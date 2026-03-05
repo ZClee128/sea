@@ -6,6 +6,8 @@ struct BexiProPaywallView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var storageManager: StorageManager
     @StateObject private var iapManager = IAPManager.shared
+    @State private var showRestoreAlert = false
+    @State private var restoreAlertMessage = ""
     
     // Internal struct for IAP items based on user's table
     struct CoinPackage: Identifiable {
@@ -153,7 +155,27 @@ struct BexiProPaywallView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             
+            // Restore Purchases Button
+            Button(action: {
+                iapManager.restorePurchases()
+                restoreAlertMessage = "Restore request submitted. If you have previous purchases, they will be restored shortly."
+                showRestoreAlert = true
+            }) {
+                Text("Restore Purchases")
+                    .font(.footnote)
+                    .foregroundColor(.blue)
+                    .padding(.vertical, 12)
+            }
+            .disabled(iapManager.isPurchasing)
+
             Spacer(minLength: 0)
+        }
+        .alert(isPresented: $showRestoreAlert) {
+            Alert(
+                title: Text("Restore Purchases"),
+                message: Text(restoreAlertMessage),
+                dismissButton: .default(Text("OK"))
+            )
         }
         .background(Color(UIColor.systemGroupedBackground).edgesIgnoringSafeArea(.all))
         .onAppear {
