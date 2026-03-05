@@ -104,7 +104,18 @@ jobs:
           rm -rf build/
           echo "✓ Build environment cleaned"
 
-      - name: 🔐 Import Certificates and Provisioning Profile
+      - name: � Install CocoaPods Dependencies
+        working-directory: ${{ needs.resolve.outputs.working_directory }}
+        run: |
+          if [ -f "Podfile" ]; then
+            echo "📦 Podfile found, running pod install..."
+            pod install --repo-update
+            echo "✓ pod install completed"
+          else
+            echo "ℹ️ No Podfile found, skipping pod install"
+          fi
+
+      - name: �🔐 Import Certificates and Provisioning Profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
@@ -170,11 +181,21 @@ jobs:
         run: |
           ARCHIVE_PATH="$RUNNER_TEMP/app.xcarchive"
           LOG_PATH="$RUNNER_TEMP/xcodebuild.log"
+          SCHEME="${{ github.event.inputs.project }}"
+
+          # 优先使用 .xcworkspace（CocoaPods 项目），否则退回 .xcodeproj
+          if [ -f "${SCHEME}.xcworkspace/contents.xcworkspacedata" ]; then
+            BUILD_FLAGS="-workspace ${SCHEME}.xcworkspace"
+            echo "🔧 Using workspace: ${SCHEME}.xcworkspace"
+          else
+            BUILD_FLAGS="-project ${{ needs.resolve.outputs.project_name }}"
+            echo "🔧 Using project: ${{ needs.resolve.outputs.project_name }}"
+          fi
 
           set -o pipefail
           xcodebuild archive \
-            -project "${{ needs.resolve.outputs.project_name }}" \
-            -scheme "${{ github.event.inputs.project }}" \
+            $BUILD_FLAGS \
+            -scheme "$SCHEME" \
             -configuration Release \
             -archivePath "$ARCHIVE_PATH" \
             -destination 'generic/platform=iOS' \
