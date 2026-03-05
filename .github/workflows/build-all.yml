@@ -9,24 +9,19 @@ on:
     inputs:
       project:
         description: '要打包的项目 scheme 名称 (如: bexi)'
+        default: 'bexi'
         required: true
         type: string
       upload_to_appstore:
         description: '是否上传到 App Store Connect'
         required: true
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
+        default: true
+        type: boolean
       submit_for_review:
         description: '是否自动提交苹果审核 (需要配置 API Key)'
         required: true
-        default: 'false'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
+        default: false
+        type: boolean
 
 jobs:
   # 解析项目路径和 bundle_id（ubuntu，不消耗 macOS 时间）
