@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 15.0, *)
 struct HomeFeedView: View {
     @EnvironmentObject var appState: AppStateManager
     @State private var selectedCategory: LookCategory? = nil

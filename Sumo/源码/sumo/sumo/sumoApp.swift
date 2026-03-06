@@ -1,20 +1,15 @@
-//
-//  sumoApp.swift
-//  sumo
-//
-//  Created by zclee on 2026/3/6.
-//
-
+// sumoApp.swift
+// The SwiftUI App struct is no longer the @main entry – AppDelegate (via main.swift) owns startup.
+// This file just holds the Scene definition so Xcode is happy.
 import SwiftUI
 
-@main
 @available(iOS 15.0, *)
-struct sumoApp: App {
+struct SumoRootView: View {
     @StateObject private var appState = AppStateManager()
     @StateObject private var cacheManager = CacheManager()
-    
-    var body: some Scene {
-        WindowGroup {
+
+    var body: some View {
+        Group {
             if appState.hasAgreedToTerms {
                 MainTabView()
                     .environmentObject(appState)

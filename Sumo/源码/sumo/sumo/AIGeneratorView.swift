@@ -122,20 +122,21 @@ struct AIGeneratorView: View {
                             
                             Button(action: {
                                 if let url = generatedImageUrl {
-                                    // Create a mock look for the generated image
+                                    // Create a new look from the AI-generated image
                                     let newLookId = UUID().uuidString
                                     let generatedLook = Look(
                                         id: newLookId,
                                         author: "AI Generation",
                                         authorAvatar: "https://picsum.photos/seed/aiavatar/200/200",
                                         description: "Prompt: \(promptText)",
-                                        category: .techwear, // Default to a category since it's mock
-                                        mediaItems: [MediaItem(type: .image, urlString: url, aspectRatio: 0.67)],
+                                        category: .techwear,
+                                        mediaItems: [MediaItem(type: .image, urlString: url, localImageName: nil, localVideoName: nil, coverImageName: nil, aspectRatio: 0.67)],
                                         likes: Int.random(in: 10...500),
                                         isVideoCover: false
                                     )
-                                    // We need to append it to the mock data so it resolves in other views
+                                    // Append to in-memory list AND persist so it survives restarts
                                     MockData.looks.append(generatedLook)
+                                    appState.saveAIGeneratedLook(generatedLook)
                                     appState.savedLookIDs.insert(newLookId)
                                     showSavedAlert = true
                                 }

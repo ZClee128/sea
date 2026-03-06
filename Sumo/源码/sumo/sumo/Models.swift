@@ -16,7 +16,10 @@ enum MediaType: String, Codable {
 struct MediaItem: Identifiable, Codable, Hashable {
     var id: String = UUID().uuidString
     let type: MediaType
-    let urlString: String
+    let urlString: String?        // remote URL for image/video
+    let localImageName: String?   // xcassets image name
+    let localVideoName: String?   // bundle .mp4 filename
+    let coverImageName: String?   // xcassets thumbnail shown in feed
     let aspectRatio: Double // width / height
 }
 

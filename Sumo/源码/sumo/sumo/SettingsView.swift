@@ -39,17 +39,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: Text("Appearance")) {
-                    NavigationLink(destination: EmptyView()) {
-                        HStack {
-                            Text("Theme")
-                            Spacer()
-                            Text("Auto")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                }
-                
+
                 Section(header: Text("Privacy & Security")) {
                     NavigationLink(destination: BlockedUsersView()) {
                         Text("Blocked Users")
@@ -57,24 +47,12 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("About & Policies")) {
-                    Link(destination: URL(string: "https://example.com/terms")!) {
-                        HStack {
-                            Text("Terms of Use")
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "safari")
-                                .foregroundColor(.secondary)
-                        }
+                    NavigationLink(destination: TermsOfUseView()) {
+                        Text("Terms of Use")
                     }
                     
-                    Link(destination: URL(string: "https://example.com/privacy")!) {
-                        HStack {
-                            Text("Privacy Policy")
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "safari")
-                                .foregroundColor(.secondary)
-                        }
+                    NavigationLink(destination: PrivacyPolicyView()) {
+                        Text("Privacy Policy")
                     }
                     
                     HStack {

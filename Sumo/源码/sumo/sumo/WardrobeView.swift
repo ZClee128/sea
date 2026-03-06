@@ -54,19 +54,29 @@ struct WardrobeGridItem: View {
             GeometryReader { geometry in
                 ZStack(alignment: .topTrailing) {
                     if firstMedia.type == .image {
-                        AsyncImage(url: URL(string: firstMedia.urlString)) { phase in
-                            if let image = phase.image {
-                                image
+                        Group {
+                            if let localName = firstMedia.localImageName {
+                                Image(localName)
                                     .resizable()
                                     .scaledToFill()
+                            } else if let urlString = firstMedia.urlString, let url = URL(string: urlString) {
+                                AsyncImage(url: url) { phase in
+                                    if let image = phase.image {
+                                        image
+                                            .resizable()
+                                            .scaledToFill()
+                                    } else {
+                                        Rectangle()
+                                            .fill(Color.gray.opacity(0.2))
+                                    }
+                                }
                             } else {
-                                Rectangle()
-                                    .fill(Color.gray.opacity(0.2))
+                                Rectangle().fill(Color.gray.opacity(0.2))
                             }
                         }
                         .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
                         .clipped()
-                    } else {
+                    } else if firstMedia.urlString != nil || firstMedia.localImageName != nil {
                         // Just show a static thumbnail or simple color for Wardrobe grid to save resources
                         // In a real app we might extract the first frame
                         ZStack {
@@ -76,6 +86,8 @@ struct WardrobeGridItem: View {
                                 .foregroundColor(.white)
                         }
                         .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                    } else {
+                        Color.black.frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
                     }
                     
                     if look.mediaItems.count > 1 {

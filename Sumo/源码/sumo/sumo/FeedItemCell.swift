@@ -69,24 +69,47 @@ struct FeedItemCell: View {
             if let firstMedia = look.mediaItems.first {
                 GeometryReader { geometry in
                     if firstMedia.type == .image {
-                        AsyncImage(url: URL(string: firstMedia.urlString)) { phase in
-                            if let image = phase.image {
-                                image
+                        Group {
+                            if let localName = firstMedia.localImageName {
+                                Image(localName)
                                     .resizable()
                                     .scaledToFill()
+                            } else if let urlString = firstMedia.urlString, let url = URL(string: urlString) {
+                                AsyncImage(url: url) { phase in
+                                    if let image = phase.image {
+                                        image
+                                            .resizable()
+                                            .scaledToFill()
+                                    } else {
+                                        Rectangle()
+                                            .fill(Color.gray.opacity(0.2))
+                                            .overlay(ProgressView())
+                                    }
+                                }
                             } else {
-                                Rectangle()
-                                    .fill(Color.gray.opacity(0.2))
-                                    .overlay(ProgressView())
+                                Rectangle().fill(Color.gray.opacity(0.2))
                             }
                         }
                         .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
                         .clipped()
                     } else {
-                        // Video Player Thumbnail
-                        VideoPlayerView(urlString: firstMedia.urlString)
-                            .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
-                            .clipped()
+                        // Video: show cover image + play icon overlay in the feed
+                        ZStack {
+                            if let cover = firstMedia.coverImageName {
+                                Image(cover)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                                    .clipped()
+                            } else {
+                                Color.black
+                                    .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                            }
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 52))
+                                .foregroundColor(.white.opacity(0.85))
+                                .shadow(radius: 4)
+                        }
                     }
                 }
                 // Calculate height based on aspect ratio
