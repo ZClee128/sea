@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct LookDetailView: View {
     let look: Look
     @EnvironmentObject var appState: AppStateManager

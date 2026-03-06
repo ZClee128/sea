@@ -1,22 +1,26 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct AIGeneratorView: View {
     @EnvironmentObject var appState: AppStateManager
     @State private var promptText = ""
     @State private var isGenerating = false
     @State private var generatedImageUrl: String? = nil
+    @State private var showSavedAlert = false
     
-    // Simulate generation with a random new image from Picsum
+    // Simulate generation with a random new image matching the prompt
     func generateImage() {
         guard !promptText.isEmpty else { return }
         
         isGenerating = true
         generatedImageUrl = nil
         
-        // Fake generation delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let randomSeed = UUID().uuidString.prefix(6)
-            self.generatedImageUrl = "https://picsum.photos/seed/\(randomSeed)/800/1200"
+        // Use pollinations.ai to generate an image based on the prompt text
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let encodedPrompt = self.promptText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "fashion"
+            // image.pollinations.ai generates images on the fly based on the path
+            let randomSeed = Int.random(in: 1...100000)
+            self.generatedImageUrl = "https://image.pollinations.ai/prompt/\(encodedPrompt)?width=800&height=1200&seed=\(randomSeed)&nologo=true"
             self.isGenerating = false
         }
     }
@@ -117,9 +121,24 @@ struct AIGeneratorView: View {
                             .shadow(radius: 10)
                             
                             Button(action: {
-                                // In a real app, this would be downloaded or saved as a custom object.
-                                // For now, we mock a save interaction.
-                                print("Saved AI image to wardrobe")
+                                if let url = generatedImageUrl {
+                                    // Create a mock look for the generated image
+                                    let newLookId = UUID().uuidString
+                                    let generatedLook = Look(
+                                        id: newLookId,
+                                        author: "AI Generation",
+                                        authorAvatar: "https://picsum.photos/seed/aiavatar/200/200",
+                                        description: "Prompt: \(promptText)",
+                                        category: .techwear, // Default to a category since it's mock
+                                        mediaItems: [MediaItem(type: .image, urlString: url, aspectRatio: 0.67)],
+                                        likes: Int.random(in: 10...500),
+                                        isVideoCover: false
+                                    )
+                                    // We need to append it to the mock data so it resolves in other views
+                                    MockData.looks.append(generatedLook)
+                                    appState.savedLookIDs.insert(newLookId)
+                                    showSavedAlert = true
+                                }
                             }) {
                                 Label("Save to Wardrobe", systemImage: "square.and.arrow.down")
                                     .font(.headline)
@@ -127,6 +146,9 @@ struct AIGeneratorView: View {
                                     .frame(maxWidth: .infinity)
                                     .background(Color.secondary.opacity(0.1))
                                     .cornerRadius(12)
+                            }
+                            .alert(isPresented: $showSavedAlert) {
+                                Alert(title: Text("Saved!"), message: Text("The AI generated look has been added to your Wardrobe."), dismissButton: .default(Text("OK")))
                             }
                         }
                         .padding()

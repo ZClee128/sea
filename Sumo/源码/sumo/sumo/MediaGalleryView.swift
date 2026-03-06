@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct MediaGalleryView: View {
     let mediaItems: [MediaItem]
     @State private var currentIndex = 0

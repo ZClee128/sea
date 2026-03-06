@@ -31,7 +31,6 @@ struct BlockedUsersView: View {
                 }
             }
         }
-        .navigationTitle("Blocked Users")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitle("Blocked Users", displayMode: .inline)
     }
 }

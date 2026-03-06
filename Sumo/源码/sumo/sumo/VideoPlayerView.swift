@@ -1,6 +1,7 @@
 import SwiftUI
 import AVKit
 
+@available(iOS 15.0, *)
 struct VideoPlayerView: View {
     let urlString: String
     @State private var player: AVPlayer?

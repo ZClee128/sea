@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+@available(iOS 15.0, *)
 struct sumoApp: App {
     @StateObject private var appState = AppStateManager()
     @StateObject private var cacheManager = CacheManager()

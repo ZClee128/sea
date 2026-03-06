@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct AgreementView: View {
     @EnvironmentObject var appState: AppStateManager
     
@@ -89,6 +90,7 @@ struct AgreementView: View {
     }
 }
 
+@available(iOS 15.0, *)
 struct AgreementView_Previews: PreviewProvider {
     static var previews: some View {
         AgreementView().environmentObject(AppStateManager())

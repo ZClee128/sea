@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct DiscoverFeedView: View {
     @State private var selectedCategory: String = "All"
     let categories = ["All", "Trending", "Cosplay", "Gaming", "Style", "Explore"]
@@ -69,11 +70,11 @@ struct DiscoverFeedView: View {
     }
 }
 
+@available(iOS 14.0, *)
 struct MediaCardView: View {
     let item: MediaItem
     @EnvironmentObject var storageManager: StorageManager
     @State private var isFullScreenPresented = false
-    @State private var showingActionSheet = false
     
     var isSaved: Bool {
         storageManager.isSaved(urlString: item.urlString)
@@ -117,26 +118,20 @@ struct MediaCardView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    showingActionSheet = true
-                }) {
+                Menu {
+                    Button(action: {
+                        storageManager.reportItem(urlString: item.urlString)
+                    }) {
+                        Label("Report Content", systemImage: "flag")
+                    }
+                    Button(action: {
+                        storageManager.blockAuthor(author: item.author)
+                    }) {
+                        Label("Block Author (\(item.author))", systemImage: "nosign")
+                    }
+                } label: {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.primary)
-                }
-                .actionSheet(isPresented: $showingActionSheet) {
-                    ActionSheet(
-                        title: Text("Options"),
-                        message: Text("Manage this content"),
-                        buttons: [
-                            .destructive(Text("Report Content")) {
-                                storageManager.reportItem(urlString: item.urlString)
-                            },
-                            .destructive(Text("Block Author (\(item.author))")) {
-                                storageManager.blockAuthor(author: item.author)
-                            },
-                            .cancel()
-                        ]
-                    )
                 }
                 
                 Spacer()
@@ -171,10 +166,6 @@ struct FeedDetailView: View {
     let item: MediaItem
     @EnvironmentObject var storageManager: StorageManager
     @Environment(\.presentationMode) var presentationMode
-    
-    @State private var isLiked = false
-    @State private var showingActionSheet = false
-    @State private var isFollowing = false
 
     var isSaved: Bool {
         storageManager.isSaved(urlString: item.urlString)
@@ -205,19 +196,6 @@ struct FeedDetailView: View {
                     }
                     
                     Spacer()
-                    
-                    Button(action: {
-                        isFollowing.toggle()
-                    }) {
-                        Text(isFollowing ? "Following" : "Follow")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .foregroundColor(isFollowing ? .primary : .white)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(isFollowing ? Color.gray.opacity(0.2) : Color.blue)
-                            .cornerRadius(20)
-                    }
                 }
                 .padding()
                 
@@ -234,22 +212,6 @@ struct FeedDetailView: View {
                 
                 // Actions
                 HStack(spacing: 20) {
-                    Button(action: {
-                        isLiked.toggle()
-                    }) {
-                        Image(systemName: isLiked ? "heart.fill" : "heart")
-                            .font(.title2)
-                            .foregroundColor(isLiked ? .red : .primary)
-                    }
-                    
-                    Button(action: {
-                        // Focus on comment
-                    }) {
-                        Image(systemName: "bubble.right")
-                            .font(.title2)
-                            .foregroundColor(.primary)
-                    }
-                    
                     Spacer()
                     
                     Button(action: {
@@ -264,10 +226,6 @@ struct FeedDetailView: View {
                 
                 // Content Info
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("\(item.likes + (isLiked ? 1 : 0)) likes")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                    
                     if !item.description.isEmpty {
                         Text(item.author)
                             .fontWeight(.bold) +
@@ -293,74 +251,26 @@ struct FeedDetailView: View {
                 }
                 .padding(.horizontal)
                 
-                Divider()
-                    .padding(.vertical)
-                
-                // Comments
-                VStack(alignment: .leading, spacing: 18) {
-                    Text("Comments (\(item.comments.count))")
-                        .font(.headline)
-                        .padding(.horizontal)
-                    
-                    if item.comments.isEmpty {
-                        Text("No comments yet. Be the first to comment!")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .padding(.horizontal)
-                    } else {
-                        ForEach(item.comments) { comment in
-                            HStack(alignment: .top, spacing: 12) {
-                                Image(systemName: "person.circle.fill")
-                                    .resizable()
-                                    .frame(width: 32, height: 32)
-                                    .foregroundColor(.gray)
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    HStack(alignment: .bottom) {
-                                        Text(comment.author)
-                                            .font(.subheadline)
-                                            .fontWeight(.bold)
-                                        Text(comment.createdAt, style: .relative)
-                                            .font(.caption2)
-                                            .foregroundColor(.secondary)
-                                            .padding(.leading, 4)
-                                    }
-                                    
-                                    Text(comment.text)
-                                        .font(.subheadline)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
-                    }
-                }
-                .padding(.bottom, 30)
+                Spacer(minLength: 30)
             }
         }
         .navigationBarTitle("Post", displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: {
-            showingActionSheet = true
-        }) {
+        .navigationBarItems(trailing: Menu {
+            Button(action: {
+                storageManager.reportItem(urlString: item.urlString)
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Label("Report Content", systemImage: "flag")
+            }
+            Button(action: {
+                storageManager.blockAuthor(author: item.author)
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Label("Block Author (\(item.author))", systemImage: "nosign")
+            }
+        } label: {
             Image(systemName: "ellipsis")
         })
-        .actionSheet(isPresented: $showingActionSheet) {
-            ActionSheet(
-                title: Text("Options"),
-                message: Text("Manage this content"),
-                buttons: [
-                    .destructive(Text("Report Content")) {
-                        storageManager.reportItem(urlString: item.urlString)
-                        presentationMode.wrappedValue.dismiss()
-                    },
-                    .destructive(Text("Block Author (\(item.author))")) {
-                        storageManager.blockAuthor(author: item.author)
-                        presentationMode.wrappedValue.dismiss()
-                    },
-                    .cancel()
-                ]
-            )
-        }
     }
     
     private func toggleSave() {
@@ -373,6 +283,10 @@ struct FeedDetailView: View {
 }
 
 #Preview {
-    DiscoverFeedView()
-        .environmentObject(StorageManager())
+    if #available(iOS 14.0, *) {
+        DiscoverFeedView()
+            .environmentObject(StorageManager())
+    } else {
+        // Fallback on earlier versions
+    }
 }

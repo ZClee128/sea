@@ -2,13 +2,6 @@ import Foundation
 import Combine
 import SwiftUI
 
-struct Comment: Identifiable, Codable, Equatable {
-    var id: UUID = UUID()
-    var author: String
-    var text: String
-    var createdAt: Date = Date()
-}
-
 struct MediaItem: Identifiable, Codable, Equatable {
     var id: UUID = UUID()
     var urlString: String
@@ -18,8 +11,6 @@ struct MediaItem: Identifiable, Codable, Equatable {
     var avatarUrlString: String?
     var description: String = ""
     var tags: [String] = []
-    var likes: Int = Int.random(in: 100...10000)
-    var comments: [Comment] = []
     var createdAt: Date = Date()
 }
 
@@ -205,37 +196,16 @@ class StorageManager: ObservableObject {
 
 // Pre-loaded content for the application feeds
 struct ContentProvider {
-    static let comments: [Comment] = [
-        Comment(author: "Alex", text: "Wow, this looks amazing! 😍"),
-        Comment(author: "Sam", text: "Great work! Keep it up."),
-        Comment(author: "Jordan", text: "I love the composition here. Beautiful."),
-        Comment(author: "Taylor", text: "Incredible detail!"),
-        Comment(author: "Casey", text: "One of the best I've seen in a while! 🔥"),
-        Comment(author: "Riley", text: "Can't wait to see more content like this."),
-        Comment(author: "Drew", text: "Absolutely stunning. 💯")
-    ]
-    
-    static func generateComments(count: Int) -> [Comment] {
-        var result: [Comment] = []
-        for _ in 0..<count {
-            if let comment = comments.randomElement() {
-                let c = Comment(author: comment.author, text: comment.text, createdAt: Date().addingTimeInterval(-Double.random(in: 100...100000)))
-                result.append(c)
-            }
-        }
-        return result
-    }
-    
     static let items: [MediaItem] = [
-        MediaItem(urlString: "c1.jpeg", isVideo: true, videoUrlString: "c1.mp4", author: "Bexi Creator", avatarUrlString: "cosplay_8", description: "First look at our new content! Let me know what you think in the comments below.", tags: ["trending", "showcase", "new"], comments: generateComments(count: 3)),
-        MediaItem(urlString: "c2.jpeg", isVideo: true, videoUrlString: "c2.mp4", author: "Anime Fan", avatarUrlString: "cosplay_7", description: "Trying out a new transition style. Super happy with how it came out!", tags: ["cosplay", "transition", "anime"], comments: generateComments(count: 5)),
-        MediaItem(urlString: "cosplay_8", isVideo: false, author: "Cosplay Queen", avatarUrlString: "cosplay_8", description: "Latest photoshoot from the convention. The lighting was absolutely perfect.", tags: ["cosplay", "photography", "photoshoot"], comments: generateComments(count: 2)),
-        MediaItem(urlString: "cosplay_7", isVideo: false, author: "Pro Gamer", avatarUrlString: "cosplay_7", description: "Ready for the next match. Setup is looking clean.", tags: ["gaming", "setup", "pro"], comments: generateComments(count: 1)),
-        MediaItem(urlString: "cosplay_6", isVideo: false, author: "Game Master", avatarUrlString: "cosplay_6", description: "Finally beat the final boss after 10 hours... My hands are shaking.", tags: ["gaming", "achievement", "boss"], comments: generateComments(count: 4)),
-        MediaItem(urlString: "cosplay_5", isVideo: false, author: "Style Icon", avatarUrlString: "cosplay_5", description: "OOTD. Mixing some vintage pieces with modern streetwear.", tags: ["style", "fashion", "ootd"], comments: generateComments(count: 6)),
-        MediaItem(urlString: "cosplay_4", isVideo: false, author: "Creative Mind", avatarUrlString: "cosplay_4", description: "Behind the scenes of my creative process.", tags: ["creative", "bts", "art"], comments: generateComments(count: 2)),
-        MediaItem(urlString: "cosplay_3", isVideo: false, author: "Adventurer", avatarUrlString: "cosplay_3", description: "Found this hidden gem while exploring the city today.", tags: ["explore", "adventure", "city"], comments: generateComments(count: 3)),
-        MediaItem(urlString: "cosplay_2", isVideo: false, author: "Tech Geek", avatarUrlString: "cosplay_2", description: "Reviewing the latest gear. Is it worth the hype? Link in bio.", tags: ["tech", "review", "trending"], comments: generateComments(count: 5)),
-        MediaItem(urlString: "cosplay_1", isVideo: false, author: "Bexi Creator", avatarUrlString: "cosplay_1", description: "Just relaxing and enjoying the vibes.", tags: ["chill", "vibes", "trending"], comments: generateComments(count: 1))
+        MediaItem(urlString: "c1.jpeg", isVideo: true, videoUrlString: "c1.mp4", author: "Bexi Creator", avatarUrlString: "cosplay_8", description: "First look at our new content! Check it out below.", tags: ["trending", "showcase", "new"]),
+        MediaItem(urlString: "c2.jpeg", isVideo: true, videoUrlString: "c2.mp4", author: "Anime Fan", avatarUrlString: "cosplay_7", description: "Trying out a new transition style. Super happy with how it came out!", tags: ["cosplay", "transition", "anime"]),
+        MediaItem(urlString: "cosplay_8", isVideo: false, author: "Cosplay Queen", avatarUrlString: "cosplay_8", description: "Latest photoshoot from the convention. The lighting was absolutely perfect.", tags: ["cosplay", "photography", "photoshoot"]),
+        MediaItem(urlString: "cosplay_7", isVideo: false, author: "Pro Gamer", avatarUrlString: "cosplay_7", description: "Ready for the next match. Setup is looking clean.", tags: ["gaming", "setup", "pro"]),
+        MediaItem(urlString: "cosplay_6", isVideo: false, author: "Game Master", avatarUrlString: "cosplay_6", description: "Finally beat the final boss after 10 hours... My hands are shaking.", tags: ["gaming", "achievement", "boss"]),
+        MediaItem(urlString: "cosplay_5", isVideo: false, author: "Style Icon", avatarUrlString: "cosplay_5", description: "OOTD. Mixing some vintage pieces with modern streetwear.", tags: ["style", "fashion", "ootd"]),
+        MediaItem(urlString: "cosplay_4", isVideo: false, author: "Creative Mind", avatarUrlString: "cosplay_4", description: "Behind the scenes of my creative process.", tags: ["creative", "bts", "art"]),
+        MediaItem(urlString: "cosplay_3", isVideo: false, author: "Adventurer", avatarUrlString: "cosplay_3", description: "Found this hidden gem while exploring the city today.", tags: ["explore", "adventure", "city"]),
+        MediaItem(urlString: "cosplay_2", isVideo: false, author: "Tech Geek", avatarUrlString: "cosplay_2", description: "Reviewing the latest gear. Is it worth the hype? Link in bio.", tags: ["tech", "review", "trending"]),
+        MediaItem(urlString: "cosplay_1", isVideo: false, author: "Bexi Creator", avatarUrlString: "cosplay_1", description: "Just relaxing and enjoying the vibes.", tags: ["chill", "vibes", "trending"])
     ]
 }

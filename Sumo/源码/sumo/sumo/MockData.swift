@@ -6,7 +6,7 @@ struct MockData {
         return "https://picsum.photos/seed/\(seed)/\(width)/\(height)"
     }
     
-    static let looks: [Look] = [
+    static var looks: [Look] = [
         Look(
             id: "1",
             author: "sumo_street",

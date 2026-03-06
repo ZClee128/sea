@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct SearchView: View {
     @EnvironmentObject var appState: AppStateManager
     @State private var searchText = ""
@@ -68,12 +69,13 @@ struct SearchView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Search")
-            .searchable(text: $searchText, prompt: "Search styles, creators, tags...")
+            .navigationBarTitle("Search", displayMode: .large)
         }
+        .searchable(text: $searchText, prompt: "Search styles, creators, tags...")
     }
 }
 
+@available(iOS 15.0, *)
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()

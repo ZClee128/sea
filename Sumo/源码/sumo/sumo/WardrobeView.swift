@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct WardrobeView: View {
     @EnvironmentObject var appState: AppStateManager
     
@@ -44,6 +45,7 @@ struct WardrobeView: View {
     }
 }
 
+@available(iOS 15.0, *)
 struct WardrobeGridItem: View {
     let look: Look
     

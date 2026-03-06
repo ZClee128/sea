@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct SettingsView: View {
     @EnvironmentObject var appState: AppStateManager
     @EnvironmentObject var cacheManager: CacheManager
