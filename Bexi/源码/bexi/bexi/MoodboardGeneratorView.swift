@@ -7,90 +7,129 @@ struct MoodboardGeneratorView: View {
     @State private var selectedItems: Set<UUID> = []
     @State private var generatedImage: UIImage? = nil
     @State private var showingCoinAlert = false
+    @State private var showingPhotoPicker = false
+    @State private var importedImage: UIImage? = nil
     
+    private var resultView: some View {
+        Group {
+            if let image = generatedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                
+                Button(action: {
+                    saveToPhotos()
+                }) {
+                    Text("Save to Photos")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(12)
+                }
+                .padding()
+            }
+        }
+    }
+    
+    private var importSection: some View {
+        HStack {
+            Text("Select 2 to 4 images for your Moodboard")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            Spacer()
+            
+            Button(action: {
+                showingPhotoPicker = true
+            }) {
+                HStack {
+                    Image(systemName: "photo.on.rectangle")
+                    Text("Import")
+                }
+                .font(.subheadline)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.blue.opacity(0.1))
+                .foregroundColor(.blue)
+                .cornerRadius(8)
+            }
+        }
+        .padding(.horizontal)
+        .padding(.top)
+    }
+    
+    private var imagePickerGrid: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                ForEach(chunked(items: storageManager.savedItems, into: 3), id: \.self.description) { chunk in
+                    HStack(spacing: 10) {
+                        ForEach(chunk) { item in
+                            ZStack(alignment: .topTrailing) {
+                                RemoteImage(urlString: item.urlString)
+                                    .aspectRatio(1, contentMode: .fill)
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .clipped()
+                                    .cornerRadius(8)
+                                    .opacity(selectedItems.contains(item.id) ? 0.7 : 1.0)
+                                    .onTapGesture {
+                                        toggleSelection(item.id)
+                                    }
+                                
+                                if selectedItems.contains(item.id) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.blue)
+                                        .padding(6)
+                                        .background(Circle().fill(Color.white))
+                                        .padding(4)
+                                }
+                            }
+                        }
+                        if chunk.count < 3 {
+                            ForEach(0..<(3 - chunk.count), id: \.self) { _ in
+                                Color.clear.frame(minWidth: 0, maxWidth: .infinity)
+                            }
+                        }
+                    }
+                }
+            }
+            .padding()
+        }
+    }
+    
+    private var generateButton: some View {
+        Button(action: {
+            if storageManager.coins >= 10 {
+                generateMoodboard()
+            } else {
+                showingCoinAlert = true
+            }
+        }) {
+            Text("Generate (Cost: 10 Coins)")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(selectedItems.count >= 2 && selectedItems.count <= 4 ? Color.blue : Color.gray)
+                .cornerRadius(12)
+        }
+        .disabled(selectedItems.count < 2 || selectedItems.count > 4)
+        .padding()
+    }
+
     var body: some View {
         NavigationView {
             VStack {
                 if generatedImage != nil {
                     // Step 2: Show result
-                    Image(uiImage: generatedImage!)
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                    
-                    Button(action: {
-                        saveToPhotos()
-                    }) {
-                        Text("Save to Photos")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(12)
-                    }
-                    .padding()
-                    
+                    resultView
                 } else {
                     // Step 1: Pick items
-                    Text("Select 2 to 4 images to create a Moodboard")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .padding(.top)
-                    
-                    ScrollView {
-                        VStack(spacing: 10) {
-                            ForEach(chunked(items: storageManager.savedItems, into: 3), id: \.self.description) { chunk in
-                                HStack(spacing: 10) {
-                                    ForEach(chunk) { item in
-                                        ZStack(alignment: .topTrailing) {
-                                            RemoteImage(urlString: item.urlString)
-                                                .aspectRatio(1, contentMode: .fill)
-                                                .frame(minWidth: 0, maxWidth: .infinity)
-                                                .clipped()
-                                                .cornerRadius(8)
-                                                .opacity(selectedItems.contains(item.id) ? 0.7 : 1.0)
-                                                .onTapGesture {
-                                                    toggleSelection(item.id)
-                                                }
-                                            
-                                            if selectedItems.contains(item.id) {
-                                                Image(systemName: "checkmark.circle.fill")
-                                                    .foregroundColor(.blue)
-                                                    .padding(6)
-                                                    .background(Circle().fill(Color.white))
-                                                    .padding(4)
-                                            }
-                                        }
-                                    }
-                                    if chunk.count < 3 {
-                                        ForEach(0..<(3 - chunk.count), id: \.self) { _ in
-                                            Color.clear.frame(minWidth: 0, maxWidth: .infinity)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .padding()
-                    }
-                    
-                    Button(action: {
-                        if storageManager.coins >= 10 {
-                            generateMoodboard()
-                        } else {
-                            showingCoinAlert = true
-                        }
-                    }) {
-                        Text("Generate (Cost: 10 Coins)")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(selectedItems.count >= 2 && selectedItems.count <= 4 ? Color.blue : Color.gray)
-                            .cornerRadius(12)
-                    }
-                    .disabled(selectedItems.count < 2 || selectedItems.count > 4)
-                    .padding()
+                    importSection
+                    imagePickerGrid
+                    generateButton
                 }
             }
             .navigationBarTitle("Moodboard", displayMode: .inline)
@@ -106,11 +145,29 @@ struct MoodboardGeneratorView: View {
                     dismissButton: .default(Text("OK"))
                 )
             }
-            .navigationBarItems(
-                leading: Button("Cancel") {
-                    presentationMode.wrappedValue.dismiss()
+            .sheet(isPresented: $showingPhotoPicker) {
+                let imageBinding = Binding<UIImage?>(
+                    get: { self.importedImage },
+                    set: { newImage in
+                        self.importedImage = newImage
+                        if let image = newImage {
+                            self.storageManager.saveUserImage(image: image) { newItem in
+                                if let item = newItem {
+                                    if self.selectedItems.count < 4 {
+                                        self.selectedItems.insert(item.id)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                )
+
+                if #available(iOS 14.0, *) {
+                    PhotoPicker(selectedImage: imageBinding)
+                } else {
+                    LegacyPhotoPicker(selectedImage: imageBinding)
                 }
-            )
+            }
         }
     }
     
@@ -144,6 +201,9 @@ struct MoodboardGeneratorView: View {
                 // Check local assets first
                 if let localImg = UIImage(named: urlString) {
                     images.append(localImg)
+                } else if let url = URL(string: urlString), url.isFileURL, let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
+                    // Local file from documents directory
+                    images.append(img)
                 } else if let url = URL(string: urlString), let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
                     // Fallback to network download
                     images.append(img)

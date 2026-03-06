@@ -14,14 +14,22 @@ struct DiscoverFeedView: View {
         MediaItem(urlString: "cosplay_2", isVideo: false, author: "Bexi Creator"),
         MediaItem(urlString: "cosplay_1", isVideo: false, author: "Bexi Creator")
     ]
+    @EnvironmentObject var storageManager: StorageManager
     
     // Split data into two columns for a masonry look
+    var filteredData: [MediaItem] {
+        mockData.filter { item in
+            !storageManager.reportedItems.contains(item.urlString) &&
+            !storageManager.blockedAuthors.contains(item.author)
+        }
+    }
+    
     var leftColumnData: [MediaItem] {
-        mockData.enumerated().compactMap { $0.offset % 2 == 0 ? $0.element : nil }
+        filteredData.enumerated().compactMap { $0.offset % 2 == 0 ? $0.element : nil }
     }
     
     var rightColumnData: [MediaItem] {
-        mockData.enumerated().compactMap { $0.offset % 2 != 0 ? $0.element : nil }
+        filteredData.enumerated().compactMap { $0.offset % 2 != 0 ? $0.element : nil }
     }
     
     var body: some View {
@@ -51,6 +59,7 @@ struct MediaCardView: View {
     let item: MediaItem
     @EnvironmentObject var storageManager: StorageManager
     @State private var isFullScreenPresented = false
+    @State private var showingActionSheet = false
     
     var isSaved: Bool {
         storageManager.isSaved(urlString: item.urlString)
@@ -85,7 +94,6 @@ struct MediaCardView: View {
             } else {
                 // Fallback on earlier versions
             }
-            
             // Interaction Bar
             HStack {
                 Button(action: {
@@ -94,7 +102,33 @@ struct MediaCardView: View {
                     Image(systemName: isSaved ? "heart.fill" : "heart")
                         .foregroundColor(isSaved ? .red : .primary)
                 }
+                
                 Spacer()
+                
+                Button(action: {
+                    showingActionSheet = true
+                }) {
+                    Image(systemName: "ellipsis")
+                        .foregroundColor(.primary)
+                }
+                .actionSheet(isPresented: $showingActionSheet) {
+                    ActionSheet(
+                        title: Text("Options"),
+                        message: Text("Manage this content"),
+                        buttons: [
+                            .destructive(Text("Report Content")) {
+                                storageManager.reportItem(urlString: item.urlString)
+                            },
+                            .destructive(Text("Block Author (\(item.author))")) {
+                                storageManager.blockAuthor(author: item.author)
+                            },
+                            .cancel()
+                        ]
+                    )
+                }
+                
+                Spacer()
+                
                 Button(action: {
                     // Quick save trigger if not saved
                     if !isSaved {

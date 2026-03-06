@@ -23,6 +23,8 @@ struct Moodboard: Identifiable, Codable, Equatable {
 class StorageManager: ObservableObject {
     @Published var savedItems: [MediaItem] = []
     @Published var moodboards: [Moodboard] = []
+    @Published var reportedItems: [String] = []
+    @Published var blockedAuthors: [String] = []
     @Published var hasAcceptedTerms: Bool = false
     @Published var coins: Int = 0 {
         didSet {
@@ -35,6 +37,8 @@ class StorageManager: ObservableObject {
     private let moodboardsKey = "bexi_moodboards"
     private let termsKey = "bexi_has_accepted_terms"
     private let coinsKey = "bexi_user_coins"
+    private let reportedItemsKey = "bexi_reported_items"
+    private let blockedAuthorsKey = "bexi_blocked_authors"
     
     init() {
         loadData()
@@ -76,10 +80,76 @@ class StorageManager: ObservableObject {
         return savedItems.contains(where: { $0.urlString == urlString })
     }
     
+    // MARK: - Safety (Report & Block)
+    func reportItem(urlString: String) {
+        if !reportedItems.contains(urlString) {
+            reportedItems.append(urlString)
+            persistSafetyData()
+            // Also remove from saved if reported
+            removeItem(urlString: urlString)
+        }
+    }
+    
+    func blockAuthor(author: String) {
+        if !blockedAuthors.contains(author) {
+            blockedAuthors.append(author)
+            persistSafetyData()
+            // Remove any saved items from this author
+            savedItems.removeAll { $0.author == author }
+            persistSavedItems()
+        }
+    }
+    
     // MARK: - Persistence
+    func saveUserImage(image: UIImage, completion: @escaping (MediaItem?) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+            
+            // Convert to JPEG
+            guard let data = image.jpegData(compressionQuality: 0.8) else {
+                DispatchQueue.main.async { completion(nil) }
+                return
+            }
+            
+            // Get documents directory
+            let fileManager = FileManager.default
+            guard let docsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                DispatchQueue.main.async { completion(nil) }
+                return
+            }
+            
+            // Create unique filename
+            let filename = UUID().uuidString + ".jpg"
+            let fileURL = docsDir.appendingPathComponent(filename)
+            
+            do {
+                try data.write(to: fileURL)
+                
+                let newItem = MediaItem(urlString: fileURL.absoluteString, isVideo: false, author: "Me")
+                
+                DispatchQueue.main.async {
+                    self.saveItem(newItem) // Add to library
+                    completion(newItem)
+                }
+            } catch {
+                print("Error saving image: \(error)")
+                DispatchQueue.main.async { completion(nil) }
+            }
+        }
+    }
+    
     func saveMoodboard(_ moodboard: Moodboard) {
         moodboards.append(moodboard)
         persistMoodboards()
+    }
+    
+    private func persistSafetyData() {
+        if let data = try? JSONEncoder().encode(reportedItems) {
+            UserDefaults.standard.set(data, forKey: reportedItemsKey)
+        }
+        if let data = try? JSONEncoder().encode(blockedAuthors) {
+            UserDefaults.standard.set(data, forKey: blockedAuthorsKey)
+        }
     }
     
     private func persistSavedItems() {
@@ -105,6 +175,16 @@ class StorageManager: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: moodboardsKey),
            let boards = try? JSONDecoder().decode([Moodboard].self, from: data) {
             self.moodboards = boards
+        }
+        
+        if let data = UserDefaults.standard.data(forKey: reportedItemsKey),
+           let items = try? JSONDecoder().decode([String].self, from: data) {
+            self.reportedItems = items
+        }
+        
+        if let data = UserDefaults.standard.data(forKey: blockedAuthorsKey),
+           let authors = try? JSONDecoder().decode([String].self, from: data) {
+            self.blockedAuthors = authors
         }
         
         self.coins = UserDefaults.standard.integer(forKey: coinsKey)

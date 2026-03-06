@@ -4,7 +4,6 @@ import SwiftUI
 struct MyLibraryView: View {
     @EnvironmentObject var storageManager: StorageManager
     @State private var isMoodboardGenPresented = false
-    @State private var showingEmptyAlert = false
     
     let columns = [
         GridItem(.adaptive(minimum: 100), spacing: 10)
@@ -17,14 +16,16 @@ struct MyLibraryView: View {
                 
                 if storageManager.savedItems.isEmpty {
                     VStack(spacing: 20) {
-                        Image(systemName: "heart.slash")
+                        Image(systemName: "photo.on.rectangle.angled")
                             .font(.system(size: 50))
                             .foregroundColor(.gray)
                         Text("Your library is empty.")
                             .foregroundColor(.secondary)
-                        Text("Discover and like items to see them here.")
+                        Text("Discover items or import your own photos to create a moodboard.")
                             .font(.caption)
                             .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
                     }
                 } else {
                     ScrollView {
@@ -57,23 +58,12 @@ struct MyLibraryView: View {
             .navigationBarTitle("My Library")
             .navigationBarItems(trailing: 
                 Button(action: {
-                    if storageManager.savedItems.isEmpty {
-                        showingEmptyAlert = true
-                    } else {
-                        isMoodboardGenPresented = true
-                    }
+                    isMoodboardGenPresented = true
                 }) {
                     Image(systemName: "photo.on.rectangle.angled")
                         .imageScale(.large)
                 }
             )
-            .alert(isPresented: $showingEmptyAlert) {
-                Alert(
-                    title: Text("Library Empty"),
-                    message: Text("Please save some images from Daily or Discover before creating a Moodboard."),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
             .sheet(isPresented: $isMoodboardGenPresented) {
                 // Future Moodboard Generator View
                 MoodboardGeneratorView()

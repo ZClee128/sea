@@ -11,6 +11,11 @@ struct DailyView: View {
     ]
     
     @State private var selectedItem: URLItem?
+    @EnvironmentObject var storageManager: StorageManager
+    
+    var filteredFeaturedItems: [String] {
+        featuredItems.filter { !storageManager.reportedItems.contains($0) }
+    }
     
     var body: some View {
         NavigationView {
@@ -32,50 +37,56 @@ struct DailyView: View {
                     .padding(.top, 10)
                     
                     // Hero Feature
-                    VStack(alignment: .leading, spacing: 8) {
-                        RemoteImage(urlString: heroImageURL)
-                            .scaledToFill()
-                            .frame(height: 280)
-                            .frame(maxWidth: .infinity)
-                            .contentShape(Rectangle())
-                            .clipped()
-                            .cornerRadius(16)
-                            .shadow(radius: 5)
-                            .onTapGesture {
-                                selectedItem = URLItem(id: heroImageURL)
-                            }
-                        
-                        Text("Editor's Pick: Cosplay Showcase")
-                            .font(.headline)
-                            .padding(.top, 4)
-                        
-                        Text("Explore our hand-picked collection of this week's most stunning cosplay masterpieces.")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(.horizontal)
-                    
-                    Divider().padding(.vertical, 10)
-                    
-                    // Curated Collection
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("Curated For You")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.horizontal)
-                        
-                        ForEach(featuredItems, id: \.self) { urlString in
-                            RemoteImage(urlString: urlString)
+                    if !storageManager.reportedItems.contains(heroImageURL) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            RemoteImage(urlString: heroImageURL)
                                 .scaledToFill()
-                                .frame(height: 200)
+                                .frame(height: 280)
                                 .frame(maxWidth: .infinity)
                                 .contentShape(Rectangle())
                                 .clipped()
-                                .cornerRadius(12)
+                                .cornerRadius(16)
+                                .shadow(radius: 5)
                                 .onTapGesture {
-                                    selectedItem = URLItem(id: urlString)
+                                    selectedItem = URLItem(id: heroImageURL)
                                 }
+                            
+                            Text("Editor's Pick: Cosplay Showcase")
+                                .font(.headline)
+                                .padding(.top, 4)
+                            
+                            Text("Explore our hand-picked collection of this week's most stunning cosplay masterpieces.")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.horizontal)
+                        
+                        Divider().padding(.vertical, 10)
+                    } else {
+                        Divider().padding(.vertical, 10) // Keep spacing even if hero is hidden
+                    }
+                    
+                    // Curated Collection
+                    if !filteredFeaturedItems.isEmpty {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Curated For You")
+                                .font(.title2)
+                                .fontWeight(.bold)
                                 .padding(.horizontal)
+                            
+                            ForEach(filteredFeaturedItems, id: \.self) { urlString in
+                                RemoteImage(urlString: urlString)
+                                    .scaledToFill()
+                                    .frame(height: 200)
+                                    .frame(maxWidth: .infinity)
+                                    .contentShape(Rectangle())
+                                    .clipped()
+                                    .cornerRadius(12)
+                                    .onTapGesture {
+                                        selectedItem = URLItem(id: urlString)
+                                    }
+                                    .padding(.horizontal)
+                            }
                         }
                     }
                 }
@@ -102,6 +113,7 @@ struct URLItem: Identifiable {
 #Preview {
     if #available(iOS 14.0, *) {
         DailyView()
+            .environmentObject(StorageManager())
     } else {
         // Fallback on earlier versions
     }
