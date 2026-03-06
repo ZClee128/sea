@@ -24,6 +24,14 @@ struct ContentView: View {
                     Image(systemName: "square.grid.2x2.fill")
                     Text("Discover")
                 }
+                
+            if #available(iOS 14.0, *) {
+                StudioView()
+                    .tabItem {
+                        Image(systemName: "wand.and.stars")
+                        Text("Studio")
+                    }
+            }
             
             if #available(iOS 14.0, *) {
                 MyLibraryView()

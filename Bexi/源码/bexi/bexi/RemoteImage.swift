@@ -12,12 +12,47 @@ class ImageLoader: ObservableObject {
     }
 
     private func load() {
+        // If it's a raw filename saved by the user (no scheme), reconstruct the URL dynamically
+        // because iOS changes the Documents Directory UUID on every app launch.
+        if !urlString.hasPrefix("http") && !urlString.hasPrefix("file://") {
+            let fileManager = FileManager.default
+            if let docsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let localURL = docsDir.appendingPathComponent(urlString)
+                loadLocalFile(url: localURL)
+                return
+            }
+        }
+        
         guard let url = URL(string: urlString) else { return }
+        
+        // Handle legacy saved absolute file URLs by extracting the filename
+        // and aggressively reconstructing the path using the current sandbox directory.
+        if url.isFileURL {
+            let filename = url.lastPathComponent
+            let fileManager = FileManager.default
+            if let docsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let freshLocalURL = docsDir.appendingPathComponent(filename)
+                loadLocalFile(url: freshLocalURL)
+            }
+            return
+        }
+        
+        // Handle remote URLs
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { UIImage(data: $0.data) }
             .replaceError(with: nil)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.image = $0 }
+    }
+    
+    private func loadLocalFile(url: URL) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.image = img
+                }
+            }
+        }
     }
     
     func cancel() {

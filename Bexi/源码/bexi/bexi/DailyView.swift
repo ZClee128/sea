@@ -10,11 +10,18 @@ struct DailyView: View {
         "cosplay_5"
     ]
     
-    @State private var selectedItem: URLItem?
+    @State private var selectedItem: MediaItem?
     @EnvironmentObject var storageManager: StorageManager
     
-    var filteredFeaturedItems: [String] {
-        featuredItems.filter { !storageManager.reportedItems.contains($0) }
+    var heroItem: MediaItem? {
+        ContentProvider.items.first(where: { $0.urlString == heroImageURL })
+    }
+    
+    var filteredFeaturedMediaItems: [MediaItem] {
+        ContentProvider.items.filter { item in
+            featuredItems.contains(item.urlString) &&
+            !storageManager.reportedItems.contains(item.urlString)
+        }
     }
     
     var body: some View {
@@ -36,10 +43,9 @@ struct DailyView: View {
                     .padding(.horizontal)
                     .padding(.top, 10)
                     
-                    // Hero Feature
-                    if !storageManager.reportedItems.contains(heroImageURL) {
+                    if !storageManager.reportedItems.contains(heroImageURL), let hero = heroItem {
                         VStack(alignment: .leading, spacing: 8) {
-                            RemoteImage(urlString: heroImageURL)
+                            RemoteImage(urlString: hero.urlString)
                                 .scaledToFill()
                                 .frame(height: 280)
                                 .frame(maxWidth: .infinity)
@@ -48,7 +54,7 @@ struct DailyView: View {
                                 .cornerRadius(16)
                                 .shadow(radius: 5)
                                 .onTapGesture {
-                                    selectedItem = URLItem(id: heroImageURL)
+                                    selectedItem = hero
                                 }
                             
                             Text("Editor's Pick: Cosplay Showcase")
@@ -67,15 +73,15 @@ struct DailyView: View {
                     }
                     
                     // Curated Collection
-                    if !filteredFeaturedItems.isEmpty {
+                    if !filteredFeaturedMediaItems.isEmpty {
                         VStack(alignment: .leading, spacing: 16) {
                             Text("Curated For You")
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                             
-                            ForEach(filteredFeaturedItems, id: \.self) { urlString in
-                                RemoteImage(urlString: urlString)
+                            ForEach(filteredFeaturedMediaItems) { item in
+                                RemoteImage(urlString: item.urlString)
                                     .scaledToFill()
                                     .frame(height: 200)
                                     .frame(maxWidth: .infinity)
@@ -83,7 +89,7 @@ struct DailyView: View {
                                     .clipped()
                                     .cornerRadius(12)
                                     .onTapGesture {
-                                        selectedItem = URLItem(id: urlString)
+                                        selectedItem = item
                                     }
                                     .padding(.horizontal)
                             }
@@ -94,21 +100,15 @@ struct DailyView: View {
             }
             .navigationBarHidden(true)
             .sheet(item: $selectedItem) { item in
-                FullScreenImageView(
-                    urlString: item.id,
-                    isPresented: Binding(
-                        get: { selectedItem != nil },
-                        set: { if !$0 { selectedItem = nil } }
-                    )
-                )
+                NavigationView {
+                    FeedDetailView(item: item)
+                }
             }
         }
     }
 }
 
-struct URLItem: Identifiable {
-    let id: String
-}
+
 
 #Preview {
     if #available(iOS 14.0, *) {

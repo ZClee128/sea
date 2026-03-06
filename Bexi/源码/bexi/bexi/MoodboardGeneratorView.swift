@@ -197,15 +197,32 @@ struct MoodboardGeneratorView: View {
         // In a real app we would show a loading spinner while downloading.
         DispatchQueue.global(qos: .userInitiated).async {
             var images: [UIImage] = []
+            let fileManager = FileManager.default
+            let docsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+            
             for urlString in urls {
-                // Check local assets first
+                // 1. Check local assets (e.g. "c1.jpeg")
                 if let localImg = UIImage(named: urlString) {
                     images.append(localImg)
-                } else if let url = URL(string: urlString), url.isFileURL, let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
-                    // Local file from documents directory
-                    images.append(img)
-                } else if let url = URL(string: urlString), let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
-                    // Fallback to network download
+                } 
+                // 2. Handle pure filenames dynamically constructed from the current sandbox docs dir
+                else if !urlString.hasPrefix("http") && !urlString.hasPrefix("file://"),
+                        let docsDir = docsDir {
+                    let freshLocalURL = docsDir.appendingPathComponent(urlString)
+                    if let data = try? Data(contentsOf: freshLocalURL), let img = UIImage(data: data) {
+                        images.append(img)
+                    }
+                } 
+                // 3. Handle legacy exact file URLs by intercepting filename dynamically
+                else if let url = URL(string: urlString), url.isFileURL, let docsDir = docsDir {
+                    let filename = url.lastPathComponent
+                    let freshLocalURL = docsDir.appendingPathComponent(filename)
+                    if let data = try? Data(contentsOf: freshLocalURL), let img = UIImage(data: data) {
+                        images.append(img)
+                    }
+                } 
+                // 4. Remote URLs
+                else if let url = URL(string: urlString), let data = try? Data(contentsOf: url), let img = UIImage(data: data) {
                     images.append(img)
                 }
             }
