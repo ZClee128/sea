@@ -4,10 +4,10 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var appState: AppStateManager
     @EnvironmentObject var cacheManager: CacheManager
-    
+
     @State private var showingClearCacheAlert = false
-    
-    // Hardcoded version string for demo
+    @State private var showCoinStore = false
+
     let appVersion = "1.0.0 (1)"
     
     var body: some View {
@@ -45,6 +45,28 @@ struct SettingsView: View {
                         Text("Blocked Users")
                     }
                 }
+
+                Section(header: Text("Coins")) {
+                    HStack {
+                        Image(systemName: "bitcoinsign.circle.fill")
+                            .foregroundColor(.yellow)
+                        Text("Balance")
+                        Spacer()
+                        Text("\(appState.coinBalance) coins")
+                            .foregroundColor(.secondary)
+                    }
+                    Button(action: { showCoinStore = true }) {
+                        HStack {
+                            Text("Get Coins")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
+                    }
+                    .foregroundColor(.primary)
+                }
+
                 
                 Section(header: Text("About & Policies")) {
                     NavigationLink(destination: TermsOfUseView()) {
@@ -65,6 +87,9 @@ struct SettingsView: View {
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Settings")
+        }
+        .sheet(isPresented: $showCoinStore) {
+            CoinStoreView().environmentObject(appState)
         }
     }
 }

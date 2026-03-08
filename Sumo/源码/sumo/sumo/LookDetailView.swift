@@ -82,14 +82,14 @@ struct LookDetailView: View {
                         .font(.body)
                         .lineSpacing(4)
                     
-                    HStack {
-                        Image(systemName: "heart.fill")
-                            .foregroundColor(.red)
-                        Text("\(look.likes) likes")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                    }
-                    .padding(.top, 8)
+//                    HStack {
+//                        Image(systemName: "heart.fill")
+//                            .foregroundColor(.red)
+//                        Text("\(look.likes) likes")
+//                            .font(.subheadline)
+//                            .fontWeight(.semibold)
+//                    }
+//                    .padding(.top, 8)
                 }
                 .padding()
             }

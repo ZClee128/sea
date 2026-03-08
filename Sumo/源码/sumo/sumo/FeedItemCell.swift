@@ -116,23 +116,15 @@ struct FeedItemCell: View {
                 .frame(height: UIScreen.main.bounds.width / CGFloat(firstMedia.aspectRatio))
             }
             
-            // Description & Likes
+            // Description
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                    Text("\(look.likes)")
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                    
                     if look.mediaItems.count > 1 {
                         Image(systemName: "square.stack.fill")
                             .foregroundColor(.secondary)
                     }
+                    Spacer()
                 }
-                .padding(.bottom, 4)
-                
                 Text(look.author)
                     .fontWeight(.bold) +
                 Text(" \(look.description)")

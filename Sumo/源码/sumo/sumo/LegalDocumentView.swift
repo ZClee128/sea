@@ -10,7 +10,7 @@ struct LegalDocumentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Text("Last updated: March 2025")
+                Text("Last updated: March 2026")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .padding(.top, 4)

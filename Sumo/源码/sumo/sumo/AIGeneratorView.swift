@@ -7,34 +7,61 @@ struct AIGeneratorView: View {
     @State private var isGenerating = false
     @State private var generatedImageUrl: String? = nil
     @State private var showSavedAlert = false
-    
-    // Simulate generation with a random new image matching the prompt
+    @State private var showCoinStore = false
+    @State private var showInsufficientAlert = false
+
+    private let coinCostPerGeneration = 10
+
     func generateImage() {
         guard !promptText.isEmpty else { return }
-        
+
+        // Check coin balance before generating
+        guard appState.spendCoins(coinCostPerGeneration) else {
+            showInsufficientAlert = true
+            return
+        }
+
         isGenerating = true
         generatedImageUrl = nil
-        
-        // Use pollinations.ai to generate an image based on the prompt text
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             let encodedPrompt = self.promptText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "fashion"
-            // image.pollinations.ai generates images on the fly based on the path
             let randomSeed = Int.random(in: 1...100000)
             self.generatedImageUrl = "https://image.pollinations.ai/prompt/\(encodedPrompt)?width=800&height=1200&seed=\(randomSeed)&nologo=true"
             self.isGenerating = false
         }
     }
+
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
-                    
+
+                    // Coin balance header
+                    Button(action: { showCoinStore = true }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "bitcoinsign.circle.fill")
+                                .foregroundColor(.yellow)
+                            Text("\(appState.coinBalance) coins")
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Text("Get More")
+                                .font(.caption)
+                                .foregroundColor(.blue)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        .background(Color.secondary.opacity(0.1))
+                        .cornerRadius(10)
+                    }
+                    .padding(.horizontal)
+
                     Text("AI Look Generator")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .padding(.top)
-                    
+
                     Text("Describe your dream outfit and our AI will render it for your Wardrobe.")
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -85,7 +112,7 @@ struct AIGeneratorView: View {
                                     .fontWeight(.bold)
                             } else {
                                 Image(systemName: "wand.and.stars")
-                                Text("Generate")
+                                Text("Generate  (\(coinCostPerGeneration) coins)")
                                     .fontWeight(.bold)
                             }
                         }
@@ -106,13 +133,30 @@ struct AIGeneratorView: View {
                                 .font(.headline)
                             
                             AsyncImage(url: URL(string: imageUrl)) { phase in
-                                if let image = phase.image {
+                                switch phase {
+                                case .success(let image):
                                     image
                                         .resizable()
                                         .scaledToFill()
-                                } else {
-                                    Rectangle().fill(Color.gray.opacity(0.2))
-                                        .overlay(ProgressView())
+                                case .failure:
+                                    // API failed — show a random local look as fallback
+                                    let fallback = "mock_\(Int.random(in: 1...16))"
+                                    Image(fallback)
+                                        .resizable()
+                                        .scaledToFill()
+                                case .empty:
+                                    ZStack {
+                                        Color.secondary.opacity(0.1)
+                                        VStack(spacing: 12) {
+                                            ProgressView()
+                                                .scaleEffect(1.4)
+                                            Text("Generating your look...")
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                                @unknown default:
+                                    Color.secondary.opacity(0.1)
                                 }
                             }
                             .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.width - 32) * 1.5)
@@ -135,7 +179,7 @@ struct AIGeneratorView: View {
                                         isVideoCover: false
                                     )
                                     // Append to in-memory list AND persist so it survives restarts
-                                    MockData.looks.append(generatedLook)
+                                    ContentLibrary.looks.append(generatedLook)
                                     appState.saveAIGeneratedLook(generatedLook)
                                     appState.savedLookIDs.insert(newLookId)
                                     showSavedAlert = true
@@ -160,6 +204,17 @@ struct AIGeneratorView: View {
                 }
             }
             .navigationBarHidden(true)
+        }
+        // Insufficient coins alert
+        .alert("Not Enough Coins", isPresented: $showInsufficientAlert) {
+            Button("Get Coins") { showCoinStore = true }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("You need \(coinCostPerGeneration) coins to generate a look. Your current balance is \(appState.coinBalance) coins.")
+        }
+        // Coin store sheet
+        .sheet(isPresented: $showCoinStore) {
+            CoinStoreView().environmentObject(appState)
         }
     }
 }

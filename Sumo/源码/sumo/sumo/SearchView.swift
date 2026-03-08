@@ -11,7 +11,7 @@ struct SearchView: View {
     ]
     
     var searchResults: [Look] {
-        let activeLooks = MockData.looks.filter { !appState.isBlocked($0.author) }
+        let activeLooks = ContentLibrary.looks.filter { !appState.isBlocked($0.author) }
         
         if searchText.isEmpty {
             return activeLooks

@@ -1,11 +1,12 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct HomeFeedView: View {
     @EnvironmentObject var appState: AppStateManager
     @State private var selectedCategory: LookCategory? = nil
     
     var filteredLooks: [Look] {
-        let baseLooks = MockData.looks.filter { !appState.isBlocked($0.author) }
+        let baseLooks = ContentLibrary.looks.filter { !appState.isBlocked($0.author) }
         if let category = selectedCategory {
             return baseLooks.filter { $0.category == category }
         }

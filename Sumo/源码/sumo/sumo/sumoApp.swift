@@ -1,7 +1,32 @@
-// sumoApp.swift
-// The SwiftUI App struct is no longer the @main entry – AppDelegate (via main.swift) owns startup.
-// This file just holds the Scene definition so Xcode is happy.
 import SwiftUI
+import AVFoundation
+
+@available(iOS 14.0, *)
+struct SumoApp: App {
+    init() {
+        // Configure audio session for background playback
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .default, options: [])
+            try session.setActive(true)
+        } catch {
+            print("[AVAudioSession] setup error: \(error)")
+        }
+    }
+
+    @available(iOS 14.0, *)
+    var body: some Scene {
+        WindowGroup {
+            if #available(iOS 15.0, *) {
+                SumoRootView()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+}
+
+// MARK: - Root view (agreement gate → main tabs)
 
 @available(iOS 15.0, *)
 struct SumoRootView: View {

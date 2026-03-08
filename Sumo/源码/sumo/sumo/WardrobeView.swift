@@ -3,12 +3,11 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct WardrobeView: View {
     @EnvironmentObject var appState: AppStateManager
-    
-    // Masonry-like grid layout
+
     let columns = [
         GridItem(.adaptive(minimum: 150), spacing: 16)
     ]
-    
+
     var body: some View {
         NavigationView {
             Group {
@@ -48,12 +47,13 @@ struct WardrobeView: View {
 @available(iOS 15.0, *)
 struct WardrobeGridItem: View {
     let look: Look
-    
+
     var body: some View {
         if let firstMedia = look.mediaItems.first {
             GeometryReader { geometry in
                 ZStack(alignment: .topTrailing) {
                     if firstMedia.type == .image {
+                        // Image item
                         Group {
                             if let localName = firstMedia.localImageName {
                                 Image(localName)
@@ -62,12 +62,9 @@ struct WardrobeGridItem: View {
                             } else if let urlString = firstMedia.urlString, let url = URL(string: urlString) {
                                 AsyncImage(url: url) { phase in
                                     if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .scaledToFill()
+                                        image.resizable().scaledToFill()
                                     } else {
-                                        Rectangle()
-                                            .fill(Color.gray.opacity(0.2))
+                                        Rectangle().fill(Color.gray.opacity(0.2))
                                     }
                                 }
                             } else {
@@ -76,20 +73,27 @@ struct WardrobeGridItem: View {
                         }
                         .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
                         .clipped()
-                    } else if firstMedia.urlString != nil || firstMedia.localImageName != nil {
-                        // Just show a static thumbnail or simple color for Wardrobe grid to save resources
-                        // In a real app we might extract the first frame
-                        ZStack {
-                            Color.black
-                            Image(systemName: "play.circle")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
                     } else {
-                        Color.black.frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                        // Video item: show coverImageName with play icon overlay
+                        ZStack {
+                            if let cover = firstMedia.coverImageName {
+                                Image(cover)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                                    .clipped()
+                            } else {
+                                Color.black
+                                    .frame(width: geometry.size.width, height: geometry.size.width / firstMedia.aspectRatio)
+                            }
+                            Image(systemName: "play.circle.fill")
+                                .font(.largeTitle)
+                                .foregroundColor(.white.opacity(0.85))
+                                .shadow(radius: 4)
+                        }
                     }
-                    
+
+                    // Multi-item badge
                     if look.mediaItems.count > 1 {
                         Image(systemName: "square.stack.fill")
                             .foregroundColor(.white)
@@ -100,7 +104,6 @@ struct WardrobeGridItem: View {
                     }
                 }
             }
-            // Estimate height based on aspect ratio
             .frame(height: (UIScreen.main.bounds.width / 2 - 24) / CGFloat(firstMedia.aspectRatio))
             .cornerRadius(12)
         } else {
