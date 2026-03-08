@@ -75,5 +75,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen.storyboard</string>
 </dict>
 </plist>

@@ -46,6 +46,7 @@
 		84B42A892F5DB4EF004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42A7A2F5DB4EF004953C3 /* AppWebViewHandleEvent.swift */; };
 		84B42A8A2F5DB4EF004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42A7D2F5DB4EF004953C3 /* ProgressHUD.swift */; };
 		84B42A8B2F5DB4EF004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42A722F5DB4EF004953C3 /* AppAdjustManager.swift */; };
+		84B42A8D2F5DBF0F004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42A8C2F5DBF0F004953C3 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		84B42A7C2F5DB4EF004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
 		84B42A7D2F5DB4EF004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84B42A7E2F5DB4EF004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B42A8C2F5DBF0F004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EC0347692EA0E0B4FC2DFBAD /* Pods-sumo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sumo.release.xcconfig"; path = "Target Support Files/Pods-sumo/Pods-sumo.release.xcconfig"; sourceTree = "<group>"; };
 		FEC384744F1B78D462D35722 /* Pods-sumo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sumo.debug.xcconfig"; path = "Target Support Files/Pods-sumo/Pods-sumo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				84B42A372F5DAD6F004953C3 /* sumoApp.swift */,
 				84B42A382F5DAD6F004953C3 /* VideoPlayerView.swift */,
 				84B42A392F5DAD6F004953C3 /* WardrobeView.swift */,
+				84B42A8C2F5DBF0F004953C3 /* Launch Screen.storyboard */,
 			);
 			path = sumo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				84B42A3B2F5DAD6F004953C3 /* Assets.xcassets in Resources */,
 				84B42A712F5DAE79004953C3 /* GoogleService-Info.plist in Resources */,
 				84B42A3D2F5DAD6F004953C3 /* ootd1.jpeg in Resources */,
+				84B42A8D2F5DBF0F004953C3 /* Launch Screen.storyboard in Resources */,
 				84B42A3E2F5DAD6F004953C3 /* ootd1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
