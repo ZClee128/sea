@@ -100,8 +100,8 @@ private let privacyPolicySections: [(heading: String, body: String)] = [
         "If you grant access, your camera and photo library are used solely to capture and display outfit content within the App. Media is processed on-device and is never uploaded to our servers without your explicit action."
     ),
     (
-        "4. Third-Party Services",
-        "The App uses the following third-party services:\n- Pollinations.ai: for AI image generation (prompt text is transmitted; no personal identifiers are sent).\n- Picsum Photos: anonymous placeholder avatar images.\nThese services have their own privacy policies."
+        "4. Third-Party AI Services (Pollinations.ai)",
+        "The App uses the following third-party services:\n- Pollinations.ai: for AI image generation. When you explicitly agree to the Data Privacy Consent toggle, we only transmit the text prompt you entered to Pollinations.ai. We do not transmit your name, face, photos, UDID, IP address, or any other personal identifiers. Pollinations.ai does not use your text prompt to identify you personally and provides equal protection of your privacy.\n- Picsum Photos: anonymous placeholder avatar images."
     ),
     (
         "5. Data Retention",

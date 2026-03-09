@@ -9,6 +9,7 @@ struct AIGeneratorView: View {
     @State private var showSavedAlert = false
     @State private var showCoinStore = false
     @State private var showInsufficientAlert = false
+    @State private var hasConsented = false
 
     private let coinCostPerGeneration = 10
 
@@ -103,6 +104,23 @@ struct AIGeneratorView: View {
                     }
                     .padding(.horizontal)
                     
+                    // Privacy Consent Section
+                    VStack(alignment: .leading, spacing: 8) {
+                        Toggle(isOn: $hasConsented) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Data Privacy Consent")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                Text("I agree to send my text prompt to Pollinations.ai for image generation. No other personal data is shared.")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 4)
+                    
                     Button(action: generateImage) {
                         HStack {
                             if isGenerating {
@@ -119,11 +137,11 @@ struct AIGeneratorView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(promptText.isEmpty ? Color.gray : Color.blue)
+                        .background((promptText.isEmpty || !hasConsented) ? Color.gray : Color.blue)
                         .cornerRadius(16)
                         .shadow(color: Color.blue.opacity(0.3), radius: 10, y: 5)
                     }
-                    .disabled(promptText.isEmpty || isGenerating)
+                    .disabled(promptText.isEmpty || isGenerating || !hasConsented)
                     .padding(.horizontal)
                     
                     // Result Area
@@ -202,6 +220,9 @@ struct AIGeneratorView: View {
                     
                     Spacer(minLength: 40)
                 }
+            }
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
             .navigationBarHidden(true)
         }
