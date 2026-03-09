@@ -1,0 +1,6 @@
+framework module Pods_jolo {
+  umbrella header "Pods-jolo-umbrella.h"
+
+  export *
+  module * { export * }
+}

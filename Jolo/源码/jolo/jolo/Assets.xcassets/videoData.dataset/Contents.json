@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "idiom" : "universal",
+      "filename" : "video.mp4"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

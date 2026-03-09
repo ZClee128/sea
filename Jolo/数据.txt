@@ -1,0 +1,18 @@
+名称：Jolo-Film&Aesthetic
+描述：Welcome to Jolo, the ultimate sanctuary for film photography enthusiasts and visual curators. Immerse yourself in a beautifully crafted, distraction-free environment designed to celebrate the art of analog aesthetics.
+
+Whether you're looking for inspiration from world-class street photography or want to apply authentic film-grade filters to your own media, Jolo provides a premium suite of tools wrapped in an elegant, theater-mode interface.
+
+Key Features:
+
+• Discover Inspiration: Scroll through a stunning, seamlessly crafted waterfall gallery of high-quality photography. Every image features deep metadata insights including simulated Camera Models, Film Stocks (e.g., Portra 400, Tri-X), Lenses, and Exposure settings.
+
+• Immersive Theater Mode: Tap any photograph to enter a pure-black theater mode. Zoom in to inspect film grain with multi-touch gestures, completely free from UI clutter.
+
+• CoreImage Film Filters: Import your own raw photos from your Camera Roll into your private Studio. Apply our meticulously crafted physical film emulations—Mono, Chrome, and Fade—to instantly transform your digital shots into analog masterpieces.
+
+• Your Personal Studio: Create your own darkroom. Save inspiring shots from the Discover feed, or import your own media. Jolo manages your collection locally on your device ensuring your visual diary remains deeply personal and private.
+
+• Native Integration: Seamlessly save your processed, high-resolution aesthetic images straight back to your Camera Roll, or share them directly with friends using the native iOS Share sheet.
+
+Elevate your visual standards. Download Jolo today and start building your analog legacy.
