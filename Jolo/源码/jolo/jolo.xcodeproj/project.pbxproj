@@ -20,6 +20,7 @@
 		84B42B542F5EA7AE004953C3 /* StudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B392F5EA7AE004953C3 /* StudioViewController.swift */; };
 		84B42B552F5EA7AE004953C3 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3B2F5EA7AE004953C3 /* FeedItem.swift */; };
 		84B42B562F5EA7AE004953C3 /* MoodboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3D2F5EA7AE004953C3 /* MoodboardManager.swift */; };
+		84B42B7C2F5FC000004953C3 /* BlocklistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */; };
 		84B42B572F5EA7AE004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3E2F5EA7AE004953C3 /* StoreManager.swift */; };
 		84B42B582F5EA7AE004953C3 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3F2F5EA7AE004953C3 /* WaterfallLayout.swift */; };
 		84B42B592F5EA7AE004953C3 /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B412F5EA7AE004953C3 /* HomeFeedCell.swift */; };
@@ -57,6 +58,7 @@
 		84B42B392F5EA7AE004953C3 /* StudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioViewController.swift; sourceTree = "<group>"; };
 		84B42B3B2F5EA7AE004953C3 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		84B42B3D2F5EA7AE004953C3 /* MoodboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardManager.swift; sourceTree = "<group>"; };
+		84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistManager.swift; sourceTree = "<group>"; };
 		84B42B3E2F5EA7AE004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		84B42B3F2F5EA7AE004953C3 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		84B42B412F5EA7AE004953C3 /* HomeFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				84B42B3D2F5EA7AE004953C3 /* MoodboardManager.swift */,
+				84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */,
 				84B42B3E2F5EA7AE004953C3 /* StoreManager.swift */,
 				84B42B3F2F5EA7AE004953C3 /* WaterfallLayout.swift */,
 			);
@@ -355,6 +358,7 @@
 				84B42B542F5EA7AE004953C3 /* StudioViewController.swift in Sources */,
 				84B42B552F5EA7AE004953C3 /* FeedItem.swift in Sources */,
 				84B42B562F5EA7AE004953C3 /* MoodboardManager.swift in Sources */,
+				84B42B7C2F5FC000004953C3 /* BlocklistManager.swift in Sources */,
 				84B42B572F5EA7AE004953C3 /* StoreManager.swift in Sources */,
 				84B42B582F5EA7AE004953C3 /* WaterfallLayout.swift in Sources */,
 				84B42B592F5EA7AE004953C3 /* HomeFeedCell.swift in Sources */,

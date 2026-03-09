@@ -1,7 +1,14 @@
 import UIKit
 
+protocol StoryTableViewCellDelegate: AnyObject {
+    func storyCell(_ cell: StoryTableViewCell, didRequestReportForItem item: FeedItem)
+    func storyCell(_ cell: StoryTableViewCell, didRequestBlockUser item: FeedItem)
+}
+
 class StoryTableViewCell: UITableViewCell {
     static let reuseIdentifier = "StoryTableViewCell"
+    weak var delegate: StoryTableViewCellDelegate?
+    private var currentItem: FeedItem?
     
     // UI Elements
     private let avatarImageView: UIImageView = {
@@ -57,6 +64,20 @@ class StoryTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
+    private lazy var moreButton: UIButton = {
+        let btn = UIButton(type: .system)
+        let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .medium)
+        btn.setImage(UIImage(systemName: "ellipsis", withConfiguration: config), for: .normal)
+        btn.tintColor = .secondaryLabel
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 14.0, *) {
+            btn.showsMenuAsPrimaryAction = true
+        } else {
+            // Fallback on earlier versions
+        }
+        return btn
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -88,6 +109,7 @@ class StoryTableViewCell: UITableViewCell {
         contentView.addSubview(avatarImageView)
         contentView.addSubview(authorLabel)
         contentView.addSubview(metaDataLabel)
+        contentView.addSubview(moreButton)
         contentView.addSubview(collectionView)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(tagsLabel)
@@ -102,8 +124,13 @@ class StoryTableViewCell: UITableViewCell {
             
             authorLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             authorLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 12),
-            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
+            authorLabel.trailingAnchor.constraint(equalTo: moreButton.leadingAnchor, constant: -8),
+
+            moreButton.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor),
+            moreButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            moreButton.widthAnchor.constraint(equalToConstant: 32),
+            moreButton.heightAnchor.constraint(equalToConstant: 32),
+
             metaDataLabel.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
             metaDataLabel.leadingAnchor.constraint(equalTo: authorLabel.leadingAnchor),
             metaDataLabel.trailingAnchor.constraint(equalTo: authorLabel.trailingAnchor),
@@ -134,20 +161,50 @@ class StoryTableViewCell: UITableViewCell {
     }
     
     func configure(with item: FeedItem) {
+        currentItem = item
         authorLabel.text = item.authorName
         avatarImageView.backgroundColor = item.avatarColor
         metaDataLabel.text = "Shot on \(item.cameraModel) • \(item.filmType)"
         descriptionLabel.text = item.title
         tagsLabel.text = item.tags.joined(separator: " ")
-        
+
+        // Build the overflow menu
+        if #available(iOS 14.0, *) {
+            moreButton.menu = makeContextMenu(for: item)
+        } else {
+            // Fallback on earlier versions
+        }
+
         galleryImages.removeAll()
         if let mainImg = item.resolveImage() {
             galleryImages.append(mainImg)
             if let rnd1 = UIImage(named: "photo_\(Int.random(in: 1...15))") { galleryImages.append(rnd1) }
             if let rnd2 = UIImage(named: "photo_\(Int.random(in: 1...15))") { galleryImages.append(rnd2) }
         }
-        
+
         collectionView.reloadData()
+    }
+
+    private func makeContextMenu(for item: FeedItem) -> UIMenu {
+        let reportAction = UIAction(
+            title: "Report Content",
+            image: UIImage(systemName: "flag"),
+            attributes: .destructive
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.storyCell(self, didRequestReportForItem: item)
+        }
+
+        let blockAction = UIAction(
+            title: "Block User",
+            image: UIImage(systemName: "person.slash"),
+            attributes: .destructive
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.storyCell(self, didRequestBlockUser: item)
+        }
+
+        return UIMenu(title: "", children: [reportAction, blockAction])
     }
 }
 

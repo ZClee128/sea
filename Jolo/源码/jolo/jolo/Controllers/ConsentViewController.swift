@@ -219,22 +219,35 @@ class PrivacyDetailViewController: UIViewController {
             Last Updated: \(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none))
 
             1. Acceptance of Terms
-            By accessing and using this application ("AnalogLens" or "the App"), you accept and agree to be bound by the terms and provisions of this agreement. 
+            By accessing and using Jolo ("the App"), you accept and agree to be bound by these Terms of Service. If you do not agree, please do not use the App.
 
             2. Description of Service
-            The App provides users with tools for discovering, collecting, and organizing photographic inspiration. The service is provided "as is".
+            Jolo provides a curated community for discovering and sharing analog photography. Features include a community Discover feed, a Journal feed, and creative studio tools.
 
-            3. User Registration and Accounts
-            This application does not require user accounts or traditional registration. All saved data, logic, and configurations remain safely inside your device's local App Sandbox.
+            3. Community Standards & Zero-Tolerance Policy
+            Jolo has a ZERO TOLERANCE policy for objectionable or abusive content. By using this App, you agree that you will NOT post, upload, or share content that:
+            - Is hateful, harassing, threatening, or discriminatory
+            - Contains nudity, sexual content, graphic violence, or self-harm material
+            - Violates any applicable law or third-party rights
+            - Is spam, misleading, or constitutes unauthorized advertising
 
-            4. Intellectual Property
-            All original photography and visual content inside the App are owned by their respective copyright holders. Users are responsible for their own uploads and imports originating from their personal hardware libraries.
+            Users who violate these standards will be removed from the platform. Jolo reserves the right to remove any content and eject any user without notice for violations of these standards. All reports of objectionable content will be acted upon within 24 hours.
 
-            5. Limitation of Liability
-            The developers of this App shall not be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the App.
+            4. Content Reporting & Blocking
+            The App provides mechanisms to:
+            - Report objectionable content using the "Report Content" option on any post
+            - Block abusive users using the "Block User" option on any post
 
-            6. Guideline 4.3 & 5.1 Compliance
-            We are fully committed to App Store Guidelines. Content moderation is automatic, and any local network access or local storage usage is strictly limited strictly for core image viewing/processing functionalities as specified in the UI. No backend tracking is implemented.
+            Upon receiving a report, we will review and take appropriate action within 24 hours, including content removal and account ejection.
+
+            5. User Accounts & Data
+            This App operates without traditional account registration. All local data remains within your device's App Sandbox.
+
+            6. Intellectual Property
+            All photography in the App is owned by its respective copyright holders. Users are solely responsible for any content they upload from their personal device.
+
+            7. Limitation of Liability
+            Jolo shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the App.
             """
         } else {
             textView.text = """
