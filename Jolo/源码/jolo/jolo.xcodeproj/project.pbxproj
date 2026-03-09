@@ -20,7 +20,6 @@
 		84B42B542F5EA7AE004953C3 /* StudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B392F5EA7AE004953C3 /* StudioViewController.swift */; };
 		84B42B552F5EA7AE004953C3 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3B2F5EA7AE004953C3 /* FeedItem.swift */; };
 		84B42B562F5EA7AE004953C3 /* MoodboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3D2F5EA7AE004953C3 /* MoodboardManager.swift */; };
-		84B42B7C2F5FC000004953C3 /* BlocklistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */; };
 		84B42B572F5EA7AE004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3E2F5EA7AE004953C3 /* StoreManager.swift */; };
 		84B42B582F5EA7AE004953C3 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B3F2F5EA7AE004953C3 /* WaterfallLayout.swift */; };
 		84B42B592F5EA7AE004953C3 /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B412F5EA7AE004953C3 /* HomeFeedCell.swift */; };
@@ -40,6 +39,7 @@
 		84B42B762F5EA856004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B692F5EA856004953C3 /* WaitViewController.swift */; };
 		84B42B782F5EBB2B004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B772F5EBB2B004953C3 /* Launch Screen.storyboard */; };
 		84B42B7A2F5EC20F004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B792F5EC20F004953C3 /* GoogleService-Info.plist */; };
+		84B42B7C2F5FC000004953C3 /* BlocklistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */; };
 		D4C3BEA099AA58C5ECFD6E26 /* Pods_jolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C6F4B9DDD9EBF49A11F6B8 /* Pods_jolo.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,6 @@
 		84B42B392F5EA7AE004953C3 /* StudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioViewController.swift; sourceTree = "<group>"; };
 		84B42B3B2F5EA7AE004953C3 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		84B42B3D2F5EA7AE004953C3 /* MoodboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardManager.swift; sourceTree = "<group>"; };
-		84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistManager.swift; sourceTree = "<group>"; };
 		84B42B3E2F5EA7AE004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		84B42B3F2F5EA7AE004953C3 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		84B42B412F5EA7AE004953C3 /* HomeFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		84B42B692F5EA856004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B42B772F5EBB2B004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		84B42B792F5EC20F004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistManager.swift; sourceTree = "<group>"; };
 		D4C6F4B9DDD9EBF49A11F6B8 /* Pods_jolo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jolo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -496,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = jolo/jolo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -545,7 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = jolo/jolo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
