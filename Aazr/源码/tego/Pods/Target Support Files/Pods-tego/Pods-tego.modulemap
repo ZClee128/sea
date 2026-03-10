@@ -1,0 +1,6 @@
+framework module Pods_tego {
+  umbrella header "Pods-tego-umbrella.h"
+
+  export *
+  module * { export * }
+}

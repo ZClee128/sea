@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15EA5735EFA21136BBE2B375 /* Pods_tego.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CDF2184E17B4E79738720C /* Pods_tego.framework */; };
+		84B42C672F5FF93C004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B42C662F5FF93C004953C3 /* StoreKit.framework */; };
+		84B42C882F6013BB004953C3 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C6A2F6013BB004953C3 /* FavoritesManager.swift */; };
+		84B42C892F6013BB004953C3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C6B2F6013BB004953C3 /* Models.swift */; };
+		84B42C8A2F6013BB004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C6C2F6013BB004953C3 /* StoreManager.swift */; };
+		84B42C8B2F6013BB004953C3 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C6E2F6013BB004953C3 /* AppViewModel.swift */; };
+		84B42C8C2F6013BB004953C3 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C702F6013BB004953C3 /* AgreementView.swift */; };
+		84B42C8D2F6013BB004953C3 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C712F6013BB004953C3 /* AVPlayerView.swift */; };
+		84B42C8E2F6013BB004953C3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C722F6013BB004953C3 /* CameraView.swift */; };
+		84B42C8F2F6013BB004953C3 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C732F6013BB004953C3 /* FavoritesView.swift */; };
+		84B42C902F6013BB004953C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C742F6013BB004953C3 /* HomeView.swift */; };
+		84B42C912F6013BB004953C3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C752F6013BB004953C3 /* ImagePicker.swift */; };
+		84B42C922F6013BB004953C3 /* LegalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C762F6013BB004953C3 /* LegalTextView.swift */; };
+		84B42C932F6013BB004953C3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C772F6013BB004953C3 /* MainTabView.swift */; };
+		84B42C942F6013BB004953C3 /* MasterclassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C782F6013BB004953C3 /* MasterclassView.swift */; };
+		84B42C952F6013BB004953C3 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C792F6013BB004953C3 /* PaywallView.swift */; };
+		84B42C962F6013BB004953C3 /* PoseStudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C7A2F6013BB004953C3 /* PoseStudioView.swift */; };
+		84B42C972F6013BB004953C3 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C7B2F6013BB004953C3 /* RemoteImage.swift */; };
+		84B42C982F6013BB004953C3 /* RootRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C7C2F6013BB004953C3 /* RootRouterView.swift */; };
+		84B42C992F6013BB004953C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C7D2F6013BB004953C3 /* SettingsView.swift */; };
+		84B42C9A2F6013BB004953C3 /* TrendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C7E2F6013BB004953C3 /* TrendDetailView.swift */; };
+		84B42C9B2F6013BB004953C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42C822F6013BB004953C3 /* ContentView.swift */; };
+		84B42C9D2F6013BB004953C3 /* Advanced Posing Techniques.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C802F6013BB004953C3 /* Advanced Posing Techniques.mp4 */; };
+		84B42C9E2F6013BB004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C812F6013BB004953C3 /* Assets.xcassets */; };
+		84B42CA02F6013BB004953C3 /* Mastering Natural Light.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C842F6013BB004953C3 /* Mastering Natural Light.mp4 */; };
+		84B42CAF2F601474004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAD2F601474004953C3 /* ProgressHUD.swift */; };
+		84B42CB02F601474004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA32F601474004953C3 /* AppConfig.swift */; };
+		84B42CB12F601474004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */; };
+		84B42CB22F601474004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B42CB32F601474004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA62F601474004953C3 /* AppPermissionTool.swift */; };
+		84B42CB42F601474004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAE2F601474004953C3 /* WaitViewController.swift */; };
+		84B42CB52F601474004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */; };
+		84B42CB62F601474004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA42F601474004953C3 /* AppDelegate.swift */; };
+		84B42CB72F601474004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA22F601474004953C3 /* AppAdjustManager.swift */; };
+		84B42CB82F601474004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA52F601474004953C3 /* AppleIAPManager.swift */; };
+		84B42CB92F601474004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B42CBA2F601474004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA82F601474004953C3 /* AppRequestTool.swift */; };
+		84B42CBB2F601474004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA92F601474004953C3 /* AppWebViewController.swift */; };
+		84B42CBD2F60156A004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42CBC2F60156A004953C3 /* GoogleService-Info.plist */; };
+		84B42CBF2F601679004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42CBE2F601679004953C3 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		38AC2C53D28BEE319A39ECB1 /* Pods-tego.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tego.debug.xcconfig"; path = "Target Support Files/Pods-tego/Pods-tego.debug.xcconfig"; sourceTree = "<group>"; };
+		84B42BF22F5FC870004953C3 /* tego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tego.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B42C662F5FF93C004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B42C6A2F6013BB004953C3 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		84B42C6B2F6013BB004953C3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		84B42C6C2F6013BB004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84B42C6E2F6013BB004953C3 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		84B42C702F6013BB004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		84B42C712F6013BB004953C3 /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		84B42C722F6013BB004953C3 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		84B42C732F6013BB004953C3 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		84B42C742F6013BB004953C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		84B42C752F6013BB004953C3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		84B42C762F6013BB004953C3 /* LegalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalTextView.swift; sourceTree = "<group>"; };
+		84B42C772F6013BB004953C3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84B42C782F6013BB004953C3 /* MasterclassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterclassView.swift; sourceTree = "<group>"; };
+		84B42C792F6013BB004953C3 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		84B42C7A2F6013BB004953C3 /* PoseStudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseStudioView.swift; sourceTree = "<group>"; };
+		84B42C7B2F6013BB004953C3 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		84B42C7C2F6013BB004953C3 /* RootRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterView.swift; sourceTree = "<group>"; };
+		84B42C7D2F6013BB004953C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84B42C7E2F6013BB004953C3 /* TrendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDetailView.swift; sourceTree = "<group>"; };
+		84B42C802F6013BB004953C3 /* Advanced Posing Techniques.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Advanced Posing Techniques.mp4"; sourceTree = "<group>"; };
+		84B42C812F6013BB004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B42C822F6013BB004953C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84B42C832F6013BB004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B42C842F6013BB004953C3 /* Mastering Natural Light.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mastering Natural Light.mp4"; sourceTree = "<group>"; };
+		84B42C852F6013BB004953C3 /* tego.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tego.entitlements; sourceTree = "<group>"; };
+		84B42CA22F601474004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B42CA32F601474004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B42CA42F601474004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B42CA52F601474004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B42CA62F601474004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B42CA82F601474004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B42CA92F601474004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B42CAD2F601474004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B42CAE2F601474004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B42CBC2F60156A004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B42CBE2F601679004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8BCEFF2EAE37A46B4F456DAC /* Pods-tego.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tego.release.xcconfig"; path = "Target Support Files/Pods-tego/Pods-tego.release.xcconfig"; sourceTree = "<group>"; };
+		E1CDF2184E17B4E79738720C /* Pods_tego.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tego.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B42BEF2F5FC870004953C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42C672F5FF93C004953C3 /* StoreKit.framework in Frameworks */,
+				15EA5735EFA21136BBE2B375 /* Pods_tego.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		286AD6A57B70BCBBEAE07FA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38AC2C53D28BEE319A39ECB1 /* Pods-tego.debug.xcconfig */,
+				8BCEFF2EAE37A46B4F456DAC /* Pods-tego.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84B42BE92F5FC870004953C3 = {
+			isa = PBXGroup;
+			children = (
+				84B42C872F6013BB004953C3 /* tego */,
+				84B42C652F5FF93C004953C3 /* Frameworks */,
+				84B42BF32F5FC870004953C3 /* Products */,
+				286AD6A57B70BCBBEAE07FA9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84B42BF32F5FC870004953C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B42BF22F5FC870004953C3 /* tego.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B42C652F5FF93C004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B42C662F5FF93C004953C3 /* StoreKit.framework */,
+				E1CDF2184E17B4E79738720C /* Pods_tego.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B42C6D2F6013BB004953C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84B42C6A2F6013BB004953C3 /* FavoritesManager.swift */,
+				84B42C6B2F6013BB004953C3 /* Models.swift */,
+				84B42C6C2F6013BB004953C3 /* StoreManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84B42C6F2F6013BB004953C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				84B42C6E2F6013BB004953C3 /* AppViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84B42C7F2F6013BB004953C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84B42C702F6013BB004953C3 /* AgreementView.swift */,
+				84B42C712F6013BB004953C3 /* AVPlayerView.swift */,
+				84B42C722F6013BB004953C3 /* CameraView.swift */,
+				84B42C732F6013BB004953C3 /* FavoritesView.swift */,
+				84B42C742F6013BB004953C3 /* HomeView.swift */,
+				84B42C752F6013BB004953C3 /* ImagePicker.swift */,
+				84B42C762F6013BB004953C3 /* LegalTextView.swift */,
+				84B42C772F6013BB004953C3 /* MainTabView.swift */,
+				84B42C782F6013BB004953C3 /* MasterclassView.swift */,
+				84B42C792F6013BB004953C3 /* PaywallView.swift */,
+				84B42C7A2F6013BB004953C3 /* PoseStudioView.swift */,
+				84B42C7B2F6013BB004953C3 /* RemoteImage.swift */,
+				84B42C7C2F6013BB004953C3 /* RootRouterView.swift */,
+				84B42C7D2F6013BB004953C3 /* SettingsView.swift */,
+				84B42C7E2F6013BB004953C3 /* TrendDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84B42C872F6013BB004953C3 /* tego */ = {
+			isa = PBXGroup;
+			children = (
+				84B42CBC2F60156A004953C3 /* GoogleService-Info.plist */,
+				84B42CA12F601455004953C3 /* er */,
+				84B42C6D2F6013BB004953C3 /* Models */,
+				84B42C6F2F6013BB004953C3 /* ViewModels */,
+				84B42C7F2F6013BB004953C3 /* Views */,
+				84B42C802F6013BB004953C3 /* Advanced Posing Techniques.mp4 */,
+				84B42C812F6013BB004953C3 /* Assets.xcassets */,
+				84B42CBE2F601679004953C3 /* Launch Screen.storyboard */,
+				84B42C822F6013BB004953C3 /* ContentView.swift */,
+				84B42C832F6013BB004953C3 /* Info.plist */,
+				84B42C842F6013BB004953C3 /* Mastering Natural Light.mp4 */,
+				84B42C852F6013BB004953C3 /* tego.entitlements */,
+			);
+			path = tego;
+			sourceTree = "<group>";
+		};
+		84B42CA12F601455004953C3 /* er */ = {
+			isa = PBXGroup;
+			children = (
+				84B42CA22F601474004953C3 /* AppAdjustManager.swift */,
+				84B42CA32F601474004953C3 /* AppConfig.swift */,
+				84B42CA42F601474004953C3 /* AppDelegate.swift */,
+				84B42CA52F601474004953C3 /* AppleIAPManager.swift */,
+				84B42CA62F601474004953C3 /* AppPermissionTool.swift */,
+				84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */,
+				84B42CA82F601474004953C3 /* AppRequestTool.swift */,
+				84B42CA92F601474004953C3 /* AppWebViewController.swift */,
+				84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */,
+				84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */,
+				84B42CAD2F601474004953C3 /* ProgressHUD.swift */,
+				84B42CAE2F601474004953C3 /* WaitViewController.swift */,
+			);
+			path = er;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B42BF12F5FC870004953C3 /* tego */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B42BFD2F5FC872004953C3 /* Build configuration list for PBXNativeTarget "tego" */;
+			buildPhases = (
+				C88254195170687CF5619550 /* [CP] Check Pods Manifest.lock */,
+				84B42BEE2F5FC870004953C3 /* Sources */,
+				84B42BEF2F5FC870004953C3 /* Frameworks */,
+				84B42BF02F5FC870004953C3 /* Resources */,
+				A938F44BDA399B098604370C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tego;
+			productName = tego;
+			productReference = 84B42BF22F5FC870004953C3 /* tego.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B42BEA2F5FC870004953C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					84B42BF12F5FC870004953C3 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 84B42BED2F5FC870004953C3 /* Build configuration list for PBXProject "tego" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B42BE92F5FC870004953C3;
+			productRefGroup = 84B42BF32F5FC870004953C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B42BF12F5FC870004953C3 /* tego */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B42BF02F5FC870004953C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42C9D2F6013BB004953C3 /* Advanced Posing Techniques.mp4 in Resources */,
+				84B42CBD2F60156A004953C3 /* GoogleService-Info.plist in Resources */,
+				84B42C9E2F6013BB004953C3 /* Assets.xcassets in Resources */,
+				84B42CBF2F601679004953C3 /* Launch Screen.storyboard in Resources */,
+				84B42CA02F6013BB004953C3 /* Mastering Natural Light.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A938F44BDA399B098604370C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tego/Pods-tego-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tego/Pods-tego-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tego/Pods-tego-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C88254195170687CF5619550 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tego-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B42BEE2F5FC870004953C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42C882F6013BB004953C3 /* FavoritesManager.swift in Sources */,
+				84B42C892F6013BB004953C3 /* Models.swift in Sources */,
+				84B42C8A2F6013BB004953C3 /* StoreManager.swift in Sources */,
+				84B42C8B2F6013BB004953C3 /* AppViewModel.swift in Sources */,
+				84B42C8C2F6013BB004953C3 /* AgreementView.swift in Sources */,
+				84B42C8D2F6013BB004953C3 /* AVPlayerView.swift in Sources */,
+				84B42C8E2F6013BB004953C3 /* CameraView.swift in Sources */,
+				84B42C8F2F6013BB004953C3 /* FavoritesView.swift in Sources */,
+				84B42C902F6013BB004953C3 /* HomeView.swift in Sources */,
+				84B42C912F6013BB004953C3 /* ImagePicker.swift in Sources */,
+				84B42C922F6013BB004953C3 /* LegalTextView.swift in Sources */,
+				84B42C932F6013BB004953C3 /* MainTabView.swift in Sources */,
+				84B42C942F6013BB004953C3 /* MasterclassView.swift in Sources */,
+				84B42C952F6013BB004953C3 /* PaywallView.swift in Sources */,
+				84B42C962F6013BB004953C3 /* PoseStudioView.swift in Sources */,
+				84B42C972F6013BB004953C3 /* RemoteImage.swift in Sources */,
+				84B42C982F6013BB004953C3 /* RootRouterView.swift in Sources */,
+				84B42C992F6013BB004953C3 /* SettingsView.swift in Sources */,
+				84B42C9A2F6013BB004953C3 /* TrendDetailView.swift in Sources */,
+				84B42C9B2F6013BB004953C3 /* ContentView.swift in Sources */,
+				84B42CAF2F601474004953C3 /* ProgressHUD.swift in Sources */,
+				84B42CB02F601474004953C3 /* AppConfig.swift in Sources */,
+				84B42CB12F601474004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B42CB22F601474004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B42CB32F601474004953C3 /* AppPermissionTool.swift in Sources */,
+				84B42CB42F601474004953C3 /* WaitViewController.swift in Sources */,
+				84B42CB52F601474004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B42CB62F601474004953C3 /* AppDelegate.swift in Sources */,
+				84B42CB72F601474004953C3 /* AppAdjustManager.swift in Sources */,
+				84B42CB82F601474004953C3 /* AppleIAPManager.swift in Sources */,
+				84B42CB92F601474004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B42CBA2F601474004953C3 /* AppRequestTool.swift in Sources */,
+				84B42CBB2F601474004953C3 /* AppWebViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84B42BFB2F5FC872004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B42BFC2F5FC872004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B42BFE2F5FC872004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38AC2C53D28BEE319A39ECB1 /* Pods-tego.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tego/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Tego requests camera access to provide the live pose studio feature. Processing occurs entirely on your device.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Tego needs permission to save the photos you take to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Tego needs permission to select photos from your library to analyze trends.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazr.fav;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84B42BFF2F5FC872004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BCEFF2EAE37A46B4F456DAC /* Pods-tego.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tego/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Tego requests camera access to provide the live pose studio feature. Processing occurs entirely on your device.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Tego needs permission to save the photos you take to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Tego needs permission to select photos from your library to analyze trends.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazr.fav;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B42BED2F5FC870004953C3 /* Build configuration list for PBXProject "tego" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B42BFB2F5FC872004953C3 /* Debug */,
+				84B42BFC2F5FC872004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B42BFD2F5FC872004953C3 /* Build configuration list for PBXNativeTarget "tego" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B42BFE2F5FC872004953C3 /* Debug */,
+				84B42BFF2F5FC872004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B42BEA2F5FC870004953C3 /* Project object */;
+}
