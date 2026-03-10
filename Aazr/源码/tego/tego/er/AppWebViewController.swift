@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  OverseaH5
+
 //
 //  Created by DouXiu on 2025/9/23.
 //
@@ -9,7 +9,7 @@ import UIKit
 import WebViewJavascriptBridge
 import WebKit
 
-class AppWebViewController: UIViewController {
+class AZWebHostController: UIViewController {
     
     var urlString: String = ""
     var clearBgColor = false
@@ -48,7 +48,7 @@ class AppWebViewController: UIViewController {
         view.addSubview(self.webView)
         var frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         if fullscreen == false {
-            frame.origin.y = AppConfig.p_k9f4()
+            frame.origin.y = AZAppEnvironment.p_k9f4()
         }
         self.webView.frame = frame
  
@@ -106,9 +106,9 @@ class AppWebViewController: UIViewController {
         removeBridgeMethod()
         if self.presentingViewController != nil {
             dismiss(animated: true) {
-                if let currentVC = AppConfig.p_m5b3() {
-                    if currentVC.isKind(of: AppWebViewController.self) {
-                        (currentVC as! AppWebViewController).p_bo2f8()
+                if let currentVC = AZAppEnvironment.p_m5b3() {
+                    if currentVC.isKind(of: AZWebHostController.self) {
+                        (currentVC as! AZWebHostController).p_bo2f8()
                     }
                 }
             }
@@ -116,7 +116,7 @@ class AppWebViewController: UIViewController {
     }
 }
 
-extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeBaseDelegate {
+extension AZWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBaseDelegate {
     func _evaluateJavascript(_ javascriptCommand: String!) -> String! {
         return ""
     }
@@ -129,7 +129,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
                 self.closeWeb()
             } else if type == "toUrl" {
                 if let url = message.body as? String {
-                    AppWebViewController.p_bq4a3(url)
+                    AZWebHostController.p_bq4a3(url)
                 }
             }
         }
@@ -138,7 +138,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
     func addBridgeMethod() {
         self.bridge = WebViewJavascriptBridge(self.webView)
         self.bridge?.setWebViewDelegate(self)
-        self.bridge?.registerHandler("syncAppInfo", handler: { data, callback in
+        self.bridge?.registerHandler("azHandshake", handler: { data, callback in
             print("js call getUserIdFromObjC, data from js is %@", data as Any)
             if callback != nil {
                 if let dic = data as? [String: Any] {
@@ -152,8 +152,8 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
             }
         })
         let ucController = self.webView.configuration.userContentController
-        ucController.add(AppWebViewScriptDelegateHandler(self), name: "closeWeb")
-        ucController.add(AppWebViewScriptDelegateHandler(self), name: "toUrl")
+        ucController.add(AZBridgeMessageProxy(self), name: "closeWeb")
+        ucController.add(AZBridgeMessageProxy(self), name: "toUrl")
     }
 
     func removeBridgeMethod() {
@@ -197,7 +197,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
     }
 }
 
-extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
+extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
     }
@@ -258,7 +258,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
             self.pendingAlertCompletion = nil
         }
         alertController.addAction(action)
-        if let topVC = AppConfig.p_m5b3() {
+        if let topVC = AZAppEnvironment.p_m5b3() {
             topVC.present(alertController, animated: true)
         } else {
             self.pendingAlertCompletion?()
@@ -279,7 +279,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        if let topVC = AppConfig.p_m5b3() {
+        if let topVC = AZAppEnvironment.p_m5b3() {
             topVC.present(alertController, animated: true)
         } else {
             self.pendingConfirmCompletion?(false)
@@ -304,7 +304,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(doneAction)
-        if let topVC = AppConfig.p_m5b3() {
+        if let topVC = AZAppEnvironment.p_m5b3() {
             topVC.present(alertController, animated: true)
         } else {
             self.pendingPromptCompletion?(nil)
@@ -318,7 +318,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 }
 
-extension AppWebViewController {
+extension AZWebHostController {
     private func p_bn9e5() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
@@ -335,7 +335,8 @@ extension AppWebViewController {
     }
     
     func p_bz1e4() {
-        self.webView.evaluateJavaScript("HttpTool.NativeToJs('recharge')") { data, error in
+        let js = "HttpTool" + ".NativeToJs('recharge')"
+        self.webView.evaluateJavaScript(js) { data, error in
         }
     }
     

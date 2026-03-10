@@ -1,6 +1,6 @@
 //
-//  AppWebViewHandleEvent.swift
-//  OverseaH5
+//  AZWebHandleEvent.swift
+
 //
 //  Created by young on 2025/9/23.
 //
@@ -36,12 +36,12 @@ private let openSettings = "openSettings"
 private let getNotificationStatus = "getNotificationStatus"
 private let setScheduledLocalPush = "setScheduledLocalPush"
 
-struct JSMessageModel: HandyJSON {
+struct AZBridgeMessage: HandyJSON {
     var typeName = ""
     var token: String?
     var totalCount: Double?
     var showText: String?
-    var data: UserInfoModel?
+    var data: AZUserProfile?
     var goodsId: String?
     var source: Int?
     var type: Int?
@@ -52,31 +52,31 @@ struct JSMessageModel: HandyJSON {
     var msg: [String]?
 }
 
-struct UserInfoModel: HandyJSON {
+struct AZUserProfile: HandyJSON {
     var headPic: String?
     var nickname: String?
     var uid: String?
 }
 
-extension AppWebViewController {
+extension AZWebHostController {
     func handleH5Message(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
-        if let model = JSMessageModel.deserialize(from: schemeDic) {
+        if let model = AZBridgeMessage.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
-                let adidStr = AppAdjustManager.p_g4b9()
+                let adidStr = AZAnalyticsCore.p_g4b9()
                 callBack(["typeName": model.typeName, "deviceID": adidStr])
 
             case getFirebaseID:
-                AppWebViewController.p_bs0c9 { str in
+                AZWebHostController.p_bs0c9 { str in
                     callBack(["typeName": model.typeName, "fireBaseID": str])
                 }
                 
             case getAreaISO:
-                let arr = AppWebViewController.p_bt3d2()
+                let arr = AZWebHostController.p_bt3d2()
                 callBack(["typeName": model.typeName, "areaISO": arr.joined(separator: ",")])
                 
             case getProxyStatus:
-                let status = AppWebViewController.p_bu6e5()
+                let status = AZWebHostController.p_bu6e5()
                 callBack(["typeName": model.typeName, "isProxy": status])
               
             case getLangCode:
@@ -96,7 +96,7 @@ extension AppWebViewController {
                 
             case inAppRating:
                 callBack(["typeName": model.typeName])
-                AppWebViewController.p_bx5b4()
+                AZWebHostController.p_bx5b4()
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
@@ -127,7 +127,7 @@ extension AppWebViewController {
                 if let urlStr = model.url,
                     let transparency = model.transparency,
                     let fullscreen = model.fullscreen {
-                    AppWebViewController.p_bq4a3(urlStr, transparency, fullscreen)
+                    AZWebHostController.p_bq4a3(urlStr, transparency, fullscreen)
                 }
                 
             case reloadWebview:
@@ -142,41 +142,41 @@ extension AppWebViewController {
                 
             case setScheduledLocalPush:
                 callBack(["typeName": model.typeName])
-                LocalPushScheduler.shared.p_v5e3(times: model.time ?? [], contents: model.msg ?? [])
+                AZNotifyScheduler.shared.p_v5e3(times: model.time ?? [], contents: model.msg ?? [])
                 
             case getNotificationStatus:
-                AppPermissionTool.shared.p_q0f5 { auth, isFirst in
+                AZAccessControl.shared.p_q0f5 { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
             
             case getMicStatus:
-                AppPermissionTool.shared.p_n1c6 { auth, isFirst in
+                AZAccessControl.shared.p_n1c6 { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getPhotoStatus:
-                AppPermissionTool.shared.p_o4d9 { auth, isFirst in
+                AZAccessControl.shared.p_o4d9 { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getCameraStatus:
-                AppPermissionTool.shared.p_p7e2 { auth, isFirst in
+                AZAccessControl.shared.p_p7e2 { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case reportAdjust:
                 if let token = model.token {
                     if let count = model.totalCount {
-                        AppAdjustManager.p_i3d7(token: token, count: count)
+                        AZAnalyticsCore.p_i3d7(token: token, count: count)
                     } else {
-                        AppAdjustManager.p_j6e1(token: token)
+                        AZAnalyticsCore.p_j6e1(token: token)
                     }
                 }
                 callBack(["typeName": model.typeName])
 
             case requestLocalPush:
                 callBack(["typeName": model.typeName])
-                AppWebViewController.p_br7b6(model)
+                AZWebHostController.p_br7b6(model)
 
             default: break
             }
@@ -185,17 +185,17 @@ extension AppWebViewController {
 }
 
 // MARK: - Event
-extension AppWebViewController {
+extension AZWebHostController {
     class func p_bq4a3(_ urlStr: String, _ transparency: Int = 0, _ fullscreen: Int = 1) {
-        let vc = AppWebViewController()
+        let vc = AZWebHostController()
         vc.urlString = urlStr
         vc.clearBgColor = (transparency == 1)
         vc.fullscreen = (fullscreen == 1)
         vc.modalPresentationStyle = .fullScreen
-        AppConfig.p_m5b3()?.present(vc, animated: true)
+        AZAppEnvironment.p_m5b3()?.present(vc, animated: true)
     }
     
-    class func p_br7b6(_ model: JSMessageModel) {
+    class func p_br7b6(_ model: AZBridgeMessage) {
         guard UIApplication.shared.applicationState != .active else { return }
         UNUserNotificationCenter.current().getNotificationSettings { setting in
             switch setting.authorizationStatus {
@@ -247,7 +247,7 @@ extension AppWebViewController {
     }
 
     class func p_bu6e5() -> Bool {
-        if AppWebViewController.p_bv9f8() || AppWebViewController.p_bw2a1() {
+        if AZWebHostController.p_bv9f8() || AZWebHostController.p_bw2a1() {
             return true
         }
         return false
@@ -284,17 +284,17 @@ extension AppWebViewController {
         }
     }
     
-    func p_by8c7(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
-        ProgressHUD.show()
+    func p_by8c7(productId: String, source: Int = -1, payType: AZPaymentType, completion: ((Bool) -> Void)? = nil) {
+        AZLoadingOverlay.show()
         var index = 0
         if source != -1 { index = source }
-        AppleIAPManager.shared.p_ad9a7(productId: productId, payType: payType, source: index) { status, _, _ in
-            ProgressHUD.dismiss()
+        AZPurchaseSession.shared.p_ad9a7(productId: productId, payType: payType, source: index) { status, _, _ in
+            AZLoadingOverlay.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
                 switch status {
                 case .verityFail:
-                    ProgressHUD.toast("Retry After or Go to \"Feedback\" to contact us")
+                    AZLoadingOverlay.toast("Retry After or Go to \"Feedback\" to contact us")
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
                     self.p_bz1e4()

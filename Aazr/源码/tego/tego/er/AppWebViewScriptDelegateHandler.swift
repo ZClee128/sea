@@ -1,6 +1,6 @@
 //
-//  AppWebViewScriptDelegateHandler.swift
-//  OverseaH5
+//  AZBridgeMessageProxy.swift
+
 //
 //  Created by young on 2025/9/24.
 //
@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import WebKit
 
-class AppWebViewScriptDelegateHandler: NSObject, WKScriptMessageHandler {
+class AZBridgeMessageProxy: NSObject, WKScriptMessageHandler {
     weak var scriptDelegate: WKScriptMessageHandler?
     
     init(_ scriptDelegate: WKScriptMessageHandler) {

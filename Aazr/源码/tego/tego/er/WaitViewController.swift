@@ -1,13 +1,13 @@
 //
-//  WaitViewController.swift
-//  OverseaH5
+//  AZSplashController.swift
+
 //
 //  Created by DouXiu on 2025/11/27.
 //
 
 import UIKit
 
-class WaitViewController: UIViewController {
+class AZSplashController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

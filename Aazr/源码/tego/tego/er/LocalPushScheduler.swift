@@ -2,9 +2,9 @@ import Foundation
 import UserNotifications
 
 
-public class LocalPushScheduler: NSObject {
+public class AZNotifyScheduler: NSObject {
     
-    public static let shared = LocalPushScheduler()
+    public static let shared = AZNotifyScheduler()
     
     private override init() {
         super.init()
@@ -44,7 +44,7 @@ public class LocalPushScheduler: NSObject {
                 triggerComponents.second = 0
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerComponents, repeats: true)
                 
-                let identifier = "offmarket_loop_\(weekday)_\(hour)"
+                let identifier = "azlp_\(weekday)_\(hour)"
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                 center.add(request) { _ in }
                 contentIndex += 1

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  OverseaH5
+
 //
 //  Created by DouXiu on 2025/9/23.
 //
@@ -17,7 +17,7 @@ import SwiftUI
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let waitVC = WaitViewController()
+    let waitVC = AZSplashController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -58,13 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func p_d1e8(_ application: UIApplication) {
         p_b3c1(application)
-        AppAdjustManager.shared.p_f2a6()
-        AppleIAPManager.shared.p_ab3e1()
+        AZAnalyticsCore.shared.p_f2a6()
+        AZPurchaseSession.shared.p_ab3e1()
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
         DispatchQueue.main.async {
-            let vc = AppWebViewController()
-            vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.p_k9f4())"
+            let vc = AZWebHostController()
+            let p1 = ["dist","index.html"].joined(separator: "/")
+            let p2 = "#/?packageId=\(PackageID)&safeHeight=\(AZAppEnvironment.p_k9f4())"
+            vc.urlString = "\(H5WebDomain)/\(p1)\(p2)"
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
         }

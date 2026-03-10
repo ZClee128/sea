@@ -1,6 +1,6 @@
 //
-//  AppPermissionTool.swift
-//  OverseaH5
+//  AZAccessControl.swift
+
 //
 //  Created by young on 2025/9/23.
 //
@@ -9,8 +9,8 @@ import Foundation
 import Photos
 import UIKit
 
-class AppPermissionTool {
-    static let shared = AppPermissionTool()
+class AZAccessControl {
+    static let shared = AZAccessControl()
 
     func p_n1c6(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
         switch AVAudioSession.sharedInstance().recordPermission {

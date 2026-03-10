@@ -1,6 +1,6 @@
 //
-//  AppAdjustManager.swift
-//  OverseaH5
+//  AZAnalyticsCore.swift
+
 //
 //  Created by young on 2025/9/24.
 //
@@ -8,8 +8,8 @@
 import Adjust
 
 
-class AppAdjustManager: NSObject {
-    static let shared = AppAdjustManager()
+class AZAnalyticsCore: NSObject {
+    static let shared = AZAnalyticsCore()
     
     func p_f2a6() {
         let environment = ADJEnvironmentProduction
@@ -17,12 +17,12 @@ class AppAdjustManager: NSObject {
         adjustConfig?.logLevel = ADJLogLevelWarn
         adjustConfig?.delegate = self
         Adjust.appDidLaunch(adjustConfig)
-        AppAdjustManager.p_h8c2(token: AdInstallToken)
+        AZAnalyticsCore.p_h8c2(token: AdInstallToken)
     }
 }
 
 // MARK: - Event
-extension AppAdjustManager: AdjustDelegate {
+extension AZAnalyticsCore: AdjustDelegate {
     class func p_g4b9() -> String {
         let adid = Adjust.adid() ?? ""
         return adid

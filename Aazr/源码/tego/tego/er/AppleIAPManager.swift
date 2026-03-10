@@ -3,12 +3,12 @@ import StoreKit
  
 let APPLE_IAP_MAX_RETRY_COUNT = 9
 
-enum ApplePayType {
+enum AZPaymentType {
     case Pay
     case Subscribe
 }
 
-enum AppleIAPStatus: String {
+enum AZPaymentStatus: String {
     case unknow            = "未知类型"
     case createOrderFail   = "创建订单失败"
     case notArrow          = "设备不允许"
@@ -21,19 +21,19 @@ enum AppleIAPStatus: String {
     case renewSucceed      = "自动续订成功"
 }
 
-typealias IAPcompletionHandle = (AppleIAPStatus, Double, ApplePayType) -> Void
+typealias AZPurchaseCompletion = (AZPaymentStatus, Double, AZPaymentType) -> Void
 
-class AppleIAPManager: NSObject {
+class AZPurchaseSession: NSObject {
     
-    var completionHandle: IAPcompletionHandle?
+    var completionHandle: AZPurchaseCompletion?
     private var productInfoReq: SKProductsRequest?
     private var reqRetryCountDict = [String: Int]()
     private var payCacheList = [[String: String]]()
     private var subscribeCacheList = [[String: String]]()
     private var createOrderId: String?
-    private var currentPayType: ApplePayType = .Pay
+    private var currentPayType: AZPaymentType = .Pay
     
-    static let shared = AppleIAPManager()
+    static let shared = AZPurchaseSession()
     override func copy() -> Any { return self }
     override func mutableCopy() -> Any { return self }
     private override init() {
@@ -50,15 +50,15 @@ class AppleIAPManager: NSObject {
 }
 
 // MARK: - 【苹果购买】业务接口
-extension AppleIAPManager {
+extension AZPurchaseSession {
     fileprivate func p_ah1e9(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
-        let reqModel = AppRequestModel.init()
-        reqModel.requestPath = "mf/recharge/createApplePay"
+        let reqModel = AZRequestPayload.init()
+        reqModel.requestPath = ["mf","recharge","createApplePay"].joined(separator: "/")
         var dict = Dictionary<String, Any>()
         dict["productId"] = productId
         dict["source"] = source
         reqModel.params = dict
-        AppRequestTool.p_r3a1(model: reqModel) { succeed, result, errorModel in
+        AZNetworkClient.p_r3a1(model: reqModel) { succeed, result, errorModel in
             guard succeed == true else {
                 handle(nil, succeed)
                 return
@@ -73,10 +73,10 @@ extension AppleIAPManager {
     }
     
     fileprivate func p_ai4f2(_ transactionId: String, params: [String: String]) {
-        let reqModel = AppRequestModel.init()
-        reqModel.requestPath = "mf/recharge/applePayNotify"
+        let reqModel = AZRequestPayload.init()
+        reqModel.requestPath = ["mf","recharge","applePayNotify"].joined(separator: "/")
         reqModel.params = params
-        AppRequestTool.p_r3a1(model: reqModel) { succeed, result, errorModel in
+        AZNetworkClient.p_r3a1(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
                     self.p_ag8d6(transactionId, .Pay)
@@ -97,15 +97,15 @@ extension AppleIAPManager {
 }
 
 // MARK: - 【苹果订阅】业务接口
-extension AppleIAPManager {
+extension AZPurchaseSession {
     fileprivate func p_aj7a5(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
-        let reqModel = AppRequestModel.init()
-        reqModel.requestPath = "mf/AutoSub/AppleCreateOrder"
+        let reqModel = AZRequestPayload.init()
+        reqModel.requestPath = ["mf","AutoSub","AppleCreateOrder"].joined(separator: "/")
         var dict = Dictionary<String, Any>()
         dict["productId"] = productId
         dict["source"] = source
         reqModel.params = dict
-        AppRequestTool.p_r3a1(model: reqModel) { succeed, result, errorModel in
+        AZNetworkClient.p_r3a1(model: reqModel) { succeed, result, errorModel in
             guard succeed == true else {
                 handle(nil, succeed)
                 return
@@ -120,10 +120,10 @@ extension AppleIAPManager {
     }
     
     fileprivate func p_ak0b8(_ transactionId: String, params: [String: String]) {
-        let reqModel = AppRequestModel.init()
-        reqModel.requestPath = "mf/AutoSub/ApplePaySuccess"
+        let reqModel = AZRequestPayload.init()
+        reqModel.requestPath = ["mf","AutoSub","ApplePaySuccess"].joined(separator: "/")
         reqModel.params = params
-        AppRequestTool.p_r3a1(model: reqModel) { succeed, result, errorModel in
+        AZNetworkClient.p_r3a1(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                     self.p_ag8d6(transactionId, .Subscribe)
@@ -144,14 +144,14 @@ extension AppleIAPManager {
 }
 
 // MARK: - Event
-extension AppleIAPManager {
+extension AZPurchaseSession {
     private func p_w8f6() {
         self.payCacheList = p_x1a9(payType: .Pay)
         self.subscribeCacheList = p_x1a9(payType: .Subscribe)
         self.createOrderId = nil
     }
     
-    private func p_x1a9(payType: ApplePayType) -> [[String: String]] {
+    private func p_x1a9(payType: AZPaymentType) -> [[String: String]] {
         var list: [[String: String]]?
         var diskPath = ""
         if payType == .Pay {
@@ -176,7 +176,7 @@ extension AppleIAPManager {
         if fileManager.fileExists(atPath: appDirectoryPath) == false {
            try? fileManager.createDirectory(atPath: appDirectoryPath, withIntermediateDirectories: true)
         }
-        let filePath = (appDirectoryPath as NSString).appendingPathComponent("OrderTransactionInfo_Cache")
+        let filePath = (appDirectoryPath as NSString).appendingPathComponent("azsc_pay")
         return filePath
     }
     
@@ -187,11 +187,11 @@ extension AppleIAPManager {
         if fileManager.fileExists(atPath: appDirectoryPath) == false {
            try? fileManager.createDirectory(atPath: appDirectoryPath, withIntermediateDirectories: true)
         }
-        let filePath = (appDirectoryPath as NSString).appendingPathComponent("OrderTransactionInfo_Subscribe_Cache")
+        let filePath = (appDirectoryPath as NSString).appendingPathComponent("azsc_sub")
         return filePath
     }
  
-    fileprivate func p_aa0d8(_ transactionId: String, _ payType: ApplePayType) -> String? {
+    fileprivate func p_aa0d8(_ transactionId: String, _ payType: AZPaymentType) -> String? {
         var paramsArr = [[String: String]]()
         switch(payType) {
         case .Pay:
@@ -210,7 +210,7 @@ extension AppleIAPManager {
 }
 
 // MARK: - 失败重试流程
-extension AppleIAPManager {
+extension AZPurchaseSession {
     func p_ab3e1() {
         p_w8f6()
         for dict in self.payCacheList {
@@ -221,7 +221,7 @@ extension AppleIAPManager {
         }
     }
     
-    private func p_ac6f4(_ transactionId: String?, _ payType: ApplePayType) {
+    private func p_ac6f4(_ transactionId: String?, _ payType: AZPaymentType) {
         guard let transactionId = transactionId else { return }
         reqRetryCountDict[transactionId] = 0
         p_ag8d6(transactionId, payType)
@@ -229,8 +229,8 @@ extension AppleIAPManager {
 }
 
 // MARK: - 苹果正常支付流程
-extension AppleIAPManager {
-    func p_ad9a7(productId: String, payType: ApplePayType, source: Int = 0, handle: @escaping IAPcompletionHandle) {
+extension AZPurchaseSession {
+    func p_ad9a7(productId: String, payType: AZPaymentType, source: Int = 0, handle: @escaping AZPurchaseCompletion) {
         p_w8f6()
         self.completionHandle = handle
         self.currentPayType = payType
@@ -281,7 +281,7 @@ extension AppleIAPManager {
 }
 
 // MARK: - SKProductsRequestDelegate
-extension AppleIAPManager: SKProductsRequestDelegate {
+extension AZPurchaseSession: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         guard response.products.count > 0 else {
             self.completionHandle?(.noProductId, 0, currentPayType)
@@ -299,7 +299,7 @@ extension AppleIAPManager: SKProductsRequestDelegate {
 }
 
 // MARK: - SKPaymentTransactionObserver
-extension AppleIAPManager: SKPaymentTransactionObserver {
+extension AZPurchaseSession: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -340,7 +340,7 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
         }
     }
  
-    fileprivate func p_ag8d6(_ transactionId: String, _ payType: ApplePayType) {
+    fileprivate func p_ag8d6(_ transactionId: String, _ payType: AZPaymentType) {
         guard let receiptStr = p_aa0d8(transactionId, payType) else {
             self.completionHandle?(.verityFail, 0, payType)
             return

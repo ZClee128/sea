@@ -1,25 +1,25 @@
 //
-//  ProgressHUD.swift
-//  AbroadTalking
+//  AZLoadingOverlay.swift
+
 //
 //  Created by Joeyoung on 2022/9/1.
 //
 
 import UIKit
 
-let kProgressHUD_W            = 80.0
-let kProgressHUD_cornerRadius = 14.0
-let kProgressHUD_alpha        = 0.9
+let kAZLoadingOverlay_W            = 80.0
+let kAZLoadingOverlay_cornerRadius = 14.0
+let kAZLoadingOverlay_alpha        = 0.9
 let kBackgroundView_alpha     = 0.6
 let kAnimationInterval        = 0.2
 let kTransformScale           = 0.9
 
-open class ProgressHUD: UIView {
+open class AZLoadingOverlay: UIView {
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static var shared = ProgressHUD()
+    static var shared = AZLoadingOverlay()
     private override init(frame: CGRect) {
         super.init(frame: frame)
         self.frame = UIScreen.main.bounds
@@ -36,21 +36,21 @@ open class ProgressHUD: UIView {
     class func show(superView: UIView?) {
         if superView != nil {
             DispatchQueue.main.async {
-                ProgressHUD.shared.frame = superView!.bounds
-                ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
-                superView!.addSubview(ProgressHUD.shared)
+                AZLoadingOverlay.shared.frame = superView!.bounds
+                AZLoadingOverlay.shared.activityIndicator.center = AZLoadingOverlay.shared.center
+                superView!.addSubview(AZLoadingOverlay.shared)
             }
         } else {
             DispatchQueue.main.async {
-                ProgressHUD.shared.frame = UIScreen.main.bounds
-                ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
-                AppConfig.p_l2a8().addSubview(ProgressHUD.shared)
+                AZLoadingOverlay.shared.frame = UIScreen.main.bounds
+                AZLoadingOverlay.shared.activityIndicator.center = AZLoadingOverlay.shared.center
+                AZAppEnvironment.p_l2a8().addSubview(AZLoadingOverlay.shared)
             }
         }
-        ProgressHUD.shared.p_ca3f1()
+        AZLoadingOverlay.shared.p_ca3f1()
     }
     class func dismiss() {
-        ProgressHUD.shared.p_cb6a4()
+        AZLoadingOverlay.shared.p_cb6a4()
     }
     
     private func p_ca3f1() {
@@ -61,7 +61,7 @@ open class ProgressHUD: UIView {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: kBackgroundView_alpha)
                 self.activityIndicator.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.activityIndicator.alpha = kProgressHUD_alpha
+                self.activityIndicator.alpha = kAZLoadingOverlay_alpha
                 self.activityIndicator.startAnimating()
             }
         }
@@ -74,7 +74,7 @@ open class ProgressHUD: UIView {
                 self.activityIndicator.alpha = 0
             } completion: { finished in
                 self.activityIndicator.stopAnimating()
-                ProgressHUD.shared.removeFromSuperview()
+                AZLoadingOverlay.shared.removeFromSuperview()
             }
         }
     }
@@ -82,16 +82,16 @@ open class ProgressHUD: UIView {
     // MARK: - Lazy load
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
-        indicator.bounds = CGRect(x: 0, y: 0, width: kProgressHUD_W, height: kProgressHUD_W)
+        indicator.bounds = CGRect(x: 0, y: 0, width: kAZLoadingOverlay_W, height: kAZLoadingOverlay_W)
         indicator.center = self.center
         indicator.backgroundColor = .black
-        indicator.layer.cornerRadius = kProgressHUD_cornerRadius
+        indicator.layer.cornerRadius = kAZLoadingOverlay_cornerRadius
         indicator.layer.masksToBounds = true
         return indicator
     }()
 }
 
-extension ProgressHUD {
+extension AZLoadingOverlay {
     class func toast(_ str: String?) {
         toast(str, showTime: 1)
     }
@@ -106,9 +106,9 @@ extension ProgressHUD {
         titleLab.textAlignment = .center
         titleLab.numberOfLines = 0
         titleLab.textColor = .white
-        AppConfig.p_l2a8().addSubview(titleLab)
+        AZAppEnvironment.p_l2a8().addSubview(titleLab)
         let size = titleLab.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(MAXFLOAT)))
-        titleLab.center = AppConfig.p_l2a8().center
+        titleLab.center = AZAppEnvironment.p_l2a8().center
         titleLab.bounds = CGRect(x: 0, y: 0, width: size.width + 30, height: size.height + 30)
         titleLab.alpha = 0
         UIView.animate(withDuration: 0.2) {

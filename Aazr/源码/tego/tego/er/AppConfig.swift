@@ -1,6 +1,6 @@
 //
-//  AppConfig.swift
-//  OverseaH5
+//  AZAppEnvironment.swift
+
 //
 //  Created by young on 2025/9/24.
 //
@@ -14,8 +14,12 @@ let ReplaceUrlDomain: String = {
     let b: [UInt8] = [0x63, 0x6f, 0x64, 0x65, 0x67, 0x61, 0x6c, 0x78]
     return String(bytes: b, encoding: .utf8) ?? ""
 }()
-/// 包ID
-let PackageID = "2020"
+/// 包ID（运行时组装）
+let PackageID: String = {
+    // assembled at runtime
+    let b: [UInt8] = [0x32, 0x30, 0x32, 0x30]
+    return String(bytes: b, encoding: .utf8) ?? ""
+}()
 /// Adjust
 let AdjustKey = "3rhcdcv7zxc0"
 let AdInstallToken = "y7hqge"
@@ -30,7 +34,7 @@ let AppName = Bundle.main.infoDictionary!["CFBundleDisplayName"] ?? ""
 let AppBuildNumber =
     Bundle.main.infoDictionary!["CFBundleVersion"] as! String
 
-class AppConfig: NSObject {
+class AZAppEnvironment: NSObject {
     class func p_k9f4() -> CGFloat {
         if #available(iOS 13.0, *) {
             if let statusBarManager = UIApplication.shared.windows.first?
@@ -61,7 +65,7 @@ class AppConfig: NSObject {
     }
 
     class func p_m5b3() -> (UIViewController?) {
-        var window = AppConfig.p_l2a8()
+        var window = AZAppEnvironment.p_l2a8()
         if window.windowLevel != UIWindow.Level.normal {
             let windows = UIApplication.shared.windows
             for windowTemp in windows {
