@@ -3,39 +3,107 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		67FC3ED579838441C94947F2 /* Pods_aazar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C14740719A68C226536E38 /* Pods_aazar.framework */; };
+		84B42E222F617167004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B42E212F617167004953C3 /* StoreKit.framework */; };
+		84B42E432F61774B004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E392F61774B004953C3 /* Assets.xcassets */; };
+		84B42E442F61774B004953C3 /* Cinematic Lighting Basics.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E3A2F61774B004953C3 /* Cinematic Lighting Basics.jpg */; };
+		84B42E452F61774B004953C3 /* Cinematic Lighting Basics.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E3B2F61774B004953C3 /* Cinematic Lighting Basics.mp4 */; };
+		84B42E462F61774B004953C3 /* Color Grading with CoreImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E3C2F61774B004953C3 /* Color Grading with CoreImage.jpg */; };
+		84B42E472F61774B004953C3 /* Color Grading with CoreImage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E3D2F61774B004953C3 /* Color Grading with CoreImage.mp4 */; };
+		84B42E492F61774B004953C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E402F61774B004953C3 /* LaunchScreen.storyboard */; };
+		84B42E4A2F61774B004953C3 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E232F61774B004953C3 /* AgreementViewController.swift */; };
+		84B42E4B2F61774B004953C3 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E242F61774B004953C3 /* CollectionListViewController.swift */; };
+		84B42E4C2F61774B004953C3 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E252F61774B004953C3 /* FavoritesViewController.swift */; };
+		84B42E4D2F61774B004953C3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E262F61774B004953C3 /* GalleryViewController.swift */; };
+		84B42E4E2F61774B004953C3 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E272F61774B004953C3 /* ImageDetailViewController.swift */; };
+		84B42E4F2F61774B004953C3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E282F61774B004953C3 /* MainTabBarController.swift */; };
+		84B42E502F61774B004953C3 /* MasterclassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E292F61774B004953C3 /* MasterclassViewController.swift */; };
+		84B42E512F61774B004953C3 /* MoodboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E2A2F61774B004953C3 /* MoodboardViewController.swift */; };
+		84B42E522F61774B004953C3 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E2B2F61774B004953C3 /* PhotoEditorViewController.swift */; };
+		84B42E532F61774B004953C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E2C2F61774B004953C3 /* SettingsViewController.swift */; };
+		84B42E542F61774B004953C3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E2D2F61774B004953C3 /* StoreViewController.swift */; };
+		84B42E552F61774B004953C3 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E2F2F61774B004953C3 /* CoinManager.swift */; };
+		84B42E562F61774B004953C3 /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E302F61774B004953C3 /* CollectionManager.swift */; };
+		84B42E572F61774B004953C3 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E312F61774B004953C3 /* IAPManager.swift */; };
+		84B42E582F61774B004953C3 /* MoodImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E322F61774B004953C3 /* MoodImage.swift */; };
+		84B42E592F61774B004953C3 /* VideoLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E332F61774B004953C3 /* VideoLesson.swift */; };
+		84B42E5A2F61774B004953C3 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E352F61774B004953C3 /* Image+Extensions.swift */; };
+		84B42E5C2F61774B004953C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E412F61774B004953C3 /* ViewController.swift */; };
+		84B42E6C2F617F7A004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E5E2F617F7A004953C3 /* AppAdjustManager.swift */; };
+		84B42E6D2F617F7A004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E692F617F7A004953C3 /* LocalPushScheduler.swift */; };
+		84B42E6E2F617F7A004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E642F617F7A004953C3 /* AppRequestTool.swift */; };
+		84B42E6F2F617F7A004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E5F2F617F7A004953C3 /* AppConfig.swift */; };
+		84B42E702F617F7A004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E672F617F7A004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B42E712F617F7A004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E612F617F7A004953C3 /* AppleIAPManager.swift */; };
+		84B42E722F617F7A004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E6B2F617F7A004953C3 /* WaitViewController.swift */; };
+		84B42E732F617F7A004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E622F617F7A004953C3 /* AppPermissionTool.swift */; };
+		84B42E742F617F7A004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E6A2F617F7A004953C3 /* ProgressHUD.swift */; };
+		84B42E752F617F7A004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E602F617F7A004953C3 /* AppDelegate.swift */; };
+		84B42E762F617F7A004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E662F617F7A004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B42E772F617F7A004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E652F617F7A004953C3 /* AppWebViewController.swift */; };
+		84B42E782F617F7A004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42E632F617F7A004953C3 /* AppRequestBaseModel.swift */; };
+		84B42E792F617F7A004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42E682F617F7A004953C3 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		26616D3C117ADF602695F740 /* Pods-aazar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aazar.debug.xcconfig"; path = "Target Support Files/Pods-aazar/Pods-aazar.debug.xcconfig"; sourceTree = "<group>"; };
+		65C14740719A68C226536E38 /* Pods_aazar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aazar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B42DCF2F6141E4004953C3 /* aazar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aazar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B42E212F617167004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B42E232F61774B004953C3 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		84B42E242F61774B004953C3 /* CollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
+		84B42E252F61774B004953C3 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		84B42E262F61774B004953C3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		84B42E272F61774B004953C3 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		84B42E282F61774B004953C3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		84B42E292F61774B004953C3 /* MasterclassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterclassViewController.swift; sourceTree = "<group>"; };
+		84B42E2A2F61774B004953C3 /* MoodboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardViewController.swift; sourceTree = "<group>"; };
+		84B42E2B2F61774B004953C3 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
+		84B42E2C2F61774B004953C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84B42E2D2F61774B004953C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		84B42E2F2F61774B004953C3 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		84B42E302F61774B004953C3 /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
+		84B42E312F61774B004953C3 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		84B42E322F61774B004953C3 /* MoodImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodImage.swift; sourceTree = "<group>"; };
+		84B42E332F61774B004953C3 /* VideoLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLesson.swift; sourceTree = "<group>"; };
+		84B42E352F61774B004953C3 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		84B42E372F61774B004953C3 /* aazar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aazar.entitlements; sourceTree = "<group>"; };
+		84B42E392F61774B004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B42E3A2F61774B004953C3 /* Cinematic Lighting Basics.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cinematic Lighting Basics.jpg"; sourceTree = "<group>"; };
+		84B42E3B2F61774B004953C3 /* Cinematic Lighting Basics.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinematic Lighting Basics.mp4"; sourceTree = "<group>"; };
+		84B42E3C2F61774B004953C3 /* Color Grading with CoreImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Color Grading with CoreImage.jpg"; sourceTree = "<group>"; };
+		84B42E3D2F61774B004953C3 /* Color Grading with CoreImage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Color Grading with CoreImage.mp4"; sourceTree = "<group>"; };
+		84B42E3E2F61774B004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B42E3F2F61774B004953C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B42E412F61774B004953C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B42E5E2F617F7A004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B42E5F2F617F7A004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B42E602F617F7A004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B42E612F617F7A004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B42E622F617F7A004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B42E632F617F7A004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B42E642F617F7A004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B42E652F617F7A004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B42E662F617F7A004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B42E672F617F7A004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B42E682F617F7A004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B42E692F617F7A004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B42E6A2F617F7A004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B42E6B2F617F7A004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		EF576EB29D1F881A04CD3543 /* Pods-aazar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aazar.release.xcconfig"; path = "Target Support Files/Pods-aazar/Pods-aazar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84B42DE12F6141E5004953C3 /* Exceptions for "aazar" folder in "aazar" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 84B42DCE2F6141E4004953C3 /* aazar */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84B42DD12F6141E4004953C3 /* aazar */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84B42DE12F6141E5004953C3 /* Exceptions for "aazar" folder in "aazar" target */,
-			);
-			path = aazar;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84B42DCC2F6141E4004953C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B42E222F617167004953C3 /* StoreKit.framework in Frameworks */,
+				67FC3ED579838441C94947F2 /* Pods_aazar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +113,10 @@
 		84B42DC62F6141E4004953C3 = {
 			isa = PBXGroup;
 			children = (
-				84B42DD12F6141E4004953C3 /* aazar */,
+				84B42E422F61774B004953C3 /* aazar */,
+				84B42E202F617167004953C3 /* Frameworks */,
 				84B42DD02F6141E4004953C3 /* Products */,
+				C9D246CD93256B428CA2A019 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +128,103 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		84B42E202F617167004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E212F617167004953C3 /* StoreKit.framework */,
+				65C14740719A68C226536E38 /* Pods_aazar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B42E2E2F61774B004953C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E232F61774B004953C3 /* AgreementViewController.swift */,
+				84B42E242F61774B004953C3 /* CollectionListViewController.swift */,
+				84B42E252F61774B004953C3 /* FavoritesViewController.swift */,
+				84B42E262F61774B004953C3 /* GalleryViewController.swift */,
+				84B42E272F61774B004953C3 /* ImageDetailViewController.swift */,
+				84B42E282F61774B004953C3 /* MainTabBarController.swift */,
+				84B42E292F61774B004953C3 /* MasterclassViewController.swift */,
+				84B42E2A2F61774B004953C3 /* MoodboardViewController.swift */,
+				84B42E2B2F61774B004953C3 /* PhotoEditorViewController.swift */,
+				84B42E2C2F61774B004953C3 /* SettingsViewController.swift */,
+				84B42E2D2F61774B004953C3 /* StoreViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84B42E342F61774B004953C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E2F2F61774B004953C3 /* CoinManager.swift */,
+				84B42E302F61774B004953C3 /* CollectionManager.swift */,
+				84B42E312F61774B004953C3 /* IAPManager.swift */,
+				84B42E322F61774B004953C3 /* MoodImage.swift */,
+				84B42E332F61774B004953C3 /* VideoLesson.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84B42E362F61774B004953C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E352F61774B004953C3 /* Image+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84B42E422F61774B004953C3 /* aazar */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E5D2F617F51004953C3 /* open */,
+				84B42E2E2F61774B004953C3 /* Controllers */,
+				84B42E342F61774B004953C3 /* Models */,
+				84B42E362F61774B004953C3 /* Utils */,
+				84B42E372F61774B004953C3 /* aazar.entitlements */,
+				84B42E392F61774B004953C3 /* Assets.xcassets */,
+				84B42E3A2F61774B004953C3 /* Cinematic Lighting Basics.jpg */,
+				84B42E3B2F61774B004953C3 /* Cinematic Lighting Basics.mp4 */,
+				84B42E3C2F61774B004953C3 /* Color Grading with CoreImage.jpg */,
+				84B42E3D2F61774B004953C3 /* Color Grading with CoreImage.mp4 */,
+				84B42E3E2F61774B004953C3 /* Info.plist */,
+				84B42E402F61774B004953C3 /* LaunchScreen.storyboard */,
+				84B42E412F61774B004953C3 /* ViewController.swift */,
+			);
+			path = aazar;
+			sourceTree = "<group>";
+		};
+		84B42E5D2F617F51004953C3 /* open */ = {
+			isa = PBXGroup;
+			children = (
+				84B42E5E2F617F7A004953C3 /* AppAdjustManager.swift */,
+				84B42E5F2F617F7A004953C3 /* AppConfig.swift */,
+				84B42E602F617F7A004953C3 /* AppDelegate.swift */,
+				84B42E612F617F7A004953C3 /* AppleIAPManager.swift */,
+				84B42E622F617F7A004953C3 /* AppPermissionTool.swift */,
+				84B42E632F617F7A004953C3 /* AppRequestBaseModel.swift */,
+				84B42E642F617F7A004953C3 /* AppRequestTool.swift */,
+				84B42E652F617F7A004953C3 /* AppWebViewController.swift */,
+				84B42E662F617F7A004953C3 /* AppWebViewHandleEvent.swift */,
+				84B42E672F617F7A004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B42E682F617F7A004953C3 /* GoogleService-Info.plist */,
+				84B42E692F617F7A004953C3 /* LocalPushScheduler.swift */,
+				84B42E6A2F617F7A004953C3 /* ProgressHUD.swift */,
+				84B42E6B2F617F7A004953C3 /* WaitViewController.swift */,
+			);
+			path = open;
+			sourceTree = "<group>";
+		};
+		C9D246CD93256B428CA2A019 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26616D3C117ADF602695F740 /* Pods-aazar.debug.xcconfig */,
+				EF576EB29D1F881A04CD3543 /* Pods-aazar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,20 +232,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B42DE22F6141E5004953C3 /* Build configuration list for PBXNativeTarget "aazar" */;
 			buildPhases = (
+				7D179DEC3012FA9F4EE9808A /* [CP] Check Pods Manifest.lock */,
 				84B42DCB2F6141E4004953C3 /* Sources */,
 				84B42DCC2F6141E4004953C3 /* Frameworks */,
 				84B42DCD2F6141E4004953C3 /* Resources */,
+				F07EFF35800E06C8A5584D40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84B42DD12F6141E4004953C3 /* aazar */,
-			);
 			name = aazar;
-			packageProductDependencies = (
-			);
 			productName = aazar;
 			productReference = 84B42DCF2F6141E4004953C3 /* aazar.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +263,7 @@
 				};
 			};
 			buildConfigurationList = 84B42DCA2F6141E4004953C3 /* Build configuration list for PBXProject "aazar" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -106,8 +271,6 @@
 				Base,
 			);
 			mainGroup = 84B42DC62F6141E4004953C3;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84B42DD02F6141E4004953C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,31 +285,132 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B42E432F61774B004953C3 /* Assets.xcassets in Resources */,
+				84B42E442F61774B004953C3 /* Cinematic Lighting Basics.jpg in Resources */,
+				84B42E452F61774B004953C3 /* Cinematic Lighting Basics.mp4 in Resources */,
+				84B42E462F61774B004953C3 /* Color Grading with CoreImage.jpg in Resources */,
+				84B42E472F61774B004953C3 /* Color Grading with CoreImage.mp4 in Resources */,
+				84B42E492F61774B004953C3 /* LaunchScreen.storyboard in Resources */,
+				84B42E792F617F7A004953C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D179DEC3012FA9F4EE9808A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aazar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F07EFF35800E06C8A5584D40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aazar/Pods-aazar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aazar/Pods-aazar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aazar/Pods-aazar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84B42DCB2F6141E4004953C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B42E4A2F61774B004953C3 /* AgreementViewController.swift in Sources */,
+				84B42E4B2F61774B004953C3 /* CollectionListViewController.swift in Sources */,
+				84B42E4C2F61774B004953C3 /* FavoritesViewController.swift in Sources */,
+				84B42E4D2F61774B004953C3 /* GalleryViewController.swift in Sources */,
+				84B42E4E2F61774B004953C3 /* ImageDetailViewController.swift in Sources */,
+				84B42E4F2F61774B004953C3 /* MainTabBarController.swift in Sources */,
+				84B42E502F61774B004953C3 /* MasterclassViewController.swift in Sources */,
+				84B42E512F61774B004953C3 /* MoodboardViewController.swift in Sources */,
+				84B42E522F61774B004953C3 /* PhotoEditorViewController.swift in Sources */,
+				84B42E532F61774B004953C3 /* SettingsViewController.swift in Sources */,
+				84B42E542F61774B004953C3 /* StoreViewController.swift in Sources */,
+				84B42E552F61774B004953C3 /* CoinManager.swift in Sources */,
+				84B42E562F61774B004953C3 /* CollectionManager.swift in Sources */,
+				84B42E572F61774B004953C3 /* IAPManager.swift in Sources */,
+				84B42E6C2F617F7A004953C3 /* AppAdjustManager.swift in Sources */,
+				84B42E6D2F617F7A004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B42E6E2F617F7A004953C3 /* AppRequestTool.swift in Sources */,
+				84B42E6F2F617F7A004953C3 /* AppConfig.swift in Sources */,
+				84B42E702F617F7A004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B42E712F617F7A004953C3 /* AppleIAPManager.swift in Sources */,
+				84B42E722F617F7A004953C3 /* WaitViewController.swift in Sources */,
+				84B42E732F617F7A004953C3 /* AppPermissionTool.swift in Sources */,
+				84B42E742F617F7A004953C3 /* ProgressHUD.swift in Sources */,
+				84B42E752F617F7A004953C3 /* AppDelegate.swift in Sources */,
+				84B42E762F617F7A004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B42E772F617F7A004953C3 /* AppWebViewController.swift in Sources */,
+				84B42E782F617F7A004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B42E582F61774B004953C3 /* MoodImage.swift in Sources */,
+				84B42E592F61774B004953C3 /* VideoLesson.swift in Sources */,
+				84B42E5A2F61774B004953C3 /* Image+Extensions.swift in Sources */,
+				84B42E5C2F61774B004953C3 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		84B42E402F61774B004953C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B42E3F2F61774B004953C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		84B42DE32F6141E5004953C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26616D3C117ADF602695F740 /* Pods-aazar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = aazar/aazar.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = aazar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Aazar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need photo library access to save your moodboard.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -158,8 +422,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.aazar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazar.master;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -176,13 +441,19 @@
 		};
 		84B42DE42F6141E5004953C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF576EB29D1F881A04CD3543 /* Pods-aazar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = aazar/aazar.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = aazar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Aazar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need photo library access to save your moodboard.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -194,8 +465,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.aazar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazar.master;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

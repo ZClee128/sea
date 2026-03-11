@@ -4,8 +4,8 @@ class CoinManager {
     static let shared = CoinManager()
     private let balanceKey = "com.aazar.coinBalance"
     
-    // Default starting coins for testing/new users
-    private let initialCoins = 100
+    // Default starting coins
+    private let initialCoins = 0
     
     // Notify UI when balance changes
     static let balanceDidChangeNotification = Notification.Name("CoinBalanceDidChange")
