@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Cinematic-Soft-Light-Portrait-Woman_ninebig__26A20lGu9y.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

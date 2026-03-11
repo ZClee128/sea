@@ -513,7 +513,7 @@
 				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -521,10 +521,10 @@
 				INFOPLIST_FILE = tego/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to capture photos and videos for use in the app.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to your microphone to record audio with videos.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add photos and videos to your photo library.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select and use photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aazr requires camera access to use Pose Studio, allowing you to use live camera silhouettes to recreate trending poses and capture your own.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Aazr requires microphone access to record audio along with your pose videos in Pose Studio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Aazr requires access to your photo library to save the pose photos and videos you create in Pose Studio.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Aazr requires access to your photo library so you can import existing photos to analyze and recreate poses in Pose Studio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,7 +563,7 @@
 				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -571,10 +571,10 @@
 				INFOPLIST_FILE = tego/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to capture photos and videos for use in the app.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to your microphone to record audio with videos.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add photos and videos to your photo library.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select and use photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aazr requires camera access to use Pose Studio, allowing you to use live camera silhouettes to recreate trending poses and capture your own.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Aazr requires microphone access to record audio along with your pose videos in Pose Studio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Aazr requires access to your photo library to save the pose photos and videos you create in Pose Studio.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Aazr requires access to your photo library so you can import existing photos to analyze and recreate poses in Pose Studio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

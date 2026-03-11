@@ -1,0 +1,17 @@
+描述：[Aazar: More Than Inspiration, Your Portable Creative Studio]
+
+Whether you are a designer seeking visual concepts, a photographer perfecting light and shadow, or a creator documenting life's aesthetics, Aazar provides the complete workflow from discovering inspiration to producing tangible results. We are not just a mood board gallery; we are a professional utility box deeply integrated with powerful tools.
+
+[Core Productivity Features]
+
+Professional Photo Filter Engine (Photo Editor) Features real-time, hardware-accelerated photo editing powered by native core architecture. It is not just for viewing; it is for creating. Tap "Edit" to apply cinematic-grade filters to your images—such as Fade, Noir, and Chrome. Save your newly graded visuals directly to your device's photo library without quality loss.
+
+Custom Inspiration Boards (Asset Management) Say goodbye to cluttered, unorganized favorites lists. Aazar allows you to create and name an unlimited number of custom folders based on your project needs. Categorize your visual assets with precision, building your personal, highly-organized design library.
+
+Rich Inspiration Annotations When an image sparks an idea, you can write down your personal design notes and annotations directly beneath it. Record lighting setups, composition breakdowns, or styling cues. All notes are persistently bound to the image and saved locally on your device for quick reference anytime.
+
+Immersive Video Masterclasses Handpicked professional visual tutorials at your fingertips. Built with a high-performance native video player, the Masterclass module supports smooth HD media streaming. Designed for true multi-tasking, it supports continuous background audio playback and seamless looping. You can listen to a photography master's lecture while putting the app in the background to handle other tasks without interruption.
+
+Pixel-Perfect Palette Extraction For every high-quality inspiration image, Aazar automatically extracts its core color DNA. Tap any color chip to instantly copy its exact HEX code, allowing you to seamlessly apply premium color schemes directly into your own design projects.
+
+Download Aazar today and turn your fleeting imagination into tangible, stunning visuals.
