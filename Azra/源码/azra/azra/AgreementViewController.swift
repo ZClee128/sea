@@ -22,14 +22,14 @@ class AgreementViewController: UIViewController {
 
         // EULA TextView
         eulaTextView.text = """
-        Welcome to Azra!
+        Welcome to Azzzr!
 
         Please read these Terms carefully before using the app. By tapping "Agree & Continue", you confirm that you are 17 years of age or older, and that you agree to be bound by the following terms.
 
         ─────────────────────────────
         1. AI-Generated Content Policy
         ─────────────────────────────
-        Azra's AI Studio feature allows you to generate tattoo designs through text prompts. You agree that you will NOT use this feature to generate:
+        Azzzr's AI Studio feature allows you to generate tattoo designs through text prompts. You agree that you will NOT use this feature to generate:
 
         • Sexually explicit or adult content of any kind
         • Any content that sexually exploits or depicts minors (CSAM). Such content is strictly illegal and will be reported to authorities.
@@ -39,17 +39,17 @@ class AgreementViewController: UIViewController {
         • Content that infringes on the intellectual property, trademarks, or copyright of any third party (including copyrighted characters or brand logos)
         • Content intended to deceive, defraud, or impersonate any person or entity
 
-        Azra employs automated safety filters. Violations may result in permanent account termination and may be reported to appropriate law enforcement authorities.
+        Azzzr employs automated safety filters. Violations may result in permanent account termination and may be reported to appropriate law enforcement authorities.
 
         ─────────────────────────────
         2. User Responsibility
         ─────────────────────────────
-        You are solely responsible for all content you generate using Azra. AI-generated designs are for personal reference and artistic inspiration only. Azra is not liable for any physical tattoos you receive based on these designs.
+        You are solely responsible for all content you generate using Azzzr. AI-generated designs are for personal reference and artistic inspiration only. Azzzr is not liable for any physical tattoos you receive based on these designs.
 
         ─────────────────────────────
         3. Privacy Policy Highlights
         ─────────────────────────────
-        • Azra does not collect or sell your personal data.
+        • Azzzr does not collect or sell your personal data.
         • AI-generated images are processed and stored locally on your device.
         • We do not share your prompts or generated images with third parties.
         • Anonymous, aggregated usage statistics may be collected to improve the app.
@@ -57,12 +57,12 @@ class AgreementViewController: UIViewController {
         ─────────────────────────────
         4. Age Requirement
         ─────────────────────────────
-        Azra is intended for users who are 17 years of age or older. By continuing, you confirm you meet this age requirement.
+        Azzzr is intended for users who are 17 years of age or older. By continuing, you confirm you meet this age requirement.
 
         ─────────────────────────────
         5. Reporting Violations
         ─────────────────────────────
-        If you encounter content that violates these terms, please report it to: support@azra.app
+        If you encounter content that violates these terms, please report it to: nguyenthiyennhi0324@icloud.com
 
         By tapping "Agree & Continue", you acknowledge you have read and agree to all of the above.
         """

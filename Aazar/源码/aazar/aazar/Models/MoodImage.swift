@@ -55,7 +55,8 @@ class InspirationDataService {
                 subtitle: "Master the art of shadows and neon contrast.",
                 videoUrlString: "Cinematic Lighting Basics",
                 thumbnailName: "Cinematic Lighting Basics.jpg",
-                duration: "00:15"
+                duration: "00:15",
+                isPremium: false
             ),
             VideoLesson(
                 id: "vid_02",
@@ -63,7 +64,8 @@ class InspirationDataService {
                 subtitle: "Learn how to build custom photo filters.",
                 videoUrlString: "Color Grading with CoreImage",
                 thumbnailName: "Color Grading with CoreImage.jpg",
-                duration: "00:20"
+                duration: "00:20",
+                isPremium: true
             )
         ]
     }

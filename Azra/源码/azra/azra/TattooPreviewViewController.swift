@@ -61,7 +61,7 @@ class TattooPreviewViewController: UIViewController {
 
     private func showPermissionAlert() {
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Camera Access Required", message: "Azra needs camera access to preview the tattoo on your body.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Camera Access Required", message: "Azzzr needs camera access to preview the tattoo on your body.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
                 if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsUrl)

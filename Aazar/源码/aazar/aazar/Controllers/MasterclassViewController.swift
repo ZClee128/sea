@@ -113,6 +113,34 @@ extension MasterclassViewController: UITableViewDelegate, UITableViewDataSource 
         tableView.deselectRow(at: indexPath, animated: true)
         
         let lesson = lessons[indexPath.row]
+        
+        if !lesson.isUnlocked {
+            let alert = UIAlertController(title: "Premium Masterclass", message: "Unlock this video for 60 coins?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Unlock (60 Coins)", style: .default, handler: { [weak self] _ in
+                if CoinManager.shared.deductCoins(60) {
+                    lesson.unlock()
+                    self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+                    self?.playVideoForLesson(lesson)
+                } else {
+                    let failAlert = UIAlertController(title: "Insufficient Coins", message: "You don't have enough coins. Would you like to get more?", preferredStyle: .alert)
+                    failAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                    failAlert.addAction(UIAlertAction(title: "Go to Store", style: .default, handler: { _ in
+                        let storeVC = StoreViewController()
+                        storeVC.hidesBottomBarWhenPushed = true
+                        self?.navigationController?.pushViewController(storeVC, animated: true)
+                    }))
+                    self?.present(failAlert, animated: true)
+                }
+            }))
+            present(alert, animated: true)
+            return
+        }
+        
+        playVideoForLesson(lesson)
+    }
+    
+    private func playVideoForLesson(_ lesson: VideoLesson) {
         let url: URL
         if let localUrl = Bundle.main.url(forResource: lesson.videoUrlString, withExtension: "mp4") {
             url = localUrl
@@ -133,6 +161,7 @@ class MasterclassCell: UITableViewCell {
     private let subtitleLabel = UILabel()
     private let durationLabel = UILabel()
     private let cardView = UIView()
+    private let lockIconImageView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -167,6 +196,13 @@ class MasterclassCell: UITableViewCell {
         playIconImageView.contentMode = .scaleAspectFit
         playIconImageView.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(playIconImageView)
+        
+        lockIconImageView.image = UIImage(systemName: "lock.fill")
+        lockIconImageView.tintColor = .systemYellow
+        lockIconImageView.contentMode = .scaleAspectFit
+        lockIconImageView.translatesAutoresizingMaskIntoConstraints = false
+        lockIconImageView.isHidden = true // Hidden by default
+        cardView.addSubview(lockIconImageView)
         
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.textColor = .white
@@ -214,6 +250,11 @@ class MasterclassCell: UITableViewCell {
             playIconImageView.widthAnchor.constraint(equalToConstant: 64),
             playIconImageView.heightAnchor.constraint(equalToConstant: 64),
             
+            lockIconImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
+            lockIconImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            lockIconImageView.widthAnchor.constraint(equalToConstant: 24),
+            lockIconImageView.heightAnchor.constraint(equalToConstant: 24),
+            
             subtitleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16),
             subtitleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
             subtitleLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
@@ -243,6 +284,14 @@ class MasterclassCell: UITableViewCell {
             thumbnailImageView.image = image
         } else {
             thumbnailImageView.backgroundColor = .darkGray
+        }
+        
+        if lesson.isUnlocked {
+            lockIconImageView.isHidden = true
+            thumbnailImageView.alpha = 1.0
+        } else {
+            lockIconImageView.isHidden = false
+            thumbnailImageView.alpha = 0.5
         }
     }
 }

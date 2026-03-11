@@ -9,7 +9,7 @@ class SettingsViewController: UITableViewController {
         ("Clear Cache", "trash"),
         ("Privacy Policy", "lock.doc"),
         ("Terms of Service", "doc.text"),
-        ("About Azra", "info.circle")
+        ("About Azzzr", "info.circle")
     ]
     
     private var coinObserver: NSObjectProtocol?
@@ -109,11 +109,11 @@ class SettingsViewController: UITableViewController {
             
         case "Privacy Policy":
             let detail = SettingsDetailViewController(title: "Privacy Policy", content: """
-Azra Privacy Policy
+Azzzr Privacy Policy
 Last Updated: March 2026
 
 1. Information We Collect
-Azra does not collect personal identifying information. All tattoo designs you generate are stored locally on your device only. We do not transmit your prompts or generated images to external servers.
+Azzzr does not collect personal identifying information. All tattoo designs you generate are stored locally on your device only. We do not transmit your prompts or generated images to external servers.
 
 2. AI Studio & Image Generation
 Text prompts you enter in the AI Studio are processed to generate images. Prompts and generated images are not stored on our servers or used to train AI models. All generation history is local to your device.
@@ -125,10 +125,10 @@ Camera access is used solely for the Tattoo Try-On AR feature. Photo Library acc
 We may collect anonymized, aggregated usage statistics (e.g., which features are used most often). This data cannot be used to identify you.
 
 5. Third-Party Services
-Azra does not include third-party advertising SDKs. If third-party AI generation APIs are used, their respective privacy policies will apply to data sent to their servers.
+Azzzr does not include third-party advertising SDKs. If third-party AI generation APIs are used, their respective privacy policies will apply to data sent to their servers.
 
 6. Children's Privacy
-Azra is rated 18+ and is not directed to children under 13. We do not knowingly collect data from minors.
+Azzzr is rated 18+ and is not directed to children under 13. We do not knowingly collect data from minors.
 
 7. Contact
 Questions about this policy? Email: nguyenthiyennhi0324@icloud.com
@@ -137,16 +137,16 @@ Questions about this policy? Email: nguyenthiyennhi0324@icloud.com
             
         case "Terms of Service":
             let detail = SettingsDetailViewController(title: "Terms of Service", content: """
-Azra Terms of Service
+Azzzr Terms of Service
 Last Updated: March 2026
 
-By downloading or using Azra, you agree to these Terms. If you do not agree, do not use the app.
+By downloading or using Azzzr, you agree to these Terms. If you do not agree, do not use the app.
 
 1. Eligibility
-You must be at least 17 years old to use Azra.
+You must be at least 17 years old to use Azzzr.
 
 2. AI-Generated Content Policy
-Azra's AI Studio generates tattoo designs from your text prompts. You agree NOT to use this feature to generate:
+Azzzr's AI Studio generates tattoo designs from your text prompts. You agree NOT to use this feature to generate:
 
 • Sexually explicit content of any kind
 • Any content that sexually exploits or depicts minors (CSAM) — this is a crime and will be reported to law enforcement
@@ -157,16 +157,16 @@ Azra's AI Studio generates tattoo designs from your text prompts. You agree NOT 
 • Content that infringes any third party's intellectual property, copyright, or trademark rights (including brand mascots or copyrighted characters)
 • Disinformation or content intended to deceive or impersonate others
 
-Azra reserves the right to terminate access for users who violate these rules.
+Azzzr reserves the right to terminate access for users who violate these rules.
 
 3. User Responsibility
-You are solely responsible for the prompts you submit and the content you generate. AI-generated designs are for personal reference and artistic inspiration only. Azra is not responsible for any physical tattoos you receive based on these designs.
+You are solely responsible for the prompts you submit and the content you generate. AI-generated designs are for personal reference and artistic inspiration only. Azzzr is not responsible for any physical tattoos you receive based on these designs.
 
 4. Disclaimer of Warranties
 The app is provided "as is." We make no guarantees about the accuracy, quality, or appropriateness of AI-generated designs.
 
 5. Limitation of Liability
-To the maximum extent permitted by law, Azra and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.
+To the maximum extent permitted by law, Azzzr and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.
 
 6. Reporting Violations
 To report content that violates these Terms, contact: nguyenthiyennhi0324@icloud.com
@@ -176,13 +176,13 @@ We may update these Terms from time to time. Continued use after changes constit
 """)
             navigationController?.pushViewController(detail, animated: true)
             
-        case "About Azra":
-            let detail = SettingsDetailViewController(title: "About Azra", content: """
-Azra — Ink Your Vision
+        case "About Azzzr":
+            let detail = SettingsDetailViewController(title: "About Azzzr", content: """
+Azzzr — Ink Your Vision
 
 Version 1.0.0
 
-Azra is your personal AI-powered tattoo design studio. Whether you're dreaming of fine-line minimalism, bold tribal patterns, or photorealistic portraits, Azra helps you visualize, design, and try on tattoo art before committing to the needle.
+Azzzr is your personal AI-powered tattoo design studio. Whether you're dreaming of fine-line minimalism, bold tribal patterns, or photorealistic portraits, Azzzr helps you visualize, design, and try on tattoo art before committing to the needle.
 
 Features
 • Explore a curated library of tattoo styles
