@@ -51,11 +51,17 @@ declare -a NEW_METHODS
 INDEX=0
 
 for method in $METHOD_LIST; do
-    # 避免替换掉太短的常用词汇，限制长度 > 3
     if [ ${#method} -gt 3 ]; then
         OLD_METHODS[$INDEX]=$method
-        # 生成 4 位随机十六进制方法名，带 p_ 前缀
-        NEW_METHODS[$INDEX]=$(printf "p_%04x" $((RANDOM % 65536)))
+        
+        # 生成两个随机小写字母作为前缀
+        letters=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+        c1=${letters[$RANDOM % 26]}
+        c2=${letters[$RANDOM % 26]}
+        
+        # 生成 随机双字母 + _ + 4 位随机十六进制方法名 (例如: xj_a3f8)
+        NEW_METHODS[$INDEX]=$(printf "%s%s_%04x" "$c1" "$c2" $((RANDOM % 65536)))
+        
         echo "   - $method  →  ${NEW_METHODS[$INDEX]}"
         INDEX=$((INDEX + 1))
     fi

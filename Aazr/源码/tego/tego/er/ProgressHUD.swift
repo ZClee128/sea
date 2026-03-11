@@ -1,25 +1,25 @@
 //
-//  codegalxLoadingOverlay.swift
-
+//  ProgressHUD.swift
+//  AbroadTalking
 //
 //  Created by Joeyoung on 2022/9/1.
 //
 
 import UIKit
 
-let kcodegalxLoadingOverlay_W            = 80.0
-let kcodegalxLoadingOverlay_cornerRadius = 14.0
-let kcodegalxLoadingOverlay_alpha        = 0.9
+let kProgressHUD_W            = 80.0
+let kProgressHUD_cornerRadius = 14.0
+let kProgressHUD_alpha        = 0.9
 let kBackgroundView_alpha     = 0.6
 let kAnimationInterval        = 0.2
 let kTransformScale           = 0.9
 
-open class codegalxLoadingOverlay: UIView {
+open class ProgressHUD: UIView {
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static var shared = codegalxLoadingOverlay()
+    static var shared = ProgressHUD()
     private override init(frame: CGRect) {
         super.init(frame: frame)
         self.frame = UIScreen.main.bounds
@@ -36,24 +36,24 @@ open class codegalxLoadingOverlay: UIView {
     class func show(superView: UIView?) {
         if superView != nil {
             DispatchQueue.main.async {
-                codegalxLoadingOverlay.shared.frame = superView!.bounds
-                codegalxLoadingOverlay.shared.activityIndicator.center = codegalxLoadingOverlay.shared.center
-                superView!.addSubview(codegalxLoadingOverlay.shared)
+                ProgressHUD.shared.frame = superView!.bounds
+                ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
+                superView!.addSubview(ProgressHUD.shared)
             }
         } else {
             DispatchQueue.main.async {
-                codegalxLoadingOverlay.shared.frame = UIScreen.main.bounds
-                codegalxLoadingOverlay.shared.activityIndicator.center = codegalxLoadingOverlay.shared.center
-                codegalxAppEnvironment.getWindow().addSubview(codegalxLoadingOverlay.shared)
+                ProgressHUD.shared.frame = UIScreen.main.bounds
+                ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
+                AppConfig.getWindow().addSubview(ProgressHUD.shared)
             }
         }
-        codegalxLoadingOverlay.shared.hud_startAnimating()
+        ProgressHUD.shared.wo_01ac()
     }
     class func dismiss() {
-        codegalxLoadingOverlay.shared.hud_stopAnimating()
+        ProgressHUD.shared.oh_6177()
     }
     
-    private func hud_startAnimating() {
+    private func wo_01ac() {
         DispatchQueue.main.async {
             self.backgroundColor = UIColor(white: 0, alpha: 0)
             self.activityIndicator.transform = CGAffineTransform(scaleX: kTransformScale, y: kTransformScale)
@@ -61,12 +61,12 @@ open class codegalxLoadingOverlay: UIView {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: kBackgroundView_alpha)
                 self.activityIndicator.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.activityIndicator.alpha = kcodegalxLoadingOverlay_alpha
+                self.activityIndicator.alpha = kProgressHUD_alpha
                 self.activityIndicator.startAnimating()
             }
         }
     }
-    private func hud_stopAnimating() {
+    private func oh_6177() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: 0)
@@ -74,7 +74,7 @@ open class codegalxLoadingOverlay: UIView {
                 self.activityIndicator.alpha = 0
             } completion: { finished in
                 self.activityIndicator.stopAnimating()
-                codegalxLoadingOverlay.shared.removeFromSuperview()
+                ProgressHUD.shared.removeFromSuperview()
             }
         }
     }
@@ -82,16 +82,16 @@ open class codegalxLoadingOverlay: UIView {
     // MARK: - Lazy load
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
-        indicator.bounds = CGRect(x: 0, y: 0, width: kcodegalxLoadingOverlay_W, height: kcodegalxLoadingOverlay_W)
+        indicator.bounds = CGRect(x: 0, y: 0, width: kProgressHUD_W, height: kProgressHUD_W)
         indicator.center = self.center
         indicator.backgroundColor = .black
-        indicator.layer.cornerRadius = kcodegalxLoadingOverlay_cornerRadius
+        indicator.layer.cornerRadius = kProgressHUD_cornerRadius
         indicator.layer.masksToBounds = true
         return indicator
     }()
 }
 
-extension codegalxLoadingOverlay {
+extension ProgressHUD {
     class func toast(_ str: String?) {
         toast(str, showTime: 1)
     }
@@ -107,9 +107,9 @@ extension codegalxLoadingOverlay {
         titleLab.textAlignment = .center
         titleLab.numberOfLines = 0
         titleLab.textColor = .white
-        codegalxAppEnvironment.getWindow().addSubview(titleLab)
+        AppConfig.getWindow().addSubview(titleLab)
         let size = titleLab.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(MAXFLOAT)))
-        titleLab.center = codegalxAppEnvironment.getWindow().center
+        titleLab.center = AppConfig.getWindow().center
         titleLab.bounds = CGRect(x: 0, y: 0, width: size.width + 30, height: size.height + 30)
         titleLab.alpha = 0
         

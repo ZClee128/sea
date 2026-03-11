@@ -1,6 +1,6 @@
 //
-//  codegalxAccessControl.swift
-
+//  AppPermissionTool.swift
+//  OverseaH5
 //
 //  Created by young on 2025/9/23.
 //
@@ -9,8 +9,8 @@ import Foundation
 import Photos
 import UIKit
 
-class codegalxAccessControl {
-    static let shared = codegalxAccessControl()
+class AppPermissionTool {
+    static let shared = AppPermissionTool()
 
     /// 获取麦克风权限
     func requestMicPermission(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {

@@ -34,19 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     let remoteVersion = config.configValue(forKey: "Azra").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
-                        self.p_6763(application)
+                        self.af_12bc(application)
                         
                     } else { // 展示A面
-                        self.p_2929()
+                        self.zd_610d()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1774873999 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.p_259d() { // 本地时间戳大于预设时间，进入B面
-                    self.p_6763(application)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.wl_19ec() { // 本地时间戳大于预设时间，进入B面
+                    self.af_12bc(application)
                     
                 } else { // 展示A面
-                    self.p_2929()
+                    self.zd_610d()
                 }
             }
         }
@@ -54,16 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func p_259d() -> Bool {
+    private func wl_19ec() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
-    private func p_6763(_ application: UIApplication) {
-        p_6af0(application)
+    private func af_12bc(_ application: UIApplication) {
+        gu_399b(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.p_5cbd()
+        AppleIAPManager.shared.rr_66e0()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    private func p_2929() {
+    private func zd_610d() {
         DispatchQueue.main.async {
             // Configure audio session for background playback
             do {
@@ -114,7 +114,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func p_6af0(_ application: UIApplication) {
+    func gu_399b(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]

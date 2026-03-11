@@ -60,7 +60,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - productId: 产品Id
     ///   - block: 回调
-    fileprivate func al_7206(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
+    fileprivate func p_3043(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = "mf/recharge/createApplePay"
         var dict = Dictionary<String, Any>()
@@ -86,14 +86,14 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func fv_12ef(_ transactionId: String, params: [String: String]) {
+    fileprivate func p_7209(_ transactionId: String, params: [String: String]) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = "mf/recharge/applePayNotify"
         reqModel.params = params
         AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else { // 验证接口失败，重试接口
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                    self.ek_67e4(transactionId, .Pay)
+                    self.p_7922(transactionId, .Pay)
                 }
                 return
             }
@@ -106,7 +106,7 @@ extension AppleIAPManager {
             
             // 过滤已验证成功的订单数据
             let newPayCacheList = self.payCacheList.filter({$0["transactionId"] != transactionId})
-            let diskPath = self.gb_1a8e()
+            let diskPath = self.p_1051()
             NSKeyedArchiver.archiveRootObject(newPayCacheList, toFile: diskPath)
                         
             // 成功回调
@@ -121,7 +121,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - productId: 产品Id
     ///   - block: 回调
-    fileprivate func vh_28a7(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
+    fileprivate func p_33cf(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = "mf/AutoSub/AppleCreateOrder"
         var dict = Dictionary<String, Any>()
@@ -147,14 +147,14 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func qd_4928(_ transactionId: String, params: [String: String]) {
+    fileprivate func p_7595(_ transactionId: String, params: [String: String]) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = "mf/AutoSub/ApplePaySuccess"
         reqModel.params = params
         AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else { // 验证接口失败，重试接口
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                    self.ek_67e4(transactionId, .Subscribe)
+                    self.p_7922(transactionId, .Subscribe)
                 }
                 return
             }
@@ -167,7 +167,7 @@ extension AppleIAPManager {
 
             // 过滤已验证成功的订单数据
             let newSubscribeCacheList = self.subscribeCacheList.filter({$0["transactionId"] != transactionId})
-            let diskPath = self.ex_627b()
+            let diskPath = self.p_5217()
             NSKeyedArchiver.archiveRootObject(newSubscribeCacheList, toFile: diskPath)
  
             // 成功回调
@@ -179,22 +179,22 @@ extension AppleIAPManager {
 // MARK: - Event
 extension AppleIAPManager {
     /// 初始化数据
-    private func jr_63a0() {
-        self.payCacheList = vd_157d(payType: .Pay)
-        self.subscribeCacheList = vd_157d(payType: .Subscribe)
+    private func p_604a() {
+        self.payCacheList = p_4e8b(payType: .Pay)
+        self.subscribeCacheList = p_4e8b(payType: .Subscribe)
         self.createOrderId = nil
     }
     
     /// 获取缓存列表
     /// - Parameter payType: 支付类型
     /// - Returns: 缓存列表
-    private func vd_157d(payType: ApplePayType) -> [[String: String]] {
+    private func p_4e8b(payType: ApplePayType) -> [[String: String]] {
         var list: [[String: String]]?
         var diskPath = ""
         if payType == .Pay {
-            diskPath = gb_1a8e()
+            diskPath = p_1051()
         } else {
-            diskPath = ex_627b()
+            diskPath = p_5217()
         }
         
         if FileManager.default.fileExists(atPath: diskPath) {
@@ -211,7 +211,7 @@ extension AppleIAPManager {
     
     /// 获取【购买】缓存路径【和uid关联】
     /// - Returns: 缓存路径
-    private func gb_1a8e() -> String {
+    private func p_1051() -> String {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
         let appDirectoryPath = (documentDirectoryPath as NSString).appendingPathComponent("App")
         
@@ -226,7 +226,7 @@ extension AppleIAPManager {
     
     /// 获取【订阅】缓存路径【和uid关联】
     /// - Returns: 缓存路径
-    private func ex_627b() -> String {
+    private func p_5217() -> String {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
         let appDirectoryPath = (documentDirectoryPath as NSString).appendingPathComponent("App")
         
@@ -244,7 +244,7 @@ extension AppleIAPManager {
     ///   - transactionId: 收据标识符
     ///   - payType: 支付类型
     /// - Returns: 收据数据
-    fileprivate func aa_54c1(_ transactionId: String, _ payType: ApplePayType) -> String? {
+    fileprivate func p_13de(_ transactionId: String, _ payType: ApplePayType) -> String? {
         // 有未完成的订单，先取缓存
         var paramsArr = [[String: String]]()
         switch(payType) {
@@ -268,17 +268,17 @@ extension AppleIAPManager {
 // MARK: - 失败重试流程
 extension AppleIAPManager {
     /// 检测未完成的苹果支付【只会重试当前登录用户】
-    func rr_66e0() {
-        jr_63a0()
+    func p_5cbd() {
+        p_604a()
 
         // 【购买】失败重试
         for dict in self.payCacheList {
-            cq_2683(dict["transactionId"], .Pay)
+            p_1e83(dict["transactionId"], .Pay)
         }
         
         // 【订阅】失败重试
         for dict in self.subscribeCacheList {
-            cq_2683(dict["transactionId"], .Subscribe)
+            p_1e83(dict["transactionId"], .Subscribe)
         }
     }
     
@@ -286,12 +286,12 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transactionId: Id
     ///   - payType: 支付类型
-    private func cq_2683(_ transactionId: String?, _ payType: ApplePayType) {
+    private func p_1e83(_ transactionId: String?, _ payType: ApplePayType) {
         guard let transactionId = transactionId else { return }
         // 初始化每个交易请求次数
         reqRetryCountDict[transactionId] = 0
         // 3. 服务端校验流程
-        ek_67e4(transactionId, payType)
+        p_7922(transactionId, payType)
     }
 }
 
@@ -303,15 +303,15 @@ extension AppleIAPManager {
     ///   - payType: 支付类型
     ///   - handle: 回调
     ///   - source: 0 常规充值 1 观看视频后充值或订阅
-    func wz_5be6(productId: String, payType: ApplePayType, source: Int = 0, handle: @escaping IAPcompletionHandle) {
-        jr_63a0()
+    func p_2210(productId: String, payType: ApplePayType, source: Int = 0, handle: @escaping IAPcompletionHandle) {
+        p_604a()
         self.completionHandle = handle
         self.currentPayType = payType
         
         // 1. 根据类型创建订单
         switch(payType) {
         case .Pay:
-            al_7206(productId: productId, source: source) { [weak self] orderId, succeed in
+            p_3043(productId: productId, source: source) { [weak self] orderId, succeed in
                 guard let self = self else { return }
                 guard succeed == true && orderId != nil else { // 订单创建失败
                     self.completionHandle?(.createOrderFail, 0, .Pay)
@@ -323,7 +323,7 @@ extension AppleIAPManager {
             }
         
         case .Subscribe:
-            vh_28a7(productId: productId, source: source) { [weak self] orderId, succeed in
+            p_33cf(productId: productId, source: source) { [weak self] orderId, succeed in
                 guard let self = self else { return }
                 guard succeed == true && orderId != nil else { // 订单创建失败
                     self.completionHandle?(.createOrderFail, 0, .Subscribe)
@@ -344,7 +344,7 @@ extension AppleIAPManager {
         }
         
         // 销毁当前请求
-        self.vg_7463()
+        self.p_0938()
         // 查询apple内购商品
         let identifiers: Set<String> = [productId]
         productInfoReq = SKProductsRequest(productIdentifiers: identifiers)
@@ -353,7 +353,7 @@ extension AppleIAPManager {
     }
     
     // 销毁当前请求
-    fileprivate func vg_7463() {
+    fileprivate func p_0938() {
         guard productInfoReq != nil else { return }
         productInfoReq?.delegate = nil
         productInfoReq?.cancel()
@@ -406,7 +406,7 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
                     // 初始化每个交易请求次数
                     reqRetryCountDict[transaction.transactionIdentifier!] = 0
                     // 3. 服务端校验流程
-                    ek_67e4(transaction.transactionIdentifier!, self.currentPayType)
+                    p_7922(transaction.transactionIdentifier!, self.currentPayType)
                 }
                 // 移除苹果支付系统缓存
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -440,8 +440,8 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
     /// - Parameters:
     ///   - transactionId: 交易唯一标识符
     ///   - payType: 支付类型
-    fileprivate func ek_67e4(_ transactionId: String, _ payType: ApplePayType) {
-        guard let receiptStr = aa_54c1(transactionId, payType) else {
+    fileprivate func p_7922(_ transactionId: String, _ payType: ApplePayType) {
+        guard let receiptStr = p_13de(transactionId, payType) else {
             self.completionHandle?(.verityFail, 0, payType)
             return
         }
@@ -455,7 +455,7 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
                                      "orderId": createOrderId!,
                                      "verifyData": receiptStr]
                     self.payCacheList.append(cacheDict)
-                    let diskPath = self.gb_1a8e()
+                    let diskPath = self.p_1051()
                     NSKeyedArchiver.archiveRootObject(self.payCacheList, toFile: diskPath)
                 }
                 
@@ -465,7 +465,7 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
                                      "orderId": createOrderId!,
                                      "verifyData": receiptStr]
                     self.subscribeCacheList.append(cacheDict)
-                    let diskPath = self.ex_627b()
+                    let diskPath = self.p_5217()
                     NSKeyedArchiver.archiveRootObject(self.subscribeCacheList, toFile: diskPath)
                 }
             }
@@ -485,12 +485,12 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
         case .Pay:
             let paramsArr = self.payCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            fv_12ef(transactionId, params: paramsArr.first!)
+            p_7209(transactionId, params: paramsArr.first!)
             
         case .Subscribe:
             let paramsArr = self.subscribeCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            qd_4928(transactionId, params: paramsArr.first!)
+            p_7595(transactionId, params: paramsArr.first!)
         }
     }
 }

@@ -16,10 +16,10 @@ let ReplaceUrlDomain: String = {
 }()
 
 /// 包ID
-let PackageID = "2020"
+let PackageID = "2021"
 /// Adjust
-let AdjustKey = "3rhcdcv7zxc0"
-let AdInstallToken = "y7hqge"
+let AdjustKey = "1rfoaesx4eww"
+let AdInstallToken = "qiuezj"
 
 /// 网络版本号
 let AppNetVersion = "1.9.1"

@@ -5,12 +5,12 @@ import StoreKit
 let APPLE_IAP_MAX_RETRY_COUNT = 9
 
 /// 支付类型
-enum codegalxPaymentType {
+enum ApplePayType {
     case Pay        // 支付
     case Subscribe  // 订阅
 }
 /// 支付状态
-enum codegalxPaymentStatus: String {
+enum AppleIAPStatus: String {
     case unknow            = "未知类型"
     case createOrderFail   = "创建订单失败"
     case notArrow          = "设备不允许"
@@ -23,20 +23,20 @@ enum codegalxPaymentStatus: String {
     case renewSucceed      = "自动续订成功"
 }
 
-typealias codegalxPurchaseCompletion = (codegalxPaymentStatus, Double, codegalxPaymentType) -> Void
+typealias IAPcompletionHandle = (AppleIAPStatus, Double, ApplePayType) -> Void
 
-class codegalxPurchaseSession: NSObject {
+class AppleIAPManager: NSObject {
     
-    var completionHandle: codegalxPurchaseCompletion?
+    var completionHandle: IAPcompletionHandle?
     private var productInfoReq: SKProductsRequest?
     private var reqRetryCountDict = [String: Int]()         // 记录每个交易请求重试次数
     private var payCacheList = [[String: String]]()         // 【购买】缓存数据
     private var subscribeCacheList = [[String: String]]()   // 【订阅】缓存数据
     private var createOrderId: String?                      // 当前支付服务端创建的订单id
-    private var currentPayType: codegalxPaymentType = .Pay         // 当前支付类型
+    private var currentPayType: ApplePayType = .Pay         // 当前支付类型
     
     // singleton
-    static let shared = codegalxPurchaseSession()
+    static let shared = AppleIAPManager()
     override func copy() -> Any { return self }
     override func mutableCopy() -> Any { return self }
     private override init() {
@@ -55,19 +55,19 @@ class codegalxPurchaseSession: NSObject {
 }
 
 // MARK: - 【苹果购买】业务接口
-extension codegalxPurchaseSession {
+extension AppleIAPManager {
     /// 【购买】创建业务订单
     /// - Parameters:
     ///   - productId: 产品Id
     ///   - block: 回调
-    fileprivate func req_pay_createAppleOrder(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
-        let reqModel = codegalxRequestPayload.init()
-        reqModel.requestPath = ["mf","recharge","createApplePay"].joined(separator: "/")
+    fileprivate func ss_508f(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
+        let reqModel = AppRequestModel.init()
+        reqModel.requestPath = "mf/recharge/createApplePay"
         var dict = Dictionary<String, Any>()
         dict["productId"] = productId
         dict["source"] = source
         reqModel.params = dict
-        codegalxNetworkClient.startPostRequest(model: reqModel) { succeed, result, errorModel in
+        AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true else {
                 handle(nil, succeed)
                 return
@@ -86,14 +86,14 @@ extension codegalxPurchaseSession {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func req_pay_uploadAppletransaction(_ transactionId: String, params: [String: String]) {
-        let reqModel = codegalxRequestPayload.init()
-        reqModel.requestPath = ["mf","recharge","applePayNotify"].joined(separator: "/")
+    fileprivate func io_7946(_ transactionId: String, params: [String: String]) {
+        let reqModel = AppRequestModel.init()
+        reqModel.requestPath = "mf/recharge/applePayNotify"
         reqModel.params = params
-        codegalxNetworkClient.startPostRequest(model: reqModel) { succeed, result, errorModel in
+        AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else { // 验证接口失败，重试接口
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                    self.transcationPurchasedToCheck(transactionId, .Pay)
+                    self.qc_7145(transactionId, .Pay)
                 }
                 return
             }
@@ -106,7 +106,7 @@ extension codegalxPurchaseSession {
             
             // 过滤已验证成功的订单数据
             let newPayCacheList = self.payCacheList.filter({$0["transactionId"] != transactionId})
-            let diskPath = self.getPayCachePath()
+            let diskPath = self.rx_5088()
             NSKeyedArchiver.archiveRootObject(newPayCacheList, toFile: diskPath)
                         
             // 成功回调
@@ -116,19 +116,19 @@ extension codegalxPurchaseSession {
 }
 
 // MARK: - 【苹果订阅】业务接口
-extension codegalxPurchaseSession {
+extension AppleIAPManager {
     /// 【订阅】创建业务订单
     /// - Parameters:
     ///   - productId: 产品Id
     ///   - block: 回调
-    fileprivate func req_subscribe_createAppleOrder(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
-        let reqModel = codegalxRequestPayload.init()
-        reqModel.requestPath = ["mf","AutoSub","AppleCreateOrder"].joined(separator: "/")
+    fileprivate func xx_762c(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
+        let reqModel = AppRequestModel.init()
+        reqModel.requestPath = "mf/AutoSub/AppleCreateOrder"
         var dict = Dictionary<String, Any>()
         dict["productId"] = productId
         dict["source"] = source
         reqModel.params = dict
-        codegalxNetworkClient.startPostRequest(model: reqModel) { succeed, result, errorModel in
+        AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true else {
                 handle(nil, succeed)
                 return
@@ -147,14 +147,14 @@ extension codegalxPurchaseSession {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func req_subscribe_uploadAppletransaction(_ transactionId: String, params: [String: String]) {
-        let reqModel = codegalxRequestPayload.init()
-        reqModel.requestPath = ["mf","AutoSub","ApplePaySuccess"].joined(separator: "/")
+    fileprivate func td_61ce(_ transactionId: String, params: [String: String]) {
+        let reqModel = AppRequestModel.init()
+        reqModel.requestPath = "mf/AutoSub/ApplePaySuccess"
         reqModel.params = params
-        codegalxNetworkClient.startPostRequest(model: reqModel) { succeed, result, errorModel in
+        AppRequestTool.startPostRequest(model: reqModel) { succeed, result, errorModel in
             guard succeed == true || errorModel?.errorCode == 405 else { // 验证接口失败，重试接口
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                    self.transcationPurchasedToCheck(transactionId, .Subscribe)
+                    self.qc_7145(transactionId, .Subscribe)
                 }
                 return
             }
@@ -167,7 +167,7 @@ extension codegalxPurchaseSession {
 
             // 过滤已验证成功的订单数据
             let newSubscribeCacheList = self.subscribeCacheList.filter({$0["transactionId"] != transactionId})
-            let diskPath = self.getSubscribeCachePath()
+            let diskPath = self.ga_14d2()
             NSKeyedArchiver.archiveRootObject(newSubscribeCacheList, toFile: diskPath)
  
             // 成功回调
@@ -177,24 +177,24 @@ extension codegalxPurchaseSession {
 }
 
 // MARK: - Event
-extension codegalxPurchaseSession {
+extension AppleIAPManager {
     /// 初始化数据
-    private func iap_initData() {
-        self.payCacheList = getLocalPayCacheList(payType: .Pay)
-        self.subscribeCacheList = getLocalPayCacheList(payType: .Subscribe)
+    private func qp_4437() {
+        self.payCacheList = qw_17bd(payType: .Pay)
+        self.subscribeCacheList = qw_17bd(payType: .Subscribe)
         self.createOrderId = nil
     }
     
     /// 获取缓存列表
     /// - Parameter payType: 支付类型
     /// - Returns: 缓存列表
-    private func getLocalPayCacheList(payType: codegalxPaymentType) -> [[String: String]] {
+    private func qw_17bd(payType: ApplePayType) -> [[String: String]] {
         var list: [[String: String]]?
         var diskPath = ""
         if payType == .Pay {
-            diskPath = getPayCachePath()
+            diskPath = rx_5088()
         } else {
-            diskPath = getSubscribeCachePath()
+            diskPath = ga_14d2()
         }
         
         if FileManager.default.fileExists(atPath: diskPath) {
@@ -211,7 +211,7 @@ extension codegalxPurchaseSession {
     
     /// 获取【购买】缓存路径【和uid关联】
     /// - Returns: 缓存路径
-    private func getPayCachePath() -> String {
+    private func rx_5088() -> String {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
         let appDirectoryPath = (documentDirectoryPath as NSString).appendingPathComponent("App")
         
@@ -220,13 +220,13 @@ extension codegalxPurchaseSession {
            try? fileManager.createDirectory(atPath: appDirectoryPath, withIntermediateDirectories: true)
         }
     
-        let filePath = (appDirectoryPath as NSString).appendingPathComponent("azsc_pay")
+        let filePath = (appDirectoryPath as NSString).appendingPathComponent("OrderTransactionInfo_Cache")
         return filePath
     }
     
     /// 获取【订阅】缓存路径【和uid关联】
     /// - Returns: 缓存路径
-    private func getSubscribeCachePath() -> String {
+    private func ga_14d2() -> String {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
         let appDirectoryPath = (documentDirectoryPath as NSString).appendingPathComponent("App")
         
@@ -235,7 +235,7 @@ extension codegalxPurchaseSession {
            try? fileManager.createDirectory(atPath: appDirectoryPath, withIntermediateDirectories: true)
         }
     
-        let filePath = (appDirectoryPath as NSString).appendingPathComponent("azsc_sub")
+        let filePath = (appDirectoryPath as NSString).appendingPathComponent("OrderTransactionInfo_Subscribe_Cache")
         return filePath
     }
  
@@ -244,7 +244,7 @@ extension codegalxPurchaseSession {
     ///   - transactionId: 收据标识符
     ///   - payType: 支付类型
     /// - Returns: 收据数据
-    fileprivate func getVerifyData(_ transactionId: String, _ payType: codegalxPaymentType) -> String? {
+    fileprivate func zh_35d8(_ transactionId: String, _ payType: ApplePayType) -> String? {
         // 有未完成的订单，先取缓存
         var paramsArr = [[String: String]]()
         switch(payType) {
@@ -266,19 +266,19 @@ extension codegalxPurchaseSession {
 }
 
 // MARK: - 失败重试流程
-extension codegalxPurchaseSession {
+extension AppleIAPManager {
     /// 检测未完成的苹果支付【只会重试当前登录用户】
-    func iap_checkUnfinishedTransactions() {
-        iap_initData()
+    func db_275d() {
+        qp_4437()
 
         // 【购买】失败重试
         for dict in self.payCacheList {
-            iap_failedRetry(dict["transactionId"], .Pay)
+            tw_0225(dict["transactionId"], .Pay)
         }
         
         // 【订阅】失败重试
         for dict in self.subscribeCacheList {
-            iap_failedRetry(dict["transactionId"], .Subscribe)
+            tw_0225(dict["transactionId"], .Subscribe)
         }
     }
     
@@ -286,32 +286,32 @@ extension codegalxPurchaseSession {
     /// - Parameters:
     ///   - transactionId: Id
     ///   - payType: 支付类型
-    private func iap_failedRetry(_ transactionId: String?, _ payType: codegalxPaymentType) {
+    private func tw_0225(_ transactionId: String?, _ payType: ApplePayType) {
         guard let transactionId = transactionId else { return }
         // 初始化每个交易请求次数
         reqRetryCountDict[transactionId] = 0
         // 3. 服务端校验流程
-        transcationPurchasedToCheck(transactionId, payType)
+        qc_7145(transactionId, payType)
     }
 }
 
 // MARK: - 苹果正常支付流程
-extension codegalxPurchaseSession {
+extension AppleIAPManager {
     /// 发起苹果支付【1.创建订单； 2.发起苹果支付； 3.服务端校验】
     /// - Parameters:
     ///   - purchID: 产品ID
     ///   - payType: 支付类型
     ///   - handle: 回调
     ///   - source: 0 常规充值 1 观看视频后充值或订阅
-    func iap_startPurchase(productId: String, payType: codegalxPaymentType, source: Int = 0, handle: @escaping codegalxPurchaseCompletion) {
-        iap_initData()
+    func gl_1218(productId: String, payType: ApplePayType, source: Int = 0, handle: @escaping IAPcompletionHandle) {
+        qp_4437()
         self.completionHandle = handle
         self.currentPayType = payType
         
         // 1. 根据类型创建订单
         switch(payType) {
         case .Pay:
-            req_pay_createAppleOrder(productId: productId, source: source) { [weak self] orderId, succeed in
+            ss_508f(productId: productId, source: source) { [weak self] orderId, succeed in
                 guard let self = self else { return }
                 guard succeed == true && orderId != nil else { // 订单创建失败
                     self.completionHandle?(.createOrderFail, 0, .Pay)
@@ -323,7 +323,7 @@ extension codegalxPurchaseSession {
             }
         
         case .Subscribe:
-            req_subscribe_createAppleOrder(productId: productId, source: source) { [weak self] orderId, succeed in
+            xx_762c(productId: productId, source: source) { [weak self] orderId, succeed in
                 guard let self = self else { return }
                 guard succeed == true && orderId != nil else { // 订单创建失败
                     self.completionHandle?(.createOrderFail, 0, .Subscribe)
@@ -344,7 +344,7 @@ extension codegalxPurchaseSession {
         }
         
         // 销毁当前请求
-        self.clearProductInfoRequest()
+        self.hk_043b()
         // 查询apple内购商品
         let identifiers: Set<String> = [productId]
         productInfoReq = SKProductsRequest(productIdentifiers: identifiers)
@@ -353,7 +353,7 @@ extension codegalxPurchaseSession {
     }
     
     // 销毁当前请求
-    fileprivate func clearProductInfoRequest() {
+    fileprivate func hk_043b() {
         guard productInfoReq != nil else { return }
         productInfoReq?.delegate = nil
         productInfoReq?.cancel()
@@ -362,7 +362,7 @@ extension codegalxPurchaseSession {
 }
 
 // MARK: - SKProductsRequestDelegate【商品查询】
-extension codegalxPurchaseSession: SKProductsRequestDelegate {
+extension AppleIAPManager: SKProductsRequestDelegate {
     // 查询apple内购商品成功回调
      func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
          guard response.products.count > 0 else {
@@ -386,7 +386,7 @@ extension codegalxPurchaseSession: SKProductsRequestDelegate {
 }
 
 // MARK: - SKPaymentTransactionObserver【支付回调】
-extension codegalxPurchaseSession: SKPaymentTransactionObserver {
+extension AppleIAPManager: SKPaymentTransactionObserver {
     /// 2.2 apple内购完成回调
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
@@ -406,7 +406,7 @@ extension codegalxPurchaseSession: SKPaymentTransactionObserver {
                     // 初始化每个交易请求次数
                     reqRetryCountDict[transaction.transactionIdentifier!] = 0
                     // 3. 服务端校验流程
-                    transcationPurchasedToCheck(transaction.transactionIdentifier!, self.currentPayType)
+                    qc_7145(transaction.transactionIdentifier!, self.currentPayType)
                 }
                 // 移除苹果支付系统缓存
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -440,8 +440,8 @@ extension codegalxPurchaseSession: SKPaymentTransactionObserver {
     /// - Parameters:
     ///   - transactionId: 交易唯一标识符
     ///   - payType: 支付类型
-    fileprivate func transcationPurchasedToCheck(_ transactionId: String, _ payType: codegalxPaymentType) {
-        guard let receiptStr = getVerifyData(transactionId, payType) else {
+    fileprivate func qc_7145(_ transactionId: String, _ payType: ApplePayType) {
+        guard let receiptStr = zh_35d8(transactionId, payType) else {
             self.completionHandle?(.verityFail, 0, payType)
             return
         }
@@ -455,7 +455,7 @@ extension codegalxPurchaseSession: SKPaymentTransactionObserver {
                                      "orderId": createOrderId!,
                                      "verifyData": receiptStr]
                     self.payCacheList.append(cacheDict)
-                    let diskPath = self.getPayCachePath()
+                    let diskPath = self.rx_5088()
                     NSKeyedArchiver.archiveRootObject(self.payCacheList, toFile: diskPath)
                 }
                 
@@ -465,7 +465,7 @@ extension codegalxPurchaseSession: SKPaymentTransactionObserver {
                                      "orderId": createOrderId!,
                                      "verifyData": receiptStr]
                     self.subscribeCacheList.append(cacheDict)
-                    let diskPath = self.getSubscribeCachePath()
+                    let diskPath = self.ga_14d2()
                     NSKeyedArchiver.archiveRootObject(self.subscribeCacheList, toFile: diskPath)
                 }
             }
@@ -485,12 +485,12 @@ extension codegalxPurchaseSession: SKPaymentTransactionObserver {
         case .Pay:
             let paramsArr = self.payCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            req_pay_uploadAppletransaction(transactionId, params: paramsArr.first!)
+            io_7946(transactionId, params: paramsArr.first!)
             
         case .Subscribe:
             let paramsArr = self.subscribeCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            req_subscribe_uploadAppletransaction(transactionId, params: paramsArr.first!)
+            td_61ce(transactionId, params: paramsArr.first!)
         }
     }
 }

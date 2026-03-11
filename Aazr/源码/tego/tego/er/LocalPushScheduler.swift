@@ -2,9 +2,9 @@ import Foundation
 import UserNotifications
 
 
-public class codegalxNotifyScheduler: NSObject {
+public class LocalPushScheduler: NSObject {
     
-    public static let shared = codegalxNotifyScheduler()
+    public static let shared = LocalPushScheduler()
     
     private override init() {
         super.init()
@@ -58,7 +58,7 @@ public class codegalxNotifyScheduler: NSObject {
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerComponents, repeats: true)
                 
                 // 创建唯一标识符 (基于周几和小时，确保 7天xN次 都不重合)
-                let identifier = "azlp_\(weekday)_\(hour)"
+                let identifier = "offmarket_loop_\(weekday)_\(hour)"
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                 center.add(request) { _ in }
                 // 递增索引，下次取下一条文案

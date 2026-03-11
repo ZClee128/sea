@@ -11,7 +11,6 @@ import FirebaseMessaging
 import UserNotifications
 import AVFAudio
 import FirebaseRemoteConfig
-import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = waitVC
         self.window?.makeKeyAndVisible()
-        kz_7f00()
+        initFireBase()
         let config = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
@@ -32,35 +31,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         config.fetch { (status, error) -> Void in
             if status == .success {
                 config.activate { changed, error in
-                    let remoteVersion = config.configValue(forKey: "Aazr").numberValue.intValue
+                    let remoteVersion = config.configValue(forKey: "Azra").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
-                    if remoteVersion > appVersion {
-                        self.hh_6dfa(application)
-                    } else {
-                        self.xb_5c92()
+                    if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
+                        self.p_6763(application)
+                        
+                    } else { // 展示A面
+                        self.p_2929()
                     }
                 }
-            } else {
-                let endTimeInterval: TimeInterval = 1774873933
-                if Date().timeIntervalSince1970 > endTimeInterval && self.ck_1bc9() {
-                    self.hh_6dfa(application)
-                } else {
-                    self.xb_5c92()
+            } else { // 远程配置获取失败，验证本地时间戳
+                let endTimeInterval: TimeInterval = 1774873999 // 预设时间(秒)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.p_259d() { // 本地时间戳大于预设时间，进入B面
+                    self.p_6763(application)
+                    
+                } else { // 展示A面
+                    self.p_2929()
                 }
             }
         }
         return true
     }
 
-    private func ck_1bc9() -> Bool {
+    /// 是否iPAD
+    private func p_259d() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
-    }
+     }
     
-    private func hh_6dfa(_ application: UIApplication) {
-        up_73ff(application)
+    /// 初始化项目
+    private func p_6763(_ application: UIApplication) {
+        p_6af0(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.db_275d()
+        AppleIAPManager.shared.p_5cbd()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -72,36 +75,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func xb_5c92() {
+    private func p_2929() {
         DispatchQueue.main.async {
+            // Configure audio session for background playback
             do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: .mixWithOthers)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
-                print("Failed to set audio session category. Error: \(error)")
+                print("AVAudioSession setup failed: \(error)")
             }
             
-            if #available(iOS 15, *) {
-                let rootView = RootRouterView()
-                    .environmentObject(FavoritesManager.shared)
-                self.window?.rootViewController = UIHostingController(rootView: rootView)
-                self.window?.makeKeyAndVisible()
-                Task.detached {
-                    await StoreManager.shared.fetchProducts()
-                }
+            // Register StoreKit payment observer at launch (required by Apple)
+            StoreManager.shared.start()
+            
+            // Simple logic to decide which screen to show first
+            let hasAgreed = UserDefaults.standard.bool(forKey: "HasAgreedToTerms")
+            
+            if hasAgreed {
+                let rootVC = MainTabBarController()
+                self.window?.rootViewController = rootVC
+            } else {
+                let rootVC = AgreementViewController()
+                self.window?.rootViewController = rootVC
             }
+            
+            // Force light mode explicitly here to avoid Simulator caching issues with Info.plist
+            self.window?.overrideUserInterfaceStyle = .light
+            self.window?.backgroundColor = .white
+            self.window?.makeKeyAndVisible()
         }
     }
 }
 
 // MARK: - Firebase
 extension AppDelegate: MessagingDelegate {
-    private func kz_7f00() {
+    private func initFireBase() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
     }
     
-    func up_73ff(_ application: UIApplication) {
+    func p_6af0(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -114,6 +127,7 @@ extension AppDelegate: MessagingDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // 注册远程通知, 将deviceToken传递过去
         let deviceStr = deviceToken.map { String(format: "%02hhx", $0) }.joined()
         Messaging.messaging().apnsToken = deviceToken
         print("APNS Token = \(deviceStr)")
@@ -135,6 +149,7 @@ extension AppDelegate: MessagingDelegate {
         completionHandler()
     }
     
+    // 注册推送失败回调
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("didFailToRegisterForRemoteNotificationsWithError = \(error.localizedDescription)")
     }

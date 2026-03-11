@@ -1,13 +1,13 @@
 //
-//  codegalxSplashController.swift
-
+//  WaitViewController.swift
+//  OverseaH5
 //
 //  Created by DouXiu on 2025/11/27.
 //
 
 import UIKit
 
-class codegalxSplashController: UIViewController {
+class WaitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

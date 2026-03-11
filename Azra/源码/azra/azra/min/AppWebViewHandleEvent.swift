@@ -62,7 +62,7 @@ struct UserInfoModel: HandyJSON {
 }
 
 extension AppWebViewController {
-    func p_176a(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
+    func lb_55b2(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
         if let model = JSMessageModel.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
@@ -108,14 +108,14 @@ extension AppWebViewController {
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.p_43e5(productId: goodsId, source: source, payType: .Pay) { success in
+                    self.iv_4617(productId: goodsId, source: source, payType: .Pay) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.p_43e5(productId: goodsId, payType: .Subscribe) { success in
+                    self.iv_4617(productId: goodsId, payType: .Subscribe) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
@@ -128,7 +128,7 @@ extension AppWebViewController {
                 
             case closeWebview:
                 callBack(["typeName": model.typeName])
-                self.p_4afe()
+                self.qw_4a55()
                 
             case openNewWebview:
                 callBack(["typeName": model.typeName])
@@ -140,7 +140,7 @@ extension AppWebViewController {
                 
             case reloadWebview:
                 callBack(["typeName": model.typeName])
-                self.p_2cb6()
+                self.rc_36aa()
             
             case openSettings:
                 callBack(["typeName": model.typeName])
@@ -319,13 +319,13 @@ extension AppWebViewController {
     /// - Parameters:
     ///   - productId: productId: 商品Id
     ///   - source: 充值来源
-    func p_43e5(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
+    func iv_4617(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
         ProgressHUD.show()
         var index = 0
         if source != -1 {
             index = source
         }
-        AppleIAPManager.shared.p_2210(productId: productId, payType: payType, source: index) { status, _, _ in
+        AppleIAPManager.shared.wz_5be6(productId: productId, payType: payType, source: index) { status, _, _ in
             ProgressHUD.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
@@ -335,7 +335,7 @@ extension AppWebViewController {
                     
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.p_375c()
+                    self.cw_4547()
                     
                 default:
                     print(" apple支付充值失败：\(status.rawValue)")

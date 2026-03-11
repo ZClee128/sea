@@ -1,6 +1,6 @@
 //
-//  codegalxBridgeMessageProxy.swift
-
+//  AppWebViewScriptDelegateHandler.swift
+//  OverseaH5
 //
 //  Created by young on 2025/9/24.
 //
@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import WebKit
 
-class codegalxBridgeMessageProxy: NSObject, WKScriptMessageHandler {
+class AppWebViewScriptDelegateHandler: NSObject, WKScriptMessageHandler {
     weak var scriptDelegate: WKScriptMessageHandler?
     
     init(_ scriptDelegate: WKScriptMessageHandler) {

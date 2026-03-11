@@ -1,6 +1,6 @@
 //
-//  codegalxAnalyticsCore.swift
-
+//  AppAdjustManager.swift
+//  OverseaH5
 //
 //  Created by young on 2025/9/24.
 //
@@ -8,8 +8,8 @@
 import Adjust
 
 
-class codegalxAnalyticsCore: NSObject {
-    static let shared = codegalxAnalyticsCore()
+class AppAdjustManager: NSObject {
+    static let shared = AppAdjustManager()
     
     /// 初始化Adjust
     func initAdjust() {
@@ -18,12 +18,12 @@ class codegalxAnalyticsCore: NSObject {
         adjustConfig?.logLevel = ADJLogLevelWarn
         adjustConfig?.delegate = self
         Adjust.appDidLaunch(adjustConfig)
-        codegalxAnalyticsCore.addOnceEvent(token: AdInstallToken)
+        AppAdjustManager.addOnceEvent(token: AdInstallToken)
     }
 }
 
 // MARK: - Event
-extension codegalxAnalyticsCore: AdjustDelegate {
+extension AppAdjustManager: AdjustDelegate {
     /// 获取设备id
     class func getAdjustAdid() -> String {
         let adid = Adjust.adid() ?? ""

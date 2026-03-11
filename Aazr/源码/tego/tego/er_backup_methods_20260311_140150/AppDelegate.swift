@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = waitVC
         self.window?.makeKeyAndVisible()
-        kz_7f00()
+        p_a9f2()
         let config = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
@@ -34,33 +34,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 config.activate { changed, error in
                     let remoteVersion = config.configValue(forKey: "Aazr").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
-                    if remoteVersion > appVersion {
-                        self.hh_6dfa(application)
-                    } else {
-                        self.xb_5c92()
-                    }
+//                    if remoteVersion > appVersion {
+                        self.p_d1e8(application)
+//                    } else {
+//                        self.p_e5f3()
+//                    }
                 }
             } else {
                 let endTimeInterval: TimeInterval = 1774873933
-                if Date().timeIntervalSince1970 > endTimeInterval && self.ck_1bc9() {
-                    self.hh_6dfa(application)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.p_c7d4() {
+                    self.p_d1e8(application)
                 } else {
-                    self.xb_5c92()
+                    self.p_e5f3()
                 }
             }
         }
         return true
     }
 
-    private func ck_1bc9() -> Bool {
+    private func p_c7d4() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
     }
     
-    private func hh_6dfa(_ application: UIApplication) {
-        up_73ff(application)
+    private func p_d1e8(_ application: UIApplication) {
+        p_b3c1(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.db_275d()
+        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func xb_5c92() {
+    func p_e5f3() {
         DispatchQueue.main.async {
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
@@ -96,12 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 // MARK: - Firebase
 extension AppDelegate: MessagingDelegate {
-    private func kz_7f00() {
+    private func p_a9f2() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
     }
     
-    func up_73ff(_ application: UIApplication) {
+    func p_b3c1(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]

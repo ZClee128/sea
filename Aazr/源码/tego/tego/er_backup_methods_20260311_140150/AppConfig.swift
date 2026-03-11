@@ -9,12 +9,7 @@ import KeychainSwift
 import UIKit
 
 /// 域名
-
-let ReplaceUrlDomain: String = {
-    let b: [UInt8] = [0x63, 0x6f, 0x64, 0x65, 0x67, 0x61, 0x6c, 0x78]
-    return String(bytes: b, encoding: .utf8) ?? ""
-}()
-
+let ReplaceUrlDomain = "codegalx"
 /// 包ID
 let PackageID = "2020"
 /// Adjust

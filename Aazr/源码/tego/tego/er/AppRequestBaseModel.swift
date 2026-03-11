@@ -1,7 +1,7 @@
 import Foundation
 import HandyJSON
  
-class codegalxRequestPayload: NSObject {
+class AppRequestModel: NSObject {
     
     @objc var requestPath: String = ""
     var requestServer: String = ""
@@ -13,14 +13,14 @@ class codegalxRequestPayload: NSObject {
 }
 
 /// 通用Model
-struct codegalxBaseResponse: HandyJSON {
+struct AppBaseResponse: HandyJSON {
     var errno: Int!  // 服务端返回码
     var msg: String? // 服务端返回码
     var data: Any?   // 具体的data的格式和业务相关，故用泛型定义
 }
 
 /// 通用Model
-public struct codegalxErrorResponse {
+public struct AppErrorResponse {
     let errorCode: Int
     let errorMsg: String
     init(errorCode: Int, errorMsg: String) {

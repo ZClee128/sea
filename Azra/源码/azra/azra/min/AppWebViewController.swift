@@ -55,8 +55,8 @@ class AppWebViewController: UIViewController {
         }
         self.webView.frame = frame
  
-        self.p_021f()
-        self.p_05ab()
+        self.gq_62d4()
+        self.fb_532e()
  
         // 应用从后台切换到前台
         NotificationCenter.default.addObserver(self,
@@ -73,25 +73,25 @@ class AppWebViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         jsEvent_onPageHide()
-        p_0cc4()
+        ez_10f8()
     }
 
     deinit {
-        p_6e7c()
-        p_0cc4()
+        jh_67de()
+        ez_10f8()
     }
 
     /// 发起网页请求
-    private func p_05ab() {
+    private func fb_532e() {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
             self.webView.load(urlRequest)
-            self.p_4771()
+            self.ax_4708()
         }
     }
     
     /// 设置页面为透明
-    private func p_4771() {
+    private func ax_4708() {
         guard clearBgColor == true else { return }
         webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'") { _, _  in
         }
@@ -105,13 +105,13 @@ class AppWebViewController: UIViewController {
     }
     
     /// 关闭webview事件
-    func p_4afe() {
+    func qw_4a55() {
         if webView.canGoBack {
             webView.goBack()
             return
         }
         
-        p_6e7c()
+        jh_67de()
         if self.presentingViewController != nil {
             // 当前页面dismiss后，下面还是网页时，手动调用viewDidAppear
             dismiss(animated: true) {
@@ -135,8 +135,8 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         // 兼容老事件
         DispatchQueue.main.async {
             let type = message.name
-            if type == "p_4afe" {
-                self.p_4afe()
+            if type == "qw_4a55" {
+                self.qw_4a55()
                 
             } else if type == "toUrl" {
                 if let url = message.body as? String {
@@ -146,38 +146,38 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         }
     }
 
-    func p_021f() {
+    func gq_62d4() {
         self.bridge = WebViewJavascriptBridge(self.webView)
         self.bridge?.setWebViewDelegate(self)
         self.bridge?.registerHandler("syncAppInfo", handler: { data, callback in
             print("js call getUserIdFromObjC, data from js is %@", data as Any)
             if callback != nil {
                 if let dic = data as? [String: Any] {
-                    self.p_176a(schemeDic: dic) { backDic in
+                    self.lb_55b2(schemeDic: dic) { backDic in
                         callback?(backDic)
                         DispatchQueue.main.async {
-                            self.p_55a4(dic: backDic)
+                            self.qp_04d0(dic: backDic)
                         }
                     }
                 }
             }
         })
         let ucController = self.webView.configuration.userContentController
-        ucController.add(AppWebViewScriptDelegateHandler(self), name: "p_4afe")
+        ucController.add(AppWebViewScriptDelegateHandler(self), name: "qw_4a55")
         ucController.add(AppWebViewScriptDelegateHandler(self), name: "toUrl")
     }
 
-    func p_6e7c() {
+    func jh_67de() {
         let ucController = self.webView.configuration.userContentController
         if #available(iOS 14.0, *) {
             ucController.removeAllScriptMessageHandlers()
         } else {
-            ucController.removeScriptMessageHandler(forName: "p_4afe")
+            ucController.removeScriptMessageHandler(forName: "qw_4a55")
             ucController.removeScriptMessageHandler(forName: "toUrl")
         }
     }
 
-    func p_55a4(dic: [String: Any]) {
+    func qp_04d0(dic: [String: Any]) {
         if let typeName = dic["typeName"] as? String, let isAuth = dic["isAuth"] as? Bool, let isFirst = dic["isFirst"] as? Bool {
             if isAuth || isFirst {
                 return
@@ -225,25 +225,25 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        p_4771()
+        ax_4708()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let alertController = UIAlertController(title: nil, message: "Poor network, loading failed", preferredStyle: .alert)
         let action = UIAlertAction(title: "Refresh", style: .default) { _ in
-            self.p_2cb6()
+            self.rc_36aa()
         }
         alertController.addAction(action)
         present(alertController, animated: true)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-    func p_2cb6() {
+    func rc_36aa() {
         if self.webView.url != nil {
             self.webView.reload()
         } else {
-            self.p_05ab()
+            self.fb_532e()
         }
     }
 
@@ -265,7 +265,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        self.p_2cb6()
+        self.rc_36aa()
     }
 
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -341,7 +341,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
 
 extension AppWebViewController {
     /// Ensure any pending JS dialog completion handlers are executed to avoid WKWebView crash
-    private func p_0cc4() {
+    private func ez_10f8() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
             pendingAlertCompletion = nil
@@ -357,7 +357,7 @@ extension AppWebViewController {
     }
     
     /// 通知三方H5刷新金币
-    func p_375c() {
+    func cw_4547() {
         self.webView.evaluateJavaScript("HttpTool.NativeToJs('recharge')") { data, error in
         }
     }
