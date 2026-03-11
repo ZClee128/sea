@@ -1,5 +1,5 @@
 //
-//  AZAccessControl.swift
+//  codegalxAccessControl.swift
 
 //
 //  Created by young on 2025/9/23.
@@ -9,10 +9,11 @@ import Foundation
 import Photos
 import UIKit
 
-class AZAccessControl {
-    static let shared = AZAccessControl()
+class codegalxAccessControl {
+    static let shared = codegalxAccessControl()
 
-    func p_n1c6(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
+    /// 获取麦克风权限
+    func requestMicPermission(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
         switch AVAudioSession.sharedInstance().recordPermission {
         case .granted:
             authBlock(true, false)
@@ -27,7 +28,8 @@ class AZAccessControl {
         }
     }
 
-    func p_o4d9(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
+    /// 获取相册权限
+    func requestPhotoPermission(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
         if #available(iOS 14, *) {
             switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
             case .authorized:
@@ -73,7 +75,8 @@ class AZAccessControl {
         }
     }
 
-    func p_p7e2(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
+    /// 获取相机权限
+    func requestCameraPermission(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             authBlock(true, false)
@@ -90,7 +93,8 @@ class AZAccessControl {
         }
     }
     
-    func p_q0f5(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
+    /// 获取通知权限
+    func requestNotificationPermission(authBlock: @escaping (_ auth: Bool, _ isFirst: Bool) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { (setttings) in
             switch setttings.authorizationStatus {
             case .authorized:

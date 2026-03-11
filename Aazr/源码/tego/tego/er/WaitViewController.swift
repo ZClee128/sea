@@ -1,5 +1,5 @@
 //
-//  AZSplashController.swift
+//  codegalxSplashController.swift
 
 //
 //  Created by DouXiu on 2025/11/27.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AZSplashController: UIViewController {
+class codegalxSplashController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

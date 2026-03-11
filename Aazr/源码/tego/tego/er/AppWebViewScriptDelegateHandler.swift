@@ -1,5 +1,5 @@
 //
-//  AZBridgeMessageProxy.swift
+//  codegalxBridgeMessageProxy.swift
 
 //
 //  Created by young on 2025/9/24.
@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import WebKit
 
-class AZBridgeMessageProxy: NSObject, WKScriptMessageHandler {
+class codegalxBridgeMessageProxy: NSObject, WKScriptMessageHandler {
     weak var scriptDelegate: WKScriptMessageHandler?
     
     init(_ scriptDelegate: WKScriptMessageHandler) {

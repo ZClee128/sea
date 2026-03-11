@@ -1,5 +1,5 @@
 //
-//  AZAnalyticsCore.swift
+//  codegalxAnalyticsCore.swift
 
 //
 //  Created by young on 2025/9/24.
@@ -8,39 +8,49 @@
 import Adjust
 
 
-class AZAnalyticsCore: NSObject {
-    static let shared = AZAnalyticsCore()
+class codegalxAnalyticsCore: NSObject {
+    static let shared = codegalxAnalyticsCore()
     
-    func p_f2a6() {
+    /// 初始化Adjust
+    func initAdjust() {
         let environment = ADJEnvironmentProduction
         let adjustConfig = ADJConfig(appToken: AdjustKey, environment: environment)
         adjustConfig?.logLevel = ADJLogLevelWarn
         adjustConfig?.delegate = self
         Adjust.appDidLaunch(adjustConfig)
-        AZAnalyticsCore.p_h8c2(token: AdInstallToken)
+        codegalxAnalyticsCore.addOnceEvent(token: AdInstallToken)
     }
 }
 
 // MARK: - Event
-extension AZAnalyticsCore: AdjustDelegate {
-    class func p_g4b9() -> String {
+extension codegalxAnalyticsCore: AdjustDelegate {
+    /// 获取设备id
+    class func getAdjustAdid() -> String {
         let adid = Adjust.adid() ?? ""
         return adid
     }
     
-    class func p_h8c2(token: String) {
+    /// 添加去重事件【只记录一次】
+    /// - Parameter key: 事件名
+    class func addOnceEvent(token: String) {
         let event = ADJEvent(eventToken: token)
         event?.setTransactionId(token)
         Adjust.trackEvent(event)
     }
 
-    class func p_i3d7(token: String, count: Double) {
+    /// 添加 内购/订阅 埋点事件
+    /// - Parameters:
+    ///   - token: token
+    ///   - count: 价格
+    class func addPurchasedEvent(token: String, count: Double) {
         let event = ADJEvent(eventToken: token)
         event?.setRevenue(count, currency: "USD")
         Adjust.trackEvent(event)
     }
 
-    class func p_j6e1(token: String) {
+    /// 添加埋点事件
+    /// - Parameter key: 事件名
+    class func addEvent(token: String) {
         let event = ADJEvent(eventToken: token)
         Adjust.trackEvent(event)
     }

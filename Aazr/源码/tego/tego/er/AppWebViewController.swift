@@ -9,14 +9,17 @@ import UIKit
 import WebViewJavascriptBridge
 import WebKit
 
-class AZWebHostController: UIViewController {
+class codegalxWebHostController: UIViewController {
     
     var urlString: String = ""
+    /// 是否背景透明
     var clearBgColor = false
+    /// 是否全屏
     var fullscreen = true
     
     private var bridge: WebViewJavascriptBridge?
     
+    // Pending JS dialog completion handlers (ensure always-called to avoid WKWebView crash)
     private var pendingAlertCompletion: (() -> Void)?
     private var pendingConfirmCompletion: ((Bool) -> Void)?
     private var pendingPromptCompletion: ((String?) -> Void)?
@@ -48,44 +51,47 @@ class AZWebHostController: UIViewController {
         view.addSubview(self.webView)
         var frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         if fullscreen == false {
-            frame.origin.y = AZAppEnvironment.p_k9f4()
+            frame.origin.y = codegalxAppEnvironment.getStatusBarHeight()
         }
         self.webView.frame = frame
  
         self.addBridgeMethod()
-        self.p_bl3c9()
+        self.beginStartRequest()
  
+        // 应用从后台切换到前台
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(p_bo2f8),
+                                               selector: #selector(jsEvent_onPageShow),
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        p_bo2f8()
+        jsEvent_onPageShow()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        p_bp5a1()
-        p_bn9e5()
+        jsEvent_onPageHide()
+        finalizePendingJSHandlersIfNeeded()
     }
 
     deinit {
         removeBridgeMethod()
-        p_bn9e5()
+        finalizePendingJSHandlersIfNeeded()
     }
 
-    private func p_bl3c9() {
+    /// 发起网页请求
+    private func beginStartRequest() {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
             self.webView.load(urlRequest)
-            self.p_bm6d2()
+            self.clearJSBgColor()
         }
     }
     
-    private func p_bm6d2() {
+    /// 设置页面为透明
+    private func clearJSBgColor() {
         guard clearBgColor == true else { return }
         webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'") { _, _  in
         }
@@ -98,17 +104,20 @@ class AZWebHostController: UIViewController {
         webView.isOpaque = false
     }
     
+    /// 关闭webview事件
     func closeWeb() {
         if webView.canGoBack {
             webView.goBack()
             return
         }
+        
         removeBridgeMethod()
         if self.presentingViewController != nil {
+            // 当前页面dismiss后，下面还是网页时，手动调用viewDidAppear
             dismiss(animated: true) {
-                if let currentVC = AZAppEnvironment.p_m5b3() {
-                    if currentVC.isKind(of: AZWebHostController.self) {
-                        (currentVC as! AZWebHostController).p_bo2f8()
+                if let currentVC = codegalxAppEnvironment.currentViewController() {
+                    if currentVC.isKind(of: codegalxWebHostController.self) {
+                        (currentVC as! codegalxWebHostController).jsEvent_onPageShow()
                     }
                 }
             }
@@ -116,20 +125,22 @@ class AZWebHostController: UIViewController {
     }
 }
 
-extension AZWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBaseDelegate {
+extension codegalxWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBaseDelegate {
     func _evaluateJavascript(_ javascriptCommand: String!) -> String! {
         return ""
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("js call method name = \(message.name), message = \(message.body)")
+        // 兼容老事件
         DispatchQueue.main.async {
             let type = message.name
             if type == "closeWeb" {
                 self.closeWeb()
+                
             } else if type == "toUrl" {
                 if let url = message.body as? String {
-                    AZWebHostController.p_bq4a3(url)
+                    codegalxWebHostController.openNewWebView(url)
                 }
             }
         }
@@ -152,8 +163,8 @@ extension AZWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBa
             }
         })
         let ucController = self.webView.configuration.userContentController
-        ucController.add(AZBridgeMessageProxy(self), name: "closeWeb")
-        ucController.add(AZBridgeMessageProxy(self), name: "toUrl")
+        ucController.add(codegalxBridgeMessageProxy(self), name: "closeWeb")
+        ucController.add(codegalxBridgeMessageProxy(self), name: "toUrl")
     }
 
     func removeBridgeMethod() {
@@ -168,22 +179,29 @@ extension AZWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBa
 
     func handAuthOpenURL(dic: [String: Any]) {
         if let typeName = dic["typeName"] as? String, let isAuth = dic["isAuth"] as? Bool, let isFirst = dic["isFirst"] as? Bool {
-            if isAuth || isFirst { return }
+            if isAuth || isFirst {
+                return
+            }
             var message = "Please click 'Go' to allow access"
             var needAlert = false
             if typeName == "getCameraStatus" {
                 needAlert = true
                 message = "Please allow '\(AppName)' to access your camera in your iPhone's 'Settings-Privacy-Camera' option"
+                
             } else if typeName == "getPhotoStatus" {
                 needAlert = true
                 message = "Please allow '\(AppName)' to access your album in your iPhone's 'Settings-Privacy-Album' option"
+                
             } else if typeName == "getMicStatus" {
                 needAlert = true
                 message = "Please allow '\(AppName)' to access your microphone in your iPhone's 'Settings-Privacy-Microphone' option"
             }
+
             if needAlert {
                 let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                let action1 = UIAlertAction(title: "Cancel", style: .default) { _ in }
+
+                let action1 = UIAlertAction(title: "Cancel", style: .default) { _ in
+                }
                 let action2 = UIAlertAction(title: "Go", style: .destructive) { _ in
                     if let url = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(url, options: [:], completionHandler: { _ in })
@@ -197,7 +215,7 @@ extension AZWebHostController: WKScriptMessageHandler, WebViewJavascriptBridgeBa
     }
 }
 
-extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
+extension codegalxWebHostController: WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
     }
@@ -207,7 +225,7 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        p_bm6d2()
+        clearJSBgColor()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
@@ -225,7 +243,7 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
         if self.webView.url != nil {
             self.webView.reload()
         } else {
-            self.p_bl3c9()
+            self.beginStartRequest()
         }
     }
 
@@ -258,9 +276,10 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
             self.pendingAlertCompletion = nil
         }
         alertController.addAction(action)
-        if let topVC = AZAppEnvironment.p_m5b3() {
+        if let topVC = codegalxAppEnvironment.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
+            // Fallback to avoid crash if cannot present
             self.pendingAlertCompletion?()
             self.pendingAlertCompletion = nil
         }
@@ -279,9 +298,10 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        if let topVC = AZAppEnvironment.p_m5b3() {
+        if let topVC = codegalxAppEnvironment.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
+            // Fallback default = false
             self.pendingConfirmCompletion?(false)
             self.pendingConfirmCompletion = nil
         }
@@ -304,9 +324,10 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(doneAction)
-        if let topVC = AZAppEnvironment.p_m5b3() {
+        if let topVC = codegalxAppEnvironment.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
+            // Fallback default = nil
             self.pendingPromptCompletion?(nil)
             self.pendingPromptCompletion = nil
         }
@@ -318,8 +339,9 @@ extension AZWebHostController: WKNavigationDelegate, WKUIDelegate {
     }
 }
 
-extension AZWebHostController {
-    private func p_bn9e5() {
+extension codegalxWebHostController {
+    /// Ensure any pending JS dialog completion handlers are executed to avoid WKWebView crash
+    private func finalizePendingJSHandlersIfNeeded() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
             pendingAlertCompletion = nil
@@ -334,20 +356,22 @@ extension AZWebHostController {
         }
     }
     
-    func p_bz1e4() {
-        let js = "HttpTool" + ".NativeToJs('recharge')"
-        self.webView.evaluateJavaScript(js) { data, error in
+    /// 通知三方H5刷新金币
+    func third_jsEvent_refreshCoin() {
+        self.webView.evaluateJavaScript("HttpTool" + ".NativeToJs('recharge')") { data, error in
         }
     }
     
-    @objc func p_bo2f8() {
+    /// js事件：网页展示
+    @objc private func jsEvent_onPageShow() {
         self.bridge?.callHandler("onPageShow")
         self.webView.evaluateJavaScript("window.onPageShow&&onPageShow();") { data, error in
             print("jsEvent(onPageShow): \(String(describing: data))---\(String(describing: error))")
         }
     }
     
-    private func p_bp5a1() {
+    /// js事件：网页消失
+    private func jsEvent_onPageHide() {
         self.bridge?.callHandler("onPageHide")
         self.webView.evaluateJavaScript("window.onPageHide&&onPageHide();") { data, error in
             print("jsEvent(onPageHide): \(String(describing: data))---\(String(describing: error))")

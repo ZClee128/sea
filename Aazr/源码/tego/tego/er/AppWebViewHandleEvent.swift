@@ -1,5 +1,5 @@
 //
-//  AZWebHandleEvent.swift
+//  AppWebViewHandleEvent.swift
 
 //
 //  Created by young on 2025/9/23.
@@ -11,103 +11,111 @@ import HandyJSON
 import StoreKit
 import UIKit
 
-private let getDeviceID     = "getDeviceID"
-private let getFirebaseID   = "getFirebaseID"
-private let getAreaISO      = "getAreaISO"
-private let getProxyStatus  = "getProxyStatus"
-private let getMicStatus    = "getMicStatus"
-private let getPhotoStatus  = "getPhotoStatus"
-private let getCameraStatus = "getCameraStatus"
-private let reportAdjust    = "reportAdjust"
-private let requestLocalPush = "requestLocalPush"
-private let getLangCode      = "getLangCode"
-private let getTimeZone      = "getTimeZone"
-private let getInstalledApps = "getInstalledApps"
-private let getSystemUUID    = "getSystemUUID"
-private let getCountryCode   = "getCountryCode"
-private let inAppRating      = "inAppRating"
-private let apPay            = "apPay"
-private let subscribe        = "subscribe"
-private let openSystemBrowser = "openSystemBrowser"
-private let closeWebview     = "closeWebview"
-private let openNewWebview   = "openNewWebview"
-private let reloadWebview    = "reloadWebview"
-private let openSettings = "openSettings"
-private let getNotificationStatus = "getNotificationStatus"
-private let setScheduledLocalPush = "setScheduledLocalPush"
+/// H5事件
+private let getDeviceID     = "getDeviceID"        // 获取设备号
+private let getFirebaseID   = "getFirebaseID"      // 获取FireBaseToken
+private let getAreaISO      = "getAreaISO"         // 获取 SIM/运营商 地区ISO
+private let getProxyStatus  = "getProxyStatus"     // 获取是否使用了代理
+private let getMicStatus    = "getMicStatus"       // 获取麦克风权限
+private let getPhotoStatus  = "getPhotoStatus"     // 获取相册权限
+private let getCameraStatus = "getCameraStatus"    // 获取相机权限
+private let reportAdjust    = "reportAdjust"       // 上报Adjust
+private let requestLocalPush = "requestLocalPush"  // APP在后台收到音视频通话推送
+private let getLangCode      = "getLangCode"        // 获取系统语言
+private let getTimeZone      = "getTimeZone"        // 获取当前系统时区
+private let getInstalledApps = "getInstalledApps"   // 获取已安装应用列表
+private let getSystemUUID    = "getSystemUUID"      // 获取系统UUID
+private let getCountryCode   = "getCountryCode"     // 获取当前系统地区
+private let inAppRating      = "inAppRating"        // 应用内评分
+private let apPay            = "apPay"              // 苹果支付
+private let subscribe        = "subscribe"          // 苹果支付-订阅
+private let openSystemBrowser = "openSystemBrowser" // 调用系统浏览器打开url
+private let closeWebview     = "closeWebview"       // 关闭当前webview
+private let openNewWebview   = "openNewWebview"     // 使用新webview打开url
+private let reloadWebview    = "reloadWebview"      // 重载webView
+private let openSettings = "openSettings"                   // v2.0.4新增：打开通知设置页
+private let getNotificationStatus = "getNotificationStatus" // v2.0.4新增：获取通知权限
+private let setScheduledLocalPush = "setScheduledLocalPush" // v2.0.5新增：设置定时本地消息推送
 
-struct AZBridgeMessage: HandyJSON {
+struct codegalxBridgeMessage: HandyJSON {
     var typeName = ""
     var token: String?
     var totalCount: Double?
+
     var showText: String?
-    var data: AZUserProfile?
-    var goodsId: String?
-    var source: Int?
-    var type: Int?
-    var url: String?
-    var fullscreen: Int?
-    var transparency: Int?
-    var time: [Int]?
-    var msg: [String]?
+    var data: codegalxUserProfile?
+    // 内购/订阅 H5参数
+    var goodsId: String?     // 商品Id
+    var source: Int?         // 充值来源
+    var type: Int?           // 订阅入口；1：首页banner，2：全屏充值页，3：半屏充值页，4：领取金币弹窗
+    var url: String?         // url
+    var fullscreen: Int?     // fullscreen：0:页面从状态栏以下渲染 1:全屏
+    var transparency: Int?   // transparency：0-webview白色背景 1-webview透明背景
+    var time: [Int]?         // 本地推送当天时间（24小时制）
+    var msg: [String]?       // 本地推送文案
 }
 
-struct AZUserProfile: HandyJSON {
-    var headPic: String?
-    var nickname: String?
-    var uid: String?
+struct codegalxUserProfile: HandyJSON {
+    var headPic: String?   // 头像
+    var nickname: String?  // 昵称
+    var uid: String?       // 用户Id
 }
 
-extension AZWebHostController {
+extension codegalxWebHostController {
     func handleH5Message(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
-        if let model = AZBridgeMessage.deserialize(from: schemeDic) {
+        if let model = codegalxBridgeMessage.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
-                let adidStr = AZAnalyticsCore.p_g4b9()
+                let adidStr = codegalxAnalyticsCore.getAdjustAdid()
                 callBack(["typeName": model.typeName, "deviceID": adidStr])
 
             case getFirebaseID:
-                AZWebHostController.p_bs0c9 { str in
+                codegalxWebHostController.getFireBaseToken { str in
                     callBack(["typeName": model.typeName, "fireBaseID": str])
                 }
                 
             case getAreaISO:
-                let arr = AZWebHostController.p_bt3d2()
+                let arr = codegalxWebHostController.getCountryISOCode()
                 callBack(["typeName": model.typeName, "areaISO": arr.joined(separator: ",")])
                 
             case getProxyStatus:
-                let status = AZWebHostController.p_bu6e5()
+                let status = codegalxWebHostController.getUsedProxyStatus()
                 callBack(["typeName": model.typeName, "isProxy": status])
               
             case getLangCode:
-                callBack(["typeName": model.typeName, "langCode": UIDevice.langCode])
+                let langCode = UIDevice.langCode
+                callBack(["typeName": model.typeName, "langCode": langCode])
                 
             case getTimeZone:
-                callBack(["typeName": model.typeName, "timeZone": UIDevice.timeZone])
+                let timeZone = UIDevice.timeZone
+                callBack(["typeName": model.typeName, "timeZone": timeZone])
                 
             case getInstalledApps:
-                callBack(["typeName": model.typeName, "installedApps": UIDevice.getInstalledApps])
+                let apps = UIDevice.getInstalledApps
+                callBack(["typeName": model.typeName, "installedApps": apps])
                 
             case getSystemUUID:
-                callBack(["typeName": model.typeName, "systemUUID": UIDevice.systemUUID])
+                let uuid = UIDevice.systemUUID
+                callBack(["typeName": model.typeName, "systemUUID": uuid])
                 
             case getCountryCode:
-                callBack(["typeName": model.typeName, "countryCode": UIDevice.countryCode])
+                let countryCode = UIDevice.countryCode
+                callBack(["typeName": model.typeName, "countryCode": countryCode])
                 
             case inAppRating:
                 callBack(["typeName": model.typeName])
-                AZWebHostController.p_bx5b4()
+                codegalxWebHostController.requestInAppRating()
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.p_by8c7(productId: goodsId, source: source, payType: .Pay) { success in
+                    self.applePay(productId: goodsId, source: source, payType: .Pay) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.p_by8c7(productId: goodsId, payType: .Subscribe) { success in
+                    self.applePay(productId: goodsId, payType: .Subscribe) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
@@ -127,7 +135,7 @@ extension AZWebHostController {
                 if let urlStr = model.url,
                     let transparency = model.transparency,
                     let fullscreen = model.fullscreen {
-                    AZWebHostController.p_bq4a3(urlStr, transparency, fullscreen)
+                    codegalxWebHostController.openNewWebView(urlStr, transparency, fullscreen)
                 }
                 
             case reloadWebview:
@@ -142,41 +150,41 @@ extension AZWebHostController {
                 
             case setScheduledLocalPush:
                 callBack(["typeName": model.typeName])
-                AZNotifyScheduler.shared.p_v5e3(times: model.time ?? [], contents: model.msg ?? [])
+                codegalxNotifyScheduler.shared.schedule(times: model.time ?? [], contents: model.msg ?? [])
                 
             case getNotificationStatus:
-                AZAccessControl.shared.p_q0f5 { auth, isFirst in
+                codegalxAccessControl.shared.requestNotificationPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
             
             case getMicStatus:
-                AZAccessControl.shared.p_n1c6 { auth, isFirst in
+                codegalxAccessControl.shared.requestMicPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getPhotoStatus:
-                AZAccessControl.shared.p_o4d9 { auth, isFirst in
+                codegalxAccessControl.shared.requestPhotoPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getCameraStatus:
-                AZAccessControl.shared.p_p7e2 { auth, isFirst in
+                codegalxAccessControl.shared.requestCameraPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case reportAdjust:
                 if let token = model.token {
                     if let count = model.totalCount {
-                        AZAnalyticsCore.p_i3d7(token: token, count: count)
+                        codegalxAnalyticsCore.addPurchasedEvent(token: token, count: count)
                     } else {
-                        AZAnalyticsCore.p_j6e1(token: token)
+                        codegalxAnalyticsCore.addEvent(token: token)
                     }
                 }
                 callBack(["typeName": model.typeName])
 
             case requestLocalPush:
                 callBack(["typeName": model.typeName])
-                AZWebHostController.p_br7b6(model)
+                codegalxWebHostController.pushLocalNotification(model)
 
             default: break
             }
@@ -185,22 +193,29 @@ extension AZWebHostController {
 }
 
 // MARK: - Event
-extension AZWebHostController {
-    class func p_bq4a3(_ urlStr: String, _ transparency: Int = 0, _ fullscreen: Int = 1) {
-        let vc = AZWebHostController()
+extension codegalxWebHostController {
+    /// 打开新的webview
+    /// - Parameters:
+    ///   - urlStr: web地址
+    ///   - transparency: 0：白色背景 1：透明背景
+    ///   - fullscreen: 0:页面从状态栏以下渲染  1：全屏
+    class func openNewWebView(_ urlStr: String, _ transparency: Int = 0, _ fullscreen: Int = 1) {
+        let vc = codegalxWebHostController()
         vc.urlString = urlStr
         vc.clearBgColor = (transparency == 1)
         vc.fullscreen = (fullscreen == 1)
         vc.modalPresentationStyle = .fullScreen
-        AZAppEnvironment.p_m5b3()?.present(vc, animated: true)
+        codegalxAppEnvironment.currentViewController()?.present(vc, animated: true)
     }
     
-    class func p_br7b6(_ model: AZBridgeMessage) {
+    /// 本地推送
+    class func pushLocalNotification(_ model: codegalxBridgeMessage) {
         guard UIApplication.shared.applicationState != .active else { return }
         UNUserNotificationCenter.current().getNotificationSettings { setting in
             switch setting.authorizationStatus {
             case .notDetermined, .denied, .ephemeral:
                 print("本地推送通知 -- 用户未授权\(setting.authorizationStatus)")
+                
             case .provisional, .authorized:
                 if let dataModel = model.data {
                     let content = UNMutableNotificationContent()
@@ -209,11 +224,14 @@ extension AZWebHostController {
                     let identifier = dataModel.uid ?? "\(AppName)__LocalPush"
                     content.userInfo = ["identifier": identifier]
                     content.sound = UNNotificationSound.default
+
                     let time = Date(timeIntervalSinceNow: 1).timeIntervalSinceNow
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
                     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                    UNUserNotificationCenter.current().add(request) { _ in }
+                    UNUserNotificationCenter.current().add(request) { _ in
+                    }
                 }
+                
             @unknown default:
                 print("本地推送通知 -- 用户未授权\(setting.authorizationStatus)")
                 break
@@ -221,7 +239,8 @@ extension AZWebHostController {
         }
     }
     
-    class func p_bs0c9(tokenBlock: @escaping (_ str: String) -> Void) {
+    /// 获取firebase token
+    class func getFireBaseToken(tokenBlock: @escaping (_ str: String) -> Void) {
         Messaging.messaging().token { token, _ in
             if let token = token {
                 tokenBlock(token)
@@ -231,7 +250,8 @@ extension AZWebHostController {
         }
     }
 
-    class func p_bt3d2() -> [String] {
+    /// 获取ISO国家代码
+    class func getCountryISOCode() -> [String] {
         var tempArr: [String] = []
         let info = CTTelephonyNetworkInfo()
         if let carrierDic = info.serviceSubscriberCellularProviders {
@@ -246,60 +266,79 @@ extension AZWebHostController {
         return tempArr
     }
 
-    class func p_bu6e5() -> Bool {
-        if AZWebHostController.p_bv9f8() || AZWebHostController.p_bw2a1() {
+    /// 获取用户代理状态
+    class func getUsedProxyStatus() -> Bool {
+        if codegalxWebHostController.isUsedProxy() || codegalxWebHostController.isUsedVPN() {
             return true
         }
         return false
     }
     
-    class func p_bv9f8() -> Bool {
+    /// 判断用户设备是否开启代理
+    /// - Returns: false: 未开启  true: 开启
+    class func isUsedProxy() -> Bool {
         guard let proxy = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() else { return false }
         guard let dict = proxy as? [String: Any] else { return false }
+
         if let httpProxy = dict["HTTPProxy"] as? String, !httpProxy.isEmpty { return true }
         if let httpsProxy = dict["HTTPSProxy"] as? String, !httpsProxy.isEmpty { return true }
         if let socksProxy = dict["SOCKSProxy"] as? String, !socksProxy.isEmpty { return true }
+
         return false
     }
     
-    class func p_bw2a1() -> Bool {
-        guard let proxy = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() else { return false }
-        guard let dict = proxy as? [String: Any] else { return false }
-        guard let scopedDic = dict["__SCOPED__"] as? [String: Any] else { return false }
-        for keyStr in scopedDic.keys {
-            if keyStr.contains("tap") || keyStr.contains("tun") || keyStr.contains("ipsec") || keyStr.contains("ppp") {
-                return true
-            }
-        }
-        return false
-    }
+    /// 判断用户设备是否开启代理VPN
+   /// - Returns: false: 未开启  true: 开启
+   class func isUsedVPN() -> Bool {
+       guard let proxy = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() else { return false }
+       guard let dict = proxy as? [String: Any] else { return false }
+       guard let scopedDic = dict["__SCOPED__"] as? [String: Any] else { return false }
+       for keyStr in scopedDic.keys {
+           if keyStr.contains("tap") || keyStr.contains("tun") || keyStr.contains("ipsec") || keyStr.contains("ppp"){
+               return true
+           }
+       }
+       return false
+   }
     
-    class func p_bx5b4() {
+    /// 请求应用内评分 - iOS 13+ 优化版本
+    class func requestInAppRating() {
         if #available(iOS 14.0, *) {
+            // iOS 14+ 使用新的 WindowScene API（推荐）
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: windowScene)
             }
         } else {
+            // iOS 13.x 使用传统 API
             SKStoreReviewController.requestReview()
         }
     }
     
-    func p_by8c7(productId: String, source: Int = -1, payType: AZPaymentType, completion: ((Bool) -> Void)? = nil) {
-        AZLoadingOverlay.show()
+    // MARK: - Event
+    /// 苹果支付/订阅
+    /// - Parameters:
+    ///   - productId: productId: 商品Id
+    ///   - source: 充值来源
+    func applePay(productId: String, source: Int = -1, payType: codegalxPaymentType, completion: ((Bool) -> Void)? = nil) {
+        codegalxLoadingOverlay.show()
         var index = 0
-        if source != -1 { index = source }
-        AZPurchaseSession.shared.p_ad9a7(productId: productId, payType: payType, source: index) { status, _, _ in
-            AZLoadingOverlay.dismiss()
+        if source != -1 {
+            index = source
+        }
+        codegalxPurchaseSession.shared.iap_startPurchase(productId: productId, payType: payType, source: index) { status, _, _ in
+            codegalxLoadingOverlay.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
                 switch status {
                 case .verityFail:
-                    AZLoadingOverlay.toast("Retry After or Go to \"Feedback\" to contact us")
+                    codegalxLoadingOverlay.toast( "Retry After or Go to \"Feedback\" to contact us")
+                    
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.p_bz1e4()
+                    self.third_jsEvent_refreshCoin()
+                    
                 default:
-                    print("apple支付充值失败：\(status.rawValue)")
+                    print(" apple支付充值失败：\(status.rawValue)")
                     break
                 }
                 completion?(isSuccess)

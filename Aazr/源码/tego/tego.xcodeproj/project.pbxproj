@@ -32,21 +32,21 @@
 		84B42C9D2F6013BB004953C3 /* Advanced Posing Techniques.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C802F6013BB004953C3 /* Advanced Posing Techniques.mp4 */; };
 		84B42C9E2F6013BB004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C812F6013BB004953C3 /* Assets.xcassets */; };
 		84B42CA02F6013BB004953C3 /* Mastering Natural Light.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42C842F6013BB004953C3 /* Mastering Natural Light.mp4 */; };
-		84B42CAF2F601474004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAD2F601474004953C3 /* ProgressHUD.swift */; };
-		84B42CB02F601474004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA32F601474004953C3 /* AppConfig.swift */; };
-		84B42CB12F601474004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */; };
-		84B42CB22F601474004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */; };
-		84B42CB32F601474004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA62F601474004953C3 /* AppPermissionTool.swift */; };
-		84B42CB42F601474004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAE2F601474004953C3 /* WaitViewController.swift */; };
-		84B42CB52F601474004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */; };
 		84B42CB62F601474004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA42F601474004953C3 /* AppDelegate.swift */; };
-		84B42CB72F601474004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA22F601474004953C3 /* AppAdjustManager.swift */; };
-		84B42CB82F601474004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA52F601474004953C3 /* AppleIAPManager.swift */; };
-		84B42CB92F601474004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
-		84B42CBA2F601474004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA82F601474004953C3 /* AppRequestTool.swift */; };
-		84B42CBB2F601474004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42CA92F601474004953C3 /* AppWebViewController.swift */; };
 		84B42CBD2F60156A004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42CBC2F60156A004953C3 /* GoogleService-Info.plist */; };
 		84B42CBF2F601679004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42CBE2F601679004953C3 /* Launch Screen.storyboard */; };
+		84B42D6F2F612898004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D662F612898004953C3 /* AppleIAPManager.swift */; };
+		84B42D702F612898004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D642F612898004953C3 /* AppAdjustManager.swift */; };
+		84B42D712F612898004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D672F612898004953C3 /* AppPermissionTool.swift */; };
+		84B42D722F612898004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D682F612898004953C3 /* AppRequestBaseModel.swift */; };
+		84B42D732F612898004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D692F612898004953C3 /* AppRequestTool.swift */; };
+		84B42D742F612898004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D6C2F612898004953C3 /* LocalPushScheduler.swift */; };
+		84B42D752F612898004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D6A2F612898004953C3 /* AppWebViewController.swift */; };
+		84B42D762F612898004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D6E2F612898004953C3 /* WaitViewController.swift */; };
+		84B42D772F612898004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D6D2F612898004953C3 /* ProgressHUD.swift */; };
+		84B42D782F612898004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D6B2F612898004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B42D792F612898004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D652F612898004953C3 /* AppConfig.swift */; };
+		84B42D7B2F612967004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D7A2F612967004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,21 +78,21 @@
 		84B42C832F6013BB004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B42C842F6013BB004953C3 /* Mastering Natural Light.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mastering Natural Light.mp4"; sourceTree = "<group>"; };
 		84B42C852F6013BB004953C3 /* tego.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tego.entitlements; sourceTree = "<group>"; };
-		84B42CA22F601474004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
-		84B42CA32F601474004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84B42CA42F601474004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B42CA52F601474004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84B42CA62F601474004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84B42CA82F601474004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84B42CA92F601474004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84B42CAD2F601474004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84B42CAE2F601474004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B42CBC2F60156A004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B42CBE2F601679004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84B42D642F612898004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B42D652F612898004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B42D662F612898004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B42D672F612898004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B42D682F612898004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B42D692F612898004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B42D6A2F612898004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B42D6B2F612898004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B42D6C2F612898004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B42D6D2F612898004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B42D6E2F612898004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B42D7A2F612967004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
 		8BCEFF2EAE37A46B4F456DAC /* Pods-tego.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tego.release.xcconfig"; path = "Target Support Files/Pods-tego/Pods-tego.release.xcconfig"; sourceTree = "<group>"; };
 		E1CDF2184E17B4E79738720C /* Pods_tego.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tego.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,19 +208,19 @@
 		84B42CA12F601455004953C3 /* er */ = {
 			isa = PBXGroup;
 			children = (
-				84B42CA22F601474004953C3 /* AppAdjustManager.swift */,
-				84B42CA32F601474004953C3 /* AppConfig.swift */,
+				84B42D642F612898004953C3 /* AppAdjustManager.swift */,
+				84B42D652F612898004953C3 /* AppConfig.swift */,
+				84B42D662F612898004953C3 /* AppleIAPManager.swift */,
+				84B42D672F612898004953C3 /* AppPermissionTool.swift */,
+				84B42D682F612898004953C3 /* AppRequestBaseModel.swift */,
+				84B42D692F612898004953C3 /* AppRequestTool.swift */,
+				84B42D6A2F612898004953C3 /* AppWebViewController.swift */,
+				84B42D6B2F612898004953C3 /* AppWebViewHandleEvent.swift */,
+				84B42D7A2F612967004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B42D6C2F612898004953C3 /* LocalPushScheduler.swift */,
+				84B42D6D2F612898004953C3 /* ProgressHUD.swift */,
+				84B42D6E2F612898004953C3 /* WaitViewController.swift */,
 				84B42CA42F601474004953C3 /* AppDelegate.swift */,
-				84B42CA52F601474004953C3 /* AppleIAPManager.swift */,
-				84B42CA62F601474004953C3 /* AppPermissionTool.swift */,
-				84B42CA72F601474004953C3 /* AppRequestBaseModel.swift */,
-				84B42CA82F601474004953C3 /* AppRequestTool.swift */,
-				84B42CA92F601474004953C3 /* AppWebViewController.swift */,
-				84B42CAA2F601474004953C3 /* AppWebViewHandleEvent.swift */,
-				84B42CAB2F601474004953C3 /* AppWebViewScriptDelegateHandler.swift */,
-				84B42CAC2F601474004953C3 /* LocalPushScheduler.swift */,
-				84B42CAD2F601474004953C3 /* ProgressHUD.swift */,
-				84B42CAE2F601474004953C3 /* WaitViewController.swift */,
 			);
 			path = er;
 			sourceTree = "<group>";
@@ -352,6 +352,18 @@
 				84B42C8B2F6013BB004953C3 /* AppViewModel.swift in Sources */,
 				84B42C8C2F6013BB004953C3 /* AgreementView.swift in Sources */,
 				84B42C8D2F6013BB004953C3 /* AVPlayerView.swift in Sources */,
+				84B42D7B2F612967004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B42D6F2F612898004953C3 /* AppleIAPManager.swift in Sources */,
+				84B42D702F612898004953C3 /* AppAdjustManager.swift in Sources */,
+				84B42D712F612898004953C3 /* AppPermissionTool.swift in Sources */,
+				84B42D722F612898004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B42D732F612898004953C3 /* AppRequestTool.swift in Sources */,
+				84B42D742F612898004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B42D752F612898004953C3 /* AppWebViewController.swift in Sources */,
+				84B42D762F612898004953C3 /* WaitViewController.swift in Sources */,
+				84B42D772F612898004953C3 /* ProgressHUD.swift in Sources */,
+				84B42D782F612898004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B42D792F612898004953C3 /* AppConfig.swift in Sources */,
 				84B42C8E2F6013BB004953C3 /* CameraView.swift in Sources */,
 				84B42C8F2F6013BB004953C3 /* FavoritesView.swift in Sources */,
 				84B42C902F6013BB004953C3 /* HomeView.swift in Sources */,
@@ -366,19 +378,7 @@
 				84B42C992F6013BB004953C3 /* SettingsView.swift in Sources */,
 				84B42C9A2F6013BB004953C3 /* TrendDetailView.swift in Sources */,
 				84B42C9B2F6013BB004953C3 /* ContentView.swift in Sources */,
-				84B42CAF2F601474004953C3 /* ProgressHUD.swift in Sources */,
-				84B42CB02F601474004953C3 /* AppConfig.swift in Sources */,
-				84B42CB12F601474004953C3 /* AppRequestBaseModel.swift in Sources */,
-				84B42CB22F601474004953C3 /* AppWebViewHandleEvent.swift in Sources */,
-				84B42CB32F601474004953C3 /* AppPermissionTool.swift in Sources */,
-				84B42CB42F601474004953C3 /* WaitViewController.swift in Sources */,
-				84B42CB52F601474004953C3 /* LocalPushScheduler.swift in Sources */,
 				84B42CB62F601474004953C3 /* AppDelegate.swift in Sources */,
-				84B42CB72F601474004953C3 /* AppAdjustManager.swift in Sources */,
-				84B42CB82F601474004953C3 /* AppleIAPManager.swift in Sources */,
-				84B42CB92F601474004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84B42CBA2F601474004953C3 /* AppRequestTool.swift in Sources */,
-				84B42CBB2F601474004953C3 /* AppWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,8 +511,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -520,9 +521,10 @@
 				INFOPLIST_FILE = tego/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Tego requests camera access to provide the live pose studio feature. Processing occurs entirely on your device.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Tego needs permission to save the photos you take to your photo library.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Tego needs permission to select photos from your library to analyze trends.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to capture photos and videos for use in the app.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to your microphone to record audio with videos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add photos and videos to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select and use photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -534,7 +536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aazr.fav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -559,8 +561,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tego/tego.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -568,9 +571,10 @@
 				INFOPLIST_FILE = tego/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Tego requests camera access to provide the live pose studio feature. Processing occurs entirely on your device.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Tego needs permission to save the photos you take to your photo library.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Tego needs permission to select photos from your library to analyze trends.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to capture photos and videos for use in the app.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to your microphone to record audio with videos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add photos and videos to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to select and use photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -582,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aazr.fav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -64,42 +64,68 @@ echo ""
 echo "🔤 Step 2: 类名混淆（前缀: ${PREFIX}）..."
 
 # 固定映射（App*/Apple*/Local* 等常见模板类名 → 新前缀）
-declare -A CLASS_MAP=(
+# 使用两个并行数组而非 declare -A，兼容 macOS 默认的 Bash 3.2
+CLASS_KEYS=(
   # WebView
-  ["AppWebViewScriptDelegateHandler"]="${PREFIX}BridgeMessageProxy"
-  ["AppWebViewController"]="${PREFIX}WebHostController"
+  "AppWebViewScriptDelegateHandler"
+  "AppWebViewController"
   # IAP
-  ["AppleIAPManager"]="${PREFIX}PurchaseSession"
-  ["IAPcompletionHandle"]="${PREFIX}PurchaseCompletion"
-  ["ApplePayType"]="${PREFIX}PaymentType"
-  ["AppleIAPStatus"]="${PREFIX}PaymentStatus"
+  "AppleIAPManager"
+  "IAPcompletionHandle"
+  "ApplePayType"
+  "AppleIAPStatus"
   # Adjust
-  ["AppAdjustManager"]="${PREFIX}AnalyticsCore"
+  "AppAdjustManager"
   # Network
-  ["AppRequestTool"]="${PREFIX}NetworkClient"
-  ["AppRequestModel"]="${PREFIX}RequestPayload"
-  ["AppBaseResponse"]="${PREFIX}BaseResponse"
-  ["AppErrorResponse"]="${PREFIX}ErrorResponse"
-  ["FinishBlock"]="${PREFIX}FinishBlock"
+  "AppRequestTool"
+  "AppRequestModel"
+  "AppBaseResponse"
+  "AppErrorResponse"
+  "FinishBlock"
   # Permission
-  ["AppPermissionTool"]="${PREFIX}AccessControl"
+  "AppPermissionTool"
   # Config
-  ["AppConfig"]="${PREFIX}AppEnvironment"
+  "AppConfig"
   # Push
-  ["LocalPushScheduler"]="${PREFIX}NotifyScheduler"
+  "LocalPushScheduler"
   # UI
-  ["WaitViewController"]="${PREFIX}SplashController"
-  ["ProgressHUD"]="${PREFIX}LoadingOverlay"
-  ["kProgressHUD_W"]="kAZOverlay_W"
-  ["kProgressHUD_cornerRadius"]="kAZOverlay_cornerRadius"
-  ["kProgressHUD_alpha"]="kAZOverlay_alpha"
+  "WaitViewController"
+  "ProgressHUD"
+  "kProgressHUD_W"
+  "kProgressHUD_cornerRadius"
+  "kProgressHUD_alpha"
   # Models
-  ["JSMessageModel"]="${PREFIX}BridgeMessage"
-  ["UserInfoModel"]="${PREFIX}UserProfile"
+  "JSMessageModel"
+  "UserInfoModel"
+)
+CLASS_VALS=(
+  "${PREFIX}BridgeMessageProxy"
+  "${PREFIX}WebHostController"
+  "${PREFIX}PurchaseSession"
+  "${PREFIX}PurchaseCompletion"
+  "${PREFIX}PaymentType"
+  "${PREFIX}PaymentStatus"
+  "${PREFIX}AnalyticsCore"
+  "${PREFIX}NetworkClient"
+  "${PREFIX}RequestPayload"
+  "${PREFIX}BaseResponse"
+  "${PREFIX}ErrorResponse"
+  "${PREFIX}FinishBlock"
+  "${PREFIX}AccessControl"
+  "${PREFIX}AppEnvironment"
+  "${PREFIX}NotifyScheduler"
+  "${PREFIX}SplashController"
+  "${PREFIX}LoadingOverlay"
+  "kAZOverlay_W"
+  "kAZOverlay_cornerRadius"
+  "kAZOverlay_alpha"
+  "${PREFIX}BridgeMessage"
+  "${PREFIX}UserProfile"
 )
 
-for old in "${!CLASS_MAP[@]}"; do
-  new="${CLASS_MAP[$old]}"
+for (( idx=0; idx<${#CLASS_KEYS[@]}; idx++ )); do
+  old="${CLASS_KEYS[$idx]}"
+  new="${CLASS_VALS[$idx]}"
   LC_ALL=C find "$TARGET_DIR" -name "*.swift" -exec sed -i '' "s/${old}/${new}/g" {} +
   echo "   ✓ ${old} → ${new}"
 done
@@ -140,11 +166,14 @@ echo "🔐 Step 5: 敏感字符串混淆..."
 # 混淆域名
 if [ -n "$DOMAIN" ]; then
   HEX_BYTES=$(str_to_hex_array "$DOMAIN")
-  OBFUSCATED_DOMAIN="let ReplaceUrlDomain: String = {\n    let b: [UInt8] = [${HEX_BYTES}]\n    return String(bytes: b, encoding: .utf8) ?? \"\"\n}()"
+  # 用 printf 构建真实换行；用环境变量传给 perl，彻底绕开引号嵌套问题
+  _AZ_OBF=$(printf 'let ReplaceUrlDomain: String = {\n    let b: [UInt8] = [%s]\n    return String(bytes: b, encoding: .utf8) ?? ""\n}()' "$HEX_BYTES")
+  export _AZ_OBF
 
   LC_ALL=C find "$TARGET_DIR" -name "*.swift" | while read -r file; do
     if grep -q "let ReplaceUrlDomain" "$file"; then
-      perl -i -0pe "s/let ReplaceUrlDomain = \"[^\"]*\"/${OBFUSCATED_DOMAIN}/g" "$file"
+      # 单引号 perl 脚本 + $ENV{} 读替换值，无需任何 shell 转义
+      perl -i -0pe 's/let ReplaceUrlDomain\s*=\s*"[^"]*"\s*/$ENV{_AZ_OBF}\n/g' "$file"
       echo "   ✓ 域名 '${DOMAIN}' 已混淆 → UInt8[] 运行时组装 (${file##*/})"
     fi
   done
@@ -153,11 +182,12 @@ fi
 # 混淆包ID
 if [ -n "$PKG_ID" ]; then
   HEX_BYTES=$(str_to_hex_array "$PKG_ID")
-  OBFUSCATED_PKGID="let PackageID: String = {\n    let b: [UInt8] = [${HEX_BYTES}]\n    return String(bytes: b, encoding: .utf8) ?? \"\"\n}()"
+  _AZ_OBF=$(printf 'let PackageID: String = {\n    let b: [UInt8] = [%s]\n    return String(bytes: b, encoding: .utf8) ?? ""\n}()' "$HEX_BYTES")
+  export _AZ_OBF
 
   LC_ALL=C find "$TARGET_DIR" -name "*.swift" | while read -r file; do
     if grep -q "let PackageID" "$file"; then
-      perl -i -0pe "s/let PackageID = \"[^\"]*\"/${OBFUSCATED_PKGID}/g" "$file"
+      perl -i -0pe 's/let PackageID\s*=\s*"[^"]*"\s*/$ENV{_AZ_OBF}\n/g' "$file"
       echo "   ✓ 包ID '${PKG_ID}' 已混淆 → UInt8[] 运行时组装 (${file##*/})"
     fi
   done
@@ -166,11 +196,12 @@ fi
 # 混淆 Adjust Key（如果发现）
 LC_ALL=C find "$TARGET_DIR" -name "*.swift" | while read -r file; do
   if grep -q "AdjustKey" "$file"; then
-    # 找出 AdjustKey 的值并混淆
-    AJKEY=$(grep 'let AdjustKey = "' "$file" | sed 's/.*= "//;s/".*//')
+    AJKEY=$(grep 'let AdjustKey\s*=\s*"' "$file" | sed 's/.*=\s*"//;s/".*//')
     if [ -n "$AJKEY" ]; then
       HEX_BYTES=$(str_to_hex_array "$AJKEY")
-      perl -i -pe "s|let AdjustKey = \"[^\"]*\"|let AdjustKey: String = { let b: [UInt8] = [${HEX_BYTES}]; return String(bytes: b, encoding: .utf8) ?? \"\" }()|g" "$file"
+      _AZ_OBF=$(printf 'let AdjustKey: String = { let b: [UInt8] = [%s]; return String(bytes: b, encoding: .utf8) ?? "" }()' "$HEX_BYTES")
+      export _AZ_OBF
+      perl -i -0pe 's/let AdjustKey\s*=\s*"[^"]*"/$ENV{_AZ_OBF}/g' "$file"
       echo "   ✓ AdjustKey 已混淆 → UInt8[] 运行时组装 (${file##*/})"
     fi
   fi

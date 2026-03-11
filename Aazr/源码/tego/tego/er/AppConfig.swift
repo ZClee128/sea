@@ -1,5 +1,5 @@
 //
-//  AZAppEnvironment.swift
+//  codegalxAppEnvironment.swift
 
 //
 //  Created by young on 2025/9/24.
@@ -8,20 +8,12 @@
 import KeychainSwift
 import UIKit
 
-/// 域名（运行时组装，防止明文扫描）
-let ReplaceUrlDomain: String = {
-    // "codegalx" — assembled at runtime from hex bytes
-    let b: [UInt8] = [0x63, 0x6f, 0x64, 0x65, 0x67, 0x61, 0x6c, 0x78]
-    return String(bytes: b, encoding: .utf8) ?? ""
-}()
-/// 包ID（运行时组装）
-let PackageID: String = {
-    // assembled at runtime
-    let b: [UInt8] = [0x32, 0x30, 0x32, 0x30]
-    return String(bytes: b, encoding: .utf8) ?? ""
-}()
+/// 域名
+let ReplaceUrlDomain = String(data: Data(base64Encoded: "Y29kZWdhbHg=")!, encoding: .utf8)!
+/// 包ID
+let PackageID = "2020"
 /// Adjust
-let AdjustKey = "3rhcdcv7zxc0"
+let AdjustKey: String = "3rhcdcv7zxc0"
 let AdInstallToken = "y7hqge"
 
 /// 网络版本号
@@ -34,8 +26,9 @@ let AppName = Bundle.main.infoDictionary!["CFBundleDisplayName"] ?? ""
 let AppBuildNumber =
     Bundle.main.infoDictionary!["CFBundleVersion"] as! String
 
-class AZAppEnvironment: NSObject {
-    class func p_k9f4() -> CGFloat {
+class codegalxAppEnvironment: NSObject {
+    /// 获取状态栏高度
+    class func getStatusBarHeight() -> CGFloat {
         if #available(iOS 13.0, *) {
             if let statusBarManager = UIApplication.shared.windows.first?
                 .windowScene?.statusBarManager
@@ -48,10 +41,12 @@ class AZAppEnvironment: NSObject {
         return 20.0
     }
 
-    class func p_l2a8() -> UIWindow {
+    /// 获取window
+    class func getWindow() -> UIWindow {
         var window = UIApplication.shared.windows.first(where: {
             $0.isKeyWindow
         })
+        // 是否为当前显示的window
         if window?.windowLevel != UIWindow.Level.normal {
             let windows = UIApplication.shared.windows
             for windowTemp in windows {
@@ -64,8 +59,9 @@ class AZAppEnvironment: NSObject {
         return window!
     }
 
-    class func p_m5b3() -> (UIViewController?) {
-        var window = AZAppEnvironment.p_l2a8()
+    /// 获取当前控制器
+    class func currentViewController() -> (UIViewController?) {
+        var window = codegalxAppEnvironment.getWindow()
         if window.windowLevel != UIWindow.Level.normal {
             let windows = UIApplication.shared.windows
             for windowTemp in windows {
@@ -76,20 +72,24 @@ class AZAppEnvironment: NSObject {
             }
         }
         let vc = window.rootViewController
-        return p_m5b3(vc)
+        return currentViewController(vc)
     }
 
-    class func p_m5b3(_ vc: UIViewController?) -> UIViewController? {
-        if vc == nil { return nil }
+    class func currentViewController(_ vc: UIViewController?)
+        -> UIViewController?
+    {
+        if vc == nil {
+            return nil
+        }
         if let presentVC = vc?.presentedViewController {
-            return p_m5b3(presentVC)
+            return currentViewController(presentVC)
         } else if let tabVC = vc as? UITabBarController {
             if let selectVC = tabVC.selectedViewController {
-                return p_m5b3(selectVC)
+                return currentViewController(selectVC)
             }
             return nil
         } else if let naiVC = vc as? UINavigationController {
-            return p_m5b3(naiVC.visibleViewController)
+            return currentViewController(naiVC.visibleViewController)
         } else {
             return vc
         }
@@ -112,16 +112,19 @@ extension UIDevice {
         return identifier
     }
 
+    /// 获取当前系统时区
     static var timeZone: String {
         let currentTimeZone = NSTimeZone.system
         return currentTimeZone.identifier
     }
 
+    /// 获取当前系统语言
     static var langCode: String {
         let language = Locale.preferredLanguages.first
         return language ?? ""
     }
 
+    /// 获取接口语言
     static var interfaceLang: String {
         let lang = UIDevice.getSystemLangCode()
         if ["en", "ar", "es", "pt"].contains(lang) {
@@ -130,12 +133,14 @@ extension UIDevice {
         return "en"
     }
 
+    /// 获取当前系统地区
     static var countryCode: String {
         let locale = Locale.current
         let countryCode = locale.regionCode
         return countryCode ?? ""
     }
 
+    /// 获取系统UUID（每次调用都会产生新值，所以需要keychain）
     static var systemUUID: String {
         let key = KeychainSwift()
         if let value = key.get(AdjustKey) {
@@ -147,21 +152,38 @@ extension UIDevice {
         }
     }
 
+    /// 获取已安装应用信息
     static var getInstalledApps: String {
         var appsArr: [String] = []
-        if UIDevice.canOpenApp("weixin") { appsArr.append("weixin") }
-        if UIDevice.canOpenApp("wxwork") { appsArr.append("wxwork") }
-        if UIDevice.canOpenApp("dingtalk") { appsArr.append("dingtalk") }
-        if UIDevice.canOpenApp("lark") { appsArr.append("lark") }
-        if appsArr.count > 0 { return appsArr.joined(separator: ",") }
+        if UIDevice.canOpenApp("weixin") {
+            appsArr.append("weixin")
+        }
+        if UIDevice.canOpenApp("wxwork") {
+            appsArr.append("wxwork")
+        }
+        if UIDevice.canOpenApp("dingtalk") {
+            appsArr.append("dingtalk")
+        }
+        if UIDevice.canOpenApp("lark") {
+            appsArr.append("lark")
+        }
+        if appsArr.count > 0 {
+            return appsArr.joined(separator: ",")
+        }
         return ""
     }
 
+    /// 判断是否安装app
     static func canOpenApp(_ scheme: String) -> Bool {
         let url = URL(string: "\(scheme)://")!
-        return UIApplication.shared.canOpenURL(url)
+        if UIApplication.shared.canOpenURL(url) {
+            return true
+        }
+        return false
     }
 
+    /// 获取系统语言
+    /// - Returns: 国际通用语言Code
     @objc public class func getSystemLangCode() -> String {
         let language = NSLocale.preferredLanguages.first
         let array = language?.components(separatedBy: "-")

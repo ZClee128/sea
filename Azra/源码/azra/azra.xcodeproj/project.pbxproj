@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80F9A4973B4F666E6C667CB2 /* Pods_azra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD38254E774F439DE5CFA39 /* Pods_azra.framework */; };
+		84B42CF92F6067FA004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B42CF82F6067FA004953C3 /* StoreKit.framework */; };
+		84B42D192F611450004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D032F611450004953C3 /* Assets.xcassets */; };
+		84B42D1B2F611450004953C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D0D2F611450004953C3 /* LaunchScreen.storyboard */; };
+		84B42D1C2F611450004953C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D0F2F611450004953C3 /* Main.storyboard */; };
+		84B42D1D2F611450004953C3 /* maxres2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D112F611450004953C3 /* maxres2.jpg */; };
+		84B42D1E2F611450004953C3 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D162F611450004953C3 /* videoplayback.mp4 */; };
+		84B42D1F2F611450004953C3 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D012F611450004953C3 /* AgreementViewController.swift */; };
+		84B42D212F611450004953C3 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D052F611450004953C3 /* CoinManager.swift */; };
+		84B42D222F611450004953C3 /* CoinStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D062F611450004953C3 /* CoinStoreViewController.swift */; };
+		84B42D232F611450004953C3 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D072F611450004953C3 /* DesignViewController.swift */; };
+		84B42D242F611450004953C3 /* ExploreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D082F611450004953C3 /* ExploreDetailViewController.swift */; };
+		84B42D252F611450004953C3 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D092F611450004953C3 /* ExploreViewController.swift */; };
+		84B42D262F611450004953C3 /* ImageVaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D0A2F611450004953C3 /* ImageVaultManager.swift */; };
+		84B42D272F611450004953C3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D102F611450004953C3 /* MainTabBarController.swift */; };
+		84B42D282F611450004953C3 /* MyInkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D122F611450004953C3 /* MyInkViewController.swift */; };
+		84B42D292F611450004953C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D132F611450004953C3 /* SettingsViewController.swift */; };
+		84B42D2A2F611450004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D142F611450004953C3 /* StoreManager.swift */; };
+		84B42D2B2F611450004953C3 /* TattooPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D152F611450004953C3 /* TattooPreviewViewController.swift */; };
+		84B42D2C2F611450004953C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D172F611450004953C3 /* ViewController.swift */; };
+		84B42D492F611617004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42D482F611617004953C3 /* GoogleService-Info.plist */; };
+		84B42D592F611B2A004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D4C2F611B2A004953C3 /* AppDelegate.swift */; };
+		84B42D882F6130AE004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D7C2F6130AE004953C3 /* AppAdjustManager.swift */; };
+		84B42D892F6130AE004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D7D2F6130AE004953C3 /* AppConfig.swift */; };
+		84B42D8A2F6130AE004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D7E2F6130AE004953C3 /* AppleIAPManager.swift */; };
+		84B42D8B2F6130AE004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D862F6130AE004953C3 /* ProgressHUD.swift */; };
+		84B42D8C2F6130AE004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D872F6130AE004953C3 /* WaitViewController.swift */; };
+		84B42D8D2F6130AE004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D812F6130AE004953C3 /* AppRequestTool.swift */; };
+		84B42D8E2F6130AE004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D822F6130AE004953C3 /* AppWebViewController.swift */; };
+		84B42D8F2F6130AE004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D7F2F6130AE004953C3 /* AppPermissionTool.swift */; };
+		84B42D902F6130AE004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D802F6130AE004953C3 /* AppRequestBaseModel.swift */; };
+		84B42D912F6130AE004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D842F6130AE004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B42D922F6130AE004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D852F6130AE004953C3 /* LocalPushScheduler.swift */; };
+		84B42D932F6130AE004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42D832F6130AE004953C3 /* AppWebViewHandleEvent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		44268C50760D8CB942D70EEB /* Pods-azra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-azra.release.xcconfig"; path = "Target Support Files/Pods-azra/Pods-azra.release.xcconfig"; sourceTree = "<group>"; };
+		84B42CC92F605226004953C3 /* azra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = azra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B42CF82F6067FA004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B42D012F611450004953C3 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		84B42D032F611450004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B42D042F611450004953C3 /* azra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = azra.entitlements; sourceTree = "<group>"; };
+		84B42D052F611450004953C3 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		84B42D062F611450004953C3 /* CoinStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStoreViewController.swift; sourceTree = "<group>"; };
+		84B42D072F611450004953C3 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
+		84B42D082F611450004953C3 /* ExploreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDetailViewController.swift; sourceTree = "<group>"; };
+		84B42D092F611450004953C3 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		84B42D0A2F611450004953C3 /* ImageVaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVaultManager.swift; sourceTree = "<group>"; };
+		84B42D0B2F611450004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B42D0C2F611450004953C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B42D0E2F611450004953C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84B42D102F611450004953C3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		84B42D112F611450004953C3 /* maxres2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maxres2.jpg; sourceTree = "<group>"; };
+		84B42D122F611450004953C3 /* MyInkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInkViewController.swift; sourceTree = "<group>"; };
+		84B42D132F611450004953C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84B42D142F611450004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84B42D152F611450004953C3 /* TattooPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooPreviewViewController.swift; sourceTree = "<group>"; };
+		84B42D162F611450004953C3 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
+		84B42D172F611450004953C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B42D482F611617004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B42D4C2F611B2A004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B42D7C2F6130AE004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B42D7D2F6130AE004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B42D7E2F6130AE004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B42D7F2F6130AE004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B42D802F6130AE004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B42D812F6130AE004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B42D822F6130AE004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B42D832F6130AE004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B42D842F6130AE004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B42D852F6130AE004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B42D862F6130AE004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B42D872F6130AE004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		929C36350166C873BB4DD8B6 /* Pods-azra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-azra.debug.xcconfig"; path = "Target Support Files/Pods-azra/Pods-azra.debug.xcconfig"; sourceTree = "<group>"; };
+		DFD38254E774F439DE5CFA39 /* Pods_azra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_azra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B42CC62F605226004953C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42CF92F6067FA004953C3 /* StoreKit.framework in Frameworks */,
+				80F9A4973B4F666E6C667CB2 /* Pods_azra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84B42CC02F605226004953C3 = {
+			isa = PBXGroup;
+			children = (
+				84B42D182F611450004953C3 /* azra */,
+				84B42CF72F6067FA004953C3 /* Frameworks */,
+				84B42CCA2F605226004953C3 /* Products */,
+				D6AD49AB0B00566D12465E9E /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84B42CCA2F605226004953C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B42CC92F605226004953C3 /* azra.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B42CF72F6067FA004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B42CF82F6067FA004953C3 /* StoreKit.framework */,
+				DFD38254E774F439DE5CFA39 /* Pods_azra.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B42D182F611450004953C3 /* azra */ = {
+			isa = PBXGroup;
+			children = (
+				84B42D2D2F6114FA004953C3 /* min */,
+				84B42D012F611450004953C3 /* AgreementViewController.swift */,
+				84B42D032F611450004953C3 /* Assets.xcassets */,
+				84B42D042F611450004953C3 /* azra.entitlements */,
+				84B42D052F611450004953C3 /* CoinManager.swift */,
+				84B42D062F611450004953C3 /* CoinStoreViewController.swift */,
+				84B42D072F611450004953C3 /* DesignViewController.swift */,
+				84B42D082F611450004953C3 /* ExploreDetailViewController.swift */,
+				84B42D092F611450004953C3 /* ExploreViewController.swift */,
+				84B42D0A2F611450004953C3 /* ImageVaultManager.swift */,
+				84B42D0B2F611450004953C3 /* Info.plist */,
+				84B42D0D2F611450004953C3 /* LaunchScreen.storyboard */,
+				84B42D0F2F611450004953C3 /* Main.storyboard */,
+				84B42D102F611450004953C3 /* MainTabBarController.swift */,
+				84B42D112F611450004953C3 /* maxres2.jpg */,
+				84B42D122F611450004953C3 /* MyInkViewController.swift */,
+				84B42D132F611450004953C3 /* SettingsViewController.swift */,
+				84B42D142F611450004953C3 /* StoreManager.swift */,
+				84B42D152F611450004953C3 /* TattooPreviewViewController.swift */,
+				84B42D162F611450004953C3 /* videoplayback.mp4 */,
+				84B42D172F611450004953C3 /* ViewController.swift */,
+				84B42D482F611617004953C3 /* GoogleService-Info.plist */,
+			);
+			path = azra;
+			sourceTree = "<group>";
+		};
+		84B42D2D2F6114FA004953C3 /* min */ = {
+			isa = PBXGroup;
+			children = (
+				84B42D4C2F611B2A004953C3 /* AppDelegate.swift */,
+				84B42D7C2F6130AE004953C3 /* AppAdjustManager.swift */,
+				84B42D7D2F6130AE004953C3 /* AppConfig.swift */,
+				84B42D7E2F6130AE004953C3 /* AppleIAPManager.swift */,
+				84B42D7F2F6130AE004953C3 /* AppPermissionTool.swift */,
+				84B42D802F6130AE004953C3 /* AppRequestBaseModel.swift */,
+				84B42D812F6130AE004953C3 /* AppRequestTool.swift */,
+				84B42D822F6130AE004953C3 /* AppWebViewController.swift */,
+				84B42D832F6130AE004953C3 /* AppWebViewHandleEvent.swift */,
+				84B42D842F6130AE004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B42D852F6130AE004953C3 /* LocalPushScheduler.swift */,
+				84B42D862F6130AE004953C3 /* ProgressHUD.swift */,
+				84B42D872F6130AE004953C3 /* WaitViewController.swift */,
+			);
+			path = min;
+			sourceTree = "<group>";
+		};
+		D6AD49AB0B00566D12465E9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				929C36350166C873BB4DD8B6 /* Pods-azra.debug.xcconfig */,
+				44268C50760D8CB942D70EEB /* Pods-azra.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B42CC82F605226004953C3 /* azra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B42CDC2F605228004953C3 /* Build configuration list for PBXNativeTarget "azra" */;
+			buildPhases = (
+				262253AF5AAD786555766E16 /* [CP] Check Pods Manifest.lock */,
+				84B42CC52F605226004953C3 /* Sources */,
+				84B42CC62F605226004953C3 /* Frameworks */,
+				84B42CC72F605226004953C3 /* Resources */,
+				B6A1319A61B23887722AC737 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = azra;
+			productName = azra;
+			productReference = 84B42CC92F605226004953C3 /* azra.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B42CC12F605226004953C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					84B42CC82F605226004953C3 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 84B42CC42F605226004953C3 /* Build configuration list for PBXProject "azra" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B42CC02F605226004953C3;
+			productRefGroup = 84B42CCA2F605226004953C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B42CC82F605226004953C3 /* azra */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B42CC72F605226004953C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42D192F611450004953C3 /* Assets.xcassets in Resources */,
+				84B42D1B2F611450004953C3 /* LaunchScreen.storyboard in Resources */,
+				84B42D1C2F611450004953C3 /* Main.storyboard in Resources */,
+				84B42D1D2F611450004953C3 /* maxres2.jpg in Resources */,
+				84B42D1E2F611450004953C3 /* videoplayback.mp4 in Resources */,
+				84B42D492F611617004953C3 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		262253AF5AAD786555766E16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-azra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6A1319A61B23887722AC737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-azra/Pods-azra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-azra/Pods-azra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-azra/Pods-azra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B42CC52F605226004953C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B42D1F2F611450004953C3 /* AgreementViewController.swift in Sources */,
+				84B42D212F611450004953C3 /* CoinManager.swift in Sources */,
+				84B42D222F611450004953C3 /* CoinStoreViewController.swift in Sources */,
+				84B42D232F611450004953C3 /* DesignViewController.swift in Sources */,
+				84B42D242F611450004953C3 /* ExploreDetailViewController.swift in Sources */,
+				84B42D252F611450004953C3 /* ExploreViewController.swift in Sources */,
+				84B42D262F611450004953C3 /* ImageVaultManager.swift in Sources */,
+				84B42D272F611450004953C3 /* MainTabBarController.swift in Sources */,
+				84B42D282F611450004953C3 /* MyInkViewController.swift in Sources */,
+				84B42D882F6130AE004953C3 /* AppAdjustManager.swift in Sources */,
+				84B42D892F6130AE004953C3 /* AppConfig.swift in Sources */,
+				84B42D8A2F6130AE004953C3 /* AppleIAPManager.swift in Sources */,
+				84B42D8B2F6130AE004953C3 /* ProgressHUD.swift in Sources */,
+				84B42D8C2F6130AE004953C3 /* WaitViewController.swift in Sources */,
+				84B42D8D2F6130AE004953C3 /* AppRequestTool.swift in Sources */,
+				84B42D8E2F6130AE004953C3 /* AppWebViewController.swift in Sources */,
+				84B42D8F2F6130AE004953C3 /* AppPermissionTool.swift in Sources */,
+				84B42D902F6130AE004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B42D912F6130AE004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B42D922F6130AE004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B42D932F6130AE004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B42D292F611450004953C3 /* SettingsViewController.swift in Sources */,
+				84B42D592F611B2A004953C3 /* AppDelegate.swift in Sources */,
+				84B42D2A2F611450004953C3 /* StoreManager.swift in Sources */,
+				84B42D2B2F611450004953C3 /* TattooPreviewViewController.swift in Sources */,
+				84B42D2C2F611450004953C3 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84B42D0D2F611450004953C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B42D0C2F611450004953C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84B42D0F2F611450004953C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B42D0E2F611450004953C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84B42CDD2F605228004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 929C36350166C873BB4DD8B6 /* Pods-azra.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = azra/azra.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = azra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Azra;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Azra uses your camera to let you preview tattoo designs on your body in real time using AR Try-On.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Azra may access your microphone if you use video recording features in the AR Try-On view.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Azra saves your tattoo preview images directly to your photo library when you tap Save.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Azra accesses your photo library so you can choose a photo to preview your tattoo design on.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azra.tattoo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84B42CDE2F605228004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44268C50760D8CB942D70EEB /* Pods-azra.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = azra/azra.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = azra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Azra;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Azra uses your camera to let you preview tattoo designs on your body in real time using AR Try-On.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Azra may access your microphone if you use video recording features in the AR Try-On view.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Azra saves your tattoo preview images directly to your photo library when you tap Save.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Azra accesses your photo library so you can choose a photo to preview your tattoo design on.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azra.tattoo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		84B42CDF2F605228004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B42CE02F605228004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B42CC42F605226004953C3 /* Build configuration list for PBXProject "azra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B42CDF2F605228004953C3 /* Debug */,
+				84B42CE02F605228004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B42CDC2F605228004953C3 /* Build configuration list for PBXNativeTarget "azra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B42CDD2F605228004953C3 /* Debug */,
+				84B42CDE2F605228004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B42CC12F605226004953C3 /* Project object */;
+}
