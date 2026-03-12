@@ -1,0 +1,6 @@
+framework module Pods_lolo {
+  umbrella header "Pods-lolo-umbrella.h"
+
+  export *
+  module * { export * }
+}
