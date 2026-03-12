@@ -1,0 +1,30 @@
+Terms of Service for QuotePortraits
+
+Last Updated: March 2026
+
+1. Acceptance of Terms
+By using QuotePortraits ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.
+
+2. Use of the App
+QuotePortraits is a local utility designed to help you combine portraits with quotes to generate custom posters. 
+- You may use the App for personal, non-commercial purposes.
+- The default photos and quotes provided within the App are for demonstration and personal use only.
+- You are solely responsible for the content of the posters you generate and save.
+
+3. Intellectual Property
+The App and its original structural design are owned by the developer. The public domain images and quotes used as placeholders remain in the public domain or are used under fair use for demonstration.
+
+4. User Restrictions
+You agree not to reverse engineer, decompile, or otherwise attempt to extract the source code of the App.
+
+5. Disclaimer of Warranty
+The App is provided "AS IS" without warranties of any kind. We do not guarantee that the App will meet your specific requirements or be uninterrupted.
+
+6. Limitation of Liability
+In no event shall the developer be liable for any damages arising out of the use or inability to use the App, even if advised of the possibility of such damages.
+
+7. No Accounts or Subscriptions
+This App does not offer subscriptions, in-app purchases, or require any user accounts.
+
+8. Governing Law
+These terms are governed by standard international practices for purely local utility applications. Since no data is collected, jurisdictional data laws do not apply.
