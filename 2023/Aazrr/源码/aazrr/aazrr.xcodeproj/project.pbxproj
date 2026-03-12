@@ -42,6 +42,7 @@
 		84B431F12F62A29A004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DF2F62A29A004953C3 /* AppRequestTool.swift */; };
 		84B431F22F62A29A004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DB2F62A29A004953C3 /* AppDelegate.swift */; };
 		84B431F52F62A346004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B431F42F62A346004953C3 /* GoogleService-Info.plist */; };
+		84B432052F62AC3A004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B432042F62AC3A004953C3 /* Launch Screen.storyboard */; };
 		F145D3777F2C6CA0C6F1A0BF /* Pods_aazrr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1692DB837B038D199F6E9B78 /* Pods_aazrr.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		84B431E42F62A29A004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84B431E52F62A29A004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B431F42F62A346004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B432042F62AC3A004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		878245D983F5FFB5386E1E12 /* Pods-aazrr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aazrr.debug.xcconfig"; path = "Target Support Files/Pods-aazrr/Pods-aazrr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				84B431AF2F62A1F3004953C3 /* TermsOfService.txt */,
 				84B431B02F62A1F3004953C3 /* The Art of War.mp4 */,
 				84B431B12F62A1F3004953C3 /* VideoFeedView.swift */,
+				84B432042F62AC3A004953C3 /* Launch Screen.storyboard */,
 			);
 			path = aazrr;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				84B431C22F62A1F3004953C3 /* Assets.xcassets in Resources */,
 				84B431C42F62A1F3004953C3 /* Mind of a General.mp4 in Resources */,
+				84B432052F62AC3A004953C3 /* Launch Screen.storyboard in Resources */,
 				84B431C52F62A1F3004953C3 /* PrivacyPolicy.txt in Resources */,
 				84B431C62F62A1F3004953C3 /* Stoic Resilience.mp4 in Resources */,
 				84B431C72F62A1F3004953C3 /* TermsOfService.txt in Resources */,
@@ -471,6 +475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aazrr/aazrr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -486,6 +491,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -518,7 +524,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aazrr/aazrr.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -533,6 +540,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -541,7 +549,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aazrr.export;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuxuandao.imapp;
 				PRODUCT_NAME = Aazrr;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
