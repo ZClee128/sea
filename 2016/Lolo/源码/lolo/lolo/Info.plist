@@ -2,23 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- Privacy - Camera Usage Description -->
-	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to capture and share daily life photos and videos</string>
-	
-	<!-- Privacy - Photo Library Usage Description -->
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to select daily life photos and videos to share</string>
-	
-	<!-- Privacy - Photo Library Additions Usage Description -->
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need permission to save your daily life photos and videos to your photo library</string>
-	
-	<!-- Privacy - Location When In Use Usage Description -->
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need access to your location to share local tips and find nearby lifestyle events</string>
-	
-	<!-- URL Types -->
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -32,16 +15,10 @@
 			</array>
 		</dict>
 	</array>
-	
-	<!-- Background Modes -->
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
 		<string>remote-notification</string>
 	</array>
-	
-	<!-- Force Light Mode -->
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 </dict>
 </plist>

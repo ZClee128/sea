@@ -754,10 +754,16 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2A8RZ725U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lolo/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture and share daily life photos and videos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to share local tips and find nearby lifestyle events";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save your daily life photos and videos to your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select daily life photos and videos to share";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -792,10 +798,16 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2A8RZ725U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lolo/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture and share daily life photos and videos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to share local tips and find nearby lifestyle events";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save your daily life photos and videos to your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select daily life photos and videos to share";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
