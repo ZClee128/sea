@@ -3,46 +3,190 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
-/* Begin PBXFileReference section */
-		84B42E832F6258F7004953C3 /* aazrr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = aazrr.app; path = Aazrr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		84B4313E2F6282C3004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B4313D2F6282C3004953C3 /* StoreKit.framework */; };
+		84B431B32F62A1F3004953C3 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4319C2F62A1F3004953C3 /* ActivityView.swift */; };
+		84B431B42F62A1F3004953C3 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4319D2F62A1F3004953C3 /* AgreementView.swift */; };
+		84B431B52F62A1F3004953C3 /* AppContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4319E2F62A1F3004953C3 /* AppContent.swift */; };
+		84B431B72F62A1F3004953C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A12F62A1F3004953C3 /* HomeView.swift */; };
+		84B431B82F62A1F3004953C3 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A22F62A1F3004953C3 /* ImageSaver.swift */; };
+		84B431B92F62A1F3004953C3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A42F62A1F3004953C3 /* MainTabView.swift */; };
+		84B431BA2F62A1F3004953C3 /* Portrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A62F62A1F3004953C3 /* Portrait.swift */; };
+		84B431BB2F62A1F3004953C3 /* PosterEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A72F62A1F3004953C3 /* PosterEditorView.swift */; };
+		84B431BC2F62A1F3004953C3 /* PremiumStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431A82F62A1F3004953C3 /* PremiumStoreView.swift */; };
+		84B431BD2F62A1F3004953C3 /* QuotePortraitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431AA2F62A1F3004953C3 /* QuotePortraitsApp.swift */; };
+		84B431BE2F62A1F3004953C3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431AB2F62A1F3004953C3 /* RootView.swift */; };
+		84B431BF2F62A1F3004953C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431AC2F62A1F3004953C3 /* SettingsView.swift */; };
+		84B431C02F62A1F3004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431AE2F62A1F3004953C3 /* StoreManager.swift */; };
+		84B431C12F62A1F3004953C3 /* VideoFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431B12F62A1F3004953C3 /* VideoFeedView.swift */; };
+		84B431C22F62A1F3004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B431A02F62A1F3004953C3 /* Assets.xcassets */; };
+		84B431C42F62A1F3004953C3 /* Mind of a General.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B431A52F62A1F3004953C3 /* Mind of a General.mp4 */; };
+		84B431C52F62A1F3004953C3 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84B431A92F62A1F3004953C3 /* PrivacyPolicy.txt */; };
+		84B431C62F62A1F3004953C3 /* Stoic Resilience.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B431AD2F62A1F3004953C3 /* Stoic Resilience.mp4 */; };
+		84B431C72F62A1F3004953C3 /* TermsOfService.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84B431AF2F62A1F3004953C3 /* TermsOfService.txt */; };
+		84B431C82F62A1F3004953C3 /* The Art of War.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B431B02F62A1F3004953C3 /* The Art of War.mp4 */; };
+		84B431E62F62A29A004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DC2F62A29A004953C3 /* AppleIAPManager.swift */; };
+		84B431E72F62A29A004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E22F62A29A004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B431E82F62A29A004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E12F62A29A004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B431E92F62A29A004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431D92F62A29A004953C3 /* AppAdjustManager.swift */; };
+		84B431EA2F62A29A004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E42F62A29A004953C3 /* ProgressHUD.swift */; };
+		84B431EB2F62A29A004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E32F62A29A004953C3 /* LocalPushScheduler.swift */; };
+		84B431EC2F62A29A004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E52F62A29A004953C3 /* WaitViewController.swift */; };
+		84B431ED2F62A29A004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DE2F62A29A004953C3 /* AppRequestBaseModel.swift */; };
+		84B431EE2F62A29A004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DA2F62A29A004953C3 /* AppConfig.swift */; };
+		84B431EF2F62A29A004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DD2F62A29A004953C3 /* AppPermissionTool.swift */; };
+		84B431F02F62A29A004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431E02F62A29A004953C3 /* AppWebViewController.swift */; };
+		84B431F12F62A29A004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DF2F62A29A004953C3 /* AppRequestTool.swift */; };
+		84B431F22F62A29A004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B431DB2F62A29A004953C3 /* AppDelegate.swift */; };
+		84B431F52F62A346004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B431F42F62A346004953C3 /* GoogleService-Info.plist */; };
+		F145D3777F2C6CA0C6F1A0BF /* Pods_aazrr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1692DB837B038D199F6E9B78 /* Pods_aazrr.framework */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84B42E852F6258F7004953C3 /* aazrr */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = aazrr;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		02AE5C697ED7F9B9B1158AB1 /* Pods-aazrr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aazrr.release.xcconfig"; path = "Target Support Files/Pods-aazrr/Pods-aazrr.release.xcconfig"; sourceTree = "<group>"; };
+		1692DB837B038D199F6E9B78 /* Pods_aazrr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aazrr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B42E832F6258F7004953C3 /* Aazrr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aazrr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4313D2F6282C3004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B4319B2F62A1F3004953C3 /* aazrr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aazrr.entitlements; sourceTree = "<group>"; };
+		84B4319C2F62A1F3004953C3 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		84B4319D2F62A1F3004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		84B4319E2F62A1F3004953C3 /* AppContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContent.swift; sourceTree = "<group>"; };
+		84B431A02F62A1F3004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B431A12F62A1F3004953C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		84B431A22F62A1F3004953C3 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		84B431A32F62A1F3004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B431A42F62A1F3004953C3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84B431A52F62A1F3004953C3 /* Mind of a General.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mind of a General.mp4"; sourceTree = "<group>"; };
+		84B431A62F62A1F3004953C3 /* Portrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portrait.swift; sourceTree = "<group>"; };
+		84B431A72F62A1F3004953C3 /* PosterEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterEditorView.swift; sourceTree = "<group>"; };
+		84B431A82F62A1F3004953C3 /* PremiumStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreView.swift; sourceTree = "<group>"; };
+		84B431A92F62A1F3004953C3 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		84B431AA2F62A1F3004953C3 /* QuotePortraitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotePortraitsApp.swift; sourceTree = "<group>"; };
+		84B431AB2F62A1F3004953C3 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		84B431AC2F62A1F3004953C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84B431AD2F62A1F3004953C3 /* Stoic Resilience.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stoic Resilience.mp4"; sourceTree = "<group>"; };
+		84B431AE2F62A1F3004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84B431AF2F62A1F3004953C3 /* TermsOfService.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TermsOfService.txt; sourceTree = "<group>"; };
+		84B431B02F62A1F3004953C3 /* The Art of War.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Art of War.mp4"; sourceTree = "<group>"; };
+		84B431B12F62A1F3004953C3 /* VideoFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedView.swift; sourceTree = "<group>"; };
+		84B431D92F62A29A004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B431DA2F62A29A004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B431DB2F62A29A004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B431DC2F62A29A004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B431DD2F62A29A004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B431DE2F62A29A004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B431DF2F62A29A004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B431E02F62A29A004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B431E12F62A29A004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B431E22F62A29A004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B431E32F62A29A004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B431E42F62A29A004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B431E52F62A29A004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B431F42F62A346004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		878245D983F5FFB5386E1E12 /* Pods-aazrr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aazrr.debug.xcconfig"; path = "Target Support Files/Pods-aazrr/Pods-aazrr.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84B42E802F6258F7004953C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B4313E2F6282C3004953C3 /* StoreKit.framework in Frameworks */,
+				F145D3777F2C6CA0C6F1A0BF /* Pods_aazrr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F14F270FDB46BCD19760E33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				878245D983F5FFB5386E1E12 /* Pods-aazrr.debug.xcconfig */,
+				02AE5C697ED7F9B9B1158AB1 /* Pods-aazrr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84B42E7A2F6258F7004953C3 = {
 			isa = PBXGroup;
 			children = (
-				84B42E852F6258F7004953C3 /* aazrr */,
+				84B431B22F62A1F3004953C3 /* aazrr */,
+				84B4313C2F6282C3004953C3 /* Frameworks */,
 				84B42E842F6258F7004953C3 /* Products */,
+				0F14F270FDB46BCD19760E33 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		84B42E842F6258F7004953C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84B42E832F6258F7004953C3 /* aazrr.app */,
+				84B42E832F6258F7004953C3 /* Aazrr.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84B4313C2F6282C3004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B4313D2F6282C3004953C3 /* StoreKit.framework */,
+				1692DB837B038D199F6E9B78 /* Pods_aazrr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B431B22F62A1F3004953C3 /* aazrr */ = {
+			isa = PBXGroup;
+			children = (
+				84B431F42F62A346004953C3 /* GoogleService-Info.plist */,
+				84B431CA2F62A27E004953C3 /* bizz */,
+				84B4319B2F62A1F3004953C3 /* aazrr.entitlements */,
+				84B4319C2F62A1F3004953C3 /* ActivityView.swift */,
+				84B4319D2F62A1F3004953C3 /* AgreementView.swift */,
+				84B4319E2F62A1F3004953C3 /* AppContent.swift */,
+				84B431A02F62A1F3004953C3 /* Assets.xcassets */,
+				84B431A12F62A1F3004953C3 /* HomeView.swift */,
+				84B431A22F62A1F3004953C3 /* ImageSaver.swift */,
+				84B431A32F62A1F3004953C3 /* Info.plist */,
+				84B431A42F62A1F3004953C3 /* MainTabView.swift */,
+				84B431A52F62A1F3004953C3 /* Mind of a General.mp4 */,
+				84B431A62F62A1F3004953C3 /* Portrait.swift */,
+				84B431A72F62A1F3004953C3 /* PosterEditorView.swift */,
+				84B431A82F62A1F3004953C3 /* PremiumStoreView.swift */,
+				84B431A92F62A1F3004953C3 /* PrivacyPolicy.txt */,
+				84B431AA2F62A1F3004953C3 /* QuotePortraitsApp.swift */,
+				84B431AB2F62A1F3004953C3 /* RootView.swift */,
+				84B431AC2F62A1F3004953C3 /* SettingsView.swift */,
+				84B431AD2F62A1F3004953C3 /* Stoic Resilience.mp4 */,
+				84B431AE2F62A1F3004953C3 /* StoreManager.swift */,
+				84B431AF2F62A1F3004953C3 /* TermsOfService.txt */,
+				84B431B02F62A1F3004953C3 /* The Art of War.mp4 */,
+				84B431B12F62A1F3004953C3 /* VideoFeedView.swift */,
+			);
+			path = aazrr;
+			sourceTree = "<group>";
+		};
+		84B431CA2F62A27E004953C3 /* bizz */ = {
+			isa = PBXGroup;
+			children = (
+				84B431D92F62A29A004953C3 /* AppAdjustManager.swift */,
+				84B431DA2F62A29A004953C3 /* AppConfig.swift */,
+				84B431DB2F62A29A004953C3 /* AppDelegate.swift */,
+				84B431DC2F62A29A004953C3 /* AppleIAPManager.swift */,
+				84B431DD2F62A29A004953C3 /* AppPermissionTool.swift */,
+				84B431DE2F62A29A004953C3 /* AppRequestBaseModel.swift */,
+				84B431DF2F62A29A004953C3 /* AppRequestTool.swift */,
+				84B431E02F62A29A004953C3 /* AppWebViewController.swift */,
+				84B431E12F62A29A004953C3 /* AppWebViewHandleEvent.swift */,
+				84B431E22F62A29A004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B431E32F62A29A004953C3 /* LocalPushScheduler.swift */,
+				84B431E42F62A29A004953C3 /* ProgressHUD.swift */,
+				84B431E52F62A29A004953C3 /* WaitViewController.swift */,
+			);
+			path = bizz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -52,20 +196,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B42E8E2F6258F8004953C3 /* Build configuration list for PBXNativeTarget "aazrr" */;
 			buildPhases = (
+				BD02D9AB795A1CCCA86EAEB3 /* [CP] Check Pods Manifest.lock */,
 				84B42E7F2F6258F7004953C3 /* Sources */,
 				84B42E802F6258F7004953C3 /* Frameworks */,
 				84B42E812F6258F7004953C3 /* Resources */,
+				778307B6BE89A1462663D204 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84B42E852F6258F7004953C3 /* aazrr */,
-			);
 			name = aazrr;
 			productName = aazrr;
-			productReference = 84B42E832F6258F7004953C3 /* aazrr.app */;
+			productReference = 84B42E832F6258F7004953C3 /* Aazrr.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -84,6 +227,7 @@
 				};
 			};
 			buildConfigurationList = 84B42E7E2F6258F7004953C3 /* Build configuration list for PBXProject "aazrr" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -91,8 +235,6 @@
 				Base,
 			);
 			mainGroup = 84B42E7A2F6258F7004953C3;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84B42E842F6258F7004953C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -107,16 +249,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B431C22F62A1F3004953C3 /* Assets.xcassets in Resources */,
+				84B431C42F62A1F3004953C3 /* Mind of a General.mp4 in Resources */,
+				84B431C52F62A1F3004953C3 /* PrivacyPolicy.txt in Resources */,
+				84B431C62F62A1F3004953C3 /* Stoic Resilience.mp4 in Resources */,
+				84B431C72F62A1F3004953C3 /* TermsOfService.txt in Resources */,
+				84B431C82F62A1F3004953C3 /* The Art of War.mp4 in Resources */,
+				84B431F52F62A346004953C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		778307B6BE89A1462663D204 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aazrr/Pods-aazrr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aazrr/Pods-aazrr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aazrr/Pods-aazrr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD02D9AB795A1CCCA86EAEB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aazrr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84B42E7F2F6258F7004953C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B431B32F62A1F3004953C3 /* ActivityView.swift in Sources */,
+				84B431B42F62A1F3004953C3 /* AgreementView.swift in Sources */,
+				84B431E62F62A29A004953C3 /* AppleIAPManager.swift in Sources */,
+				84B431E72F62A29A004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B431E82F62A29A004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B431E92F62A29A004953C3 /* AppAdjustManager.swift in Sources */,
+				84B431EA2F62A29A004953C3 /* ProgressHUD.swift in Sources */,
+				84B431EB2F62A29A004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B431EC2F62A29A004953C3 /* WaitViewController.swift in Sources */,
+				84B431ED2F62A29A004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B431EE2F62A29A004953C3 /* AppConfig.swift in Sources */,
+				84B431EF2F62A29A004953C3 /* AppPermissionTool.swift in Sources */,
+				84B431F02F62A29A004953C3 /* AppWebViewController.swift in Sources */,
+				84B431F12F62A29A004953C3 /* AppRequestTool.swift in Sources */,
+				84B431F22F62A29A004953C3 /* AppDelegate.swift in Sources */,
+				84B431B52F62A1F3004953C3 /* AppContent.swift in Sources */,
+				84B431B72F62A1F3004953C3 /* HomeView.swift in Sources */,
+				84B431B82F62A1F3004953C3 /* ImageSaver.swift in Sources */,
+				84B431B92F62A1F3004953C3 /* MainTabView.swift in Sources */,
+				84B431BA2F62A1F3004953C3 /* Portrait.swift in Sources */,
+				84B431BB2F62A1F3004953C3 /* PosterEditorView.swift in Sources */,
+				84B431BC2F62A1F3004953C3 /* PremiumStoreView.swift in Sources */,
+				84B431BD2F62A1F3004953C3 /* QuotePortraitsApp.swift in Sources */,
+				84B431BE2F62A1F3004953C3 /* RootView.swift in Sources */,
+				84B431BF2F62A1F3004953C3 /* SettingsView.swift in Sources */,
+				84B431C02F62A1F3004953C3 /* StoreManager.swift in Sources */,
+				84B431C12F62A1F3004953C3 /* VideoFeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,16 +466,24 @@
 		};
 		84B42E8F2F6258F8004953C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 878245D983F5FFB5386E1E12 /* Pods-aazrr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = aazrr/aazrr.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aazrr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazrr;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QuotePortraits needs access to save posters to your photo library.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add new photos to your library, enabling you to save photos directly from the app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -263,9 +493,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.aazrr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazrr.export;
 				PRODUCT_NAME = Aazrr;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -282,16 +513,24 @@
 		};
 		84B42E902F6258F8004953C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02AE5C697ED7F9B9B1158AB1 /* Pods-aazrr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = aazrr/aazrr.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aazrr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Aazrr;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QuotePortraits needs access to save posters to your photo library.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add new photos to your library, enabling you to save photos directly from the app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -301,9 +540,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.aazrr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aazrr.export;
 				PRODUCT_NAME = Aazrr;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

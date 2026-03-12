@@ -1,11 +1,11 @@
-Privacy Policy for QuotePortraits
+Privacy Policy for Aazrr
 
 Last Updated: March 2026
 
-Welcome to QuotePortraits! Your privacy is critically important to us. We have built this application with a fundamental commitment to user privacy.
+Welcome to Aazrr! Your privacy is critically important to us. We have built this application with a fundamental commitment to user privacy.
 
 1. No Data Collection
-QuotePortraits operates entirely on your device. We do not collect, store, transmit, or share any of your personal information, usage data, or device analytics. There are no tracking scripts, analytics SDKs, or advertising networks integrated into this app.
+Aazrr operates entirely on your device. We do not collect, store, transmit, or share any of your personal information, usage data, or device analytics. There are no tracking scripts, analytics SDKs, or advertising networks integrated into this app.
 
 2. Local Storage Only
 All your actions within the app, including generated posters, selected portraits, and customized quotes, are processed and stored locally on your device. When you save a poster, it is saved directly to your local Photo Library using standard system APIs.

@@ -83,6 +83,7 @@ struct HomeView: View {
                 PosterEditorView(portrait: portrait)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

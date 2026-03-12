@@ -12,6 +12,12 @@ struct PosterEditorView: View {
     @State private var showShareSheet = false
     @State private var imageToShare: UIImage?
     
+    // Premium Features
+    @ObservedObject var storeManager = StoreManager.shared
+    @State private var showCoinPrompt = false
+    @State private var showInsufficientFunds = false
+    @State private var pendingAction: (() -> Void)?
+    
     init(portrait: Portrait) {
         self.portrait = portrait
         self._quoteText = State(initialValue: portrait.defaultQuote)
@@ -73,13 +79,13 @@ struct PosterEditorView: View {
                 Text("Editor")
                     .font(.headline)
                 Spacer()
-                Button(action: sharePoster) {
+                Button(action: { promptCoinCharge(for: sharePoster) }) {
                     Image(systemName: "square.and.arrow.up")
                         .font(.title)
                 }
                 .padding(.trailing, 10)
                 Button("Save") {
-                    savePoster()
+                    promptCoinCharge(for: savePoster)
                 }
                 .disabled(quoteText.isEmpty)
             }
@@ -121,20 +127,60 @@ struct PosterEditorView: View {
                 .padding(.top, 30)
             }
         }
-        .alert(isPresented: $showSaveSuccess) {
-            Alert(
-                title: Text("Saved!"),
-                message: Text("Poster has been saved to your Photo Library."),
-                dismissButton: .default(Text("OK")) {
-                    presentationMode.wrappedValue.dismiss()
-                }
-            )
+        .alert(isPresented: Binding<Bool>(
+            get: { showSaveSuccess || showCoinPrompt || showInsufficientFunds },
+            set: { _ in }
+        )) {
+            if showCoinPrompt {
+                return Alert(
+                    title: Text("Premium Action"),
+                    message: Text("Saving or sharing this high-quality poster costs 10 coins. You have \(storeManager.coinBalance) coins."),
+                    primaryButton: .default(Text("Pay 10 Coins")) {
+                        if storeManager.deductCoins(10) {
+                            showCoinPrompt = false
+                            pendingAction?()
+                        } else {
+                            showCoinPrompt = false
+                            // Small delay to allow previous alert to dismiss
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                self.showInsufficientFunds = true
+                            }
+                        }
+                    },
+                    secondaryButton: .cancel(Text("Cancel")) {
+                        showCoinPrompt = false
+                        pendingAction = nil
+                    }
+                )
+            } else if showInsufficientFunds {
+                return Alert(
+                    title: Text("Insufficient Coins"),
+                    message: Text("You need 10 coins to perform this action. Please visit the Premium Store in the Settings tab to top up."),
+                    dismissButton: .default(Text("OK")) {
+                        showInsufficientFunds = false
+                    }
+                )
+            } else {
+                return Alert(
+                    title: Text("Saved!"),
+                    message: Text("Poster has been saved to your Photo Library."),
+                    dismissButton: .default(Text("OK")) {
+                        showSaveSuccess = false
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                )
+            }
         }
         .sheet(isPresented: $showShareSheet) {
             if let img = self.imageToShare {
                 ActivityView(activityItems: [img])
             }
         }
+    }
+    
+    private func promptCoinCharge(for action: @escaping () -> Void) {
+        self.pendingAction = action
+        self.showCoinPrompt = true
     }
     
     private func sharePoster() {

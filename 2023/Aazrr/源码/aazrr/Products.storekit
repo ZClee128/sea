@@ -1,0 +1,153 @@
+{
+  "identifier" : "E2B35B48",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1",
+      "localizations" : [
+        {
+          "description" : "32 Coins",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr",
+      "referenceName" : "Aazrr",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "2",
+      "localizations" : [
+        {
+          "description" : "60 Coins",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr1",
+      "referenceName" : "Aazrr1",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "3",
+      "localizations" : [
+        {
+          "description" : "96 Coins",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr2",
+      "referenceName" : "Aazrr2",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "4",
+      "localizations" : [
+        {
+          "description" : "155 Coins",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr4",
+      "referenceName" : "Aazrr4",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "5",
+      "localizations" : [
+        {
+          "description" : "189 Coins",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr5",
+      "referenceName" : "Aazrr5",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6",
+      "localizations" : [
+        {
+          "description" : "359 Coins",
+          "displayName" : "359 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr9",
+      "referenceName" : "Aazrr9",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "7",
+      "localizations" : [
+        {
+          "description" : "729 Coins",
+          "displayName" : "729 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr19",
+      "referenceName" : "Aazrr19",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "8",
+      "localizations" : [
+        {
+          "description" : "1869 Coins",
+          "displayName" : "1869 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr49",
+      "referenceName" : "Aazrr49",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "9",
+      "localizations" : [
+        {
+          "description" : "3799 Coins",
+          "displayName" : "3799 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Aazrr99",
+      "referenceName" : "Aazrr99",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

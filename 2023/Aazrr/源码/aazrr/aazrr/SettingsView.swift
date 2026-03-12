@@ -8,6 +8,22 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
+                // Premium Store Section
+                Section(header: Text("Account")) {
+                    NavigationLink(destination: PremiumStoreView()) {
+                        HStack {
+                            Image(systemName: "dollarsign.circle.fill")
+                                .foregroundColor(.yellow)
+                                .frame(width: 30)
+                            Text("Premium Store")
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Text("\(StoreManager.shared.coinBalance) coins")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                
                 Section(header: Text("Legal & Terms")) {
                     Button(action: { showPrivacy = true }) {
                         HStack {
@@ -73,5 +89,6 @@ struct SettingsView: View {
                 LegalDocumentView(title: "Terms of Service", filename: "TermsOfService")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
