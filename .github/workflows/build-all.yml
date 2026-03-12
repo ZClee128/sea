@@ -104,6 +104,26 @@ jobs:
             echo "📦 Podfile found, running pod install..."
             pod install --repo-update
             echo "✓ pod install completed"
+            
+            if [ -d "Pods/Pods.xcodeproj" ]; then
+              echo "🔧 Disabling code signing for Pods..."
+              cat << 'EOF' > disable_pods_signing.rb
+              require 'xcodeproj'
+              project_path = 'Pods/Pods.xcodeproj'
+              project = Xcodeproj::Project.open(project_path)
+              project.targets.each do |target|
+                target.build_configurations.each do |config|
+                  config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+                  config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+                  config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = '""'
+                end
+              end
+              project.save
+              EOF
+              ruby disable_pods_signing.rb || true
+              rm disable_pods_signing.rb
+            fi
+            
           else
             echo "ℹ️ No Podfile found, skipping pod install"
           fi
