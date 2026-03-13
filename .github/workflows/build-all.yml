@@ -334,7 +334,11 @@ jobs:
             echo "    precheck_include_in_app_purchases: false," >> fastlane/Fastfile
             echo "    submit_for_review: true," >> fastlane/Fastfile
             echo "    automatic_release: true," >> fastlane/Fastfile
-            echo "    phased_release: true" >> fastlane/Fastfile
+            echo "    phased_release: true," >> fastlane/Fastfile
+            echo "    submission_information: {" >> fastlane/Fastfile
+            echo "      export_compliance_uses_encryption: false," >> fastlane/Fastfile
+            echo "      add_id_info_uses_idfa: false" >> fastlane/Fastfile
+            echo "    }" >> fastlane/Fastfile
             echo "  )" >> fastlane/Fastfile
             echo "end" >> fastlane/Fastfile
             
