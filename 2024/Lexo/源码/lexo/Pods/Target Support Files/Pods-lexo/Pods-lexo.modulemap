@@ -1,0 +1,6 @@
+framework module Pods_lexo {
+  umbrella header "Pods-lexo-umbrella.h"
+
+  export *
+  module * { export * }
+}
