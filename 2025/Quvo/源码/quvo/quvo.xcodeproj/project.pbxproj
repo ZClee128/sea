@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30B590F88B5FEC82BFB03309 /* Pods_quvo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A197C9F3049E9CC1733631 /* Pods_quvo.framework */; };
+		84B4335F2F641521004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B4335E2F641521004953C3 /* StoreKit.framework */; };
+		84B433782F6436CB004953C3 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433602F6436CB004953C3 /* AgreementView.swift */; };
+		84B4337A2F6436CB004953C3 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433632F6436CB004953C3 /* ClassesView.swift */; };
+		84B4337B2F6436CB004953C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433642F6436CB004953C3 /* ContentView.swift */; };
+		84B4337C2F6436CB004953C3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4336C2F6436CB004953C3 /* MainTabView.swift */; };
+		84B4337D2F6436CB004953C3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4336D2F6436CB004953C3 /* Models.swift */; };
+		84B4337E2F6436CB004953C3 /* MyPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4336E2F6436CB004953C3 /* MyPlanView.swift */; };
+		84B4337F2F6436CB004953C3 /* PoseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4336F2F6436CB004953C3 /* PoseDetailView.swift */; };
+		84B433802F6436CB004953C3 /* PosesFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433702F6436CB004953C3 /* PosesFeedView.swift */; };
+		84B433812F6436CB004953C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433722F6436CB004953C3 /* SettingsView.swift */; };
+		84B433822F6436CB004953C3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433732F6436CB004953C3 /* StoreManager.swift */; };
+		84B433832F6436CB004953C3 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433742F6436CB004953C3 /* StoreView.swift */; };
+		84B433842F6436CB004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B433622F6436CB004953C3 /* Assets.xcassets */; };
+		84B433852F6436CB004953C3 /* Core Strengthening.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B433652F6436CB004953C3 /* Core Strengthening.jpg */; };
+		84B433862F6436CB004953C3 /* Core Strengthening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B433662F6436CB004953C3 /* Core Strengthening.mp4 */; };
+		84B433872F6436CB004953C3 /* Deep Stretch & Relax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B433672F6436CB004953C3 /* Deep Stretch & Relax.jpg */; };
+		84B433882F6436CB004953C3 /* Deep Stretch & Relax.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B433682F6436CB004953C3 /* Deep Stretch & Relax.mp4 */; };
+		84B433892F6436CB004953C3 /* Full Body Morning Flow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B433692F6436CB004953C3 /* Full Body Morning Flow.jpg */; };
+		84B4338A2F6436CB004953C3 /* Full Body Morning Flow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B4336A2F6436CB004953C3 /* Full Body Morning Flow.mp4 */; };
+		84B4338C2F6436CB004953C3 /* Yoga for Beginners.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B433752F6436CB004953C3 /* Yoga for Beginners.jpg */; };
+		84B4338D2F6436CB004953C3 /* Yoga for Beginners.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B433762F6436CB004953C3 /* Yoga for Beginners.mp4 */; };
+		84B4339C2F64378F004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433932F64378F004953C3 /* AppPermissionTool.swift */; };
+		84B4339D2F64378F004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433902F64378F004953C3 /* AppConfig.swift */; };
+		84B4339E2F64378F004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433942F64378F004953C3 /* AppRequestBaseModel.swift */; };
+		84B4339F2F64378F004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433962F64378F004953C3 /* AppWebViewController.swift */; };
+		84B433A02F64378F004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433912F64378F004953C3 /* AppDelegate.swift */; };
+		84B433A12F64378F004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433952F64378F004953C3 /* AppRequestTool.swift */; };
+		84B433A22F64378F004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433922F64378F004953C3 /* AppleIAPManager.swift */; };
+		84B433A32F64378F004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4339A2F64378F004953C3 /* ProgressHUD.swift */; };
+		84B433A42F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B433A52F64378F004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4339B2F64378F004953C3 /* WaitViewController.swift */; };
+		84B433A62F64378F004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433992F64378F004953C3 /* LocalPushScheduler.swift */; };
+		84B433A72F64378F004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4338F2F64378F004953C3 /* AppAdjustManager.swift */; };
+		84B433A82F64378F004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B433AA2F643944004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B433A92F643944004953C3 /* Launch Screen.storyboard */; };
+		84B433AC2F6439EB004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B433AB2F6439EB004953C3 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20A197C9F3049E9CC1733631 /* Pods_quvo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quvo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDA3891F83E6BA5C3B3DB3D /* Pods-quvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quvo.debug.xcconfig"; path = "Target Support Files/Pods-quvo/Pods-quvo.debug.xcconfig"; sourceTree = "<group>"; };
+		84B4331E2F63EA2C004953C3 /* quvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4335E2F641521004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B433602F6436CB004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		84B433622F6436CB004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B433632F6436CB004953C3 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
+		84B433642F6436CB004953C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84B433652F6436CB004953C3 /* Core Strengthening.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Core Strengthening.jpg"; sourceTree = "<group>"; };
+		84B433662F6436CB004953C3 /* Core Strengthening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Core Strengthening.mp4"; sourceTree = "<group>"; };
+		84B433672F6436CB004953C3 /* Deep Stretch & Relax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Deep Stretch & Relax.jpg"; sourceTree = "<group>"; };
+		84B433682F6436CB004953C3 /* Deep Stretch & Relax.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deep Stretch & Relax.mp4"; sourceTree = "<group>"; };
+		84B433692F6436CB004953C3 /* Full Body Morning Flow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Full Body Morning Flow.jpg"; sourceTree = "<group>"; };
+		84B4336A2F6436CB004953C3 /* Full Body Morning Flow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Full Body Morning Flow.mp4"; sourceTree = "<group>"; };
+		84B4336B2F6436CB004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B4336C2F6436CB004953C3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84B4336D2F6436CB004953C3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		84B4336E2F6436CB004953C3 /* MyPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanView.swift; sourceTree = "<group>"; };
+		84B4336F2F6436CB004953C3 /* PoseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailView.swift; sourceTree = "<group>"; };
+		84B433702F6436CB004953C3 /* PosesFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosesFeedView.swift; sourceTree = "<group>"; };
+		84B433712F6436CB004953C3 /* quvo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = quvo.entitlements; sourceTree = "<group>"; };
+		84B433722F6436CB004953C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84B433732F6436CB004953C3 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84B433742F6436CB004953C3 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		84B433752F6436CB004953C3 /* Yoga for Beginners.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yoga for Beginners.jpg"; sourceTree = "<group>"; };
+		84B433762F6436CB004953C3 /* Yoga for Beginners.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoga for Beginners.mp4"; sourceTree = "<group>"; };
+		84B4338F2F64378F004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B433902F64378F004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B433912F64378F004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B433922F64378F004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B433932F64378F004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B433942F64378F004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B433952F64378F004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B433962F64378F004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B433992F64378F004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B4339A2F64378F004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B4339B2F64378F004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B433A92F643944004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84B433AB2F6439EB004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		948789D71EFB04602484ED25 /* Pods-quvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quvo.release.xcconfig"; path = "Target Support Files/Pods-quvo/Pods-quvo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B4331B2F63EA2C004953C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B4335F2F641521004953C3 /* StoreKit.framework in Frameworks */,
+				30B590F88B5FEC82BFB03309 /* Pods_quvo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84B433152F63EA2C004953C3 = {
+			isa = PBXGroup;
+			children = (
+				84B433772F6436CB004953C3 /* quvo */,
+				84B4335D2F641521004953C3 /* Frameworks */,
+				84B4331F2F63EA2C004953C3 /* Products */,
+				9A42603FD6252A2F92D6C547 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84B4331F2F63EA2C004953C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B4331E2F63EA2C004953C3 /* quvo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B4335D2F641521004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B4335E2F641521004953C3 /* StoreKit.framework */,
+				20A197C9F3049E9CC1733631 /* Pods_quvo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B433772F6436CB004953C3 /* quvo */ = {
+			isa = PBXGroup;
+			children = (
+				84B4338E2F643771004953C3 /* ext */,
+				84B433602F6436CB004953C3 /* AgreementView.swift */,
+				84B433622F6436CB004953C3 /* Assets.xcassets */,
+				84B433632F6436CB004953C3 /* ClassesView.swift */,
+				84B433642F6436CB004953C3 /* ContentView.swift */,
+				84B433652F6436CB004953C3 /* Core Strengthening.jpg */,
+				84B433662F6436CB004953C3 /* Core Strengthening.mp4 */,
+				84B433672F6436CB004953C3 /* Deep Stretch & Relax.jpg */,
+				84B433682F6436CB004953C3 /* Deep Stretch & Relax.mp4 */,
+				84B433692F6436CB004953C3 /* Full Body Morning Flow.jpg */,
+				84B4336A2F6436CB004953C3 /* Full Body Morning Flow.mp4 */,
+				84B4336B2F6436CB004953C3 /* Info.plist */,
+				84B4336C2F6436CB004953C3 /* MainTabView.swift */,
+				84B4336D2F6436CB004953C3 /* Models.swift */,
+				84B4336E2F6436CB004953C3 /* MyPlanView.swift */,
+				84B4336F2F6436CB004953C3 /* PoseDetailView.swift */,
+				84B433702F6436CB004953C3 /* PosesFeedView.swift */,
+				84B433712F6436CB004953C3 /* quvo.entitlements */,
+				84B433722F6436CB004953C3 /* SettingsView.swift */,
+				84B433732F6436CB004953C3 /* StoreManager.swift */,
+				84B433742F6436CB004953C3 /* StoreView.swift */,
+				84B433752F6436CB004953C3 /* Yoga for Beginners.jpg */,
+				84B433762F6436CB004953C3 /* Yoga for Beginners.mp4 */,
+				84B433A92F643944004953C3 /* Launch Screen.storyboard */,
+				84B433AB2F6439EB004953C3 /* GoogleService-Info.plist */,
+			);
+			path = quvo;
+			sourceTree = "<group>";
+		};
+		84B4338E2F643771004953C3 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				84B4338F2F64378F004953C3 /* AppAdjustManager.swift */,
+				84B433902F64378F004953C3 /* AppConfig.swift */,
+				84B433912F64378F004953C3 /* AppDelegate.swift */,
+				84B433922F64378F004953C3 /* AppleIAPManager.swift */,
+				84B433932F64378F004953C3 /* AppPermissionTool.swift */,
+				84B433942F64378F004953C3 /* AppRequestBaseModel.swift */,
+				84B433952F64378F004953C3 /* AppRequestTool.swift */,
+				84B433962F64378F004953C3 /* AppWebViewController.swift */,
+				84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */,
+				84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B433992F64378F004953C3 /* LocalPushScheduler.swift */,
+				84B4339A2F64378F004953C3 /* ProgressHUD.swift */,
+				84B4339B2F64378F004953C3 /* WaitViewController.swift */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		9A42603FD6252A2F92D6C547 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DDA3891F83E6BA5C3B3DB3D /* Pods-quvo.debug.xcconfig */,
+				948789D71EFB04602484ED25 /* Pods-quvo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B4331D2F63EA2C004953C3 /* quvo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B433292F63EA2D004953C3 /* Build configuration list for PBXNativeTarget "quvo" */;
+			buildPhases = (
+				F88F7ACAD6B60D2DF9D3F3A4 /* [CP] Check Pods Manifest.lock */,
+				84B4331A2F63EA2C004953C3 /* Sources */,
+				84B4331B2F63EA2C004953C3 /* Frameworks */,
+				84B4331C2F63EA2C004953C3 /* Resources */,
+				7D4E94A45390497624137BA1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = quvo;
+			productName = quvo;
+			productReference = 84B4331E2F63EA2C004953C3 /* quvo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B433162F63EA2C004953C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					84B4331D2F63EA2C004953C3 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 84B433192F63EA2C004953C3 /* Build configuration list for PBXProject "quvo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B433152F63EA2C004953C3;
+			productRefGroup = 84B4331F2F63EA2C004953C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B4331D2F63EA2C004953C3 /* quvo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B4331C2F63EA2C004953C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B433842F6436CB004953C3 /* Assets.xcassets in Resources */,
+				84B433852F6436CB004953C3 /* Core Strengthening.jpg in Resources */,
+				84B433862F6436CB004953C3 /* Core Strengthening.mp4 in Resources */,
+				84B433872F6436CB004953C3 /* Deep Stretch & Relax.jpg in Resources */,
+				84B433882F6436CB004953C3 /* Deep Stretch & Relax.mp4 in Resources */,
+				84B433892F6436CB004953C3 /* Full Body Morning Flow.jpg in Resources */,
+				84B4338A2F6436CB004953C3 /* Full Body Morning Flow.mp4 in Resources */,
+				84B4338C2F6436CB004953C3 /* Yoga for Beginners.jpg in Resources */,
+				84B433AC2F6439EB004953C3 /* GoogleService-Info.plist in Resources */,
+				84B433AA2F643944004953C3 /* Launch Screen.storyboard in Resources */,
+				84B4338D2F6436CB004953C3 /* Yoga for Beginners.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D4E94A45390497624137BA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quvo/Pods-quvo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quvo/Pods-quvo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quvo/Pods-quvo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F88F7ACAD6B60D2DF9D3F3A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quvo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B4331A2F63EA2C004953C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B433782F6436CB004953C3 /* AgreementView.swift in Sources */,
+				84B4337A2F6436CB004953C3 /* ClassesView.swift in Sources */,
+				84B4337B2F6436CB004953C3 /* ContentView.swift in Sources */,
+				84B4337C2F6436CB004953C3 /* MainTabView.swift in Sources */,
+				84B4337D2F6436CB004953C3 /* Models.swift in Sources */,
+				84B4337E2F6436CB004953C3 /* MyPlanView.swift in Sources */,
+				84B4337F2F6436CB004953C3 /* PoseDetailView.swift in Sources */,
+				84B433802F6436CB004953C3 /* PosesFeedView.swift in Sources */,
+				84B433812F6436CB004953C3 /* SettingsView.swift in Sources */,
+				84B4339C2F64378F004953C3 /* AppPermissionTool.swift in Sources */,
+				84B4339D2F64378F004953C3 /* AppConfig.swift in Sources */,
+				84B4339E2F64378F004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B4339F2F64378F004953C3 /* AppWebViewController.swift in Sources */,
+				84B433A02F64378F004953C3 /* AppDelegate.swift in Sources */,
+				84B433A12F64378F004953C3 /* AppRequestTool.swift in Sources */,
+				84B433A22F64378F004953C3 /* AppleIAPManager.swift in Sources */,
+				84B433A32F64378F004953C3 /* ProgressHUD.swift in Sources */,
+				84B433A42F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B433A52F64378F004953C3 /* WaitViewController.swift in Sources */,
+				84B433A62F64378F004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B433A72F64378F004953C3 /* AppAdjustManager.swift in Sources */,
+				84B433A82F64378F004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B433822F6436CB004953C3 /* StoreManager.swift in Sources */,
+				84B433832F6436CB004953C3 /* StoreView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84B433272F63EA2D004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B433282F63EA2D004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B4332A2F63EA2D004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDA3891F83E6BA5C3B3DB3D /* Pods-quvo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = quvo/quvo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = quvo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quvo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add new photos to your library, enabling you to save photos directly from the app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quvo.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84B4332B2F63EA2D004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948789D71EFB04602484ED25 /* Pods-quvo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = quvo/quvo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = quvo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quvo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to add new photos to your library, enabling you to save photos directly from the app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quvo.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B433192F63EA2C004953C3 /* Build configuration list for PBXProject "quvo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B433272F63EA2D004953C3 /* Debug */,
+				84B433282F63EA2D004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B433292F63EA2D004953C3 /* Build configuration list for PBXNativeTarget "quvo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B4332A2F63EA2D004953C3 /* Debug */,
+				84B4332B2F63EA2D004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B433162F63EA2C004953C3 /* Project object */;
+}
