@@ -51,12 +51,13 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         request.start()
     }
     
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        DispatchQueue.main.async {
+    nonisolated func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        Task { @MainActor in
             self.myProducts = response.products.sorted { p1, p2 in
                 p1.price.decimalValue < p2.price.decimalValue
             }
             print("Loaded \(self.myProducts.count) products from App Store.")
+            
             if !response.invalidProductIdentifiers.isEmpty {
                 print("====== ⚠️ APPLE STOREKIT REJECTED PRODUCTS ⚠️ ======")
                 print("The following IDs were returned as INVALID by Apple's servers:")
@@ -67,15 +68,15 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         }
     }
     
-    func request(_ request: SKRequest, didFailWithError error: Error) {
+    nonisolated func request(_ request: SKRequest, didFailWithError error: Error) {
         print("Failed to load products: \(error.localizedDescription)")
     }
     
     func purchase(_ package: CoinPackage, completion: @escaping (Bool, Int) -> Void) {
+        currentProcessingPackage = package
+        completionCallback = completion
+        
         if SKPaymentQueue.canMakePayments() {
-            currentProcessingPackage = package
-            completionCallback = completion
-            
             // Force real App Store workflow
             if let product = myProducts.first(where: { $0.productIdentifier == package.id }) {
                 let payment = SKPayment(product: product)
@@ -95,34 +96,30 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         }
     }
     
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    nonisolated func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 self.transactionState = transaction.transactionState
-            }
-            switch transaction.transactionState {
-            case .purchasing:
-                break
-            case .purchased, .restored:
-                if let pkg = currentProcessingPackage {
-                    DispatchQueue.main.async {
+                switch transaction.transactionState {
+                case .purchasing:
+                    break
+                case .purchased, .restored:
+                    if let pkg = self.currentProcessingPackage {
                         self.completionCallback?(true, pkg.totalCoins)
                         self.completionCallback = nil
                         self.currentProcessingPackage = nil
                     }
-                }
-                SKPaymentQueue.default().finishTransaction(transaction)
-            case .failed:
-                SKPaymentQueue.default().finishTransaction(transaction)
-                DispatchQueue.main.async {
+                    queue.finishTransaction(transaction)
+                case .failed:
+                    queue.finishTransaction(transaction)
                     self.completionCallback?(false, 0)
                     self.completionCallback = nil
                     self.currentProcessingPackage = nil
+                case .deferred:
+                    break
+                @unknown default:
+                    break
                 }
-            case .deferred:
-                break
-            @unknown default:
-                break
             }
         }
     }
