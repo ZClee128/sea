@@ -32,7 +32,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     ]
     
     var request: SKProductsRequest!
-    var successCallback: ((Int) -> Void)?
+    var completionCallback: ((Bool, Int) -> Void)?
     var currentProcessingPackage: CoinPackage?
     
     override init() {
@@ -57,6 +57,13 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
                 p1.price.decimalValue < p2.price.decimalValue
             }
             print("Loaded \(self.myProducts.count) products from App Store.")
+            if !response.invalidProductIdentifiers.isEmpty {
+                print("====== ⚠️ APPLE STOREKIT REJECTED PRODUCTS ⚠️ ======")
+                print("The following IDs were returned as INVALID by Apple's servers:")
+                print(response.invalidProductIdentifiers.joined(separator: ", "))
+                print("This means Apple cannot find these IDs under the current Bundle ID and Sandbox Account.")
+                print("=========================================================")
+            }
         }
     }
     
@@ -64,10 +71,10 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         print("Failed to load products: \(error.localizedDescription)")
     }
     
-    func purchase(_ package: CoinPackage, onSuccess: @escaping (Int) -> Void) {
+    func purchase(_ package: CoinPackage, completion: @escaping (Bool, Int) -> Void) {
         if SKPaymentQueue.canMakePayments() {
             currentProcessingPackage = package
-            successCallback = onSuccess
+            completionCallback = completion
             
             // Force real App Store workflow
             if let product = myProducts.first(where: { $0.productIdentifier == package.id }) {
@@ -77,12 +84,14 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
                 print("Error: SKProduct not found for \(package.id). Ensure App Store Connect is setup.")
                 DispatchQueue.main.async {
                     // Fail gracefully. In a real environment, product availability must be synchronized.
-                    self.successCallback = nil
+                    self.completionCallback?(false, 0)
+                    self.completionCallback = nil
                     self.currentProcessingPackage = nil
                 }
             }
         } else {
             print("Purchases are disabled on this device.")
+            completion(false, 0)
         }
     }
     
@@ -97,16 +106,19 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
             case .purchased, .restored:
                 if let pkg = currentProcessingPackage {
                     DispatchQueue.main.async {
-                        self.successCallback?(pkg.totalCoins)
-                        self.successCallback = nil
+                        self.completionCallback?(true, pkg.totalCoins)
+                        self.completionCallback = nil
                         self.currentProcessingPackage = nil
                     }
                 }
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
-                self.successCallback = nil
-                self.currentProcessingPackage = nil
+                DispatchQueue.main.async {
+                    self.completionCallback?(false, 0)
+                    self.completionCallback = nil
+                    self.currentProcessingPackage = nil
+                }
             case .deferred:
                 break
             @unknown default:

@@ -1,0 +1,153 @@
+{
+  "identifier" : "9B1F20C5",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1",
+      "localizations" : [
+        {
+          "description" : "32 coins",
+          "displayName" : "32 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo",
+      "referenceName" : "32 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "2",
+      "localizations" : [
+        {
+          "description" : "60 coins",
+          "displayName" : "60 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo1",
+      "referenceName" : "60 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "3",
+      "localizations" : [
+        {
+          "description" : "96 coins",
+          "displayName" : "96 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo2",
+      "referenceName" : "96 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "4",
+      "localizations" : [
+        {
+          "description" : "155 coins",
+          "displayName" : "155 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo4",
+      "referenceName" : "155 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "5",
+      "localizations" : [
+        {
+          "description" : "189 coins",
+          "displayName" : "189 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo5",
+      "referenceName" : "189 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6",
+      "localizations" : [
+        {
+          "description" : "359 coins",
+          "displayName" : "359 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo9",
+      "referenceName" : "359 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "7",
+      "localizations" : [
+        {
+          "description" : "729 coins",
+          "displayName" : "729 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo19",
+      "referenceName" : "729 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "8",
+      "localizations" : [
+        {
+          "description" : "1869 coins",
+          "displayName" : "1869 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo49",
+      "referenceName" : "1869 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "9",
+      "localizations" : [
+        {
+          "description" : "3799 coins",
+          "displayName" : "3799 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Lexo99",
+      "referenceName" : "3799 coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

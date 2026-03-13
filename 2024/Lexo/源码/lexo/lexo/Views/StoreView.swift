@@ -99,13 +99,15 @@ struct StoreView: View {
     
     private func purchase(package: CoinPackage) {
         isPurchasing = true
-        storeManager.purchase(package) { coinsToAdd in
+        storeManager.purchase(package) { success, coinsToAdd in
             // Must update on main thread
             DispatchQueue.main.async {
                 isPurchasing = false
-                appState.totalCoins += coinsToAdd
-                justBoughtCoins = package.totalCoins
-                purchaseSuccessAlert = true
+                if success {
+                    appState.totalCoins += coinsToAdd
+                    justBoughtCoins = package.totalCoins
+                    purchaseSuccessAlert = true
+                }
             }
         }
     }
