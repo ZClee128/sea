@@ -28,12 +28,12 @@ struct AgreementView: View {
                 .foregroundColor(.blue)
                 .padding(.top, 40)
             
-            Text("Welcome to Fit & Flow")
+            Text("Welcome to Quvo")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
             
-            Text("Your personal guide to daily fitness, yoga, and healthy movement.")
+            Text("Your personal guide to exploring fitness, yoga, and healthy routines.")
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

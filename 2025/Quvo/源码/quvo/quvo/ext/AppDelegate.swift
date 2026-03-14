@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.overrideUserInterfaceStyle = .light
         self.window?.rootViewController = waitVC
         self.window?.makeKeyAndVisible()
         initFireBase()
@@ -71,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         DispatchQueue.main.async {
             let vc = AppWebViewController()
             vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.getStatusBarHeight())"
+            self.window?.overrideUserInterfaceStyle = .light
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
         }
@@ -87,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             // Setup Window
             let rootController = UIHostingController(rootView: ContentView())
+            self.window?.overrideUserInterfaceStyle = .light
             self.window?.rootViewController = rootController
             self.window?.makeKeyAndVisible()
         }

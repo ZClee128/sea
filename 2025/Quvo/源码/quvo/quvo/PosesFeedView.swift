@@ -16,7 +16,7 @@ struct PosesFeedView: View {
                 }
                 .padding(.vertical)
             }
-            .navigationBarTitle("Fit & Flow", displayMode: .large)
+            .navigationBarTitle("Quvo Explore", displayMode: .large)
         }
     }
 }
