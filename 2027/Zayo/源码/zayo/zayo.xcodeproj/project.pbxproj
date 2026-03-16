@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84B434C12F67ED85004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B434C02F67ED85004953C3 /* StoreKit.framework */; };
+		84B434E32F681031004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B434CB2F681031004953C3 /* Assets.xcassets */; };
+		84B434E42F681031004953C3 /* Glitch Aura.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B434CF2F681031004953C3 /* Glitch Aura.mp4 */; };
+		84B434E52F681031004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B434D02F681031004953C3 /* GoogleService-Info.plist */; };
+		84B434E72F681031004953C3 /* Midnight Echo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B434D32F681031004953C3 /* Midnight Echo.mp4 */; };
+		84B434E82F681031004953C3 /* Wind Muse.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B434DC2F681031004953C3 /* Wind Muse.mp4 */; };
+		84B434E92F681031004953C3 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434C92F681031004953C3 /* AgreementView.swift */; };
+		84B434EB2F681031004953C3 /* CinemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434CC2F681031004953C3 /* CinemaView.swift */; };
+		84B434EC2F681031004953C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434CD2F681031004953C3 /* ContentView.swift */; };
+		84B434ED2F681031004953C3 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434CE2F681031004953C3 /* GalleryView.swift */; };
+		84B434EE2F681031004953C3 /* LegalContentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D22F681031004953C3 /* LegalContentViews.swift */; };
+		84B434EF2F681031004953C3 /* PortraitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D42F681031004953C3 /* PortraitDetailView.swift */; };
+		84B434F02F681031004953C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D52F681031004953C3 /* SettingsView.swift */; };
+		84B434F12F681031004953C3 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D62F681031004953C3 /* ShareSheet.swift */; };
+		84B434F22F681031004953C3 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D72F681031004953C3 /* StoreKitManager.swift */; };
+		84B434F32F681031004953C3 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D82F681031004953C3 /* StoreView.swift */; };
+		84B434F42F681031004953C3 /* StyleBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434D92F681031004953C3 /* StyleBoardView.swift */; };
+		84B434F52F681031004953C3 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434DA2F681031004953C3 /* VideoPlayerView.swift */; };
+		84B434F62F681031004953C3 /* VisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434DB2F681031004953C3 /* VisionView.swift */; };
+		84B434F72F681031004953C3 /* WorkshopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434DD2F681031004953C3 /* WorkshopView.swift */; };
+		84B434F82F681031004953C3 /* zayoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434DF2F681031004953C3 /* zayoApp.swift */; };
+		84B434F92F681031004953C3 /* ZayoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434E02F681031004953C3 /* ZayoData.swift */; };
+		84B434FA2F681031004953C3 /* ZayoMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434E12F681031004953C3 /* ZayoMainView.swift */; };
+		84B435092F6810F8004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FC2F6810F8004953C3 /* AppAdjustManager.swift */; };
+		84B4350A2F6810F8004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FD2F6810F8004953C3 /* AppConfig.swift */; };
+		84B4350B2F6810F8004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435062F6810F8004953C3 /* LocalPushScheduler.swift */; };
+		84B4350C2F6810F8004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435072F6810F8004953C3 /* ProgressHUD.swift */; };
+		84B4350D2F6810F8004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FE2F6810F8004953C3 /* AppDelegate.swift */; };
+		84B4350E2F6810F8004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435012F6810F8004953C3 /* AppRequestBaseModel.swift */; };
+		84B4350F2F6810F8004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435022F6810F8004953C3 /* AppRequestTool.swift */; };
+		84B435102F6810F8004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FF2F6810F8004953C3 /* AppleIAPManager.swift */; };
+		84B435112F6810F8004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435082F6810F8004953C3 /* WaitViewController.swift */; };
+		84B435122F6810F8004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435042F6810F8004953C3 /* AppWebViewHandleEvent.swift */; };
+		84B435132F6810F8004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435002F6810F8004953C3 /* AppPermissionTool.swift */; };
+		84B435142F6810F8004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435032F6810F8004953C3 /* AppWebViewController.swift */; };
+		84B435152F6810F8004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B435052F6810F8004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
+		84B435172F68110C004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B435162F68110C004953C3 /* Launch Screen.storyboard */; };
+		B301A175C1364A150BFFA6C1 /* Pods_zayo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82156DAADFB2DB2909EF5DE5 /* Pods_zayo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		82156DAADFB2DB2909EF5DE5 /* Pods_zayo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zayo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4348D2F67DE0D004953C3 /* zayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B434C02F67ED85004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84B434C92F681031004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		84B434CB2F681031004953C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B434CC2F681031004953C3 /* CinemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaView.swift; sourceTree = "<group>"; };
+		84B434CD2F681031004953C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84B434CE2F681031004953C3 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		84B434CF2F681031004953C3 /* Glitch Aura.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Glitch Aura.mp4"; sourceTree = "<group>"; };
+		84B434D02F681031004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B434D12F681031004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B434D22F681031004953C3 /* LegalContentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalContentViews.swift; sourceTree = "<group>"; };
+		84B434D32F681031004953C3 /* Midnight Echo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Midnight Echo.mp4"; sourceTree = "<group>"; };
+		84B434D42F681031004953C3 /* PortraitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitDetailView.swift; sourceTree = "<group>"; };
+		84B434D52F681031004953C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84B434D62F681031004953C3 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		84B434D72F681031004953C3 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		84B434D82F681031004953C3 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		84B434D92F681031004953C3 /* StyleBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleBoardView.swift; sourceTree = "<group>"; };
+		84B434DA2F681031004953C3 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		84B434DB2F681031004953C3 /* VisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionView.swift; sourceTree = "<group>"; };
+		84B434DC2F681031004953C3 /* Wind Muse.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wind Muse.mp4"; sourceTree = "<group>"; };
+		84B434DD2F681031004953C3 /* WorkshopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopView.swift; sourceTree = "<group>"; };
+		84B434DE2F681031004953C3 /* zayo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zayo.entitlements; sourceTree = "<group>"; };
+		84B434DF2F681031004953C3 /* zayoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zayoApp.swift; sourceTree = "<group>"; };
+		84B434E02F681031004953C3 /* ZayoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayoData.swift; sourceTree = "<group>"; };
+		84B434E12F681031004953C3 /* ZayoMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayoMainView.swift; sourceTree = "<group>"; };
+		84B434FC2F6810F8004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84B434FD2F6810F8004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84B434FE2F6810F8004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B434FF2F6810F8004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84B435002F6810F8004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84B435012F6810F8004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84B435022F6810F8004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84B435032F6810F8004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84B435042F6810F8004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84B435052F6810F8004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84B435062F6810F8004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84B435072F6810F8004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84B435082F6810F8004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84B435162F68110C004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C0308936C0274E6B85AADE78 /* Pods-zayo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zayo.release.xcconfig"; path = "Target Support Files/Pods-zayo/Pods-zayo.release.xcconfig"; sourceTree = "<group>"; };
+		CCF9707A16E9F43362E41EC1 /* Pods-zayo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zayo.debug.xcconfig"; path = "Target Support Files/Pods-zayo/Pods-zayo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B4348A2F67DE0D004953C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B434C12F67ED85004953C3 /* StoreKit.framework in Frameworks */,
+				B301A175C1364A150BFFA6C1 /* Pods_zayo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		653B0CF1C00AC549600F8DFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCF9707A16E9F43362E41EC1 /* Pods-zayo.debug.xcconfig */,
+				C0308936C0274E6B85AADE78 /* Pods-zayo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84B434842F67DE0D004953C3 = {
+			isa = PBXGroup;
+			children = (
+				84B434E22F681031004953C3 /* zayo */,
+				84B434BF2F67ED85004953C3 /* Frameworks */,
+				84B4348E2F67DE0D004953C3 /* Products */,
+				653B0CF1C00AC549600F8DFB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84B4348E2F67DE0D004953C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B4348D2F67DE0D004953C3 /* zayo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B434BF2F67ED85004953C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B434C02F67ED85004953C3 /* StoreKit.framework */,
+				82156DAADFB2DB2909EF5DE5 /* Pods_zayo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B434E22F681031004953C3 /* zayo */ = {
+			isa = PBXGroup;
+			children = (
+				84B434FB2F6810E0004953C3 /* yu */,
+				84B434C92F681031004953C3 /* AgreementView.swift */,
+				84B434CB2F681031004953C3 /* Assets.xcassets */,
+				84B434CC2F681031004953C3 /* CinemaView.swift */,
+				84B434CD2F681031004953C3 /* ContentView.swift */,
+				84B434CE2F681031004953C3 /* GalleryView.swift */,
+				84B434CF2F681031004953C3 /* Glitch Aura.mp4 */,
+				84B434D02F681031004953C3 /* GoogleService-Info.plist */,
+				84B434D12F681031004953C3 /* Info.plist */,
+				84B434D22F681031004953C3 /* LegalContentViews.swift */,
+				84B434D32F681031004953C3 /* Midnight Echo.mp4 */,
+				84B434D42F681031004953C3 /* PortraitDetailView.swift */,
+				84B434D52F681031004953C3 /* SettingsView.swift */,
+				84B434D62F681031004953C3 /* ShareSheet.swift */,
+				84B434D72F681031004953C3 /* StoreKitManager.swift */,
+				84B434D82F681031004953C3 /* StoreView.swift */,
+				84B434D92F681031004953C3 /* StyleBoardView.swift */,
+				84B434DA2F681031004953C3 /* VideoPlayerView.swift */,
+				84B434DB2F681031004953C3 /* VisionView.swift */,
+				84B434DC2F681031004953C3 /* Wind Muse.mp4 */,
+				84B434DD2F681031004953C3 /* WorkshopView.swift */,
+				84B434DE2F681031004953C3 /* zayo.entitlements */,
+				84B434DF2F681031004953C3 /* zayoApp.swift */,
+				84B434E02F681031004953C3 /* ZayoData.swift */,
+				84B434E12F681031004953C3 /* ZayoMainView.swift */,
+				84B435162F68110C004953C3 /* Launch Screen.storyboard */,
+			);
+			path = zayo;
+			sourceTree = "<group>";
+		};
+		84B434FB2F6810E0004953C3 /* yu */ = {
+			isa = PBXGroup;
+			children = (
+				84B434FC2F6810F8004953C3 /* AppAdjustManager.swift */,
+				84B434FD2F6810F8004953C3 /* AppConfig.swift */,
+				84B434FE2F6810F8004953C3 /* AppDelegate.swift */,
+				84B434FF2F6810F8004953C3 /* AppleIAPManager.swift */,
+				84B435002F6810F8004953C3 /* AppPermissionTool.swift */,
+				84B435012F6810F8004953C3 /* AppRequestBaseModel.swift */,
+				84B435022F6810F8004953C3 /* AppRequestTool.swift */,
+				84B435032F6810F8004953C3 /* AppWebViewController.swift */,
+				84B435042F6810F8004953C3 /* AppWebViewHandleEvent.swift */,
+				84B435052F6810F8004953C3 /* AppWebViewScriptDelegateHandler.swift */,
+				84B435062F6810F8004953C3 /* LocalPushScheduler.swift */,
+				84B435072F6810F8004953C3 /* ProgressHUD.swift */,
+				84B435082F6810F8004953C3 /* WaitViewController.swift */,
+			);
+			path = yu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B4348C2F67DE0D004953C3 /* zayo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B434982F67DE0E004953C3 /* Build configuration list for PBXNativeTarget "zayo" */;
+			buildPhases = (
+				804A7B27ADEE62B1FD21FA99 /* [CP] Check Pods Manifest.lock */,
+				84B434892F67DE0D004953C3 /* Sources */,
+				84B4348A2F67DE0D004953C3 /* Frameworks */,
+				84B4348B2F67DE0D004953C3 /* Resources */,
+				B92123AD009B5583E520829F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zayo;
+			productName = zayo;
+			productReference = 84B4348D2F67DE0D004953C3 /* zayo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B434852F67DE0D004953C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					84B4348C2F67DE0D004953C3 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 84B434882F67DE0D004953C3 /* Build configuration list for PBXProject "zayo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B434842F67DE0D004953C3;
+			productRefGroup = 84B4348E2F67DE0D004953C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B4348C2F67DE0D004953C3 /* zayo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B4348B2F67DE0D004953C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B435172F68110C004953C3 /* Launch Screen.storyboard in Resources */,
+				84B434E32F681031004953C3 /* Assets.xcassets in Resources */,
+				84B434E42F681031004953C3 /* Glitch Aura.mp4 in Resources */,
+				84B434E52F681031004953C3 /* GoogleService-Info.plist in Resources */,
+				84B434E72F681031004953C3 /* Midnight Echo.mp4 in Resources */,
+				84B434E82F681031004953C3 /* Wind Muse.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		804A7B27ADEE62B1FD21FA99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zayo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B92123AD009B5583E520829F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zayo/Pods-zayo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zayo/Pods-zayo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zayo/Pods-zayo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B434892F67DE0D004953C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B434E92F681031004953C3 /* AgreementView.swift in Sources */,
+				84B434EB2F681031004953C3 /* CinemaView.swift in Sources */,
+				84B434EC2F681031004953C3 /* ContentView.swift in Sources */,
+				84B434ED2F681031004953C3 /* GalleryView.swift in Sources */,
+				84B434EE2F681031004953C3 /* LegalContentViews.swift in Sources */,
+				84B435092F6810F8004953C3 /* AppAdjustManager.swift in Sources */,
+				84B4350A2F6810F8004953C3 /* AppConfig.swift in Sources */,
+				84B4350B2F6810F8004953C3 /* LocalPushScheduler.swift in Sources */,
+				84B4350C2F6810F8004953C3 /* ProgressHUD.swift in Sources */,
+				84B4350D2F6810F8004953C3 /* AppDelegate.swift in Sources */,
+				84B4350E2F6810F8004953C3 /* AppRequestBaseModel.swift in Sources */,
+				84B4350F2F6810F8004953C3 /* AppRequestTool.swift in Sources */,
+				84B435102F6810F8004953C3 /* AppleIAPManager.swift in Sources */,
+				84B435112F6810F8004953C3 /* WaitViewController.swift in Sources */,
+				84B435122F6810F8004953C3 /* AppWebViewHandleEvent.swift in Sources */,
+				84B435132F6810F8004953C3 /* AppPermissionTool.swift in Sources */,
+				84B435142F6810F8004953C3 /* AppWebViewController.swift in Sources */,
+				84B435152F6810F8004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84B434EF2F681031004953C3 /* PortraitDetailView.swift in Sources */,
+				84B434F02F681031004953C3 /* SettingsView.swift in Sources */,
+				84B434F12F681031004953C3 /* ShareSheet.swift in Sources */,
+				84B434F22F681031004953C3 /* StoreKitManager.swift in Sources */,
+				84B434F32F681031004953C3 /* StoreView.swift in Sources */,
+				84B434F42F681031004953C3 /* StyleBoardView.swift in Sources */,
+				84B434F52F681031004953C3 /* VideoPlayerView.swift in Sources */,
+				84B434F62F681031004953C3 /* VisionView.swift in Sources */,
+				84B434F72F681031004953C3 /* WorkshopView.swift in Sources */,
+				84B434F82F681031004953C3 /* zayoApp.swift in Sources */,
+				84B434F92F681031004953C3 /* ZayoData.swift in Sources */,
+				84B434FA2F681031004953C3 /* ZayoMainView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84B434962F67DE0E004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B434972F67DE0E004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B434992F67DE0E004953C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCF9707A16E9F43362E41EC1 /* Pods-zayo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zayo/zayo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = zayo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Zayo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take portraits and reference photos in the Workshop module.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice notes during shooting sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs permission to save exported shooting plans and artistic portraits to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo library to import references and share your saved style board portraits.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zayo.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84B4349A2F67DE0E004953C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0308936C0274E6B85AADE78 /* Pods-zayo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zayo/zayo.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = zayo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Zayo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take portraits and reference photos in the Workshop module.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice notes during shooting sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs permission to save exported shooting plans and artistic portraits to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo library to import references and share your saved style board portraits.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zayo.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B434882F67DE0D004953C3 /* Build configuration list for PBXProject "zayo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B434962F67DE0E004953C3 /* Debug */,
+				84B434972F67DE0E004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B434982F67DE0E004953C3 /* Build configuration list for PBXNativeTarget "zayo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B434992F67DE0E004953C3 /* Debug */,
+				84B4349A2F67DE0E004953C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B434852F67DE0D004953C3 /* Project object */;
+}
