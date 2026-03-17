@@ -3,50 +3,123 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		387FD57B060EE226923B60C6 /* Pods_mexo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7774EB6F62BF6398258200 /* Pods_mexo.framework */; };
+		842DA35D2F69197900FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA35C2F69197900FEEBD9 /* StoreKit.framework */; };
+		842DA3B42F69357A00FEEBD9 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3982F69357A00FEEBD9 /* PhotoModel.swift */; };
+		842DA3B52F69357A00FEEBD9 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3992F69357A00FEEBD9 /* StoreManager.swift */; };
+		842DA3B62F69357A00FEEBD9 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA39A2F69357A00FEEBD9 /* VideoModel.swift */; };
+		842DA3B72F69357A00FEEBD9 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA39D2F69357A00FEEBD9 /* AgreementView.swift */; };
+		842DA3B82F69357A00FEEBD9 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA39E2F69357A00FEEBD9 /* DiscoverView.swift */; };
+		842DA3B92F69357A00FEEBD9 /* EditorialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA39F2F69357A00FEEBD9 /* EditorialFeedView.swift */; };
+		842DA3BA2F69357A00FEEBD9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A02F69357A00FEEBD9 /* MainTabView.swift */; };
+		842DA3BB2F69357A00FEEBD9 /* MoodBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */; };
+		842DA3BC2F69357A00FEEBD9 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */; };
+		842DA3BD2F69357A00FEEBD9 /* PoseCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */; };
+		842DA3BE2F69357A00FEEBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A42F69357A00FEEBD9 /* SettingsView.swift */; };
+		842DA3BF2F69357A00FEEBD9 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A52F69357A00FEEBD9 /* StoreView.swift */; };
+		842DA3C02F69357A00FEEBD9 /* TutorialsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */; };
+		842DA3C12F69357A00FEEBD9 /* VideoPlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A72F69357A00FEEBD9 /* VideoPlayerDetailView.swift */; };
+		842DA3C32F69357A00FEEBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3AB2F69357A00FEEBD9 /* ContentView.swift */; };
+		842DA3C42F69357A00FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3AA2F69357A00FEEBD9 /* Assets.xcassets */; };
+		842DA3C52F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3AC2F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 */; };
+		842DA3C62F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3AD2F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 */; };
+		842DA3C82F69357A00FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3AF2F69357A00FEEBD9 /* Launch Screen.storyboard */; };
+		842DA3C92F69357A00FEEBD9 /* Mastering Natural Light.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3B02F69357A00FEEBD9 /* Mastering Natural Light.mp4 */; };
+		842DA3CA2F69357A00FEEBD9 /* Studio Lighting Basics.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3B22F69357A00FEEBD9 /* Studio Lighting Basics.mp4 */; };
+		842DA3D92F69361F00FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */; };
+		842DA3DA2F69361F00FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */; };
+		842DA3DB2F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
+		842DA3DC2F69361F00FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */; };
+		842DA3DD2F69361F00FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */; };
+		842DA3DE2F69361F00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */; };
+		842DA3DF2F69361F00FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */; };
+		842DA3E02F69361F00FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */; };
+		842DA3E12F69361F00FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */; };
+		842DA3E22F69361F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */; };
+		842DA3E32F69361F00FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */; };
+		842DA3E42F69361F00FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */; };
+		842DA3E52F69361F00FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */; };
+		842DA3E72F69372A00FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0D7774EB6F62BF6398258200 /* Pods_mexo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mexo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C835F6B14645CCFE823C585 /* Pods-mexo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mexo.debug.xcconfig"; path = "Target Support Files/Pods-mexo/Pods-mexo.debug.xcconfig"; sourceTree = "<group>"; };
 		842DA21A2F68F90000FEEBD9 /* mexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mexo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DA35C2F69197900FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		842DA3982F69357A00FEEBD9 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		842DA3992F69357A00FEEBD9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		842DA39A2F69357A00FEEBD9 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		842DA39D2F69357A00FEEBD9 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		842DA39E2F69357A00FEEBD9 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		842DA39F2F69357A00FEEBD9 /* EditorialFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorialFeedView.swift; sourceTree = "<group>"; };
+		842DA3A02F69357A00FEEBD9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardView.swift; sourceTree = "<group>"; };
+		842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCameraView.swift; sourceTree = "<group>"; };
+		842DA3A42F69357A00FEEBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		842DA3A52F69357A00FEEBD9 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsFeedView.swift; sourceTree = "<group>"; };
+		842DA3A72F69357A00FEEBD9 /* VideoPlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerDetailView.swift; sourceTree = "<group>"; };
+		842DA3AA2F69357A00FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842DA3AB2F69357A00FEEBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		842DA3AC2F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dynamic Posing Walkthrough.mp4"; sourceTree = "<group>"; };
+		842DA3AD2F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Editing for Soft Skin Tones.mp4"; sourceTree = "<group>"; };
+		842DA3AE2F69357A00FEEBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842DA3AF2F69357A00FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		842DA3B02F69357A00FEEBD9 /* Mastering Natural Light.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mastering Natural Light.mp4"; sourceTree = "<group>"; };
+		842DA3B12F69357A00FEEBD9 /* mexo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mexo.entitlements; sourceTree = "<group>"; };
+		842DA3B22F69357A00FEEBD9 /* Studio Lighting Basics.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Studio Lighting Basics.mp4"; sourceTree = "<group>"; };
+		842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BACCEFDE731390C5ED02844C /* Pods-mexo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mexo.release.xcconfig"; path = "Target Support Files/Pods-mexo/Pods-mexo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		842DA3052F6901B300FEEBD9 /* Exceptions for "mexo" folder in "mexo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 842DA2192F68F90000FEEBD9 /* mexo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		842DA21C2F68F90000FEEBD9 /* mexo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				842DA3052F6901B300FEEBD9 /* Exceptions for "mexo" folder in "mexo" target */,
-			);
-			path = mexo;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		842DA2172F68F90000FEEBD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA35D2F69197900FEEBD9 /* StoreKit.framework in Frameworks */,
+				387FD57B060EE226923B60C6 /* Pods_mexo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AC438A1BC3478B16758905D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C835F6B14645CCFE823C585 /* Pods-mexo.debug.xcconfig */,
+				BACCEFDE731390C5ED02844C /* Pods-mexo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		842DA2112F68F90000FEEBD9 = {
 			isa = PBXGroup;
 			children = (
-				842DA21C2F68F90000FEEBD9 /* mexo */,
+				842DA3B32F69357A00FEEBD9 /* mexo */,
+				842DA35B2F69197900FEEBD9 /* Frameworks */,
 				842DA21B2F68F90000FEEBD9 /* Products */,
+				4AC438A1BC3478B16758905D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +131,91 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		842DA35B2F69197900FEEBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DA35C2F69197900FEEBD9 /* StoreKit.framework */,
+				0D7774EB6F62BF6398258200 /* Pods_mexo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DA39B2F69357A00FEEBD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				842DA3982F69357A00FEEBD9 /* PhotoModel.swift */,
+				842DA3992F69357A00FEEBD9 /* StoreManager.swift */,
+				842DA39A2F69357A00FEEBD9 /* VideoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		842DA39C2F69357A00FEEBD9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		842DA3A82F69357A00FEEBD9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				842DA39D2F69357A00FEEBD9 /* AgreementView.swift */,
+				842DA39E2F69357A00FEEBD9 /* DiscoverView.swift */,
+				842DA39F2F69357A00FEEBD9 /* EditorialFeedView.swift */,
+				842DA3A02F69357A00FEEBD9 /* MainTabView.swift */,
+				842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */,
+				842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */,
+				842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */,
+				842DA3A42F69357A00FEEBD9 /* SettingsView.swift */,
+				842DA3A52F69357A00FEEBD9 /* StoreView.swift */,
+				842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */,
+				842DA3A72F69357A00FEEBD9 /* VideoPlayerDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		842DA3B32F69357A00FEEBD9 /* mexo */ = {
+			isa = PBXGroup;
+			children = (
+				842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */,
+				842DA3CB2F6935FE00FEEBD9 /* map */,
+				842DA39B2F69357A00FEEBD9 /* Models */,
+				842DA39C2F69357A00FEEBD9 /* ViewModels */,
+				842DA3A82F69357A00FEEBD9 /* Views */,
+				842DA3AA2F69357A00FEEBD9 /* Assets.xcassets */,
+				842DA3AB2F69357A00FEEBD9 /* ContentView.swift */,
+				842DA3AC2F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 */,
+				842DA3AD2F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 */,
+				842DA3AE2F69357A00FEEBD9 /* Info.plist */,
+				842DA3AF2F69357A00FEEBD9 /* Launch Screen.storyboard */,
+				842DA3B02F69357A00FEEBD9 /* Mastering Natural Light.mp4 */,
+				842DA3B12F69357A00FEEBD9 /* mexo.entitlements */,
+				842DA3B22F69357A00FEEBD9 /* Studio Lighting Basics.mp4 */,
+			);
+			path = mexo;
+			sourceTree = "<group>";
+		};
+		842DA3CB2F6935FE00FEEBD9 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */,
+				842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */,
+				842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */,
+				842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */,
+				842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */,
+				842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */,
+				842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */,
+				842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */,
+				842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */,
+				842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
+				842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */,
+				842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */,
+				842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,20 +223,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842DA2252F68F90100FEEBD9 /* Build configuration list for PBXNativeTarget "mexo" */;
 			buildPhases = (
+				87305717C0E39683EBD414BD /* [CP] Check Pods Manifest.lock */,
 				842DA2162F68F90000FEEBD9 /* Sources */,
 				842DA2172F68F90000FEEBD9 /* Frameworks */,
 				842DA2182F68F90000FEEBD9 /* Resources */,
+				5E799B2E498387D5E5628240 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				842DA21C2F68F90000FEEBD9 /* mexo */,
-			);
 			name = mexo;
-			packageProductDependencies = (
-			);
 			productName = mexo;
 			productReference = 842DA21A2F68F90000FEEBD9 /* mexo.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +254,7 @@
 				};
 			};
 			buildConfigurationList = 842DA2152F68F90000FEEBD9 /* Build configuration list for PBXProject "mexo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -106,8 +262,6 @@
 				Base,
 			);
 			mainGroup = 842DA2112F68F90000FEEBD9;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 842DA21B2F68F90000FEEBD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,16 +276,97 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA3C42F69357A00FEEBD9 /* Assets.xcassets in Resources */,
+				842DA3C52F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 in Resources */,
+				842DA3C62F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 in Resources */,
+				842DA3C82F69357A00FEEBD9 /* Launch Screen.storyboard in Resources */,
+				842DA3C92F69357A00FEEBD9 /* Mastering Natural Light.mp4 in Resources */,
+				842DA3CA2F69357A00FEEBD9 /* Studio Lighting Basics.mp4 in Resources */,
+				842DA3E72F69372A00FEEBD9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E799B2E498387D5E5628240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mexo/Pods-mexo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mexo/Pods-mexo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mexo/Pods-mexo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87305717C0E39683EBD414BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mexo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842DA2162F68F90000FEEBD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA3B42F69357A00FEEBD9 /* PhotoModel.swift in Sources */,
+				842DA3B52F69357A00FEEBD9 /* StoreManager.swift in Sources */,
+				842DA3B62F69357A00FEEBD9 /* VideoModel.swift in Sources */,
+				842DA3B72F69357A00FEEBD9 /* AgreementView.swift in Sources */,
+				842DA3B82F69357A00FEEBD9 /* DiscoverView.swift in Sources */,
+				842DA3B92F69357A00FEEBD9 /* EditorialFeedView.swift in Sources */,
+				842DA3BA2F69357A00FEEBD9 /* MainTabView.swift in Sources */,
+				842DA3BB2F69357A00FEEBD9 /* MoodBoardView.swift in Sources */,
+				842DA3BC2F69357A00FEEBD9 /* PhotoDetailView.swift in Sources */,
+				842DA3BD2F69357A00FEEBD9 /* PoseCameraView.swift in Sources */,
+				842DA3BE2F69357A00FEEBD9 /* SettingsView.swift in Sources */,
+				842DA3BF2F69357A00FEEBD9 /* StoreView.swift in Sources */,
+				842DA3C02F69357A00FEEBD9 /* TutorialsFeedView.swift in Sources */,
+				842DA3D92F69361F00FEEBD9 /* AppConfig.swift in Sources */,
+				842DA3DA2F69361F00FEEBD9 /* AppRequestBaseModel.swift in Sources */,
+				842DA3DB2F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				842DA3DC2F69361F00FEEBD9 /* ProgressHUD.swift in Sources */,
+				842DA3DD2F69361F00FEEBD9 /* LocalPushScheduler.swift in Sources */,
+				842DA3DE2F69361F00FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA3DF2F69361F00FEEBD9 /* AppPermissionTool.swift in Sources */,
+				842DA3E02F69361F00FEEBD9 /* AppRequestTool.swift in Sources */,
+				842DA3E12F69361F00FEEBD9 /* AppAdjustManager.swift in Sources */,
+				842DA3E22F69361F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
+				842DA3E32F69361F00FEEBD9 /* AppleIAPManager.swift in Sources */,
+				842DA3E42F69361F00FEEBD9 /* WaitViewController.swift in Sources */,
+				842DA3E52F69361F00FEEBD9 /* AppWebViewController.swift in Sources */,
+				842DA3C12F69357A00FEEBD9 /* VideoPlayerDetailView.swift in Sources */,
+				842DA3C32F69357A00FEEBD9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,18 +494,28 @@
 		};
 		842DA2262F68F90100FEEBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C835F6B14645CCFE823C585 /* Pods-mexo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mexo/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to let you try and practice photography poses using our interactive overlay feature.";
+				INFOPLIST_KEY_CFBundleDisplayName = Mexo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to let you practice photography poses using our interactive overlay feature.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone access for recording audio during video tutorials and feedback sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save the photos you take while practicing poses directly to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to let you save your practice photos and browse existing inspiration.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -280,8 +525,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.mexo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mexo.export;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -298,18 +544,28 @@
 		};
 		842DA2272F68F90100FEEBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BACCEFDE731390C5ED02844C /* Pods-mexo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mexo/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to let you try and practice photography poses using our interactive overlay feature.";
+				INFOPLIST_KEY_CFBundleDisplayName = Mexo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to let you practice photography poses using our interactive overlay feature.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone access for recording audio during video tutorials and feedback sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save the photos you take while practicing poses directly to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to let you save your practice photos and browse existing inspiration.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -319,8 +575,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mori.com.mexo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mexo.export;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -31,20 +31,12 @@ struct PhotoCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if #available(iOS 15.0, *) {
-                AsyncImage(url: URL(string: photo.imageUrl)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Color.gray.opacity(0.3)
-                }
+            Image(photo.imageUrl)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .frame(height: 200)
                 .cornerRadius(12)
                 .clipped()
-            } else {
-                // Fallback on earlier versions
-            }
             
             Text(photo.category)
                 .font(.caption)

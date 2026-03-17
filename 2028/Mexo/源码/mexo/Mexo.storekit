@@ -1,0 +1,153 @@
+{
+  "identifier" : "MexoCoinsConfig",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_01",
+      "localizations" : [
+        {
+          "description" : "Get 32 coins to unlock premium magazines.",
+          "displayName" : "32 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo",
+      "referenceName" : "32 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_02",
+      "localizations" : [
+        {
+          "description" : "Get 60 coins to unlock premium magazines.",
+          "displayName" : "60 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo1",
+      "referenceName" : "60 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_03",
+      "localizations" : [
+        {
+          "description" : "Get 96 coins to unlock premium magazines.",
+          "displayName" : "96 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo2",
+      "referenceName" : "96 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_04",
+      "localizations" : [
+        {
+          "description" : "Get 155 coins to unlock premium magazines.",
+          "displayName" : "155 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo4",
+      "referenceName" : "155 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_05",
+      "localizations" : [
+        {
+          "description" : "Get 189 coins to unlock premium magazines.",
+          "displayName" : "189 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo5",
+      "referenceName" : "189 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_09",
+      "localizations" : [
+        {
+          "description" : "Get 359 coins to unlock premium magazines.",
+          "displayName" : "359 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo9",
+      "referenceName" : "359 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_19",
+      "localizations" : [
+        {
+          "description" : "Get 729 coins to unlock premium magazines.",
+          "displayName" : "729 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo19",
+      "referenceName" : "729 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_49",
+      "localizations" : [
+        {
+          "description" : "Get 1869 coins to unlock premium magazines.",
+          "displayName" : "1869 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo49",
+      "referenceName" : "1869 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "MEXO_99",
+      "localizations" : [
+        {
+          "description" : "Get 3799 coins to unlock premium magazines.",
+          "displayName" : "3799 coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Mexo99",
+      "referenceName" : "3799 coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

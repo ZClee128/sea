@@ -15,12 +15,14 @@ struct PhotoModel: Identifiable, Codable {
     let stylingTags: [String]   // Added for Fashion/Styling context
     let poseTips: [PoseTip]
     let issueNumber: String    // Added for Magazine Issue context
+    var isPremium: Bool = false
+    var coinPrice: Int = 0
     
     // Mock Data Generator with Magazine Context
     static let mockData: [PhotoModel] = [
         PhotoModel(
             id: "1", 
-            imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop", 
+            imageUrl: "Golden Hour Glow", 
             category: "Portrait", 
             title: "Golden Hour Glow",
             subtitle: "Embracing natural warmth in urban settings",
@@ -33,7 +35,7 @@ struct PhotoModel: Identifiable, Codable {
         ),
         PhotoModel(
             id: "2", 
-            imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop", 
+            imageUrl: "Noir Elegance", 
             category: "Studio", 
             title: "Noir Elegance",
             subtitle: "The art of shadow and minimalist composition",
@@ -46,7 +48,7 @@ struct PhotoModel: Identifiable, Codable {
         ),
         PhotoModel(
             id: "3", 
-            imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", 
+            imageUrl: "Candid Moments", 
             category: "Casual", 
             title: "Candid Moments",
             subtitle: "Capturing the beauty in everyday simplicity",
@@ -55,11 +57,13 @@ struct PhotoModel: Identifiable, Codable {
                 PoseTip(title: "Natural Smile", description: "Think of something genuinely funny to capture an authentic expression."),
                 PoseTip(title: "Slight Head Tilt", description: "Tilt the head slightly to one side for a softer, more approachable vibe.")
             ],
-            issueNumber: "Issue Vol. 11"
+            issueNumber: "Issue Vol. 11",
+            isPremium: true,
+            coinPrice: 99
         ),
         PhotoModel(
             id: "4", 
-            imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop", 
+            imageUrl: "Vivid Urbanism", 
             category: "Street Style", 
             title: "Vivid Urbanism",
             subtitle: "Bold colors and dynamic motion in the heart of the city",

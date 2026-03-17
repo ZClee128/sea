@@ -68,10 +68,18 @@ struct AgreementView: View {
             .padding(.bottom, 40)
         }
         .sheet(isPresented: $showingTerms) {
-            DocumentView(title: "Terms of Service", content: "These are the Terms of Service for Mexo.\n\nBy using this app, you agree to... [Content to be populated]")
+            if #available(iOS 14.0, *) {
+                DocumentView(title: "Terms of Service", content: StoreManager.termsOfService)
+            } else {
+                // Fallback on earlier versions
+            }
         }
         .sheet(isPresented: $showingPrivacy) {
-            DocumentView(title: "Privacy Policy", content: "This is the Privacy Policy for Mexo.\n\nWe value your privacy and... [Content to be populated]")
+            if #available(iOS 14.0, *) {
+                DocumentView(title: "Privacy Policy", content: StoreManager.privacyPolicy)
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }

@@ -10,26 +10,11 @@ struct PhotoDetailView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     // Main Image
-                    if #available(iOS 15.0, *) {
-                        AsyncImage(url: URL(string: photo.imageUrl)) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        } placeholder: {
-                            Rectangle()
-                                .fill(Color.gray.opacity(0.2))
-                                .frame(height: 400)
-                        }
+                    Image(photo.imageUrl)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .cornerRadius(16)
                         .padding(.horizontal)
-                    } else {
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(height: 400)
-                            .cornerRadius(16)
-                            .padding(.horizontal)
-                            .overlay(Text("Requires iOS 15").foregroundColor(.gray))
-                    }
                     
                     // Try this Pose Button (The core feature)
                     if #available(iOS 14.0, *) {

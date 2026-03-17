@@ -1,22 +1,82 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct TutorialsFeedView: View {
     let videos: [VideoModel] = VideoModel.mockData
+    @StateObject private var storeManager = StoreManager.shared
+    @State private var selectedVideo: VideoModel?
+    @State private var showingUnlockAlert = false
+    @State private var showingStore = false
     
     var body: some View {
         NavigationView {
             if #available(iOS 14.0, *) {
-                List(videos) { video in
-                    NavigationLink(destination: VideoPlayerDetailView(video: video)) {
-                        VideoRowView(video: video)
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(videos) { video in
+                            VideoRowWrapper(video: video, selectedVideo: $selectedVideo, showingUnlockAlert: $showingUnlockAlert) {
+                                VideoRowView(video: video)
+                                    .padding(.vertical, 12)
+                                    .padding(.horizontal)
+                            }
+                            Divider().padding(.leading, 172)
+                        }
                     }
-                    .padding(.vertical, 8)
                 }
-                .listStyle(PlainListStyle())
                 .navigationTitle("Tutorials")
+                .alert(isPresented: $showingUnlockAlert) {
+                    Alert(
+                        title: Text("Unlock Tutorial"),
+                        message: Text("Would you like to unlock this premium video for \(selectedVideo?.coinPrice ?? 0) coins?"),
+                        primaryButton: .default(Text("Unlock")) {
+                            if let video = selectedVideo {
+                                if storeManager.unlockContent(id: video.id, price: video.coinPrice) {
+                                    // Success
+                                } else {
+                                    showingStore = true
+                                }
+                            }
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
+                .sheet(isPresented: $showingStore) {
+                    StoreView()
+                }
             } else {
                 // Fallback on earlier versions
             }
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct VideoRowWrapper<Content: View>: View {
+    let video: VideoModel
+    @Binding var selectedVideo: VideoModel?
+    @Binding var showingUnlockAlert: Bool
+    let content: () -> Content
+    
+    @StateObject private var storeManager = StoreManager.shared
+    @State private var navigateToDetail = false
+    
+    var body: some View {
+        ZStack {
+            NavigationLink(destination: VideoPlayerDetailView(video: video), isActive: $navigateToDetail) {
+                EmptyView()
+            }
+            
+            Button(action: {
+                if video.isPremium && !storeManager.isContentUnlocked(id: video.id) {
+                    selectedVideo = video
+                    showingUnlockAlert = true
+                } else {
+                    navigateToDetail = true
+                }
+            }) {
+                content()
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
 }
@@ -28,29 +88,37 @@ struct VideoRowView: View {
         HStack(alignment: .top, spacing: 16) {
             // Thumbnail
             ZStack {
-                if #available(iOS 15.0, *) {
-                    AsyncImage(url: URL(string: video.thumbnailUrl)) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } placeholder: {
-                        Color.gray.opacity(0.3)
-                    }
+                Image(video.thumbnailUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 140, height: 90)
                     .cornerRadius(8)
                     .clipped()
-                } else {
-                    Rectangle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: 140, height: 90)
-                        .cornerRadius(8)
-                }
                 
-                // Play Icon Overlay
-                Image(systemName: "play.circle.fill")
-                    .font(.system(size: 30))
-                    .foregroundColor(.white)
-                    .shadow(radius: 2)
+                if #available(iOS 14.0, *) {
+                    if video.isPremium && !StoreManager.shared.isContentUnlocked(id: video.id) {
+                        Color.black.opacity(0.3)
+                            .frame(width: 140, height: 90)
+                            .cornerRadius(8)
+                        
+                        VStack(spacing: 4) {
+                            Image(systemName: "lock.fill")
+                                .font(.system(size: 20))
+                            Text("\(video.coinPrice)")
+                                .font(.caption2)
+                                .fontWeight(.black)
+                        }
+                        .foregroundColor(.white)
+                    } else {
+                        // Play Icon Overlay
+                        Image(systemName: "play.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundColor(.white)
+                            .shadow(radius: 2)
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
                 
                 // Duration Label
                 VStack {
@@ -92,6 +160,10 @@ struct VideoRowView: View {
 
 struct TutorialsFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialsFeedView()
+        if #available(iOS 14.0, *) {
+            TutorialsFeedView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

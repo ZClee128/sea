@@ -1,14 +1,41 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct SettingsView: View {
     @State private var showingTerms = false
     @State private var showingPrivacy = false
+    @State private var showingStore = false
     @State private var cacheCleared = false
+    @StateObject private var storeManager = StoreManager.shared
     
     var body: some View {
         NavigationView {
             if #available(iOS 14.0, *) {
                 Form {
+                    Section(header: Text("Account & Balance")) {
+                        HStack {
+                            Label {
+                                Text("Coin Balance")
+                            } icon: {
+                                Image(systemName: "bitcoinsign.circle.fill")
+                                    .foregroundColor(.orange)
+                            }
+                            Spacer()
+                            Text("\(storeManager.coins)")
+                                .fontWeight(.bold)
+                        }
+                        
+                        Button(action: { showingStore = true }) {
+                            HStack {
+                                Label("Premium Store", systemImage: "star.fill")
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+
                     Section(header: Text("Legal & Information")) {
                         Button(action: { showingTerms = true }) {
                             HStack {
@@ -59,10 +86,15 @@ struct SettingsView: View {
                 }
                 .navigationTitle("Settings")
                 .sheet(isPresented: $showingTerms) {
-                    DocumentView(title: "Terms of Service", content: "These are the Terms of Service for Mexo.\n\nBy using this app, you agree to... [Content to be populated]")
+                    DocumentView(title: "Terms of Service", content: StoreManager.termsOfService)
                 }
                 .sheet(isPresented: $showingPrivacy) {
-                    DocumentView(title: "Privacy Policy", content: "This is the Privacy Policy for Mexo.\n\nWe value your privacy and... [Content to be populated]")
+                    DocumentView(title: "Privacy Policy", content: StoreManager.privacyPolicy)
+                }
+                .sheet(isPresented: $showingStore) {
+                    if #available(iOS 14.0, *) {
+                        StoreView()
+                    }
                 }
             } else {
                 // Fallback on earlier versions
@@ -88,6 +120,10 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        if #available(iOS 14.0, *) {
+            SettingsView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

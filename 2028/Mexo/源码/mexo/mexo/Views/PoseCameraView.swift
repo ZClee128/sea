@@ -25,17 +25,11 @@ struct PoseCameraView: View {
                     if isCameraAuthorized {
                         CameraPreview(session: session)
                         
-                        if #available(iOS 15.0, *) {
-                            AsyncImage(url: URL(string: photoUrl)) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .opacity(overlayOpacity)
-                            } placeholder: {
-                                Color.clear
-                            }
+                        Image(photoUrl) // Now local asset name
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .opacity(overlayOpacity)
                             .allowsHitTesting(false)
-                        }
                     }
                     
                     if isFlashActive {
@@ -58,7 +52,7 @@ struct PoseCameraView: View {
                             .shadow(radius: 5)
                     }
                     // Adjusted Y Offset: safeAreaInsets.top + 50 to fully clear the status bar and potential nav bar overlap
-                    .position(x: 44, y: geometry.safeAreaInsets.top + 70)
+                    .position(x: 44, y: geometry.safeAreaInsets.top + 50)
                     .zIndex(100)
                     
                     // BOTTOM CONTROLS
@@ -154,23 +148,18 @@ struct PoseCameraView: View {
         }
         
         #if targetEnvironment(simulator)
-        // Simulator - Download the target photoUrl and save it as the "taken photo"
-        // This provides a much better testing experience than a solid color block.
-        if let url = URL(string: photoUrl) {
-            URLSession.shared.dataTask(with: url) { data, _, _ in
-                if let data = data, let image = UIImage(data: data) {
-                    self.saveImageToLibrary(image)
-                } else {
-                    // Fallback to blue if download fails
-                    let size = CGSize(width: 800, height: 1200)
-                    UIGraphicsBeginImageContext(size)
-                    UIColor.systemBlue.setFill()
-                    UIRectFill(CGRect(origin: .zero, size: size))
-                    let fallbackImage = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
-                    UIGraphicsEndImageContext()
-                    self.saveImageToLibrary(fallbackImage)
-                }
-            }.resume()
+        // Simulator - Get the local asset image and save it
+        if let localImage = UIImage(named: photoUrl) {
+            self.saveImageToLibrary(localImage)
+        } else {
+            // Fallback to blue if image not found
+            let size = CGSize(width: 800, height: 1200)
+            UIGraphicsBeginImageContext(size)
+            UIColor.systemBlue.setFill()
+            UIRectFill(CGRect(origin: .zero, size: size))
+            let fallbackImage = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+            UIGraphicsEndImageContext()
+            self.saveImageToLibrary(fallbackImage)
         }
         #else
         let settings = AVCapturePhotoSettings()

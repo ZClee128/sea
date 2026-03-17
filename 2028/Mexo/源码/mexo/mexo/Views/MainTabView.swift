@@ -34,14 +34,18 @@ struct MainTabView: View {
                 // Fallback on earlier versions
             }
             
-            SettingsView()
-                .tabItem {
-                    if #available(iOS 14.0, *) {
-                        Label("Settings", systemImage: "gearshape")
-                    } else {
-                        // Fallback on earlier versions
+            if #available(iOS 14.0, *) {
+                SettingsView()
+                    .tabItem {
+                        if #available(iOS 14.0, *) {
+                            Label("Settings", systemImage: "gearshape")
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
-                }
+            } else {
+                // Fallback on earlier versions
+            }
         }
         .accentColor(.blue) // Ensure default tinting in Light mode
     }
