@@ -1,8 +1,8 @@
 //
 //  WaitViewController.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by DouXiu on 2025/11/27.
+//  Created by Mexo Photography Team on 2025/11/27.
 //
 
 import UIKit

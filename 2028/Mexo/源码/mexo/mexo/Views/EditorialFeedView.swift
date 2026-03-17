@@ -11,36 +11,59 @@ struct EditorialFeedView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 30) {
+                VStack(spacing: 40) {
                     // Header / Masthead
                     VStack(spacing: 8) {
                         Text("MEXO")
-                            .font(.system(size: 44, weight: .black, design: .serif))
-                            .tracking(4)
+                            .font(.system(size: 48, weight: .black, design: .serif))
+                            .italic()
+                            .tracking(8)
                         
                         Text("PORTRAIT ESTHETICS MAGAZINE")
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(.secondary)
-                            .tracking(2)
+                            .tracking(4)
                         
-                        Divider()
-                            .padding(.horizontal, 40)
+                        Rectangle()
+                            .fill(LinearGradient(gradient: Gradient(colors: [.clear, .primary.opacity(0.3), .clear]), startPoint: .leading, endPoint: .trailing))
+                            .frame(height: 1)
+                            .padding(.horizontal, 60)
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 40)
                     
-                    // Top Spotlight (Large Feature)
-                    if let first = photos.first {
-                        MagazineCardWrapper(photo: first, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
-                            FeaturedMagazineCard(photo: first)
+                    // Featured Carousel
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text("FEATURED EDITORIALS")
+                            .font(.system(size: 12, weight: .heavy))
+                            .tracking(2)
+                            .padding(.horizontal, 25)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
+                                ForEach(photos.prefix(2)) { photo in
+                                    MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
+                                        FeaturedMagazineCard(photo: photo)
+                                            .frame(width: UIScreen.main.bounds.width - 50)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 25)
                         }
                     }
                     
-                    // Regular Feed with staggered look
-                    VStack(spacing: 40) {
-                        ForEach(photos.dropFirst()) { photo in
-                            MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
-                                EditorialMagazineCard(photo: photo)
+                    // Main Feed
+                    VStack(alignment: .leading, spacing: 25) {
+                        Text("LATEST ISSUES")
+                            .font(.system(size: 12, weight: .heavy))
+                            .tracking(2)
+                            .padding(.horizontal, 25)
+                        
+                        VStack(spacing: 30) {
+                            ForEach(photos.dropFirst(2)) { photo in
+                                MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
+                                    EditorialMagazineCard(photo: photo)
+                                }
                             }
                         }
                     }
@@ -65,24 +88,13 @@ struct EditorialFeedView: View {
                 )
             }
             .sheet(isPresented: $showingStore) {
-                if #available(iOS 14.0, *) {
-                    StoreView()
-                }
+                StoreView()
             }
         }
     }
-    
-    private func handlePhotoSelection(_ photo: PhotoModel) {
-        if photo.isPremium && !storeManager.isContentUnlocked(id: photo.id) {
-            selectedPhoto = photo
-            showingUnlockAlert = true
-        } else {
-            // Already unlocked or free - let NavigationLink handle via Tag/Selection
-            // Actually, simplified approach: we can use a Programmatic NavigationLink or just wrap the card in Button.
-            // Let's use a hidden NavigationLink for simplicity.
-        }
-    }
 }
+
+
 
 struct PremiumLockOverlay: View {
     let price: Int
@@ -117,51 +129,55 @@ struct FeaturedMagazineCard: View {
                 Image(photo.imageUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 450)
+                    .frame(height: 500)
                     .clipped()
+                
+                LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.4)]), startPoint: .top, endPoint: .bottom)
                 
                 if #available(iOS 14.0, *) {
                     if photo.isPremium && !StoreManager.shared.isContentUnlocked(id: photo.id) {
                         PremiumLockOverlay(price: photo.coinPrice)
                     }
-                } else {
-                    // Fallback on earlier versions
                 }
                 
                 // Issue Tag
                 if #available(iOS 14.0, *) {
                     Text(photo.issueNumber.uppercased())
-                        .font(.caption2)
-                        .fontWeight(.black)
+                        .font(.system(size: 10, weight: .heavy))
                         .foregroundColor(.white)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Color.blue)
-                        .padding(20)
-                } else {
-                    // Fallback on earlier versions
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(Color.black.opacity(0.7))
+                        .overlay(Rectangle().stroke(Color.white.opacity(0.3), lineWidth: 0.5))
+                        .padding(25)
                 }
             }
+            .cornerRadius(0)
+            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
             
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 12) {
                     ForEach(photo.stylingTags, id: \.self) { tag in
-                        Text("#\(tag)")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.blue)
+                        Text(tag.uppercased())
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(.secondary)
                     }
+                    Spacer()
                 }
                 
                 Text(photo.title.uppercased())
-                    .font(.system(size: 28, weight: .bold, design: .serif))
+                    .font(.system(size: 32, weight: .bold, design: .serif))
                     .foregroundColor(.primary)
                 
                 Text(photo.subtitle)
-                    .font(.subheadline)
+                    .font(.body)
+                    .italic()
                     .foregroundColor(.secondary)
                     .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 25)
+            .padding(.top, 10)
         }
     }
 }
@@ -206,9 +222,10 @@ struct EditorialMagazineCard: View {
             Image(photo.imageUrl)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 200)
-                .cornerRadius(4)
+                .frame(width: 130, height: 180)
+                .cornerRadius(2)
                 .clipped()
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 2, y: 2)
                 .overlay(
                     Group {
                         if #available(iOS 14.0, *) {

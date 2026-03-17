@@ -18,7 +18,9 @@ struct VideoModel: Identifiable, Codable {
             description: "Learn how to use window light and natural outdoor lighting to create stunning, soft portraits without expensive gear.",
             videoUrl: "Mastering Natural Light",
             thumbnailUrl: "Mastering Natural Light",
-            duration: "00:20"
+            duration: "00:20",
+            isPremium: false,
+            coinPrice: 0
         ),
         VideoModel(
             id: "v2",
@@ -26,7 +28,9 @@ struct VideoModel: Identifiable, Codable {
             description: "A complete guide to directing your subject to move naturally, avoiding stiff poses and capturing authentic moments.",
             videoUrl: "Dynamic Posing Walkthrough",
             thumbnailUrl: "Dynamic Posing Walkthrough",
-            duration: "00:13"
+            duration: "00:13",
+            isPremium: false,
+            coinPrice: 0
         ),
         VideoModel(
             id: "v3",

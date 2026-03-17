@@ -1,8 +1,8 @@
 //
 //  AppAdjustManager.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by young on 2025/9/24.
+//  Created by Mexo Photography Team on 2025/9/24.
 //
 
 import Adjust

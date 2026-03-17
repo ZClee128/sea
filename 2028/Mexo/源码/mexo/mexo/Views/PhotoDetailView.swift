@@ -1,155 +1,126 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct PhotoDetailView: View {
     let photo: PhotoModel
+    @State private var showingCamera = false
     @State private var isSaved: Bool = false
-    @State private var showingCamera: Bool = false
     
     var body: some View {
-        if #available(iOS 14.0, *) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    // Main Image
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                ZStack(alignment: .bottomLeading) {
                     Image(photo.imageUrl)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(16)
-                        .padding(.horizontal)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 400)
+                        .clipped()
                     
-                    // Try this Pose Button (The core feature)
-                    if #available(iOS 14.0, *) {
-                        Button(action: {
-                            showingCamera = true
-                        }) {
-                            HStack {
-                                Image(systemName: "camera.viewfinder")
-                                Text("Try this Pose")
-                                    .fontWeight(.bold)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
+                    LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(photo.category.uppercased())
+                            .font(.system(size: 12, weight: .heavy))
+                            .foregroundColor(.white.opacity(0.8))
+                        
+                        Text(photo.title.uppercased())
+                            .font(.system(size: 36, weight: .black, design: .serif))
                             .foregroundColor(.white)
-                            .cornerRadius(12)
-                        }
-                        .padding(.horizontal)
-                        .fullScreenCover(isPresented: $showingCamera) {
-                            PoseCameraView(photoUrl: photo.imageUrl)
-                        }
                     }
-                    
-                    // Header & Action
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(photo.category.uppercased())
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.blue)
-                                
-                                Text(photo.title)
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                            }
+                    .padding(25)
+                }
+                
+                VStack(alignment: .leading, spacing: 25) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("STYLING NOTES")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(.secondary)
                             
-                            Spacer()
-                            
-                            Button(action: {
-                                toggleSave()
-                            }) {
-                                if #available(iOS 14.0, *) {
-                                    Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
-                                        .font(.title2)
-                                        .foregroundColor(isSaved ? .blue : .primary)
-                                } else {
-                                    // Fallback on earlier versions
-                                }
-                            }
-                        }
-                        
-                        Text(photo.subtitle)
-                            .font(.body)
-                            .foregroundColor(.secondary)
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 ForEach(photo.stylingTags, id: \.self) { tag in
-                                    Text("#\(tag)")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .padding(.horizontal, 10)
-                                        .padding(.vertical, 5)
-                                        .background(Color.blue.opacity(0.1))
-                                        .foregroundColor(.blue)
-                                        .cornerRadius(20)
-                                }
-                            }
-                        }
-                        
-                        Divider().padding(.top, 10)
-                        
-                        if #available(iOS 14.0, *) {
-                            Text("Pose Analysis")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                        } else {
-                            // Fallback on earlier versions
-                        }
-                    }
-                    .padding(.horizontal)
-                    
-                    // Pose Tips
-                    VStack(alignment: .leading, spacing: 16) {
-                        ForEach(photo.poseTips) { tip in
-                            HStack(alignment: .top, spacing: 16) {
-                                if #available(iOS 14.0, *) {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(.green)
-                                        .font(.title3)
-                                        .padding(.top, 2)
-                                }
-                                
-                                VStack(alignment: .leading, spacing: 6) {
-                                    Text(tip.title)
-                                        .font(.headline)
-                                    
-                                    Text(tip.description)
+                                    Text(tag)
                                         .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .fixedSize(horizontal: false, vertical: true)
+                                        .fontWeight(.medium)
                                 }
                             }
-                            .padding()
-                            .background(Color(UIColor.secondarySystemBackground))
-                            .cornerRadius(12)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack(spacing: 15) {
+                            Button(action: { toggleSave() }) {
+                                Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                                    .font(.title2)
+                                    .foregroundColor(isSaved ? .black : .primary)
+                            }
+                            
+                            Button(action: { showingCamera = true }) {
+                                HStack(spacing: 8) {
+                                    Image(systemName: "camera.viewfinder")
+                                    Text("TRY THIS POSE")
+                                }
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
+                                .background(Color.black)
+                                .cornerRadius(30)
+                                .shadow(radius: 5)
+                            }
+                            .fullScreenCover(isPresented: $showingCamera) {
+                                CameraView(overlayImage: photo.imageUrl)
+                            }
                         }
                     }
-                    .padding(.horizontal)
                     
-                    Spacer(minLength: 40)
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text("POSING GUIDE")
+                            .font(.system(size: 14, weight: .heavy))
+                            .tracking(1)
+                        
+                        ForEach(photo.poseTips) { tip in
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(tip.title.uppercased())
+                                    .font(.system(size: 13, weight: .bold))
+                                Text(tip.description)
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.secondary)
+                                    .lineSpacing(4)
+                            }
+                            .padding(.bottom, 10)
+                        }
+                    }
+                    
+                    Text(photo.subtitle)
+                        .font(.body)
+                        .italic()
+                        .foregroundColor(.secondary)
+                        .padding(.top, 10)
                 }
+                .padding(25)
             }
-            .onAppear {
-                checkIfSaved()
-            }
-            .navigationBarHidden(false)
-            .navigationBarTitleDisplayMode(.inline)
-        } else {
-            // Fallback on earlier versions
+        }
+        .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            checkIfSaved()
         }
     }
     
     private func toggleSave() {
         var savedIds = UserDefaults.standard.stringArray(forKey: "savedPhotoIds") ?? []
-        
         if isSaved {
             savedIds.removeAll { $0 == photo.id }
         } else {
             savedIds.append(photo.id)
         }
-        
         UserDefaults.standard.set(savedIds, forKey: "savedPhotoIds")
         isSaved.toggle()
+        
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     
     private func checkIfSaved() {
@@ -160,7 +131,7 @@ struct PhotoDetailView: View {
 
 struct PhotoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        if #available(iOS 14.0, *) {
             PhotoDetailView(photo: PhotoModel.mockData[0])
         }
     }

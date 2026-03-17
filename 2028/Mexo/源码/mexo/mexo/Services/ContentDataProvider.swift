@@ -16,7 +16,7 @@ typealias FinishBlock = (_ succeed: Bool, _ result: Any?, _ errorModel: AppError
         AF.request(serverUrl, method: .post, parameters: model.params, headers: headers, requestModifier: { $0.timeoutInterval = 10.0 }).responseData { [self] responseData in
             switch responseData.result {
             case .success:
-                func__requestSucess(model: model, response: responseData.response!, responseData: responseData.data!, completion: completion)
+                handleNetworkSuccess(model: model, response: responseData.response!, responseData: responseData.data!, completion: completion)
                 
             case .failure:
                 completion(false, nil, AppErrorResponse.init(errorCode: RequestResultCode.NetError.rawValue, errorMsg: "Net Error, Try again later"))
@@ -24,7 +24,7 @@ typealias FinishBlock = (_ succeed: Bool, _ result: Any?, _ errorModel: AppError
         }
     }
     
-    class func func__requestSucess(model: AppRequestModel, response: HTTPURLResponse, responseData: Data, completion: @escaping FinishBlock) {
+    class func handleNetworkSuccess(model: AppRequestModel, response: HTTPURLResponse, responseData: Data, completion: @escaping FinishBlock) {
         var responseJson = String(data: responseData, encoding: .utf8)
         responseJson = responseJson?.replacingOccurrences(of: "\"data\":null", with: "\"data\":{}")
         if let responseModel = JSONDeserializer<AppBaseResponse>.deserializeFrom(json: responseJson) {

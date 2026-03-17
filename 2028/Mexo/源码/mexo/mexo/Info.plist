@@ -32,5 +32,7 @@
 		<string>audio</string>
 		<string>remote-notification</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Mexo needs camera access to provide posing guides and photography assistance while you capture portraits.</string>
 </dict>
 </plist>

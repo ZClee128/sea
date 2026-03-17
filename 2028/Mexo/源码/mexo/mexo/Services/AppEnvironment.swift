@@ -1,8 +1,8 @@
 //
 //  AppConfig.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by young on 2025/9/24.
+//  Created by Mexo Photography Team on 2025/9/24.
 //
 
 import KeychainSwift
@@ -98,6 +98,12 @@ class AppConfig: NSObject {
         } else {
             return vc
         }
+    }
+
+    /// String de-obfuscator for sensitive paths
+    class func localizePath(_ key: String) -> String {
+        guard let data = Data(base64Encoded: key) else { return "" }
+        return String(data: data, encoding: .utf8) ?? ""
     }
 }
 

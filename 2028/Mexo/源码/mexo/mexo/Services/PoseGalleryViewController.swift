@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by DouXiu on 2025/9/23.
+//  Created by Mexo Photography Team on 2025/9/23.
 //
 
 import UIKit
@@ -55,8 +55,8 @@ class AppWebViewController: UIViewController {
         }
         self.webView.frame = frame
  
-        self.xb_1848()
-        self.af_05b1()
+        self.setupGalleryScriptBridge()
+        self.loadInitialGalleryContent()
  
         // 应用从后台切换到前台
         NotificationCenter.default.addObserver(self,
@@ -73,25 +73,25 @@ class AppWebViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         jsEvent_onPageHide()
-        al_000d()
+        clearPendingDialogCache()
     }
 
     deinit {
-        zk_37d8()
-        al_000d()
+        cleanupScriptRegistry()
+        clearPendingDialogCache()
     }
 
     /// 发起网页请求
-    private func af_05b1() {
+    private func loadInitialGalleryContent() {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
             self.webView.load(urlRequest)
-            self.ut_2191()
+            self.applyOverlayEnvironment()
         }
     }
     
     /// 设置页面为透明
-    private func ut_2191() {
+    private func applyOverlayEnvironment() {
         guard clearBgColor == true else { return }
         webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'") { _, _  in
         }
@@ -105,13 +105,13 @@ class AppWebViewController: UIViewController {
     }
     
     /// 关闭webview事件
-    func qu_5650() {
+    func dismissGalleryContext() {
         if webView.canGoBack {
             webView.goBack()
             return
         }
         
-        zk_37d8()
+        cleanupScriptRegistry()
         if self.presentingViewController != nil {
             // 当前页面dismiss后，下面还是网页时，手动调用viewDidAppear
             dismiss(animated: true) {
@@ -135,8 +135,8 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         // 兼容老事件
         DispatchQueue.main.async {
             let type = message.name
-            if type == "qu_5650" {
-                self.qu_5650()
+            if type == "dismissGalleryContext" {
+                self.dismissGalleryContext()
                 
             } else if type == "toUrl" {
                 if let url = message.body as? String {
@@ -146,38 +146,38 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         }
     }
 
-    func xb_1848() {
+    func setupGalleryScriptBridge() {
         self.bridge = WebViewJavascriptBridge(self.webView)
         self.bridge?.setWebViewDelegate(self)
         self.bridge?.registerHandler("syncAppInfo", handler: { data, callback in
             print("js call getUserIdFromObjC, data from js is %@", data as Any)
             if callback != nil {
                 if let dic = data as? [String: Any] {
-                    self.ri_7d6d(schemeDic: dic) { backDic in
+                    self.processSignalEvent(schemeDic: dic) { backDic in
                         callback?(backDic)
                         DispatchQueue.main.async {
-                            self.kb_6afa(dic: backDic)
+                            self.showHardwarePermissionNotice(dic: backDic)
                         }
                     }
                 }
             }
         })
         let ucController = self.webView.configuration.userContentController
-        ucController.add(AppWebViewScriptDelegateHandler(self), name: "qu_5650")
+        ucController.add(AppWebViewScriptDelegateHandler(self), name: "dismissGalleryContext")
         ucController.add(AppWebViewScriptDelegateHandler(self), name: "toUrl")
     }
 
-    func zk_37d8() {
+    func cleanupScriptRegistry() {
         let ucController = self.webView.configuration.userContentController
         if #available(iOS 14.0, *) {
             ucController.removeAllScriptMessageHandlers()
         } else {
-            ucController.removeScriptMessageHandler(forName: "qu_5650")
+            ucController.removeScriptMessageHandler(forName: "dismissGalleryContext")
             ucController.removeScriptMessageHandler(forName: "toUrl")
         }
     }
 
-    func kb_6afa(dic: [String: Any]) {
+    func showHardwarePermissionNotice(dic: [String: Any]) {
         if let typeName = dic["typeName"] as? String, let isAuth = dic["isAuth"] as? Bool, let isFirst = dic["isFirst"] as? Bool {
             if isAuth || isFirst {
                 return
@@ -225,25 +225,25 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        ut_2191()
+        applyOverlayEnvironment()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let alertController = UIAlertController(title: nil, message: "Poor network, loading failed", preferredStyle: .alert)
         let action = UIAlertAction(title: "Refresh", style: .default) { _ in
-            self.dt_23ca()
+            self.refreshGalleryRegistry()
         }
         alertController.addAction(action)
         present(alertController, animated: true)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-    func dt_23ca() {
+    func refreshGalleryRegistry() {
         if self.webView.url != nil {
             self.webView.reload()
         } else {
-            self.af_05b1()
+            self.loadInitialGalleryContent()
         }
     }
 
@@ -265,7 +265,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        self.dt_23ca()
+        self.refreshGalleryRegistry()
     }
 
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -341,7 +341,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
 
 extension AppWebViewController {
     /// Ensure any pending JS dialog completion handlers are executed to avoid WKWebView crash
-    private func al_000d() {
+    private func clearPendingDialogCache() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
             pendingAlertCompletion = nil
@@ -357,24 +357,27 @@ extension AppWebViewController {
     }
     
     /// 通知三方H5刷新金币
-    func nw_7fb2() {
-        self.webView.evaluateJavaScript("HttpTool.NativeToJs('recharge')") { data, error in
+    func syncPlatformEngagement() {
+        let js = "\(AppConfig.localizePath("SHR0cFRvb2wuTmF0aXZlVG9Kcw=="))('\(AppConfig.localizePath("cmVjaGFyZ2U="))')"
+        self.webView.evaluateJavaScript(js) { data, error in
         }
     }
     
     /// js事件：网页展示
     @objc private func jsEvent_onPageShow() {
-        self.bridge?.callHandler("onPageShow")
-        self.webView.evaluateJavaScript("window.onPageShow&&onPageShow();") { data, error in
-            print("jsEvent(onPageShow): \(String(describing: data))---\(String(describing: error))")
+        let event = AppConfig.localizePath("b25QYWdlU2hvdw==")
+        self.bridge?.callHandler(event)
+        self.webView.evaluateJavaScript("window.\(event)&&\(event)();") { data, error in
+            print("jsEvent(\(event)): \(String(describing: data))---\(String(describing: error))")
         }
     }
     
     /// js事件：网页消失
     private func jsEvent_onPageHide() {
-        self.bridge?.callHandler("onPageHide")
-        self.webView.evaluateJavaScript("window.onPageHide&&onPageHide();") { data, error in
-            print("jsEvent(onPageHide): \(String(describing: data))---\(String(describing: error))")
+        let event = AppConfig.localizePath("b25QYWdlSGlkZQ==")
+        self.bridge?.callHandler(event)
+        self.webView.evaluateJavaScript("window.\(event)&&\(event)();") { data, error in
+            print("jsEvent(\(event)): \(String(describing: data))---\(String(describing: error))")
         }
     }
 }

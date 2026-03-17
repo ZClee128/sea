@@ -18,7 +18,6 @@
 		842DA3BA2F69357A00FEEBD9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A02F69357A00FEEBD9 /* MainTabView.swift */; };
 		842DA3BB2F69357A00FEEBD9 /* MoodBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */; };
 		842DA3BC2F69357A00FEEBD9 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */; };
-		842DA3BD2F69357A00FEEBD9 /* PoseCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */; };
 		842DA3BE2F69357A00FEEBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A42F69357A00FEEBD9 /* SettingsView.swift */; };
 		842DA3BF2F69357A00FEEBD9 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A52F69357A00FEEBD9 /* StoreView.swift */; };
 		842DA3C02F69357A00FEEBD9 /* TutorialsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */; };
@@ -30,20 +29,21 @@
 		842DA3C82F69357A00FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3AF2F69357A00FEEBD9 /* Launch Screen.storyboard */; };
 		842DA3C92F69357A00FEEBD9 /* Mastering Natural Light.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3B02F69357A00FEEBD9 /* Mastering Natural Light.mp4 */; };
 		842DA3CA2F69357A00FEEBD9 /* Studio Lighting Basics.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3B22F69357A00FEEBD9 /* Studio Lighting Basics.mp4 */; };
-		842DA3D92F69361F00FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */; };
-		842DA3DA2F69361F00FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */; };
-		842DA3DB2F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
-		842DA3DC2F69361F00FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */; };
-		842DA3DD2F69361F00FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */; };
-		842DA3DE2F69361F00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */; };
-		842DA3DF2F69361F00FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */; };
-		842DA3E02F69361F00FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */; };
-		842DA3E12F69361F00FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */; };
-		842DA3E22F69361F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */; };
-		842DA3E32F69361F00FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */; };
-		842DA3E42F69361F00FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */; };
-		842DA3E52F69361F00FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */; };
 		842DA3E72F69372A00FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */; };
+		842DA3F72F69683B00FEEBD9 /* CameraFeaturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EB2F69683B00FEEBD9 /* CameraFeaturesManager.swift */; };
+		842DA3F82F69683B00FEEBD9 /* ContentDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3ED2F69683B00FEEBD9 /* ContentDataProvider.swift */; };
+		842DA3F92F69683B00FEEBD9 /* ContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EC2F69683B00FEEBD9 /* ContentDataModel.swift */; };
+		842DA3FA2F69683B00FEEBD9 /* PoseReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F22F69683B00FEEBD9 /* PoseReminderScheduler.swift */; };
+		842DA3FB2F69683B00FEEBD9 /* PoseGalleryInteractionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EF2F69683B00FEEBD9 /* PoseGalleryInteractionHandler.swift */; };
+		842DA3FC2F69683B00FEEBD9 /* ProContentPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F42F69683B00FEEBD9 /* ProContentPurchaseManager.swift */; };
+		842DA3FD2F69683B00FEEBD9 /* UIActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F52F69683B00FEEBD9 /* UIActivityIndicator.swift */; };
+		842DA3FE2F69683B00FEEBD9 /* PoseGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F12F69683B00FEEBD9 /* PoseGalleryViewController.swift */; };
+		842DA3FF2F69683B00FEEBD9 /* PreloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F32F69683B00FEEBD9 /* PreloadViewController.swift */; };
+		842DA4002F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EE2F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift */; };
+		842DA4012F69683B00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3E92F69683B00FEEBD9 /* AppDelegate.swift */; };
+		842DA4022F69683B00FEEBD9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EA2F69683B00FEEBD9 /* AppEnvironment.swift */; };
+		842DA4032F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F02F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift */; };
+		842DA4052F696BF700FEEBD9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4042F696BF700FEEBD9 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +60,6 @@
 		842DA3A02F69357A00FEEBD9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardView.swift; sourceTree = "<group>"; };
 		842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
-		842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCameraView.swift; sourceTree = "<group>"; };
 		842DA3A42F69357A00FEEBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		842DA3A52F69357A00FEEBD9 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsFeedView.swift; sourceTree = "<group>"; };
@@ -74,20 +73,21 @@
 		842DA3B02F69357A00FEEBD9 /* Mastering Natural Light.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mastering Natural Light.mp4"; sourceTree = "<group>"; };
 		842DA3B12F69357A00FEEBD9 /* mexo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mexo.entitlements; sourceTree = "<group>"; };
 		842DA3B22F69357A00FEEBD9 /* Studio Lighting Basics.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Studio Lighting Basics.mp4"; sourceTree = "<group>"; };
-		842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
-		842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
-		842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		842DA3E92F69683B00FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA3EA2F69683B00FEEBD9 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		842DA3EB2F69683B00FEEBD9 /* CameraFeaturesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeaturesManager.swift; sourceTree = "<group>"; };
+		842DA3EC2F69683B00FEEBD9 /* ContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataModel.swift; sourceTree = "<group>"; };
+		842DA3ED2F69683B00FEEBD9 /* ContentDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataProvider.swift; sourceTree = "<group>"; };
+		842DA3EE2F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographyAnalyticsManager.swift; sourceTree = "<group>"; };
+		842DA3EF2F69683B00FEEBD9 /* PoseGalleryInteractionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseGalleryInteractionHandler.swift; sourceTree = "<group>"; };
+		842DA3F02F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseGalleryScriptHandler.swift; sourceTree = "<group>"; };
+		842DA3F12F69683B00FEEBD9 /* PoseGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseGalleryViewController.swift; sourceTree = "<group>"; };
+		842DA3F22F69683B00FEEBD9 /* PoseReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseReminderScheduler.swift; sourceTree = "<group>"; };
+		842DA3F32F69683B00FEEBD9 /* PreloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewController.swift; sourceTree = "<group>"; };
+		842DA3F42F69683B00FEEBD9 /* ProContentPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProContentPurchaseManager.swift; sourceTree = "<group>"; };
+		842DA3F52F69683B00FEEBD9 /* UIActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicator.swift; sourceTree = "<group>"; };
+		842DA4042F696BF700FEEBD9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BACCEFDE731390C5ED02844C /* Pods-mexo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mexo.release.xcconfig"; path = "Target Support Files/Pods-mexo/Pods-mexo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,11 +162,11 @@
 			children = (
 				842DA39D2F69357A00FEEBD9 /* AgreementView.swift */,
 				842DA39E2F69357A00FEEBD9 /* DiscoverView.swift */,
+				842DA4042F696BF700FEEBD9 /* CameraView.swift */,
 				842DA39F2F69357A00FEEBD9 /* EditorialFeedView.swift */,
 				842DA3A02F69357A00FEEBD9 /* MainTabView.swift */,
 				842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */,
 				842DA3A22F69357A00FEEBD9 /* PhotoDetailView.swift */,
-				842DA3A32F69357A00FEEBD9 /* PoseCameraView.swift */,
 				842DA3A42F69357A00FEEBD9 /* SettingsView.swift */,
 				842DA3A52F69357A00FEEBD9 /* StoreView.swift */,
 				842DA3A62F69357A00FEEBD9 /* TutorialsFeedView.swift */,
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */,
-				842DA3CB2F6935FE00FEEBD9 /* map */,
+				842DA3F62F69683B00FEEBD9 /* Services */,
 				842DA39B2F69357A00FEEBD9 /* Models */,
 				842DA39C2F69357A00FEEBD9 /* ViewModels */,
 				842DA3A82F69357A00FEEBD9 /* Views */,
@@ -196,24 +196,24 @@
 			path = mexo;
 			sourceTree = "<group>";
 		};
-		842DA3CB2F6935FE00FEEBD9 /* map */ = {
+		842DA3F62F69683B00FEEBD9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				842DA3CC2F69361F00FEEBD9 /* AppAdjustManager.swift */,
-				842DA3CD2F69361F00FEEBD9 /* AppConfig.swift */,
-				842DA3CE2F69361F00FEEBD9 /* AppDelegate.swift */,
-				842DA3CF2F69361F00FEEBD9 /* AppleIAPManager.swift */,
-				842DA3D02F69361F00FEEBD9 /* AppPermissionTool.swift */,
-				842DA3D12F69361F00FEEBD9 /* AppRequestBaseModel.swift */,
-				842DA3D22F69361F00FEEBD9 /* AppRequestTool.swift */,
-				842DA3D32F69361F00FEEBD9 /* AppWebViewController.swift */,
-				842DA3D42F69361F00FEEBD9 /* AppWebViewHandleEvent.swift */,
-				842DA3D52F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
-				842DA3D62F69361F00FEEBD9 /* LocalPushScheduler.swift */,
-				842DA3D72F69361F00FEEBD9 /* ProgressHUD.swift */,
-				842DA3D82F69361F00FEEBD9 /* WaitViewController.swift */,
+				842DA3E92F69683B00FEEBD9 /* AppDelegate.swift */,
+				842DA3EA2F69683B00FEEBD9 /* AppEnvironment.swift */,
+				842DA3EB2F69683B00FEEBD9 /* CameraFeaturesManager.swift */,
+				842DA3EC2F69683B00FEEBD9 /* ContentDataModel.swift */,
+				842DA3ED2F69683B00FEEBD9 /* ContentDataProvider.swift */,
+				842DA3EE2F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift */,
+				842DA3EF2F69683B00FEEBD9 /* PoseGalleryInteractionHandler.swift */,
+				842DA3F02F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift */,
+				842DA3F12F69683B00FEEBD9 /* PoseGalleryViewController.swift */,
+				842DA3F22F69683B00FEEBD9 /* PoseReminderScheduler.swift */,
+				842DA3F32F69683B00FEEBD9 /* PreloadViewController.swift */,
+				842DA3F42F69683B00FEEBD9 /* ProContentPurchaseManager.swift */,
+				842DA3F52F69683B00FEEBD9 /* UIActivityIndicator.swift */,
 			);
-			path = map;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +340,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				842DA3B42F69357A00FEEBD9 /* PhotoModel.swift in Sources */,
+				842DA3F72F69683B00FEEBD9 /* CameraFeaturesManager.swift in Sources */,
+				842DA3F82F69683B00FEEBD9 /* ContentDataProvider.swift in Sources */,
+				842DA3F92F69683B00FEEBD9 /* ContentDataModel.swift in Sources */,
+				842DA3FA2F69683B00FEEBD9 /* PoseReminderScheduler.swift in Sources */,
+				842DA3FB2F69683B00FEEBD9 /* PoseGalleryInteractionHandler.swift in Sources */,
+				842DA3FC2F69683B00FEEBD9 /* ProContentPurchaseManager.swift in Sources */,
+				842DA3FD2F69683B00FEEBD9 /* UIActivityIndicator.swift in Sources */,
+				842DA3FE2F69683B00FEEBD9 /* PoseGalleryViewController.swift in Sources */,
+				842DA3FF2F69683B00FEEBD9 /* PreloadViewController.swift in Sources */,
+				842DA4002F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift in Sources */,
+				842DA4012F69683B00FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA4022F69683B00FEEBD9 /* AppEnvironment.swift in Sources */,
+				842DA4052F696BF700FEEBD9 /* CameraView.swift in Sources */,
+				842DA4032F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift in Sources */,
 				842DA3B52F69357A00FEEBD9 /* StoreManager.swift in Sources */,
 				842DA3B62F69357A00FEEBD9 /* VideoModel.swift in Sources */,
 				842DA3B72F69357A00FEEBD9 /* AgreementView.swift in Sources */,
@@ -348,23 +362,9 @@
 				842DA3BA2F69357A00FEEBD9 /* MainTabView.swift in Sources */,
 				842DA3BB2F69357A00FEEBD9 /* MoodBoardView.swift in Sources */,
 				842DA3BC2F69357A00FEEBD9 /* PhotoDetailView.swift in Sources */,
-				842DA3BD2F69357A00FEEBD9 /* PoseCameraView.swift in Sources */,
 				842DA3BE2F69357A00FEEBD9 /* SettingsView.swift in Sources */,
 				842DA3BF2F69357A00FEEBD9 /* StoreView.swift in Sources */,
 				842DA3C02F69357A00FEEBD9 /* TutorialsFeedView.swift in Sources */,
-				842DA3D92F69361F00FEEBD9 /* AppConfig.swift in Sources */,
-				842DA3DA2F69361F00FEEBD9 /* AppRequestBaseModel.swift in Sources */,
-				842DA3DB2F69361F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				842DA3DC2F69361F00FEEBD9 /* ProgressHUD.swift in Sources */,
-				842DA3DD2F69361F00FEEBD9 /* LocalPushScheduler.swift in Sources */,
-				842DA3DE2F69361F00FEEBD9 /* AppDelegate.swift in Sources */,
-				842DA3DF2F69361F00FEEBD9 /* AppPermissionTool.swift in Sources */,
-				842DA3E02F69361F00FEEBD9 /* AppRequestTool.swift in Sources */,
-				842DA3E12F69361F00FEEBD9 /* AppAdjustManager.swift in Sources */,
-				842DA3E22F69361F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
-				842DA3E32F69361F00FEEBD9 /* AppleIAPManager.swift in Sources */,
-				842DA3E42F69361F00FEEBD9 /* WaitViewController.swift in Sources */,
-				842DA3E52F69361F00FEEBD9 /* AppWebViewController.swift in Sources */,
 				842DA3C12F69357A00FEEBD9 /* VideoPlayerDetailView.swift in Sources */,
 				842DA3C32F69357A00FEEBD9 /* ContentView.swift in Sources */,
 			);
@@ -500,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -550,7 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

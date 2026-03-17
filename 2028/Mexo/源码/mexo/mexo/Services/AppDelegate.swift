@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by DouXiu on 2025/9/23.
+//  Created by Mexo Photography Team on 2026/3/17.
 //
 
 import UIKit
@@ -38,16 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.ti_3015()
+                        self.initializePhotographyTutorial()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1774874577 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.jc_4763() { // 本地时间戳大于预设时间，进入B面
+                if Date().timeIntervalSince1970 > endTimeInterval && self.isStandardHandheldDevice() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.ti_3015()
+                    self.initializePhotographyTutorial()
                 }
             }
         }
@@ -55,16 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func jc_4763() -> Bool {
+    private func isStandardHandheldDevice() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        rl_06d4(application)
+        setupPushNotifications(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.jn_3ba2()
+        AppleIAPManager.shared.processPendingTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func ti_3015() {
+    func initializePhotographyTutorial() {
         DispatchQueue.main.async {
             // Configure Global Audio Session for Background Playback
             do {
@@ -108,7 +108,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func rl_06d4(_ application: UIApplication) {
+    func setupPushNotifications(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]

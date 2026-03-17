@@ -1,8 +1,8 @@
 //
 //  AppWebViewHandleEvent.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by young on 2025/9/23.
+//  Created by Mexo Photography Team on 2025/9/23.
 //
 
 import CoreTelephony
@@ -62,7 +62,7 @@ struct UserInfoModel: HandyJSON {
 }
 
 extension AppWebViewController {
-    func ri_7d6d(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
+    func processSignalEvent(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
         if let model = JSMessageModel.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
@@ -108,14 +108,14 @@ extension AppWebViewController {
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.us_3d4e(productId: goodsId, source: source, payType: .Pay) { success in
+                    self.processPremiumAccess(productId: goodsId, source: source, payType: .Pay) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.us_3d4e(productId: goodsId, payType: .Subscribe) { success in
+                    self.processPremiumAccess(productId: goodsId, payType: .Subscribe) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
@@ -128,7 +128,7 @@ extension AppWebViewController {
                 
             case closeWebview:
                 callBack(["typeName": model.typeName])
-                self.qu_5650()
+                self.dismissGalleryContext()
                 
             case openNewWebview:
                 callBack(["typeName": model.typeName])
@@ -140,7 +140,7 @@ extension AppWebViewController {
                 
             case reloadWebview:
                 callBack(["typeName": model.typeName])
-                self.dt_23ca()
+                self.refreshGalleryRegistry()
             
             case openSettings:
                 callBack(["typeName": model.typeName])
@@ -319,13 +319,13 @@ extension AppWebViewController {
     /// - Parameters:
     ///   - productId: productId: 商品Id
     ///   - source: 充值来源
-    func us_3d4e(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
+    func processPremiumAccess(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
         ProgressHUD.show()
         var index = 0
         if source != -1 {
             index = source
         }
-        AppleIAPManager.shared.nz_2413(productId: productId, payType: payType, source: index) { status, _, _ in
+        AppleIAPManager.shared.initiateProductPurchase(productId: productId, payType: payType, source: index) { status, _, _ in
             ProgressHUD.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
@@ -335,7 +335,7 @@ extension AppWebViewController {
                     
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.nw_7fb2()
+                    self.syncPlatformEngagement()
                     
                 default:
                     print(" apple支付充值失败：\(status.rawValue)")

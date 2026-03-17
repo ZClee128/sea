@@ -1,8 +1,8 @@
 //
 //  AppPermissionTool.swift
-//  OverseaH5
+//  Mexo
 //
-//  Created by young on 2025/9/23.
+//  Created by Mexo Photography Team on 2025/9/23.
 //
 
 import Foundation
