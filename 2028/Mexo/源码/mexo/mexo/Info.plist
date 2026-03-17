@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to let you try and practice photography poses using our interactive overlay feature.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need permission to save and manage the photos you take while practicing poses within the app.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need permission to save the photos you take while practicing poses to your library.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>mexo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mexo</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

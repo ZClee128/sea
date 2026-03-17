@@ -1,0 +1,19 @@
+--- mexo.xcodeproj/project.pbxproj
++++ mexo.xcodeproj/project.pbxproj
+@@ -107,7 +107,6 @@
+ 		1498D232297123A800A52DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+ 		1498D235297123A800A52DDB /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+ 		1498D231297123A800A52DDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+-		1498D233297123A800A52DDB /* mexoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mexoApp.swift; sourceTree = "<group>"; };
+ 		14A2E7CE297116810014B1FA /* mexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mexo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+ /* End PBXFileReference section */
+ 
+@@ -141,7 +140,6 @@
+ 			children = (
+ 				1498D230297123A800A52DDB /* mexo */,
+ 				1498D232297123A800A52DDB /* Assets.xcassets */,
+ 				1498D231297123A800A52DDB /* ContentView.swift */,
+-				1498D233297123A800A52DDB /* mexoApp.swift */,
+ 				1498D234297123A800A52DDB /* Preview Content */,
+ 			);
+ 			path = mexo;
