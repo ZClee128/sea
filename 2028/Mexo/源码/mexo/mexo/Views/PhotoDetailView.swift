@@ -3,7 +3,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 struct PhotoDetailView: View {
     let photo: PhotoModel
-    @State private var showingCamera = false
+    @State private var showingWorkshop = false
     @State private var isSaved: Bool = false
     
     var body: some View {
@@ -56,10 +56,10 @@ struct PhotoDetailView: View {
                                     .foregroundColor(isSaved ? .black : .primary)
                             }
                             
-                            Button(action: { showingCamera = true }) {
+                            Button(action: { showingWorkshop = true }) {
                                 HStack(spacing: 8) {
-                                    Image(systemName: "camera.viewfinder")
-                                    Text("TRY THIS POSE")
+                                    Image(systemName: "play.circle.fill")
+                                    Text("POSING WORKSHOP")
                                 }
                                 .font(.system(size: 12, weight: .bold))
                                 .foregroundColor(.white)
@@ -69,8 +69,9 @@ struct PhotoDetailView: View {
                                 .cornerRadius(30)
                                 .shadow(radius: 5)
                             }
-                            .fullScreenCover(isPresented: $showingCamera) {
-                                CameraView(overlayImage: photo.imageUrl)
+                            .fullScreenCover(isPresented: $showingWorkshop) {
+                                let item = PosingWorkshopView.PoseWorkshopItem(title: photo.title, image: photo.imageUrl, tips: photo.subtitle)
+                                PosingWorkshopView(poses: [item])
                             }
                         }
                     }

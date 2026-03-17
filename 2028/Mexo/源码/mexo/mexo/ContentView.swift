@@ -12,7 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         if hasAgreed {
-            MainTabView()
+            if #available(iOS 14.0, *) {
+                MainTabView()
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             AgreementView(isAgreed: $hasAgreed)
         }

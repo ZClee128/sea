@@ -10,71 +10,81 @@ struct EditorialFeedView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 40) {
-                    // Header / Masthead
-                    VStack(spacing: 8) {
-                        Text("MEXO")
-                            .font(.system(size: 48, weight: .black, design: .serif))
-                            .italic()
-                            .tracking(8)
+            ZStack {
+                DesignTokens.Colors.background.ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 40) {
+                        // Header / Masthead
+                        VStack(spacing: 8) {
+                            Text("MEXO")
+                                .font(.system(size: 64, weight: .black, design: .serif))
+                                .italic()
+                                .tracking(12)
+                                .foregroundColor(DesignTokens.Colors.primary)
+                            
+                            Text("PORTRAIT AESTHETICS MAGAZINE")
+                                .font(DesignTokens.Typography.caption())
+                                .fontWeight(.bold)
+                                .foregroundColor(DesignTokens.Colors.accent)
+                                .tracking(6)
+                            
+                            DesignTokens.Colors.accent
+                                .frame(width: 80, height: 2)
+                                .padding(.top, 10)
+                        }
+                        .padding(.top, 60)
                         
-                        Text("PORTRAIT ESTHETICS MAGAZINE")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.secondary)
-                            .tracking(4)
-                        
-                        Rectangle()
-                            .fill(LinearGradient(gradient: Gradient(colors: [.clear, .primary.opacity(0.3), .clear]), startPoint: .leading, endPoint: .trailing))
-                            .frame(height: 1)
-                            .padding(.horizontal, 60)
-                    }
-                    .padding(.top, 40)
-                    
-                    // Featured Carousel
-                    VStack(alignment: .leading, spacing: 15) {
-                        Text("FEATURED EDITORIALS")
-                            .font(.system(size: 12, weight: .heavy))
-                            .tracking(2)
+                        // Featured Section
+                        VStack(alignment: .leading, spacing: 20) {
+                            HStack {
+                                Text("FEATURED EDITORIALS")
+                                    .font(DesignTokens.Typography.caption())
+                                    .fontWeight(.heavy)
+                                    .tracking(2)
+                                    .foregroundColor(DesignTokens.Colors.secondary)
+                                Spacer()
+                            }
                             .padding(.horizontal, 25)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 25) {
+                                    ForEach(photos.prefix(3)) { photo in
+                                        MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
+                                            PremiumFeaturedCard(photo: photo)
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal, 25)
+                            }
+                        }
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(photos.prefix(2)) { photo in
+                        // Latest Issues Grid
+                        VStack(alignment: .leading, spacing: 30) {
+                            Text("LATEST ISSUES")
+                                .font(DesignTokens.Typography.caption())
+                                .fontWeight(.heavy)
+                                .tracking(2)
+                                .foregroundColor(DesignTokens.Colors.secondary)
+                                .padding(.horizontal, 25)
+                            
+                            LazyVStack(spacing: 40) {
+                                ForEach(photos.dropFirst(3)) { photo in
                                     MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
-                                        FeaturedMagazineCard(photo: photo)
-                                            .frame(width: UIScreen.main.bounds.width - 50)
+                                        PremiumEditorialCard(photo: photo)
                                     }
                                 }
                             }
-                            .padding(.horizontal, 25)
                         }
+                        .padding(.bottom, 120)
                     }
-                    
-                    // Main Feed
-                    VStack(alignment: .leading, spacing: 25) {
-                        Text("LATEST ISSUES")
-                            .font(.system(size: 12, weight: .heavy))
-                            .tracking(2)
-                            .padding(.horizontal, 25)
-                        
-                        VStack(spacing: 30) {
-                            ForEach(photos.dropFirst(2)) { photo in
-                                MagazineCardWrapper(photo: photo, selectedPhoto: $selectedPhoto, showingUnlockAlert: $showingUnlockAlert) {
-                                    EditorialMagazineCard(photo: photo)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.bottom, 40)
                 }
             }
             .navigationBarHidden(true)
             .alert(isPresented: $showingUnlockAlert) {
                 Alert(
-                    title: Text("Unlock Content"),
-                    message: Text("Would you like to unlock this premium magazine for \(selectedPhoto?.coinPrice ?? 0) coins?"),
+                    title: Text("Unlock Premium Content"),
+                    message: Text("Access this exclusive editorial for \(selectedPhoto?.coinPrice ?? 0) coins."),
                     primaryButton: .default(Text("Unlock")) {
                         if let photo = selectedPhoto {
                             if storeManager.unlockContent(id: photo.id, price: photo.coinPrice) {
@@ -94,91 +104,126 @@ struct EditorialFeedView: View {
     }
 }
 
-
-
-struct PremiumLockOverlay: View {
-    let price: Int
-    var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                HStack(spacing: 4) {
-                    Image(systemName: "lock.fill")
-                    Text("\(price)")
-                        .fontWeight(.bold)
-                }
-                .font(.caption)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(Color.black.opacity(0.6))
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding(8)
-            }
-        }
-    }
-}
-
-struct FeaturedMagazineCard: View {
+@available(iOS 14.0, *)
+struct PremiumFeaturedCard: View {
     let photo: PhotoModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 15) {
             ZStack(alignment: .bottomLeading) {
                 Image(photo.imageUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 500)
+                    .frame(width: 320, height: 450)
                     .clipped()
                 
-                LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.4)]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
                 
-                if #available(iOS 14.0, *) {
-                    if photo.isPremium && !StoreManager.shared.isContentUnlocked(id: photo.id) {
-                        PremiumLockOverlay(price: photo.coinPrice)
-                    }
-                }
-                
-                // Issue Tag
-                if #available(iOS 14.0, *) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text(photo.issueNumber.uppercased())
-                        .font(.system(size: 10, weight: .heavy))
+                        .font(DesignTokens.Typography.caption(10))
+                        .fontWeight(.black)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(DesignTokens.Colors.accent)
                         .foregroundColor(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
-                        .background(Color.black.opacity(0.7))
-                        .overlay(Rectangle().stroke(Color.white.opacity(0.3), lineWidth: 0.5))
-                        .padding(25)
+                    
+                    Text(photo.title.uppercased())
+                        .font(DesignTokens.Typography.title(24))
+                        .foregroundColor(.white)
+                }
+                .padding(20)
+                
+                if photo.isPremium && !StoreManager.shared.isContentUnlocked(id: photo.id) {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            PremiumLockTag(price: photo.coinPrice)
+                        }
+                        Spacer()
+                    }
+                    .padding(15)
                 }
             }
             .cornerRadius(0)
-            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
+            .shadow(color: Color.black.opacity(0.15), radius: 20, x: 0, y: 15)
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct PremiumEditorialCard: View {
+    let photo: PhotoModel
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            ZStack(alignment: .topTrailing) {
+                Image(photo.imageUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 200)
+                    .clipped()
+                    .cornerRadius(4)
+                
+                if photo.isPremium && !StoreManager.shared.isContentUnlocked(id: photo.id) {
+                    PremiumLockTag(price: photo.coinPrice)
+                        .padding(8)
+                }
+            }
+            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 5, y: 5)
             
             VStack(alignment: .leading, spacing: 10) {
-                HStack(spacing: 12) {
-                    ForEach(photo.stylingTags, id: \.self) { tag in
-                        Text(tag.uppercased())
-                            .font(.system(size: 11, weight: .semibold))
-                            .foregroundColor(.secondary)
-                    }
-                    Spacer()
-                }
+                Text(photo.category.uppercased())
+                    .font(DesignTokens.Typography.caption(10))
+                    .fontWeight(.bold)
+                    .foregroundColor(DesignTokens.Colors.accent)
                 
-                Text(photo.title.uppercased())
-                    .font(.system(size: 32, weight: .bold, design: .serif))
-                    .foregroundColor(.primary)
+                Text(photo.title)
+                    .font(DesignTokens.Typography.headline(20))
+                    .foregroundColor(DesignTokens.Colors.primary)
+                    .lineLimit(2)
                 
                 Text(photo.subtitle)
-                    .font(.body)
-                    .italic()
-                    .foregroundColor(.secondary)
+                    .font(DesignTokens.Typography.body(14))
+                    .foregroundColor(DesignTokens.Colors.secondary)
                     .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
+                
+                HStack(spacing: 12) {
+                    Label("View Analysis", systemImage: "sparkles")
+                        .font(DesignTokens.Typography.caption(11))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(DesignTokens.Colors.accent)
+                        .cornerRadius(20)
+                }
             }
-            .padding(.horizontal, 25)
-            .padding(.top, 10)
+            .padding(.vertical, 5)
+            
+            Spacer()
         }
+        .padding(.horizontal, 25)
+    }
+}
+
+@available(iOS 14.0, *)
+struct PremiumLockTag: View {
+    let price: Int
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "lock.fill")
+            Text("\(price)")
+                .fontWeight(.bold)
+        }
+        .font(.system(size: 10))
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialLight))
+        .foregroundColor(DesignTokens.Colors.accent)
+        .clipShape(Capsule())
+        .shadow(color: Color.black.opacity(0.1), radius: 5)
     }
 }
 
@@ -194,7 +239,6 @@ struct MagazineCardWrapper<Content: View>: View {
     
     var body: some View {
         ZStack {
-            // Invisible NavigationLink
             NavigationLink(destination: PhotoDetailView(photo: photo), isActive: $navigateToDetail) {
                 EmptyView()
             }
@@ -214,78 +258,9 @@ struct MagazineCardWrapper<Content: View>: View {
     }
 }
 
-struct EditorialMagazineCard: View {
-    let photo: PhotoModel
-    
-    var body: some View {
-        HStack(spacing: 20) {
-            Image(photo.imageUrl)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 130, height: 180)
-                .cornerRadius(2)
-                .clipped()
-                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 2, y: 2)
-                .overlay(
-                    Group {
-                        if #available(iOS 14.0, *) {
-                            if photo.isPremium && !StoreManager.shared.isContentUnlocked(id: photo.id) {
-                                PremiumLockOverlay(price: photo.coinPrice)
-                            }
-                        } else {
-                            // Fallback on earlier versions
-                        }
-                    }
-                )
-            
-            VStack(alignment: .leading, spacing: 8) {
-                if #available(iOS 14.0, *) {
-                    Text(photo.category.uppercased())
-                        .font(.caption2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                } else {
-                    // Fallback on earlier versions
-                }
-                
-                Text(photo.title)
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                
-                Text(photo.subtitle)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                    .lineLimit(3)
-                
-                Spacer()
-                
-                HStack {
-                    Image(systemName: "camera.viewfinder")
-                    Text("Pose Analysis")
-                }
-                .font(.system(size: 10, weight: .bold))
-                .foregroundColor(.primary)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(4)
-            }
-            .padding(.vertical, 4)
-            
-            Spacer()
-        }
-        .padding(.horizontal)
-    }
-}
-
+@available(iOS 14.0, *)
 struct EditorialFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            if #available(iOS 14.0, *) {
-                EditorialFeedView()
-            } else {
-                // Fallback on earlier versions
-            }
-        }
+        EditorialFeedView()
     }
 }

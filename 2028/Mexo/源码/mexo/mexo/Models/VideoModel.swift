@@ -7,6 +7,7 @@ struct VideoModel: Identifiable, Codable {
     let videoUrl: String
     let thumbnailUrl: String
     let duration: String
+    let category: String
     var isPremium: Bool = false
     var coinPrice: Int = 0
     
@@ -19,6 +20,7 @@ struct VideoModel: Identifiable, Codable {
             videoUrl: "Mastering Natural Light",
             thumbnailUrl: "Mastering Natural Light",
             duration: "00:20",
+            category: "Lighting",
             isPremium: false,
             coinPrice: 0
         ),
@@ -29,6 +31,7 @@ struct VideoModel: Identifiable, Codable {
             videoUrl: "Dynamic Posing Walkthrough",
             thumbnailUrl: "Dynamic Posing Walkthrough",
             duration: "00:13",
+            category: "Posing",
             isPremium: false,
             coinPrice: 0
         ),
@@ -39,6 +42,7 @@ struct VideoModel: Identifiable, Codable {
             videoUrl: "Studio Lighting Basics",
             thumbnailUrl: "Studio Lighting Basics",
             duration: "00:09",
+            category: "Studio",
             isPremium: true,
             coinPrice: 199
         ),
@@ -49,6 +53,7 @@ struct VideoModel: Identifiable, Codable {
             videoUrl: "Editing for Soft Skin Tones",
             thumbnailUrl: "Editing for Soft Skin Tones",
             duration: "00:17",
+            category: "Editing",
             isPremium: true,
             coinPrice: 299
         )

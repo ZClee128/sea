@@ -43,7 +43,11 @@
 		842DA4012F69683B00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3E92F69683B00FEEBD9 /* AppDelegate.swift */; };
 		842DA4022F69683B00FEEBD9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3EA2F69683B00FEEBD9 /* AppEnvironment.swift */; };
 		842DA4032F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA3F02F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift */; };
-		842DA4052F696BF700FEEBD9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4042F696BF700FEEBD9 /* CameraView.swift */; };
+		842DA40D2F698BD700FEEBD9 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4092F698BD700FEEBD9 /* DesignTokens.swift */; };
+		842DA40E2F698BD700FEEBD9 /* PhotographyContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 842DA40A2F698BD700FEEBD9 /* PhotographyContent.json */; };
+		842DA40F2F698BD700FEEBD9 /* TutorialContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 842DA40B2F698BD700FEEBD9 /* TutorialContent.json */; };
+		842DA4132F69907E00FEEBD9 /* PoseLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4122F69907E00FEEBD9 /* PoseLabView.swift */; };
+		842DA4172F69A91500FEEBD9 /* PosingWorkshopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4162F69A91500FEEBD9 /* PosingWorkshopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +91,11 @@
 		842DA3F32F69683B00FEEBD9 /* PreloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewController.swift; sourceTree = "<group>"; };
 		842DA3F42F69683B00FEEBD9 /* ProContentPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProContentPurchaseManager.swift; sourceTree = "<group>"; };
 		842DA3F52F69683B00FEEBD9 /* UIActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicator.swift; sourceTree = "<group>"; };
-		842DA4042F696BF700FEEBD9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		842DA4092F698BD700FEEBD9 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		842DA40A2F698BD700FEEBD9 /* PhotographyContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PhotographyContent.json; sourceTree = "<group>"; };
+		842DA40B2F698BD700FEEBD9 /* TutorialContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TutorialContent.json; sourceTree = "<group>"; };
+		842DA4122F69907E00FEEBD9 /* PoseLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseLabView.swift; sourceTree = "<group>"; };
+		842DA4162F69A91500FEEBD9 /* PosingWorkshopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosingWorkshopView.swift; sourceTree = "<group>"; };
 		BACCEFDE731390C5ED02844C /* Pods-mexo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mexo.release.xcconfig"; path = "Target Support Files/Pods-mexo/Pods-mexo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +170,8 @@
 			children = (
 				842DA39D2F69357A00FEEBD9 /* AgreementView.swift */,
 				842DA39E2F69357A00FEEBD9 /* DiscoverView.swift */,
-				842DA4042F696BF700FEEBD9 /* CameraView.swift */,
+				842DA4122F69907E00FEEBD9 /* PoseLabView.swift */,
+				842DA4162F69A91500FEEBD9 /* PosingWorkshopView.swift */,
 				842DA39F2F69357A00FEEBD9 /* EditorialFeedView.swift */,
 				842DA3A02F69357A00FEEBD9 /* MainTabView.swift */,
 				842DA3A12F69357A00FEEBD9 /* MoodBoardView.swift */,
@@ -179,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				842DA3E62F69372A00FEEBD9 /* GoogleService-Info.plist */,
+				842DA40C2F698BD700FEEBD9 /* Resources */,
 				842DA3F62F69683B00FEEBD9 /* Services */,
 				842DA39B2F69357A00FEEBD9 /* Models */,
 				842DA39C2F69357A00FEEBD9 /* ViewModels */,
@@ -214,6 +224,16 @@
 				842DA3F52F69683B00FEEBD9 /* UIActivityIndicator.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		842DA40C2F698BD700FEEBD9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4092F698BD700FEEBD9 /* DesignTokens.swift */,
+				842DA40A2F698BD700FEEBD9 /* PhotographyContent.json */,
+				842DA40B2F698BD700FEEBD9 /* TutorialContent.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +298,8 @@
 			files = (
 				842DA3C42F69357A00FEEBD9 /* Assets.xcassets in Resources */,
 				842DA3C52F69357A00FEEBD9 /* Dynamic Posing Walkthrough.mp4 in Resources */,
+				842DA40E2F698BD700FEEBD9 /* PhotographyContent.json in Resources */,
+				842DA40F2F698BD700FEEBD9 /* TutorialContent.json in Resources */,
 				842DA3C62F69357A00FEEBD9 /* Editing for Soft Skin Tones.mp4 in Resources */,
 				842DA3C82F69357A00FEEBD9 /* Launch Screen.storyboard in Resources */,
 				842DA3C92F69357A00FEEBD9 /* Mastering Natural Light.mp4 in Resources */,
@@ -350,9 +372,9 @@
 				842DA3FE2F69683B00FEEBD9 /* PoseGalleryViewController.swift in Sources */,
 				842DA3FF2F69683B00FEEBD9 /* PreloadViewController.swift in Sources */,
 				842DA4002F69683B00FEEBD9 /* PhotographyAnalyticsManager.swift in Sources */,
+				842DA4132F69907E00FEEBD9 /* PoseLabView.swift in Sources */,
 				842DA4012F69683B00FEEBD9 /* AppDelegate.swift in Sources */,
 				842DA4022F69683B00FEEBD9 /* AppEnvironment.swift in Sources */,
-				842DA4052F696BF700FEEBD9 /* CameraView.swift in Sources */,
 				842DA4032F69683B00FEEBD9 /* PoseGalleryScriptHandler.swift in Sources */,
 				842DA3B52F69357A00FEEBD9 /* StoreManager.swift in Sources */,
 				842DA3B62F69357A00FEEBD9 /* VideoModel.swift in Sources */,
@@ -360,6 +382,7 @@
 				842DA3B82F69357A00FEEBD9 /* DiscoverView.swift in Sources */,
 				842DA3B92F69357A00FEEBD9 /* EditorialFeedView.swift in Sources */,
 				842DA3BA2F69357A00FEEBD9 /* MainTabView.swift in Sources */,
+				842DA40D2F698BD700FEEBD9 /* DesignTokens.swift in Sources */,
 				842DA3BB2F69357A00FEEBD9 /* MoodBoardView.swift in Sources */,
 				842DA3BC2F69357A00FEEBD9 /* PhotoDetailView.swift in Sources */,
 				842DA3BE2F69357A00FEEBD9 /* SettingsView.swift in Sources */,
@@ -367,6 +390,7 @@
 				842DA3C02F69357A00FEEBD9 /* TutorialsFeedView.swift in Sources */,
 				842DA3C12F69357A00FEEBD9 /* VideoPlayerDetailView.swift in Sources */,
 				842DA3C32F69357A00FEEBD9 /* ContentView.swift in Sources */,
+				842DA4172F69A91500FEEBD9 /* PosingWorkshopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +524,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -550,7 +574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mexo/mexo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

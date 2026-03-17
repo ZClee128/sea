@@ -5,63 +5,87 @@ struct MoodBoardView: View {
     @State private var savedPhotos: [PhotoModel] = []
     
     let columns = [
-        GridItem(.flexible(), spacing: 15),
-        GridItem(.flexible(), spacing: 15)
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20)
     ]
     
     var body: some View {
         NavigationView {
-            Group {
-                if savedPhotos.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "photo.stack")
-                            .font(.system(size: 60))
-                            .foregroundColor(.gray)
-                        
-                        Text("Your Inspiration Board is Empty")
-                            .font(.headline)
-                            .foregroundColor(.secondary)
-                        
-                        Text("Save photos from Discover to start building your own portrait reference collection.")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 40)
-                    }
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: 15) {
-                            ForEach(savedPhotos) { photo in
-                                NavigationLink(destination: PhotoDetailView(photo: photo)) {
-                                    PhotoCardView(photo: photo)
+            ZStack {
+                DesignTokens.Colors.background.ignoresSafeArea()
+                
+                Group {
+                    if savedPhotos.isEmpty {
+                        VStack(spacing: 20) {
+                            Image(systemName: "photo.on.rectangle.angled")
+                                .font(.system(size: 80))
+                                .foregroundColor(DesignTokens.Colors.accent.opacity(0.2))
+                            
+                            Text("CURATE YOUR INSPIRATION")
+                                .font(DesignTokens.Typography.headline())
+                                .foregroundColor(DesignTokens.Colors.primary)
+                            
+                            Text("Save masterworks from Discover to build your personalized portrait reference collection.")
+                                .font(DesignTokens.Typography.body(14))
+                                .foregroundColor(DesignTokens.Colors.secondary)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 50)
+                            
+                            NavigationLink(destination: DiscoverView()) {
+                                Text("BRIGHTEN YOUR BOARD")
+                                    .font(DesignTokens.Typography.caption())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 25)
+                                    .padding(.vertical, 12)
+                                    .background(DesignTokens.Colors.accent)
+                                    .cornerRadius(25)
+                            }
+                            .padding(.top, 10)
+                        }
+                    } else {
+                        ScrollView {
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("MY COLLECTION")
+                                    .font(DesignTokens.Typography.caption())
+                                    .fontWeight(.heavy)
+                                    .tracking(2)
+                                    .foregroundColor(DesignTokens.Colors.secondary)
+                                    .padding(.horizontal, 25)
+                                    .padding(.top, 20)
+                                    
+                                LazyVGrid(columns: columns, spacing: 25) {
+                                    ForEach(savedPhotos) { photo in
+                                        NavigationLink(destination: PhotoDetailView(photo: photo)) {
+                                            PremiumPhotoCard(photo: photo)
+                                        }
+                                    }
                                 }
+                                .padding(.horizontal, 25)
+                                .padding(.bottom, 120)
                             }
                         }
-                        .padding()
                     }
                 }
             }
             .navigationTitle("Mood Board")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
             .onAppear {
                 loadSavedPhotos()
             }
         }
     }
     
-    // Simplistic load logic
     private func loadSavedPhotos() {
         let savedIds = UserDefaults.standard.stringArray(forKey: "savedPhotoIds") ?? []
-        // In a real app we would fetch from CoreData or Backend, here we filter mock
         savedPhotos = PhotoModel.mockData.filter { savedIds.contains($0.id) }
     }
 }
 
+@available(iOS 14.0, *)
 struct MoodBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        if #available(iOS 14.0, *) {
-            MoodBoardView()
-        } else {
-            // Fallback on earlier versions
-        }
+        MoodBoardView()
     }
 }
