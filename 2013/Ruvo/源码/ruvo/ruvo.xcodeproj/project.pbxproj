@@ -3,37 +3,113 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
-/* Begin PBXFileReference section */
-		842DA54F2F6AA2D700FEEBD9 /* ruvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		842DA57F2F6AE42100FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA57E2F6AE42100FEEBD9 /* StoreKit.framework */; };
+		842DA59A2F6AFD2200FEEBD9 /* AgreementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5882F6AFD2200FEEBD9 /* AgreementManager.swift */; };
+		842DA59B2F6AFD2200FEEBD9 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5892F6AFD2200FEEBD9 /* AgreementView.swift */; };
+		842DA59D2F6AFD2200FEEBD9 /* ArtworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA58B2F6AFD2200FEEBD9 /* ArtworkDetailView.swift */; };
+		842DA59E2F6AFD2200FEEBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA58D2F6AFD2200FEEBD9 /* ContentView.swift */; };
+		842DA59F2F6AFD2200FEEBD9 /* GridOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA58E2F6AFD2200FEEBD9 /* GridOverlayView.swift */; };
+		842DA5A02F6AFD2200FEEBD9 /* MainGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5902F6AFD2200FEEBD9 /* MainGalleryView.swift */; };
+		842DA5A12F6AFD2200FEEBD9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5912F6AFD2200FEEBD9 /* Models.swift */; };
+		842DA5A22F6AFD2200FEEBD9 /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5922F6AFD2200FEEBD9 /* PracticeModeView.swift */; };
+		842DA5A32F6AFD2200FEEBD9 /* ScratchpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5942F6AFD2200FEEBD9 /* ScratchpadView.swift */; };
+		842DA5A42F6AFD2200FEEBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5952F6AFD2200FEEBD9 /* SettingsView.swift */; };
+		842DA5A52F6AFD2200FEEBD9 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5962F6AFD2200FEEBD9 /* StoreManager.swift */; };
+		842DA5A62F6AFD2200FEEBD9 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5972F6AFD2200FEEBD9 /* StoreView.swift */; };
+		842DA5A72F6AFD2200FEEBD9 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5982F6AFD2200FEEBD9 /* VideoPlayerView.swift */; };
+		842DA5A82F6AFD2200FEEBD9 /* 27.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5872F6AFD2200FEEBD9 /* 27.mp4 */; };
+		842DA5A92F6AFD2200FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA58C2F6AFD2200FEEBD9 /* Assets.xcassets */; };
+		842DA5B92F6AFE1F00FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */; };
+		842DA5BA2F6AFE1F00FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */; };
+		842DA5BB2F6AFE1F00FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */; };
+		842DA5BC2F6AFE1F00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */; };
+		842DA5BD2F6AFE1F00FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */; };
+		842DA5BE2F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
+		842DA5BF2F6AFE1F00FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */; };
+		842DA5C02F6AFE1F00FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */; };
+		842DA5C12F6AFE1F00FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */; };
+		842DA5C22F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */; };
+		842DA5C32F6AFE1F00FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */; };
+		842DA5C42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */; };
+		842DA5C52F6AFE1F00FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */; };
+		842DA5C72F6AFEC200FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5C62F6AFEC200FEEBD9 /* GoogleService-Info.plist */; };
+		842DA5C92F6B051F00FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5C82F6B051F00FEEBD9 /* Launch Screen.storyboard */; };
+		CF3B71A41A681C104A8032A5 /* Pods_ruvo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A9923C5934C7AFF069721 /* Pods_ruvo.framework */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		842DA5512F6AA2D700FEEBD9 /* ruvo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ruvo;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		1B1A9923C5934C7AFF069721 /* Pods_ruvo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ruvo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE4EBED4626E6B9CA0EE7EF /* Pods-ruvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvo.release.xcconfig"; path = "Target Support Files/Pods-ruvo/Pods-ruvo.release.xcconfig"; sourceTree = "<group>"; };
+		842DA54F2F6AA2D700FEEBD9 /* ruvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DA57E2F6AE42100FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		842DA5872F6AFD2200FEEBD9 /* 27.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 27.mp4; sourceTree = "<group>"; };
+		842DA5882F6AFD2200FEEBD9 /* AgreementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementManager.swift; sourceTree = "<group>"; };
+		842DA5892F6AFD2200FEEBD9 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		842DA58B2F6AFD2200FEEBD9 /* ArtworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailView.swift; sourceTree = "<group>"; };
+		842DA58C2F6AFD2200FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842DA58D2F6AFD2200FEEBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		842DA58E2F6AFD2200FEEBD9 /* GridOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOverlayView.swift; sourceTree = "<group>"; };
+		842DA58F2F6AFD2200FEEBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842DA5902F6AFD2200FEEBD9 /* MainGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGalleryView.swift; sourceTree = "<group>"; };
+		842DA5912F6AFD2200FEEBD9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		842DA5922F6AFD2200FEEBD9 /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
+		842DA5932F6AFD2200FEEBD9 /* ruvo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruvo.entitlements; sourceTree = "<group>"; };
+		842DA5942F6AFD2200FEEBD9 /* ScratchpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchpadView.swift; sourceTree = "<group>"; };
+		842DA5952F6AFD2200FEEBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		842DA5962F6AFD2200FEEBD9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		842DA5972F6AFD2200FEEBD9 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		842DA5982F6AFD2200FEEBD9 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		842DA5C62F6AFEC200FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		842DA5C82F6B051F00FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C932321E6453C8CA4777979E /* Pods-ruvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvo.debug.xcconfig"; path = "Target Support Files/Pods-ruvo/Pods-ruvo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		842DA54C2F6AA2D700FEEBD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA57F2F6AE42100FEEBD9 /* StoreKit.framework in Frameworks */,
+				CF3B71A41A681C104A8032A5 /* Pods_ruvo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6877301F4DC6CCDB47921E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C932321E6453C8CA4777979E /* Pods-ruvo.debug.xcconfig */,
+				3CE4EBED4626E6B9CA0EE7EF /* Pods-ruvo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		842DA5462F6AA2D700FEEBD9 = {
 			isa = PBXGroup;
 			children = (
-				842DA5512F6AA2D700FEEBD9 /* ruvo */,
+				842DA5992F6AFD2200FEEBD9 /* ruvo */,
+				842DA57D2F6AE42100FEEBD9 /* Frameworks */,
 				842DA5502F6AA2D700FEEBD9 /* Products */,
+				4B6877301F4DC6CCDB47921E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +121,62 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		842DA57D2F6AE42100FEEBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DA57E2F6AE42100FEEBD9 /* StoreKit.framework */,
+				1B1A9923C5934C7AFF069721 /* Pods_ruvo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DA5992F6AFD2200FEEBD9 /* ruvo */ = {
+			isa = PBXGroup;
+			children = (
+				842DA5C62F6AFEC200FEEBD9 /* GoogleService-Info.plist */,
+				842DA5AB2F6AFDFE00FEEBD9 /* enjoy */,
+				842DA5872F6AFD2200FEEBD9 /* 27.mp4 */,
+				842DA5882F6AFD2200FEEBD9 /* AgreementManager.swift */,
+				842DA5892F6AFD2200FEEBD9 /* AgreementView.swift */,
+				842DA58B2F6AFD2200FEEBD9 /* ArtworkDetailView.swift */,
+				842DA58C2F6AFD2200FEEBD9 /* Assets.xcassets */,
+				842DA5C82F6B051F00FEEBD9 /* Launch Screen.storyboard */,
+				842DA58D2F6AFD2200FEEBD9 /* ContentView.swift */,
+				842DA58E2F6AFD2200FEEBD9 /* GridOverlayView.swift */,
+				842DA58F2F6AFD2200FEEBD9 /* Info.plist */,
+				842DA5902F6AFD2200FEEBD9 /* MainGalleryView.swift */,
+				842DA5912F6AFD2200FEEBD9 /* Models.swift */,
+				842DA5922F6AFD2200FEEBD9 /* PracticeModeView.swift */,
+				842DA5932F6AFD2200FEEBD9 /* ruvo.entitlements */,
+				842DA5942F6AFD2200FEEBD9 /* ScratchpadView.swift */,
+				842DA5952F6AFD2200FEEBD9 /* SettingsView.swift */,
+				842DA5962F6AFD2200FEEBD9 /* StoreManager.swift */,
+				842DA5972F6AFD2200FEEBD9 /* StoreView.swift */,
+				842DA5982F6AFD2200FEEBD9 /* VideoPlayerView.swift */,
+			);
+			path = ruvo;
+			sourceTree = "<group>";
+		};
+		842DA5AB2F6AFDFE00FEEBD9 /* enjoy */ = {
+			isa = PBXGroup;
+			children = (
+				842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */,
+				842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */,
+				842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */,
+				842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */,
+				842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */,
+				842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */,
+				842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */,
+				842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */,
+				842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */,
+				842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
+				842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */,
+				842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */,
+				842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */,
+			);
+			path = enjoy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,20 +184,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842DA55A2F6AA2D800FEEBD9 /* Build configuration list for PBXNativeTarget "ruvo" */;
 			buildPhases = (
+				6A505494CBA318D8589AE374 /* [CP] Check Pods Manifest.lock */,
 				842DA54B2F6AA2D700FEEBD9 /* Sources */,
 				842DA54C2F6AA2D700FEEBD9 /* Frameworks */,
 				842DA54D2F6AA2D700FEEBD9 /* Resources */,
+				D34F20836817E722C9F6CA22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				842DA5512F6AA2D700FEEBD9 /* ruvo */,
-			);
 			name = ruvo;
-			packageProductDependencies = (
-			);
 			productName = ruvo;
 			productReference = 842DA54F2F6AA2D700FEEBD9 /* ruvo.app */;
 			productType = "com.apple.product-type.application";
@@ -86,6 +215,7 @@
 				};
 			};
 			buildConfigurationList = 842DA54A2F6AA2D700FEEBD9 /* Build configuration list for PBXProject "ruvo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,8 +223,6 @@
 				Base,
 			);
 			mainGroup = 842DA5462F6AA2D700FEEBD9;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 842DA5502F6AA2D700FEEBD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -109,16 +237,92 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA5A82F6AFD2200FEEBD9 /* 27.mp4 in Resources */,
+				842DA5A92F6AFD2200FEEBD9 /* Assets.xcassets in Resources */,
+				842DA5C92F6B051F00FEEBD9 /* Launch Screen.storyboard in Resources */,
+				842DA5C72F6AFEC200FEEBD9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A505494CBA318D8589AE374 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruvo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D34F20836817E722C9F6CA22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ruvo/Pods-ruvo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ruvo/Pods-ruvo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ruvo/Pods-ruvo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842DA54B2F6AA2D700FEEBD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA59A2F6AFD2200FEEBD9 /* AgreementManager.swift in Sources */,
+				842DA59B2F6AFD2200FEEBD9 /* AgreementView.swift in Sources */,
+				842DA59D2F6AFD2200FEEBD9 /* ArtworkDetailView.swift in Sources */,
+				842DA59E2F6AFD2200FEEBD9 /* ContentView.swift in Sources */,
+				842DA59F2F6AFD2200FEEBD9 /* GridOverlayView.swift in Sources */,
+				842DA5A02F6AFD2200FEEBD9 /* MainGalleryView.swift in Sources */,
+				842DA5A12F6AFD2200FEEBD9 /* Models.swift in Sources */,
+				842DA5A22F6AFD2200FEEBD9 /* PracticeModeView.swift in Sources */,
+				842DA5A32F6AFD2200FEEBD9 /* ScratchpadView.swift in Sources */,
+				842DA5A42F6AFD2200FEEBD9 /* SettingsView.swift in Sources */,
+				842DA5A52F6AFD2200FEEBD9 /* StoreManager.swift in Sources */,
+				842DA5A62F6AFD2200FEEBD9 /* StoreView.swift in Sources */,
+				842DA5B92F6AFE1F00FEEBD9 /* AppAdjustManager.swift in Sources */,
+				842DA5BA2F6AFE1F00FEEBD9 /* ProgressHUD.swift in Sources */,
+				842DA5BB2F6AFE1F00FEEBD9 /* WaitViewController.swift in Sources */,
+				842DA5BC2F6AFE1F00FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA5BD2F6AFE1F00FEEBD9 /* LocalPushScheduler.swift in Sources */,
+				842DA5BE2F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				842DA5BF2F6AFE1F00FEEBD9 /* AppConfig.swift in Sources */,
+				842DA5C02F6AFE1F00FEEBD9 /* AppleIAPManager.swift in Sources */,
+				842DA5C12F6AFE1F00FEEBD9 /* AppRequestTool.swift in Sources */,
+				842DA5C22F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift in Sources */,
+				842DA5C32F6AFE1F00FEEBD9 /* AppWebViewController.swift in Sources */,
+				842DA5C42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
+				842DA5C52F6AFE1F00FEEBD9 /* AppPermissionTool.swift in Sources */,
+				842DA5A72F6AFD2200FEEBD9 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -234,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -246,26 +450,38 @@
 		};
 		842DA55B2F6AA2D800FEEBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C932321E6453C8CA4777979E /* Pods-ruvo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ruvo/ruvo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ruvo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ruvo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.ruvo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruvo.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -282,26 +498,38 @@
 		};
 		842DA55C2F6AA2D800FEEBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE4EBED4626E6B9CA0EE7EF /* Pods-ruvo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ruvo/ruvo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ruvo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ruvo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.ruvo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruvo.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
