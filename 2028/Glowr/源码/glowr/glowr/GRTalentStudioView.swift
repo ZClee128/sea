@@ -1,4 +1,7 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct GRTalentStudioView: View {
     @ObservedObject var store = GRStoreRegistry.shared
@@ -10,6 +13,10 @@ struct GRTalentStudioView: View {
     @State private var scanningProgress: Double = 0.0
     @State private var alertMessage = ""
     @State private var activeAlert: GRStudioAlert? = nil
+    
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 
     enum GRStudioAlert: Identifiable {
         case notice(message: String)
@@ -60,6 +67,9 @@ struct GRTalentStudioView: View {
                     }
                     .padding(.horizontal)
                 }
+                .onTapGesture {
+                    dismissKeyboard()
+                }
             }
         }
         .alert(item: $activeAlert) { alertType in
@@ -68,8 +78,8 @@ struct GRTalentStudioView: View {
                 return Alert(title: Text("Notice"), message: Text(message), dismissButton: .default(Text("OK")))
             case .aiDisclosure:
                 return Alert(
-                    title: Text("AI Analysis Permissions"),
-                    message: Text("To provide modeling insights, Glowr uses an AI engine to analyze your portfolio photos. This process is performed locally on your device to protect your privacy. No personal image data is shared with third-party servers. Do you wish to proceed?"),
+                    title: Text("Data & Privacy Notice"),
+                    message: Text("Before proceeding, please note:\n\n• Data used: Your portfolio photos stored on this device\n• Who processes it: All analysis runs entirely on your device using Apple's on-device ML framework — no images or personal data are sent to any third-party server\n• Purpose: To generate a commercial score and modeling insights solely for your personal use\n\nBy tapping Agree, you consent to this on-device analysis."),
                     primaryButton: .default(Text("Agree"), action: {
                         UserDefaults.standard.set(true, forKey: "hasAgreedToAIDisclosure")
                         startAnalysis()
@@ -321,6 +331,7 @@ struct GRTalentStudioView: View {
     }
     
     func calculateBmi() {
+        dismissKeyboard()
         guard let h = Double(height), let w = Double(weight), h > 0 else { return }
         let heightInMeters = h / 100.0
         resultBmi = w / (heightInMeters * heightInMeters)

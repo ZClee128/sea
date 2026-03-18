@@ -1,23 +1,40 @@
 Privacy Policy for Glowr
 
-Last Updated: March 20, 2026
+Last Updated: March 18, 2026
 
-Glowr is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application and its AI-driven features.
+Glowr is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
 
-1. Information Collection
-We do not collect personal identification information (PII) such as your name, email address, or phone number. All app data, including your "Mood Board" and character preferences, is stored locally on your device.
+1. Information We Collect
+We do not collect personal identification information (PII) such as your name, email address, or phone number. All app data, including your "Mood Board" and preferences, is stored locally on your device using Apple's on-device storage (UserDefaults / local file system).
 
-2. AI Portfolio Analysis
-Our "AI Portfolio Analysis" feature processes image data locally on your device or via secure, transient cloud-based processing to provide modeling insights. We do not store your images on our servers or use them to train public AI models. Any analysis result is strictly for your personal, private reference.
+2. AI Portfolio Analysis — Third-Party AI Disclosure
+
+Feature: "AI Portfolio Analysis"
+
+Data used: Profile photos and portfolio images you have saved within the app on your device.
+
+Who processes the data: ALL analysis is performed entirely on-device using Apple's Core ML framework. No images, no biometric data, and no personal information are transmitted to Glowr's servers or to any third-party server, AI service, or cloud platform. 
+
+Purpose of processing: To generate a commercial score and modeling insights displayed solely to you within the app for personal reference.
+
+Data retention: No data is stored or retained outside of your device. Analysis results exist only in local app memory for the duration of your session.
+
+In-app consent: Before the AI Portfolio Analysis feature activates for the first time, the app displays a "Data & Privacy Notice" dialog that discloses what data is analyzed, confirms it stays on your device, and asks for your explicit consent before proceeding.
 
 3. In-App Purchases
-When you make a purchase through the App Store, Apple handles your payment information. We only receive a confirmation of the transaction to provide you with "Vault Credits".
+When you make a purchase through the App Store, Apple handles all payment processing. We only receive a purchase confirmation to provide you with "Vault Credits." We never receive, store, or process payment card details.
 
 4. Data Usage
-The data stored on your device is used solely to provide and improve the user experience. We do not share this data with third parties.
+Data stored on your device is used solely to provide and improve your in-app experience. We do not share your data with any third parties for advertising, analytics, or any other purpose.
 
-5. Security
-We value your trust in providing us your information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.
+5. Children's Privacy
+Glowr is not directed to children under the age of 13. We do not knowingly collect data from children.
 
-6. Contact Us
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at luubaphong5089@icloud.com.
+6. Security
+We use commercially acceptable means to protect any app-related information. No method of electronic storage is 100% secure; however, since data never leaves your device, exposure risk is minimized.
+
+7. Changes to This Policy
+We may update this Privacy Policy periodically. Any changes will be reflected in the "Last Updated" date above. Continued use of the app after changes constitutes your acknowledgment of the updated policy.
+
+8. Contact Us
+If you have any questions about this Privacy Policy, please contact us at: luubaphong5089@icloud.com
