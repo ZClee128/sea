@@ -1,9 +1,12 @@
 import SwiftUI
+import MediaPlayer
 import StoreKit
 
+@available(iOS 14.0, *)
 struct GRSettingsPanelView: View {
     @State private var notificationsEnabled = true
     @State private var hapticFeedback = true
+    @AppStorage("backgroundAudioEnabled") private var backgroundAudioEnabled = true
     @State private var showPrivacy = false
     @State private var showTerms = false
     @State private var showStore = false
@@ -40,6 +43,30 @@ struct GRSettingsPanelView: View {
                                     .font(.caption)
                                     .foregroundColor(.gray)
                             }
+                        }
+                    }
+                    
+                    Section(header: Text("PLAYBACK").foregroundColor(.gray)) {
+                        Toggle(isOn: $backgroundAudioEnabled) { 
+                            HStack {
+                                Image(systemName: "waveform.circle.fill")
+                                    .foregroundColor(.black)
+                                Text("Background Audio")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .onChange(of: backgroundAudioEnabled) { newValue in
+                            // Optional: immediately stop anything playing if turned off
+                            if !newValue {
+                                MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+                            }
+                        }
+                        if #available(iOS 14.0, *) {
+                            Text("Allows Reels audio to continue playing when the app is in the background.")
+                                .font(.caption2)
+                                .foregroundColor(.gray)
+                        } else {
+                            // Fallback on earlier versions
                         }
                     }
                     
@@ -103,6 +130,10 @@ struct GRSettingsPanelView: View {
 
 struct GRSettingsPanelView_Previews: PreviewProvider {
     static var previews: some View {
-        GRSettingsPanelView()
+        if #available(iOS 14.0, *) {
+            GRSettingsPanelView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

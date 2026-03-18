@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let waitVC = WaitViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UserDefaults.standard.register(defaults: ["backgroundAudioEnabled": true])
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = waitVC
         self.window?.makeKeyAndVisible()

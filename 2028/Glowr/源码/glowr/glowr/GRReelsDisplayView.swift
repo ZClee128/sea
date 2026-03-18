@@ -1,5 +1,6 @@
 import SwiftUI
 import AVKit
+import MediaPlayer
 
 struct GRReelsDisplayView: View {
     @State private var selectedVideo: GRRunwayReel?
@@ -25,7 +26,11 @@ struct GRReelsDisplayView: View {
             }
         }
         .sheet(item: $selectedVideo) { video in
-            GRReelPlaybackOverlay(video: video)
+            if #available(iOS 14.0, *) {
+                GRReelPlaybackOverlay(video: video)
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
@@ -92,16 +97,18 @@ struct GRReelFeedCell: View {
     }
 }
 
+@available(iOS 14.0, *)
 struct GRReelPlaybackOverlay: View {
     let video: GRRunwayReel
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("backgroundAudioEnabled") private var backgroundAudioEnabled = true
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color.black.edgesIgnoringSafeArea(.all)
             
             if let url = Bundle.main.url(forResource: video.videoFileName, withExtension: "mp4") {
-                AVPlayerControllerWrapper(url: url)
+                AVPlayerControllerWrapper(url: url, title: video.title, description: video.description)
                     .edgesIgnoringSafeArea(.all)
             } else {
                 VStack(spacing: 20) {
@@ -117,26 +124,54 @@ struct GRReelPlaybackOverlay: View {
                 }
             }
             
-            Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.3).clipShape(Circle()))
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.black.opacity(0.3).clipShape(Circle()))
+                    }
+                }
+                Spacer()
+                
+                // 根据设置开关动态显示
+                HStack {
+                    Image(systemName: backgroundAudioEnabled ? "waveform" : "waveform.slash")
+                        .foregroundColor(.white.opacity(0.7))
+                    Text(backgroundAudioEnabled ? "Background Audio Enabled" : "Background Audio Disabled")
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.7))
+                }
+                .padding(8)
+                .background(BlurView(style: .systemThinMaterialDark))
+                .cornerRadius(20)
+                .padding(.bottom, 40)
             }
             .padding()
         }
     }
 }
 
+struct BlurView: UIViewRepresentable {
+    var style: UIBlurEffect.Style
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        UIVisualEffectView(effect: UIBlurEffect(style: style))
+    }
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
+}
+
 struct AVPlayerControllerWrapper: UIViewControllerRepresentable {
     let url: URL
+    let title: String
+    let description: String
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {
         let controller = AVPlayerViewController()
-        let player = AVQueuePlayer(url: url)
         
-        // Ensure audio session is correctly set every time a player is created
+        // 1. 先配置音频会话（必须在创建 player 之前）
         do {
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(.playback, mode: .moviePlayback, options: [.allowAirPlay, .allowBluetooth, .allowBluetoothA2DP])
@@ -145,13 +180,21 @@ struct AVPlayerControllerWrapper: UIViewControllerRepresentable {
             print("AVAudioSession error: \(error)")
         }
         
-        // Essential for background playback
+        // 2. 正确的 AVQueuePlayer + looper 初始化方式
+        let templateItem = AVPlayerItem(url: url)
+        let player = AVQueuePlayer()
         player.allowsExternalPlayback = true
         player.preventsDisplaySleepDuringVideoPlayback = true
         
+        // 3. 先注册远程控制命令（在 NowPlaying 之前注册）
+        setupRemoteCommands(player: player)
+        
+        // 4. 把播放器存入 coordinator, 并开始 KVO 监听
         context.coordinator.player = player
         context.coordinator.controller = controller
-        context.coordinator.looper = AVPlayerLooper(player: player, templateItem: AVPlayerItem(url: url))
+        context.coordinator.title = title
+        context.coordinator.looper = AVPlayerLooper(player: player, templateItem: templateItem)
+        context.coordinator.startObserving(player: player)
         
         controller.player = player
         controller.allowsPictureInPicturePlayback = true
@@ -162,14 +205,45 @@ struct AVPlayerControllerWrapper: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {}
     
+    static func dismantleUIViewController(_ uiViewController: AVPlayerViewController, coordinator: Coordinator) {
+        coordinator.stopObserving()
+        coordinator.player?.pause()
+        coordinator.player = nil
+        coordinator.looper = nil
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+        // 释放远程控制命令
+        MPRemoteCommandCenter.shared().playCommand.removeTarget(nil)
+        MPRemoteCommandCenter.shared().pauseCommand.removeTarget(nil)
+    }
+    
     func makeCoordinator() -> Coordinator {
         Coordinator()
+    }
+    
+    private func setupRemoteCommands(player: AVPlayer) {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.removeTarget(nil)
+        commandCenter.pauseCommand.removeTarget(nil)
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { _ in
+            player.play()
+            return .success
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { _ in
+            player.pause()
+            return .success
+        }
     }
     
     class Coordinator: NSObject {
         var looper: AVPlayerLooper?
         var player: AVQueuePlayer?
         weak var controller: AVPlayerViewController?
+        var title: String = ""
+        private var timeControlObservation: NSKeyValueObservation?
         
         override init() {
             super.init()
@@ -177,17 +251,51 @@ struct AVPlayerControllerWrapper: UIViewControllerRepresentable {
             NotificationCenter.default.addObserver(self, selector: #selector(handleWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         }
         
+        func startObserving(player: AVQueuePlayer) {
+            timeControlObservation = player.observe(\.timeControlStatus, options: [.new]) { [weak self] player, _ in
+                guard let self = self else { return }
+                if player.timeControlStatus == .playing {
+                    self.updateNowPlayingInfo(player: player)
+                }
+            }
+        }
+        
+        func stopObserving() {
+            timeControlObservation?.invalidate()
+            timeControlObservation = nil
+        }
+        
+        func updateNowPlayingInfo(player: AVPlayer) {
+            var nowPlayingInfo = [String: Any]()
+            nowPlayingInfo[MPMediaItemPropertyTitle] = title
+            nowPlayingInfo[MPMediaItemPropertyArtist] = "Glowr · Fashion Reels"
+            nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player.currentTime().seconds
+            nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
+            if let duration = player.currentItem?.duration, duration.isNumeric {
+                nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = duration.seconds
+            }
+            DispatchQueue.main.async {
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+            }
+        }
+        
         @objc func handleDidEnterBackground() {
-            // Detach player from controller to keep audio playing in background
-            controller?.player = nil
+            if UserDefaults.standard.bool(forKey: "backgroundAudioEnabled") {
+                // 先更新 NowPlaying，再把 player 从 controller 分离（保证后台继续播放）
+                if let player = player { updateNowPlayingInfo(player: player) }
+                controller?.player = nil
+            } else {
+                player?.pause()
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+            }
         }
         
         @objc func handleWillEnterForeground() {
-            // Re-attach player when returning to foreground
             controller?.player = player
         }
         
         deinit {
+            stopObserving()
             NotificationCenter.default.removeObserver(self)
         }
     }

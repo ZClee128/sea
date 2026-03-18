@@ -27,11 +27,15 @@ struct GRMainDashboardView: View {
                     Text("Studio")
                 }
             
-            GRSettingsPanelView()
-                .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("Settings")
-                }
+            if #available(iOS 14.0, *) {
+                GRSettingsPanelView()
+                    .tabItem {
+                        Image(systemName: "gearshape.fill")
+                        Text("Settings")
+                    }
+            } else {
+                // Fallback on earlier versions
+            }
         }
         .accentColor(.black)
         .preferredColorScheme(.light)
