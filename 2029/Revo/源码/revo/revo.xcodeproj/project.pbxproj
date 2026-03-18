@@ -3,26 +3,89 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
-/* Begin PBXFileReference section */
-		842DA4CF2F6A5C9D00FEEBD9 /* revo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = revo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		047210C8FDA52C3A20A34E44 /* Pods_revo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87DF3F6AD8D94E6B62FC62E /* Pods_revo.framework */; };
+		842DA4FB2F6A772300FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA4FA2F6A772300FEEBD9 /* StoreKit.framework */; };
+		842DA5192F6A82BE00FEEBD9 /* BeautyJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5072F6A82BE00FEEBD9 /* BeautyJournalView.swift */; };
+		842DA51A2F6A82BE00FEEBD9 /* CoinStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5082F6A82BE00FEEBD9 /* CoinStoreView.swift */; };
+		842DA51B2F6A82BE00FEEBD9 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA50A2F6A82BE00FEEBD9 /* DesignSystem.swift */; };
+		842DA51C2F6A82BE00FEEBD9 /* HomeGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA50B2F6A82BE00FEEBD9 /* HomeGalleryView.swift */; };
+		842DA51D2F6A82BE00FEEBD9 /* LegalAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA50E2F6A82BE00FEEBD9 /* LegalAgreementView.swift */; };
+		842DA51E2F6A82BE00FEEBD9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA50F2F6A82BE00FEEBD9 /* MainTabView.swift */; };
+		842DA51F2F6A82BE00FEEBD9 /* MakeupToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5102F6A82BE00FEEBD9 /* MakeupToolsView.swift */; };
+		842DA5202F6A82BE00FEEBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5132F6A82BE00FEEBD9 /* SettingsView.swift */; };
+		842DA5212F6A82BE00FEEBD9 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5142F6A82BE00FEEBD9 /* StoreManager.swift */; };
+		842DA5222F6A82BE00FEEBD9 /* VideoTutorialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5162F6A82BE00FEEBD9 /* VideoTutorialListView.swift */; };
+		842DA5232F6A82BE00FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5062F6A82BE00FEEBD9 /* Assets.xcassets */; };
+		842DA5242F6A82BE00FEEBD9 /* Contouring for Beginners.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5092F6A82BE00FEEBD9 /* Contouring for Beginners.mp4 */; };
+		842DA5262F6A82BE00FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA50D2F6A82BE00FEEBD9 /* Launch Screen.storyboard */; };
+		842DA5272F6A82BE00FEEBD9 /* Mastering the Winged Liner.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5112F6A82BE00FEEBD9 /* Mastering the Winged Liner.mp4 */; };
+		842DA5282F6A82BE00FEEBD9 /* The 5-Minute Morning Routine.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5152F6A82BE00FEEBD9 /* The 5-Minute Morning Routine.mp4 */; };
+		842DA5372F6A85D400FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52E2F6A85D400FEEBD9 /* AppPermissionTool.swift */; };
+		842DA5382F6A85D400FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5322F6A85D400FEEBD9 /* AppWebViewHandleEvent.swift */; };
+		842DA5392F6A85D400FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5302F6A85D400FEEBD9 /* AppRequestTool.swift */; };
+		842DA53A2F6A85D400FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5312F6A85D400FEEBD9 /* AppWebViewController.swift */; };
+		842DA53B2F6A85D400FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5352F6A85D400FEEBD9 /* ProgressHUD.swift */; };
+		842DA53C2F6A85D400FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52B2F6A85D400FEEBD9 /* AppConfig.swift */; };
+		842DA53D2F6A85D400FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52D2F6A85D400FEEBD9 /* AppleIAPManager.swift */; };
+		842DA53E2F6A85D400FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5332F6A85D400FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
+		842DA53F2F6A85D400FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52C2F6A85D400FEEBD9 /* AppDelegate.swift */; };
+		842DA5402F6A85D400FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5342F6A85D400FEEBD9 /* LocalPushScheduler.swift */; };
+		842DA5412F6A85D400FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5362F6A85D400FEEBD9 /* WaitViewController.swift */; };
+		842DA5422F6A85D400FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52A2F6A85D400FEEBD9 /* AppAdjustManager.swift */; };
+		842DA5432F6A85D400FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA52F2F6A85D400FEEBD9 /* AppRequestBaseModel.swift */; };
+		842DA5452F6A8E2800FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5442F6A8E2800FEEBD9 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		842DA4D12F6A5C9D00FEEBD9 /* revo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = revo;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		83E289F3898538F2C75CF7FD /* Pods-revo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-revo.release.xcconfig"; path = "Target Support Files/Pods-revo/Pods-revo.release.xcconfig"; sourceTree = "<group>"; };
+		842DA4CF2F6A5C9D00FEEBD9 /* revo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = revo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DA4FA2F6A772300FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		842DA5062F6A82BE00FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842DA5072F6A82BE00FEEBD9 /* BeautyJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyJournalView.swift; sourceTree = "<group>"; };
+		842DA5082F6A82BE00FEEBD9 /* CoinStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStoreView.swift; sourceTree = "<group>"; };
+		842DA5092F6A82BE00FEEBD9 /* Contouring for Beginners.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Contouring for Beginners.mp4"; sourceTree = "<group>"; };
+		842DA50A2F6A82BE00FEEBD9 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		842DA50B2F6A82BE00FEEBD9 /* HomeGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGalleryView.swift; sourceTree = "<group>"; };
+		842DA50C2F6A82BE00FEEBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842DA50D2F6A82BE00FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		842DA50E2F6A82BE00FEEBD9 /* LegalAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalAgreementView.swift; sourceTree = "<group>"; };
+		842DA50F2F6A82BE00FEEBD9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		842DA5102F6A82BE00FEEBD9 /* MakeupToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupToolsView.swift; sourceTree = "<group>"; };
+		842DA5112F6A82BE00FEEBD9 /* Mastering the Winged Liner.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mastering the Winged Liner.mp4"; sourceTree = "<group>"; };
+		842DA5122F6A82BE00FEEBD9 /* revo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = revo.entitlements; sourceTree = "<group>"; };
+		842DA5132F6A82BE00FEEBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		842DA5142F6A82BE00FEEBD9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		842DA5152F6A82BE00FEEBD9 /* The 5-Minute Morning Routine.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The 5-Minute Morning Routine.mp4"; sourceTree = "<group>"; };
+		842DA5162F6A82BE00FEEBD9 /* VideoTutorialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTutorialListView.swift; sourceTree = "<group>"; };
+		842DA52A2F6A85D400FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		842DA52B2F6A85D400FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		842DA52C2F6A85D400FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA52D2F6A85D400FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		842DA52E2F6A85D400FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		842DA52F2F6A85D400FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		842DA5302F6A85D400FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		842DA5312F6A85D400FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		842DA5322F6A85D400FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		842DA5332F6A85D400FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		842DA5342F6A85D400FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		842DA5352F6A85D400FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		842DA5362F6A85D400FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		842DA5442F6A8E2800FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B87DF3F6AD8D94E6B62FC62E /* Pods_revo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_revo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB23F4DA859826EDB52A0C34 /* Pods-revo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-revo.debug.xcconfig"; path = "Target Support Files/Pods-revo/Pods-revo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		842DA4CC2F6A5C9D00FEEBD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA4FB2F6A772300FEEBD9 /* StoreKit.framework in Frameworks */,
+				047210C8FDA52C3A20A34E44 /* Pods_revo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,8 +95,10 @@
 		842DA4C62F6A5C9D00FEEBD9 = {
 			isa = PBXGroup;
 			children = (
-				842DA4D12F6A5C9D00FEEBD9 /* revo */,
+				842DA5172F6A82BE00FEEBD9 /* revo */,
+				842DA4F92F6A772300FEEBD9 /* Frameworks */,
 				842DA4D02F6A5C9D00FEEBD9 /* Products */,
+				BF7FEA89FB4CA7926F296923 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +110,70 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		842DA4F92F6A772300FEEBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4FA2F6A772300FEEBD9 /* StoreKit.framework */,
+				B87DF3F6AD8D94E6B62FC62E /* Pods_revo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DA5172F6A82BE00FEEBD9 /* revo */ = {
+			isa = PBXGroup;
+			children = (
+				842DA5292F6A85B600FEEBD9 /* enjoy */,
+				842DA5062F6A82BE00FEEBD9 /* Assets.xcassets */,
+				842DA5072F6A82BE00FEEBD9 /* BeautyJournalView.swift */,
+				842DA5082F6A82BE00FEEBD9 /* CoinStoreView.swift */,
+				842DA5092F6A82BE00FEEBD9 /* Contouring for Beginners.mp4 */,
+				842DA50A2F6A82BE00FEEBD9 /* DesignSystem.swift */,
+				842DA50B2F6A82BE00FEEBD9 /* HomeGalleryView.swift */,
+				842DA50C2F6A82BE00FEEBD9 /* Info.plist */,
+				842DA50D2F6A82BE00FEEBD9 /* Launch Screen.storyboard */,
+				842DA50E2F6A82BE00FEEBD9 /* LegalAgreementView.swift */,
+				842DA50F2F6A82BE00FEEBD9 /* MainTabView.swift */,
+				842DA5102F6A82BE00FEEBD9 /* MakeupToolsView.swift */,
+				842DA5112F6A82BE00FEEBD9 /* Mastering the Winged Liner.mp4 */,
+				842DA5122F6A82BE00FEEBD9 /* revo.entitlements */,
+				842DA5132F6A82BE00FEEBD9 /* SettingsView.swift */,
+				842DA5142F6A82BE00FEEBD9 /* StoreManager.swift */,
+				842DA5152F6A82BE00FEEBD9 /* The 5-Minute Morning Routine.mp4 */,
+				842DA5162F6A82BE00FEEBD9 /* VideoTutorialListView.swift */,
+				842DA5442F6A8E2800FEEBD9 /* GoogleService-Info.plist */,
+			);
+			path = revo;
+			sourceTree = "<group>";
+		};
+		842DA5292F6A85B600FEEBD9 /* enjoy */ = {
+			isa = PBXGroup;
+			children = (
+				842DA52A2F6A85D400FEEBD9 /* AppAdjustManager.swift */,
+				842DA52B2F6A85D400FEEBD9 /* AppConfig.swift */,
+				842DA52C2F6A85D400FEEBD9 /* AppDelegate.swift */,
+				842DA52D2F6A85D400FEEBD9 /* AppleIAPManager.swift */,
+				842DA52E2F6A85D400FEEBD9 /* AppPermissionTool.swift */,
+				842DA52F2F6A85D400FEEBD9 /* AppRequestBaseModel.swift */,
+				842DA5302F6A85D400FEEBD9 /* AppRequestTool.swift */,
+				842DA5312F6A85D400FEEBD9 /* AppWebViewController.swift */,
+				842DA5322F6A85D400FEEBD9 /* AppWebViewHandleEvent.swift */,
+				842DA5332F6A85D400FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
+				842DA5342F6A85D400FEEBD9 /* LocalPushScheduler.swift */,
+				842DA5352F6A85D400FEEBD9 /* ProgressHUD.swift */,
+				842DA5362F6A85D400FEEBD9 /* WaitViewController.swift */,
+			);
+			path = enjoy;
+			sourceTree = "<group>";
+		};
+		BF7FEA89FB4CA7926F296923 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB23F4DA859826EDB52A0C34 /* Pods-revo.debug.xcconfig */,
+				83E289F3898538F2C75CF7FD /* Pods-revo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,20 +181,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842DA4DA2F6A5C9E00FEEBD9 /* Build configuration list for PBXNativeTarget "revo" */;
 			buildPhases = (
+				1FB4882C3A527F611C42F26E /* [CP] Check Pods Manifest.lock */,
 				842DA4CB2F6A5C9D00FEEBD9 /* Sources */,
 				842DA4CC2F6A5C9D00FEEBD9 /* Frameworks */,
 				842DA4CD2F6A5C9D00FEEBD9 /* Resources */,
+				D64D841FE45E6AB4B0DE7E5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				842DA4D12F6A5C9D00FEEBD9 /* revo */,
-			);
 			name = revo;
-			packageProductDependencies = (
-			);
 			productName = revo;
 			productReference = 842DA4CF2F6A5C9D00FEEBD9 /* revo.app */;
 			productType = "com.apple.product-type.application";
@@ -86,6 +212,7 @@
 				};
 			};
 			buildConfigurationList = 842DA4CA2F6A5C9D00FEEBD9 /* Build configuration list for PBXProject "revo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,8 +220,6 @@
 				Base,
 			);
 			mainGroup = 842DA4C62F6A5C9D00FEEBD9;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 842DA4D02F6A5C9D00FEEBD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -109,16 +234,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA5232F6A82BE00FEEBD9 /* Assets.xcassets in Resources */,
+				842DA5242F6A82BE00FEEBD9 /* Contouring for Beginners.mp4 in Resources */,
+				842DA5262F6A82BE00FEEBD9 /* Launch Screen.storyboard in Resources */,
+				842DA5272F6A82BE00FEEBD9 /* Mastering the Winged Liner.mp4 in Resources */,
+				842DA5282F6A82BE00FEEBD9 /* The 5-Minute Morning Routine.mp4 in Resources */,
+				842DA5452F6A8E2800FEEBD9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FB4882C3A527F611C42F26E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-revo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D64D841FE45E6AB4B0DE7E5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-revo/Pods-revo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-revo/Pods-revo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-revo/Pods-revo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842DA4CB2F6A5C9D00FEEBD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA5192F6A82BE00FEEBD9 /* BeautyJournalView.swift in Sources */,
+				842DA5372F6A85D400FEEBD9 /* AppPermissionTool.swift in Sources */,
+				842DA5382F6A85D400FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
+				842DA5392F6A85D400FEEBD9 /* AppRequestTool.swift in Sources */,
+				842DA53A2F6A85D400FEEBD9 /* AppWebViewController.swift in Sources */,
+				842DA53B2F6A85D400FEEBD9 /* ProgressHUD.swift in Sources */,
+				842DA53C2F6A85D400FEEBD9 /* AppConfig.swift in Sources */,
+				842DA53D2F6A85D400FEEBD9 /* AppleIAPManager.swift in Sources */,
+				842DA53E2F6A85D400FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				842DA53F2F6A85D400FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA5402F6A85D400FEEBD9 /* LocalPushScheduler.swift in Sources */,
+				842DA5412F6A85D400FEEBD9 /* WaitViewController.swift in Sources */,
+				842DA5422F6A85D400FEEBD9 /* AppAdjustManager.swift in Sources */,
+				842DA5432F6A85D400FEEBD9 /* AppRequestBaseModel.swift in Sources */,
+				842DA51A2F6A82BE00FEEBD9 /* CoinStoreView.swift in Sources */,
+				842DA51B2F6A82BE00FEEBD9 /* DesignSystem.swift in Sources */,
+				842DA51C2F6A82BE00FEEBD9 /* HomeGalleryView.swift in Sources */,
+				842DA51D2F6A82BE00FEEBD9 /* LegalAgreementView.swift in Sources */,
+				842DA51E2F6A82BE00FEEBD9 /* MainTabView.swift in Sources */,
+				842DA51F2F6A82BE00FEEBD9 /* MakeupToolsView.swift in Sources */,
+				842DA5202F6A82BE00FEEBD9 /* SettingsView.swift in Sources */,
+				842DA5212F6A82BE00FEEBD9 /* StoreManager.swift in Sources */,
+				842DA5222F6A82BE00FEEBD9 /* VideoTutorialListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,18 +446,30 @@
 		};
 		842DA4DB2F6A5C9E00FEEBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB23F4DA859826EDB52A0C34 /* Pods-revo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = revo/revo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = revo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Revo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to take and analyze photos for makeup look creation.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio during makeup tutorials and voice notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to import inspiration and analyze existing images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -266,6 +478,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.revo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -282,18 +495,30 @@
 		};
 		842DA4DC2F6A5C9E00FEEBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83E289F3898538F2C75CF7FD /* Pods-revo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = revo/revo.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = revo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Revo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to take and analyze photos for makeup look creation.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio during makeup tutorials and voice notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to import inspiration and analyze existing images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +527,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.revo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

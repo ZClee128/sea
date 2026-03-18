@@ -31,7 +31,7 @@ struct LegalAgreementView: View {
                             .font(.headline)
                             .foregroundColor(RevoDesign.text)
                         
-                        Text("By using Revo, you agree to our Terms of Use and Privacy Policy. This application provides makeup inspiration and educational content. We do not collect personal data as we do not use an account system.")
+                        Text("By using Revo, you agree to our Terms of Use and Privacy Policy. This application provides makeup inspiration, educational content, and professional tutorials. We use anonymous device identifiers for performance analytics and to maintain your premium coin balance.")
                             .font(.body)
                             .foregroundColor(RevoDesign.textSecondary)
                         
@@ -47,7 +47,7 @@ struct LegalAgreementView: View {
                             .font(.headline)
                             .foregroundColor(RevoDesign.text)
                         
-                        Text("Revo operates entirely on your local device. Any 'Inspired Looks' or 'Beauty Notes' you save are stored locally and are not transmitted to any external servers.")
+                        Text("While your personal 'Beauty Notes' are stored locally, we use secure identifiers (like Adjust and Firebase) to ensure the App's stability and to provide premium features. No personal identifiable information is linked to these IDs.")
                             .font(.body)
                             .foregroundColor(RevoDesign.textSecondary)
                         

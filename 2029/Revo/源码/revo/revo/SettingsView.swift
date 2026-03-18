@@ -2,22 +2,31 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var showingClearCacheAlert = false
+    @ObservedObject var storeManager = StoreManager.shared
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("App Information")) {
-                    HStack {
-                        Text("App Name")
-                        Spacer()
-                        Text("Revo: The Art of Makeup")
-                            .foregroundColor(RevoDesign.textSecondary)
+                Section(header: Text("Premium Features")) {
+                    NavigationLink(destination: CoinStoreView()) {
+                        HStack {
+                            Image(systemName: "circle.grid.hex.fill")
+                                .foregroundColor(RevoDesign.primary)
+                            Text("Coin Store")
+                            Spacer()
+                            Text("\(storeManager.coinBalance) coins")
+                                .font(.caption)
+                                .foregroundColor(RevoDesign.textSecondary)
+                        }
                     }
+                }
+                
+                Section(header: Text("App Information")) {
                     
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.0.0 (Build 1)")
+                        Text("1.0.0")
                             .foregroundColor(RevoDesign.textSecondary)
                     }
                 }
@@ -56,17 +65,6 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Support")) {
-                    Button(action: {
-                        if let url = URL(string: "mailto:support@revoapp.com") {
-                            UIApplication.shared.open(url)
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: "envelope")
-                            Text("Contact Support")
-                        }
-                    }
-                    
                     Button(action: {
                         showingClearCacheAlert = true
                     }) {
@@ -144,20 +142,23 @@ The makeup techniques shown are for educational purposes. We are not responsible
 """
 
 private let privacyPolicyText = """
-Privacy Policy for Revo
+Privacy Policy for Revo: The Art of Makeup
 
-1. Data Collection
-Revo does not collect, store, or transmit any personal identifiable information. We do not use third-party tracking services.
+1. Data Collection & Usage
+We collect unique device identifiers (Adjust ID, UUID) and usage data via third-party services like Adjust and Firebase to improve app performance and analyze user interactions.
 
-2. Local Storage
-Revo uses your device's local storage (UserDefaults and local files) to save your preferences and "Inspired Looks". This data stays on your device and is deleted if you uninstall the app.
+2. In-App Purchases
+Transaction details are processed through Apple StoreKit to manage your coin balance. Purchase history is used solely for app functionality.
 
-3. External Links
-The app may contain links to external sites (like Apple's EULA). We are not responsible for the privacy practices of those sites.
+3. Local Storage
+Your "Beauty Journal" entries and personal preferences are stored locally on your device and are not transmitted to our servers.
 
-4. Children's Privacy
+4. Permissions
+Camera, Microphone, and Photo Library access is used only for specific features (makeup analysis/saving looks) and is never shared without your consent.
+
+5. Children's Privacy
 We do not knowingly collect any information from children under the age of 13.
 
-5. Contact Us
-If you have any questions about this Privacy Policy, please contact us at support@revoapp.com.
+6. Contact Us
+If you have any questions, please contact us at hathivan0204@icloud.com.
 """
