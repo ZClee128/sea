@@ -125,7 +125,7 @@ struct GRAcceptanceFlowView: View {
         }
         
         if finalContent.isEmpty || finalContent.count < 50 {
-            combinedContent = "Welcome to Glowr. By continuing, you agree to our professional terms and privacy guidelines regarding data usage and AI analysis."
+            combinedContent = "Welcome to Glowr. By continuing, you agree to our professional terms and privacy guidelines. Specifically, our AI Portfolio Analysis is performed locally on your device to safeguard your privacy; your personal image data is never uploaded to third-party servers for training or storage."
         } else {
             combinedContent = finalContent
         }

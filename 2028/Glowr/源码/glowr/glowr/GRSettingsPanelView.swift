@@ -62,6 +62,14 @@ struct GRSettingsPanelView: View {
                             Text("1.0.0")
                                 .foregroundColor(.gray)
                         }
+                        
+                        Button(action: {
+                            UserDefaults.standard.set(false, forKey: "hasAgreedToAIDisclosure")
+                        }) {
+                            Text("Reset AI Permissions (Developer)")
+                                .font(.caption)
+                                .foregroundColor(.red)
+                        }
                     }
                 }
                 .listStyle(GroupedListStyle())

@@ -8,8 +8,20 @@ struct GRTalentStudioView: View {
     @State private var showPremiumAnalysis = false
     @State private var isScanning = false
     @State private var scanningProgress: Double = 0.0
-    @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var activeAlert: GRStudioAlert? = nil
+
+    enum GRStudioAlert: Identifiable {
+        case notice(message: String)
+        case aiDisclosure
+        
+        var id: String {
+            switch self {
+            case .notice: return "notice"
+            case .aiDisclosure: return "aiDisclosure"
+            }
+        }
+    }
     
     // Analysis Results
     @State private var commercialScore = 94
@@ -50,8 +62,21 @@ struct GRTalentStudioView: View {
                 }
             }
         }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Notice"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        .alert(item: $activeAlert) { alertType in
+            switch alertType {
+            case .notice(let message):
+                return Alert(title: Text("Notice"), message: Text(message), dismissButton: .default(Text("OK")))
+            case .aiDisclosure:
+                return Alert(
+                    title: Text("AI Analysis Permissions"),
+                    message: Text("To provide modeling insights, Glowr uses an AI engine to analyze your portfolio photos. This process is performed locally on your device to protect your privacy. No personal image data is shared with third-party servers. Do you wish to proceed?"),
+                    primaryButton: .default(Text("Agree"), action: {
+                        UserDefaults.standard.set(true, forKey: "hasAgreedToAIDisclosure")
+                        startAnalysis()
+                    }),
+                    secondaryButton: .cancel(Text("Decline"))
+                )
+            }
         }
     }
     
@@ -140,10 +165,9 @@ struct GRTalentStudioView: View {
             } else {
                 Button(action: {
                     if store.spendCoins(10) {
-                        startAnalysis()
+                        checkAIDisclosure()
                     } else {
-                        alertMessage = "Not enough coins. Please visit the Store in Settings to recharge."
-                        showAlert = true
+                        activeAlert = .notice(message: "Not enough coins. Please visit the Store in Settings to recharge.")
                     }
                 }) {
                     Text("Unlock Premium Analysis")
@@ -155,6 +179,14 @@ struct GRTalentStudioView: View {
                         .cornerRadius(10)
                 }
             }
+        }
+    }
+    
+    func checkAIDisclosure() {
+        if !UserDefaults.standard.bool(forKey: "hasAgreedToAIDisclosure") {
+            activeAlert = .aiDisclosure
+        } else {
+            startAnalysis()
         }
     }
     
@@ -241,10 +273,25 @@ struct GRTalentStudioView: View {
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Citations & Medical Disclaimer:")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(.gray)
+                        Text("BMI calculation and feedback are based on World Health Organization (WHO) standard body mass index classifications. This tool is for informational purposes only and does not constitute medical advice.")
+                            .font(.system(size: 9))
+                            .foregroundColor(.gray)
+                        if #available(iOS 14.0, *) {
+                            Link("Learn more about WHO BMI standards", destination: URL(string: "https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index")!)
+                                .font(.system(size: 9))
+                                .foregroundColor(.blue)
+                        } else {
+                            // Fallback on earlier versions
+                        }
+                    }
+                    .padding(.top, 5)
                 }
             }
         }

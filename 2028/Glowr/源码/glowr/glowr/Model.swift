@@ -39,9 +39,9 @@ struct GRRunwayReel: Identifiable {
 
 struct GRReelRegistry {
     static let samples: [GRRunwayReel] = [
-        GRRunwayReel(title: "Milan Fashion Week SS26", description: "Exclusive highlights from the runway of the season.", thumbnailName: "Milan Fashion Week SS26", videoFileName: "Milan Fashion Week SS26", duration: "00:45"),
-        GRRunwayReel(title: "Elena Rossi- Creative Shoot", description: "Behind the scenes with Elena Rossi in Rome.", thumbnailName: "Elena Rossi- Creative Shoot", videoFileName: "Elena Rossi- Creative Shoot", duration: "01:20"),
-        GRRunwayReel(title: "The Art of the Walk", description: "Mastering the runway with our top talent coaches.", thumbnailName: "The Art of the Walk", videoFileName: "The Art of the Walk", duration: "00:30"),
-        GRRunwayReel(title: "Fashion Editorial- Neon Dreams", description: "A cinematic capture of our latest editorial feature.", thumbnailName: "Fashion Editorial- Neon Dreams", videoFileName: "Fashion Editorial- Neon Dreams", duration: "02:15")
+        GRRunwayReel(title: "Milan Fashion Week SS26", description: "Exclusive highlights from the runway of the season.", thumbnailName: "Milan Fashion Week SS26", videoFileName: "Milan Fashion Week SS26", duration: "00:21"),
+        GRRunwayReel(title: "Elena Rossi- Creative Shoot", description: "Behind the scenes with Elena Rossi in Rome.", thumbnailName: "Elena Rossi- Creative Shoot", videoFileName: "Elena Rossi- Creative Shoot", duration: "00:11"),
+        GRRunwayReel(title: "The Art of the Walk", description: "Mastering the runway with our top talent coaches.", thumbnailName: "The Art of the Walk", videoFileName: "The Art of the Walk", duration: "00:08"),
+        GRRunwayReel(title: "Fashion Editorial- Neon Dreams", description: "A cinematic capture of our latest editorial feature.", thumbnailName: "Fashion Editorial- Neon Dreams", videoFileName: "Fashion Editorial- Neon Dreams", duration: "00:14")
     ]
 }

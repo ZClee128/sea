@@ -138,8 +138,9 @@ struct AVPlayerControllerWrapper: UIViewControllerRepresentable {
         
         // Ensure audio session is correctly set every time a player is created
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .moviePlayback, options: [.allowAirPlay, .allowBluetooth, .allowBluetoothA2DP])
+            try session.setActive(true)
         } catch {
             print("AVAudioSession error: \(error)")
         }
