@@ -57,14 +57,24 @@ struct HomeGalleryView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
+                    // Featured This Week Banner
+                    FeaturedLookBanner(look: looks[3]) // Evening Glamour
+                        .padding(.horizontal)
+                        .padding(.top, 8)
+                    
                     // Category Filter
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
                             ForEach(categories, id: \.self) { cat in
                                 Button(action: { selectedCategory = cat }) {
                                     Text(cat)
-                                            .font(.subheadline)
-                                            .bold()
+                                        .font(.subheadline)
+                                        .bold()
+                                        .foregroundColor(selectedCategory == cat ? RevoDesign.primary : RevoDesign.textSecondary)
+                                        .padding(.horizontal, 14)
+                                        .padding(.vertical, 7)
+                                        .background(selectedCategory == cat ? RevoDesign.primary.opacity(0.12) : Color.clear)
+                                        .cornerRadius(20)
                                 }
                             }
                         }
@@ -93,6 +103,58 @@ struct HomeGalleryView: View {
             .background(RevoDesign.background.edgesIgnoringSafeArea(.all))
         }
         .forceLightMode()
+    }
+}
+
+// MARK: - Featured Look Banner
+struct FeaturedLookBanner: View {
+    let look: MakeupLook
+    
+    var body: some View {
+        NavigationLink(destination: LookDetailView(look: look)) {
+            ZStack(alignment: .bottomLeading) {
+                // Background image or gradient
+                if !look.imageName.isEmpty {
+                    Image(look.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 180)
+                        .clipped()
+                        .cornerRadius(18)
+                } else {
+                    RoundedRectangle(cornerRadius: 18)
+                        .fill(RevoDesign.premiumGradient)
+                        .frame(height: 180)
+                }
+                
+                // Gradient overlay
+                LinearGradient(
+                    colors: [Color.black.opacity(0.6), Color.clear],
+                    startPoint: .bottom,
+                    endPoint: .center
+                )
+                .cornerRadius(18)
+                .frame(height: 180)
+                
+                // Text overlay
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("FEATURED THIS WEEK")
+                        .font(.system(size: 10, weight: .bold))
+                        .tracking(1.5)
+                        .foregroundColor(RevoDesign.primary)
+                    Text(look.name)
+                        .font(.headline)
+                        .bold()
+                        .foregroundColor(.white)
+                    Text(look.category)
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.75))
+                }
+                .padding(16)
+            }
+            .frame(height: 180)
+            .frame(maxWidth: .infinity)
+        }
     }
 }
 

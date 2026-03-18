@@ -31,6 +31,23 @@ struct SettingsView: View {
                     }
                 }
                 
+                Section(header: Text("Content Ownership")) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(spacing: 8) {
+                            Image(systemName: "checkmark.seal.fill")
+                                .foregroundColor(RevoDesign.primary)
+                            Text("Original Content")
+                                .font(.headline)
+                                .foregroundColor(RevoDesign.text)
+                        }
+                        Text("All tutorial videos and written guides in Revo are original content created exclusively by the Revo App Team. No content is sourced from or linked to third-party streaming platforms. Full copyright is held by Revo App Team © 2026.")
+                            .font(.caption)
+                            .foregroundColor(RevoDesign.textSecondary)
+                            .lineSpacing(4)
+                    }
+                    .padding(.vertical, 6)
+                }
+                
                 Section(header: Text("Legal & Privacy")) {
                     NavigationLink(destination: LegalContentView(title: "Terms of Service", content: termsOfServiceText)) {
                         HStack {

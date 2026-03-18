@@ -22,11 +22,13 @@ struct MakeupToolsView: View {
     ]
     
     @State private var showingColorTheory = false
+    @State private var showingQuiz = false
     
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Interactive Tools")) {
+                    // Color Theory
                     Button(action: { showingColorTheory = true }) {
                         HStack {
                             ZStack {
@@ -43,6 +45,34 @@ struct MakeupToolsView: View {
                                     .font(.caption)
                                     .foregroundColor(RevoDesign.textSecondary)
                             }
+                        }
+                    }
+                    
+                    // Beauty Style Quiz
+                    Button(action: { showingQuiz = true }) {
+                        HStack {
+                            ZStack {
+                                Circle().fill(LinearGradient(colors: [Color(hex: "FF6B9D"), Color(hex: "C44569")], startPoint: .topLeading, endPoint: .bottomTrailing))
+                                    .frame(width: 40, height: 40)
+                                Image(systemName: "star.circle.fill")
+                                    .foregroundColor(.white)
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Beauty Style Quiz")
+                                    .font(.headline)
+                                    .foregroundColor(RevoDesign.text)
+                                Text("Discover your signature makeup style.")
+                                    .font(.caption)
+                                    .foregroundColor(RevoDesign.textSecondary)
+                            }
+                            Spacer()
+                            Text("NEW")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 7)
+                                .padding(.vertical, 3)
+                                .background(RevoDesign.primary)
+                                .cornerRadius(8)
                         }
                     }
                 }
@@ -68,11 +98,195 @@ struct MakeupToolsView: View {
             .sheet(isPresented: $showingColorTheory) {
                 ColorTheoryView()
             }
+            .sheet(isPresented: $showingQuiz) {
+                BeautyStyleQuizView()
+            }
         }
         .forceLightMode()
     }
 }
 
+// MARK: - Beauty Style Quiz
+struct QuizQuestion {
+    let text: String
+    let options: [String]
+}
+
+struct BeautyStyleQuizView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var currentQuestion = 0
+    @State private var answers: [Int] = []
+    @State private var showResult = false
+    
+    let questions = [
+        QuizQuestion(
+            text: "What's your go-to weekend vibe?",
+            options: ["Brunch with friends — effortlessly chic", "Hiking in nature — bare-faced and free", "Art gallery visit — bold and expressive", "Movie night in — comfortable and cozy"]
+        ),
+        QuizQuestion(
+            text: "Pick your ideal lip color:",
+            options: ["A classic MLBB (My Lips But Better) nude", "Clear gloss — shine only!", "Deep berry or dark plum", "Bright coral or classic red"]
+        ),
+        QuizQuestion(
+            text: "Your everyday skincare finish is:",
+            options: ["Dewy and glowing — glass skin goals", "Matte and clean — barely-there look", "Whatever is quick!", "Depends on my mood"]
+        ),
+        QuizQuestion(
+            text: "When you look in the mirror, you want to feel:",
+            options: ["Polished and professional", "Natural and effortless", "Artistic and unique", "Glamorous and bold"]
+        ),
+        QuizQuestion(
+            text: "Your makeup bag essential is:",
+            options: ["A good concealer — skin first always", "Mascara — quick and effective", "An eyeshadow palette — endless creativity", "Statement lipstick — it says everything"]
+        )
+    ]
+    
+    private var result: (title: String, description: String, icon: String) {
+        // Tally scores: 0=Classic, 1=Natural, 2=Artistic, 3=Glam
+        var scores = [0, 0, 0, 0]
+        for answer in answers {
+            if answer < 4 { scores[answer] += 1 }
+        }
+        let topIndex = scores.enumerated().max(by: { $0.element < $1.element })?.offset ?? 0
+        switch topIndex {
+        case 0: return ("Classic Chic ✨", "You gravitate toward timeless, polished looks. Think clean skin, defined brows, a nude lip, and the perfect mascara. You believe less is more—but executed flawlessly.", "crown.fill")
+        case 1: return ("Natural Glow 🌿", "Your style is effortless and skin-forward. You love enhancing your natural beauty with tinted moisturizers, groomed brows, and a fresh-faced flush. Dewy skin is your signature.", "leaf.fill")
+        case 2: return ("Artistic Spirit 🎨", "Makeup is your canvas. You love experimenting with bold colors, graphic liner, and unexpected combinations. Trends are just a starting point—your look is always uniquely yours.", "paintpalette.fill")
+        default: return ("Glam Goddess 💄", "You live for a full glam moment. Lashes, contour, highlight, and a statement lip are your essentials. You see every day as an occasion worth dressing up for.", "sparkles")
+        }
+    }
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 0) {
+                if showResult {
+                    // Result View
+                    ScrollView {
+                        VStack(spacing: 25) {
+                            ZStack {
+                                Circle()
+                                    .fill(RevoDesign.premiumGradient)
+                                    .frame(width: 120, height: 120)
+                                Image(systemName: result.icon)
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.top, 30)
+                            
+                            Text("Your Style is…")
+                                .font(.subheadline)
+                                .foregroundColor(RevoDesign.textSecondary)
+                            
+                            Text(result.title)
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(RevoDesign.text)
+                                .multilineTextAlignment(.center)
+                            
+                            Text(result.description)
+                                .font(.body)
+                                .foregroundColor(RevoDesign.textSecondary)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 30)
+                                .lineSpacing(5)
+                            
+                            Button(action: {
+                                currentQuestion = 0
+                                answers = []
+                                showResult = false
+                            }) {
+                                Text("Retake Quiz")
+                                    .font(.subheadline.bold())
+                                    .foregroundColor(RevoDesign.primary)
+                                    .padding(.horizontal, 30)
+                                    .padding(.vertical, 12)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(RevoDesign.primary, lineWidth: 1.5)
+                                    )
+                            }
+                            .padding(.top, 10)
+                        }
+                        .padding()
+                    }
+                } else {
+                    // Progress bar
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(RevoDesign.secondary)
+                                .frame(height: 4)
+                            Rectangle()
+                                .fill(RevoDesign.primary)
+                                .frame(width: geo.size.width * CGFloat(currentQuestion) / CGFloat(questions.count), height: 4)
+                                .animation(.easeInOut, value: currentQuestion)
+                        }
+                    }
+                    .frame(height: 4)
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+                    
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 24) {
+                            Text("Question \(currentQuestion + 1) of \(questions.count)")
+                                .font(.caption)
+                                .foregroundColor(RevoDesign.textSecondary)
+                                .padding(.top, 20)
+                            
+                            Text(questions[currentQuestion].text)
+                                .font(.headline)
+                                .bold()
+                                .foregroundColor(RevoDesign.text)
+                                .fixedSize(horizontal: false, vertical: true)
+                            
+                            VStack(spacing: 12) {
+                                ForEach(0..<questions[currentQuestion].options.count, id: \.self) { i in
+                                    Button(action: {
+                                        answers.append(i)
+                                        if currentQuestion < questions.count - 1 {
+                                            withAnimation { currentQuestion += 1 }
+                                        } else {
+                                            withAnimation { showResult = true }
+                                        }
+                                    }) {
+                                        HStack {
+                                            Text(questions[currentQuestion].options[i])
+                                                .font(.subheadline)
+                                                .foregroundColor(RevoDesign.text)
+                                                .multilineTextAlignment(.leading)
+                                                .fixedSize(horizontal: false, vertical: true)
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .font(.caption)
+                                                .foregroundColor(RevoDesign.primary)
+                                        }
+                                        .padding()
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .background(RevoDesign.secondary.opacity(0.5))
+                                        .cornerRadius(12)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .stroke(RevoDesign.primary.opacity(0.2), lineWidth: 1)
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 30)
+                    }
+                }
+            }
+            .navigationBarTitle("Beauty Style Quiz", displayMode: .inline)
+            .navigationBarItems(leading: Button("Close") {
+                presentationMode.wrappedValue.dismiss()
+            })
+        }
+        .forceLightMode()
+    }
+}
+
+// MARK: - Tool Detail View
 struct ToolDetailView: View {
     let tool: MakeupTool
     
@@ -137,16 +351,16 @@ struct InfoBlock: View {
     }
 }
 
+// MARK: - Color Theory View
 struct ColorTheoryView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedTone: Color = Color(white: 0.95)
     @State private var undertone: String = "Cool"
     
-    // Dynamic recommendations based on undertone
     private var matchingShades: [Color] {
         switch undertone {
         case "Cool":
-            return [.pink, .purple, .blue, Color(hex: "E0B0FF")] // Mauve
+            return [.pink, .purple, .blue, Color(hex: "E0B0FF")]
         case "Neutral":
             return [.orange, .red, .green, .yellow]
         case "Warm":
@@ -184,8 +398,6 @@ struct ColorTheoryView: View {
                                 .font(.system(.title3, design: .serif))
                                 .bold()
                                 .foregroundColor(undertone == "Fair" ? .black : .white.opacity(0.8))
-                        } else {
-                            // Fallback on earlier versions
                         }
                     }
                 }
