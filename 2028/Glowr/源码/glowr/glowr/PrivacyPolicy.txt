@@ -1,0 +1,23 @@
+Privacy Policy for Glowr
+
+Last Updated: March 20, 2026
+
+Glowr is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application and its AI-driven features.
+
+1. Information Collection
+We do not collect personal identification information (PII) such as your name, email address, or phone number. All app data, including your "Mood Board" and character preferences, is stored locally on your device.
+
+2. AI Portfolio Analysis
+Our "AI Portfolio Analysis" feature processes image data locally on your device or via secure, transient cloud-based processing to provide modeling insights. We do not store your images on our servers or use them to train public AI models. Any analysis result is strictly for your personal, private reference.
+
+3. In-App Purchases
+When you make a purchase through the App Store, Apple handles your payment information. We only receive a confirmation of the transaction to provide you with "Vault Credits".
+
+4. Data Usage
+The data stored on your device is used solely to provide and improve the user experience. We do not share this data with third parties.
+
+5. Security
+We value your trust in providing us your information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.
+
+6. Contact Us
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at luubaphong5089@icloud.com.

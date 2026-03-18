@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8100B3508C2DCA47A2090B17 /* Pods_glowr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C360DB56DB5D08918B41999 /* Pods_glowr.framework */; };
+		842DA4342F6A314100FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA4332F6A314100FEEBD9 /* StoreKit.framework */; };
+		842DA4912F6A538600FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA4782F6A538600FEEBD9 /* Assets.xcassets */; };
+		842DA4922F6A538600FEEBD9 /* Elena Rossi- Creative Shoot.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA47B2F6A538600FEEBD9 /* Elena Rossi- Creative Shoot.mp4 */; };
+		842DA4932F6A538600FEEBD9 /* Fashion Editorial- Neon Dreams.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA47C2F6A538600FEEBD9 /* Fashion Editorial- Neon Dreams.mp4 */; };
+		842DA4952F6A538600FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA48A2F6A538600FEEBD9 /* Launch Screen.storyboard */; };
+		842DA4962F6A538600FEEBD9 /* Milan Fashion Week SS26.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA48B2F6A538600FEEBD9 /* Milan Fashion Week SS26.mp4 */; };
+		842DA4972F6A538600FEEBD9 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA48D2F6A538600FEEBD9 /* PrivacyPolicy.txt */; };
+		842DA4982F6A538600FEEBD9 /* TermsOfService.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA48E2F6A538600FEEBD9 /* TermsOfService.txt */; };
+		842DA4992F6A538600FEEBD9 /* The Art of the Walk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA48F2F6A538600FEEBD9 /* The Art of the Walk.mp4 */; };
+		842DA49B2F6A538600FEEBD9 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4792F6A538600FEEBD9 /* CommonUI.swift */; };
+		842DA49C2F6A538600FEEBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA47A2F6A538600FEEBD9 /* ContentView.swift */; };
+		842DA49D2F6A538600FEEBD9 /* GRAcceptanceFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA47E2F6A538600FEEBD9 /* GRAcceptanceFlowView.swift */; };
+		842DA49E2F6A538600FEEBD9 /* GRCreditStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA47F2F6A538600FEEBD9 /* GRCreditStoreView.swift */; };
+		842DA49F2F6A538600FEEBD9 /* GRDiscoverGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4802F6A538600FEEBD9 /* GRDiscoverGalleryView.swift */; };
+		842DA4A02F6A538600FEEBD9 /* GRFavoritesHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4812F6A538600FEEBD9 /* GRFavoritesHubView.swift */; };
+		842DA4A12F6A538600FEEBD9 /* GRLegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4822F6A538600FEEBD9 /* GRLegalDocumentView.swift */; };
+		842DA4A22F6A538600FEEBD9 /* GRMainDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4832F6A538600FEEBD9 /* GRMainDashboardView.swift */; };
+		842DA4A32F6A538600FEEBD9 /* GRProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4842F6A538600FEEBD9 /* GRProfileDetailView.swift */; };
+		842DA4A42F6A538600FEEBD9 /* GRReelsDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4852F6A538600FEEBD9 /* GRReelsDisplayView.swift */; };
+		842DA4A52F6A538600FEEBD9 /* GRSettingsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4862F6A538600FEEBD9 /* GRSettingsPanelView.swift */; };
+		842DA4A62F6A538600FEEBD9 /* GRStoreRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4872F6A538600FEEBD9 /* GRStoreRegistry.swift */; };
+		842DA4A72F6A538600FEEBD9 /* GRTalentStudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4882F6A538600FEEBD9 /* GRTalentStudioView.swift */; };
+		842DA4A82F6A538600FEEBD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA48C2F6A538600FEEBD9 /* Model.swift */; };
+		842DA4B72F6A548500FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AE2F6A548500FEEBD9 /* AppPermissionTool.swift */; };
+		842DA4B82F6A548500FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B32F6A548500FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
+		842DA4B92F6A548500FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B12F6A548500FEEBD9 /* AppWebViewController.swift */; };
+		842DA4BA2F6A548500FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B52F6A548500FEEBD9 /* ProgressHUD.swift */; };
+		842DA4BB2F6A548500FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B62F6A548500FEEBD9 /* WaitViewController.swift */; };
+		842DA4BC2F6A548500FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B22F6A548500FEEBD9 /* AppWebViewHandleEvent.swift */; };
+		842DA4BD2F6A548500FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AC2F6A548500FEEBD9 /* AppDelegate.swift */; };
+		842DA4BE2F6A548500FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B42F6A548500FEEBD9 /* LocalPushScheduler.swift */; };
+		842DA4BF2F6A548500FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AB2F6A548500FEEBD9 /* AppConfig.swift */; };
+		842DA4C02F6A548500FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AA2F6A548500FEEBD9 /* AppAdjustManager.swift */; };
+		842DA4C12F6A548500FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AD2F6A548500FEEBD9 /* AppleIAPManager.swift */; };
+		842DA4C22F6A548500FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4AF2F6A548500FEEBD9 /* AppRequestBaseModel.swift */; };
+		842DA4C32F6A548500FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA4B02F6A548500FEEBD9 /* AppRequestTool.swift */; };
+		842DA4C52F6A559D00FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA4C42F6A559D00FEEBD9 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EFDF818E324781D248C493B /* Pods-glowr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-glowr.debug.xcconfig"; path = "Target Support Files/Pods-glowr/Pods-glowr.debug.xcconfig"; sourceTree = "<group>"; };
+		2C360DB56DB5D08918B41999 /* Pods_glowr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_glowr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		738BE2711CFC8F22717B4C98 /* Pods-glowr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-glowr.release.xcconfig"; path = "Target Support Files/Pods-glowr/Pods-glowr.release.xcconfig"; sourceTree = "<group>"; };
+		842DA4212F6A30FF00FEEBD9 /* glowr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glowr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DA4332F6A314100FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		842DA4782F6A538600FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842DA4792F6A538600FEEBD9 /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
+		842DA47A2F6A538600FEEBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		842DA47B2F6A538600FEEBD9 /* Elena Rossi- Creative Shoot.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Elena Rossi- Creative Shoot.mp4"; sourceTree = "<group>"; };
+		842DA47C2F6A538600FEEBD9 /* Fashion Editorial- Neon Dreams.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fashion Editorial- Neon Dreams.mp4"; sourceTree = "<group>"; };
+		842DA47D2F6A538600FEEBD9 /* glowr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = glowr.entitlements; sourceTree = "<group>"; };
+		842DA47E2F6A538600FEEBD9 /* GRAcceptanceFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRAcceptanceFlowView.swift; sourceTree = "<group>"; };
+		842DA47F2F6A538600FEEBD9 /* GRCreditStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRCreditStoreView.swift; sourceTree = "<group>"; };
+		842DA4802F6A538600FEEBD9 /* GRDiscoverGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDiscoverGalleryView.swift; sourceTree = "<group>"; };
+		842DA4812F6A538600FEEBD9 /* GRFavoritesHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRFavoritesHubView.swift; sourceTree = "<group>"; };
+		842DA4822F6A538600FEEBD9 /* GRLegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRLegalDocumentView.swift; sourceTree = "<group>"; };
+		842DA4832F6A538600FEEBD9 /* GRMainDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRMainDashboardView.swift; sourceTree = "<group>"; };
+		842DA4842F6A538600FEEBD9 /* GRProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRProfileDetailView.swift; sourceTree = "<group>"; };
+		842DA4852F6A538600FEEBD9 /* GRReelsDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRReelsDisplayView.swift; sourceTree = "<group>"; };
+		842DA4862F6A538600FEEBD9 /* GRSettingsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRSettingsPanelView.swift; sourceTree = "<group>"; };
+		842DA4872F6A538600FEEBD9 /* GRStoreRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRStoreRegistry.swift; sourceTree = "<group>"; };
+		842DA4882F6A538600FEEBD9 /* GRTalentStudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRTalentStudioView.swift; sourceTree = "<group>"; };
+		842DA4892F6A538600FEEBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842DA48A2F6A538600FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		842DA48B2F6A538600FEEBD9 /* Milan Fashion Week SS26.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Milan Fashion Week SS26.mp4"; sourceTree = "<group>"; };
+		842DA48C2F6A538600FEEBD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		842DA48D2F6A538600FEEBD9 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		842DA48E2F6A538600FEEBD9 /* TermsOfService.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TermsOfService.txt; sourceTree = "<group>"; };
+		842DA48F2F6A538600FEEBD9 /* The Art of the Walk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Art of the Walk.mp4"; sourceTree = "<group>"; };
+		842DA4AA2F6A548500FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		842DA4AB2F6A548500FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		842DA4AC2F6A548500FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA4AD2F6A548500FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		842DA4AE2F6A548500FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		842DA4AF2F6A548500FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		842DA4B02F6A548500FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		842DA4B12F6A548500FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		842DA4B22F6A548500FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		842DA4B32F6A548500FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		842DA4B42F6A548500FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		842DA4B52F6A548500FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		842DA4B62F6A548500FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		842DA4C42F6A559D00FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842DA41E2F6A30FF00FEEBD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA4342F6A314100FEEBD9 /* StoreKit.framework in Frameworks */,
+				8100B3508C2DCA47A2090B17 /* Pods_glowr.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A3E907DEE67D77483D58D27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EFDF818E324781D248C493B /* Pods-glowr.debug.xcconfig */,
+				738BE2711CFC8F22717B4C98 /* Pods-glowr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		842DA4182F6A30FF00FEEBD9 = {
+			isa = PBXGroup;
+			children = (
+				842DA4902F6A538600FEEBD9 /* glowr */,
+				842DA4322F6A314100FEEBD9 /* Frameworks */,
+				842DA4222F6A30FF00FEEBD9 /* Products */,
+				0A3E907DEE67D77483D58D27 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		842DA4222F6A30FF00FEEBD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4212F6A30FF00FEEBD9 /* glowr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842DA4322F6A314100FEEBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4332F6A314100FEEBD9 /* StoreKit.framework */,
+				2C360DB56DB5D08918B41999 /* Pods_glowr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DA4902F6A538600FEEBD9 /* glowr */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4A92F6A546B00FEEBD9 /* king */,
+				842DA4782F6A538600FEEBD9 /* Assets.xcassets */,
+				842DA4792F6A538600FEEBD9 /* CommonUI.swift */,
+				842DA47A2F6A538600FEEBD9 /* ContentView.swift */,
+				842DA47B2F6A538600FEEBD9 /* Elena Rossi- Creative Shoot.mp4 */,
+				842DA47C2F6A538600FEEBD9 /* Fashion Editorial- Neon Dreams.mp4 */,
+				842DA47D2F6A538600FEEBD9 /* glowr.entitlements */,
+				842DA47E2F6A538600FEEBD9 /* GRAcceptanceFlowView.swift */,
+				842DA47F2F6A538600FEEBD9 /* GRCreditStoreView.swift */,
+				842DA4802F6A538600FEEBD9 /* GRDiscoverGalleryView.swift */,
+				842DA4812F6A538600FEEBD9 /* GRFavoritesHubView.swift */,
+				842DA4822F6A538600FEEBD9 /* GRLegalDocumentView.swift */,
+				842DA4832F6A538600FEEBD9 /* GRMainDashboardView.swift */,
+				842DA4842F6A538600FEEBD9 /* GRProfileDetailView.swift */,
+				842DA4852F6A538600FEEBD9 /* GRReelsDisplayView.swift */,
+				842DA4862F6A538600FEEBD9 /* GRSettingsPanelView.swift */,
+				842DA4872F6A538600FEEBD9 /* GRStoreRegistry.swift */,
+				842DA4882F6A538600FEEBD9 /* GRTalentStudioView.swift */,
+				842DA4892F6A538600FEEBD9 /* Info.plist */,
+				842DA48A2F6A538600FEEBD9 /* Launch Screen.storyboard */,
+				842DA48B2F6A538600FEEBD9 /* Milan Fashion Week SS26.mp4 */,
+				842DA48C2F6A538600FEEBD9 /* Model.swift */,
+				842DA48D2F6A538600FEEBD9 /* PrivacyPolicy.txt */,
+				842DA48E2F6A538600FEEBD9 /* TermsOfService.txt */,
+				842DA48F2F6A538600FEEBD9 /* The Art of the Walk.mp4 */,
+				842DA4C42F6A559D00FEEBD9 /* GoogleService-Info.plist */,
+			);
+			path = glowr;
+			sourceTree = "<group>";
+		};
+		842DA4A92F6A546B00FEEBD9 /* king */ = {
+			isa = PBXGroup;
+			children = (
+				842DA4AA2F6A548500FEEBD9 /* AppAdjustManager.swift */,
+				842DA4AB2F6A548500FEEBD9 /* AppConfig.swift */,
+				842DA4AC2F6A548500FEEBD9 /* AppDelegate.swift */,
+				842DA4AD2F6A548500FEEBD9 /* AppleIAPManager.swift */,
+				842DA4AE2F6A548500FEEBD9 /* AppPermissionTool.swift */,
+				842DA4AF2F6A548500FEEBD9 /* AppRequestBaseModel.swift */,
+				842DA4B02F6A548500FEEBD9 /* AppRequestTool.swift */,
+				842DA4B12F6A548500FEEBD9 /* AppWebViewController.swift */,
+				842DA4B22F6A548500FEEBD9 /* AppWebViewHandleEvent.swift */,
+				842DA4B32F6A548500FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
+				842DA4B42F6A548500FEEBD9 /* LocalPushScheduler.swift */,
+				842DA4B52F6A548500FEEBD9 /* ProgressHUD.swift */,
+				842DA4B62F6A548500FEEBD9 /* WaitViewController.swift */,
+			);
+			path = king;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842DA4202F6A30FF00FEEBD9 /* glowr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842DA42C2F6A310100FEEBD9 /* Build configuration list for PBXNativeTarget "glowr" */;
+			buildPhases = (
+				D8381E4ECB2850853FCF13F4 /* [CP] Check Pods Manifest.lock */,
+				842DA41D2F6A30FF00FEEBD9 /* Sources */,
+				842DA41E2F6A30FF00FEEBD9 /* Frameworks */,
+				842DA41F2F6A30FF00FEEBD9 /* Resources */,
+				1BA177CE991FF5A044CF47E0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glowr;
+			productName = glowr;
+			productReference = 842DA4212F6A30FF00FEEBD9 /* glowr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842DA4192F6A30FF00FEEBD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					842DA4202F6A30FF00FEEBD9 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 842DA41C2F6A30FF00FEEBD9 /* Build configuration list for PBXProject "glowr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842DA4182F6A30FF00FEEBD9;
+			productRefGroup = 842DA4222F6A30FF00FEEBD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842DA4202F6A30FF00FEEBD9 /* glowr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842DA41F2F6A30FF00FEEBD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA4912F6A538600FEEBD9 /* Assets.xcassets in Resources */,
+				842DA4922F6A538600FEEBD9 /* Elena Rossi- Creative Shoot.mp4 in Resources */,
+				842DA4C52F6A559D00FEEBD9 /* GoogleService-Info.plist in Resources */,
+				842DA4932F6A538600FEEBD9 /* Fashion Editorial- Neon Dreams.mp4 in Resources */,
+				842DA4952F6A538600FEEBD9 /* Launch Screen.storyboard in Resources */,
+				842DA4962F6A538600FEEBD9 /* Milan Fashion Week SS26.mp4 in Resources */,
+				842DA4972F6A538600FEEBD9 /* PrivacyPolicy.txt in Resources */,
+				842DA4982F6A538600FEEBD9 /* TermsOfService.txt in Resources */,
+				842DA4992F6A538600FEEBD9 /* The Art of the Walk.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BA177CE991FF5A044CF47E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-glowr/Pods-glowr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-glowr/Pods-glowr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-glowr/Pods-glowr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8381E4ECB2850853FCF13F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-glowr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842DA41D2F6A30FF00FEEBD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA49B2F6A538600FEEBD9 /* CommonUI.swift in Sources */,
+				842DA4B72F6A548500FEEBD9 /* AppPermissionTool.swift in Sources */,
+				842DA4B82F6A548500FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				842DA4B92F6A548500FEEBD9 /* AppWebViewController.swift in Sources */,
+				842DA4BA2F6A548500FEEBD9 /* ProgressHUD.swift in Sources */,
+				842DA4BB2F6A548500FEEBD9 /* WaitViewController.swift in Sources */,
+				842DA4BC2F6A548500FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
+				842DA4BD2F6A548500FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA4BE2F6A548500FEEBD9 /* LocalPushScheduler.swift in Sources */,
+				842DA4BF2F6A548500FEEBD9 /* AppConfig.swift in Sources */,
+				842DA4C02F6A548500FEEBD9 /* AppAdjustManager.swift in Sources */,
+				842DA4C12F6A548500FEEBD9 /* AppleIAPManager.swift in Sources */,
+				842DA4C22F6A548500FEEBD9 /* AppRequestBaseModel.swift in Sources */,
+				842DA4C32F6A548500FEEBD9 /* AppRequestTool.swift in Sources */,
+				842DA49C2F6A538600FEEBD9 /* ContentView.swift in Sources */,
+				842DA49D2F6A538600FEEBD9 /* GRAcceptanceFlowView.swift in Sources */,
+				842DA49E2F6A538600FEEBD9 /* GRCreditStoreView.swift in Sources */,
+				842DA49F2F6A538600FEEBD9 /* GRDiscoverGalleryView.swift in Sources */,
+				842DA4A02F6A538600FEEBD9 /* GRFavoritesHubView.swift in Sources */,
+				842DA4A12F6A538600FEEBD9 /* GRLegalDocumentView.swift in Sources */,
+				842DA4A22F6A538600FEEBD9 /* GRMainDashboardView.swift in Sources */,
+				842DA4A32F6A538600FEEBD9 /* GRProfileDetailView.swift in Sources */,
+				842DA4A42F6A538600FEEBD9 /* GRReelsDisplayView.swift in Sources */,
+				842DA4A52F6A538600FEEBD9 /* GRSettingsPanelView.swift in Sources */,
+				842DA4A62F6A538600FEEBD9 /* GRStoreRegistry.swift in Sources */,
+				842DA4A72F6A538600FEEBD9 /* GRTalentStudioView.swift in Sources */,
+				842DA4A82F6A538600FEEBD9 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		842DA42A2F6A310100FEEBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		842DA42B2F6A310100FEEBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842DA42D2F6A310100FEEBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFDF818E324781D248C493B /* Pods-glowr.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = glowr/glowr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = glowr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Glowr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		842DA42E2F6A310100FEEBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 738BE2711CFC8F22717B4C98 /* Pods-glowr.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = glowr/glowr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = glowr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Glowr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842DA41C2F6A30FF00FEEBD9 /* Build configuration list for PBXProject "glowr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842DA42A2F6A310100FEEBD9 /* Debug */,
+				842DA42B2F6A310100FEEBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842DA42C2F6A310100FEEBD9 /* Build configuration list for PBXNativeTarget "glowr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842DA42D2F6A310100FEEBD9 /* Debug */,
+				842DA42E2F6A310100FEEBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842DA4192F6A30FF00FEEBD9 /* Project object */;
+}
