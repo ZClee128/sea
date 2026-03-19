@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		842DA6022F6C350900FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA6012F6C350900FEEBD9 /* StoreKit.framework */; };
+		842DA62A2F6C443700FEEBD9 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6122F6C443700FEEBD9 /* AgreementView.swift */; };
+		842DA62C2F6C443700FEEBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6152F6C443700FEEBD9 /* ContentView.swift */; };
+		842DA62D2F6C443700FEEBD9 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6162F6C443700FEEBD9 /* DocumentView.swift */; };
+		842DA62E2F6C443700FEEBD9 /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA61A2F6C443700FEEBD9 /* InspirationView.swift */; };
+		842DA62F2F6C443700FEEBD9 /* LegacyVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA61C2F6C443700FEEBD9 /* LegacyVideoPlayer.swift */; };
+		842DA6302F6C443700FEEBD9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA61D2F6C443700FEEBD9 /* MainTabView.swift */; };
+		842DA6312F6C443700FEEBD9 /* MatchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA61E2F6C443700FEEBD9 /* MatchHistoryManager.swift */; };
+		842DA6322F6C443700FEEBD9 /* NailAcademyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA61F2F6C443700FEEBD9 /* NailAcademyView.swift */; };
+		842DA6332F6C443700FEEBD9 /* NailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6202F6C443700FEEBD9 /* NailDetailView.swift */; };
+		842DA6342F6C443700FEEBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6222F6C443700FEEBD9 /* SettingsView.swift */; };
+		842DA6352F6C443700FEEBD9 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6242F6C443700FEEBD9 /* StoreManager.swift */; };
+		842DA6362F6C443700FEEBD9 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6252F6C443700FEEBD9 /* StoreView.swift */; };
+		842DA6372F6C443700FEEBD9 /* StyleMatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6262F6C443700FEEBD9 /* StyleMatcherView.swift */; };
+		842DA6382F6C443700FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6142F6C443700FEEBD9 /* Assets.xcassets */; };
+		842DA6392F6C443700FEEBD9 /* French Manicure Tips.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6172F6C443700FEEBD9 /* French Manicure Tips.mp4 */; };
+		842DA63A2F6C443700FEEBD9 /* Gel Polish Masterclass.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6182F6C443700FEEBD9 /* Gel Polish Masterclass.mp4 */; };
+		842DA63C2F6C443700FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA61B2F6C443700FEEBD9 /* Launch Screen.storyboard */; };
+		842DA63D2F6C443700FEEBD9 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6212F6C443700FEEBD9 /* PrivacyPolicy.txt */; };
+		842DA63E2F6C443700FEEBD9 /* Stencils for Beginners.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6232F6C443700FEEBD9 /* Stencils for Beginners.mp4 */; };
+		842DA63F2F6C443700FEEBD9 /* TermsOfService.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA6272F6C443700FEEBD9 /* TermsOfService.txt */; };
+		842DA64E2F6C451000FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6452F6C451000FEEBD9 /* AppPermissionTool.swift */; };
+		842DA64F2F6C451000FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6462F6C451000FEEBD9 /* AppRequestBaseModel.swift */; };
+		842DA6502F6C451000FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA64B2F6C451000FEEBD9 /* LocalPushScheduler.swift */; };
+		842DA6512F6C451000FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6422F6C451000FEEBD9 /* AppConfig.swift */; };
+		842DA6522F6C451000FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA64A2F6C451000FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
+		842DA6532F6C451000FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6412F6C451000FEEBD9 /* AppAdjustManager.swift */; };
+		842DA6542F6C451000FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6492F6C451000FEEBD9 /* AppWebViewHandleEvent.swift */; };
+		842DA6552F6C451000FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6442F6C451000FEEBD9 /* AppleIAPManager.swift */; };
+		842DA6562F6C451000FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA64D2F6C451000FEEBD9 /* WaitViewController.swift */; };
+		842DA6572F6C451000FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6432F6C451000FEEBD9 /* AppDelegate.swift */; };
+		842DA6582F6C451000FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6482F6C451000FEEBD9 /* AppWebViewController.swift */; };
+		842DA6592F6C451000FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA64C2F6C451000FEEBD9 /* ProgressHUD.swift */; };
+		842DA65A2F6C451000FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6472F6C451000FEEBD9 /* AppRequestTool.swift */; };
+		842DA65C2F6C45B200FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA65B2F6C45B200FEEBD9 /* GoogleService-Info.plist */; };
+		D88FDF6CAAF128644A777FA8 /* Pods_twinr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		697CC468DF481683E60C29C2 /* Pods-twinr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twinr.release.xcconfig"; path = "Target Support Files/Pods-twinr/Pods-twinr.release.xcconfig"; sourceTree = "<group>"; };
+		7EA3A4C771EF5903DCE9D77C /* Pods-twinr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twinr.debug.xcconfig"; path = "Target Support Files/Pods-twinr/Pods-twinr.debug.xcconfig"; sourceTree = "<group>"; };
+		842DA5D32F6BDF0D00FEEBD9 /* twinr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twinr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DA6012F6C350900FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		842DA6122F6C443700FEEBD9 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		842DA6142F6C443700FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842DA6152F6C443700FEEBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		842DA6162F6C443700FEEBD9 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		842DA6172F6C443700FEEBD9 /* French Manicure Tips.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "French Manicure Tips.mp4"; sourceTree = "<group>"; };
+		842DA6182F6C443700FEEBD9 /* Gel Polish Masterclass.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gel Polish Masterclass.mp4"; sourceTree = "<group>"; };
+		842DA6192F6C443700FEEBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842DA61A2F6C443700FEEBD9 /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
+		842DA61B2F6C443700FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		842DA61C2F6C443700FEEBD9 /* LegacyVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyVideoPlayer.swift; sourceTree = "<group>"; };
+		842DA61D2F6C443700FEEBD9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		842DA61E2F6C443700FEEBD9 /* MatchHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchHistoryManager.swift; sourceTree = "<group>"; };
+		842DA61F2F6C443700FEEBD9 /* NailAcademyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailAcademyView.swift; sourceTree = "<group>"; };
+		842DA6202F6C443700FEEBD9 /* NailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailDetailView.swift; sourceTree = "<group>"; };
+		842DA6212F6C443700FEEBD9 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		842DA6222F6C443700FEEBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		842DA6232F6C443700FEEBD9 /* Stencils for Beginners.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stencils for Beginners.mp4"; sourceTree = "<group>"; };
+		842DA6242F6C443700FEEBD9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		842DA6252F6C443700FEEBD9 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		842DA6262F6C443700FEEBD9 /* StyleMatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleMatcherView.swift; sourceTree = "<group>"; };
+		842DA6272F6C443700FEEBD9 /* TermsOfService.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TermsOfService.txt; sourceTree = "<group>"; };
+		842DA6282F6C443700FEEBD9 /* twinr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = twinr.entitlements; sourceTree = "<group>"; };
+		842DA6412F6C451000FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		842DA6422F6C451000FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		842DA6432F6C451000FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842DA6442F6C451000FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		842DA6452F6C451000FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		842DA6462F6C451000FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		842DA6472F6C451000FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		842DA6482F6C451000FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		842DA6492F6C451000FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		842DA64A2F6C451000FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		842DA64B2F6C451000FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		842DA64C2F6C451000FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		842DA64D2F6C451000FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		842DA65B2F6C45B200FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twinr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842DA5D02F6BDF0D00FEEBD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA6022F6C350900FEEBD9 /* StoreKit.framework in Frameworks */,
+				D88FDF6CAAF128644A777FA8 /* Pods_twinr.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		842DA5CA2F6BDF0D00FEEBD9 = {
+			isa = PBXGroup;
+			children = (
+				842DA6292F6C443700FEEBD9 /* twinr */,
+				842DA6002F6C350900FEEBD9 /* Frameworks */,
+				842DA5D42F6BDF0D00FEEBD9 /* Products */,
+				FA618E751D42E11266CDA6DB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		842DA5D42F6BDF0D00FEEBD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842DA5D32F6BDF0D00FEEBD9 /* twinr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842DA6002F6C350900FEEBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DA6012F6C350900FEEBD9 /* StoreKit.framework */,
+				95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DA6292F6C443700FEEBD9 /* twinr */ = {
+			isa = PBXGroup;
+			children = (
+				842DA65B2F6C45B200FEEBD9 /* GoogleService-Info.plist */,
+				842DA6402F6C44D200FEEBD9 /* user */,
+				842DA6122F6C443700FEEBD9 /* AgreementView.swift */,
+				842DA6142F6C443700FEEBD9 /* Assets.xcassets */,
+				842DA6152F6C443700FEEBD9 /* ContentView.swift */,
+				842DA6162F6C443700FEEBD9 /* DocumentView.swift */,
+				842DA6172F6C443700FEEBD9 /* French Manicure Tips.mp4 */,
+				842DA6182F6C443700FEEBD9 /* Gel Polish Masterclass.mp4 */,
+				842DA6192F6C443700FEEBD9 /* Info.plist */,
+				842DA61A2F6C443700FEEBD9 /* InspirationView.swift */,
+				842DA61B2F6C443700FEEBD9 /* Launch Screen.storyboard */,
+				842DA61C2F6C443700FEEBD9 /* LegacyVideoPlayer.swift */,
+				842DA61D2F6C443700FEEBD9 /* MainTabView.swift */,
+				842DA61E2F6C443700FEEBD9 /* MatchHistoryManager.swift */,
+				842DA61F2F6C443700FEEBD9 /* NailAcademyView.swift */,
+				842DA6202F6C443700FEEBD9 /* NailDetailView.swift */,
+				842DA6212F6C443700FEEBD9 /* PrivacyPolicy.txt */,
+				842DA6222F6C443700FEEBD9 /* SettingsView.swift */,
+				842DA6232F6C443700FEEBD9 /* Stencils for Beginners.mp4 */,
+				842DA6242F6C443700FEEBD9 /* StoreManager.swift */,
+				842DA6252F6C443700FEEBD9 /* StoreView.swift */,
+				842DA6262F6C443700FEEBD9 /* StyleMatcherView.swift */,
+				842DA6272F6C443700FEEBD9 /* TermsOfService.txt */,
+				842DA6282F6C443700FEEBD9 /* twinr.entitlements */,
+			);
+			path = twinr;
+			sourceTree = "<group>";
+		};
+		842DA6402F6C44D200FEEBD9 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				842DA6412F6C451000FEEBD9 /* AppAdjustManager.swift */,
+				842DA6422F6C451000FEEBD9 /* AppConfig.swift */,
+				842DA6432F6C451000FEEBD9 /* AppDelegate.swift */,
+				842DA6442F6C451000FEEBD9 /* AppleIAPManager.swift */,
+				842DA6452F6C451000FEEBD9 /* AppPermissionTool.swift */,
+				842DA6462F6C451000FEEBD9 /* AppRequestBaseModel.swift */,
+				842DA6472F6C451000FEEBD9 /* AppRequestTool.swift */,
+				842DA6482F6C451000FEEBD9 /* AppWebViewController.swift */,
+				842DA6492F6C451000FEEBD9 /* AppWebViewHandleEvent.swift */,
+				842DA64A2F6C451000FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
+				842DA64B2F6C451000FEEBD9 /* LocalPushScheduler.swift */,
+				842DA64C2F6C451000FEEBD9 /* ProgressHUD.swift */,
+				842DA64D2F6C451000FEEBD9 /* WaitViewController.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		FA618E751D42E11266CDA6DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA3A4C771EF5903DCE9D77C /* Pods-twinr.debug.xcconfig */,
+				697CC468DF481683E60C29C2 /* Pods-twinr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842DA5D22F6BDF0D00FEEBD9 /* twinr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842DA5DE2F6BDF0E00FEEBD9 /* Build configuration list for PBXNativeTarget "twinr" */;
+			buildPhases = (
+				4901DCFE5E905CC2201510BF /* [CP] Check Pods Manifest.lock */,
+				842DA5CF2F6BDF0D00FEEBD9 /* Sources */,
+				842DA5D02F6BDF0D00FEEBD9 /* Frameworks */,
+				842DA5D12F6BDF0D00FEEBD9 /* Resources */,
+				B3068D28BD98DD80EFCAAEE0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = twinr;
+			productName = twinr;
+			productReference = 842DA5D32F6BDF0D00FEEBD9 /* twinr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842DA5CB2F6BDF0D00FEEBD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					842DA5D22F6BDF0D00FEEBD9 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 842DA5CE2F6BDF0D00FEEBD9 /* Build configuration list for PBXProject "twinr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842DA5CA2F6BDF0D00FEEBD9;
+			productRefGroup = 842DA5D42F6BDF0D00FEEBD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842DA5D22F6BDF0D00FEEBD9 /* twinr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842DA5D12F6BDF0D00FEEBD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA6382F6C443700FEEBD9 /* Assets.xcassets in Resources */,
+				842DA65C2F6C45B200FEEBD9 /* GoogleService-Info.plist in Resources */,
+				842DA6392F6C443700FEEBD9 /* French Manicure Tips.mp4 in Resources */,
+				842DA63A2F6C443700FEEBD9 /* Gel Polish Masterclass.mp4 in Resources */,
+				842DA63C2F6C443700FEEBD9 /* Launch Screen.storyboard in Resources */,
+				842DA63D2F6C443700FEEBD9 /* PrivacyPolicy.txt in Resources */,
+				842DA63E2F6C443700FEEBD9 /* Stencils for Beginners.mp4 in Resources */,
+				842DA63F2F6C443700FEEBD9 /* TermsOfService.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4901DCFE5E905CC2201510BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-twinr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3068D28BD98DD80EFCAAEE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twinr/Pods-twinr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twinr/Pods-twinr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twinr/Pods-twinr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842DA5CF2F6BDF0D00FEEBD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842DA62A2F6C443700FEEBD9 /* AgreementView.swift in Sources */,
+				842DA62C2F6C443700FEEBD9 /* ContentView.swift in Sources */,
+				842DA62D2F6C443700FEEBD9 /* DocumentView.swift in Sources */,
+				842DA62E2F6C443700FEEBD9 /* InspirationView.swift in Sources */,
+				842DA62F2F6C443700FEEBD9 /* LegacyVideoPlayer.swift in Sources */,
+				842DA6302F6C443700FEEBD9 /* MainTabView.swift in Sources */,
+				842DA6312F6C443700FEEBD9 /* MatchHistoryManager.swift in Sources */,
+				842DA6322F6C443700FEEBD9 /* NailAcademyView.swift in Sources */,
+				842DA6332F6C443700FEEBD9 /* NailDetailView.swift in Sources */,
+				842DA6342F6C443700FEEBD9 /* SettingsView.swift in Sources */,
+				842DA6352F6C443700FEEBD9 /* StoreManager.swift in Sources */,
+				842DA6362F6C443700FEEBD9 /* StoreView.swift in Sources */,
+				842DA6372F6C443700FEEBD9 /* StyleMatcherView.swift in Sources */,
+				842DA64E2F6C451000FEEBD9 /* AppPermissionTool.swift in Sources */,
+				842DA64F2F6C451000FEEBD9 /* AppRequestBaseModel.swift in Sources */,
+				842DA6502F6C451000FEEBD9 /* LocalPushScheduler.swift in Sources */,
+				842DA6512F6C451000FEEBD9 /* AppConfig.swift in Sources */,
+				842DA6522F6C451000FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				842DA6532F6C451000FEEBD9 /* AppAdjustManager.swift in Sources */,
+				842DA6542F6C451000FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
+				842DA6552F6C451000FEEBD9 /* AppleIAPManager.swift in Sources */,
+				842DA6562F6C451000FEEBD9 /* WaitViewController.swift in Sources */,
+				842DA6572F6C451000FEEBD9 /* AppDelegate.swift in Sources */,
+				842DA6582F6C451000FEEBD9 /* AppWebViewController.swift in Sources */,
+				842DA6592F6C451000FEEBD9 /* ProgressHUD.swift in Sources */,
+				842DA65A2F6C451000FEEBD9 /* AppRequestTool.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		842DA5DC2F6BDF0E00FEEBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		842DA5DD2F6BDF0E00FEEBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842DA5DF2F6BDF0E00FEEBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA3A4C771EF5903DCE9D77C /* Pods-twinr.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = twinr/twinr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = twinr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Twinr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take professional photos of your nail art creations.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice-over tutorials and video content.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to browse and share high-quality nail art inspirations.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinr.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		842DA5E02F6BDF0E00FEEBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 697CC468DF481683E60C29C2 /* Pods-twinr.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = twinr/twinr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = twinr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Twinr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take professional photos of your nail art creations.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice-over tutorials and video content.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to browse and share high-quality nail art inspirations.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinr.export;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842DA5CE2F6BDF0D00FEEBD9 /* Build configuration list for PBXProject "twinr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842DA5DC2F6BDF0E00FEEBD9 /* Debug */,
+				842DA5DD2F6BDF0E00FEEBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842DA5DE2F6BDF0E00FEEBD9 /* Build configuration list for PBXNativeTarget "twinr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842DA5DF2F6BDF0E00FEEBD9 /* Debug */,
+				842DA5E02F6BDF0E00FEEBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842DA5CB2F6BDF0D00FEEBD9 /* Project object */;
+}
