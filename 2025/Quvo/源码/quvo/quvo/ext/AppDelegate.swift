@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1774874140 // 预设时间(秒)
+                let endTimeInterval: TimeInterval = 1777034688 // 预设时间(秒)
                 if Date().timeIntervalSince1970 > endTimeInterval && self.kv_68ca() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
