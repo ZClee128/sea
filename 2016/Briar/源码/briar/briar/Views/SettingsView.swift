@@ -2,19 +2,32 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var settings: UserSettings
+    @ObservedObject var iap = IAPManager.shared
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Appearance")) {
-                    VStack(alignment: .leading) {
-                        Text("Reading Font Size")
-                        Slider(value: $settings.fontSizeMultiplier, in: 0.8...1.5, step: 0.1)
-                        Text("Preview Text: A swift fox jumps.")
-                            .font(.system(size: 16 * settings.fontSizeMultiplier))
-                            .padding(.top, 4)
+                Section(header: Text("Account & Store")) {
+                    HStack {
+                        Image(systemName: "bitcoinsign.circle.fill")
+                            .foregroundColor(.yellow)
+                        Text("Coin Balance")
+                        Spacer()
+                        Text("\(iap.coins)")
+                            .fontWeight(.bold)
+                            .foregroundColor(.blue)
                     }
-                    .padding(.vertical, 8)
+                    
+                    NavigationLink(destination: StoreView()) {
+                        Text("Get More Coins")
+                            .foregroundColor(.blue)
+                    }
+                }
+                
+                Section(header: Text("Video Settings")) {
+                    Toggle(isOn: $settings.backgroundAudioLoop) {
+                        Text("Background Audio Loop")
+                    }
                 }
                 
                 Section(header: Text("Activity")) {
@@ -30,13 +43,16 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Legal & About")) {
-                    NavigationLink(destination: AgreementView(hasAgreed: .constant(true))) {
+                    NavigationLink(destination: DocumentView(filename: "Agreement", title: "Terms of Service")) {
                         Text("Terms of Service")
+                    }
+                    NavigationLink(destination: DocumentView(filename: "Privacy", title: "Privacy Policy")) {
+                        Text("Privacy Policy")
                     }
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.1.0")
+                        Text("\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"))")
                             .foregroundColor(.gray)
                     }
                 }

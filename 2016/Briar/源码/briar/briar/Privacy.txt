@@ -1,0 +1,17 @@
+Briar Beauty Privacy Policy
+Last Updated: March 2026
+
+1. Information We Collect
+We are committed to operating in a privacy-first manner. We do not require any user accounts or collect personally identifiable information (PII) such as your name, email address, or phone number to use this app. All app settings, bookmarks, and viewing histories are stored strictly locally on your device via UserDefaults and are never transmitted to any external servers.
+
+2. How We Use Non-Personal Information
+Our app may utilize anonymous diagnostic data if the app encounters an error. This data solely contains device state information (such as OS version and crash logs) required to ensure stability. No behavioral or personal usage data is compiled.
+
+3. Third-Party Services
+We do not integrate third-party ad-tracking APIs or cross-app tracking parameters. The application is completely offline unless explicitly accessing media urls embedded within posts. 
+
+4. Your Rights
+Because we do not store your data on external servers, your data is entirely under your control. By navigating to Settings > Activity in the app, you may instantly clear all locally cached User Data (Bookmarks) ending its permanent storage.
+
+5. Contact
+If you have questions regarding this Privacy Policy, please contact our privacy compliance team via doquangminh0404@icloud.com.

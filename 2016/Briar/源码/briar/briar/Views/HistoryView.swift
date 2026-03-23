@@ -41,7 +41,7 @@ struct HistoryView: View {
         let historyIDs = UserDefaults.standard.stringArray(forKey: "HistoryPosts") ?? []
         // Map over historyIDs to preserve chronological order (most recent first)
         historyPosts = historyIDs.compactMap { id in
-            mockPosts.first(where: { $0.id == id })
+            posts.first(where: { $0.id == id })
         }
     }
 }

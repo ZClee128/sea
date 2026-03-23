@@ -1,0 +1,153 @@
+{
+  "identifier" : "B5E5F0A4",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_32",
+      "localizations" : [
+        {
+          "description" : "32 Virtual Coins",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar",
+      "referenceName" : "32 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_60",
+      "localizations" : [
+        {
+          "description" : "60 Virtual Coins",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar1",
+      "referenceName" : "60 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_96",
+      "localizations" : [
+        {
+          "description" : "96 Virtual Coins",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar2",
+      "referenceName" : "96 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_155",
+      "localizations" : [
+        {
+          "description" : "155 Virtual Coins",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar4",
+      "referenceName" : "155 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_189",
+      "localizations" : [
+        {
+          "description" : "189 Virtual Coins",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar5",
+      "referenceName" : "189 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_359",
+      "localizations" : [
+        {
+          "description" : "359 Virtual Coins",
+          "displayName" : "359 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar9",
+      "referenceName" : "359 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_729",
+      "localizations" : [
+        {
+          "description" : "729 Virtual Coins",
+          "displayName" : "729 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar19",
+      "referenceName" : "729 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_1869",
+      "localizations" : [
+        {
+          "description" : "1869 Virtual Coins",
+          "displayName" : "1869 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar49",
+      "referenceName" : "1869 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "BRIAR_3799",
+      "localizations" : [
+        {
+          "description" : "3799 Virtual Coins",
+          "displayName" : "3799 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Briar99",
+      "referenceName" : "3799 coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

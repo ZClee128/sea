@@ -19,7 +19,7 @@ struct Post: Identifiable, Codable {
 }
 
 // Mock Data
-let mockPosts: [Post] = [
+let posts: [Post] = [
     Post(
         id: "1",
         title: "How to Achieve the Perfect Glass Skin",

@@ -5,7 +5,7 @@ struct HomeView: View {
     @State private var searchText: String = ""
     
     var filteredPosts: [Post] {
-        var result = mockPosts
+        var result = posts
         if let category = selectedCategory {
             result = result.filter { $0.category == category }
         }
@@ -97,14 +97,14 @@ struct PostCard: View {
     var body: some View {
         NavigationLink(destination: PostDetailView(post: post)) {
             VStack(alignment: .leading, spacing: 0) {
-                Rectangle()
-                    .fill(Color(UIColor.secondarySystemBackground))
-                    .frame(height: 200)
+                Color.clear
+                    .frame(height: 180)
                     .overlay(
-                        Image(systemName: "photo")
-                            .font(.largeTitle)
-                            .foregroundColor(.gray)
+                        Image(post.title)
+                            .resizable()
+                            .scaledToFill()
                     )
+                    .clipped()
                 
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {

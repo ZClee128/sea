@@ -1,0 +1,6 @@
+framework module Pods_briar {
+  umbrella header "Pods-briar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -22,14 +22,12 @@ struct FavoritesView: View {
                         ForEach(favoritePosts) { post in
                             NavigationLink(destination: PostDetailView(post: post)) {
                                 HStack(spacing: 16) {
-                                    Rectangle()
-                                        .fill(Color(UIColor.secondarySystemBackground))
+                                    Image(post.title)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
                                         .frame(width: 80, height: 60)
                                         .cornerRadius(8)
-                                        .overlay(
-                                            Image(systemName: "photo")
-                                                .foregroundColor(.gray)
-                                        )
+                                        .clipped()
                                     
                                     VStack(alignment: .leading, spacing: 4) {
                                         Text(post.category.rawValue)
@@ -58,6 +56,6 @@ struct FavoritesView: View {
     
     func loadFavorites() {
         let favIDs = UserDefaults.standard.stringArray(forKey: "FavoritePosts") ?? []
-        favoritePosts = mockPosts.filter { favIDs.contains($0.id) }
+        favoritePosts = posts.filter { favIDs.contains($0.id) }
     }
 }
