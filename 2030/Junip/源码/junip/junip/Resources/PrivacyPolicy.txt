@@ -1,0 +1,23 @@
+JUNIP PRIVACY POLICY
+Last Updated: March 2026
+
+1. DATA COLLECTION
+Junip is designed with an "Anonymous-First" privacy model. We do not collect your name, email address, or phone number.
+
+2. LOCAL STORAGE
+Any data related to your "Hair DNA Profile," such as color preferences, texture notes, and "Style Lab" sequence history, is stored exclusively on your device. We do not sync this data to any external server.
+
+3. STYLE CONCIERGE INTERACTION
+Messages sent to the "Style Concierge" are processed locally to simulate an expert response. These conversations are persistent but are only stored on your device's local memory (UserDefaults).
+
+4. THIRD-PARTY ANALYTICS
+We may use standard, non-identifying analytics to improve app performance and content reach. This data is aggregated and does not contain any personal information.
+
+5. SECURITY
+Junip relies on the standard security features of your iOS device to protect local data. We recommend using a passcode or biometric security to protect your device.
+
+6. DATA DELETION
+You can reset all app data at any time by deleting the App. This will permanently remove all local history and profiles.
+
+7. PRIVACY CONTACT
+For privacy-related questions, please contact our editorial team at tranthithom0906@icloud.com.
