@@ -45,6 +45,7 @@
 		84E19A9C2F716DA500CBA304 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E19A882F716DA500CBA304 /* AppPermissionTool.swift */; };
 		84E19A9D2F716DA500CBA304 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E19A872F716DA500CBA304 /* AppleIAPManager.swift */; };
 		84E19A9F2F716E4000CBA304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E19A9E2F716E4000CBA304 /* GoogleService-Info.plist */; };
+		84E19AA12F7172DC00CBA304 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E19AA02F7172DC00CBA304 /* Launch Screen.storyboard */; };
 		D1D4E7D6F4286A61DCBB46CC /* Pods_briar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B889EB3B26AF1FA25C50375E /* Pods_briar.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		84E19A8F2F716DA500CBA304 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84E19A902F716DA500CBA304 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84E19A9E2F716E4000CBA304 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84E19AA02F7172DC00CBA304 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B01F46F5412563B19A010283 /* Pods-briar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-briar.release.xcconfig"; path = "Target Support Files/Pods-briar/Pods-briar.release.xcconfig"; sourceTree = "<group>"; };
 		B889EB3B26AF1FA25C50375E /* Pods_briar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_briar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -190,6 +192,7 @@
 				84E19A662F716CFC00CBA304 /* Privacy.txt */,
 				84E19A672F716CFC00CBA304 /* Store.storekit */,
 				84E19A682F716CFC00CBA304 /* Top 10 Fall Makeup Trends.mp4 */,
+				84E19AA02F7172DC00CBA304 /* Launch Screen.storyboard */,
 			);
 			path = briar;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				84E19A7C2F716CFC00CBA304 /* Agreement.txt in Resources */,
 				84E19A7D2F716CFC00CBA304 /* Assets.xcassets in Resources */,
+				84E19AA12F7172DC00CBA304 /* Launch Screen.storyboard in Resources */,
 				84E19A7E2F716CFC00CBA304 /* How to Achieve the Perfect Glass Skin.mp4 in Resources */,
 				84E19A802F716CFC00CBA304 /* Privacy.txt in Resources */,
 				84E19A812F716CFC00CBA304 /* Store.storekit in Resources */,
@@ -501,18 +505,20 @@
 				CODE_SIGN_ENTITLEMENTS = briar/briar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = briar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Briar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -548,18 +554,20 @@
 				CODE_SIGN_ENTITLEMENTS = briar/briar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = briar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Briar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
