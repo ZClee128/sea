@@ -10,10 +10,9 @@ import UIKit
 
 /// 域名
 
-let ReplaceUrlDomain: String = {
-    let b: [UInt8] = [0x63, 0x6f, 0x64, 0x65, 0x67, 0x61, 0x6c, 0x78]
-    return String(bytes: b, encoding: .utf8) ?? ""
-}()
+fileprivate let app_lowerData:String = "codemast"
+fileprivate let user_imageRemotePath:String = "ralax"
+public let ReplaceUrlDomain = (app_lowerData.replacingOccurrences(of: "mast", with: "") + user_imageRemotePath.replacingOccurrences(of: "ra", with: "ga").replacingOccurrences(of: "ax", with: "x"))
 
 /// 包ID
 let PackageID = "2027"

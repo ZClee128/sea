@@ -1,0 +1,24 @@
+Welcome to Briar App!
+
+### 1. Acceptance of Terms
+By accessing or using the App, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you may not use the App.
+
+### 2. Description of Service
+Briar is an aesthetic beauty product discovery application. It allows users to browse beauty product catalogs, view images, and watch tutorial videos.
+
+### 3. User Conduct
+You agree not to use the App for any unlawful purpose. You shall not attempt to gain unauthorized access to any part of the App or its related systems.
+
+### 4. Intellectual Property
+All content within the App, including but not limited to text, images, videos, graphics, and logos, is the intellectual property of Briar or its licensors. You may not reproduce, distribute, or modify any content without explicit permission.
+
+### 5. Privacy
+Your privacy is important to us. Briar operates primarily as an offline-first discovery tool. Any locally saved preferences (such as your Favorites list) are stored exclusively on your device. We do not require account creation and we do not harvest personal identity metrics.
+
+### 6. Modifications to Terms
+We reserve the right to modify these Terms at any time. Your continued use of the App following any changes indicates your acceptance of the new Terms.
+
+### 7. Contact Us
+If you have any questions about these Terms, please contact us via the support section in the settings.
+
+By tapping "I Agree" below, you confirm that you have read, understood, and agreed to these Terms of Service.

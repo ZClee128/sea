@@ -2,6 +2,9 @@ import SwiftUI
 
 struct AgreementView: View {
     @State private var accepted = false
+    @EnvironmentObject var favoritesManager: FavoritesManager
+    @EnvironmentObject var storeManager: StoreManager
+    @EnvironmentObject var coinManager: CoinManager
     
     var body: some View {
         NavigationView {
@@ -49,7 +52,12 @@ struct AgreementView: View {
                     // For simplicity here, we'll suggest a refresh or the AppDelegate will handle next launch
                     // But to show immediate effect, we'll use a hack or just inform the user.
                     if let window = UIApplication.shared.windows.first {
-                        window.rootViewController = UIHostingController(rootView: ZayoMainView())
+                        window.rootViewController = UIHostingController(
+                            rootView: ZayoMainView()
+                                .environmentObject(favoritesManager)
+                                .environmentObject(storeManager)
+                                .environmentObject(coinManager)
+                        )
                         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
                     }
                 }) {
