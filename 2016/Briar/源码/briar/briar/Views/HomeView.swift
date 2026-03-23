@@ -2,18 +2,39 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedCategory: Post.Category? = nil
+    @State private var searchText: String = ""
     
     var filteredPosts: [Post] {
+        var result = mockPosts
         if let category = selectedCategory {
-            return mockPosts.filter { $0.category == category }
+            result = result.filter { $0.category == category }
         }
-        return mockPosts
+        if !searchText.isEmpty {
+            result = result.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.content.localizedCaseInsensitiveContains(searchText) }
+        }
+        return result
     }
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                // Categories
+                
+                HStack {
+                    Image(systemName: "magnifyingglass").foregroundColor(.gray)
+                    TextField("Search posts...", text: $searchText)
+                        .autocapitalization(.none)
+                    if !searchText.isEmpty {
+                        Button(action: { searchText = "" }) {
+                            Image(systemName: "xmark.circle.fill").foregroundColor(.gray)
+                        }
+                    }
+                }
+                .padding(10)
+                .background(Color(UIColor.secondarySystemBackground))
+                .cornerRadius(10)
+                .padding(.horizontal)
+                .padding(.top, 10)
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         CategoryButton(title: "Latest", isSelected: selectedCategory == nil) {
@@ -33,8 +54,14 @@ struct HomeView: View {
                 
                 ScrollView {
                     VStack(spacing: 20) {
-                        ForEach(filteredPosts) { post in
-                            PostCard(post: post)
+                        if filteredPosts.isEmpty {
+                            Text("No posts found.")
+                                .foregroundColor(.gray)
+                                .padding(.top, 40)
+                        } else {
+                            ForEach(filteredPosts) { post in
+                                PostCard(post: post)
+                            }
                         }
                     }
                     .padding(.vertical)
@@ -70,7 +97,6 @@ struct PostCard: View {
     var body: some View {
         NavigationLink(destination: PostDetailView(post: post)) {
             VStack(alignment: .leading, spacing: 0) {
-                // Placeholder image styling
                 Rectangle()
                     .fill(Color(UIColor.secondarySystemBackground))
                     .frame(height: 200)
@@ -107,11 +133,11 @@ struct PostCard: View {
                     
                     HStack {
                         Text(post.author)
-                            .font(.caption)
+                            .font(.system(size: 10))
                             .foregroundColor(.gray)
                         Spacer()
                         Text(post.date)
-                            .font(.caption)
+                            .font(.system(size: 10))
                             .foregroundColor(.gray)
                     }
                     .padding(.top, 4)

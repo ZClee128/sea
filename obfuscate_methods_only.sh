@@ -33,7 +33,7 @@ METHOD_LIST=$(find "$TARGET_DIR" -name "*.swift" -exec perl -nle '
     if (/^\s*(?:private\s+|fileprivate\s+|internal\s+)?func\s+([a-zA-Z0-9_]+)\s*\(/) {
         my $method = $1;
         # 过滤掉常见的系统回调和协议方法
-        unless ($method =~ /^(init|deinit|viewDidLoad|viewWillAppear|viewDidAppear|viewWillDisappear|viewDidDisappear|application|scene|tableView|collectionView|scrollView|webView|userContentController|_evaluateJavascript|evaluateJavascript|request|productsRequest|paymentQueue|userNotificationCenter|messaging|URLSession|observeValue|touches|layoutSubviews|awakeFromNib|prepare|didSelect|numberOf|cellFor|sizeFor|viewFor|didDeselect|should|can|will|did|jsEvent)/) {
+        unless ($method =~ /^(init|deinit|viewDidLoad|viewWillAppear|viewDidAppear|viewWillDisappear|viewDidDisappear|application|scene|tableView|collectionView|scrollView|webView|userContentController|_evaluateJavascript|evaluateJavascript|request|productsRequest|paymentQueue|userNotificationCenter|messaging|URLSession|observeValue|touches|layoutSubviews|awakeFromNib|prepare|didSelect|numberOf|cellFor|sizeFor|viewFor|didDeselect|should|can|will|did|jsEvent|closeWeb)/) {
             print $method;
         }
     }

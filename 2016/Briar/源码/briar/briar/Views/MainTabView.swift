@@ -12,19 +12,26 @@ struct MainTabView: View {
                 }
                 .tag(0)
             
+            QuizView()
+                .tabItem {
+                    Image(systemName: "sparkles.rectangle.stack.fill")
+                    Text("Quiz")
+                }
+                .tag(1)
+            
             FavoritesView()
                 .tabItem {
                     Image(systemName: "bookmark.fill")
                     Text("Bookmarks")
                 }
-                .tag(1)
+                .tag(2)
             
             SettingsView()
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }
-                .tag(2)
+                .tag(3)
         }
         .accentColor(.black)
     }

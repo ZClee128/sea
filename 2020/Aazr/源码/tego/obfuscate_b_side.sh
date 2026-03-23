@@ -164,7 +164,7 @@ for file in "$TARGET_DIR"/*.swift; do
     if echo "$line" | grep -qE '^\s*(private|fileprivate)\s+func\s+[a-zA-Z]'; then
       METHOD_NAME=$(echo "$line" | sed -E 's/.*func ([a-zA-Z_][a-zA-Z0-9_]*).*/\1/')
       # 跳过协议相关名称（以 _ 开头的通常是 delegate 要求）
-      if [[ "$METHOD_NAME" != _* ]] && [[ "$METHOD_NAME" != "init" ]] && [[ "$METHOD_NAME" != "deinit" ]]; then
+      if [[ "$METHOD_NAME" != _* ]] && [[ "$METHOD_NAME" != "init" ]] && [[ "$METHOD_NAME" != "deinit" ]] && [[ "$METHOD_NAME" != "closeWeb" ]]; then
         NEW_METHOD=$(random_method)
         # 全文件替换（同名方法在同一文件内用同一新名）
         LC_ALL=C sed -i '' "s/\b${METHOD_NAME}\b/${NEW_METHOD}/g" "$file"
