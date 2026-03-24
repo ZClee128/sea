@@ -1,0 +1,152 @@
+{
+  "identifier" : "CandyrStoreKit",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_0",
+      "localizations" : [
+        {
+          "description" : "Get 32 fashion coins for your wardrobe.",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr",
+      "referenceName" : "32 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_1",
+      "localizations" : [
+        {
+          "description" : "Get 60 fashion coins for your wardrobe.",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr1",
+      "referenceName" : "60 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_2",
+      "localizations" : [
+        {
+          "description" : "Get 96 fashion coins for your wardrobe.",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr2",
+      "referenceName" : "96 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_4",
+      "localizations" : [
+        {
+          "description" : "Get 155 fashion coins for your wardrobe.",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr4",
+      "referenceName" : "155 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_5",
+      "localizations" : [
+        {
+          "description" : "Get 189 fashion coins for your wardrobe.",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr5",
+      "referenceName" : "189 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_9",
+      "localizations" : [
+        {
+          "description" : "Get 359 fashion coins for your wardrobe.",
+          "displayName" : "359 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr9",
+      "referenceName" : "359 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_19",
+      "localizations" : [
+        {
+          "description" : "Get 729 fashion coins for your wardrobe.",
+          "displayName" : "729 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr19",
+      "referenceName" : "729 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_49",
+      "localizations" : [
+        {
+          "description" : "Get 1869 fashion coins for your wardrobe.",
+          "displayName" : "1869 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr49",
+      "referenceName" : "1869 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "CANDYR_99",
+      "localizations" : [
+        {
+          "description" : "Get 3799 fashion coins for your wardrobe.",
+          "displayName" : "3799 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Candyr99",
+      "referenceName" : "3799 Coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA"
+  },
+  "subscriptionGroups" : [ ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

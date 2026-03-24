@@ -1,0 +1,177 @@
+//
+//  AppDelegate.swift
+//  OverseaH5
+//
+//  Created by DouXiu on 2025/9/23.
+//
+
+import UIKit
+import Firebase
+import FirebaseMessaging
+import UserNotifications
+import AVFAudio
+import FirebaseRemoteConfig
+import SwiftUI
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+
+    var window: UIWindow?
+    let waitVC = WaitViewController()
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = waitVC
+        self.window?.makeKeyAndVisible()
+        initFireBase()
+        let config = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        settings.fetchTimeout = 5
+        config.configSettings = settings
+        config.fetch { (status, error) -> Void in
+            if status == .success {
+                config.activate { changed, error in
+                    let remoteVersion = config.configValue(forKey: "Candyr").numberValue.intValue
+                    let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
+                    if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
+                        self.initConfig(application)
+                        
+                    } else { // 展示A面
+                        self.vh_362c()
+                    }
+                }
+            } else { // 远程配置获取失败，验证本地时间戳
+                let endTimeInterval: TimeInterval = 1776775935 // 预设时间(秒)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.pr_33f7() { // 本地时间戳大于预设时间，进入B面
+                    self.initConfig(application)
+                    
+                } else { // 展示A面
+                    self.vh_362c()
+                }
+            }
+        }
+        return true
+    }
+
+    /// 是否iPAD
+    private func pr_33f7() -> Bool {
+        return UIDevice.current.userInterfaceIdiom != .pad
+     }
+    
+    /// 初始化项目
+    private func initConfig(_ application: UIApplication) {
+        yq_37dc(application)
+        AppAdjustManager.shared.initAdjust()
+        // 检查是否有未完成的支付订单
+        AppleIAPManager.shared.qi_1802()
+        // 支持后台播放音乐
+        try? AVAudioSession.sharedInstance().setCategory(.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        DispatchQueue.main.async {
+            let vc = AppWebViewController()
+            vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.getStatusBarHeight())"
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    
+    func vh_362c() {
+        DispatchQueue.main.async {
+            // Setup background audio capability
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print("Failed to set background audio category: \(error)")
+            }
+            
+            // Check if user has agreed to terms
+            let hasAgreed = UserDefaults.standard.bool(forKey: "hasAgreedToTerms")
+            
+            if hasAgreed {
+                self.ss_4c17()
+            } else {
+                self.dt_5911()
+            }
+            
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    
+    func dt_5911() {
+        let agreementView = AgreementView { [weak self] in
+            self?.ss_4c17()
+        }
+        let hostingController = UIHostingController(rootView: agreementView)
+        hostingController.modalPresentationStyle = .fullScreen
+        window?.rootViewController = hostingController
+    }
+    
+    func ss_4c17() {
+        let mainView = MainTabView()
+        let hostingController = UIHostingController(rootView: mainView)
+        
+        // Transition animation for a professional feel
+        UIView.transition(with: window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.window?.rootViewController = hostingController
+        }, completion: nil)
+    }
+}
+
+// MARK: - Firebase
+extension AppDelegate: MessagingDelegate {
+    private func initFireBase() {
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+    }
+    
+    func yq_37dc(_ application: UIApplication) {
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+            UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in
+            })
+            DispatchQueue.main.async {
+                application.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // 注册远程通知, 将deviceToken传递过去
+        let deviceStr = deviceToken.map { String(format: "%02hhx", $0) }.joined()
+        Messaging.messaging().apnsToken = deviceToken
+        print("APNS Token = \(deviceStr)")
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("error = \(error)")
+            } else if let token = token {
+                print("token = \(token)")
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        completionHandler(.newData)
+    }
+  
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    // 注册推送失败回调
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("didFailToRegisterForRemoteNotificationsWithError = \(error.localizedDescription)")
+    }
+    
+    public func messaging(_: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        print("didReceiveRegistrationToken = \(dataDict)")
+        NotificationCenter.default.post(
+            name: Notification.Name("FCMToken"),
+            object: nil,
+            userInfo: dataDict)
+    }
+}

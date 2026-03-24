@@ -1,0 +1,22 @@
+CANDYR PRIVACY POLICY
+Last Updated: March 24, 2026
+
+At "Candyr", we value your privacy.
+
+1. DATA COLLECTION
+Candyr does not collect, store, or share any personal information.
+- No name, email, or physical address is required.
+- No tracking or analytics are implemented.
+- The App functions entirely without an account system.
+
+2. COOKIES AND TRACKING
+We do not use cookies or tracking technologies. All data stays local to the device where possible, though currently, the App is purely for content viewing and does not store user data.
+
+3. THIRD PARTY SERVICES
+Candyr may show content hosted on our servers, but no user-specific data is sent during these requests.
+
+4. CHILDREN'S PRIVACY
+Since we do not collect any personal data, Candyr is safe for all ages (18+).
+
+5. CONTACT
+For privacy concerns, reach out to tranthilieu8192@icloud.com.
