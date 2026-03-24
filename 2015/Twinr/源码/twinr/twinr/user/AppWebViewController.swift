@@ -105,7 +105,7 @@ class AppWebViewController: UIViewController {
     }
     
     /// 关闭webview事件
-    func qe_5688() {
+    func closeWeb() {
         if webView.canGoBack {
             webView.goBack()
             return
@@ -135,8 +135,8 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         // 兼容老事件
         DispatchQueue.main.async {
             let type = message.name
-            if type == "qe_5688" {
-                self.qe_5688()
+            if type == "closeWeb" {
+                self.closeWeb()
                 
             } else if type == "toUrl" {
                 if let url = message.body as? String {
@@ -163,7 +163,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
             }
         })
         let ucController = self.webView.configuration.userContentController
-        ucController.add(AppWebViewScriptDelegateHandler(self), name: "qe_5688")
+        ucController.add(AppWebViewScriptDelegateHandler(self), name: "closeWeb")
         ucController.add(AppWebViewScriptDelegateHandler(self), name: "toUrl")
     }
 
@@ -172,7 +172,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         if #available(iOS 14.0, *) {
             ucController.removeAllScriptMessageHandlers()
         } else {
-            ucController.removeScriptMessageHandler(forName: "qe_5688")
+            ucController.removeScriptMessageHandler(forName: "closeWeb")
             ucController.removeScriptMessageHandler(forName: "toUrl")
         }
     }

@@ -4,6 +4,7 @@ import StoreKit
 @available(iOS 14.0, *)
 struct StoreView: View {
     @ObservedObject var storeManager = StoreManager.shared
+    @State private var showLoadingAlert = false
     
     let coinPacks = [
         ("Twinr", "32 Coins", "0.99"),
@@ -32,16 +33,6 @@ struct StoreView: View {
                 Text("My Coin Balance")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                
-                // Demo button for testing without Sandbox
-//                Button(action: {
-//                    storeManager.addDemoCoins()
-//                }) {
-//                    Text("Add Demo Coins (Simulation)")
-//                        .font(.caption)
-//                        .foregroundColor(.blue)
-//                }
-//                .padding(.top, 5)
             }
             .padding(.vertical, 5)
             
@@ -57,13 +48,11 @@ struct StoreView: View {
                             Spacer()
                             
                             Button(action: {
-                                // Find the SKProduct and buy it
                                 if let product = storeManager.products.first(where: { $0.productIdentifier == pack.0 }) {
                                     storeManager.buyProduct(product)
                                 } else {
-                                    // Simulation for local testing
-                                    let coinsToAdd = StoreManager.shared.addCoinsFromPack(pack.0)
-                                    print("Simulated purchase of \(coinsToAdd) coins")
+                                    showLoadingAlert = true
+                                    storeManager.fetchProducts()
                                 }
                             }) {
                                 Text("$\(pack.2)")
@@ -82,6 +71,18 @@ struct StoreView: View {
         }
         .navigationTitle("Coin Store")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showLoadingAlert) {
+            Alert(
+                title: Text("Connecting to App Store"),
+                message: Text("We are still fetching product information from the App Store. Please wait a moment and try again."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+        .onAppear {
+            if storeManager.products.isEmpty {
+                storeManager.fetchProducts()
+            }
+        }
     }
 }
 

@@ -128,7 +128,7 @@ extension AppWebViewController {
                 
             case closeWebview:
                 callBack(["typeName": model.typeName])
-                self.qe_5688()
+                self.closeWeb()
                 
             case openNewWebview:
                 callBack(["typeName": model.typeName])

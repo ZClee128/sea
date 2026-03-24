@@ -38,6 +38,10 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print("[IAP] Loaded \(response.products.count) products")
+        if !response.invalidProductIdentifiers.isEmpty {
+            print("[IAP] ⚠️ Invalid product IDs (not found in App Store Connect): \(response.invalidProductIdentifiers)")
+        }
         DispatchQueue.main.async {
             self.products = response.products.sorted { $0.price.doubleValue < $1.price.doubleValue }
         }

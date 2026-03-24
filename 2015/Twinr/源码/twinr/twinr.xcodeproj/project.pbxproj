@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842DA6022F6C350900FEEBD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DA6012F6C350900FEEBD9 /* StoreKit.framework */; };
 		842DA62A2F6C443700FEEBD9 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6122F6C443700FEEBD9 /* AgreementView.swift */; };
 		842DA62C2F6C443700FEEBD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6152F6C443700FEEBD9 /* ContentView.swift */; };
 		842DA62D2F6C443700FEEBD9 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6162F6C443700FEEBD9 /* DocumentView.swift */; };
@@ -42,6 +41,7 @@
 		842DA6592F6C451000FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA64C2F6C451000FEEBD9 /* ProgressHUD.swift */; };
 		842DA65A2F6C451000FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA6472F6C451000FEEBD9 /* AppRequestTool.swift */; };
 		842DA65C2F6C45B200FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA65B2F6C45B200FEEBD9 /* GoogleService-Info.plist */; };
+		84E19B312F72801B00CBA304 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E19B302F72801B00CBA304 /* StoreKit.framework */; };
 		D88FDF6CAAF128644A777FA8 /* Pods_twinr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,6 @@
 		697CC468DF481683E60C29C2 /* Pods-twinr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twinr.release.xcconfig"; path = "Target Support Files/Pods-twinr/Pods-twinr.release.xcconfig"; sourceTree = "<group>"; };
 		7EA3A4C771EF5903DCE9D77C /* Pods-twinr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twinr.debug.xcconfig"; path = "Target Support Files/Pods-twinr/Pods-twinr.debug.xcconfig"; sourceTree = "<group>"; };
 		842DA5D32F6BDF0D00FEEBD9 /* twinr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twinr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		842DA6012F6C350900FEEBD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		842DA6122F6C443700FEEBD9 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		842DA6142F6C443700FEEBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842DA6152F6C443700FEEBD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		842DA64C2F6C451000FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		842DA64D2F6C451000FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		842DA65B2F6C45B200FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84E19B302F72801B00CBA304 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twinr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,8 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842DA6022F6C350900FEEBD9 /* StoreKit.framework in Frameworks */,
 				D88FDF6CAAF128644A777FA8 /* Pods_twinr.framework in Frameworks */,
+				84E19B312F72801B00CBA304 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +123,7 @@
 		842DA6002F6C350900FEEBD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				842DA6012F6C350900FEEBD9 /* StoreKit.framework */,
+				84E19B302F72801B00CBA304 /* StoreKit.framework */,
 				95582CCB4E9C8814C69E1ACD /* Pods_twinr.framework */,
 			);
 			name = Frameworks;
@@ -471,8 +471,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = twinr/twinr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -480,15 +481,14 @@
 				INFOPLIST_FILE = twinr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Twinr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take professional photos of your nail art creations.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice-over tutorials and video content.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to enable video features.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to enable audio features.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to browse and share high-quality nail art inspirations.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,8 +520,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = twinr/twinr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -529,15 +530,14 @@
 				INFOPLIST_FILE = twinr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Twinr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take professional photos of your nail art creations.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access for recording voice-over tutorials and video content.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to enable video features.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to enable audio features.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to browse and share high-quality nail art inspirations.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

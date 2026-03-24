@@ -1,0 +1,153 @@
+{
+  "identifier" : "E00F5B42",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1",
+      "localizations" : [
+        {
+          "description" : "Get 32 Coins",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr",
+      "referenceName" : "32 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "2",
+      "localizations" : [
+        {
+          "description" : "Get 60 Coins",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr1",
+      "referenceName" : "60 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "3",
+      "localizations" : [
+        {
+          "description" : "Get 96 Coins",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr2",
+      "referenceName" : "96 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "4",
+      "localizations" : [
+        {
+          "description" : "Get 155 Coins",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr4",
+      "referenceName" : "155 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "5",
+      "localizations" : [
+        {
+          "description" : "Get 189 Coins",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr5",
+      "referenceName" : "189 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6",
+      "localizations" : [
+        {
+          "description" : "Get 359 Coins",
+          "displayName" : "359 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr9",
+      "referenceName" : "359 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "7",
+      "localizations" : [
+        {
+          "description" : "Get 729 Coins",
+          "displayName" : "729 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr19",
+      "referenceName" : "729 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "8",
+      "localizations" : [
+        {
+          "description" : "Get 1869 Coins",
+          "displayName" : "1869 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr49",
+      "referenceName" : "1869 coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "9",
+      "localizations" : [
+        {
+          "description" : "Get 3799 Coins",
+          "displayName" : "3799 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Twinr99",
+      "referenceName" : "3799 coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : [
+    1,
+    2
+  ]
+}
