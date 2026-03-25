@@ -1,0 +1,153 @@
+{
+  "identifier" : "SunnyStoreKit",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "32_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 32 coins for style tips",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny",
+      "referenceName" : "32 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "60_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 60 coins for style tips",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny1",
+      "referenceName" : "60 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "96_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 96 coins for style tips",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny2",
+      "referenceName" : "96 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "155_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 155 coins for style tips",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny4",
+      "referenceName" : "155 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "189_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 189 coins for style tips",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny5",
+      "referenceName" : "189 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "359_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 359 coins for style tips",
+          "displayName" : "359 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny9",
+      "referenceName" : "359 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "729_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 729 coins for style tips",
+          "displayName" : "729 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny19",
+      "referenceName" : "729 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "1869_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 1869 coins for style tips",
+          "displayName" : "1869 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny49",
+      "referenceName" : "1869 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "3799_COINS",
+      "localizations" : [
+        {
+          "description" : "Get 3799 coins for style tips",
+          "displayName" : "3799 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Sunny99",
+      "referenceName" : "3799 Coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : [
+    1,
+    2
+  ]
+}
