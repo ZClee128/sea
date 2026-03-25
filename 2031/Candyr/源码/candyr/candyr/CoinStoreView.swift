@@ -12,29 +12,25 @@ struct CoinStoreView: View {
         GridItem(.flexible())
     ]
     
-    // Fallback data if StoreKit is not configured in environment
-    let fallbackPacks = [
-        (id: "Candyr", coins: 32, price: "0.99"),
-        (id: "Candyr1", coins: 60, price: "1.99"),
-        (id: "Candyr2", coins: 96, price: "2.99"),
-        (id: "Candyr4", coins: 155, price: "4.99"),
-        (id: "Candyr5", coins: 189, price: "5.99"),
-        (id: "Candyr9", coins: 359, price: "9.99"),
-        (id: "Candyr19", coins: 729, price: "19.99"),
-        (id: "Candyr49", coins: 1869, price: "49.99"),
-        (id: "Candyr99", coins: 3799, price: "99.99")
-    ]
-    
-    @State private var showingConfigAlert = false
+    @State private var showingError = false
     
     var body: some View {
         VStack(spacing: 0) {
             // Header
             HStack {
-                Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.title2)
-                        .foregroundColor(.gray.opacity(0.5))
+                HStack(spacing: 16) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(.gray.opacity(0.5))
+                    }
+                    
+                    Button(action: { storeManager.getProducts() }) {
+                        Image(systemName: "arrow.clockwise.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(storeManager.isLoading ? NeonCouture.primary : .gray.opacity(0.5))
+                    }
+                    .disabled(storeManager.isLoading)
                 }
                 Spacer()
                 Text("COIN BOUTIQUE")
@@ -68,19 +64,46 @@ struct CoinStoreView: View {
                     }
                     .padding(.top)
                     
-                    LazyVGrid(columns: columns, spacing: 16) {
-                        if storeManager.myProducts.isEmpty {
-                            // Show fallback UI for demonstration/sandbox - WITH interactive buttons
-                            ForEach(fallbackPacks, id: \.id) { pack in
-                                Button(action: { 
-                                    // Formal request: Attempt to fetch real products 
-                                    storeManager.getProducts() 
-                                    showingConfigAlert = true
-                                }) {
-                                    CoinPackCard(id: pack.id, coins: pack.coins, price: "$\(pack.price) (Sample)")
-                                }
+                    if storeManager.isLoading {
+                        VStack(spacing: 20) {
+                            ProgressView()
+                                .scaleEffect(1.5)
+                                .accentColor(NeonCouture.primary)
+                            Text("Curating Your Collection...")
+                                .font(.system(size: 14, weight: .medium, design: .serif))
+                                .foregroundColor(.gray)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 100)
+                    } else if storeManager.myProducts.isEmpty {
+                        VStack(spacing: 16) {
+                            Image(systemName: "cart.badge.minus")
+                                .font(.system(size: 50))
+                                .foregroundColor(.gray.opacity(0.3))
+                            
+                            Text("Boutique Temporarily Closed")
+                                .font(.headline)
+                            
+                            Text("We couldn't reach the styling vault. Please check your connection and try again.")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 40)
+                            
+                            Button(action: { storeManager.getProducts() }) {
+                                Text("RETRY ACCESS")
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 30)
+                                    .padding(.vertical, 12)
+                                    .background(NeonCouture.primary)
+                                    .cornerRadius(25)
+                                    .neonGlow()
                             }
-                        } else {
+                        }
+                        .padding(.vertical, 60)
+                    } else {
+                        LazyVGrid(columns: columns, spacing: 16) {
                             ForEach(storeManager.myProducts) { product in
                                 Button(action: { storeManager.purchaseProduct(product: product) }) {
                                     CoinPackCard(id: product.id, 
@@ -89,20 +112,13 @@ struct CoinStoreView: View {
                                 }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
             }
         }
         .onAppear {
             storeManager.getProducts()
-        }
-        .alert(isPresented: $showingConfigAlert) {
-            Alert(
-                title: Text("StoreKit Configuration Required"),
-                message: Text("To test the formal payment flow in the simulator:\n\n1. Edit Scheme -> Run -> Options\n2. Set 'StoreKit Configuration' to 'Candyr.storekit'"),
-                dismissButton: .default(Text("Got it!"))
-            )
         }
     }
 }

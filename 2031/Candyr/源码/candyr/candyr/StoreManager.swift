@@ -5,6 +5,7 @@ import Combine
 @available(iOS 15.0, *)
 class StoreManager: ObservableObject {
     @Published var myProducts = [Product]()
+    @Published var isLoading = false
     private var updates: Task<Void, Never>? = nil
     
     let productIDs = ["Candyr", "Candyr1", "Candyr2", "Candyr4", "Candyr5", "Candyr9", "Candyr19", "Candyr49", "Candyr99"]
@@ -34,12 +35,15 @@ class StoreManager: ObservableObject {
     @MainActor
     func getProducts() {
         Task {
+            self.isLoading = true
             do {
                 let storeProducts = try await Product.products(for: productIDs)
                 self.myProducts = storeProducts.sorted { self.coinMap[$0.id] ?? 0 < self.coinMap[$1.id] ?? 0 }
+                print("Successfully fetched \(self.myProducts.count) products")
             } catch {
-                print("Failed to fetch products: \(error)")
+                print("Failed to fetch products: \(error.localizedDescription)")
             }
+            self.isLoading = false
         }
     }
     
