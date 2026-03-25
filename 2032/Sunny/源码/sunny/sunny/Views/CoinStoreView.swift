@@ -42,7 +42,7 @@ struct CoinStoreView: View {
                 .padding()
                 
                 ScrollView {
-                    VStack(spacing: 24) {
+                    VStack(spacing: 10) {
                         // 余额卡片
                         VStack(spacing: 12) {
                             Text("Current Balance")
@@ -51,7 +51,7 @@ struct CoinStoreView: View {
                             
                             HStack(spacing: 8) {
                                 Image(systemName: "bitcoinsign.circle.fill")
-                                    .font(.system(size: 32))
+                                    .font(.system(size: 18))
                                     .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.2))
                                 
                                 Text("\(coinManager.balance)")
@@ -59,7 +59,7 @@ struct CoinStoreView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 30)
+                        .padding(.vertical, 10)
                         .background(
                             RoundedRectangle(cornerRadius: 24)
                                 .fill(Color.white)
@@ -68,7 +68,7 @@ struct CoinStoreView: View {
                         .padding(.horizontal)
                         
                         // 产品列表
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
                             ForEach(storeManager.products, id: \.id) { product in
                                 CoinPackageCard(product: product, coins: productIdToCoins[product.id] ?? 0) {
                                     Task {
@@ -105,21 +105,21 @@ struct CoinPackageCard: View {
     
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 12) {
+            VStack(spacing: 6) {
                 // 图标
                 ZStack {
                     Circle()
                         .fill(Color(red: 1.0, green: 0.6, blue: 0.2).opacity(0.1))
-                        .frame(width: 60, height: 60)
+                        .frame(width: 20, height: 20)
                     
                     Image(systemName: "sun.max.fill")
-                        .font(.system(size: 28))
+                        .font(.system(size: 14))
                         .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.2))
                 }
                 
                 VStack(spacing: 4) {
                     Text("\(coins) Coins")
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.primary)
                     
                     Text(product.displayPrice)
@@ -131,14 +131,14 @@ struct CoinPackageCard: View {
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 4)
                     .background(
                         Capsule()
                             .fill(Color(red: 1.0, green: 0.6, blue: 0.2))
                     )
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
+            .padding(.vertical, 10)
             .background(Color.white)
             .cornerRadius(20)
             .shadow(color: Color.black.opacity(0.04), radius: 5, x: 0, y: 2)
