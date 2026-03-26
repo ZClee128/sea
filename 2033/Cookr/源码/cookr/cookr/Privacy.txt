@@ -1,0 +1,24 @@
+PRIVACY POLICY
+
+Welcome to Cookr! We take your privacy seriously. This document describes how we handle information in our application.
+
+1. DATA COLLECTION
+Cookr is designed to be a local-first application. We do not require you to create an account, nor do we collect personal identifiers such as your name, email address (unless you contact support), or phone number.
+
+2. STORAGE
+Your favorite recipes, meal plans, and application settings are stored locally on your device. We do not sync this data to our servers.
+
+3. THIRD-PARTY SERVICES
+We may use standard system frameworks (such as AVFoundation for video playback) that do not track you. We do not integrate third-party advertising or tracking SDKs.
+
+4. COOKIES
+As a native mobile application, we do not use browser cookies.
+
+5. CONTACT
+If you have questions about this Privacy Policy, please contact us at:
+Email: dothiminh9186@icloud.com
+
+6. UPDATES
+We may update our Privacy Policy from time to time. We encourage you to review this page periodically for any changes.
+
+Last Updated: March 2026
