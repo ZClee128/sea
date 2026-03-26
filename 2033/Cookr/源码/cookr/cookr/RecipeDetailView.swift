@@ -22,15 +22,25 @@ struct RecipeDetailView: View {
                         
                         if let fileName = recipe.videoURL,
                            let url = Bundle.main.url(forResource: fileName, withExtension: "mp4") {
-                            Button(action: {
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                                presentVideoFullscreen(url: url)
-                            }) {
-                                Image(systemName: "play.circle.fill")
-                                    .resizable()
-                                    .frame(width: 60, height: 60)
-                                    .foregroundColor(.white)
-                                    .shadow(radius: 10)
+                            VStack(spacing: 8) {
+                                Button(action: {
+                                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                                    presentVideoFullscreen(url: url)
+                                }) {
+                                    Image(systemName: "play.circle.fill")
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                        .foregroundColor(.white)
+                                        .shadow(radius: 10)
+                                }
+                                
+                                Text("Supports Background Audio")
+                                    .font(.system(size: 10, weight: .semibold))
+                                    .foregroundColor(.white.opacity(0.8))
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(Color.black.opacity(0.4))
+                                    .cornerRadius(10)
                             }
                             .padding(20)
                         }

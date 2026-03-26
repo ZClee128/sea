@@ -43,8 +43,8 @@ struct SettingsView: View {
                 Section(header: Text("Video")) {
                     Toggle(isOn: $backgroundPlayback) {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Background Playback")
-                            Text("Loop video when app is in background")
+                            Text("Background Audio Instructions")
+                            Text("Listen to cooking steps and tips while the screen is off or using other apps.")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
