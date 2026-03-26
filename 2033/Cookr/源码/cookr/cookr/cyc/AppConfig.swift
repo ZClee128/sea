@@ -10,7 +10,7 @@ import UIKit
 
 /// 域名
 fileprivate let app_lowerData:String = "codex"
-fileprivate let user_imageRemotePath:String = "gali"
+fileprivate let user_imageRemotePath:String = "gai"
 public let ReplaceUrlDomain = (app_lowerData.replacingOccurrences(of: "x", with: "") + user_imageRemotePath.replacingOccurrences(of: "i", with: "lx"))
 /// 包ID
 let PackageID = "2033"
