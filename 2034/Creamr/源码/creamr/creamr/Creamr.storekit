@@ -1,0 +1,90 @@
+{
+  "identifier" : "D4B8C2A1-1234-5678-ABCD-EF0123456789",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familySharable" : false,
+      "internalID" : "001",
+      "localizations" : [{"description" : "32 Coins", "displayName" : "32 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr",
+      "referenceName" : "32 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familySharable" : false,
+      "internalID" : "002",
+      "localizations" : [{"description" : "60 Coins", "displayName" : "60 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr1",
+      "referenceName" : "60 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familySharable" : false,
+      "internalID" : "003",
+      "localizations" : [{"description" : "96 Coins", "displayName" : "96 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr2",
+      "referenceName" : "96 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familySharable" : false,
+      "internalID" : "004",
+      "localizations" : [{"description" : "155 Coins", "displayName" : "155 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr4",
+      "referenceName" : "155 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familySharable" : false,
+      "internalID" : "005",
+      "localizations" : [{"description" : "189 Coins", "displayName" : "189 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr5",
+      "referenceName" : "189 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familySharable" : false,
+      "internalID" : "006",
+      "localizations" : [{"description" : "299 + 60 Bonus Coins", "displayName" : "359 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr9",
+      "referenceName" : "359 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familySharable" : false,
+      "internalID" : "007",
+      "localizations" : [{"description" : "599 + 130 Bonus Coins", "displayName" : "729 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr19",
+      "referenceName" : "729 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familySharable" : false,
+      "internalID" : "008",
+      "localizations" : [{"description" : "1599 + 270 Bonus Coins", "displayName" : "1869 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr49",
+      "referenceName" : "1869 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familySharable" : false,
+      "internalID" : "009",
+      "localizations" : [{"description" : "3199 + 600 Bonus Coins", "displayName" : "3799 Coins", "locale" : "en_US"}],
+      "productID" : "Creamr99",
+      "referenceName" : "3799 Coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {"_locale" : "en_US", "_storeKitErrors" : [{"current" : null, "enabled" : false, "code" : "1"}]},
+  "subscriptionGroups" : [],
+  "version" : {"major" : 2, "minor" : 0}
+}

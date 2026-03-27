@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84728CF62F76AA7E00498A56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84728CF52F76AA7E00498A56 /* StoreKit.framework */; };
+		84728D242F76CA3D00498A56 /* ArtChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D0B2F76CA3D00498A56 /* ArtChatView.swift */; };
+		84728D252F76CA3D00498A56 /* ArtGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D0C2F76CA3D00498A56 /* ArtGalleryView.swift */; };
+		84728D262F76CA3D00498A56 /* AtmosphereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D0E2F76CA3D00498A56 /* AtmosphereView.swift */; };
+		84728D272F76CA3D00498A56 /* CoinShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D102F76CA3D00498A56 /* CoinShopView.swift */; };
+		84728D282F76CA3D00498A56 /* CoinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D112F76CA3D00498A56 /* CoinStore.swift */; };
+		84728D292F76CA3D00498A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D122F76CA3D00498A56 /* ContentView.swift */; };
+		84728D2A2F76CA3D00498A56 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D152F76CA3D00498A56 /* DiscoverView.swift */; };
+		84728D2B2F76CA3D00498A56 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D1A2F76CA3D00498A56 /* MainTabView.swift */; };
+		84728D2C2F76CA3D00498A56 /* PrivacyGuardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D1B2F76CA3D00498A56 /* PrivacyGuardView.swift */; };
+		84728D2D2F76CA3D00498A56 /* SavedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D1D2F76CA3D00498A56 /* SavedStore.swift */; };
+		84728D2E2F76CA3D00498A56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D1E2F76CA3D00498A56 /* SettingsView.swift */; };
+		84728D2F2F76CA3D00498A56 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D1F2F76CA3D00498A56 /* StoreManager.swift */; };
+		84728D302F76CA3D00498A56 /* StudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D202F76CA3D00498A56 /* StudioView.swift */; };
+		84728D312F76CA3D00498A56 /* VideoPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D212F76CA3D00498A56 /* VideoPlaybackManager.swift */; };
+		84728D322F76CA3D00498A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84728D0D2F76CA3D00498A56 /* Assets.xcassets */; };
+		84728D332F76CA3D00498A56 /* Celestial Flow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728D0F2F76CA3D00498A56 /* Celestial Flow.mp4 */; };
+		84728D342F76CA3D00498A56 /* Creamr.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 84728D142F76CA3D00498A56 /* Creamr.storekit */; };
+		84728D352F76CA3D00498A56 /* Emerald Echo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728D162F76CA3D00498A56 /* Emerald Echo.mp4 */; };
+		84728D362F76CA3D00498A56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84728D172F76CA3D00498A56 /* GoogleService-Info.plist */; };
+		84728D382F76CA3D00498A56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84728D192F76CA3D00498A56 /* Launch Screen.storyboard */; };
+		84728D392F76CA3D00498A56 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84728D1C2F76CA3D00498A56 /* PrivacyPolicy.txt */; };
+		84728D482F76CB9400498A56 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D472F76CB9400498A56 /* WaitViewController.swift */; };
+		84728D492F76CB9400498A56 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D402F76CB9400498A56 /* AppRequestBaseModel.swift */; };
+		84728D4A2F76CB9400498A56 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D3B2F76CB9400498A56 /* AppAdjustManager.swift */; };
+		84728D4B2F76CB9400498A56 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D422F76CB9400498A56 /* AppWebViewController.swift */; };
+		84728D4C2F76CB9400498A56 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D412F76CB9400498A56 /* AppRequestTool.swift */; };
+		84728D4D2F76CB9400498A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D3D2F76CB9400498A56 /* AppDelegate.swift */; };
+		84728D4E2F76CB9400498A56 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D452F76CB9400498A56 /* LocalPushScheduler.swift */; };
+		84728D4F2F76CB9400498A56 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D462F76CB9400498A56 /* ProgressHUD.swift */; };
+		84728D502F76CB9400498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D442F76CB9400498A56 /* AppWebViewScriptDelegateHandler.swift */; };
+		84728D512F76CB9400498A56 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D432F76CB9400498A56 /* AppWebViewHandleEvent.swift */; };
+		84728D522F76CB9400498A56 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D3C2F76CB9400498A56 /* AppConfig.swift */; };
+		84728D532F76CB9400498A56 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D3E2F76CB9400498A56 /* AppleIAPManager.swift */; };
+		84728D542F76CB9400498A56 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728D3F2F76CB9400498A56 /* AppPermissionTool.swift */; };
+		8F147365262D939D54F7203E /* Pods_creamr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAF585D9289BBFF24E1B4D /* Pods_creamr.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F31108F964B64E26094683F /* Pods-creamr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-creamr.release.xcconfig"; path = "Target Support Files/Pods-creamr/Pods-creamr.release.xcconfig"; sourceTree = "<group>"; };
+		84728CCE2F761B7C00498A56 /* creamr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = creamr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84728CF52F76AA7E00498A56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84728D0B2F76CA3D00498A56 /* ArtChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtChatView.swift; sourceTree = "<group>"; };
+		84728D0C2F76CA3D00498A56 /* ArtGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtGalleryView.swift; sourceTree = "<group>"; };
+		84728D0D2F76CA3D00498A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84728D0E2F76CA3D00498A56 /* AtmosphereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmosphereView.swift; sourceTree = "<group>"; };
+		84728D0F2F76CA3D00498A56 /* Celestial Flow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Celestial Flow.mp4"; sourceTree = "<group>"; };
+		84728D102F76CA3D00498A56 /* CoinShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinShopView.swift; sourceTree = "<group>"; };
+		84728D112F76CA3D00498A56 /* CoinStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStore.swift; sourceTree = "<group>"; };
+		84728D122F76CA3D00498A56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84728D132F76CA3D00498A56 /* creamr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = creamr.entitlements; sourceTree = "<group>"; };
+		84728D142F76CA3D00498A56 /* Creamr.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Creamr.storekit; sourceTree = "<group>"; };
+		84728D152F76CA3D00498A56 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		84728D162F76CA3D00498A56 /* Emerald Echo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Emerald Echo.mp4"; sourceTree = "<group>"; };
+		84728D172F76CA3D00498A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84728D182F76CA3D00498A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84728D192F76CA3D00498A56 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84728D1A2F76CA3D00498A56 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84728D1B2F76CA3D00498A56 /* PrivacyGuardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyGuardView.swift; sourceTree = "<group>"; };
+		84728D1C2F76CA3D00498A56 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		84728D1D2F76CA3D00498A56 /* SavedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStore.swift; sourceTree = "<group>"; };
+		84728D1E2F76CA3D00498A56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84728D1F2F76CA3D00498A56 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84728D202F76CA3D00498A56 /* StudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioView.swift; sourceTree = "<group>"; };
+		84728D212F76CA3D00498A56 /* VideoPlaybackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackManager.swift; sourceTree = "<group>"; };
+		84728D3B2F76CB9400498A56 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84728D3C2F76CB9400498A56 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84728D3D2F76CB9400498A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84728D3E2F76CB9400498A56 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84728D3F2F76CB9400498A56 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84728D402F76CB9400498A56 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84728D412F76CB9400498A56 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84728D422F76CB9400498A56 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84728D432F76CB9400498A56 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84728D442F76CB9400498A56 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84728D452F76CB9400498A56 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84728D462F76CB9400498A56 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84728D472F76CB9400498A56 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		EFDAF585D9289BBFF24E1B4D /* Pods_creamr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_creamr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DCB25CC8D9275D3EE73EC5 /* Pods-creamr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-creamr.debug.xcconfig"; path = "Target Support Files/Pods-creamr/Pods-creamr.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84728CCB2F761B7C00498A56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84728CF62F76AA7E00498A56 /* StoreKit.framework in Frameworks */,
+				8F147365262D939D54F7203E /* Pods_creamr.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84728CC52F761B7C00498A56 = {
+			isa = PBXGroup;
+			children = (
+				84728D222F76CA3D00498A56 /* creamr */,
+				84728CF42F76AA7E00498A56 /* Frameworks */,
+				84728CCF2F761B7C00498A56 /* Products */,
+				946485FB1A99101B1927FD8D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84728CCF2F761B7C00498A56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84728CCE2F761B7C00498A56 /* creamr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84728CF42F76AA7E00498A56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84728CF52F76AA7E00498A56 /* StoreKit.framework */,
+				EFDAF585D9289BBFF24E1B4D /* Pods_creamr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84728D222F76CA3D00498A56 /* creamr */ = {
+			isa = PBXGroup;
+			children = (
+				84728D3A2F76CB6700498A56 /* enjoy */,
+				84728D0B2F76CA3D00498A56 /* ArtChatView.swift */,
+				84728D0C2F76CA3D00498A56 /* ArtGalleryView.swift */,
+				84728D0D2F76CA3D00498A56 /* Assets.xcassets */,
+				84728D0E2F76CA3D00498A56 /* AtmosphereView.swift */,
+				84728D0F2F76CA3D00498A56 /* Celestial Flow.mp4 */,
+				84728D102F76CA3D00498A56 /* CoinShopView.swift */,
+				84728D112F76CA3D00498A56 /* CoinStore.swift */,
+				84728D122F76CA3D00498A56 /* ContentView.swift */,
+				84728D132F76CA3D00498A56 /* creamr.entitlements */,
+				84728D142F76CA3D00498A56 /* Creamr.storekit */,
+				84728D152F76CA3D00498A56 /* DiscoverView.swift */,
+				84728D162F76CA3D00498A56 /* Emerald Echo.mp4 */,
+				84728D172F76CA3D00498A56 /* GoogleService-Info.plist */,
+				84728D182F76CA3D00498A56 /* Info.plist */,
+				84728D192F76CA3D00498A56 /* Launch Screen.storyboard */,
+				84728D1A2F76CA3D00498A56 /* MainTabView.swift */,
+				84728D1B2F76CA3D00498A56 /* PrivacyGuardView.swift */,
+				84728D1C2F76CA3D00498A56 /* PrivacyPolicy.txt */,
+				84728D1D2F76CA3D00498A56 /* SavedStore.swift */,
+				84728D1E2F76CA3D00498A56 /* SettingsView.swift */,
+				84728D1F2F76CA3D00498A56 /* StoreManager.swift */,
+				84728D202F76CA3D00498A56 /* StudioView.swift */,
+				84728D212F76CA3D00498A56 /* VideoPlaybackManager.swift */,
+			);
+			path = creamr;
+			sourceTree = "<group>";
+		};
+		84728D3A2F76CB6700498A56 /* enjoy */ = {
+			isa = PBXGroup;
+			children = (
+				84728D3B2F76CB9400498A56 /* AppAdjustManager.swift */,
+				84728D3C2F76CB9400498A56 /* AppConfig.swift */,
+				84728D3D2F76CB9400498A56 /* AppDelegate.swift */,
+				84728D3E2F76CB9400498A56 /* AppleIAPManager.swift */,
+				84728D3F2F76CB9400498A56 /* AppPermissionTool.swift */,
+				84728D402F76CB9400498A56 /* AppRequestBaseModel.swift */,
+				84728D412F76CB9400498A56 /* AppRequestTool.swift */,
+				84728D422F76CB9400498A56 /* AppWebViewController.swift */,
+				84728D432F76CB9400498A56 /* AppWebViewHandleEvent.swift */,
+				84728D442F76CB9400498A56 /* AppWebViewScriptDelegateHandler.swift */,
+				84728D452F76CB9400498A56 /* LocalPushScheduler.swift */,
+				84728D462F76CB9400498A56 /* ProgressHUD.swift */,
+				84728D472F76CB9400498A56 /* WaitViewController.swift */,
+			);
+			path = enjoy;
+			sourceTree = "<group>";
+		};
+		946485FB1A99101B1927FD8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2DCB25CC8D9275D3EE73EC5 /* Pods-creamr.debug.xcconfig */,
+				0F31108F964B64E26094683F /* Pods-creamr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84728CCD2F761B7C00498A56 /* creamr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84728CD92F761B7E00498A56 /* Build configuration list for PBXNativeTarget "creamr" */;
+			buildPhases = (
+				6573EAA658CF3850BA0EA9C6 /* [CP] Check Pods Manifest.lock */,
+				84728CCA2F761B7C00498A56 /* Sources */,
+				84728CCB2F761B7C00498A56 /* Frameworks */,
+				84728CCC2F761B7C00498A56 /* Resources */,
+				B6E24157B9DB31DA7433AB5F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = creamr;
+			productName = creamr;
+			productReference = 84728CCE2F761B7C00498A56 /* creamr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84728CC62F761B7C00498A56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					84728CCD2F761B7C00498A56 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = 84728CC92F761B7C00498A56 /* Build configuration list for PBXProject "creamr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84728CC52F761B7C00498A56;
+			productRefGroup = 84728CCF2F761B7C00498A56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84728CCD2F761B7C00498A56 /* creamr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84728CCC2F761B7C00498A56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84728D322F76CA3D00498A56 /* Assets.xcassets in Resources */,
+				84728D332F76CA3D00498A56 /* Celestial Flow.mp4 in Resources */,
+				84728D342F76CA3D00498A56 /* Creamr.storekit in Resources */,
+				84728D352F76CA3D00498A56 /* Emerald Echo.mp4 in Resources */,
+				84728D362F76CA3D00498A56 /* GoogleService-Info.plist in Resources */,
+				84728D382F76CA3D00498A56 /* Launch Screen.storyboard in Resources */,
+				84728D392F76CA3D00498A56 /* PrivacyPolicy.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6573EAA658CF3850BA0EA9C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-creamr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6E24157B9DB31DA7433AB5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-creamr/Pods-creamr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-creamr/Pods-creamr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-creamr/Pods-creamr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84728CCA2F761B7C00498A56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84728D242F76CA3D00498A56 /* ArtChatView.swift in Sources */,
+				84728D482F76CB9400498A56 /* WaitViewController.swift in Sources */,
+				84728D492F76CB9400498A56 /* AppRequestBaseModel.swift in Sources */,
+				84728D4A2F76CB9400498A56 /* AppAdjustManager.swift in Sources */,
+				84728D4B2F76CB9400498A56 /* AppWebViewController.swift in Sources */,
+				84728D4C2F76CB9400498A56 /* AppRequestTool.swift in Sources */,
+				84728D4D2F76CB9400498A56 /* AppDelegate.swift in Sources */,
+				84728D4E2F76CB9400498A56 /* LocalPushScheduler.swift in Sources */,
+				84728D4F2F76CB9400498A56 /* ProgressHUD.swift in Sources */,
+				84728D502F76CB9400498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84728D512F76CB9400498A56 /* AppWebViewHandleEvent.swift in Sources */,
+				84728D522F76CB9400498A56 /* AppConfig.swift in Sources */,
+				84728D532F76CB9400498A56 /* AppleIAPManager.swift in Sources */,
+				84728D542F76CB9400498A56 /* AppPermissionTool.swift in Sources */,
+				84728D252F76CA3D00498A56 /* ArtGalleryView.swift in Sources */,
+				84728D262F76CA3D00498A56 /* AtmosphereView.swift in Sources */,
+				84728D272F76CA3D00498A56 /* CoinShopView.swift in Sources */,
+				84728D282F76CA3D00498A56 /* CoinStore.swift in Sources */,
+				84728D292F76CA3D00498A56 /* ContentView.swift in Sources */,
+				84728D2A2F76CA3D00498A56 /* DiscoverView.swift in Sources */,
+				84728D2B2F76CA3D00498A56 /* MainTabView.swift in Sources */,
+				84728D2C2F76CA3D00498A56 /* PrivacyGuardView.swift in Sources */,
+				84728D2D2F76CA3D00498A56 /* SavedStore.swift in Sources */,
+				84728D2E2F76CA3D00498A56 /* SettingsView.swift in Sources */,
+				84728D2F2F76CA3D00498A56 /* StoreManager.swift in Sources */,
+				84728D302F76CA3D00498A56 /* StudioView.swift in Sources */,
+				84728D312F76CA3D00498A56 /* VideoPlaybackManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84728CD72F761B7E00498A56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84728CD82F761B7E00498A56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84728CDA2F761B7E00498A56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2DCB25CC8D9275D3EE73EC5 /* Pods-creamr.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = creamr/creamr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = creamr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Creamr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Creamr uses your camera to capture photos for real-time artistic stylization.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Creamr uses your microphone for audio processing during interactive art experiences.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Creamr uses your photo library to select images for applying artistic filters in the Art Studio.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.creamr.enjoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84728CDB2F761B7E00498A56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F31108F964B64E26094683F /* Pods-creamr.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = creamr/creamr.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = creamr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Creamr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Creamr uses your camera to capture photos for real-time artistic stylization.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Creamr uses your microphone for audio processing during interactive art experiences.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Creamr uses your photo library to select images for applying artistic filters in the Art Studio.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.creamr.enjoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84728CC92F761B7C00498A56 /* Build configuration list for PBXProject "creamr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84728CD72F761B7E00498A56 /* Debug */,
+				84728CD82F761B7E00498A56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84728CD92F761B7E00498A56 /* Build configuration list for PBXNativeTarget "creamr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84728CDA2F761B7E00498A56 /* Debug */,
+				84728CDB2F761B7E00498A56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84728CC62F761B7C00498A56 /* Project object */;
+}
