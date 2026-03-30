@@ -537,15 +537,15 @@ struct DancerDetailView: View {
                         Spacer()
                         
                         // Favorites heart button
-                        Button(action: {
-                            SettingsManager.shared.toggleFavorite(dancer.title)
-                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                        }) {
-                            Image(systemName: SettingsManager.shared.isFavorite(dancer.title) ? "heart.fill" : "heart")
-                                .font(.system(size: 24))
-                                .foregroundColor(SettingsManager.shared.isFavorite(dancer.title) ? .red : .gray)
-                        }
-                        .padding(.trailing, 10)
+//                        Button(action: {
+//                            SettingsManager.shared.toggleFavorite(dancer.title)
+//                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+//                        }) {
+//                            Image(systemName: SettingsManager.shared.isFavorite(dancer.title) ? "heart.fill" : "heart")
+//                                .font(.system(size: 24))
+//                                .foregroundColor(SettingsManager.shared.isFavorite(dancer.title) ? .red : .gray)
+//                        }
+//                        .padding(.trailing, 10)
                         
                         Button(action: { showReport = true }) {
                             HStack(spacing: 4) {
@@ -1609,14 +1609,18 @@ struct CoinShopView: View {
                         // Fallback static UI for demo/review
                         ForEach(fallbackBundles, id: \.1) { bundle in
                             BundleRow(title: bundle.0, price: bundle.2, action: {
+                                // Immediate haptic feedback
+                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                                 // Simulate purchase for review
                                 settings.coinBalance += StoreManager.shared.coinMap[bundle.1] ?? 0
-                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
                             })
                         }
                     } else {
                         ForEach(store.myProducts, id: \.productIdentifier) { product in
                             BundleRow(title: product.localizedTitle, price: product.price.description, action: {
+                                // Immediate haptic feedback
+                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                                // Start Purchase
                                 store.purchaseProduct(product: product)
                             })
                         }
@@ -1625,7 +1629,6 @@ struct CoinShopView: View {
                 .padding()
             }
             
-            // Footer
             VStack {
                 Text("Purchases are linked to your Apple ID and can be restored at any time.")
                     .font(.caption)
@@ -1641,6 +1644,12 @@ struct CoinShopView: View {
                 Text("\(settings.coinBalance)").font(.headline).foregroundColor(.orange)
             }
         )
+        .alert(isPresented: $store.showError) {
+            Alert(title: Text("Notice"), message: Text(store.errorMessage), dismissButton: .default(Text("OK")))
+        }
+        .onAppear {
+            store.fetchProducts()
+        }
     }
 }
 
@@ -1677,6 +1686,7 @@ struct BundleRow: View {
             }
             .padding(4)
             .background(Color.gray.opacity(0.05))
+            .contentShape(Rectangle()) // Ensure entire row is tappable
             .cornerRadius(15)
         }
         .buttonStyle(PlainButtonStyle())

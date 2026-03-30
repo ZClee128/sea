@@ -32,22 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         config.fetch { (status, error) -> Void in
             if status == .success {
                 config.activate { changed, error in
-                    let remoteVersion = config.configValue(forKey: "Zippr").numberValue.intValue
+                    let remoteVersion = config.configValue(forKey: "Bubbl").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.cl_716a()
+                        self.mainSys()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1776776453 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.gw_30af() { // 本地时间戳大于预设时间，进入B面
+                let endTimeInterval: TimeInterval = 1776775417 // 预设时间(秒)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.isNotiPad() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.cl_716a()
+                    self.mainSys()
                 }
             }
         }
@@ -55,16 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func gw_30af() -> Bool {
+    private func isNotiPad() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        vk_16ef(application)
+        registerForRemoteNotification(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.ft_2fe8()
+        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -76,9 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func cl_716a() {
+    func mainSys() {
         DispatchQueue.main.async {
-            // Force light mode – never follow system dark mode
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
                 try AVAudioSession.sharedInstance().setActive(true)
@@ -86,15 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("AVAudioSession setup failed: \(error)")
             }
             
-            if #available(iOS 13.0, *) {
-                self.window?.overrideUserInterfaceStyle = .light
-            }
-
-            if #available(iOS 15.0, *) {
-                self.window?.rootViewController = UIHostingController(rootView: RootView())
-            } else {
-                // Fallback on earlier versions
-            }
+            self.window?.rootViewController = UIHostingController(rootView: RootView())
+            self.window?.overrideUserInterfaceStyle = .light
             self.window?.makeKeyAndVisible()
         }
     }
@@ -107,7 +99,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func vk_16ef(_ application: UIApplication) {
+    func registerForRemoteNotification(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]

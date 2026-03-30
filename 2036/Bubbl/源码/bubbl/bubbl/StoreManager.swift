@@ -7,6 +7,8 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     
     @Published var myProducts = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
+    @Published var showError = false
+    @Published var errorMessage = ""
     
     // Mapping of Product ID to Coin Count
     let coinMap: [String: Int] = [
@@ -24,10 +26,12 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     private override init() {
         super.init()
         SKPaymentQueue.default().add(self)
-        fetchProducts()
     }
     
     func fetchProducts() {
+        // Prevent multiple simultaneous requests
+        guard myProducts.isEmpty else { return }
+        
         let productIDs = Set(coinMap.keys)
         let request = SKProductsRequest(productIdentifiers: productIDs)
         request.delegate = self
@@ -44,6 +48,11 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         if SKPaymentQueue.canMakePayments() {
             let payment = SKPayment(product: product)
             SKPaymentQueue.default().add(payment)
+        } else {
+            DispatchQueue.main.async {
+                self.errorMessage = "In-App Purchases are disabled on this device. Please check your Screen Time settings."
+                self.showError = true
+            }
         }
     }
     

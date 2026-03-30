@@ -3,32 +3,6 @@ import SwiftUI
 import Combine
 import AVFoundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Configure audio session to support background playback
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("AVAudioSession setup failed: \(error)")
-        }
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: RootView())
-        window.overrideUserInterfaceStyle = .light
-        
-        self.window = window
-        window.makeKeyAndVisible()
-        
-        return true
-    }
-}
-
 // iOS 13 compatible UserDefaults publisher to act as @AppStorage
 class PrivacyManager: ObservableObject {
     static let shared = PrivacyManager()
