@@ -1,0 +1,105 @@
+PRIVACY POLICY
+
+Zippr
+Version 1.0.0
+Effective Date: March 30, 2026
+
+─────────────────────────────────────────
+1. INTRODUCTION
+─────────────────────────────────────────
+
+Welcome to Zippr ("the App"), a fitness and body sculpting lifestyle application. This Privacy Policy explains how we handle information when you use our App. We are committed to protecting your privacy and being transparent about our practices.
+
+─────────────────────────────────────────
+2. INFORMATION WE COLLECT
+─────────────────────────────────────────
+
+Zippr is designed with privacy at its core. We do NOT collect, store, or transmit any personally identifiable information (PII).
+
+What the App stores LOCALLY on your device only:
+• Your favorite content items (stored using UserDefaults)
+• Your workout history and progress check-ins (stored using UserDefaults)
+• Your app preferences and settings (stored using UserDefaults)
+• Your privacy policy agreement status
+
+None of this data leaves your device. We have no servers, no databases, and no backend services that receive your personal data.
+
+─────────────────────────────────────────
+3. DATA WE DO NOT COLLECT
+─────────────────────────────────────────
+
+We do NOT collect:
+• Your name, email address, phone number, or any contact information
+• Your location data or GPS coordinates
+• Your camera or microphone data
+• Your device identifiers (IDFA, IDFV, or similar)
+• Your health or fitness data from HealthKit
+• Your payment information
+• Your browsing history or usage analytics
+• Any biometric data
+
+─────────────────────────────────────────
+4. NO ACCOUNT SYSTEM
+─────────────────────────────────────────
+
+Zippr does not require you to create an account, register, or log in. You can use all features of the App without providing any personal information.
+
+─────────────────────────────────────────
+5. THIRD-PARTY SERVICES
+─────────────────────────────────────────
+
+Zippr does not integrate any third-party analytics, advertising networks, or tracking SDKs.
+
+The App uses Apple's built-in frameworks (AVKit for video playback, SwiftUI for user interface) which are governed by Apple's own Privacy Policy available at https://www.apple.com/legal/privacy/.
+
+─────────────────────────────────────────
+6. CHILDREN'S PRIVACY
+─────────────────────────────────────────
+
+Zippr is intended for users aged 17 and older. We do not knowingly collect any information from children under the age of 13. If you are a parent or guardian and believe your child has used the App, please be assured that no personal data is collected.
+
+─────────────────────────────────────────
+7. DATA SECURITY
+─────────────────────────────────────────
+
+Since all data is stored locally on your device and we collect no personal information, your data security is governed by your device's own security features (Face ID, Touch ID, passcode, etc.). We recommend keeping your iOS software up to date for maximum security.
+
+─────────────────────────────────────────
+8. YOUR RIGHTS
+─────────────────────────────────────────
+
+Since we do not collect any personal data, there is no personal data to access, correct, or delete on our end. All locally stored preferences can be cleared by uninstalling the App from your device.
+
+─────────────────────────────────────────
+9. CHANGES TO THIS PRIVACY POLICY
+─────────────────────────────────────────
+
+We may update this Privacy Policy from time to time. Any changes will be reflected in the updated version available within the App. The "Effective Date" at the top of this policy indicates when it was last revised. Continued use of the App after changes constitutes your acceptance of the updated policy.
+
+─────────────────────────────────────────
+10. CONTACT US
+─────────────────────────────────────────
+
+If you have any questions or concerns about this Privacy Policy or the App's practices, please contact us at:
+
+Email: tranminhanh0189@icloud.com
+
+We will respond to your inquiry within 5 business days.
+
+─────────────────────────────────────────
+11. CALIFORNIA PRIVACY RIGHTS (CCPA)
+─────────────────────────────────────────
+
+If you are a California resident, you have specific rights regarding your personal information under the California Consumer Privacy Act (CCPA). Since Zippr does not collect, sell, or share any personal information, all CCPA rights are inherently satisfied. We do not sell your personal data to anyone.
+
+─────────────────────────────────────────
+12. GDPR (FOR EUROPEAN USERS)
+─────────────────────────────────────────
+
+If you are located in the European Economic Area (EEA), you have rights under the General Data Protection Regulation (GDPR). Since we do not collect or process any personal data, there is no lawful basis for processing to declare, no data retention period to specify, and no data transfers to third countries to disclose.
+
+─────────────────────────────────────────
+
+By using Zippr, you acknowledge that you have read, understood, and agree to this Privacy Policy.
+
+© 2026 Zippr. All rights reserved.

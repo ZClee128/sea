@@ -1,6 +1,0 @@
-framework module Pods_mexo {
-  umbrella header "Pods-mexo-umbrella.h"
-
-  export *
-  module * { export * }
-}

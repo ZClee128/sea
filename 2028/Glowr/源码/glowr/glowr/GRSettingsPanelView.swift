@@ -86,7 +86,7 @@ struct GRSettingsPanelView: View {
                             Text("Version")
                                 .foregroundColor(.black)
                             Spacer()
-                            Text("1.0.0")
+                            Text("1.1.0")
                                 .foregroundColor(.gray)
                         }
                         

@@ -1,0 +1,6 @@
+framework module Pods_zippr {
+  umbrella header "Pods-zippr-umbrella.h"
+
+  export *
+  module * { export * }
+}
