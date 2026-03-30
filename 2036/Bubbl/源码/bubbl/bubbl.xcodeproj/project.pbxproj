@@ -3,38 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75F18A15A66C5AE71CD5B949 /* Pods_bubbl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C415572727CE3D6F1772EC /* Pods_bubbl.framework */; };
 		84728E492F7A759200498A56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84728E482F7A759200498A56 /* StoreKit.framework */; };
+		84728E602F7AB6C400498A56 /* 7526246155546545422.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728E582F7AB6C400498A56 /* 7526246155546545422.mp4 */; };
+		84728E612F7AB6C400498A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84728E592F7AB6C400498A56 /* Assets.xcassets */; };
+		84728E632F7AB6C400498A56 /* bubblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E5B2F7AB6C400498A56 /* bubblApp.swift */; };
+		84728E642F7AB6C400498A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E5C2F7AB6C400498A56 /* ContentView.swift */; };
+		84728E652F7AB6C400498A56 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E5E2F7AB6C400498A56 /* StoreManager.swift */; };
+		84728E672F7AB7C100498A56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84728E662F7AB7C100498A56 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84728E372F7A752F00498A56 /* bubbl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bubbl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84728E482F7A759200498A56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84728E582F7AB6C400498A56 /* 7526246155546545422.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7526246155546545422.mp4; sourceTree = "<group>"; };
+		84728E592F7AB6C400498A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84728E5A2F7AB6C400498A56 /* bubbl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bubbl.entitlements; sourceTree = "<group>"; };
+		84728E5B2F7AB6C400498A56 /* bubblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bubblApp.swift; sourceTree = "<group>"; };
+		84728E5C2F7AB6C400498A56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84728E5D2F7AB6C400498A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84728E5E2F7AB6C400498A56 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84728E662F7AB7C100498A56 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		961B4569E8C14D88805B6F99 /* Pods-bubbl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bubbl.release.xcconfig"; path = "Target Support Files/Pods-bubbl/Pods-bubbl.release.xcconfig"; sourceTree = "<group>"; };
+		C88F36CD5ACC0D43F8487A1F /* Pods-bubbl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bubbl.debug.xcconfig"; path = "Target Support Files/Pods-bubbl/Pods-bubbl.debug.xcconfig"; sourceTree = "<group>"; };
+		D4C415572727CE3D6F1772EC /* Pods_bubbl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bubbl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84728E462F7A757C00498A56 /* Exceptions for "bubbl" folder in "bubbl" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 84728E362F7A752F00498A56 /* bubbl */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84728E392F7A752F00498A56 /* bubbl */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84728E462F7A757C00498A56 /* Exceptions for "bubbl" folder in "bubbl" target */,
-			);
-			path = bubbl;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84728E342F7A752F00498A56 /* Frameworks */ = {
@@ -42,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84728E492F7A759200498A56 /* StoreKit.framework in Frameworks */,
+				75F18A15A66C5AE71CD5B949 /* Pods_bubbl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +49,10 @@
 		84728E2E2F7A752F00498A56 = {
 			isa = PBXGroup;
 			children = (
-				84728E392F7A752F00498A56 /* bubbl */,
+				84728E5F2F7AB6C400498A56 /* bubbl */,
 				84728E472F7A759200498A56 /* Frameworks */,
 				84728E382F7A752F00498A56 /* Products */,
+				B01DF7EC44598C27FB68A805 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +68,34 @@
 			isa = PBXGroup;
 			children = (
 				84728E482F7A759200498A56 /* StoreKit.framework */,
+				D4C415572727CE3D6F1772EC /* Pods_bubbl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84728E5F2F7AB6C400498A56 /* bubbl */ = {
+			isa = PBXGroup;
+			children = (
+				84728E582F7AB6C400498A56 /* 7526246155546545422.mp4 */,
+				84728E592F7AB6C400498A56 /* Assets.xcassets */,
+				84728E5A2F7AB6C400498A56 /* bubbl.entitlements */,
+				84728E5B2F7AB6C400498A56 /* bubblApp.swift */,
+				84728E5C2F7AB6C400498A56 /* ContentView.swift */,
+				84728E5D2F7AB6C400498A56 /* Info.plist */,
+				84728E5E2F7AB6C400498A56 /* StoreManager.swift */,
+				84728E662F7AB7C100498A56 /* Launch Screen.storyboard */,
+			);
+			path = bubbl;
+			sourceTree = "<group>";
+		};
+		B01DF7EC44598C27FB68A805 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C88F36CD5ACC0D43F8487A1F /* Pods-bubbl.debug.xcconfig */,
+				961B4569E8C14D88805B6F99 /* Pods-bubbl.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,20 +105,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84728E422F7A753000498A56 /* Build configuration list for PBXNativeTarget "bubbl" */;
 			buildPhases = (
+				E49ED783B7DB3C8C19479A8C /* [CP] Check Pods Manifest.lock */,
 				84728E332F7A752F00498A56 /* Sources */,
 				84728E342F7A752F00498A56 /* Frameworks */,
 				84728E352F7A752F00498A56 /* Resources */,
+				994358ECC963442D6AAE0689 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84728E392F7A752F00498A56 /* bubbl */,
-			);
 			name = bubbl;
-			packageProductDependencies = (
-			);
 			productName = bubbl;
 			productReference = 84728E372F7A752F00498A56 /* bubbl.app */;
 			productType = "com.apple.product-type.application";
@@ -121,8 +143,6 @@
 				Base,
 			);
 			mainGroup = 84728E2E2F7A752F00498A56;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84728E382F7A752F00498A56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,16 +157,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84728E672F7AB7C100498A56 /* Launch Screen.storyboard in Resources */,
+				84728E602F7AB6C400498A56 /* 7526246155546545422.mp4 in Resources */,
+				84728E612F7AB6C400498A56 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		994358ECC963442D6AAE0689 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bubbl/Pods-bubbl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bubbl/Pods-bubbl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bubbl/Pods-bubbl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E49ED783B7DB3C8C19479A8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bubbl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84728E332F7A752F00498A56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84728E632F7AB6C400498A56 /* bubblApp.swift in Sources */,
+				84728E642F7AB6C400498A56 /* ContentView.swift in Sources */,
+				84728E652F7AB6C400498A56 /* StoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -262,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -274,6 +342,7 @@
 		};
 		84728E432F7A753000498A56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C88F36CD5ACC0D43F8487A1F /* Pods-bubbl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -281,11 +350,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bubbl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bubbl;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -312,6 +388,7 @@
 		};
 		84728E442F7A753000498A56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 961B4569E8C14D88805B6F99 /* Pods-bubbl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -319,11 +396,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bubbl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bubbl;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
