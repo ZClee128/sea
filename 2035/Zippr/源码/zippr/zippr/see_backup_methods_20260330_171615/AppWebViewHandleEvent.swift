@@ -62,7 +62,7 @@ struct UserInfoModel: HandyJSON {
 }
 
 extension AppWebViewController {
-    func uh_0b78(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
+    func handleH5Message(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
         if let model = JSMessageModel.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
@@ -108,14 +108,14 @@ extension AppWebViewController {
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.wn_4ec6(productId: goodsId, source: source, payType: .Pay) { success in
+                    self.applePay(productId: goodsId, source: source, payType: .Pay) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.wn_4ec6(productId: goodsId, payType: .Subscribe) { success in
+                    self.applePay(productId: goodsId, payType: .Subscribe) { success in
                         callBack(["typeName": model.typeName, "status": success])
                     }
                 }
@@ -140,7 +140,7 @@ extension AppWebViewController {
                 
             case reloadWebview:
                 callBack(["typeName": model.typeName])
-                self.qn_417e()
+                self.reloadWebView()
             
             case openSettings:
                 callBack(["typeName": model.typeName])
@@ -319,13 +319,13 @@ extension AppWebViewController {
     /// - Parameters:
     ///   - productId: productId: 商品Id
     ///   - source: 充值来源
-    func wn_4ec6(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
+    func applePay(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
         ProgressHUD.show()
         var index = 0
         if source != -1 {
             index = source
         }
-        AppleIAPManager.shared.va_0497(productId: productId, payType: payType, source: index) { status, _, _ in
+        AppleIAPManager.shared.iap_startPurchase(productId: productId, payType: payType, source: index) { status, _, _ in
             ProgressHUD.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
@@ -335,7 +335,7 @@ extension AppWebViewController {
                     
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.ja_3024()
+                    self.third_jsEvent_refreshCoin()
                     
                 default:
                     print(" apple支付充值失败：\(status.rawValue)")
