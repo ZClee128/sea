@@ -53,9 +53,9 @@ class LabDataStore {
     ]
     
     static let poses: [PoseSkeleton] = [
-        PoseSkeleton(title: "The S-Curve", description: "Elegant curvature of the spine for fashion shots.", imageUrl: "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?w=400&h=400&fit=crop"),
-        PoseSkeleton(title: "Power Stance", description: "Symmetrical and strong, perfect for urban aesthetics.", imageUrl: "https://images.pexels.com/photos/1515886/pexels-photo-1515886.jpeg?w=400&h=400&fit=crop"),
-        PoseSkeleton(title: "Floating Gaze", description: "Minimalist and dreamy, focusing on the profile.", imageUrl: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?w=400&h=400&fit=crop")
+        PoseSkeleton(title: "The S-Curve", description: "Elegant curvature of the spine for fashion shots.", imageUrl: "The S-Curve"),
+        PoseSkeleton(title: "Power Stance", description: "Symmetrical and strong, perfect for urban aesthetics.", imageUrl: "Power Stance"),
+        PoseSkeleton(title: "Floating Gaze", description: "Minimalist and dreamy, focusing on the profile.", imageUrl: "Floating Gaze")
     ]
 }
 

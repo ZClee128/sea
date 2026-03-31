@@ -72,20 +72,17 @@ struct MuseCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack(alignment: .bottomTrailing) {
-                AsyncImage(url: URL(string: muse.imageUrl)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 220)
-                        .clipped()
-                } placeholder: {
-                    Rectangle()
-                        .fill(Color.white.opacity(0.05))
-                        .frame(height: 220)
-                        .overlay(ProgressView().tint(.white))
-                }
-                .cornerRadius(16)
+                Image(muse.imageUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(height: 220)
+                    .clipped()
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                    )
                 
                 if muse.videoUrl != nil {
                     Image(systemName: "video.fill")

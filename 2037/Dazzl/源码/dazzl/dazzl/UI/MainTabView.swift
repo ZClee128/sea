@@ -7,13 +7,11 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             FeedView()
-                .environmentObject(dataStore)
                 .tabItem {
                     Label("Discover", systemImage: "sparkles")
                 }
             
             StyleLabView()
-                .environmentObject(dataStore)
                 .tabItem {
                     Label("Style Lab", systemImage: "chart.bar.doc.horizontal")
                 }
@@ -23,7 +21,8 @@ struct MainTabView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .accentColor(.white) // Make the icons pop against dark background
+        .environmentObject(dataStore)
+        .accentColor(.white)
         .onAppear {
             // Force TabBar appearance
             UITabBar.appearance().barTintColor = .black

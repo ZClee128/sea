@@ -11,8 +11,10 @@ struct VideoReelView: View {
             Color.black.ignoresSafeArea()
             
             if let firstMuse = dataStore.muses.first(where: { $0.videoUrl != nil }) {
-                VideoPlayerWrapper(url: URL(string: firstMuse.videoUrl!)!)
+                VideoPlayerWrapper(name: firstMuse.videoUrl!, museID: firstMuse.id)
                     .ignoresSafeArea()
+                    .onAppear { dataStore.activeVideoID = firstMuse.id }
+                    .onDisappear { dataStore.activeVideoID = nil }
                 
                 VStack {
                     Spacer()
@@ -65,24 +67,106 @@ struct ActionButton: View {
 }
 
 struct VideoPlayerWrapper: UIViewControllerRepresentable {
-    let url: URL
+    let name: String
+    let museID: UUID
+    var isPlaying: Bool = true
+    var player: AVPlayer? = nil // Optional shared player
+    @EnvironmentObject var dataStore: MuseDataStore
+    
+    class Coordinator: NSObject {
+        var player: AVPlayer?
+        var loopObserver: NSObjectProtocol? // Token for looping observer
+        weak var dataStore: MuseDataStore?
+        var museID: UUID?
+        var isPlaying: Bool = true
+        var isBackgroundPlayEnabled: Bool = true
+        
+        @objc func handleBackground() {
+            if !isBackgroundPlayEnabled {
+                player?.pause()
+            }
+        }
+        
+        @objc func handleForeground() {
+            guard let ds = dataStore, let mid = museID else { return }
+            let shouldPlay = isPlaying && (ds.activeVideoID == mid)
+            if shouldPlay {
+                player?.play()
+            }
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {
         let controller = AVPlayerViewController()
-        let player = AVPlayer(url: url)
-        controller.player = player
-        controller.showsPlaybackControls = false
-        controller.videoGravity = .resizeAspectFill
-        player.play()
+        context.coordinator.isBackgroundPlayEnabled = dataStore.isBackgroundPlayEnabled
+        context.coordinator.dataStore = dataStore
+        context.coordinator.museID = museID
+        context.coordinator.isPlaying = isPlaying
         
-        // Loop video
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
-            player.seek(to: .zero)
+        // Use the provided shared player or create a new one
+        let currentPlayer: AVPlayer?
+        if let sharedPlayer = player {
+            currentPlayer = sharedPlayer
+        } else if let path = Bundle.main.path(forResource: name, ofType: "mp4") {
+            let url = URL(fileURLWithPath: path)
+            currentPlayer = AVPlayer(url: url)
+        } else {
+            currentPlayer = nil
+        }
+        
+        if let player = currentPlayer {
+            context.coordinator.player = player
+            controller.player = player
+            controller.showsPlaybackControls = true
+            controller.videoGravity = .resizeAspectFill
             player.play()
+            
+            // Looping observer with weak reference
+            let token = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak player] _ in
+                player?.seek(to: .zero)
+                player?.play()
+            }
+            context.coordinator.loopObserver = token
+            
+            // Background / Foreground observers
+            NotificationCenter.default.addObserver(context.coordinator, selector: #selector(Coordinator.handleBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+            NotificationCenter.default.addObserver(context.coordinator, selector: #selector(Coordinator.handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         }
         
         return controller
     }
     
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
+        context.coordinator.isBackgroundPlayEnabled = dataStore.isBackgroundPlayEnabled
+        context.coordinator.isPlaying = isPlaying
+        
+        let shouldPlay = isPlaying && (dataStore.activeVideoID == museID)
+        
+        if shouldPlay {
+            uiViewController.player?.play()
+        } else {
+            uiViewController.player?.pause()
+        }
+    }
+    
+    static func dismantleUIViewController(_ uiViewController: AVPlayerViewController, coordinator: Coordinator) {
+        // Explicitly clear observers and items to prevent leaks or freezes
+        if let token = coordinator.loopObserver {
+            NotificationCenter.default.removeObserver(token)
+            coordinator.loopObserver = nil
+        }
+        
+        uiViewController.player?.pause()
+        uiViewController.player?.replaceCurrentItem(with: nil) // Break item link
+        uiViewController.player = nil
+        
+        coordinator.player?.pause()
+        coordinator.player = nil
+        
+        NotificationCenter.default.removeObserver(coordinator)
+    }
 }

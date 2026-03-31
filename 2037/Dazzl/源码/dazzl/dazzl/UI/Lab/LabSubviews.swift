@@ -126,19 +126,17 @@ struct PoseGeometryView: View {
                     
                     ForEach(LabDataStore.poses) { pose in
                         VStack(alignment: .leading, spacing: 15) {
-                            AsyncImage(url: URL(string: pose.imageUrl)) { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fill)
-                            } placeholder: {
-                                Color.white.opacity(0.1)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 250)
-                            .cornerRadius(12)
-                            .overlay(
-                                // Simulated line art overlay
-                                Color.blue.opacity(0.1)
-                            )
+                            Image(pose.imageUrl)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 250)
+                                .cornerRadius(12)
+                                .background(Color.white.opacity(0.1))
+                                .overlay(
+                                    // Simulated line art overlay
+                                    Color.blue.opacity(0.1)
+                                )
                             
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(pose.title)

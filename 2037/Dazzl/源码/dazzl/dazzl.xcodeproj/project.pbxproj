@@ -3,38 +3,103 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		84728EA02F7B692D00498A56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84728E9F2F7B692D00498A56 /* StoreKit.framework */; };
+		84728EF82F7BA38300498A56 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728ED72F7BA38300498A56 /* ChatModel.swift */; };
+		84728EF92F7BA38300498A56 /* ExpertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728ED82F7BA38300498A56 /* ExpertModel.swift */; };
+		84728EFA2F7BA38300498A56 /* LabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728ED92F7BA38300498A56 /* LabData.swift */; };
+		84728EFB2F7BA38300498A56 /* MuseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EDA2F7BA38300498A56 /* MuseModel.swift */; };
+		84728EFC2F7BA38300498A56 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EDB2F7BA38300498A56 /* StoreManager.swift */; };
+		84728EFD2F7BA38300498A56 /* LabSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EDD2F7BA38300498A56 /* LabSubviews.swift */; };
+		84728EFE2F7BA38300498A56 /* ProTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EDE2F7BA38300498A56 /* ProTipsView.swift */; };
+		84728EFF2F7BA38300498A56 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE02F7BA38300498A56 /* AppTheme.swift */; };
+		84728F002F7BA38300498A56 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE12F7BA38300498A56 /* ChatView.swift */; };
+		84728F012F7BA38300498A56 /* CoinShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE22F7BA38300498A56 /* CoinShopView.swift */; };
+		84728F022F7BA38300498A56 /* ExpertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE32F7BA38300498A56 /* ExpertListView.swift */; };
+		84728F032F7BA38300498A56 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE42F7BA38300498A56 /* FeedView.swift */; };
+		84728F042F7BA38300498A56 /* LaunchCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE52F7BA38300498A56 /* LaunchCoordinatorView.swift */; };
+		84728F052F7BA38300498A56 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE62F7BA38300498A56 /* MainTabView.swift */; };
+		84728F062F7BA38300498A56 /* MuseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE72F7BA38300498A56 /* MuseDetailView.swift */; };
+		84728F072F7BA38300498A56 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE82F7BA38300498A56 /* ReportView.swift */; };
+		84728F082F7BA38300498A56 /* SavedMusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EE92F7BA38300498A56 /* SavedMusesView.swift */; };
+		84728F092F7BA38300498A56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EEA2F7BA38300498A56 /* SettingsView.swift */; };
+		84728F0A2F7BA38300498A56 /* StyleLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EEB2F7BA38300498A56 /* StyleLabView.swift */; };
+		84728F0B2F7BA38300498A56 /* VideoReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EEC2F7BA38300498A56 /* VideoReelView.swift */; };
+		84728F0D2F7BA38300498A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728EF12F7BA38300498A56 /* ContentView.swift */; };
+		84728F0E2F7BA38300498A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84728EEF2F7BA38300498A56 /* Assets.xcassets */; };
+		84728F0F2F7BA38300498A56 /* Aura.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728EF02F7BA38300498A56 /* Aura.mp4 */; };
+		84728F112F7BA38300498A56 /* Kodak.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728EF42F7BA38300498A56 /* Kodak.mp4 */; };
+		84728F122F7BA38300498A56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84728EF52F7BA38300498A56 /* Launch Screen.storyboard */; };
+		84728F132F7BA38300498A56 /* Privacy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84728EF62F7BA38300498A56 /* Privacy.txt */; };
+		84728F152F7BA41B00498A56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84728F142F7BA41B00498A56 /* GoogleService-Info.plist */; };
+		84728F242F7BA43500498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F202F7BA43500498A56 /* AppWebViewScriptDelegateHandler.swift */; };
+		84728F252F7BA43500498A56 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F172F7BA43500498A56 /* AppAdjustManager.swift */; };
+		84728F262F7BA43500498A56 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1B2F7BA43500498A56 /* AppPermissionTool.swift */; };
+		84728F272F7BA43500498A56 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F232F7BA43500498A56 /* WaitViewController.swift */; };
+		84728F282F7BA43500498A56 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F212F7BA43500498A56 /* LocalPushScheduler.swift */; };
+		84728F292F7BA43500498A56 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F182F7BA43500498A56 /* AppConfig.swift */; };
+		84728F2A2F7BA43500498A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F192F7BA43500498A56 /* AppDelegate.swift */; };
+		84728F2B2F7BA43500498A56 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1C2F7BA43500498A56 /* AppRequestBaseModel.swift */; };
+		84728F2C2F7BA43500498A56 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F222F7BA43500498A56 /* ProgressHUD.swift */; };
+		84728F2D2F7BA43500498A56 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1D2F7BA43500498A56 /* AppRequestTool.swift */; };
+		84728F2E2F7BA43500498A56 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1F2F7BA43500498A56 /* AppWebViewHandleEvent.swift */; };
+		84728F2F2F7BA43500498A56 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1A2F7BA43500498A56 /* AppleIAPManager.swift */; };
+		84728F302F7BA43500498A56 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728F1E2F7BA43500498A56 /* AppWebViewController.swift */; };
+		E478BC4705C34E3E1F5EDB37 /* Pods_dazzl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5337812B40DF84C7F203AA3F /* Pods_dazzl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5337812B40DF84C7F203AA3F /* Pods_dazzl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dazzl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA3A751758CBA67635635A1 /* Pods-dazzl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dazzl.debug.xcconfig"; path = "Target Support Files/Pods-dazzl/Pods-dazzl.debug.xcconfig"; sourceTree = "<group>"; };
 		84728E8E2F7B68F000498A56 /* dazzl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dazzl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84728E9F2F7B692D00498A56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84728ED72F7BA38300498A56 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		84728ED82F7BA38300498A56 /* ExpertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertModel.swift; sourceTree = "<group>"; };
+		84728ED92F7BA38300498A56 /* LabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabData.swift; sourceTree = "<group>"; };
+		84728EDA2F7BA38300498A56 /* MuseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseModel.swift; sourceTree = "<group>"; };
+		84728EDB2F7BA38300498A56 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84728EDD2F7BA38300498A56 /* LabSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabSubviews.swift; sourceTree = "<group>"; };
+		84728EDE2F7BA38300498A56 /* ProTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProTipsView.swift; sourceTree = "<group>"; };
+		84728EE02F7BA38300498A56 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		84728EE12F7BA38300498A56 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		84728EE22F7BA38300498A56 /* CoinShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinShopView.swift; sourceTree = "<group>"; };
+		84728EE32F7BA38300498A56 /* ExpertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertListView.swift; sourceTree = "<group>"; };
+		84728EE42F7BA38300498A56 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		84728EE52F7BA38300498A56 /* LaunchCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinatorView.swift; sourceTree = "<group>"; };
+		84728EE62F7BA38300498A56 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84728EE72F7BA38300498A56 /* MuseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseDetailView.swift; sourceTree = "<group>"; };
+		84728EE82F7BA38300498A56 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		84728EE92F7BA38300498A56 /* SavedMusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusesView.swift; sourceTree = "<group>"; };
+		84728EEA2F7BA38300498A56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84728EEB2F7BA38300498A56 /* StyleLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLabView.swift; sourceTree = "<group>"; };
+		84728EEC2F7BA38300498A56 /* VideoReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoReelView.swift; sourceTree = "<group>"; };
+		84728EEF2F7BA38300498A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84728EF02F7BA38300498A56 /* Aura.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aura.mp4; sourceTree = "<group>"; };
+		84728EF12F7BA38300498A56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84728EF22F7BA38300498A56 /* dazzl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dazzl.entitlements; sourceTree = "<group>"; };
+		84728EF32F7BA38300498A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84728EF42F7BA38300498A56 /* Kodak.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kodak.mp4; sourceTree = "<group>"; };
+		84728EF52F7BA38300498A56 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84728EF62F7BA38300498A56 /* Privacy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Privacy.txt; sourceTree = "<group>"; };
+		84728F142F7BA41B00498A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84728F172F7BA43500498A56 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84728F182F7BA43500498A56 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84728F192F7BA43500498A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84728F1A2F7BA43500498A56 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84728F1B2F7BA43500498A56 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84728F1C2F7BA43500498A56 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84728F1D2F7BA43500498A56 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84728F1E2F7BA43500498A56 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84728F1F2F7BA43500498A56 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84728F202F7BA43500498A56 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84728F212F7BA43500498A56 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84728F222F7BA43500498A56 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84728F232F7BA43500498A56 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		E482B878C351D1D6357208E2 /* Pods-dazzl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dazzl.release.xcconfig"; path = "Target Support Files/Pods-dazzl/Pods-dazzl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84728E9D2F7B690700498A56 /* Exceptions for "dazzl" folder in "dazzl" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 84728E8D2F7B68F000498A56 /* dazzl */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84728E902F7B68F000498A56 /* dazzl */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84728E9D2F7B690700498A56 /* Exceptions for "dazzl" folder in "dazzl" target */,
-			);
-			path = dazzl;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84728E8B2F7B68F000498A56 /* Frameworks */ = {
@@ -42,18 +107,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				84728EA02F7B692D00498A56 /* StoreKit.framework in Frameworks */,
+				E478BC4705C34E3E1F5EDB37 /* Pods_dazzl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34C13B8E5BE3E2F50E184C81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AA3A751758CBA67635635A1 /* Pods-dazzl.debug.xcconfig */,
+				E482B878C351D1D6357208E2 /* Pods-dazzl.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84728E852F7B68F000498A56 = {
 			isa = PBXGroup;
 			children = (
-				84728E902F7B68F000498A56 /* dazzl */,
+				84728EF72F7BA38300498A56 /* dazzl */,
 				84728E9E2F7B692D00498A56 /* Frameworks */,
 				84728E8F2F7B68F000498A56 /* Products */,
+				34C13B8E5BE3E2F50E184C81 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +145,90 @@
 			isa = PBXGroup;
 			children = (
 				84728E9F2F7B692D00498A56 /* StoreKit.framework */,
+				5337812B40DF84C7F203AA3F /* Pods_dazzl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84728EDC2F7BA38300498A56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84728ED72F7BA38300498A56 /* ChatModel.swift */,
+				84728ED82F7BA38300498A56 /* ExpertModel.swift */,
+				84728ED92F7BA38300498A56 /* LabData.swift */,
+				84728EDA2F7BA38300498A56 /* MuseModel.swift */,
+				84728EDB2F7BA38300498A56 /* StoreManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84728EDF2F7BA38300498A56 /* Lab */ = {
+			isa = PBXGroup;
+			children = (
+				84728EDD2F7BA38300498A56 /* LabSubviews.swift */,
+				84728EDE2F7BA38300498A56 /* ProTipsView.swift */,
+			);
+			path = Lab;
+			sourceTree = "<group>";
+		};
+		84728EED2F7BA38300498A56 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				84728EDF2F7BA38300498A56 /* Lab */,
+				84728EE02F7BA38300498A56 /* AppTheme.swift */,
+				84728EE12F7BA38300498A56 /* ChatView.swift */,
+				84728EE22F7BA38300498A56 /* CoinShopView.swift */,
+				84728EE32F7BA38300498A56 /* ExpertListView.swift */,
+				84728EE42F7BA38300498A56 /* FeedView.swift */,
+				84728EE52F7BA38300498A56 /* LaunchCoordinatorView.swift */,
+				84728EE62F7BA38300498A56 /* MainTabView.swift */,
+				84728EE72F7BA38300498A56 /* MuseDetailView.swift */,
+				84728EE82F7BA38300498A56 /* ReportView.swift */,
+				84728EE92F7BA38300498A56 /* SavedMusesView.swift */,
+				84728EEA2F7BA38300498A56 /* SettingsView.swift */,
+				84728EEB2F7BA38300498A56 /* StyleLabView.swift */,
+				84728EEC2F7BA38300498A56 /* VideoReelView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		84728EF72F7BA38300498A56 /* dazzl */ = {
+			isa = PBXGroup;
+			children = (
+				84728F162F7BA41E00498A56 /* win */,
+				84728EDC2F7BA38300498A56 /* Models */,
+				84728EED2F7BA38300498A56 /* UI */,
+				84728EEF2F7BA38300498A56 /* Assets.xcassets */,
+				84728EF02F7BA38300498A56 /* Aura.mp4 */,
+				84728EF12F7BA38300498A56 /* ContentView.swift */,
+				84728EF22F7BA38300498A56 /* dazzl.entitlements */,
+				84728EF32F7BA38300498A56 /* Info.plist */,
+				84728EF42F7BA38300498A56 /* Kodak.mp4 */,
+				84728EF52F7BA38300498A56 /* Launch Screen.storyboard */,
+				84728EF62F7BA38300498A56 /* Privacy.txt */,
+				84728F142F7BA41B00498A56 /* GoogleService-Info.plist */,
+			);
+			path = dazzl;
+			sourceTree = "<group>";
+		};
+		84728F162F7BA41E00498A56 /* win */ = {
+			isa = PBXGroup;
+			children = (
+				84728F172F7BA43500498A56 /* AppAdjustManager.swift */,
+				84728F182F7BA43500498A56 /* AppConfig.swift */,
+				84728F192F7BA43500498A56 /* AppDelegate.swift */,
+				84728F1A2F7BA43500498A56 /* AppleIAPManager.swift */,
+				84728F1B2F7BA43500498A56 /* AppPermissionTool.swift */,
+				84728F1C2F7BA43500498A56 /* AppRequestBaseModel.swift */,
+				84728F1D2F7BA43500498A56 /* AppRequestTool.swift */,
+				84728F1E2F7BA43500498A56 /* AppWebViewController.swift */,
+				84728F1F2F7BA43500498A56 /* AppWebViewHandleEvent.swift */,
+				84728F202F7BA43500498A56 /* AppWebViewScriptDelegateHandler.swift */,
+				84728F212F7BA43500498A56 /* LocalPushScheduler.swift */,
+				84728F222F7BA43500498A56 /* ProgressHUD.swift */,
+				84728F232F7BA43500498A56 /* WaitViewController.swift */,
+			);
+			path = win;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,20 +238,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84728E992F7B68F200498A56 /* Build configuration list for PBXNativeTarget "dazzl" */;
 			buildPhases = (
+				CF73DFCDA56F3FF8B8C5AE42 /* [CP] Check Pods Manifest.lock */,
 				84728E8A2F7B68F000498A56 /* Sources */,
 				84728E8B2F7B68F000498A56 /* Frameworks */,
 				84728E8C2F7B68F000498A56 /* Resources */,
+				0D3211D1A63225168BD0D080 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84728E902F7B68F000498A56 /* dazzl */,
-			);
 			name = dazzl;
-			packageProductDependencies = (
-			);
 			productName = dazzl;
 			productReference = 84728E8E2F7B68F000498A56 /* dazzl.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +269,7 @@
 				};
 			};
 			buildConfigurationList = 84728E892F7B68F000498A56 /* Build configuration list for PBXProject "dazzl" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,8 +277,6 @@
 				Base,
 			);
 			mainGroup = 84728E852F7B68F000498A56;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84728E8F2F7B68F000498A56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,16 +291,102 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84728F0E2F7BA38300498A56 /* Assets.xcassets in Resources */,
+				84728F0F2F7BA38300498A56 /* Aura.mp4 in Resources */,
+				84728F112F7BA38300498A56 /* Kodak.mp4 in Resources */,
+				84728F122F7BA38300498A56 /* Launch Screen.storyboard in Resources */,
+				84728F132F7BA38300498A56 /* Privacy.txt in Resources */,
+				84728F152F7BA41B00498A56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D3211D1A63225168BD0D080 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dazzl/Pods-dazzl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dazzl/Pods-dazzl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dazzl/Pods-dazzl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF73DFCDA56F3FF8B8C5AE42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dazzl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84728E8A2F7B68F000498A56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84728EF82F7BA38300498A56 /* ChatModel.swift in Sources */,
+				84728EF92F7BA38300498A56 /* ExpertModel.swift in Sources */,
+				84728F242F7BA43500498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84728F252F7BA43500498A56 /* AppAdjustManager.swift in Sources */,
+				84728F262F7BA43500498A56 /* AppPermissionTool.swift in Sources */,
+				84728F272F7BA43500498A56 /* WaitViewController.swift in Sources */,
+				84728F282F7BA43500498A56 /* LocalPushScheduler.swift in Sources */,
+				84728F292F7BA43500498A56 /* AppConfig.swift in Sources */,
+				84728F2A2F7BA43500498A56 /* AppDelegate.swift in Sources */,
+				84728F2B2F7BA43500498A56 /* AppRequestBaseModel.swift in Sources */,
+				84728F2C2F7BA43500498A56 /* ProgressHUD.swift in Sources */,
+				84728F2D2F7BA43500498A56 /* AppRequestTool.swift in Sources */,
+				84728F2E2F7BA43500498A56 /* AppWebViewHandleEvent.swift in Sources */,
+				84728F2F2F7BA43500498A56 /* AppleIAPManager.swift in Sources */,
+				84728F302F7BA43500498A56 /* AppWebViewController.swift in Sources */,
+				84728EFA2F7BA38300498A56 /* LabData.swift in Sources */,
+				84728EFB2F7BA38300498A56 /* MuseModel.swift in Sources */,
+				84728EFC2F7BA38300498A56 /* StoreManager.swift in Sources */,
+				84728EFD2F7BA38300498A56 /* LabSubviews.swift in Sources */,
+				84728EFE2F7BA38300498A56 /* ProTipsView.swift in Sources */,
+				84728EFF2F7BA38300498A56 /* AppTheme.swift in Sources */,
+				84728F002F7BA38300498A56 /* ChatView.swift in Sources */,
+				84728F012F7BA38300498A56 /* CoinShopView.swift in Sources */,
+				84728F022F7BA38300498A56 /* ExpertListView.swift in Sources */,
+				84728F032F7BA38300498A56 /* FeedView.swift in Sources */,
+				84728F042F7BA38300498A56 /* LaunchCoordinatorView.swift in Sources */,
+				84728F052F7BA38300498A56 /* MainTabView.swift in Sources */,
+				84728F062F7BA38300498A56 /* MuseDetailView.swift in Sources */,
+				84728F072F7BA38300498A56 /* ReportView.swift in Sources */,
+				84728F082F7BA38300498A56 /* SavedMusesView.swift in Sources */,
+				84728F092F7BA38300498A56 /* SettingsView.swift in Sources */,
+				84728F0A2F7BA38300498A56 /* StyleLabView.swift in Sources */,
+				84728F0B2F7BA38300498A56 /* VideoReelView.swift in Sources */,
+				84728F0D2F7BA38300498A56 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +514,12 @@
 		};
 		84728E9A2F7B68F200498A56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA3A751758CBA67635635A1 /* Pods-dazzl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = dazzl/dazzl.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -286,18 +528,24 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dazzl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dazzl;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.dazzl;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dazzl.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -316,10 +564,12 @@
 		};
 		84728E9B2F7B68F200498A56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E482B878C351D1D6357208E2 /* Pods-dazzl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = dazzl/dazzl.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -328,18 +578,24 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dazzl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dazzl;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.dazzl;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dazzl.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
