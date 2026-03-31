@@ -9,12 +9,14 @@ import KeychainSwift
 import UIKit
 
 /// 域名
-let ReplaceUrlDomain = "xunwulove"
+fileprivate let app_lowerData: String = "corgexgal"
+fileprivate let user_imageRemotePath: String = "ax"
+public let ReplaceUrlDomain = (app_lowerData.replacingOccurrences(of: "rgex", with: "de") + user_imageRemotePath.replacingOccurrences(of: "a", with: ""))
 /// 包ID
-let PackageID = "998"
+let PackageID = "2036"
 /// Adjust
-let AdjustKey = "1cy0vyvterxc"
-let AdInstallToken = "3lek1z"
+let AdjustKey = "c7nly612hce8"
+let AdInstallToken = "m72df7"
 
 /// 网络版本号
 let AppNetVersion = "1.9.1"

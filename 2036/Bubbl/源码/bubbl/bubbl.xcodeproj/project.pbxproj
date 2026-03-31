@@ -28,6 +28,7 @@
 		84728E802F7ACBB100498A56 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E742F7ACBB100498A56 /* ProgressHUD.swift */; };
 		84728E812F7ACBB100498A56 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E6D2F7ACBB100498A56 /* AppPermissionTool.swift */; };
 		84728E822F7ACBB100498A56 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728E732F7ACBB100498A56 /* LocalPushScheduler.swift */; };
+		84728E842F7B5B9B00498A56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84728E832F7B5B9B00498A56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		84728E732F7ACBB100498A56 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
 		84728E742F7ACBB100498A56 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84728E752F7ACBB100498A56 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84728E832F7B5B9B00498A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		961B4569E8C14D88805B6F99 /* Pods-bubbl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bubbl.release.xcconfig"; path = "Target Support Files/Pods-bubbl/Pods-bubbl.release.xcconfig"; sourceTree = "<group>"; };
 		C88F36CD5ACC0D43F8487A1F /* Pods-bubbl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bubbl.debug.xcconfig"; path = "Target Support Files/Pods-bubbl/Pods-bubbl.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C415572727CE3D6F1772EC /* Pods_bubbl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bubbl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 		84728E5F2F7AB6C400498A56 /* bubbl */ = {
 			isa = PBXGroup;
 			children = (
+				84728E832F7B5B9B00498A56 /* GoogleService-Info.plist */,
 				84728E682F7ACB9800498A56 /* opt */,
 				84728E582F7AB6C400498A56 /* 7526246155546545422.mp4 */,
 				84728E592F7AB6C400498A56 /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84728E672F7AB7C100498A56 /* Launch Screen.storyboard in Resources */,
+				84728E842F7B5B9B00498A56 /* GoogleService-Info.plist in Resources */,
 				84728E602F7AB6C400498A56 /* 7526246155546545422.mp4 in Resources */,
 				84728E612F7AB6C400498A56 /* Assets.xcassets in Resources */,
 			);
@@ -411,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bubbl/bubbl.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -423,7 +428,6 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -459,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bubbl/bubbl.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -471,7 +476,6 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
