@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		30B590F88B5FEC82BFB03309 /* Pods_quvo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A197C9F3049E9CC1733631 /* Pods_quvo.framework */; };
+		84598BF62F7CF42F002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BEC2F7CF42F002A5DBE /* AppleIAPManager.swift */; };
+		84598BF72F7CF42F002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF42F7CF42F002A5DBE /* ProgressHUD.swift */; };
+		84598BF82F7CF42F002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF52F7CF42F002A5DBE /* WaitViewController.swift */; };
+		84598BF92F7CF42F002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BED2F7CF42F002A5DBE /* AppPermissionTool.swift */; };
+		84598BFA2F7CF42F002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BEF2F7CF42F002A5DBE /* AppRequestTool.swift */; };
+		84598BFB2F7CF42F002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF12F7CF42F002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598BFC2F7CF42F002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BEE2F7CF42F002A5DBE /* AppRequestBaseModel.swift */; };
+		84598BFD2F7CF42F002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BEB2F7CF42F002A5DBE /* AppAdjustManager.swift */; };
+		84598BFE2F7CF42F002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF32F7CF42F002A5DBE /* LocalPushScheduler.swift */; };
+		84598BFF2F7CF42F002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF22F7CF42F002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598C002F7CF42F002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598BF02F7CF42F002A5DBE /* AppWebViewController.swift */; };
 		84B4335F2F641521004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B4335E2F641521004953C3 /* StoreKit.framework */; };
 		84B433782F6436CB004953C3 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433602F6436CB004953C3 /* AgreementView.swift */; };
 		84B4337A2F6436CB004953C3 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433632F6436CB004953C3 /* ClassesView.swift */; };
@@ -29,19 +40,8 @@
 		84B4338A2F6436CB004953C3 /* Full Body Morning Flow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B4336A2F6436CB004953C3 /* Full Body Morning Flow.mp4 */; };
 		84B4338C2F6436CB004953C3 /* Yoga for Beginners.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B433752F6436CB004953C3 /* Yoga for Beginners.jpg */; };
 		84B4338D2F6436CB004953C3 /* Yoga for Beginners.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B433762F6436CB004953C3 /* Yoga for Beginners.mp4 */; };
-		84B4339C2F64378F004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433932F64378F004953C3 /* AppPermissionTool.swift */; };
 		84B4339D2F64378F004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433902F64378F004953C3 /* AppConfig.swift */; };
-		84B4339E2F64378F004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433942F64378F004953C3 /* AppRequestBaseModel.swift */; };
-		84B4339F2F64378F004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433962F64378F004953C3 /* AppWebViewController.swift */; };
 		84B433A02F64378F004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433912F64378F004953C3 /* AppDelegate.swift */; };
-		84B433A12F64378F004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433952F64378F004953C3 /* AppRequestTool.swift */; };
-		84B433A22F64378F004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433922F64378F004953C3 /* AppleIAPManager.swift */; };
-		84B433A32F64378F004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4339A2F64378F004953C3 /* ProgressHUD.swift */; };
-		84B433A42F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
-		84B433A52F64378F004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4339B2F64378F004953C3 /* WaitViewController.swift */; };
-		84B433A62F64378F004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433992F64378F004953C3 /* LocalPushScheduler.swift */; };
-		84B433A72F64378F004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4338F2F64378F004953C3 /* AppAdjustManager.swift */; };
-		84B433A82F64378F004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */; };
 		84B433AA2F643944004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B433A92F643944004953C3 /* Launch Screen.storyboard */; };
 		84B433AC2F6439EB004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B433AB2F6439EB004953C3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -49,6 +49,17 @@
 /* Begin PBXFileReference section */
 		20A197C9F3049E9CC1733631 /* Pods_quvo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quvo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDA3891F83E6BA5C3B3DB3D /* Pods-quvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quvo.debug.xcconfig"; path = "Target Support Files/Pods-quvo/Pods-quvo.debug.xcconfig"; sourceTree = "<group>"; };
+		84598BEB2F7CF42F002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598BEC2F7CF42F002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598BED2F7CF42F002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598BEE2F7CF42F002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598BEF2F7CF42F002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598BF02F7CF42F002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598BF12F7CF42F002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598BF22F7CF42F002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598BF32F7CF42F002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598BF42F7CF42F002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598BF52F7CF42F002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B4331E2F63EA2C004953C3 /* quvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B4335E2F641521004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84B433602F6436CB004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
@@ -73,19 +84,8 @@
 		84B433742F6436CB004953C3 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		84B433752F6436CB004953C3 /* Yoga for Beginners.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yoga for Beginners.jpg"; sourceTree = "<group>"; };
 		84B433762F6436CB004953C3 /* Yoga for Beginners.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoga for Beginners.mp4"; sourceTree = "<group>"; };
-		84B4338F2F64378F004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		84B433902F64378F004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84B433912F64378F004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B433922F64378F004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84B433932F64378F004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84B433942F64378F004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84B433952F64378F004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84B433962F64378F004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84B433992F64378F004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84B4339A2F64378F004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84B4339B2F64378F004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B433A92F643944004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		84B433AB2F6439EB004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		948789D71EFB04602484ED25 /* Pods-quvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quvo.release.xcconfig"; path = "Target Support Files/Pods-quvo/Pods-quvo.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,19 +166,19 @@
 		84B4338E2F643771004953C3 /* ext */ = {
 			isa = PBXGroup;
 			children = (
-				84B4338F2F64378F004953C3 /* AppAdjustManager.swift */,
 				84B433902F64378F004953C3 /* AppConfig.swift */,
 				84B433912F64378F004953C3 /* AppDelegate.swift */,
-				84B433922F64378F004953C3 /* AppleIAPManager.swift */,
-				84B433932F64378F004953C3 /* AppPermissionTool.swift */,
-				84B433942F64378F004953C3 /* AppRequestBaseModel.swift */,
-				84B433952F64378F004953C3 /* AppRequestTool.swift */,
-				84B433962F64378F004953C3 /* AppWebViewController.swift */,
-				84B433972F64378F004953C3 /* AppWebViewHandleEvent.swift */,
-				84B433982F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift */,
-				84B433992F64378F004953C3 /* LocalPushScheduler.swift */,
-				84B4339A2F64378F004953C3 /* ProgressHUD.swift */,
-				84B4339B2F64378F004953C3 /* WaitViewController.swift */,
+				84598BEB2F7CF42F002A5DBE /* AppAdjustManager.swift */,
+				84598BEC2F7CF42F002A5DBE /* AppleIAPManager.swift */,
+				84598BED2F7CF42F002A5DBE /* AppPermissionTool.swift */,
+				84598BEE2F7CF42F002A5DBE /* AppRequestBaseModel.swift */,
+				84598BEF2F7CF42F002A5DBE /* AppRequestTool.swift */,
+				84598BF02F7CF42F002A5DBE /* AppWebViewController.swift */,
+				84598BF12F7CF42F002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598BF22F7CF42F002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598BF32F7CF42F002A5DBE /* LocalPushScheduler.swift */,
+				84598BF42F7CF42F002A5DBE /* ProgressHUD.swift */,
+				84598BF52F7CF42F002A5DBE /* WaitViewController.swift */,
 			);
 			path = ext;
 			sourceTree = "<group>";
@@ -324,23 +324,23 @@
 				84B4337B2F6436CB004953C3 /* ContentView.swift in Sources */,
 				84B4337C2F6436CB004953C3 /* MainTabView.swift in Sources */,
 				84B4337D2F6436CB004953C3 /* Models.swift in Sources */,
+				84598BF62F7CF42F002A5DBE /* AppleIAPManager.swift in Sources */,
+				84598BF72F7CF42F002A5DBE /* ProgressHUD.swift in Sources */,
+				84598BF82F7CF42F002A5DBE /* WaitViewController.swift in Sources */,
+				84598BF92F7CF42F002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598BFA2F7CF42F002A5DBE /* AppRequestTool.swift in Sources */,
+				84598BFB2F7CF42F002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598BFC2F7CF42F002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598BFD2F7CF42F002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598BFE2F7CF42F002A5DBE /* LocalPushScheduler.swift in Sources */,
+				84598BFF2F7CF42F002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598C002F7CF42F002A5DBE /* AppWebViewController.swift in Sources */,
 				84B4337E2F6436CB004953C3 /* MyPlanView.swift in Sources */,
 				84B4337F2F6436CB004953C3 /* PoseDetailView.swift in Sources */,
 				84B433802F6436CB004953C3 /* PosesFeedView.swift in Sources */,
 				84B433812F6436CB004953C3 /* SettingsView.swift in Sources */,
-				84B4339C2F64378F004953C3 /* AppPermissionTool.swift in Sources */,
 				84B4339D2F64378F004953C3 /* AppConfig.swift in Sources */,
-				84B4339E2F64378F004953C3 /* AppRequestBaseModel.swift in Sources */,
-				84B4339F2F64378F004953C3 /* AppWebViewController.swift in Sources */,
 				84B433A02F64378F004953C3 /* AppDelegate.swift in Sources */,
-				84B433A12F64378F004953C3 /* AppRequestTool.swift in Sources */,
-				84B433A22F64378F004953C3 /* AppleIAPManager.swift in Sources */,
-				84B433A32F64378F004953C3 /* ProgressHUD.swift in Sources */,
-				84B433A42F64378F004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84B433A52F64378F004953C3 /* WaitViewController.swift in Sources */,
-				84B433A62F64378F004953C3 /* LocalPushScheduler.swift in Sources */,
-				84B433A72F64378F004953C3 /* AppAdjustManager.swift in Sources */,
-				84B433A82F64378F004953C3 /* AppWebViewHandleEvent.swift in Sources */,
 				84B433822F6436CB004953C3 /* StoreManager.swift in Sources */,
 				84B433832F6436CB004953C3 /* StoreView.swift in Sources */,
 			);

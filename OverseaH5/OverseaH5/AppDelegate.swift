@@ -11,7 +11,6 @@ import FirebaseMessaging
 import UserNotifications
 import AVFAudio
 import FirebaseRemoteConfig
-import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -20,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let waitVC = WaitViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.overrideUserInterfaceStyle = .light
-        self.window?.rootViewController = waitVC
+        self.window?.rootViewController?.view.addSubview(self.waitVC.view)
         self.window?.makeKeyAndVisible()
         initFireBase()
         let config = RemoteConfig.remoteConfig()
@@ -33,22 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         config.fetch { (status, error) -> Void in
             if status == .success {
                 config.activate { changed, error in
-                    let remoteVersion = config.configValue(forKey: "Quvo").numberValue.intValue
+                    let remoteVersion = config.configValue(forKey: "Sweete").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.bz_4286()
+                        DispatchQueue.main.async {
+                            self.waitVC.view.removeFromSuperview()
+                        }
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1777034688 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.rw_6c34() { // 本地时间戳大于预设时间，进入B面
+                let endTimeInterval: TimeInterval = 1762322400 // 预设时间(秒)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.isNotiPad() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.bz_4286()
+                    DispatchQueue.main.async {
+                        self.waitVC.view.removeFromSuperview()
+                    }
                 }
             }
         }
@@ -56,41 +57,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func rw_6c34() -> Bool {
+    private func isNotiPad() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        ay_0e37(application)
+        registerForRemoteNotification(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.dc_7337()
+        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
         DispatchQueue.main.async {
             let vc = AppWebViewController()
             vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.getStatusBarHeight())"
-            self.window?.overrideUserInterfaceStyle = .light
             self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
-        }
-    }
-    
-    func bz_4286() {
-        DispatchQueue.main.async {
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-                try AVAudioSession.sharedInstance().setActive(true)
-            } catch {
-                print("Failed to set AVAudioSession category: \(error)")
-            }
-            
-            // Setup Window
-            let rootController = UIHostingController(rootView: ContentView())
-            self.window?.overrideUserInterfaceStyle = .light
-            self.window?.rootViewController = rootController
             self.window?.makeKeyAndVisible()
         }
     }
@@ -103,7 +86,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func ay_0e37(_ application: UIApplication) {
+    func registerForRemoteNotification(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
