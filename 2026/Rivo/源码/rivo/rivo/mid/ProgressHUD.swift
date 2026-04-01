@@ -47,13 +47,13 @@ open class ProgressHUD: UIView {
                 AppConfig.getWindow().addSubview(ProgressHUD.shared)
             }
         }
-        ProgressHUD.shared.xm_61c7()
+        ProgressHUD.shared.ri_1f5b()
     }
     class func dismiss() {
-        ProgressHUD.shared.wa_1809()
+        ProgressHUD.shared.hr_0c00()
     }
     
-    private func xm_61c7() {
+    private func ri_1f5b() {
         DispatchQueue.main.async {
             self.backgroundColor = UIColor(white: 0, alpha: 0)
             self.activityIndicator.transform = CGAffineTransform(scaleX: kTransformScale, y: kTransformScale)
@@ -66,7 +66,7 @@ open class ProgressHUD: UIView {
             }
         }
     }
-    private func wa_1809() {
+    private func hr_0c00() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: 0)

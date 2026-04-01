@@ -30,10 +30,10 @@ open class ProgressHUD: UIView {
     open override func copy() -> Any { return self }
     open override func mutableCopy() -> Any { return self }
     
-    class func displayHUD() {
-        displayHUD(superView: nil)
+    class func show() {
+        show(superView: nil)
     }
-    class func displayHUD(superView: UIView?) {
+    class func show(superView: UIView?) {
         if superView != nil {
             DispatchQueue.main.async {
                 ProgressHUD.shared.frame = superView!.bounds
@@ -44,16 +44,16 @@ open class ProgressHUD: UIView {
             DispatchQueue.main.async {
                 ProgressHUD.shared.frame = UIScreen.main.bounds
                 ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
-                AppConfig.fetchKeyWindow().addSubview(ProgressHUD.shared)
+                AppConfig.getWindow().addSubview(ProgressHUD.shared)
             }
         }
-        ProgressHUD.shared.animateHUDAppearance()
+        ProgressHUD.shared.ke_3f35()
     }
-    class func hideHUD() {
-        ProgressHUD.shared.animateHUDDisappearance()
+    class func dismiss() {
+        ProgressHUD.shared.ct_7210()
     }
     
-    private func animateHUDAppearance() {
+    private func ke_3f35() {
         DispatchQueue.main.async {
             self.backgroundColor = UIColor(white: 0, alpha: 0)
             self.activityIndicator.transform = CGAffineTransform(scaleX: kTransformScale, y: kTransformScale)
@@ -66,7 +66,7 @@ open class ProgressHUD: UIView {
             }
         }
     }
-    private func animateHUDDisappearance() {
+    private func ct_7210() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: 0)
@@ -92,10 +92,10 @@ open class ProgressHUD: UIView {
 }
 
 extension ProgressHUD {
-    class func showToastMessage(_ str: String?) {
-        showToastMessage(str, showTime: 1)
+    class func toast(_ str: String?) {
+        toast(str, showTime: 1)
     }
-    class func showToastMessage(_ str: String?, showTime: CGFloat) {
+    class func toast(_ str: String?, showTime: CGFloat) {
         guard str != nil else { return }
                 
         let titleLab = UILabel()
@@ -107,9 +107,9 @@ extension ProgressHUD {
         titleLab.textAlignment = .center
         titleLab.numberOfLines = 0
         titleLab.textColor = .white
-        AppConfig.fetchKeyWindow().addSubview(titleLab)
+        AppConfig.getWindow().addSubview(titleLab)
         let size = titleLab.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(MAXFLOAT)))
-        titleLab.center = AppConfig.fetchKeyWindow().center
+        titleLab.center = AppConfig.getWindow().center
         titleLab.bounds = CGRect(x: 0, y: 0, width: size.width + 30, height: size.height + 30)
         titleLab.alpha = 0
         

@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		7774C7FCD213F666A6457821 /* Pods_cookr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF479B7091F8E148EA79F2D /* Pods_cookr.framework */; };
+		84598C732F7D59B4002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C682F7D59B4002A5DBE /* AppAdjustManager.swift */; };
+		84598C742F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6F2F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598C752F7D59B4002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6D2F7D59B4002A5DBE /* AppWebViewController.swift */; };
+		84598C762F7D59B4002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6A2F7D59B4002A5DBE /* AppPermissionTool.swift */; };
+		84598C772F7D59B4002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C692F7D59B4002A5DBE /* AppleIAPManager.swift */; };
+		84598C782F7D59B4002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6C2F7D59B4002A5DBE /* AppRequestTool.swift */; };
+		84598C792F7D59B4002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6E2F7D59B4002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598C7A2F7D59B4002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C712F7D59B4002A5DBE /* ProgressHUD.swift */; };
+		84598C7B2F7D59B4002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C722F7D59B4002A5DBE /* WaitViewController.swift */; };
+		84598C7C2F7D59B4002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C702F7D59B4002A5DBE /* LocalPushScheduler.swift */; };
+		84598C7D2F7D59B4002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6B2F7D59B4002A5DBE /* AppRequestBaseModel.swift */; };
 		84728C6D2F75151400498A56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84728C6C2F75151400498A56 /* StoreKit.framework */; };
 		84728C8B2F7519D500498A56 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728C6F2F7519D500498A56 /* AgreementView.swift */; };
 		84728C8D2F7519D500498A56 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728C722F7519D500498A56 /* ChatView.swift */; };
@@ -34,24 +45,24 @@
 		84728CA32F7519D500498A56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84728C7B2F7519D500498A56 /* Launch Screen.storyboard */; };
 		84728CA42F7519D500498A56 /* Midnight Berry Tart.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84728C7E2F7519D500498A56 /* Midnight Berry Tart.mp4 */; };
 		84728CA52F7519D500498A56 /* Privacy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84728C7F2F7519D500498A56 /* Privacy.txt */; };
-		84728CB42F751B4C00498A56 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CA72F751B4C00498A56 /* AppAdjustManager.swift */; };
-		84728CB52F751B4C00498A56 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAC2F751B4C00498A56 /* AppRequestBaseModel.swift */; };
 		84728CB62F751B4C00498A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CA92F751B4C00498A56 /* AppDelegate.swift */; };
-		84728CB72F751B4C00498A56 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAE2F751B4C00498A56 /* AppWebViewController.swift */; };
-		84728CB82F751B4C00498A56 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAF2F751B4C00498A56 /* AppWebViewHandleEvent.swift */; };
-		84728CB92F751B4C00498A56 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAB2F751B4C00498A56 /* AppPermissionTool.swift */; };
-		84728CBA2F751B4C00498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CB02F751B4C00498A56 /* AppWebViewScriptDelegateHandler.swift */; };
-		84728CBB2F751B4C00498A56 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CB12F751B4C00498A56 /* LocalPushScheduler.swift */; };
-		84728CBC2F751B4C00498A56 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CB32F751B4C00498A56 /* WaitViewController.swift */; };
-		84728CBD2F751B4C00498A56 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAA2F751B4C00498A56 /* AppleIAPManager.swift */; };
 		84728CBE2F751B4C00498A56 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CA82F751B4C00498A56 /* AppConfig.swift */; };
-		84728CBF2F751B4C00498A56 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CAD2F751B4C00498A56 /* AppRequestTool.swift */; };
-		84728CC02F751B4C00498A56 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728CB22F751B4C00498A56 /* ProgressHUD.swift */; };
 		84728CC22F751C6700498A56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84728CC12F751C6700498A56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		210C9D7C039C8478A05E0585 /* Pods-cookr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cookr.debug.xcconfig"; path = "Target Support Files/Pods-cookr/Pods-cookr.debug.xcconfig"; sourceTree = "<group>"; };
+		84598C682F7D59B4002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598C692F7D59B4002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598C6A2F7D59B4002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598C6B2F7D59B4002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598C6C2F7D59B4002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598C6D2F7D59B4002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598C6E2F7D59B4002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598C6F2F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598C702F7D59B4002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598C712F7D59B4002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598C722F7D59B4002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84728C6C2F75151400498A56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84728C6E2F7519D500498A56 /* Agreement.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Agreement.txt; sourceTree = "<group>"; };
 		84728C6F2F7519D500498A56 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
@@ -80,19 +91,8 @@
 		84728C872F7519D500498A56 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		84728C882F7519D500498A56 /* VideoPlaybackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackManager.swift; sourceTree = "<group>"; };
 		84728C892F7519D500498A56 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		84728CA72F751B4C00498A56 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		84728CA82F751B4C00498A56 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84728CA92F751B4C00498A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84728CAA2F751B4C00498A56 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84728CAB2F751B4C00498A56 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84728CAC2F751B4C00498A56 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84728CAD2F751B4C00498A56 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84728CAE2F751B4C00498A56 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84728CAF2F751B4C00498A56 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84728CB02F751B4C00498A56 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84728CB12F751B4C00498A56 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84728CB22F751B4C00498A56 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84728CB32F751B4C00498A56 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84728CC12F751C6700498A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84E19E422F74D09200CBA304 /* cookr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF479B7091F8E148EA79F2D /* Pods_cookr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cookr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,19 +169,19 @@
 		84728CA62F751B2600498A56 /* cyc */ = {
 			isa = PBXGroup;
 			children = (
-				84728CA72F751B4C00498A56 /* AppAdjustManager.swift */,
 				84728CA82F751B4C00498A56 /* AppConfig.swift */,
 				84728CA92F751B4C00498A56 /* AppDelegate.swift */,
-				84728CAA2F751B4C00498A56 /* AppleIAPManager.swift */,
-				84728CAB2F751B4C00498A56 /* AppPermissionTool.swift */,
-				84728CAC2F751B4C00498A56 /* AppRequestBaseModel.swift */,
-				84728CAD2F751B4C00498A56 /* AppRequestTool.swift */,
-				84728CAE2F751B4C00498A56 /* AppWebViewController.swift */,
-				84728CAF2F751B4C00498A56 /* AppWebViewHandleEvent.swift */,
-				84728CB02F751B4C00498A56 /* AppWebViewScriptDelegateHandler.swift */,
-				84728CB12F751B4C00498A56 /* LocalPushScheduler.swift */,
-				84728CB22F751B4C00498A56 /* ProgressHUD.swift */,
-				84728CB32F751B4C00498A56 /* WaitViewController.swift */,
+				84598C682F7D59B4002A5DBE /* AppAdjustManager.swift */,
+				84598C692F7D59B4002A5DBE /* AppleIAPManager.swift */,
+				84598C6A2F7D59B4002A5DBE /* AppPermissionTool.swift */,
+				84598C6B2F7D59B4002A5DBE /* AppRequestBaseModel.swift */,
+				84598C6C2F7D59B4002A5DBE /* AppRequestTool.swift */,
+				84598C6D2F7D59B4002A5DBE /* AppWebViewController.swift */,
+				84598C6E2F7D59B4002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598C6F2F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598C702F7D59B4002A5DBE /* LocalPushScheduler.swift */,
+				84598C712F7D59B4002A5DBE /* ProgressHUD.swift */,
+				84598C722F7D59B4002A5DBE /* WaitViewController.swift */,
 			);
 			path = cyc;
 			sourceTree = "<group>";
@@ -336,22 +336,22 @@
 				84728C922F7519D500498A56 /* GalleryView.swift in Sources */,
 				84728C932F7519D500498A56 /* MainTabView.swift in Sources */,
 				84728C942F7519D500498A56 /* MealPlanView.swift in Sources */,
+				84598C732F7D59B4002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598C742F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598C752F7D59B4002A5DBE /* AppWebViewController.swift in Sources */,
+				84598C762F7D59B4002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598C772F7D59B4002A5DBE /* AppleIAPManager.swift in Sources */,
+				84598C782F7D59B4002A5DBE /* AppRequestTool.swift in Sources */,
+				84598C792F7D59B4002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598C7A2F7D59B4002A5DBE /* ProgressHUD.swift in Sources */,
+				84598C7B2F7D59B4002A5DBE /* WaitViewController.swift in Sources */,
+				84598C7C2F7D59B4002A5DBE /* LocalPushScheduler.swift in Sources */,
+				84598C7D2F7D59B4002A5DBE /* AppRequestBaseModel.swift in Sources */,
 				84728C952F7519D500498A56 /* Recipe.swift in Sources */,
 				84728C962F7519D500498A56 /* RecipeData.swift in Sources */,
 				84728C972F7519D500498A56 /* RecipeDetailView.swift in Sources */,
-				84728CB42F751B4C00498A56 /* AppAdjustManager.swift in Sources */,
-				84728CB52F751B4C00498A56 /* AppRequestBaseModel.swift in Sources */,
 				84728CB62F751B4C00498A56 /* AppDelegate.swift in Sources */,
-				84728CB72F751B4C00498A56 /* AppWebViewController.swift in Sources */,
-				84728CB82F751B4C00498A56 /* AppWebViewHandleEvent.swift in Sources */,
-				84728CB92F751B4C00498A56 /* AppPermissionTool.swift in Sources */,
-				84728CBA2F751B4C00498A56 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84728CBB2F751B4C00498A56 /* LocalPushScheduler.swift in Sources */,
-				84728CBC2F751B4C00498A56 /* WaitViewController.swift in Sources */,
-				84728CBD2F751B4C00498A56 /* AppleIAPManager.swift in Sources */,
 				84728CBE2F751B4C00498A56 /* AppConfig.swift in Sources */,
-				84728CBF2F751B4C00498A56 /* AppRequestTool.swift in Sources */,
-				84728CC02F751B4C00498A56 /* ProgressHUD.swift in Sources */,
 				84728C982F7519D500498A56 /* ReportView.swift in Sources */,
 				84728C992F7519D500498A56 /* RootView.swift in Sources */,
 				84728C9A2F7519D500498A56 /* SettingsView.swift in Sources */,
@@ -492,7 +492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cookr/cookr.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -514,7 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookr.explore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -536,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cookr/cookr.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -558,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookr.explore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

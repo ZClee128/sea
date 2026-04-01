@@ -53,6 +53,8 @@ struct JSMessageModel: HandyJSON {
     var transparency: Int?   // transparency：0-webview白色背景 1-webview透明背景
     var time: [Int]?         // 本地推送当天时间（24小时制）
     var msg: [String]?       // 本地推送文案
+    var uid: String = ""     // 用户Id
+    var orderId: String = "" // 订单Id
 }
 
 struct UserInfoModel: HandyJSON {
@@ -62,7 +64,7 @@ struct UserInfoModel: HandyJSON {
 }
 
 extension AppWebViewController {
-    func uq_33af(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
+    func hn_1e91(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
         if let model = JSMessageModel.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
@@ -108,15 +110,15 @@ extension AppWebViewController {
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.xy_0baa(productId: goodsId, source: source, payType: .Pay) { success in
-                        callBack(["typeName": model.typeName, "status": success])
+                    self.ou_58a5(productId: goodsId, source: source, payType: .Pay) { success, orderId in
+                        callBack(["typeName": model.typeName, "status": success, "orderId": orderId])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.xy_0baa(productId: goodsId, payType: .Subscribe) { success in
-                        callBack(["typeName": model.typeName, "status": success])
+                    self.ou_58a5(productId: goodsId, payType: .Subscribe) { success, orderId in
+                        callBack(["typeName": model.typeName, "status": success, "orderId": orderId])
                     }
                 }
                 
@@ -140,7 +142,7 @@ extension AppWebViewController {
                 
             case reloadWebview:
                 callBack(["typeName": model.typeName])
-                self.xn_5659()
+                self.uq_16d5()
             
             case openSettings:
                 callBack(["typeName": model.typeName])
@@ -175,9 +177,9 @@ extension AppWebViewController {
             case reportAdjust:
                 if let token = model.token {
                     if let count = model.totalCount {
-                        AppAdjustManager.addPurchasedEvent(token: token, count: count)
+                        AppAdjustManager.addPurchasedEvent(token: token, count: count, uid: model.uid, orderId: model.orderId)
                     } else {
-                        AppAdjustManager.addEvent(token: token)
+                        AppAdjustManager.addEvent(token: token, uid: model.uid)
                     }
                 }
                 callBack(["typeName": model.typeName])
@@ -319,13 +321,13 @@ extension AppWebViewController {
     /// - Parameters:
     ///   - productId: productId: 商品Id
     ///   - source: 充值来源
-    func xy_0baa(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
+    func ou_58a5(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool, String) -> Void)? = nil) {
         ProgressHUD.show()
         var index = 0
         if source != -1 {
             index = source
         }
-        AppleIAPManager.shared.ad_2266(productId: productId, payType: payType, source: index) { status, _, _ in
+        AppleIAPManager.shared.kv_1251(productId: productId, payType: payType, source: index) { status, _, _, orderId in
             ProgressHUD.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
@@ -335,13 +337,13 @@ extension AppWebViewController {
                     
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.wg_6089()
+                    self.iy_18fa()
                     
                 default:
                     print(" apple支付充值失败：\(status.rawValue)")
                     break
                 }
-                completion?(isSuccess)
+                completion?(isSuccess, orderId)
             }
         }
     }

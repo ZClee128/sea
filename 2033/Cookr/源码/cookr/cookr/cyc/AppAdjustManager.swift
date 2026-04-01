@@ -40,18 +40,42 @@ extension AppAdjustManager: AdjustDelegate {
 
     /// 添加 内购/订阅 埋点事件
     /// - Parameters:
-    ///   - token: token
-    ///   - count: 价格
-    class func addPurchasedEvent(token: String, count: Double) {
+    ///   - token: Adjust event token
+    ///   - count: 价格（USD）
+    ///   - uid: 用户ID
+    ///   - orderId: 订单ID
+    class func addPurchasedEvent(token: String, count: Double, uid: String = "", orderId: String = "") {
         let event = ADJEvent(eventToken: token)
         event?.setRevenue(count, currency: "USD")
+        if !uid.isEmpty {
+            event?.addCallbackParameter("uid", value: uid)
+        }
+        if !orderId.isEmpty {
+            event?.addCallbackParameter("order_id", value: orderId)
+        }
         Adjust.trackEvent(event)
     }
 
-    /// 添加埋点事件
-    /// - Parameter key: 事件名
-    class func addEvent(token: String) {
+    /// 添加普通埋点事件
+    /// - Parameters:
+    ///   - token: Adjust event token
+    ///   - uid: 用户ID
+    class func addEvent(token: String, uid: String = "") {
         let event = ADJEvent(eventToken: token)
+        if !uid.isEmpty {
+            event?.addCallbackParameter("uid", value: uid)
+        }
+        if let attribution = Adjust.attribution() {
+            if let trackerToken = attribution.trackerToken, !trackerToken.isEmpty {
+                event?.addCallbackParameter("tracker_token", value: trackerToken)
+            }
+            if let campaign = attribution.campaign, !campaign.isEmpty {
+                event?.addCallbackParameter("campaign", value: campaign)
+            }
+            if let adgroup = attribution.adgroup, !adgroup.isEmpty {
+                event?.addCallbackParameter("adgroup", value: adgroup)
+            }
+        }
         Adjust.trackEvent(event)
     }
 }

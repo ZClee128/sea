@@ -1,0 +1,32 @@
+Privacy Policy
+
+Effective Date: April 1, 2026
+
+1. Introduction
+Welcome to Fickr - Aesthetic Lifestyle & Muse Insights. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we handle your data within the application.
+
+2. Data Collection
+Fickr is designed as a standalone visual experience. 
+- We DO NOT collect any personal information (PII) such as your name, email, or physical address.
+- We DO NOT require an account or login from you.
+- We DO NOT track your location.
+
+3. Locally Stored Data
+Certain information is only stored locally on your device for functionality:
+- Your "Favorites" list: Saved within your device's persistent storage.
+- Privacy Agreement status: To ensure you have consented to these terms.
+This data never leaves your device and is not shared with us or any third parties.
+
+4. Third-Party Services
+Our app may contain links to external web content for aesthetic inspiration. We are not responsible for the privacy practices of these third-party websites.
+
+5. Apple Guidelines Compliance
+We comply with the Apple App Store Review Guidelines regarding User Privacy. This app does not use any tracking pixels or advertising identifiers (IDFA).
+
+6. Children’s Privacy
+Our app does not intentionally collect or maintain information from those we know are under 13.
+
+7. Contact Us
+If you have any questions regarding this privacy policy, please contact us via the Feedback section in the app.
+
+By clicking "AGREE", you signify your acceptance of this policy.

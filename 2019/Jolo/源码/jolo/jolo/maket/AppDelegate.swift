@@ -34,19 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     let remoteVersion = config.configValue(forKey: "Jolo").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
-                        self.setupConfiguration(application)
+                        self.ey_2aa7(application)
                         
                     } else { // 展示A面
-                        self.launchMainInterface()
+                        self.di_44c3()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1774874522 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.checkForPhoneInterface() { // 本地时间戳大于预设时间，进入B面
-                    self.setupConfiguration(application)
+                let endTimeInterval: TimeInterval = 1776776539 // 预设时间(秒)
+                if Date().timeIntervalSince1970 > endTimeInterval && self.xo_2d0c() { // 本地时间戳大于预设时间，进入B面
+                    self.ey_2aa7(application)
                     
                 } else { // 展示A面
-                    self.launchMainInterface()
+                    self.di_44c3()
                 }
             }
         }
@@ -54,16 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func checkForPhoneInterface() -> Bool {
+    private func xo_2d0c() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
-    private func setupConfiguration(_ application: UIApplication) {
+    private func ey_2aa7(_ application: UIApplication) {
         initializeRemoteNotifications(application)
-        AppAdjustManager.shared.configureTrackingServices()
+        AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.processPendingTransactions()
+        AppleIAPManager.shared.eg_7991()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func launchMainInterface() {
+    func di_44c3() {
         DispatchQueue.main.async {
             // Ensure iOS permits video and audio playback immediately
             try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])

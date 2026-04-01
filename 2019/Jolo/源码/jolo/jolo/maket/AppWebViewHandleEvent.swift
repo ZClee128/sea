@@ -53,6 +53,8 @@ struct JSMessageModel: HandyJSON {
     var transparency: Int?   // transparency：0-webview白色背景 1-webview透明背景
     var time: [Int]?         // 本地推送当天时间（24小时制）
     var msg: [String]?       // 本地推送文案
+    var uid: String = ""     // 用户Id
+    var orderId: String = "" // 订单Id
 }
 
 struct UserInfoModel: HandyJSON {
@@ -62,24 +64,24 @@ struct UserInfoModel: HandyJSON {
 }
 
 extension AppWebViewController {
-    func processH5MessagePayload(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
+    func oa_3acf(schemeDic: [String: Any], callBack: @escaping (_ backDic: [String: Any]) -> Void) {
         if let model = JSMessageModel.deserialize(from: schemeDic) {
             switch model.typeName {
             case getDeviceID:
-                let adidStr = AppAdjustManager.fetchDeviceIdentifier()
+                let adidStr = AppAdjustManager.getAdjustAdid()
                 callBack(["typeName": model.typeName, "deviceID": adidStr])
 
             case getFirebaseID:
-                AppWebViewController.retrieveFCMToken { str in
+                AppWebViewController.getFireBaseToken { str in
                     callBack(["typeName": model.typeName, "fireBaseID": str])
                 }
                 
             case getAreaISO:
-                let arr = AppWebViewController.fetchCarrierISOCodes()
+                let arr = AppWebViewController.getCountryISOCode()
                 callBack(["typeName": model.typeName, "areaISO": arr.joined(separator: ",")])
                 
             case getProxyStatus:
-                let status = AppWebViewController.checkProxyUsageStatus()
+                let status = AppWebViewController.getUsedProxyStatus()
                 callBack(["typeName": model.typeName, "isProxy": status])
               
             case getLangCode:
@@ -104,19 +106,19 @@ extension AppWebViewController {
                 
             case inAppRating:
                 callBack(["typeName": model.typeName])
-                AppWebViewController.promptAppStoreReview()
+                AppWebViewController.requestInAppRating()
 
             case apPay:
                 if let goodsId = model.goodsId, let source = model.source {
-                    self.initiateApplePayTransaction(productId: goodsId, source: source, payType: .Pay) { success in
-                        callBack(["typeName": model.typeName, "status": success])
+                    self.gq_2762(productId: goodsId, source: source, payType: .Pay) { success, orderId in
+                        callBack(["typeName": model.typeName, "status": success, "orderId": orderId])
                     }
                 }
 
             case subscribe:
                 if let goodsId = model.goodsId {
-                    self.initiateApplePayTransaction(productId: goodsId, payType: .Subscribe) { success in
-                        callBack(["typeName": model.typeName, "status": success])
+                    self.gq_2762(productId: goodsId, payType: .Subscribe) { success, orderId in
+                        callBack(["typeName": model.typeName, "status": success, "orderId": orderId])
                     }
                 }
                 
@@ -128,19 +130,19 @@ extension AppWebViewController {
                 
             case closeWebview:
                 callBack(["typeName": model.typeName])
-                self.dismissWebInterface()
+                self.closeWeb()
                 
             case openNewWebview:
                 callBack(["typeName": model.typeName])
                 if let urlStr = model.url,
                     let transparency = model.transparency,
                     let fullscreen = model.fullscreen {
-                    AppWebViewController.presentNewWebInterface(urlStr, transparency, fullscreen)
+                    AppWebViewController.openNewWebView(urlStr, transparency, fullscreen)
                 }
                 
             case reloadWebview:
                 callBack(["typeName": model.typeName])
-                self.reloadWebView()
+                self.yv_5ea2()
             
             case openSettings:
                 callBack(["typeName": model.typeName])
@@ -150,41 +152,41 @@ extension AppWebViewController {
                 
             case setScheduledLocalPush:
                 callBack(["typeName": model.typeName])
-                LocalPushScheduler.shared.configureScheduledNotifications(times: model.time ?? [], contents: model.msg ?? [])
+                LocalPushScheduler.shared.schedule(times: model.time ?? [], contents: model.msg ?? [])
                 
             case getNotificationStatus:
-                AppPermissionTool.shared.ensureNotificationCapability { auth, isFirst in
+                AppPermissionTool.shared.requestNotificationPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
             
             case getMicStatus:
-                AppPermissionTool.shared.verifyMicrophoneAccess { auth, isFirst in
+                AppPermissionTool.shared.requestMicPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getPhotoStatus:
-                AppPermissionTool.shared.checkPhotoLibraryAuthorization { auth, isFirst in
+                AppPermissionTool.shared.requestPhotoPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case getCameraStatus:
-                AppPermissionTool.shared.validateCameraAccess { auth, isFirst in
+                AppPermissionTool.shared.requestCameraPermission { auth, isFirst in
                     callBack(["typeName": model.typeName, "isAuth": auth, "isFirst": isFirst])
                 }
                 
             case reportAdjust:
                 if let token = model.token {
                     if let count = model.totalCount {
-                        AppAdjustManager.trackRevenueTransaction(token: token, count: count)
+                        AppAdjustManager.addPurchasedEvent(token: token, count: count, uid: model.uid, orderId: model.orderId)
                     } else {
-                        AppAdjustManager.trackCustomEvent(token: token)
+                        AppAdjustManager.addEvent(token: token, uid: model.uid)
                     }
                 }
                 callBack(["typeName": model.typeName])
 
             case requestLocalPush:
                 callBack(["typeName": model.typeName])
-                AppWebViewController.scheduleLocalNotification(model)
+                AppWebViewController.pushLocalNotification(model)
 
             default: break
             }
@@ -199,17 +201,17 @@ extension AppWebViewController {
     ///   - urlStr: web地址
     ///   - transparency: 0：白色背景 1：透明背景
     ///   - fullscreen: 0:页面从状态栏以下渲染  1：全屏
-    class func presentNewWebInterface(_ urlStr: String, _ transparency: Int = 0, _ fullscreen: Int = 1) {
+    class func openNewWebView(_ urlStr: String, _ transparency: Int = 0, _ fullscreen: Int = 1) {
         let vc = AppWebViewController()
         vc.urlString = urlStr
         vc.clearBgColor = (transparency == 1)
         vc.fullscreen = (fullscreen == 1)
         vc.modalPresentationStyle = .fullScreen
-        AppConfig.locateTopMostViewController()?.present(vc, animated: true)
+        AppConfig.currentViewController()?.present(vc, animated: true)
     }
     
     /// 本地推送
-    class func scheduleLocalNotification(_ model: JSMessageModel) {
+    class func pushLocalNotification(_ model: JSMessageModel) {
         guard UIApplication.shared.applicationState != .active else { return }
         UNUserNotificationCenter.current().getNotificationSettings { setting in
             switch setting.authorizationStatus {
@@ -240,7 +242,7 @@ extension AppWebViewController {
     }
     
     /// 获取firebase token
-    class func retrieveFCMToken(tokenBlock: @escaping (_ str: String) -> Void) {
+    class func getFireBaseToken(tokenBlock: @escaping (_ str: String) -> Void) {
         Messaging.messaging().token { token, _ in
             if let token = token {
                 tokenBlock(token)
@@ -251,7 +253,7 @@ extension AppWebViewController {
     }
 
     /// 获取ISO国家代码
-    class func fetchCarrierISOCodes() -> [String] {
+    class func getCountryISOCode() -> [String] {
         var tempArr: [String] = []
         let info = CTTelephonyNetworkInfo()
         if let carrierDic = info.serviceSubscriberCellularProviders {
@@ -267,8 +269,8 @@ extension AppWebViewController {
     }
 
     /// 获取用户代理状态
-    class func checkProxyUsageStatus() -> Bool {
-        if AppWebViewController.detectHTTPProxy() || AppWebViewController.detectVPNConnection() {
+    class func getUsedProxyStatus() -> Bool {
+        if AppWebViewController.isUsedProxy() || AppWebViewController.isUsedVPN() {
             return true
         }
         return false
@@ -276,7 +278,7 @@ extension AppWebViewController {
     
     /// 判断用户设备是否开启代理
     /// - Returns: false: 未开启  true: 开启
-    class func detectHTTPProxy() -> Bool {
+    class func isUsedProxy() -> Bool {
         guard let proxy = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() else { return false }
         guard let dict = proxy as? [String: Any] else { return false }
 
@@ -289,7 +291,7 @@ extension AppWebViewController {
     
     /// 判断用户设备是否开启代理VPN
    /// - Returns: false: 未开启  true: 开启
-   class func detectVPNConnection() -> Bool {
+   class func isUsedVPN() -> Bool {
        guard let proxy = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() else { return false }
        guard let dict = proxy as? [String: Any] else { return false }
        guard let scopedDic = dict["__SCOPED__"] as? [String: Any] else { return false }
@@ -302,7 +304,7 @@ extension AppWebViewController {
    }
     
     /// 请求应用内评分 - iOS 13+ 优化版本
-    class func promptAppStoreReview() {
+    class func requestInAppRating() {
         if #available(iOS 14.0, *) {
             // iOS 14+ 使用新的 WindowScene API（推荐）
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
@@ -319,29 +321,29 @@ extension AppWebViewController {
     /// - Parameters:
     ///   - productId: productId: 商品Id
     ///   - source: 充值来源
-    func initiateApplePayTransaction(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool) -> Void)? = nil) {
-        ProgressHUD.displayHUD()
+    func gq_2762(productId: String, source: Int = -1, payType: ApplePayType, completion: ((Bool, String) -> Void)? = nil) {
+        ProgressHUD.show()
         var index = 0
         if source != -1 {
             index = source
         }
-        AppleIAPManager.shared.startIAPFlow(productId: productId, payType: payType, source: index) { status, _, _ in
-            ProgressHUD.hideHUD()
+        AppleIAPManager.shared.mu_304e(productId: productId, payType: payType, source: index) { status, _, _, orderId in
+            ProgressHUD.dismiss()
             DispatchQueue.main.async {
                 var isSuccess = false
                 switch status {
                 case .verityFail:
-                    ProgressHUD.showToastMessage( "Retry After or Go to \"Feedback\" to contact us")
+                    ProgressHUD.toast( "Retry After or Go to \"Feedback\" to contact us")
                     
                 case .veritySucceed, .renewSucceed:
                     isSuccess = true
-                    self.notifyJSOfCoinUpdate()
+                    self.rr_7ee4()
                     
                 default:
                     print(" apple支付充值失败：\(status.rawValue)")
                     break
                 }
-                completion?(isSuccess)
+                completion?(isSuccess, orderId)
             }
         }
     }

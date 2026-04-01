@@ -51,47 +51,47 @@ class AppWebViewController: UIViewController {
         view.addSubview(self.webView)
         var frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         if fullscreen == false {
-            frame.origin.y = AppConfig.calculateTopBarHeight()
+            frame.origin.y = AppConfig.getStatusBarHeight()
         }
         self.webView.frame = frame
  
-        self.registerJSBridgeHandlers()
-        self.initiateWebPageLoad()
+        self.pr_36ff()
+        self.eh_7a4b()
  
         // 应用从后台切换到前台
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(triggerPageShowEvent),
+                                               selector: #selector(jsEvent_onPageShow),
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        triggerPageShowEvent()
+        jsEvent_onPageShow()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        triggerPageHideEvent()
-        finalizePendingJSHandlersIfNeeded()
+        jsEvent_onPageHide()
+        oz_6d89()
     }
 
     deinit {
-        unregisterJSBridgeHandlers()
-        finalizePendingJSHandlersIfNeeded()
+        bx_600e()
+        oz_6d89()
     }
 
     /// 发起网页请求
-    private func initiateWebPageLoad() {
+    private func eh_7a4b() {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
             self.webView.load(urlRequest)
-            self.makeWebViewTransparent()
+            self.au_191b()
         }
     }
     
     /// 设置页面为透明
-    private func makeWebViewTransparent() {
+    private func au_191b() {
         guard clearBgColor == true else { return }
         webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'") { _, _  in
         }
@@ -105,19 +105,19 @@ class AppWebViewController: UIViewController {
     }
     
     /// 关闭webview事件
-    func dismissWebInterface() {
+    func closeWeb() {
         if webView.canGoBack {
             webView.goBack()
             return
         }
         
-        unregisterJSBridgeHandlers()
+        bx_600e()
         if self.presentingViewController != nil {
             // 当前页面dismiss后，下面还是网页时，手动调用viewDidAppear
             dismiss(animated: true) {
-                if let currentVC = AppConfig.locateTopMostViewController() {
+                if let currentVC = AppConfig.currentViewController() {
                     if currentVC.isKind(of: AppWebViewController.self) {
-                        (currentVC as! AppWebViewController).triggerPageShowEvent()
+                        (currentVC as! AppWebViewController).jsEvent_onPageShow()
                     }
                 }
             }
@@ -136,27 +136,27 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         DispatchQueue.main.async {
             let type = message.name
             if type == "closeWeb" {
-                self.dismissWebInterface()
+                self.closeWeb()
                 
             } else if type == "toUrl" {
                 if let url = message.body as? String {
-                    AppWebViewController.presentNewWebInterface(url)
+                    AppWebViewController.openNewWebView(url)
                 }
             }
         }
     }
 
-    func registerJSBridgeHandlers() {
+    func pr_36ff() {
         self.bridge = WebViewJavascriptBridge(self.webView)
         self.bridge?.setWebViewDelegate(self)
         self.bridge?.registerHandler("syncAppInfo", handler: { data, callback in
             print("js call getUserIdFromObjC, data from js is %@", data as Any)
             if callback != nil {
                 if let dic = data as? [String: Any] {
-                    self.processH5MessagePayload(schemeDic: dic) { backDic in
+                    self.oa_3acf(schemeDic: dic) { backDic in
                         callback?(backDic)
                         DispatchQueue.main.async {
-                            self.handAuthOpenURL(dic: backDic)
+                            self.uw_392b(dic: backDic)
                         }
                     }
                 }
@@ -167,7 +167,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         ucController.add(AppWebViewScriptDelegateHandler(self), name: "toUrl")
     }
 
-    func unregisterJSBridgeHandlers() {
+    func bx_600e() {
         let ucController = self.webView.configuration.userContentController
         if #available(iOS 14.0, *) {
             ucController.removeAllScriptMessageHandlers()
@@ -177,7 +177,7 @@ extension AppWebViewController: WKScriptMessageHandler, WebViewJavascriptBridgeB
         }
     }
 
-    func handAuthOpenURL(dic: [String: Any]) {
+    func uw_392b(dic: [String: Any]) {
         if let typeName = dic["typeName"] as? String, let isAuth = dic["isAuth"] as? Bool, let isFirst = dic["isFirst"] as? Bool {
             if isAuth || isFirst {
                 return
@@ -225,25 +225,25 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        makeWebViewTransparent()
+        au_191b()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let alertController = UIAlertController(title: nil, message: "Poor network, loading failed", preferredStyle: .alert)
         let action = UIAlertAction(title: "Refresh", style: .default) { _ in
-            self.reloadWebView()
+            self.yv_5ea2()
         }
         alertController.addAction(action)
         present(alertController, animated: true)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-    func reloadWebView() {
+    func yv_5ea2() {
         if self.webView.url != nil {
             self.webView.reload()
         } else {
-            self.initiateWebPageLoad()
+            self.eh_7a4b()
         }
     }
 
@@ -265,7 +265,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        self.reloadWebView()
+        self.yv_5ea2()
     }
 
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -276,7 +276,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
             self.pendingAlertCompletion = nil
         }
         alertController.addAction(action)
-        if let topVC = AppConfig.locateTopMostViewController() {
+        if let topVC = AppConfig.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback to avoid crash if cannot present
@@ -298,7 +298,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        if let topVC = AppConfig.locateTopMostViewController() {
+        if let topVC = AppConfig.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback default = false
@@ -324,7 +324,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(doneAction)
-        if let topVC = AppConfig.locateTopMostViewController() {
+        if let topVC = AppConfig.currentViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback default = nil
@@ -341,7 +341,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
 
 extension AppWebViewController {
     /// Ensure any pending JS dialog completion handlers are executed to avoid WKWebView crash
-    private func finalizePendingJSHandlersIfNeeded() {
+    private func oz_6d89() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
             pendingAlertCompletion = nil
@@ -357,13 +357,13 @@ extension AppWebViewController {
     }
     
     /// 通知三方H5刷新金币
-    func notifyJSOfCoinUpdate() {
+    func rr_7ee4() {
         self.webView.evaluateJavaScript("HttpTool.NativeToJs('recharge')") { data, error in
         }
     }
     
     /// js事件：网页展示
-    @objc private func triggerPageShowEvent() {
+    @objc private func jsEvent_onPageShow() {
         self.bridge?.callHandler("onPageShow")
         self.webView.evaluateJavaScript("window.onPageShow&&onPageShow();") { data, error in
             print("jsEvent(onPageShow): \(String(describing: data))---\(String(describing: error))")
@@ -371,7 +371,7 @@ extension AppWebViewController {
     }
     
     /// js事件：网页消失
-    private func triggerPageHideEvent() {
+    private func jsEvent_onPageHide() {
         self.bridge?.callHandler("onPageHide")
         self.webView.evaluateJavaScript("window.onPageHide&&onPageHide();") { data, error in
             print("jsEvent(onPageHide): \(String(describing: data))---\(String(describing: error))")

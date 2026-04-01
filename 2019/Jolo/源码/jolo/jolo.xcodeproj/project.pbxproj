@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84598C892F7D5A98002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C7E2F7D5A98002A5DBE /* AppAdjustManager.swift */; };
+		84598C8A2F7D5A98002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C872F7D5A98002A5DBE /* ProgressHUD.swift */; };
+		84598C8B2F7D5A98002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C822F7D5A98002A5DBE /* AppRequestTool.swift */; };
+		84598C8C2F7D5A98002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C852F7D5A98002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598C8D2F7D5A98002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C842F7D5A98002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598C8E2F7D5A98002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C7F2F7D5A98002A5DBE /* AppleIAPManager.swift */; };
+		84598C8F2F7D5A98002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C882F7D5A98002A5DBE /* WaitViewController.swift */; };
+		84598C902F7D5A98002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C832F7D5A98002A5DBE /* AppWebViewController.swift */; };
+		84598C912F7D5A98002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C802F7D5A98002A5DBE /* AppPermissionTool.swift */; };
+		84598C922F7D5A98002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C812F7D5A98002A5DBE /* AppRequestBaseModel.swift */; };
+		84598C932F7D5A98002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C862F7D5A98002A5DBE /* LocalPushScheduler.swift */; };
 		84B42B082F5EA17E004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B42B072F5EA17E004953C3 /* StoreKit.framework */; };
 		84B42B4A2F5EA7AE004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B452F5EA7AE004953C3 /* Assets.xcassets */; };
 		84B42B4C2F5EA7AE004953C3 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B482F5EA7AE004953C3 /* video.mp4 */; };
@@ -25,18 +36,7 @@
 		84B42B592F5EA7AE004953C3 /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B412F5EA7AE004953C3 /* HomeFeedCell.swift */; };
 		84B42B5A2F5EA7AE004953C3 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B422F5EA7AE004953C3 /* StoryTableViewCell.swift */; };
 		84B42B6A2F5EA856004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B5E2F5EA856004953C3 /* AppConfig.swift */; };
-		84B42B6B2F5EA856004953C3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B682F5EA856004953C3 /* ProgressHUD.swift */; };
-		84B42B6C2F5EA856004953C3 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B622F5EA856004953C3 /* AppRequestBaseModel.swift */; };
-		84B42B6D2F5EA856004953C3 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B612F5EA856004953C3 /* AppPermissionTool.swift */; };
-		84B42B6E2F5EA856004953C3 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B602F5EA856004953C3 /* AppleIAPManager.swift */; };
-		84B42B6F2F5EA856004953C3 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B5D2F5EA856004953C3 /* AppAdjustManager.swift */; };
-		84B42B702F5EA856004953C3 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B642F5EA856004953C3 /* AppWebViewController.swift */; };
-		84B42B712F5EA856004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B662F5EA856004953C3 /* AppWebViewScriptDelegateHandler.swift */; };
-		84B42B722F5EA856004953C3 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B632F5EA856004953C3 /* AppRequestTool.swift */; };
-		84B42B732F5EA856004953C3 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B672F5EA856004953C3 /* LocalPushScheduler.swift */; };
-		84B42B742F5EA856004953C3 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B652F5EA856004953C3 /* AppWebViewHandleEvent.swift */; };
 		84B42B752F5EA856004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B5F2F5EA856004953C3 /* AppDelegate.swift */; };
-		84B42B762F5EA856004953C3 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B692F5EA856004953C3 /* WaitViewController.swift */; };
 		84B42B782F5EBB2B004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B772F5EBB2B004953C3 /* Launch Screen.storyboard */; };
 		84B42B7A2F5EC20F004953C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B42B792F5EC20F004953C3 /* GoogleService-Info.plist */; };
 		84B42B7C2F5FC000004953C3 /* BlocklistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */; };
@@ -46,6 +46,17 @@
 /* Begin PBXFileReference section */
 		0979023A86F1C72CBD99044B /* Pods-jolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jolo.debug.xcconfig"; path = "Target Support Files/Pods-jolo/Pods-jolo.debug.xcconfig"; sourceTree = "<group>"; };
 		38204314AB2FA00772786B07 /* Pods-jolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jolo.release.xcconfig"; path = "Target Support Files/Pods-jolo/Pods-jolo.release.xcconfig"; sourceTree = "<group>"; };
+		84598C7E2F7D5A98002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598C7F2F7D5A98002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598C802F7D5A98002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598C812F7D5A98002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598C822F7D5A98002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598C832F7D5A98002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598C842F7D5A98002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598C852F7D5A98002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598C862F7D5A98002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598C872F7D5A98002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598C882F7D5A98002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B42A972F5E6324004953C3 /* jolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B42B072F5EA17E004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84B42B322F5EA7AE004953C3 /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
@@ -66,19 +77,8 @@
 		84B42B462F5EA7AE004953C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B42B472F5EA7AE004953C3 /* jolo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = jolo.entitlements; sourceTree = "<group>"; };
 		84B42B482F5EA7AE004953C3 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		84B42B5D2F5EA856004953C3 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		84B42B5E2F5EA856004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84B42B5F2F5EA856004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B42B602F5EA856004953C3 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84B42B612F5EA856004953C3 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84B42B622F5EA856004953C3 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84B42B632F5EA856004953C3 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84B42B642F5EA856004953C3 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84B42B652F5EA856004953C3 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84B42B662F5EA856004953C3 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84B42B672F5EA856004953C3 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84B42B682F5EA856004953C3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84B42B692F5EA856004953C3 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B42B772F5EBB2B004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		84B42B792F5EC20F004953C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B42B7B2F5FC000004953C3 /* BlocklistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistManager.swift; sourceTree = "<group>"; };
@@ -189,19 +189,19 @@
 		84B42B5C2F5EA836004953C3 /* maket */ = {
 			isa = PBXGroup;
 			children = (
-				84B42B5D2F5EA856004953C3 /* AppAdjustManager.swift */,
 				84B42B5E2F5EA856004953C3 /* AppConfig.swift */,
 				84B42B5F2F5EA856004953C3 /* AppDelegate.swift */,
-				84B42B602F5EA856004953C3 /* AppleIAPManager.swift */,
-				84B42B612F5EA856004953C3 /* AppPermissionTool.swift */,
-				84B42B622F5EA856004953C3 /* AppRequestBaseModel.swift */,
-				84B42B632F5EA856004953C3 /* AppRequestTool.swift */,
-				84B42B642F5EA856004953C3 /* AppWebViewController.swift */,
-				84B42B652F5EA856004953C3 /* AppWebViewHandleEvent.swift */,
-				84B42B662F5EA856004953C3 /* AppWebViewScriptDelegateHandler.swift */,
-				84B42B672F5EA856004953C3 /* LocalPushScheduler.swift */,
-				84B42B682F5EA856004953C3 /* ProgressHUD.swift */,
-				84B42B692F5EA856004953C3 /* WaitViewController.swift */,
+				84598C7E2F7D5A98002A5DBE /* AppAdjustManager.swift */,
+				84598C7F2F7D5A98002A5DBE /* AppleIAPManager.swift */,
+				84598C802F7D5A98002A5DBE /* AppPermissionTool.swift */,
+				84598C812F7D5A98002A5DBE /* AppRequestBaseModel.swift */,
+				84598C822F7D5A98002A5DBE /* AppRequestTool.swift */,
+				84598C832F7D5A98002A5DBE /* AppWebViewController.swift */,
+				84598C842F7D5A98002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598C852F7D5A98002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598C862F7D5A98002A5DBE /* LocalPushScheduler.swift */,
+				84598C872F7D5A98002A5DBE /* ProgressHUD.swift */,
+				84598C882F7D5A98002A5DBE /* WaitViewController.swift */,
 			);
 			path = maket;
 			sourceTree = "<group>";
@@ -336,20 +336,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B42B4D2F5EA7AE004953C3 /* ConsentViewController.swift in Sources */,
+				84598C892F7D5A98002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598C8A2F7D5A98002A5DBE /* ProgressHUD.swift in Sources */,
+				84598C8B2F7D5A98002A5DBE /* AppRequestTool.swift in Sources */,
+				84598C8C2F7D5A98002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598C8D2F7D5A98002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598C8E2F7D5A98002A5DBE /* AppleIAPManager.swift in Sources */,
+				84598C8F2F7D5A98002A5DBE /* WaitViewController.swift in Sources */,
+				84598C902F7D5A98002A5DBE /* AppWebViewController.swift in Sources */,
+				84598C912F7D5A98002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598C922F7D5A98002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598C932F7D5A98002A5DBE /* LocalPushScheduler.swift in Sources */,
 				84B42B4E2F5EA7AE004953C3 /* HomeViewController.swift in Sources */,
 				84B42B6A2F5EA856004953C3 /* AppConfig.swift in Sources */,
-				84B42B6B2F5EA856004953C3 /* ProgressHUD.swift in Sources */,
-				84B42B6C2F5EA856004953C3 /* AppRequestBaseModel.swift in Sources */,
-				84B42B6D2F5EA856004953C3 /* AppPermissionTool.swift in Sources */,
-				84B42B6E2F5EA856004953C3 /* AppleIAPManager.swift in Sources */,
-				84B42B6F2F5EA856004953C3 /* AppAdjustManager.swift in Sources */,
-				84B42B702F5EA856004953C3 /* AppWebViewController.swift in Sources */,
-				84B42B712F5EA856004953C3 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84B42B722F5EA856004953C3 /* AppRequestTool.swift in Sources */,
-				84B42B732F5EA856004953C3 /* LocalPushScheduler.swift in Sources */,
-				84B42B742F5EA856004953C3 /* AppWebViewHandleEvent.swift in Sources */,
 				84B42B752F5EA856004953C3 /* AppDelegate.swift in Sources */,
-				84B42B762F5EA856004953C3 /* WaitViewController.swift in Sources */,
 				84B42B4F2F5EA7AE004953C3 /* MainTabBarController.swift in Sources */,
 				84B42B502F5EA7AE004953C3 /* PhotoDetailViewController.swift in Sources */,
 				84B42B512F5EA7AE004953C3 /* SettingsViewController.swift in Sources */,
@@ -511,15 +511,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.film.jolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -560,15 +560,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.film.jolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

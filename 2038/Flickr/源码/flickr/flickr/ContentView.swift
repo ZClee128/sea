@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -20,5 +21,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    if #available(iOS 15.0, *) {
+        ContentView()
+    } else {
+        // Fallback on earlier versions
+    }
 }
