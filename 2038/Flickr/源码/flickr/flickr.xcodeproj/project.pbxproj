@@ -547,6 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -556,7 +557,10 @@
 				INFOPLIST_FILE = flickr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fickr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save your customized wallpapers.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -593,6 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -602,7 +607,10 @@
 				INFOPLIST_FILE = flickr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fickr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save your customized wallpapers.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
