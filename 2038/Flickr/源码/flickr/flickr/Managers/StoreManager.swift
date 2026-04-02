@@ -15,6 +15,9 @@ class StoreManager: ObservableObject {
         "Flickr5", "Flickr9", "Flickr19", "Flickr49", "Flickr99"
     ]
     
+    @Published var isFetching = false
+    @Published var fetchError: String? = nil
+    
     // Hardcoded local package info for UI fallback and coin amounts
     let coinPackages: [CoinPackage] = [
         CoinPackage(id: "Flickr", name: "32 coins", amount: 32, price: "$0.99"),
@@ -40,12 +43,30 @@ class StoreManager: ObservableObject {
     
     @MainActor
     func fetchProducts() async {
+        isFetching = true
+        fetchError = nil
+        print("------- STOREKIT FETCH START -------")
         do {
             let fetchedProducts = try await Product.products(for: productIDs)
             self.products = fetchedProducts.sorted(by: { $0.price < $1.price })
+            
+            print("Successfully fetched \(fetchedProducts.count) products from StoreKit.")
+            for p in fetchedProducts {
+                print("  - Product: \(p.id) | \(p.displayName) | \(p.displayPrice)")
+            }
+
+            if fetchedProducts.isEmpty {
+                print("⚠️ [WARNING] No products returned from StoreKit! This usually means:")
+                print("   1. Paid Apps Agreement not signed in App Store Connect.")
+                print("   2. Product IDs in StoreManager don't match those in App Store Connect.")
+                print("   3. Products are not in 'Ready to Submit' status.")
+            }
         } catch {
-            print("Failed to fetch products: \(error)")
+            fetchError = error.localizedDescription
+            print("❌ [ERROR] StoreKit fetch failed: \(error)")
         }
+        print("------- STOREKIT FETCH END -------")
+        isFetching = false
     }
     
     func listenForTransactions() async {

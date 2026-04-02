@@ -128,13 +128,19 @@ struct InspoCardView: View {
                                 }
                                 
                                 Button(action: exportCard) {
-                                    Text("EXPORT CARD")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                        .frame(maxWidth: .infinity)
-                                        .padding()
-                                        .background(Color.black)
-                                        .cornerRadius(12)
+                                    HStack(spacing: 8) {
+                                        Text("EXPORT CARD")
+                                        Text("(10")
+                                        Image(systemName: "circle.circle.fill")
+                                            .foregroundColor(.yellow)
+                                        Text(")")
+                                    }
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.black)
+                                    .cornerRadius(12)
                                 }
                                 
                                 Button(action: { selectedMuse = nil }) {

@@ -1,9 +1,12 @@
 import SwiftUI
+import StoreKit
 
 @available(iOS 15.0, *)
 struct CoinShopView: View {
     @StateObject var storeManager = StoreManager.shared
     @Environment(\.presentationMode) var presentationMode
+    @State private var errorMessage: String? = nil
+    @State private var showingError = false
     @State private var purchasingID: String? = nil
     
     var body: some View {
@@ -35,11 +38,52 @@ struct CoinShopView: View {
                         )
                         .padding(.horizontal)
                         
-                        Text("Coin Boutique")
-                            .font(.system(size: 22, weight: .bold, design: .serif))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        HStack {
+                            Text("Coin Boutique")
+                                .font(.system(size: 22, weight: .bold, design: .serif))
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            if storeManager.isFetching {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
+                            }
+                        }
+                        .padding(.horizontal)
+
+                        // StoreKit Status Info (Helpful for Reviewers)
+                        if !storeManager.isFetching && storeManager.products.isEmpty {
+                            VStack(spacing: 12) {
+                                Image(systemName: "exclamationmark.triangle.fill")
+                                    .font(.title)
+                                    .foregroundColor(.yellow)
+                                
+                                Text("Store Synchronization Pending")
+                                    .font(.system(size: 16, weight: .bold, design: .serif))
+                                    .foregroundColor(.white)
+                                
+                                Text("We're having trouble connecting to the App Store. Please ensure your device has a valid network connection and sandbox account.")
+                                    .font(.system(size: 12, design: .serif))
+                                    .foregroundColor(.white.opacity(0.6))
+                                    .multilineTextAlignment(.center)
+                                    .padding(.horizontal)
+                                
+                                Button(action: { Task { await storeManager.fetchProducts() } }) {
+                                    Text("Retry Connection")
+                                        .font(.system(size: 14, weight: .bold, design: .serif))
+                                        .foregroundColor(.black)
+                                        .padding(.horizontal, 20)
+                                        .padding(.vertical, 8)
+                                        .background(Color.yellow)
+                                        .cornerRadius(20)
+                                }
+                            }
+                            .padding()
+                            .background(Color.white.opacity(0.05))
+                            .cornerRadius(16)
                             .padding(.horizontal)
+                        }
                         
                         // Coin Packages Grid
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
@@ -73,7 +117,8 @@ struct CoinShopView: View {
                                     )
                                 }
                                 .buttonStyle(PlainButtonStyle())
-                                .disabled(purchasingID != nil)
+                                .disabled(purchasingID != nil || (storeManager.products.isEmpty && !storeManager.isFetching))
+                                .opacity(storeManager.products.isEmpty && !storeManager.isFetching ? 0.5 : 1.0)
                             }
                         }
                         .padding(.horizontal)
@@ -85,6 +130,14 @@ struct CoinShopView: View {
                             .foregroundColor(.white.opacity(0.4))
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
+                        
+                        Button(action: { Task { try? await AppStore.sync() } }) {
+                            Text("Restore Purchases")
+                                .font(.system(size: 13, weight: .medium, design: .serif))
+                                .foregroundColor(.white.opacity(0.5))
+                                .underline()
+                        }
+                        .padding(.bottom, 20)
                     }
                     .padding(.top)
                 }
@@ -97,10 +150,24 @@ struct CoinShopView: View {
                     .background(Color.white.opacity(0.1))
                     .clipShape(Circle())
             })
+            .alert(isPresented: $showingError) {
+                Alert(
+                    title: Text("Boutique Unavailable"),
+                    message: Text(errorMessage ?? "Please check your network connection or try again later."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
     private func purchase(_ id: String) {
+        // Ensure product exists in fetched products
+        guard storeManager.products.contains(where: { $0.id == id }) else {
+            errorMessage = "This package is currently unavailable in your region or storefront. Please try another one."
+            showingError = true
+            return
+        }
+
         withAnimation { purchasingID = id }
         triggerHaptic()
         
@@ -109,6 +176,8 @@ struct CoinShopView: View {
                 try await storeManager.purchase(id)
                 triggerHapticSuccess()
             } catch {
+                errorMessage = error.localizedDescription
+                showingError = true
                 print("Purchase failed: \(error)")
             }
             withAnimation { purchasingID = nil }
