@@ -30,6 +30,10 @@ class StoreManager: ObservableObject {
     
     init() {
         Task {
+            // Listen for transactions that happen outside of the app
+            await listenForTransactions()
+        }
+        Task {
             await fetchProducts()
         }
     }
@@ -44,31 +48,42 @@ class StoreManager: ObservableObject {
         }
     }
     
-    func purchase(_ productID: String) async throws {
-        // Find the matching package to get the amount to add
-        guard let package = coinPackages.first(where: { $0.id == productID }) else { return }
-        
-        // In a real environment, we use StoreKit 2:
-        /*
-        if let product = products.first(where: { $0.id == productID }) {
-            let result = try await product.purchase()
-            switch result {
-            case .success(let verification):
-                let transaction = try checkVerified(verification)
-                await addCoins(package.amount)
+    func listenForTransactions() async {
+        for await result in Transaction.updates {
+            do {
+                let transaction = try checkVerified(result)
+                await deliverContent(for: transaction.productID)
                 await transaction.finish()
-            case .userCancelled, .pending:
-                break
-            @unknown default:
-                break
+            } catch {
+                print("Transaction failed verification")
             }
         }
-        */
+    }
+    
+    @MainActor
+    func purchase(_ productID: String) async throws {
+        guard let product = products.first(where: { $0.id == productID }) else { return }
         
-        // MOCK for demonstration/development if StoreKit unavailable
-        DispatchQueue.main.async {
-            self.coinBalance += package.amount
+        let result = try await product.purchase()
+        
+        switch result {
+        case .success(let verification):
+            let transaction = try checkVerified(verification)
+            await deliverContent(for: transaction.productID)
+            await transaction.finish()
+        case .userCancelled:
+            print("User cancelled purchase")
+        case .pending:
+            print("Purchase pending")
+        @unknown default:
+            break
         }
+    }
+    
+    @MainActor
+    private func deliverContent(for productID: String) {
+        guard let package = coinPackages.first(where: { $0.id == productID }) else { return }
+        self.coinBalance += package.amount
     }
     
     func spendCoins(_ amount: Int) -> Bool {

@@ -3,38 +3,109 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		84598C1C2F7CF611002A5DBE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84598C1B2F7CF611002A5DBE /* StoreKit.framework */; };
+		84598CC52F7E0882002A5DBE /* CommunityGuidelines.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84598CAA2F7E0882002A5DBE /* CommunityGuidelines.txt */; };
+		84598CC62F7E0882002A5DBE /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84598CAB2F7E0882002A5DBE /* PrivacyPolicy.txt */; };
+		84598CC72F7E0882002A5DBE /* TermsOfService.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84598CAC2F7E0882002A5DBE /* TermsOfService.txt */; };
+		84598CC82F7E0882002A5DBE /* Art of Stillness.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84598CBD2F7E0882002A5DBE /* Art of Stillness.mp4 */; };
+		84598CC92F7E0882002A5DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84598CBE2F7E0882002A5DBE /* Assets.xcassets */; };
+		84598CCA2F7E0882002A5DBE /* Ethereal Flow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84598CC02F7E0882002A5DBE /* Ethereal Flow.mp4 */; };
+		84598CCC2F7E0882002A5DBE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84598CC32F7E0882002A5DBE /* Launch Screen.storyboard */; };
+		84598CCD2F7E0882002A5DBE /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C9F2F7E0882002A5DBE /* Color+Hex.swift */; };
+		84598CCE2F7E0882002A5DBE /* ArchiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA12F7E0882002A5DBE /* ArchiveManager.swift */; };
+		84598CCF2F7E0882002A5DBE /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA22F7E0882002A5DBE /* AssetManager.swift */; };
+		84598CD02F7E0882002A5DBE /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA32F7E0882002A5DBE /* ChatManager.swift */; };
+		84598CD12F7E0882002A5DBE /* GalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA42F7E0882002A5DBE /* GalleryManager.swift */; };
+		84598CD22F7E0882002A5DBE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA52F7E0882002A5DBE /* StoreManager.swift */; };
+		84598CD32F7E0882002A5DBE /* VideoThumbnailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA62F7E0882002A5DBE /* VideoThumbnailManager.swift */; };
+		84598CD42F7E0882002A5DBE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CA82F7E0882002A5DBE /* Models.swift */; };
+		84598CD52F7E0882002A5DBE /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CAE2F7E0882002A5DBE /* ChatDetailView.swift */; };
+		84598CD62F7E0882002A5DBE /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CAF2F7E0882002A5DBE /* ChatListView.swift */; };
+		84598CD72F7E0882002A5DBE /* CoinShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB02F7E0882002A5DBE /* CoinShopView.swift */; };
+		84598CD82F7E0882002A5DBE /* ColorStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB12F7E0882002A5DBE /* ColorStoryView.swift */; };
+		84598CD92F7E0882002A5DBE /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB22F7E0882002A5DBE /* ExploreView.swift */; };
+		84598CDA2F7E0882002A5DBE /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB32F7E0882002A5DBE /* FocusView.swift */; };
+		84598CDB2F7E0882002A5DBE /* InspoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB42F7E0882002A5DBE /* InspoCardView.swift */; };
+		84598CDC2F7E0882002A5DBE /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB52F7E0882002A5DBE /* MainTabView.swift */; };
+		84598CDD2F7E0882002A5DBE /* MoodboardLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB62F7E0882002A5DBE /* MoodboardLabView.swift */; };
+		84598CDE2F7E0882002A5DBE /* MuseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB72F7E0882002A5DBE /* MuseDetailView.swift */; };
+		84598CDF2F7E0882002A5DBE /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB82F7E0882002A5DBE /* PrivacyView.swift */; };
+		84598CE02F7E0882002A5DBE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CB92F7E0882002A5DBE /* SettingsView.swift */; };
+		84598CE12F7E0882002A5DBE /* WallPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CBA2F7E0882002A5DBE /* WallPreviewView.swift */; };
+		84598CE32F7E0882002A5DBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CBF2F7E0882002A5DBE /* ContentView.swift */; };
+		84598CF22F7E0A19002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEC2F7E0A19002A5DBE /* AppWebViewController.swift */; };
+		84598CF32F7E0A19002A5DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE72F7E0A19002A5DBE /* AppDelegate.swift */; };
+		84598CF42F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEE2F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598CF52F7E0A19002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEB2F7E0A19002A5DBE /* AppRequestTool.swift */; };
+		84598CF62F7E0A19002A5DBE /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE62F7E0A19002A5DBE /* AppConfig.swift */; };
+		84598CF72F7E0A19002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CED2F7E0A19002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598CF82F7E0A19002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE82F7E0A19002A5DBE /* AppleIAPManager.swift */; };
+		84598CF92F7E0A19002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CF02F7E0A19002A5DBE /* ProgressHUD.swift */; };
+		84598CFA2F7E0A19002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CF12F7E0A19002A5DBE /* WaitViewController.swift */; };
+		84598CFB2F7E0A19002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEF2F7E0A19002A5DBE /* LocalPushScheduler.swift */; };
+		84598CFC2F7E0A19002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE92F7E0A19002A5DBE /* AppPermissionTool.swift */; };
+		84598CFD2F7E0A19002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEA2F7E0A19002A5DBE /* AppRequestBaseModel.swift */; };
+		84598CFE2F7E0A19002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE52F7E0A19002A5DBE /* AppAdjustManager.swift */; };
+		84598D002F7E0B70002A5DBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84598CFF2F7E0B70002A5DBE /* GoogleService-Info.plist */; };
+		A8B339034433A30E3733DD45 /* Pods_flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A100BEB3A877F9A78E4718A /* Pods_flickr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		663EE91587243D7D6D56402B /* Pods-flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.release.xcconfig"; path = "Target Support Files/Pods-flickr/Pods-flickr.release.xcconfig"; sourceTree = "<group>"; };
 		84598C0A2F7CF5BB002A5DBE /* flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84598C1B2F7CF611002A5DBE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84598C9F2F7E0882002A5DBE /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		84598CA12F7E0882002A5DBE /* ArchiveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveManager.swift; sourceTree = "<group>"; };
+		84598CA22F7E0882002A5DBE /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		84598CA32F7E0882002A5DBE /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		84598CA42F7E0882002A5DBE /* GalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryManager.swift; sourceTree = "<group>"; };
+		84598CA52F7E0882002A5DBE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84598CA62F7E0882002A5DBE /* VideoThumbnailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailManager.swift; sourceTree = "<group>"; };
+		84598CA82F7E0882002A5DBE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		84598CAA2F7E0882002A5DBE /* CommunityGuidelines.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CommunityGuidelines.txt; sourceTree = "<group>"; };
+		84598CAB2F7E0882002A5DBE /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		84598CAC2F7E0882002A5DBE /* TermsOfService.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TermsOfService.txt; sourceTree = "<group>"; };
+		84598CAE2F7E0882002A5DBE /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
+		84598CAF2F7E0882002A5DBE /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		84598CB02F7E0882002A5DBE /* CoinShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinShopView.swift; sourceTree = "<group>"; };
+		84598CB12F7E0882002A5DBE /* ColorStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoryView.swift; sourceTree = "<group>"; };
+		84598CB22F7E0882002A5DBE /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		84598CB32F7E0882002A5DBE /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
+		84598CB42F7E0882002A5DBE /* InspoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspoCardView.swift; sourceTree = "<group>"; };
+		84598CB52F7E0882002A5DBE /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84598CB62F7E0882002A5DBE /* MoodboardLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodboardLabView.swift; sourceTree = "<group>"; };
+		84598CB72F7E0882002A5DBE /* MuseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseDetailView.swift; sourceTree = "<group>"; };
+		84598CB82F7E0882002A5DBE /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		84598CB92F7E0882002A5DBE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84598CBA2F7E0882002A5DBE /* WallPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPreviewView.swift; sourceTree = "<group>"; };
+		84598CBD2F7E0882002A5DBE /* Art of Stillness.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Art of Stillness.mp4"; sourceTree = "<group>"; };
+		84598CBE2F7E0882002A5DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84598CBF2F7E0882002A5DBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84598CC02F7E0882002A5DBE /* Ethereal Flow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ethereal Flow.mp4"; sourceTree = "<group>"; };
+		84598CC12F7E0882002A5DBE /* flickr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = flickr.entitlements; sourceTree = "<group>"; };
+		84598CC22F7E0882002A5DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84598CC32F7E0882002A5DBE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84598CE52F7E0A19002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598CE62F7E0A19002A5DBE /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84598CE72F7E0A19002A5DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84598CE82F7E0A19002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598CE92F7E0A19002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598CEA2F7E0A19002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598CEB2F7E0A19002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598CEC2F7E0A19002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598CED2F7E0A19002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598CEE2F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598CEF2F7E0A19002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598CF02F7E0A19002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598CF12F7E0A19002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84598CFF2F7E0B70002A5DBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A100BEB3A877F9A78E4718A /* Pods_flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3260AA73292662CCE406DFA /* Pods-flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.debug.xcconfig"; path = "Target Support Files/Pods-flickr/Pods-flickr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84598C192F7CF5E2002A5DBE /* Exceptions for "flickr" folder in "flickr" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 84598C092F7CF5BB002A5DBE /* flickr */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84598C0C2F7CF5BB002A5DBE /* flickr */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84598C192F7CF5E2002A5DBE /* Exceptions for "flickr" folder in "flickr" target */,
-			);
-			path = flickr;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84598C072F7CF5BB002A5DBE /* Frameworks */ = {
@@ -42,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84598C1C2F7CF611002A5DBE /* StoreKit.framework in Frameworks */,
+				A8B339034433A30E3733DD45 /* Pods_flickr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +123,10 @@
 		84598C012F7CF5BB002A5DBE = {
 			isa = PBXGroup;
 			children = (
-				84598C0C2F7CF5BB002A5DBE /* flickr */,
+				84598CC42F7E0882002A5DBE /* flickr */,
 				84598C1A2F7CF611002A5DBE /* Frameworks */,
 				84598C0B2F7CF5BB002A5DBE /* Products */,
+				F2F97E8D297DA3DF3382DB4D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +142,118 @@
 			isa = PBXGroup;
 			children = (
 				84598C1B2F7CF611002A5DBE /* StoreKit.framework */,
+				9A100BEB3A877F9A78E4718A /* Pods_flickr.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84598CA02F7E0882002A5DBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84598C9F2F7E0882002A5DBE /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84598CA72F7E0882002A5DBE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84598CA12F7E0882002A5DBE /* ArchiveManager.swift */,
+				84598CA22F7E0882002A5DBE /* AssetManager.swift */,
+				84598CA32F7E0882002A5DBE /* ChatManager.swift */,
+				84598CA42F7E0882002A5DBE /* GalleryManager.swift */,
+				84598CA52F7E0882002A5DBE /* StoreManager.swift */,
+				84598CA62F7E0882002A5DBE /* VideoThumbnailManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		84598CA92F7E0882002A5DBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84598CA82F7E0882002A5DBE /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84598CAD2F7E0882002A5DBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84598CAA2F7E0882002A5DBE /* CommunityGuidelines.txt */,
+				84598CAB2F7E0882002A5DBE /* PrivacyPolicy.txt */,
+				84598CAC2F7E0882002A5DBE /* TermsOfService.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84598CBB2F7E0882002A5DBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84598CAE2F7E0882002A5DBE /* ChatDetailView.swift */,
+				84598CAF2F7E0882002A5DBE /* ChatListView.swift */,
+				84598CB02F7E0882002A5DBE /* CoinShopView.swift */,
+				84598CB12F7E0882002A5DBE /* ColorStoryView.swift */,
+				84598CB22F7E0882002A5DBE /* ExploreView.swift */,
+				84598CB32F7E0882002A5DBE /* FocusView.swift */,
+				84598CB42F7E0882002A5DBE /* InspoCardView.swift */,
+				84598CB52F7E0882002A5DBE /* MainTabView.swift */,
+				84598CB62F7E0882002A5DBE /* MoodboardLabView.swift */,
+				84598CB72F7E0882002A5DBE /* MuseDetailView.swift */,
+				84598CB82F7E0882002A5DBE /* PrivacyView.swift */,
+				84598CB92F7E0882002A5DBE /* SettingsView.swift */,
+				84598CBA2F7E0882002A5DBE /* WallPreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84598CC42F7E0882002A5DBE /* flickr */ = {
+			isa = PBXGroup;
+			children = (
+				84598CFF2F7E0B70002A5DBE /* GoogleService-Info.plist */,
+				84598CE42F7E0A06002A5DBE /* ext */,
+				84598CA02F7E0882002A5DBE /* Extensions */,
+				84598CA72F7E0882002A5DBE /* Managers */,
+				84598CA92F7E0882002A5DBE /* Models */,
+				84598CAD2F7E0882002A5DBE /* Resources */,
+				84598CBB2F7E0882002A5DBE /* Views */,
+				84598CBD2F7E0882002A5DBE /* Art of Stillness.mp4 */,
+				84598CBE2F7E0882002A5DBE /* Assets.xcassets */,
+				84598CBF2F7E0882002A5DBE /* ContentView.swift */,
+				84598CC02F7E0882002A5DBE /* Ethereal Flow.mp4 */,
+				84598CC12F7E0882002A5DBE /* flickr.entitlements */,
+				84598CC22F7E0882002A5DBE /* Info.plist */,
+				84598CC32F7E0882002A5DBE /* Launch Screen.storyboard */,
+			);
+			path = flickr;
+			sourceTree = "<group>";
+		};
+		84598CE42F7E0A06002A5DBE /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				84598CE52F7E0A19002A5DBE /* AppAdjustManager.swift */,
+				84598CE62F7E0A19002A5DBE /* AppConfig.swift */,
+				84598CE72F7E0A19002A5DBE /* AppDelegate.swift */,
+				84598CE82F7E0A19002A5DBE /* AppleIAPManager.swift */,
+				84598CE92F7E0A19002A5DBE /* AppPermissionTool.swift */,
+				84598CEA2F7E0A19002A5DBE /* AppRequestBaseModel.swift */,
+				84598CEB2F7E0A19002A5DBE /* AppRequestTool.swift */,
+				84598CEC2F7E0A19002A5DBE /* AppWebViewController.swift */,
+				84598CED2F7E0A19002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598CEE2F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598CEF2F7E0A19002A5DBE /* LocalPushScheduler.swift */,
+				84598CF02F7E0A19002A5DBE /* ProgressHUD.swift */,
+				84598CF12F7E0A19002A5DBE /* WaitViewController.swift */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		F2F97E8D297DA3DF3382DB4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3260AA73292662CCE406DFA /* Pods-flickr.debug.xcconfig */,
+				663EE91587243D7D6D56402B /* Pods-flickr.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,20 +263,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84598C152F7CF5BE002A5DBE /* Build configuration list for PBXNativeTarget "flickr" */;
 			buildPhases = (
+				0AA69B2D9BF9A82B8E2756ED /* [CP] Check Pods Manifest.lock */,
 				84598C062F7CF5BB002A5DBE /* Sources */,
 				84598C072F7CF5BB002A5DBE /* Frameworks */,
 				84598C082F7CF5BB002A5DBE /* Resources */,
+				A0B6B534389CDBC217EC1A02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84598C0C2F7CF5BB002A5DBE /* flickr */,
-			);
 			name = flickr;
-			packageProductDependencies = (
-			);
 			productName = flickr;
 			productReference = 84598C0A2F7CF5BB002A5DBE /* flickr.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +294,7 @@
 				};
 			};
 			buildConfigurationList = 84598C052F7CF5BB002A5DBE /* Build configuration list for PBXProject "flickr" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,8 +302,6 @@
 				Base,
 			);
 			mainGroup = 84598C012F7CF5BB002A5DBE;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84598C0B2F7CF5BB002A5DBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,16 +316,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84598CC52F7E0882002A5DBE /* CommunityGuidelines.txt in Resources */,
+				84598D002F7E0B70002A5DBE /* GoogleService-Info.plist in Resources */,
+				84598CC62F7E0882002A5DBE /* PrivacyPolicy.txt in Resources */,
+				84598CC72F7E0882002A5DBE /* TermsOfService.txt in Resources */,
+				84598CC82F7E0882002A5DBE /* Art of Stillness.mp4 in Resources */,
+				84598CC92F7E0882002A5DBE /* Assets.xcassets in Resources */,
+				84598CCA2F7E0882002A5DBE /* Ethereal Flow.mp4 in Resources */,
+				84598CCC2F7E0882002A5DBE /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AA69B2D9BF9A82B8E2756ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-flickr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B6B534389CDBC217EC1A02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flickr/Pods-flickr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flickr/Pods-flickr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-flickr/Pods-flickr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84598C062F7CF5BB002A5DBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84598CCD2F7E0882002A5DBE /* Color+Hex.swift in Sources */,
+				84598CCE2F7E0882002A5DBE /* ArchiveManager.swift in Sources */,
+				84598CCF2F7E0882002A5DBE /* AssetManager.swift in Sources */,
+				84598CD02F7E0882002A5DBE /* ChatManager.swift in Sources */,
+				84598CD12F7E0882002A5DBE /* GalleryManager.swift in Sources */,
+				84598CD22F7E0882002A5DBE /* StoreManager.swift in Sources */,
+				84598CD32F7E0882002A5DBE /* VideoThumbnailManager.swift in Sources */,
+				84598CD42F7E0882002A5DBE /* Models.swift in Sources */,
+				84598CD52F7E0882002A5DBE /* ChatDetailView.swift in Sources */,
+				84598CD62F7E0882002A5DBE /* ChatListView.swift in Sources */,
+				84598CF22F7E0A19002A5DBE /* AppWebViewController.swift in Sources */,
+				84598CF32F7E0A19002A5DBE /* AppDelegate.swift in Sources */,
+				84598CF42F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598CF52F7E0A19002A5DBE /* AppRequestTool.swift in Sources */,
+				84598CF62F7E0A19002A5DBE /* AppConfig.swift in Sources */,
+				84598CF72F7E0A19002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598CF82F7E0A19002A5DBE /* AppleIAPManager.swift in Sources */,
+				84598CF92F7E0A19002A5DBE /* ProgressHUD.swift in Sources */,
+				84598CFA2F7E0A19002A5DBE /* WaitViewController.swift in Sources */,
+				84598CFB2F7E0A19002A5DBE /* LocalPushScheduler.swift in Sources */,
+				84598CFC2F7E0A19002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598CFD2F7E0A19002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598CFE2F7E0A19002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598CD72F7E0882002A5DBE /* CoinShopView.swift in Sources */,
+				84598CD82F7E0882002A5DBE /* ColorStoryView.swift in Sources */,
+				84598CD92F7E0882002A5DBE /* ExploreView.swift in Sources */,
+				84598CDA2F7E0882002A5DBE /* FocusView.swift in Sources */,
+				84598CDB2F7E0882002A5DBE /* InspoCardView.swift in Sources */,
+				84598CDC2F7E0882002A5DBE /* MainTabView.swift in Sources */,
+				84598CDD2F7E0882002A5DBE /* MoodboardLabView.swift in Sources */,
+				84598CDE2F7E0882002A5DBE /* MuseDetailView.swift in Sources */,
+				84598CDF2F7E0882002A5DBE /* PrivacyView.swift in Sources */,
+				84598CE02F7E0882002A5DBE /* SettingsView.swift in Sources */,
+				84598CE12F7E0882002A5DBE /* WallPreviewView.swift in Sources */,
+				84598CE32F7E0882002A5DBE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +542,14 @@
 		};
 		84598C162F7CF5BE002A5DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3260AA73292662CCE406DFA /* Pods-flickr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -287,7 +557,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Fickr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save your customized wallpapers.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -299,9 +568,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.flickr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flickr.exoprt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -318,12 +588,14 @@
 		};
 		84598C172F7CF5BE002A5DBE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663EE91587243D7D6D56402B /* Pods-flickr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -331,7 +603,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Fickr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save your customized wallpapers.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -343,9 +614,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.glowr.export.flickr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flickr.exoprt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

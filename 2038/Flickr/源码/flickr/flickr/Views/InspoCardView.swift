@@ -214,6 +214,24 @@ struct InspoCardView: View {
                 selectedMuse = muse
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("LoadComposition"))) { notification in
+            if let comp = notification.object as? InspoComposition {
+                selectedMuse = comp.muse
+                quote = comp.quote
+                selectedFontIndex = comp.fontIndex
+                textColor = Color(hex: comp.textColorHex)
+                overlayOpacity = comp.overlayOpacity
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("LoadTemplate"))) { notification in
+            if let temp = notification.object as? StudioTemplate {
+                selectedMuse = temp.muse
+                quote = temp.quote
+                selectedFontIndex = temp.fontIndex
+                textColor = Color(hex: temp.textColorHex)
+                overlayOpacity = temp.overlayOpacity
+            }
+        }
     }
     
     private func randomize() {
@@ -242,6 +260,15 @@ struct InspoCardView: View {
                 
                 let saver = PhotoSaver()
                 saver.writeToPhotoAlbum(image: image)
+                
+                // Save to Local Gallery
+                GalleryManager.shared.saveComposition(
+                    muse: muse,
+                    quote: quote,
+                    fontIndex: selectedFontIndex,
+                    textColorHex: textColor.toHex() ?? "#FFFFFF",
+                    opacity: overlayOpacity
+                )
                 
                 withAnimation {
                     isShowingSuccess = true

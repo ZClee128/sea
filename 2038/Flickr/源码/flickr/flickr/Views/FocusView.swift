@@ -7,6 +7,7 @@ struct FocusView: View {
     @StateObject var assetManager = AssetManager()
     @StateObject var thumbnailManager = VideoThumbnailManager.shared
     @State private var selectedSession: FocusSession?
+    @AppStorage("isBackgroundPlaybackEnabled") var isBackgroundPlaybackEnabled = true
     
     var body: some View {
         NavigationView {
@@ -58,9 +59,26 @@ struct FocusView: View {
                                     .cornerRadius(20)
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text(session.title)
-                                        .font(.system(size: 22, weight: .bold, design: .serif))
-                                        .foregroundColor(.white)
+                                    HStack {
+                                        Text(session.title)
+                                            .font(.system(size: 22, weight: .bold, design: .serif))
+                                            .foregroundColor(.white)
+                                        
+                                        Spacer()
+                                        
+                                        if isBackgroundPlaybackEnabled {
+                                            HStack(spacing: 4) {
+                                                Image(systemName: "sparkles")
+                                                Text("Background Play")
+                                            }
+                                            .font(.system(size: 10, weight: .bold))
+                                            .padding(.horizontal, 8)
+                                            .padding(.vertical, 4)
+                                            .background(Color.white.opacity(0.2))
+                                            .foregroundColor(.white)
+                                            .cornerRadius(8)
+                                        }
+                                    }
                                     
                                     Text(session.mantra)
                                         .font(.system(size: 14, design: .serif))
@@ -100,6 +118,7 @@ struct FocusView: View {
 struct FullscreenPlayer: View {
     let session: FocusSession
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("isBackgroundPlaybackEnabled") var isBackgroundPlaybackEnabled = true
     
     var body: some View {
         ZStack {
@@ -124,6 +143,17 @@ struct FullscreenPlayer: View {
                             .background(Circle().fill(Color.black.opacity(0.2)))
                     }
                     Spacer()
+                    
+                    HStack(spacing: 6) {
+                        Image(systemName: isBackgroundPlaybackEnabled ? "play.circle.fill" : "pause.circle.fill")
+                        Text(isBackgroundPlaybackEnabled ? "Background ON" : "Background OFF")
+                            .font(.system(size: 12, weight: .bold))
+                    }
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(Color.black.opacity(0.3))
+                    .cornerRadius(20)
                 }
                 .padding()
                 
