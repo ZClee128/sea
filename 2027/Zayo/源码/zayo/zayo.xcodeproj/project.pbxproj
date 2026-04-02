@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84598D0E2F7EA3D0002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D062F7EA3D0002A5DBE /* AppRequestBaseModel.swift */; };
+		84598D0F2F7EA3D0002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D0C2F7EA3D0002A5DBE /* ProgressHUD.swift */; };
+		84598D102F7EA3D0002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D0A2F7EA3D0002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598D112F7EA3D0002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D052F7EA3D0002A5DBE /* AppPermissionTool.swift */; };
+		84598D122F7EA3D0002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D0D2F7EA3D0002A5DBE /* WaitViewController.swift */; };
+		84598D132F7EA3D0002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D082F7EA3D0002A5DBE /* AppWebViewController.swift */; };
+		84598D142F7EA3D0002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D0B2F7EA3D0002A5DBE /* LocalPushScheduler.swift */; };
+		84598D152F7EA3D0002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D072F7EA3D0002A5DBE /* AppRequestTool.swift */; };
+		84598D162F7EA3D0002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D032F7EA3D0002A5DBE /* AppAdjustManager.swift */; };
+		84598D172F7EA3D0002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D092F7EA3D0002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598D182F7EA3D0002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D042F7EA3D0002A5DBE /* AppleIAPManager.swift */; };
 		84B434C12F67ED85004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B434C02F67ED85004953C3 /* StoreKit.framework */; };
 		84B434E32F681031004953C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B434CB2F681031004953C3 /* Assets.xcassets */; };
 		84B434E42F681031004953C3 /* Glitch Aura.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84B434CF2F681031004953C3 /* Glitch Aura.mp4 */; };
@@ -33,22 +44,22 @@
 		84B4350A2F6810F8004953C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FD2F6810F8004953C3 /* AppConfig.swift */; };
 		84B4350D2F6810F8004953C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434FE2F6810F8004953C3 /* AppDelegate.swift */; };
 		84B435172F68110C004953C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B435162F68110C004953C3 /* Launch Screen.storyboard */; };
-		84E199C82F714A4800CBA304 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C32F714A4800CBA304 /* AppWebViewHandleEvent.swift */; };
-		84E199C92F714A4800CBA304 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C02F714A4800CBA304 /* AppRequestBaseModel.swift */; };
-		84E199CA2F714A4800CBA304 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C12F714A4800CBA304 /* AppRequestTool.swift */; };
-		84E199CB2F714A4800CBA304 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199BF2F714A4800CBA304 /* AppPermissionTool.swift */; };
-		84E199CC2F714A4800CBA304 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C22F714A4800CBA304 /* AppWebViewController.swift */; };
-		84E199CD2F714A4800CBA304 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C62F714A4800CBA304 /* ProgressHUD.swift */; };
-		84E199CE2F714A4800CBA304 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199BE2F714A4800CBA304 /* AppleIAPManager.swift */; };
-		84E199CF2F714A4800CBA304 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C52F714A4800CBA304 /* LocalPushScheduler.swift */; };
-		84E199D02F714A4800CBA304 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199BD2F714A4800CBA304 /* AppAdjustManager.swift */; };
-		84E199D12F714A4800CBA304 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C42F714A4800CBA304 /* AppWebViewScriptDelegateHandler.swift */; };
-		84E199D22F714A4800CBA304 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199C72F714A4800CBA304 /* WaitViewController.swift */; };
 		B301A175C1364A150BFFA6C1 /* Pods_zayo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82156DAADFB2DB2909EF5DE5 /* Pods_zayo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82156DAADFB2DB2909EF5DE5 /* Pods_zayo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zayo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84598D032F7EA3D0002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598D042F7EA3D0002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598D052F7EA3D0002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598D062F7EA3D0002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598D072F7EA3D0002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598D082F7EA3D0002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598D092F7EA3D0002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598D0A2F7EA3D0002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598D0B2F7EA3D0002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598D0C2F7EA3D0002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598D0D2F7EA3D0002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84B4348D2F67DE0D004953C3 /* zayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B434C02F67ED85004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84B434C92F681031004953C3 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
@@ -78,17 +89,6 @@
 		84B434FD2F6810F8004953C3 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84B434FE2F6810F8004953C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B435162F68110C004953C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		84E199BD2F714A4800CBA304 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
-		84E199BE2F714A4800CBA304 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84E199BF2F714A4800CBA304 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84E199C02F714A4800CBA304 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84E199C12F714A4800CBA304 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84E199C22F714A4800CBA304 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84E199C32F714A4800CBA304 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84E199C42F714A4800CBA304 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84E199C52F714A4800CBA304 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84E199C62F714A4800CBA304 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84E199C72F714A4800CBA304 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		C0308936C0274E6B85AADE78 /* Pods-zayo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zayo.release.xcconfig"; path = "Target Support Files/Pods-zayo/Pods-zayo.release.xcconfig"; sourceTree = "<group>"; };
 		CCF9707A16E9F43362E41EC1 /* Pods-zayo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zayo.debug.xcconfig"; path = "Target Support Files/Pods-zayo/Pods-zayo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,17 +180,17 @@
 			children = (
 				84B434FD2F6810F8004953C3 /* AppConfig.swift */,
 				84B434FE2F6810F8004953C3 /* AppDelegate.swift */,
-				84E199BD2F714A4800CBA304 /* AppAdjustManager.swift */,
-				84E199BE2F714A4800CBA304 /* AppleIAPManager.swift */,
-				84E199BF2F714A4800CBA304 /* AppPermissionTool.swift */,
-				84E199C02F714A4800CBA304 /* AppRequestBaseModel.swift */,
-				84E199C12F714A4800CBA304 /* AppRequestTool.swift */,
-				84E199C22F714A4800CBA304 /* AppWebViewController.swift */,
-				84E199C32F714A4800CBA304 /* AppWebViewHandleEvent.swift */,
-				84E199C42F714A4800CBA304 /* AppWebViewScriptDelegateHandler.swift */,
-				84E199C52F714A4800CBA304 /* LocalPushScheduler.swift */,
-				84E199C62F714A4800CBA304 /* ProgressHUD.swift */,
-				84E199C72F714A4800CBA304 /* WaitViewController.swift */,
+				84598D032F7EA3D0002A5DBE /* AppAdjustManager.swift */,
+				84598D042F7EA3D0002A5DBE /* AppleIAPManager.swift */,
+				84598D052F7EA3D0002A5DBE /* AppPermissionTool.swift */,
+				84598D062F7EA3D0002A5DBE /* AppRequestBaseModel.swift */,
+				84598D072F7EA3D0002A5DBE /* AppRequestTool.swift */,
+				84598D082F7EA3D0002A5DBE /* AppWebViewController.swift */,
+				84598D092F7EA3D0002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598D0A2F7EA3D0002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598D0B2F7EA3D0002A5DBE /* LocalPushScheduler.swift */,
+				84598D0C2F7EA3D0002A5DBE /* ProgressHUD.swift */,
+				84598D0D2F7EA3D0002A5DBE /* WaitViewController.swift */,
 			);
 			path = yu;
 			sourceTree = "<group>";
@@ -322,17 +322,6 @@
 				84B434EC2F681031004953C3 /* ContentView.swift in Sources */,
 				84B434ED2F681031004953C3 /* GalleryView.swift in Sources */,
 				84B434EE2F681031004953C3 /* LegalContentViews.swift in Sources */,
-				84E199C82F714A4800CBA304 /* AppWebViewHandleEvent.swift in Sources */,
-				84E199C92F714A4800CBA304 /* AppRequestBaseModel.swift in Sources */,
-				84E199CA2F714A4800CBA304 /* AppRequestTool.swift in Sources */,
-				84E199CB2F714A4800CBA304 /* AppPermissionTool.swift in Sources */,
-				84E199CC2F714A4800CBA304 /* AppWebViewController.swift in Sources */,
-				84E199CD2F714A4800CBA304 /* ProgressHUD.swift in Sources */,
-				84E199CE2F714A4800CBA304 /* AppleIAPManager.swift in Sources */,
-				84E199CF2F714A4800CBA304 /* LocalPushScheduler.swift in Sources */,
-				84E199D02F714A4800CBA304 /* AppAdjustManager.swift in Sources */,
-				84E199D12F714A4800CBA304 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84E199D22F714A4800CBA304 /* WaitViewController.swift in Sources */,
 				84B4350A2F6810F8004953C3 /* AppConfig.swift in Sources */,
 				84B4350D2F6810F8004953C3 /* AppDelegate.swift in Sources */,
 				84B434EF2F681031004953C3 /* PortraitDetailView.swift in Sources */,
@@ -345,6 +334,17 @@
 				84B434F62F681031004953C3 /* VisionView.swift in Sources */,
 				84B434F72F681031004953C3 /* WorkshopView.swift in Sources */,
 				84B434F82F681031004953C3 /* zayoApp.swift in Sources */,
+				84598D0E2F7EA3D0002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598D0F2F7EA3D0002A5DBE /* ProgressHUD.swift in Sources */,
+				84598D102F7EA3D0002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598D112F7EA3D0002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598D122F7EA3D0002A5DBE /* WaitViewController.swift in Sources */,
+				84598D132F7EA3D0002A5DBE /* AppWebViewController.swift in Sources */,
+				84598D142F7EA3D0002A5DBE /* LocalPushScheduler.swift in Sources */,
+				84598D152F7EA3D0002A5DBE /* AppRequestTool.swift in Sources */,
+				84598D162F7EA3D0002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598D172F7EA3D0002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598D182F7EA3D0002A5DBE /* AppleIAPManager.swift in Sources */,
 				84B434F92F681031004953C3 /* ZayoData.swift in Sources */,
 				84B434FA2F681031004953C3 /* ZayoMainView.swift in Sources */,
 			);
@@ -503,7 +503,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zayo.export;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -552,7 +552,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zayo.export;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
