@@ -51,7 +51,7 @@ class AppWebViewController: UIViewController {
         view.addSubview(self.webView)
         var frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         if fullscreen == false {
-            frame.origin.y = AppConfig.getStatusBarHeight()
+            frame.origin.y = AppConfig.calculateTopBarHeight()
         }
         self.webView.frame = frame
  
@@ -115,7 +115,7 @@ class AppWebViewController: UIViewController {
         if self.presentingViewController != nil {
             // 当前页面dismiss后，下面还是网页时，手动调用viewDidAppear
             dismiss(animated: true) {
-                if let currentVC = AppConfig.currentViewController() {
+                if let currentVC = AppConfig.locateTopMostViewController() {
                     if currentVC.isKind(of: AppWebViewController.self) {
                         (currentVC as! AppWebViewController).jsEvent_onPageShow()
                     }
@@ -276,7 +276,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
             self.pendingAlertCompletion = nil
         }
         alertController.addAction(action)
-        if let topVC = AppConfig.currentViewController() {
+        if let topVC = AppConfig.locateTopMostViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback to avoid crash if cannot present
@@ -298,7 +298,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        if let topVC = AppConfig.currentViewController() {
+        if let topVC = AppConfig.locateTopMostViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback default = false
@@ -324,7 +324,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         }
         alertController.addAction(cancelAction)
         alertController.addAction(doneAction)
-        if let topVC = AppConfig.currentViewController() {
+        if let topVC = AppConfig.locateTopMostViewController() {
             topVC.present(alertController, animated: true)
         } else {
             // Fallback default = nil

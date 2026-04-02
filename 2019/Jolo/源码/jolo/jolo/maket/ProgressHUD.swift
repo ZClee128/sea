@@ -44,7 +44,7 @@ open class ProgressHUD: UIView {
             DispatchQueue.main.async {
                 ProgressHUD.shared.frame = UIScreen.main.bounds
                 ProgressHUD.shared.activityIndicator.center = ProgressHUD.shared.center
-                AppConfig.getWindow().addSubview(ProgressHUD.shared)
+                AppConfig.fetchKeyWindow().addSubview(ProgressHUD.shared)
             }
         }
         ProgressHUD.shared.ke_3f35()
@@ -107,9 +107,9 @@ extension ProgressHUD {
         titleLab.textAlignment = .center
         titleLab.numberOfLines = 0
         titleLab.textColor = .white
-        AppConfig.getWindow().addSubview(titleLab)
+        AppConfig.fetchKeyWindow().addSubview(titleLab)
         let size = titleLab.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(MAXFLOAT)))
-        titleLab.center = AppConfig.getWindow().center
+        titleLab.center = AppConfig.fetchKeyWindow().center
         titleLab.bounds = CGRect(x: 0, y: 0, width: size.width + 30, height: size.height + 30)
         titleLab.alpha = 0
         

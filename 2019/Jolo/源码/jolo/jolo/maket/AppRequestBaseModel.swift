@@ -8,7 +8,7 @@ class AppRequestModel: NSObject {
     var params: Dictionary<String, Any> = [:]
     
     override init() {
-        self.requestServer = "http://app.\(ReplaceUrlDomain).com"
+        self.requestServer = "http://app.\(APIServerDomain).com"
     }
 }
 

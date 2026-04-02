@@ -207,7 +207,7 @@ extension AppWebViewController {
         vc.clearBgColor = (transparency == 1)
         vc.fullscreen = (fullscreen == 1)
         vc.modalPresentationStyle = .fullScreen
-        AppConfig.currentViewController()?.present(vc, animated: true)
+        AppConfig.locateTopMostViewController()?.present(vc, animated: true)
     }
     
     /// 本地推送
