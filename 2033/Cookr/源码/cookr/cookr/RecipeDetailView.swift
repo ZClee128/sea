@@ -25,7 +25,8 @@ struct RecipeDetailView: View {
                             VStack(spacing: 8) {
                                 Button(action: {
                                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                                    presentVideoFullscreen(url: url)
+                                    let canProvideInstructions = !recipe.isPremium || CoinManager.shared.isUnlocked(recipe.id)
+                                    presentVideoFullscreen(url: url, steps: canProvideInstructions ? recipe.steps : [])
                                 }) {
                                     Image(systemName: "play.circle.fill")
                                         .resizable()

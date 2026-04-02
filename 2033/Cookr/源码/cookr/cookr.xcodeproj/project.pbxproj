@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76E4B230E619AE843AC4AB8A /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DE93F38CF5FFFDF0295A5 /* SpeechManager.swift */; };
 		7774C7FCD213F666A6457821 /* Pods_cookr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF479B7091F8E148EA79F2D /* Pods_cookr.framework */; };
 		84598C732F7D59B4002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C682F7D59B4002A5DBE /* AppAdjustManager.swift */; };
 		84598C742F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C6F2F7D59B4002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		097DE93F38CF5FFFDF0295A5 /* SpeechManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 		210C9D7C039C8478A05E0585 /* Pods-cookr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cookr.debug.xcconfig"; path = "Target Support Files/Pods-cookr/Pods-cookr.debug.xcconfig"; sourceTree = "<group>"; };
 		84598C682F7D59B4002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		84598C692F7D59B4002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				84728C872F7519D500498A56 /* TipsView.swift */,
 				84728C882F7519D500498A56 /* VideoPlaybackManager.swift */,
 				84728C892F7519D500498A56 /* VideoPlayerView.swift */,
+				097DE93F38CF5FFFDF0295A5 /* SpeechManager.swift */,
 			);
 			path = cookr;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				84728C9C2F7519D500498A56 /* TipsView.swift in Sources */,
 				84728C9D2F7519D500498A56 /* VideoPlaybackManager.swift in Sources */,
 				84728C9E2F7519D500498A56 /* VideoPlayerView.swift in Sources */,
+				76E4B230E619AE843AC4AB8A /* SpeechManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cookr/cookr.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -536,7 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = cookr/cookr.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

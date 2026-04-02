@@ -82,7 +82,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let backgroundEnabled = UserDefaults.standard.object(forKey: "backgroundPlayback") == nil
                 ? true
                 : UserDefaults.standard.bool(forKey: "backgroundPlayback")
-            VideoPlaybackManager.shared.applyAudioSession(background: backgroundEnabled)
+            if #available(iOS 14.2, *) {
+                VideoPlaybackManager.shared.applyAudioSession(background: backgroundEnabled)
+            } else {
+                // Fallback on earlier versions
+            }
             
             self.window?.overrideUserInterfaceStyle = .light
             

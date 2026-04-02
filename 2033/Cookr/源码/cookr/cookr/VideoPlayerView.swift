@@ -4,6 +4,7 @@ import AVFoundation
 // The presentVideoFullscreen free function below is kept for compatibility,
 // but RecipeDetailView calls VideoPlaybackManager.shared.presentLoopingVideo() instead.
 
-func presentVideoFullscreen(url: URL) {
-    VideoPlaybackManager.shared.presentLoopingVideo(url: url)
+@available(iOS 14.2, *)
+func presentVideoFullscreen(url: URL, steps: [String] = []) {
+    VideoPlaybackManager.shared.presentLoopingVideo(url: url, steps: steps)
 }
