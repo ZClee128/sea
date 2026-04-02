@@ -38,16 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.zm_26b3()
+                        self.mainSys()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1777554139 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.mh_33bf() { // 本地时间戳大于预设时间，进入B面
+                if Date().timeIntervalSince1970 > endTimeInterval && self.isNotiPad() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.zm_26b3()
+                    self.mainSys()
                 }
             }
         }
@@ -55,16 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func mh_33bf() -> Bool {
+    private func isNotiPad() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        ev_4021(application)
+        registerForRemoteNotification(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.zn_43af()
+        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func zm_26b3() {
+    func mainSys() {
         DispatchQueue.main.async {
             // Register Defaults
             UserDefaults.standard.register(defaults: [
@@ -100,10 +100,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let hasAgreed = UserDefaults.standard.bool(forKey: "hasAgreedToPrivacy")
             
             if hasAgreed {
-                self.xm_3ca1()
+                self.showMainContent()
             } else {
-                self.iw_45ab {
-                    self.xm_3ca1()
+                self.showPrivacyAgreement {
+                    self.showMainContent()
                 }
             }
             
@@ -111,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func iw_45ab(onAgree: @escaping () -> Void) {
+    func showPrivacyAgreement(onAgree: @escaping () -> Void) {
         let privacyView = PrivacyView {
             onAgree()
         }
@@ -119,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window?.rootViewController = hostingController
     }
     
-    func xm_3ca1() {
+    func showMainContent() {
         if #available(iOS 15.0, *) {
             let mainTabView = MainTabView()
             let hostingController = UIHostingController(rootView: mainTabView)
@@ -142,7 +142,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func ev_4021(_ application: UIApplication) {
+    func registerForRemoteNotification(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
