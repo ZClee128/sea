@@ -18,10 +18,36 @@ class ArchiveManager: ObservableObject {
         return paths[0].appendingPathComponent(fileName)
     }
     
-    func saveArchive(muses: [MuseItem], keywords: String) {
-        let newArchive = MoodboardArchive(muses: muses, keywords: keywords)
+    func saveArchive(muses: [MuseItem], keywords: String, customImages: [UIImage] = []) {
+        var localPaths: [String] = []
+        for image in customImages {
+            if let path = saveImageToDisk(image: image) {
+                localPaths.append(path)
+            }
+        }
+        
+        let newArchive = MoodboardArchive(muses: muses, localImagePaths: localPaths, keywords: keywords)
         archives.insert(newArchive, at: 0)
         saveToDisk()
+    }
+    
+    private func saveImageToDisk(image: UIImage) -> String? {
+        let name = "mb_\(UUID().uuidString).jpg"
+        let url = fileURL.deletingLastPathComponent().appendingPathComponent(name)
+        
+        if let data = image.jpegData(compressionQuality: 0.8) {
+            do {
+                try data.write(to: url)
+                return name
+            } catch {
+                print("Error saving image: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    func getURLForLocalImage(_ name: String) -> URL {
+        return fileURL.deletingLastPathComponent().appendingPathComponent(name)
     }
     
     private func saveToDisk() {

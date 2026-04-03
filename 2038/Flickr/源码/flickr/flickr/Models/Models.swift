@@ -75,6 +75,7 @@ struct StudioTemplate: Identifiable, Hashable, Codable {
 struct MoodboardArchive: Identifiable, Hashable, Codable {
     var id: UUID = UUID()
     let muses: [MuseItem]
+    var localImagePaths: [String]? = []
     let keywords: String
     var date: Date = Date()
 }

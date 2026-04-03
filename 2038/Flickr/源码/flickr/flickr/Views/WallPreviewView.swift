@@ -218,15 +218,15 @@ struct WallPreviewView: View {
     }
     
     private func saveWallpaper() {
-        // Real-world logic: save the image to the Photo Library
-        // For this demo, we save the base image 'placeholder' associated with the muse
         if let muse = selectedMuse {
             let image = UIImage(named: muse.imageName) ?? UIImage(systemName: "photo")!
             let saver = PhotoSaver()
-            saver.writeToPhotoAlbum(image: image)
-            
-            withAnimation { isShowingSuccess = true }
-            triggerHapticSuccess()
+            saver.writeToPhotoAlbum(image: image) { error in
+                if error == nil {
+                    withAnimation { isShowingSuccess = true }
+                    triggerHapticSuccess()
+                }
+            }
         }
     }
     
@@ -242,15 +242,20 @@ struct WallPreviewView: View {
 }
 
 class PhotoSaver: NSObject {
-    func writeToPhotoAlbum(image: UIImage) {
+    var completionHandler: ((Error?) -> Void)?
+    
+    func writeToPhotoAlbum(image: UIImage, completion: @escaping (Error?) -> Void) {
+        self.completionHandler = completion
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
     }
 
     @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             print("Save error: \(error.localizedDescription)")
+            completionHandler?(error)
         } else {
             print("Successfully saved to photos!")
+            completionHandler?(nil)
         }
     }
 }

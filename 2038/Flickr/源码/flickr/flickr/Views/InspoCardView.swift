@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 15.0, *)
+@available(iOS 16.0, *)
 struct InspoCardView: View {
     @StateObject var assetManager = AssetManager()
     @State private var selectedMuse: MuseItem?
@@ -265,24 +265,26 @@ struct InspoCardView: View {
                 let image = cardToExport.snapshot()
                 
                 let saver = PhotoSaver()
-                saver.writeToPhotoAlbum(image: image)
-                
-                // Save to Local Gallery
-                GalleryManager.shared.saveComposition(
-                    muse: muse,
-                    quote: quote,
-                    fontIndex: selectedFontIndex,
-                    textColorHex: textColor.toHex() ?? "#FFFFFF",
-                    opacity: overlayOpacity
-                )
-                
-                withAnimation {
-                    isShowingSuccess = true
-                }
-                triggerHapticSuccess()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation { isShowingSuccess = false }
+                saver.writeToPhotoAlbum(image: image) { error in
+                    if error == nil {
+                        // Save to Local Gallery
+                        GalleryManager.shared.saveComposition(
+                            muse: muse,
+                            quote: quote,
+                            fontIndex: selectedFontIndex,
+                            textColorHex: textColor.toHex() ?? "#FFFFFF",
+                            opacity: overlayOpacity
+                        )
+                        
+                        withAnimation {
+                            isShowingSuccess = true
+                        }
+                        triggerHapticSuccess()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation { isShowingSuccess = false }
+                        }
+                    }
                 }
             } else {
                 // Not enough coins, show shop
@@ -303,6 +305,7 @@ struct InspoCardView: View {
 }
 
 // Separate View for Exporting to ensure clean snapshotting
+@available(iOS 16.0, *)
 struct ExportCardView: View {
     let muse: MuseItem
     let quote: String
@@ -336,23 +339,15 @@ struct ExportCardView: View {
         .clipped()
     }
     
+    @MainActor
     func snapshot() -> UIImage {
-        let controller = UIHostingController(rootView: self)
-        let view = controller.view
-
-        let targetSize = CGSize(width: 800, height: 800)
-        view?.bounds = CGRect(origin: .zero, size: targetSize)
-        view?.backgroundColor = .clear
-
-        let renderer = UIGraphicsImageRenderer(size: targetSize)
-
-        return renderer.image { _ in
-            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
-        }
+        let renderer = ImageRenderer(content: self)
+        renderer.scale = 2.0
+        return renderer.uiImage ?? UIImage()
     }
 }
 
-@available(iOS 15.0, *)
+@available(iOS 16.0, *)
 struct InspoCardView_Previews: PreviewProvider {
     static var previews: some View {
         InspoCardView()
