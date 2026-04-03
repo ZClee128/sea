@@ -185,6 +185,7 @@ struct VideoPlayerContainer: UIViewControllerRepresentable {
     class Coordinator: NSObject {
         var tokens: [NSObjectProtocol] = []
         var player: AVPlayer?
+        weak var playerViewController: AVPlayerViewController? // Reference to the controller
         
         deinit {
             for token in tokens {
@@ -201,6 +202,7 @@ struct VideoPlayerContainer: UIViewControllerRepresentable {
         let controller = AVPlayerViewController()
         let player = AVPlayer(url: url)
         context.coordinator.player = player
+        context.coordinator.playerViewController = controller
         
         player.actionAtItemEnd = .none
         controller.player = player
@@ -214,15 +216,22 @@ struct VideoPlayerContainer: UIViewControllerRepresentable {
         }
         
         // Background Lifecycle handling
-        let bgToken = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak player] _ in
-            if !UserDefaults.standard.bool(forKey: "isBackgroundPlaybackEnabled") {
+        let bgToken = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak player, weak controller] _ in
+            if UserDefaults.standard.bool(forKey: "isBackgroundPlaybackEnabled") {
+                // IMPORTANT: Detach player the view controller but let it keep playing
+                controller?.player = nil
+                player?.play() // Ensure it keeps playing
+            } else {
                 player?.pause()
             }
         }
         
-        let fgToken = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [weak player] _ in
-            // ONLY resume if we are still active and have a player
-            player?.play()
+        let fgToken = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [weak player, weak controller] _ in
+            // Re-attach the player to the controller to see the video again
+            if let p = player {
+                controller?.player = p
+                p.play()
+            }
         }
         
         context.coordinator.tokens = [loopToken, bgToken, fgToken]
