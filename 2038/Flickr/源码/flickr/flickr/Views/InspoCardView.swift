@@ -40,28 +40,29 @@ struct InspoCardView: View {
                                         .scaledToFill()
                                 )
                                 .clipped()
-                                .cornerRadius(20)
+                                .cornerRadius(24)
                             
                             // Dimming Overlay
                             Color.black.opacity(overlayOpacity)
-                                .cornerRadius(20)
+                                .cornerRadius(24)
                             
-                            VStack(spacing: 16) {
+                            VStack(spacing: 24) {
                                 Image(systemName: "quote.opening")
-                                    .font(.title)
+                                    .font(.system(size: 32))
                                     .foregroundColor(textColor)
                                 
                                 Text(quote)
                                     .font(.system(size: 26, weight: .bold, design: fontStyles[selectedFontIndex]))
                                     .foregroundColor(textColor)
                                     .multilineTextAlignment(.center)
-                                    .padding(.horizontal)
-                                    .shadow(radius: 5)
+                                    .padding(.horizontal, 30)
+                                    .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
                             }
                             .padding()
                         }
-                        .padding()
-                        .shadow(radius: 12)
+                        .frame(maxWidth: 380, maxHeight: 380) // Reduced from 500 for better iPad spacing
+                        .padding(.top, 16)
+                        .shadow(color: .black.opacity(0.12), radius: 25, x: 0, y: 12)
                         
                         // Customization Tools
                         VStack(spacing: 20) {
@@ -103,26 +104,29 @@ struct InspoCardView: View {
                                             triggerHaptic()
                                         }) {
                                             Text(q)
-                                                .font(.caption)
+                                                .font(.system(size: 14, weight: .medium))
                                                 .padding(.horizontal, 16)
-                                                .padding(.vertical, 8)
+                                                .padding(.vertical, 10)
                                                 .background(quote == q ? Color.black : Color(.systemGray6))
                                                 .foregroundColor(quote == q ? .white : .black)
-                                                .cornerRadius(20)
+                                                .cornerRadius(25)
+                                                .fixedSize(horizontal: true, vertical: false) // Prevent horizontal squishing/overlap
                                         }
                                     }
                                 }
                                 .padding(.horizontal)
+                                .padding(.vertical, 4)
                             }
                             
                             // Export Button
-                            HStack(spacing: 16) {
+                            HStack(spacing: 12) {
                                 Button(action: {
                                     selectedFontIndex = (selectedFontIndex + 1) % fontStyles.count
                                     triggerHaptic()
                                 }) {
                                     Image(systemName: "textformat")
-                                        .padding()
+                                        .font(.system(size: 18))
+                                        .padding(14)
                                         .background(Color(.systemGray6))
                                         .cornerRadius(12)
                                 }
@@ -135,36 +139,27 @@ struct InspoCardView: View {
                                             .foregroundColor(.yellow)
                                         Text(")")
                                     }
-                                    .font(.headline)
+                                    .font(.system(size: 14, weight: .bold))
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity)
-                                    .padding()
+                                    .padding(.vertical, 14) // Slimmed down vertical padding
                                     .background(Color.black)
                                     .cornerRadius(12)
                                 }
                                 
                                 Button(action: { selectedMuse = nil }) {
                                     Image(systemName: "xmark")
-                                        .padding()
+                                        .font(.system(size: 18))
+                                        .padding(14)
                                         .background(Color(.systemGray6))
                                         .cornerRadius(12)
                                 }
                             }
                             .padding(.horizontal)
                         }
+                        .padding(.bottom, 24) // Final iPad buffer to avoid Tab Bar overlap
                         
                         Spacer()
-                        
-                        if isShowingSuccess {
-                            Text("Card Exported to Gallery")
-                                .font(.caption)
-                                .foregroundColor(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 20)
-                                .background(Color.black.opacity(0.8))
-                                .cornerRadius(20)
-                                .transition(.opacity)
-                        }
                     }
                 } else {
                     ScrollView {
@@ -213,6 +208,19 @@ struct InspoCardView: View {
             .navigationBarHidden(true)
             .sheet(isPresented: $showingShop) {
                 CoinShopView()
+            }
+            .overlay(alignment: .top) {
+                if isShowingSuccess {
+                    Text("Card Exported to Gallery")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 24)
+                        .background(Capsule().fill(Color.black.opacity(0.9)))
+                        .shadow(radius: 10)
+                        .padding(.top, 60)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("OpenStudioWithMuse"))) { notification in

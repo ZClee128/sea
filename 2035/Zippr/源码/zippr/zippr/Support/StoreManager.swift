@@ -64,12 +64,17 @@ class StoreManager: ObservableObject {
     }
     
     func requestProducts() async {
+        print("--- [StoreManager] Starting product request for IDs: \(Array(productIDs.keys)) ---")
         do {
             let storeProducts = try await Product.products(for: Array(productIDs.keys))
+            print("--- [StoreManager] Successfully fetched \(storeProducts.count) products ---")
+            for product in storeProducts {
+                print("--- [StoreManager] Product: \(product.id) - \(product.displayName) - \(product.displayPrice) ---")
+            }
             // 按照价格从低到高排序
             self.products = storeProducts.sorted(by: { $0.price < $1.price })
         } catch {
-            print("Failed product request: \(error)")
+            print("--- [StoreManager] Failed product request: \(error) ---")
         }
     }
     

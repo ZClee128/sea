@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A05971C6738E806216DD1E0 /* Pods_zippr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B48BF29FE35B41F730EA8EA /* Pods_zippr.framework */; };
+		84598D2C2F7FAD1F002A5DBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84598D2B2F7FAD1F002A5DBE /* GoogleService-Info.plist */; };
 		84728D712F7A156200498A56 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84728D702F7A156200498A56 /* StoreKit.framework */; };
 		84728DFB2F7A555E00498A56 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728DD72F7A555E00498A56 /* Models.swift */; };
 		84728DFC2F7A555E00498A56 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84728DDB2F7A555E00498A56 /* DesignSystem.swift */; };
@@ -50,6 +51,7 @@
 		05F2C001F084C9A7A259FA18 /* Pods-zippr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zippr.release.xcconfig"; path = "Target Support Files/Pods-zippr/Pods-zippr.release.xcconfig"; sourceTree = "<group>"; };
 		593ED19A405C5869C5D29DE5 /* Pods-zippr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zippr.debug.xcconfig"; path = "Target Support Files/Pods-zippr/Pods-zippr.debug.xcconfig"; sourceTree = "<group>"; };
 		6B48BF29FE35B41F730EA8EA /* Pods_zippr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zippr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84598D2B2F7FAD1F002A5DBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84728D5E2F7A153500498A56 /* zippr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zippr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84728D702F7A156200498A56 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84728DD72F7A555E00498A56 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				84728DF72F7A555E00498A56 /* zippr.entitlements */,
 				84728DF82F7A555E00498A56 /* zipprApp.swift */,
 				84728E112F7A55B200498A56 /* Launch Screen.storyboard */,
+				84598D2B2F7FAD1F002A5DBE /* GoogleService-Info.plist */,
 			);
 			path = zippr;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			files = (
 				84728E0D2F7A555E00498A56 /* privacy_policy.txt in Resources */,
 				84728E0E2F7A555E00498A56 /* Assets.xcassets in Resources */,
+				84598D2C2F7FAD1F002A5DBE /* GoogleService-Info.plist in Resources */,
 				84728E122F7A55B200498A56 /* Launch Screen.storyboard in Resources */,
 				84728E0F2F7A555E00498A56 /* Full Glute Activation.mp4 in Resources */,
 			);

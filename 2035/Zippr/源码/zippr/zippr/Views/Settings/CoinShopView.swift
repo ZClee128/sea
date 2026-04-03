@@ -70,6 +70,18 @@ struct CoinShopView: View {
         }
         .navigationTitle("Coin Shop")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    Task {
+                        await storeManager.requestProducts()
+                    }
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(Color.zPrimary)
+                }
+            }
+        }
     }
 }
 

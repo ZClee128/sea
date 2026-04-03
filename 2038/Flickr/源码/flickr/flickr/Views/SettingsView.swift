@@ -92,19 +92,30 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("SUPPORT")) {
+                    // Button(action: openSupportURL) {
+                    //     HStack {
+                    //         Text("Technical Support")
+                    //             .foregroundColor(.black)
+                    //         Spacer()
+                    //         Image(systemName: "safari")
+                    //             .foregroundColor(.blue)
+                    //     }
+                    // }
+                    
                     Button(action: openFeedback) {
                         HStack {
-                            Text("Feedback")
+                            Text("Email Feedback")
                                 .foregroundColor(.black)
                             Spacer()
                             Text("lovantiep9088@icloud.com")
+                                .font(.caption)
                                 .foregroundColor(.blue)
                         }
                     }
                     
                     Button(action: { showingClearCacheAlert = true }) {
                         HStack {
-                            Text("Clear Cache")
+                            Text("Clear Aesthetic Cache")
                                 .foregroundColor(.black)
                             Spacer()
                             Text(cacheSize)
@@ -156,6 +167,12 @@ struct SettingsView: View {
                         .foregroundColor(.gray)
                 }
             }
+    }
+
+    private func openSupportURL() {
+        if let url = URL(string: "https://flickr-explore.github.io/Fickr/") {
+            UIApplication.shared.open(url)
+        }
     }
 
     private func openFeedback() {
