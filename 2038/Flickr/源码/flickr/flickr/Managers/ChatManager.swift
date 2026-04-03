@@ -73,26 +73,79 @@ class ChatManager: ObservableObject {
         let persona = PersonaManager.shared.currentPersona
         let lower = message.lowercased()
         
-        // Persona-specific context
+        // Define Response Pools
+        let greetings = [
+            "I'm here to help you refine your unique aesthetic vision.",
+            "Ready to explore some new visual directions together?",
+            "It's a beautiful day to create something meaningful.",
+            "How can I assist your creative journey today?"
+        ]
+        
+        let aestheticTalk = [
+            "That's a fascinating perspective on visual harmony.",
+            "I love how you're thinking about the balance of light and shadow.",
+            "Exploring the emotional depth of a composition is key.",
+            "Your eye for detail is becoming quite refined.",
+            "The way you perceive texture and form is very unique."
+        ]
+        
+        let colorTalk = [
+            "Color stories are the soul of any great work. What palette are you feeling?",
+            "Have you considered a more muted, monochromatic approach?",
+            "Vibrant accents can really make a minimalist piece pop.",
+            "Pastels often evoke a sense of calm and clarity.",
+            "Darker tones can add a layer of mystery and sophistication."
+        ]
+        
+        let studioTalk = [
+            "The Studio is where your vision truly comes to life. Try the Wall Studio for custom lockscreens!",
+            "Have you experimented with the Inspo Card templates yet?",
+            "Exporting your favorite compositions is a great way to track your style evolution.",
+            "The Studio tools are designed for deep focus and creative flow.",
+            "Each Studio session is a chance to discover a new facet of your style."
+        ]
+        
+        let helpTalk = [
+            "I can suggest specific palettes or studio templates that match your vibe.",
+            "If you're stuck, try randomizing a composition in the Inspo Studio.",
+            "Looking for inspiration? The Explore tab features some truly amazing muses.",
+            "Need help with a specific tool or feature? I'm all ears.",
+            "I'm your guide to navigating the Fickr creative ecosystem."
+        ]
+        
+        let fallbacks = [
+            "Tell me more about what you're trying to achieve visually.",
+            "That's an interesting thought. How does it fit into your current project?",
+            "Let's look at this from a different angle together.",
+            "Every creative spark is worth exploring.",
+            "I'm intrigued by that idea. What's the next step in your process?"
+        ]
+        
+        // Response Construction
         var intro = ""
         if persona != .undiagnosed {
-            switch persona {
-            case .ethereal: intro = "As an Ethereal Minimalist, you'll appreciate that "
-            case .noir: intro = "For a Noir Architect like yourself, "
-            case .vibrant: intro = "With your Vibrant Dreamer energy, "
-            case .naturalString: intro = "As a Natural Sage, you'll notice that "
-            default: intro = ""
-            }
+            let prefixes = [
+                "As an \(persona.rawValue) perspective, ",
+                "Following your \(persona.rawValue) energy, ",
+                "In line with your \(persona.rawValue) style, ",
+                "For a \(persona.rawValue) like yourself, "
+            ]
+            intro = prefixes.randomElement() ?? ""
         }
         
-        if lower.contains("hello") || lower.contains("hi") {
-            return intro + "I'm here to help you refine your unique aesthetic vision."
-        } else if lower.contains("help") {
-            return intro + "I can suggest specific palettes or studio templates that match your \(persona == .undiagnosed ? "style" : persona.rawValue). What are you working on today?"
-        } else if lower.contains("studio") {
-            return "The Studio is where your \(persona.rawValue) persona comes to life. Have you tried the Wall Studio for your custom lockscreens?"
+        // Intent Detection
+        if lower.contains("hello") || lower.contains("hi") || lower.contains("hey") {
+            return intro + (greetings.randomElement() ?? "")
+        } else if lower.contains("color") || lower.contains("palette") || lower.contains("shade") {
+            return intro + (colorTalk.randomElement() ?? "")
+        } else if lower.contains("aesthetic") || lower.contains("style") || lower.contains("vibe") {
+            return intro + (aestheticTalk.randomElement() ?? "")
+        } else if lower.contains("studio") || lower.contains("wall") || lower.contains("card") {
+            return intro + (studioTalk.randomElement() ?? "")
+        } else if lower.contains("help") || lower.contains("how") || lower.contains("what") {
+            return intro + (helpTalk.randomElement() ?? "")
         } else {
-            return intro + "That's a fascinating perspective. Let's explore how to visualize that aesthetic together."
+            return intro + (fallbacks.randomElement() ?? "")
         }
     }
     

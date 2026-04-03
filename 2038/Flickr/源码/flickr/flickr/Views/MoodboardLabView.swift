@@ -29,164 +29,168 @@ struct MoodboardLabView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            HStack {
-                Button(action: { dismiss() }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.black)
-                        .padding(12)
-                        .background(Circle().fill(Color(.systemGray6)))
-                }
-                Spacer()
-                Text("Moodboard Laboratory")
-                    .font(.system(size: 18, weight: .bold, design: .serif))
-                Spacer()
-                // Invisible spacer for balance
-                Circle().fill(Color.clear).frame(width: 44)
-            }
-            .padding()
-            .overlay(
-                Group {
-                    if isSaving {
-                        ProgressView()
-                            .padding()
-                            .background(.ultraThinMaterial)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                    }
-                }
-            )
+        GeometryReader { geometry in
+            let isPad = UIDevice.current.userInterfaceIdiom == .pad
+            let availableWidth = geometry.size.width
             
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) { // Tightened spacing
-                    // VISION HEADER
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Define your aesthetic story. Layer your muses, capture your intent, and archive your creative evolution.")
-                            .font(.system(size: 16, design: .serif))
-                            .foregroundColor(.secondary)
-                            .lineSpacing(4)
-                            .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true) // Force wrapping
-                            .frame(maxWidth: .infinity, alignment: .leading)
+            VStack(spacing: 0) {
+                // Header
+                HStack {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.black)
+                            .padding(12)
+                            .background(Circle().fill(Color(.systemGray6)))
                     }
-                    .padding(.horizontal)
-                    
-                    if !selectedItems.isEmpty {
-                        // Collage Display
-                        VStack(alignment: .leading, spacing: 20) {
-                            // The Moodboard Area (Strictly Capped Height)
-                            VStack(spacing: 4) {
-                                HStack(spacing: 4) {
-                                    if selectedItems.indices.contains(0) {
-                                        MoodboardElementView(item: selectedItems[0], height: 140)
-                                    }
-                                    if selectedItems.indices.contains(1) {
-                                        MoodboardElementView(item: selectedItems[1], height: 140)
-                                    }
-                                }
-                                HStack(spacing: 4) {
-                                    if selectedItems.indices.contains(2) {
-                                        MoodboardElementView(item: selectedItems[2], height: 100)
-                                    }
-                                    if selectedItems.indices.contains(3) {
-                                        MoodboardElementView(item: selectedItems[3], height: 100)
-                                    }
-                                }
-                            }
-                            .frame(maxWidth: UIScreen.main.bounds.width - 32) // Prevent horizontal overflow
-                            .frame(maxHeight: 280)
-                            .cornerRadius(16)
-                            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
-                            
-                            // Keywords Input
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Aesthetic Intent")
-                                    .font(.system(size: 14, weight: .bold))
-                                    .foregroundColor(.secondary)
-                                
-                                TextField("Enter vibes (e.g. Dreamy, Minimal, Noir)", text: $keywords)
-                                    .padding()
-                                    .background(Color(.systemGray6).opacity(0.4))
-                                    .cornerRadius(12)
-                                    .focused($isInputActive)
-                            }
-                            
-                            Button(action: saveMoodboard) {
-                                if isSaving {
-                                    ProgressView().tint(.white)
-                                } else {
-                                    Text("EXPORT MOODBOARD")
-                                        .font(.system(size: 14, weight: .bold))
-                                }
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .cornerRadius(12)
-                            .disabled(isSaving)
-                            
-                            Button(action: { selectedItems = [] }) {
-                                Text("RE-START ARCHIVE")
-                                    .font(.system(size: 12, weight: .bold))
-                                    .foregroundColor(.gray)
-                                    .frame(maxWidth: .infinity)
-                            }
+                    Spacer()
+                    Text("Moodboard Laboratory")
+                        .font(.system(size: 20, weight: .bold, design: .serif))
+                    Spacer()
+                    Circle().fill(Color.clear).frame(width: 44)
+                }
+                .padding()
+                .overlay(
+                    Group {
+                        if isSaving {
+                            ProgressView()
+                                .padding()
+                                .background(.ultraThinMaterial)
+                                .cornerRadius(10)
+                        }
+                    }
+                )
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        // VISION HEADER
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Define your aesthetic story. Layer your muses, capture your intent, and archive your creative evolution.")
+                                .font(.system(size: 17, design: .serif))
+                                .foregroundColor(.secondary)
+                                .lineSpacing(4)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         .padding(.horizontal)
                         
-                    } else {
-                        // Selection Section
-                        VStack(alignment: .leading, spacing: 20) {
-                            Text("Select from archives or upload your own to begin deconstructing your current aesthetic mood.")
-                                .font(.system(size: 15, design: .serif))
-                                .foregroundColor(.secondary)
-                                .padding(.horizontal)
-                            
-                            // NEW: Custom Upload Button
-                            PhotosPicker(selection: $selectedPhotosPickerItems, maxSelectionCount: 4 - selectedItems.count, matching: .images) {
-                                HStack {
-                                    Image(systemName: "plus.circle.fill")
-                                    Text("IMPORT PERSONAL CAPTURES")
-                                        .font(.system(size: 14, weight: .bold))
+                        if !selectedItems.isEmpty {
+                            // Collage Display
+                            VStack(alignment: .center, spacing: 25) {
+                                // The Moodboard Area (Responsive Grid)
+                                VStack(spacing: 6) {
+                                    HStack(spacing: 6) {
+                                        if selectedItems.indices.contains(0) {
+                                            MoodboardElementView(item: selectedItems[0], height: isPad ? 250 : 160)
+                                        }
+                                        if selectedItems.indices.contains(1) {
+                                            MoodboardElementView(item: selectedItems[1], height: isPad ? 250 : 160)
+                                        }
+                                    }
+                                    HStack(spacing: 6) {
+                                        if selectedItems.indices.contains(2) {
+                                            MoodboardElementView(item: selectedItems[2], height: isPad ? 200 : 120)
+                                        }
+                                        if selectedItems.indices.contains(3) {
+                                            MoodboardElementView(item: selectedItems[3], height: isPad ? 200 : 120)
+                                        }
+                                    }
                                 }
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(RoundedRectangle(cornerRadius: 16).stroke(Color.black.opacity(0.1), style: StrokeStyle(lineWidth: 1, dash: [4])))
+                                .frame(maxWidth: isPad ? 600 : .infinity)
+                                .cornerRadius(20)
+                                .shadow(color: .black.opacity(0.1), radius: 15, x: 0, y: 8)
+                                
+                                // Keywords Input
+                                VStack(alignment: .leading, spacing: 12) {
+                                    Text("Aesthetic Intent")
+                                        .font(.system(size: 14, weight: .bold))
+                                        .foregroundColor(.secondary)
+                                    
+                                    TextField("Enter vibes (e.g. Dreamy, Minimal, Noir)", text: $keywords)
+                                        .padding(16)
+                                        .background(Color(.systemGray6).opacity(0.6))
+                                        .cornerRadius(12)
+                                        .focused($isInputActive)
+                                }
+                                .frame(maxWidth: isPad ? 500 : .infinity)
+                                
+                                // Buttons
+                                VStack(spacing: 16) {
+                                    Button(action: saveMoodboard) {
+                                        if isSaving {
+                                            ProgressView().tint(.white)
+                                        } else {
+                                            Text("EXPORT MOODBOARD")
+                                                .font(.system(size: 15, weight: .bold))
+                                        }
+                                    }
+                                    .frame(maxWidth: isPad ? 400 : .infinity)
+                                    .padding(.vertical, 16)
+                                    .background(Color.black)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(15)
+                                    .disabled(isSaving)
+                                    
+                                    Button(action: { selectedItems = [] }) {
+                                        Text("RE-START ARCHIVE")
+                                            .font(.system(size: 13, weight: .semibold))
+                                            .foregroundColor(.gray)
+                                    }
+                                }
                             }
                             .padding(.horizontal)
-                            
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                                ForEach(assetManager.muses) { muse in
-                                    Button(action: {
-                                        if selectedItems.count < 4 && !selectedItems.contains(where: { $0.muse?.id == muse.id }) {
-                                            selectedItems.append(MoodboardItem(muse: muse))
-                                        }
-                                    }) {
-                                        ZStack(alignment: .bottomLeading) {
-                                            Image(muse.imageName)
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: (UIScreen.main.bounds.width - 60) / 2, height: 160)
-                                                .clipped()
-                                                .cornerRadius(16)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 16)
-                                                        .stroke(selectedItems.contains(where: { $0.muse?.id == muse.id }) ? Color.black : Color.clear, lineWidth: 3)
-                                                )
-                                            
-                                            if selectedItems.contains(where: { $0.muse?.id == muse.id }) {
-                                                Circle()
-                                                    .fill(Color.black)
-                                                    .frame(width: 24, height: 24)
+                        } else {
+                            // Selection Section
+                            VStack(alignment: .leading, spacing: 24) {
+                                Text("Select from archives or upload your own to begin deconstructing your current aesthetic mood.")
+                                    .font(.system(size: 16, design: .serif))
+                                    .foregroundColor(.secondary)
+                                
+                                // Custom Upload Button
+                                PhotosPicker(selection: $selectedPhotosPickerItems, maxSelectionCount: 4 - selectedItems.count, matching: .images) {
+                                    HStack {
+                                        Image(systemName: "plus.viewfinder")
+                                            .font(.title3)
+                                        Text("IMPORT PERSONAL CAPTURES")
+                                            .font(.system(size: 14, weight: .bold))
+                                    }
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 20)
+                                    .background(RoundedRectangle(cornerRadius: 16).stroke(Color.black.opacity(0.15), style: StrokeStyle(lineWidth: 1.5, dash: [6])))
+                                }
+                                
+                                let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: isPad ? 3 : 2)
+                                
+                                LazyVGrid(columns: columns, spacing: 20) {
+                                    ForEach(assetManager.muses) { muse in
+                                        Button(action: {
+                                            if selectedItems.count < 4 && !selectedItems.contains(where: { $0.muse?.id == muse.id }) {
+                                                selectedItems.append(MoodboardItem(muse: muse))
+                                            }
+                                        }) {
+                                            ZStack(alignment: .topTrailing) {
+                                                Image(muse.imageName)
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(height: isPad ? 220 : 160)
+                                                    .clipped()
+                                                    .cornerRadius(18)
                                                     .overlay(
-                                                        Text("\(selectedItems.firstIndex(where: { $0.muse?.id == muse.id })! + 1)")
-                                                            .font(.caption)
-                                                            .foregroundColor(.white)
+                                                        RoundedRectangle(cornerRadius: 18)
+                                                            .stroke(selectedItems.contains(where: { $0.muse?.id == muse.id }) ? Color.black : Color.clear, lineWidth: 3)
                                                     )
-                                                    .padding(8)
+                                                
+                                                if selectedItems.contains(where: { $0.muse?.id == muse.id }) {
+                                                    ZStack {
+                                                        Circle()
+                                                            .fill(Color.black)
+                                                            .frame(width: 28, height: 28)
+                                                        Text("\(selectedItems.firstIndex(where: { $0.muse?.id == muse.id })! + 1)")
+                                                            .font(.system(size: 12, weight: .bold))
+                                                            .foregroundColor(.white)
+                                                    }
+                                                    .padding(10)
+                                                }
                                             }
                                         }
                                     }
@@ -194,16 +198,17 @@ struct MoodboardLabView: View {
                             }
                             .padding(.horizontal)
                         }
+                        
+                        Spacer(minLength: 60)
                     }
-                    
-                    Spacer(minLength: 40)
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
-            }
-            .onTapGesture {
-                isInputActive = false
+                .onTapGesture {
+                    isInputActive = false
+                }
             }
         }
+        .background(Color.white)
         .alert(statusMessage, isPresented: $showStatusAlert) {
             Button(isSuccess ? "Fabulous" : "Retry") {
                 if isSuccess { dismiss() }
