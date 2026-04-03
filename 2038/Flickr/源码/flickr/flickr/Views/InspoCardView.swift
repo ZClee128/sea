@@ -60,7 +60,7 @@ struct InspoCardView: View {
                             }
                             .padding()
                         }
-                        .frame(maxWidth: 380, maxHeight: 380) // Reduced from 500 for better iPad spacing
+                        .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : 380, maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 550 : 380) 
                         .padding(.top, 16)
                         .shadow(color: .black.opacity(0.12), radius: 25, x: 0, y: 12)
                         
@@ -174,12 +174,12 @@ struct InspoCardView: View {
                                 .foregroundColor(.secondary)
                                 .padding(.horizontal)
                             
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                                ForEach(assetManager.muses) { muse in
-                                    Button(action: { 
-                                        withAnimation { selectedMuse = muse }
-                                        triggerHaptic()
-                                    }) {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: UIDevice.current.userInterfaceIdiom == .pad ? 3 : 2), spacing: 16) {
+                            ForEach(assetManager.muses) { muse in
+                                Button(action: { 
+                                    withAnimation { selectedMuse = muse }
+                                    triggerHaptic()
+                                }) {
                                         VStack(alignment: .leading) {
                                             Color.gray.opacity(0.1)
                                                 .aspectRatio(1, contentMode: .fill)

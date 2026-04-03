@@ -12,99 +12,107 @@ struct FocusView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 20) {
                     Text("Immersive Focus")
-                        .font(.system(size: 28, weight: .bold, design: .serif))
-                        .padding(.horizontal)
+                        .font(.system(size: 32, weight: .bold, design: .serif))
+                        .padding(.horizontal, 30)
                     
                     Text("Select a session to find your center. These curated visual moments are designed for mindful breathing and aesthetic reflection.")
                         .font(.system(size: 16, design: .serif))
                         .foregroundColor(.secondary)
-                        .padding(.horizontal)
+                        .padding(.horizontal, 30)
                     
-                    ForEach(assetManager.focusSessions) { session in
-                        Button(action: { 
-                            withAnimation {
-                                selectedSession = session 
-                            }
-                        }) {
-                            ZStack(alignment: .bottomLeading) {
-                                // Dynamic Thumbnail
-                                Group {
-                                    if let thumb = thumbnailManager.thumbnails[session.videoURL] {
-                                        Image(uiImage: thumb)
-                                            .resizable()
-                                            .scaledToFill()
-                                    } else {
-                                        Rectangle()
-                                            .fill(Color.gray.opacity(0.1))
-                                            .onAppear {
-                                                thumbnailManager.getThumbnail(for: session.videoURL)
-                                            }
-                                    }
+                    let columns = [GridItem(.flexible(), spacing: 20)]
+                    let padColumns = [GridItem(.flexible(), spacing: 30), GridItem(.flexible(), spacing: 30)]
+                    
+                    LazyVGrid(columns: UIDevice.current.userInterfaceIdiom == .pad ? padColumns : columns, spacing: 30) {
+                        ForEach(assetManager.focusSessions) { session in
+                            Button(action: { 
+                                withAnimation {
+                                    selectedSession = session 
                                 }
-                                .aspectRatio(16/9, contentMode: .fill)
-                                .frame(height: 220)
-                                .clipped()
-                                .cornerRadius(20)
-                                .overlay(
-                                    Image(systemName: "play.fill")
-                                        .font(.system(size: 36))
-                                        .foregroundColor(.white)
-                                        .padding(15)
-                                        .background(Circle().fill(Color.black.opacity(0.3)).blur(radius: 5))
-                                )
-                                
-                                LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .bottom, endPoint: .top)
-                                    .cornerRadius(20)
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    HStack {
-                                        Text(session.title)
-                                            .font(.system(size: 22, weight: .bold, design: .serif))
-                                            .foregroundColor(.white)
-                                        
-                                        Spacer()
-                                        
-                                        if isBackgroundPlaybackEnabled {
-                                            HStack(spacing: 4) {
-                                                Image(systemName: "sparkles")
-                                                Text("Background Play")
-                                            }
-                                            .font(.system(size: 10, weight: .bold))
-                                            .padding(.horizontal, 8)
-                                            .padding(.vertical, 4)
-                                            .background(Color.white.opacity(0.2))
-                                            .foregroundColor(.white)
-                                            .cornerRadius(8)
+                            }) {
+                                ZStack(alignment: .bottomLeading) {
+                                    // Dynamic Thumbnail
+                                    Group {
+                                        if let thumb = thumbnailManager.thumbnails[session.videoURL] {
+                                            Image(uiImage: thumb)
+                                                .resizable()
+                                                .scaledToFill()
+                                        } else {
+                                            Rectangle()
+                                                .fill(Color.gray.opacity(0.1))
+                                                .onAppear {
+                                                    thumbnailManager.getThumbnail(for: session.videoURL)
+                                                }
                                         }
                                     }
+                                    .aspectRatio(16/9, contentMode: .fill)
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 300 : 200)
+                                    .clipped()
+                                    .cornerRadius(24)
+                                    .overlay(
+                                        Image(systemName: "play.fill")
+                                            .font(.system(size: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 32))
+                                            .foregroundColor(.white)
+                                            .padding(20)
+                                            .background(Circle().fill(Color.black.opacity(0.3)).blur(radius: 5))
+                                    )
                                     
-                                    Text(session.mantra)
-                                        .font(.system(size: 14, design: .serif))
-                                        .foregroundColor(.white.opacity(0.8))
+                                    LinearGradient(colors: [.black.opacity(0.8), .clear], startPoint: .bottom, endPoint: .top)
+                                        .cornerRadius(24)
+                                    
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        HStack {
+                                            Text(session.title)
+                                                .font(.system(size: 24, weight: .bold, design: .serif))
+                                                .foregroundColor(.white)
+                                            
+                                            Spacer()
+                                            
+                                            if isBackgroundPlaybackEnabled {
+                                                HStack(spacing: 4) {
+                                                    Image(systemName: "sparkles")
+                                                    Text("Background Play")
+                                                }
+                                                .font(.system(size: 10, weight: .bold))
+                                                .padding(.horizontal, 10)
+                                                .padding(.vertical, 6)
+                                                .background(Color.white.opacity(0.25))
+                                                .foregroundColor(.white)
+                                                .cornerRadius(10)
+                                            }
+                                        }
+                                        
+                                        Text(session.mantra)
+                                            .font(.system(size: 14, design: .serif))
+                                            .foregroundColor(.white.opacity(0.9))
+                                    }
+                                    .padding(24)
                                 }
-                                .padding(20)
+                                .contentShape(Rectangle())
+                                .shadow(color: .black.opacity(0.2), radius: 10, y: 5)
                             }
-                            .contentShape(Rectangle())
+                            .buttonStyle(PlainButtonStyle())
                         }
-                        .padding(.horizontal)
-                        .buttonStyle(PlainButtonStyle())
                     }
+                    .padding(.horizontal, 20) // FORCE PADDING DIRECTLY ON THE GRID
                     
-                    Spacer(minLength: 40)
+                    Spacer(minLength: 60)
                     
-                    VStack(alignment: .center, spacing: 12) {
+                    VStack(alignment: .center, spacing: 16) {
                         Image(systemName: "sparkles")
-                            .font(.largeTitle)
-                            .foregroundColor(.gray.opacity(0.4))
+                            .font(.system(size: 40))
+                            .foregroundColor(.gray.opacity(0.3))
                         Text("New sessions added weekly")
-                            .font(.system(size: 14, design: .serif))
+                            .font(.system(size: 15, design: .serif))
                             .foregroundColor(.gray)
                     }
                     .frame(maxWidth: .infinity)
                 }
-                .padding(.top)
+                .padding(.top, 40)
+                .padding(.bottom, 120)
             }
             .navigationBarHidden(true)
             .fullScreenCover(item: $selectedSession) { session in

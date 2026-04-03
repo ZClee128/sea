@@ -11,205 +11,101 @@ struct WallPreviewView: View {
     @State private var offset: CGSize = .zero
     @State private var lastOffset: CGSize = .zero
     
-    // Customization State
+    // Ambient Lighting State
+    @State private var selectedFilterIndex: Int = 0
+    @State private var isFlashActive = false
     @State private var clockColor: Color = .white
     @State private var selectedFontIndex: Int = 0
     @State private var isShowingSuccess = false
     
     let fontStyles: [Font.Design] = [.default, .serif, .monospaced, .rounded]
     let colors: [Color] = [.white, .yellow, .orange, .pink, .purple, .cyan]
+    let filters: [(name: String, color: Color, opacity: Double)] = [
+        ("Natural", .clear, 0),
+        ("Warm Dawn", .orange.opacity(0.15), 0.2),
+        ("Midnight", .blue.opacity(0.2), 0.4),
+        ("Golden", .yellow.opacity(0.1), 0.15),
+        ("Vivid", .purple.opacity(0.1), 0.2)
+    ]
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                if let muse = selectedMuse {
-                    ZStack {
-                        // Interactive Background
-                        ZStack {
-                            Image(muse.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .scaleEffect(scale)
-                                .offset(offset)
-                                .gesture(
-                                    DragGesture()
-                                        .onChanged { value in
-                                            offset = CGSize(width: lastOffset.width + value.translation.width,
-                                                            height: lastOffset.height + value.translation.height)
-                                        }
-                                        .onEnded { _ in
-                                            lastOffset = offset
-                                        }
-                                )
-                                .gesture(
-                                    MagnificationGesture()
-                                        .onChanged { value in
-                                            scale = lastScale * value
-                                        }
-                                        .onEnded { _ in
-                                            lastScale = scale
-                                        }
-                                )
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .clipped()
-                        
-                        // Mock iOS Lock Screen Overlay
-                        VStack {
-                            Spacer().frame(height: 80)
-                            
-                            Text(Date(), style: .time)
-                                .font(.system(size: 85, weight: .thin, design: fontStyles[selectedFontIndex]))
-                                .foregroundColor(clockColor)
-                                .shadow(radius: 10)
-                            
-                            Text("Wednesday, April 1")
-                                .font(.system(size: 22, weight: .medium, design: fontStyles[selectedFontIndex]))
-                                .foregroundColor(clockColor)
-                                .shadow(radius: 10)
-                            
-                            Spacer()
-                            
-                            HStack {
-                                Circle()
-                                    .fill(.ultraThinMaterial)
-                                    .frame(width: 50, height: 50)
-                                    .overlay(Image(systemName: "flashlight.off.fill").foregroundColor(.white))
-                                
-                                Spacer()
-                                
-                                Circle()
-                                    .fill(.ultraThinMaterial)
-                                    .frame(width: 50, height: 50)
-                                    .overlay(Image(systemName: "camera.fill").foregroundColor(.white))
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(.bottom, 60)
-                        }
-                        .allowsHitTesting(false) // Let gestures pass through to the background
-                        
-                        // Success Toast
-                        if isShowingSuccess {
-                            Text("Wallpaper Saved to Studio")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.black.opacity(0.8))
-                                .cornerRadius(20)
-                                .transition(.move(edge: .top).combined(with: .opacity))
-                                .onAppear {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                        withAnimation { isShowingSuccess = false }
-                                    }
-                                }
-                        }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.black)
-                    .cornerRadius(44)
-                    .padding()
-                    .shadow(radius: 20)
-                    
-                    // Customization Toolbar
-                    VStack(spacing: 16) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 15) {
-                                ForEach(colors, id: \.self) { color in
-                                    Circle()
-                                        .fill(color)
-                                        .frame(width: 30, height: 30)
-                                        .overlay(Circle().stroke(Color.gray.opacity(0.3), lineWidth: 1))
-                                        .onTapGesture {
-                                            withAnimation { clockColor = color }
-                                            triggerHaptic()
-                                        }
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
-                        
-                        HStack(spacing: 20) {
-                            Button(action: {
-                                selectedFontIndex = (selectedFontIndex + 1) % fontStyles.count
-                                triggerHaptic()
-                            }) {
-                                Image(systemName: "textformat")
-                                    .font(.title3)
-                                    .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(12)
-                                    .shadow(radius: 2)
-                            }
-                            
-                            Button(action: {
-                                saveWallpaper()
-                            }) {
-                                Text("SAVE PRESET")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
+            GeometryReader { geometry in
+                ZStack {
+                    if let muse = selectedMuse {
+                        // Use Split layout ONLY if width is substantial (e.g. > 550)
+                        if geometry.size.width > 550 {
+                            HStack(spacing: 0) {
+                                previewSection(muse: muse)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .padding(geometry.size.width * 0.05)
                                     .background(Color.black)
-                                    .cornerRadius(12)
-                            }
-                            
-                            Button(action: {
-                                withAnimation {
-                                    scale = 1.0
-                                    offset = .zero
-                                    selectedMuse = nil
+                                
+                                ScrollView {
+                                    VStack(alignment: .leading, spacing: 32) {
+                                        Text("Bespoke Customization")
+                                            .font(.system(size: 24, weight: .bold, design: .serif))
+                                            .padding(.top, 40)
+                                        
+                                        customizationSection()
+                                        
+                                        Spacer(minLength: 50)
+                                        
+                                        Button(action: {
+                                            withAnimation {
+                                                selectedMuse = nil
+                                                scale = 1.0
+                                                offset = .zero
+                                            }
+                                        }) {
+                                            HStack {
+                                                Image(systemName: "arrow.left.circle.fill")
+                                                Text("Change Muse")
+                                            }
+                                            .font(.headline)
+                                            .foregroundColor(.secondary)
+                                        }
+                                    }
+                                    .padding(30)
                                 }
-                            }) {
-                                Image(systemName: "xmark")
-                                    .foregroundColor(.gray)
-                                    .padding()
+                                .frame(width: 320)
+                                .background(Color(.systemGray6))
                             }
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.bottom, 20)
-                    
-                } else {
-                    ScrollView {
-                        VStack(spacing: 16) {
-                            Text("Bespoke Wall Studio")
-                                .font(.system(size: 28, weight: .bold, design: .serif))
-                                .padding(.top)
-                            
-                            Text("Craft your perfect aesthetic alignment. Drag to reposition, pinch to scale, and customize the clock to match your muse.")
-                                .font(.system(size: 16, design: .serif))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.secondary)
-                                .padding(.horizontal)
-                            
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                                ForEach(assetManager.muses) { muse in
-                                    Button(action: { 
-                                        withAnimation { selectedMuse = muse }
-                                        triggerHaptic()
-                                    }) {
-                                        VStack(alignment: .leading) {
-                                        Color.gray.opacity(0.1)
-                                            .aspectRatio(9/16, contentMode: .fill)
-                                            .overlay(
-                                                Image(muse.imageName)
-                                                    .resizable()
-                                                    .scaledToFill()
-                                            )
-                                            .clipped()
-                                            .cornerRadius(16)
-                                            
-                                            Text(muse.title)
-                                                .font(.caption)
-                                                .fontWeight(.semibold)
-                                                .foregroundColor(.black)
-                                                .padding(.top, 4)
+                        } else {
+                            // Vertical Layout for iPhone or Narrow iPad Window
+                            ScrollView {
+                                VStack(spacing: 30) {
+                                    previewSection(muse: muse)
+                                        .frame(height: geometry.size.height * 0.7) // FORCE 70% OF SCREEN HEIGHT
+                                    
+                                    VStack(spacing: 20) {
+                                        customizationSection()
+                                        
+                                        Button(action: {
+                                            withAnimation {
+                                                scale = 1.0
+                                                offset = .zero
+                                                selectedMuse = nil
+                                            }
+                                        }) {
+                                            Text("Cancel and Return")
+                                                .font(.system(size: 13, weight: .medium))
+                                                .foregroundColor(.gray)
                                         }
                                     }
                                 }
+                                .padding(.vertical, 20)
+                                .frame(width: geometry.size.width)
                             }
                         }
-                        .padding()
+                    } else {
+                        museGalleryView()
+                    }
+                    
+                    // Camera Flash Animation
+                    if isFlashActive {
+                        Color.white.ignoresSafeArea()
+                            .transition(.opacity)
                     }
                 }
             }
@@ -217,14 +113,237 @@ struct WallPreviewView: View {
         }
     }
     
+    // MARK: - Subviews
+    
+    @ViewBuilder
+    private func previewSection(muse: MuseItem) -> some View {
+        ZStack {
+            // THE STABLE 9:16 CONTAINER
+            ZStack {
+                // 1. Fixed Aspect Background
+                Color.black
+                
+                // 2. The Image (which fills the box)
+                Image(muse.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(scale)
+                    .offset(offset)
+                    .overlay(filters[selectedFilterIndex].color)
+                    .hueRotation(.degrees(selectedFilterIndex == 4 ? 45 : 0))
+                    .gesture(
+                        DragGesture()
+                            .onChanged { value in
+                                offset = CGSize(width: lastOffset.width + value.translation.width,
+                                                height: lastOffset.height + value.translation.height)
+                            }
+                            .onEnded { _ in lastOffset = offset }
+                    )
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged { value in scale = lastScale * value }
+                            .onEnded { _ in lastScale = scale }
+                    )
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .clipped()
+                
+                // 3. Mock iOS Lock Screen Overlay
+                VStack {
+                    Spacer().frame(height: 50)
+                        .allowsHitTesting(false)
+                    
+                    VStack(spacing: 4) {
+                        Text(Date(), style: .time)
+                            .font(.system(size: 64, weight: .thin, design: fontStyles[selectedFontIndex]))
+                            .foregroundColor(clockColor)
+                            .minimumScaleFactor(0.5)
+                        
+                        Text("Wednesday, April 1")
+                            .font(.system(size: 16, weight: .medium, design: fontStyles[selectedFontIndex]))
+                            .foregroundColor(clockColor)
+                    }
+                    .shadow(radius: 5)
+                    .allowsHitTesting(false)
+                    
+                    Spacer()
+                        .allowsHitTesting(false)
+                    
+                    // BOTTOM ACTION
+                    HStack {
+                        Button(action: {
+                            triggerHaptic()
+                            withAnimation {
+                                selectedFilterIndex = (selectedFilterIndex + 1) % filters.count
+                            }
+                        }) {
+                            Circle()
+                                .fill(.ultraThinMaterial)
+                                .frame(width: 44, height: 44)
+                                .overlay(Image(systemName: "sun.max.fill").foregroundColor(.white).font(.system(size: 18)))
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.bottom, 30)
+                }
+            }
+            .aspectRatio(9/16, contentMode: .fit) // FORCE 9:16 AND FIT INSIDE PARENT
+            .cornerRadius(32)
+            .shadow(color: .black.opacity(0.4), radius: 15)
+            .clipped()
+            
+            // Success Toast
+            if isShowingSuccess {
+                VStack {
+                    Text("HD PRESET SAVED")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
+                        .background(Capsule().fill(Color.black.opacity(0.8)))
+                        .padding(.top, 40)
+                    Spacer()
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func customizationSection() -> some View {
+        VStack(spacing: 20) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("COLOR PALETTE")
+                    .font(.system(size: 10, weight: .black))
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(colors, id: \.self) { color in
+                            Circle()
+                                .fill(color)
+                                .frame(width: 28, height: 28)
+                                .overlay(Circle().stroke(Color.black, lineWidth: 1.5).opacity(clockColor == color ? 1 : 0))
+                                .onTapGesture {
+                                    withAnimation { clockColor = color }
+                                    triggerHaptic()
+                                }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            
+            VStack(spacing: 12) {
+                Button(action: {
+                    selectedFontIndex = (selectedFontIndex + 1) % fontStyles.count
+                    triggerHaptic()
+                }) {
+                    HStack {
+                        Image(systemName: "textformat")
+                        Text("Cycle Typography")
+                        Spacer()
+                    }
+                    .font(.system(size: 14, weight: .bold))
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(12)
+                }
+                .buttonStyle(PlainButtonStyle())
+                
+                Button(action: { saveWallpaper() }) {
+                    HStack {
+                        Image(systemName: "square.and.arrow.down.fill")
+                        Text("SAVE HD PRESET")
+                    }
+                    .font(.system(size: 14, weight: .black))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.black)
+                    .cornerRadius(12)
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    @ViewBuilder
+    private func museGalleryView() -> some View {
+        ScrollView {
+            VStack(spacing: 32) {
+                VStack(spacing: 8) {
+                    Text("Bespoke Wall Studio")
+                        .font(.system(size: 30, weight: .bold, design: .serif))
+                    
+                    Text("Deconstruct and realign your aesthetic perspective.")
+                        .font(.system(size: 15, design: .serif))
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.top, 40)
+                
+                let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: UIDevice.current.userInterfaceIdiom == .pad ? 3 : 2)
+                
+                LazyVGrid(columns: columns, spacing: 30) {
+                    ForEach(assetManager.muses) { muse in
+                        Button(action: { 
+                            withAnimation { selectedMuse = muse }
+                            triggerHaptic()
+                        }) {
+                            VStack(alignment: .leading, spacing: 12) {
+                                Image(muse.imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .aspectRatio(9/16, contentMode: .fill) // ENSURE GRID ITEMS HAVE RATIO
+                                    .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 300 : 200)
+                                    .clipped()
+                                    .cornerRadius(16)
+                                    .shadow(color: .black.opacity(0.1), radius: 8, y: 4)
+                                
+                                Text(muse.title)
+                                    .font(.system(size: 12, weight: .bold, design: .serif))
+                                    .foregroundColor(.black)
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+            .padding(.bottom, 100)
+        }
+    }
+    
     private func saveWallpaper() {
         if let muse = selectedMuse {
-            let image = UIImage(named: muse.imageName) ?? UIImage(systemName: "photo")!
-            let saver = PhotoSaver()
-            saver.writeToPhotoAlbum(image: image) { error in
-                if error == nil {
-                    withAnimation { isShowingSuccess = true }
-                    triggerHapticSuccess()
+            // RENDER ONLY THE IMAGE + FILTER (without UI)
+            let exportView = ZStack {
+                Image(muse.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(scale)
+                    .offset(offset)
+                    .overlay(filters[selectedFilterIndex].color)
+                    .hueRotation(.degrees(selectedFilterIndex == 4 ? 45 : 0))
+            }
+            .frame(width: 1284, height: 2778) // Standard high-res vertical (iPhone Pro Max size)
+            .clipped()
+            
+            // Snapshot the view to a UIImage
+            if let image = exportView.asUIImage() {
+                let saver = PhotoSaver()
+                saver.writeToPhotoAlbum(image: image) { error in
+                    if error == nil {
+                        withAnimation { isShowingSuccess = true }
+                        triggerHapticSuccess()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            withAnimation { isShowingSuccess = false }
+                        }
+                    }
                 }
             }
         }
@@ -238,6 +357,23 @@ struct WallPreviewView: View {
     private func triggerHapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+}
+
+// MARK: - Snapshot Extension (iOS 15 Compatibility)
+extension View {
+    func asUIImage() -> UIImage? {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+        
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+        
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
     }
 }
 

@@ -169,12 +169,6 @@ struct SettingsView: View {
             }
     }
 
-    private func openSupportURL() {
-        if let url = URL(string: "https://flickr-explore.github.io/Fickr/") {
-            UIApplication.shared.open(url)
-        }
-    }
-
     private func openFeedback() {
         if let url = URL(string: "mailto:lovantiep9088@icloud.com?subject=Fickr%20Feedback") {
             UIApplication.shared.open(url)

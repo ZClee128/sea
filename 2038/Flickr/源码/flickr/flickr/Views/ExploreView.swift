@@ -189,17 +189,18 @@ struct FeaturedMuseCard: View {
     let muse: MuseItem
     
     var body: some View {
+        let isPad = UIDevice.current.userInterfaceIdiom == .pad
         NavigationLink(destination: MuseDetailView(muse: muse)) {
             ZStack(alignment: .bottomLeading) {
                 Image(muse.imageName)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 280, height: 350)
+                    .frame(width: isPad ? 400 : 280, height: isPad ? 500 : 350)
                     .clipped()
-                    .cornerRadius(20)
+                    .cornerRadius(24)
                 
                 LinearGradient(colors: [.black.opacity(0.6), .clear], startPoint: .bottom, endPoint: .top)
-                    .cornerRadius(20)
+                    .cornerRadius(24)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(muse.category.uppercased())
