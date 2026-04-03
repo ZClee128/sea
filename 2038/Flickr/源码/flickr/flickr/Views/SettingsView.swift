@@ -9,11 +9,42 @@ struct SettingsView: View {
     @State private var cacheSize = "1.2 MB"
     @AppStorage("isBackgroundPlaybackEnabled") var isBackgroundPlaybackEnabled = true
     @State private var showingShop = false
+    @ObservedObject var personaManager = PersonaManager.shared
     @ObservedObject var storeManager = StoreManager.shared
     
     var body: some View {
         NavigationView {
             List {
+                Section(header: Text("AESTHETIC PROFILE")) {
+                    HStack(spacing: 16) {
+                        Circle()
+                            .fill(personaManager.currentPersona.themeColor.opacity(0.1))
+                            .frame(width: 50, height: 50)
+                            .overlay(
+                                Image(systemName: personaManager.currentPersona.icon)
+                                    .foregroundColor(personaManager.currentPersona.themeColor)
+                            )
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(personaManager.currentPersona.rawValue)
+                                .font(.system(size: 16, weight: .bold, design: .serif))
+                            
+                            Text(personaManager.currentPersona == .undiagnosed ? "Awaiting DNA decoding" : "Current Persona")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: AestheticIQView()) {
+                            Text(personaManager.currentPersona == .undiagnosed ? "Take Test" : "Re-test")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .padding(.vertical, 8)
+                }
+
                 Section(header: Text("COIN BOUTIQUE")) {
                     HStack {
                         Image(systemName: "circle.circle.fill")

@@ -77,6 +77,73 @@ class AssetManager: ObservableObject {
                 aestheticAttributes: ["High Key", "Vibrant", "Sharp Detail", "Cheerful"],
                 colorPalette: ["#FFFFE0", "#FFFACD", "#FAFAD2", "#FFD700"],
                 location: "Mediterranean Villa"
+            ),
+            // NEW DIVERSIFIED ASSETS
+            MuseItem(
+                title: "Minimalist Muse", 
+                imageName: "minimalist_architecture", 
+                description: "Clean lines and structural silence.", 
+                category: "Brutalist", 
+                isEditorialFeatured: true,
+                story: "Found in the intersection of concrete and light, this piece explores the elegance of essential geometry.",
+                aestheticAttributes: ["Brutalist", "Monochrome", "Clean Lines", "Geometric"],
+                colorPalette: ["#CCCCCC", "#888888", "#FFFFFF", "#333333"],
+                location: "Stockholm, SE"
+            ),
+            MuseItem(
+                title: "Urban Neon", 
+                imageName: "neon_noir_city", 
+                description: "Vibrant energy under the night rain.", 
+                category: "Cyberpunk", 
+                isEditorialFeatured: false,
+                story: "The city comes alive when it rains, reflecting a futuristic spectrum of light and energy.",
+                aestheticAttributes: ["Neon", "Moody", "Urban", "Purple Glow"],
+                colorPalette: ["#FF00FF", "#800080", "#0000FF", "#00FFFF"],
+                location: "Neo Tokyo"
+            ),
+            MuseItem(
+                title: "Misty Peaks", 
+                imageName: "ethereal_fog_mountains", 
+                description: "Peaceful silence shrouded in mountain mist.", 
+                category: "Ethereal", 
+                isEditorialFeatured: false,
+                story: "High above the noise, the fog creates a canvas of pure tranquility and soft whispers.",
+                aestheticAttributes: ["Misty", "Atmospheric", "Minimalist", "Gray Tones"],
+                colorPalette: ["#F5F5F5", "#D3D3D3", "#A9A9A9", "#FFFFFF"],
+                location: "Highland Range"
+            ),
+            MuseItem(
+                title: "Vintage Haven", 
+                imageName: "retro_film_grain_aesthetic", 
+                description: "Warm nostalgia captured on 35mm film.", 
+                category: "Analog", 
+                isEditorialFeatured: true,
+                story: "A moment of timeless reflection in a sunlit corner, grain and light dancing in harmony.",
+                aestheticAttributes: ["Grainy", "Warm", "Nostalgic", "Vintage"],
+                colorPalette: ["#D2B48C", "#F5F5DC", "#8B4513", "#CD853F"],
+                location: "Kyoto, JP"
+            ),
+            MuseItem(
+                title: "Green Detail", 
+                imageName: "botanical_macro_texture", 
+                description: "Extreme organic textures of nature.", 
+                category: "Botanical", 
+                isEditorialFeatured: false,
+                story: "Deconstructing the structural brilliance of a single leaf, revealing nature's macro patterns.",
+                aestheticAttributes: ["Organic", "High Detail", "Macro", "Emerald"],
+                colorPalette: ["#006400", "#228B22", "#32CD32", "#90EE90"],
+                location: "Greenhouse Archive"
+            ),
+            MuseItem(
+                title: "Prism Theory", 
+                imageName: "abstract_prism_light_lake", 
+                description: "Abstract light leaks and spectrum flares.", 
+                category: "Prism", 
+                isEditorialFeatured: false,
+                story: "Exploring the science of rainbows and the abstract beauty of light refraction.",
+                aestheticAttributes: ["Rainbow", "Flares", "Abstract", "White Space"],
+                colorPalette: ["#FF0000", "#00FF00", "#0000FF", "#FFFFFF"],
+                location: "Laboratory 9"
             )
         ]
     }

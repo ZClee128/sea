@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@available(iOS 14.0, *)
 class ChatManager: ObservableObject {
     @Published var activeSessions: [ChatSession] = []
     
@@ -69,15 +70,29 @@ class ChatManager: ObservableObject {
     }
     
     private func generateMockReply(for message: String) -> String {
+        let persona = PersonaManager.shared.currentPersona
         let lower = message.lowercased()
+        
+        // Persona-specific context
+        var intro = ""
+        if persona != .undiagnosed {
+            switch persona {
+            case .ethereal: intro = "As an Ethereal Minimalist, you'll appreciate that "
+            case .noir: intro = "For a Noir Architect like yourself, "
+            case .vibrant: intro = "With your Vibrant Dreamer energy, "
+            case .naturalString: intro = "As a Natural Sage, you'll notice that "
+            default: intro = ""
+            }
+        }
+        
         if lower.contains("hello") || lower.contains("hi") {
-            return "Greetings! I'm here to help you find your aesthetic center."
+            return intro + "I'm here to help you refine your unique aesthetic vision."
         } else if lower.contains("help") {
-            return "I can suggest color palettes or studio presets that match your current mood. What are you looking for?"
+            return intro + "I can suggest specific palettes or studio templates that match your \(persona == .undiagnosed ? "style" : persona.rawValue). What are you working on today?"
         } else if lower.contains("studio") {
-            return "The Studio tools are perfect for capturing your vision. Have you tried the Wall Studio yet?"
+            return "The Studio is where your \(persona.rawValue) persona comes to life. Have you tried the Wall Studio for your custom lockscreens?"
         } else {
-            return "That's an interesting perspective. Let's explore how we can visualize that together."
+            return intro + "That's a fascinating perspective. Let's explore how to visualize that aesthetic together."
         }
     }
     

@@ -90,6 +90,43 @@ struct StudioTabView: View {
                         .padding(.horizontal)
                     
                     VStack(spacing: 16) {
+                        // NEW: Optical Analysis Lab
+                        if #available(iOS 16.0, *) {
+                            NavigationLink(destination: AestheticScannerView()) {
+                                VStack(alignment: .leading, spacing: 12) {
+                                    HStack {
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text("NEW UTILITY")
+                                                .font(.system(size: 10, weight: .black))
+                                                .tracking(2)
+                                                .foregroundColor(.blue.opacity(0.8))
+                                            
+                                            Text("Aesthetic Lab")
+                                                .font(.system(size: 22, weight: .bold, design: .serif))
+                                                .foregroundColor(.white)
+                                        }
+                                        Spacer()
+                                        Image(systemName: "sensor.tag.radiowaves.forward.fill")
+                                            .font(.title2)
+                                            .foregroundColor(.white)
+                                    }
+                                    
+                                    Text("A bespoke optical scanner to deconstruct the Color DNA and structural alignment of your photos.")
+                                        .font(.system(size: 14, design: .serif))
+                                        .foregroundColor(.white.opacity(0.7))
+                                }
+                                .padding(24)
+                                .background(
+                                    LinearGradient(colors: [Color(hex: "#1A1A1A"), Color(hex: "#333333")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                                .cornerRadius(24)
+                                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+                            }
+                            .padding(.bottom, 10)
+                        } else {
+                            // Fallback on earlier versions
+                        }
+
                         // Lock Screen Card
                         NavigationLink(destination: WallPreviewView()) {
                             StudioCard(

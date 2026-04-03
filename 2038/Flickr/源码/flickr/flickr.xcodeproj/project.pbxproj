@@ -51,6 +51,10 @@
 		84598CFD2F7E0A19002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CEA2F7E0A19002A5DBE /* AppRequestBaseModel.swift */; };
 		84598CFE2F7E0A19002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598CE52F7E0A19002A5DBE /* AppAdjustManager.swift */; };
 		84598D002F7E0B70002A5DBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84598CFF2F7E0B70002A5DBE /* GoogleService-Info.plist */; };
+		84598D1A2F7F399A002A5DBE /* PersonaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D192F7F399A002A5DBE /* PersonaManager.swift */; };
+		84598D1C2F7F39D2002A5DBE /* AestheticIQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D1B2F7F39D2002A5DBE /* AestheticIQView.swift */; };
+		84598D1E2F7F4170002A5DBE /* ScannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D1D2F7F4170002A5DBE /* ScannerManager.swift */; };
+		84598D202F7F4179002A5DBE /* AestheticScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D1F2F7F4179002A5DBE /* AestheticScannerView.swift */; };
 		A8B339034433A30E3733DD45 /* Pods_flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A100BEB3A877F9A78E4718A /* Pods_flickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +107,10 @@
 		84598CF02F7E0A19002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84598CF12F7E0A19002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84598CFF2F7E0B70002A5DBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84598D192F7F399A002A5DBE /* PersonaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaManager.swift; sourceTree = "<group>"; };
+		84598D1B2F7F39D2002A5DBE /* AestheticIQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AestheticIQView.swift; sourceTree = "<group>"; };
+		84598D1D2F7F4170002A5DBE /* ScannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerManager.swift; sourceTree = "<group>"; };
+		84598D1F2F7F4179002A5DBE /* AestheticScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AestheticScannerView.swift; sourceTree = "<group>"; };
 		9A100BEB3A877F9A78E4718A /* Pods_flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3260AA73292662CCE406DFA /* Pods-flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.debug.xcconfig"; path = "Target Support Files/Pods-flickr/Pods-flickr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +169,8 @@
 				84598CA12F7E0882002A5DBE /* ArchiveManager.swift */,
 				84598CA22F7E0882002A5DBE /* AssetManager.swift */,
 				84598CA32F7E0882002A5DBE /* ChatManager.swift */,
+				84598D192F7F399A002A5DBE /* PersonaManager.swift */,
+				84598D1D2F7F4170002A5DBE /* ScannerManager.swift */,
 				84598CA42F7E0882002A5DBE /* GalleryManager.swift */,
 				84598CA52F7E0882002A5DBE /* StoreManager.swift */,
 				84598CA62F7E0882002A5DBE /* VideoThumbnailManager.swift */,
@@ -191,6 +201,8 @@
 			children = (
 				84598CAE2F7E0882002A5DBE /* ChatDetailView.swift */,
 				84598CAF2F7E0882002A5DBE /* ChatListView.swift */,
+				84598D1B2F7F39D2002A5DBE /* AestheticIQView.swift */,
+				84598D1F2F7F4179002A5DBE /* AestheticScannerView.swift */,
 				84598CB02F7E0882002A5DBE /* CoinShopView.swift */,
 				84598CB12F7E0882002A5DBE /* ColorStoryView.swift */,
 				84598CB22F7E0882002A5DBE /* ExploreView.swift */,
@@ -392,7 +404,9 @@
 				84598CD62F7E0882002A5DBE /* ChatListView.swift in Sources */,
 				84598CF22F7E0A19002A5DBE /* AppWebViewController.swift in Sources */,
 				84598CF32F7E0A19002A5DBE /* AppDelegate.swift in Sources */,
+				84598D1E2F7F4170002A5DBE /* ScannerManager.swift in Sources */,
 				84598CF42F7E0A19002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598D1C2F7F39D2002A5DBE /* AestheticIQView.swift in Sources */,
 				84598CF52F7E0A19002A5DBE /* AppRequestTool.swift in Sources */,
 				84598CF62F7E0A19002A5DBE /* AppConfig.swift in Sources */,
 				84598CF72F7E0A19002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
@@ -402,6 +416,7 @@
 				84598CFB2F7E0A19002A5DBE /* LocalPushScheduler.swift in Sources */,
 				84598CFC2F7E0A19002A5DBE /* AppPermissionTool.swift in Sources */,
 				84598CFD2F7E0A19002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598D202F7F4179002A5DBE /* AestheticScannerView.swift in Sources */,
 				84598CFE2F7E0A19002A5DBE /* AppAdjustManager.swift in Sources */,
 				84598CD72F7E0882002A5DBE /* CoinShopView.swift in Sources */,
 				84598CD82F7E0882002A5DBE /* ColorStoryView.swift in Sources */,
@@ -410,6 +425,7 @@
 				84598CDB2F7E0882002A5DBE /* InspoCardView.swift in Sources */,
 				84598CDC2F7E0882002A5DBE /* MainTabView.swift in Sources */,
 				84598CDD2F7E0882002A5DBE /* MoodboardLabView.swift in Sources */,
+				84598D1A2F7F399A002A5DBE /* PersonaManager.swift in Sources */,
 				84598CDE2F7E0882002A5DBE /* MuseDetailView.swift in Sources */,
 				84598CDF2F7E0882002A5DBE /* PrivacyView.swift in Sources */,
 				84598CE02F7E0882002A5DBE /* SettingsView.swift in Sources */,
@@ -549,7 +565,7 @@
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -599,7 +615,7 @@
 				CODE_SIGN_ENTITLEMENTS = flickr/flickr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
