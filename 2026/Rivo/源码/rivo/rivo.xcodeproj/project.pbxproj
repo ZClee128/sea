@@ -19,6 +19,8 @@
 		84598C652F7D5953002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C562F7D5953002A5DBE /* AppRequestTool.swift */; };
 		84598C662F7D5953002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C572F7D5953002A5DBE /* AppWebViewController.swift */; };
 		84598C672F7D5953002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598C542F7D5953002A5DBE /* AppPermissionTool.swift */; };
+		84598D292F7F4BEE002A5DBE /* DancePulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D272F7F4BEE002A5DBE /* DancePulseView.swift */; };
+		84598D2A2F7F4BEE002A5DBE /* AestheticScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D262F7F4BEE002A5DBE /* AestheticScannerView.swift */; };
 		84B434192F67AE6E004953C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B434182F67AE6E004953C3 /* StoreKit.framework */; };
 		84B4344C2F67D32D004953C3 /* DanceMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434262F67D32D004953C3 /* DanceMove.swift */; };
 		84B4344D2F67D32D004953C3 /* DanceVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B434272F67D32D004953C3 /* DanceVideo.swift */; };
@@ -62,6 +64,8 @@
 		84598C5A2F7D5953002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
 		84598C5B2F7D5953002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84598C5C2F7D5953002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84598D262F7F4BEE002A5DBE /* AestheticScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AestheticScannerView.swift; sourceTree = "<group>"; };
+		84598D272F7F4BEE002A5DBE /* DancePulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancePulseView.swift; sourceTree = "<group>"; };
 		84B433B62F679FF8004953C3 /* rivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B434182F67AE6E004953C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84B434262F67D32D004953C3 /* DanceMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceMove.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				FD762A8DC40A10130706022A /* Pods-rivo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		84598D282F7F4BEE002A5DBE /* Studio */ = {
+			isa = PBXGroup;
+			children = (
+				84598D262F7F4BEE002A5DBE /* AestheticScannerView.swift */,
+				84598D272F7F4BEE002A5DBE /* DancePulseView.swift */,
+			);
+			path = Studio;
 			sourceTree = "<group>";
 		};
 		84B433AD2F679FF8004953C3 = {
@@ -233,6 +246,7 @@
 		84B4343E2F67D32D004953C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84598D282F7F4BEE002A5DBE /* Studio */,
 				84B434302F67D32D004953C3 /* Detail */,
 				84B434322F67D32D004953C3 /* Home */,
 				84B434342F67D32D004953C3 /* Onboarding */,
@@ -435,6 +449,8 @@
 				84598C632F7D5953002A5DBE /* WaitViewController.swift in Sources */,
 				84598C642F7D5953002A5DBE /* AppleIAPManager.swift in Sources */,
 				84598C652F7D5953002A5DBE /* AppRequestTool.swift in Sources */,
+				84598D292F7F4BEE002A5DBE /* DancePulseView.swift in Sources */,
+				84598D2A2F7F4BEE002A5DBE /* AestheticScannerView.swift in Sources */,
 				84598C662F7D5953002A5DBE /* AppWebViewController.swift in Sources */,
 				84598C672F7D5953002A5DBE /* AppPermissionTool.swift in Sources */,
 				84B434552F67D32D004953C3 /* PracticeTimerView.swift in Sources */,
@@ -577,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = rivo/rivo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -626,7 +642,7 @@
 				CODE_SIGN_ENTITLEMENTS = rivo/rivo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

@@ -48,11 +48,15 @@ struct MainTabView: View {
                     Text("Training")
                 }
             
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gearshape")
-                    Text("Settings")
-                }
+            if #available(iOS 14.0, *) {
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gearshape")
+                        Text("Settings")
+                    }
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }

@@ -1,8 +1,10 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct SettingsView: View {
     @EnvironmentObject var storeManager: StoreManager
     @State private var showingContact = false
+    @State private var showingScanner = false
     
     var body: some View {
         NavigationView {
@@ -23,6 +25,25 @@ struct SettingsView: View {
                             Image(systemName: "cart.fill")
                                 .foregroundColor(.blue)
                             Text("Top Up Coins")
+                        }
+                    }
+                }
+                
+                Section(header: Text("LAB & TOOLS").foregroundColor(.gray)) {
+                    Button(action: { showingScanner = true }) {
+                        HStack {
+                            Image(systemName: "camera.viewfinder")
+                                .foregroundColor(.blue)
+                            Text("Aesthetic Lab")
+                                .foregroundColor(.primary)
+                            Spacer()
+                            if #available(iOS 14.0, *) {
+                                Image(systemName: "chevron.right")
+                                    .font(.caption2)
+                                    .foregroundColor(.gray)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                         }
                     }
                 }
@@ -58,6 +79,9 @@ struct SettingsView: View {
         }
         .alert(isPresented: $showingContact) {
             Alert(title: Text("Support"), message: Text("Please contact us at support@rivoapp.example.com"), dismissButton: .default(Text("OK")))
+        }
+        .fullScreenCover(isPresented: $showingScanner) {
+            AestheticScannerView()
         }
     }
 }
