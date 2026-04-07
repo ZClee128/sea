@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 
 @available(iOS 15.0, *)
 struct PoplaStoreView: View {
@@ -21,16 +22,31 @@ struct PoplaStoreView: View {
                     Text("COIN PACKAGES").font(.system(size: 10, weight: .black)).foregroundColor(.gray.opacity(0.4))
                         .padding(.horizontal, 30)
                     
-                    VStack(spacing: 12) {
-                        ForEach(storeManager.products) { product in
-                            ProductRow(product: product) {
-                                Task {
-                                    await storeManager.purchase(product)
+                    if storeManager.isLoading && storeManager.products.isEmpty {
+                        VStack {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                            Text("Fetching from App Store...")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.secondary)
+                                .padding(.top, 10)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 50)
+                    } else {
+                        VStack(spacing: 12) {
+                            ForEach(storeManager.products) { product in
+                                RealProductRow(product: product) {
+                                    Task {
+                                        await storeManager.purchase(product)
+                                    }
                                 }
                             }
                         }
+                        .padding(.horizontal, 30)
                     }
-                    .padding(.horizontal, 30)
+                    
+                    legalSection
                     
                     Spacer().frame(height: 50)
                 }
@@ -64,11 +80,11 @@ struct PoplaStoreView: View {
     private var balanceCard: some View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
-                Text("YOUR BALACE").font(.system(size: 10, weight: .black)).foregroundColor(.white.opacity(0.6))
+                Text("YOUR BALANCE").font(.system(size: 10, weight: .black)).foregroundColor(.white.opacity(0.6))
                 Text("\(collectionManager.coinBalance) COINS").font(.system(size: 24, weight: .black)).foregroundColor(.white)
             }
             Spacer()
-            Image(systemName: "circle.circle.fill")
+            Image(systemName: "sparkles")
                 .font(.system(size: 30))
                 .foregroundColor(.yellow)
         }
@@ -77,25 +93,56 @@ struct PoplaStoreView: View {
         .cornerRadius(30)
         .padding(.horizontal, 30)
     }
+    
+    private var legalSection: some View {
+        VStack(spacing: 8) {
+            Text("Purchases are linked to your Apple ID. Consumable items like coins are spent instantly upon use and are not transferable.")
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 50)
+            
+            Button(action: { /* Restore logic if needed */ }) {
+                Text("Restore Purchases")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(.black.opacity(0.4))
+            }
+        }
+        .padding(.top, 20)
+    }
 }
 
-struct ProductRow: View {
-    let product: ProductItem
+@available(iOS 15.0, *)
+struct RealProductRow: View {
+    let product: Product
     let action: () -> Void
+    @State private var isProcessing = false
     
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            isProcessing = true
+            action()
+            // Reset processing after a delay (simulated or real)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { isProcessing = false }
+        }) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(product.name).font(.system(size: 16, weight: .bold)).foregroundColor(.black)
-                    Text("Product ID: \(product.id)").font(.system(size: 10)).foregroundColor(.gray)
+                    Text(product.displayName).font(.system(size: 16, weight: .bold)).foregroundColor(.black)
+                    Text(product.description).font(.system(size: 10)).foregroundColor(.gray)
                 }
                 Spacer()
-                Text(product.price)
-                    .font(.system(size: 14, weight: .black))
-                    .padding(.horizontal, 15).padding(.vertical, 8)
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(10)
+                
+                if isProcessing {
+                    ProgressView()
+                        .padding(.horizontal, 20)
+                } else {
+                    Text(product.displayPrice)
+                        .font(.system(size: 14, weight: .black))
+                        .padding(.horizontal, 15).padding(.vertical, 8)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .foregroundColor(.black)
+                }
             }
             .padding(20)
             .background(Color.white)
@@ -103,5 +150,6 @@ struct ProductRow: View {
             .shadow(color: Color.black.opacity(0.03), radius: 10, x: 0, y: 5)
         }
         .buttonStyle(PlainButtonStyle())
+        .disabled(isProcessing)
     }
 }

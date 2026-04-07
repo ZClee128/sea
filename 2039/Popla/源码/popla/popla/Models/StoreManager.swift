@@ -6,40 +6,111 @@ import Combine
 class StoreManager: ObservableObject {
     static let shared = StoreManager()
     
-    @Published var products: [ProductItem] = []
+    @Published var products: [Product] = []
+    @Published var isLoading = false
+    
+    private var updatesTask: Task<Void, Never>?
+    
+    private let productIDs = [
+        "PoplaGold", "PoplaGold1", "PoplaGold2", "PoplaGold4",
+        "PoplaGold5", "PoplaGold9", "PoplaGold19", "PoplaGold49", "PoplaGold99"
+    ]
+    
+    // Mapping IDs to coins for internal logic
+    private let coinMap: [String: Int] = [
+        "PoplaGold": 32, "PoplaGold1": 60, "PoplaGold2": 96, "PoplaGold4": 155,
+        "PoplaGold5": 189, "PoplaGold9": 359, "PoplaGold19": 729, "PoplaGold49": 1869, "PoplaGold99": 3799
+    ]
     
     init() {
-        setupProducts()
+        // Start listening for transaction updates (e.g., successful purchases)
+        updatesTask = listenForTransactions()
+        
+        Task {
+            await requestProducts()
+        }
     }
     
-    private func setupProducts() {
-        // Map the IDs provided by the user to their coin values
-        self.products = [
-            ProductItem(id: "Popla", name: "32 coins", price: "$0.99", coins: 32),
-            ProductItem(id: "Popla1", name: "60 coins", price: "$1.99", coins: 60),
-            ProductItem(id: "Popla2", name: "96 coins", price: "$2.99", coins: 96),
-            ProductItem(id: "Popla4", name: "155 coins", price: "$4.99", coins: 155),
-            ProductItem(id: "Popla5", name: "189 coins", price: "$5.99", coins: 189),
-            ProductItem(id: "Popla9", name: "359 coins", price: "$9.99", coins: 359),
-            ProductItem(id: "Popla19", name: "729 coins", price: "$19.99", coins: 729),
-            ProductItem(id: "Popla49", name: "1869 coins", price: "$49.99", coins: 1869),
-            ProductItem(id: "Popla99", name: "3799 coins", price: "$99.99", coins: 3799)
-        ]
+    deinit {
+        updatesTask?.cancel()
     }
     
     @MainActor
-    func purchase(_ product: ProductItem) async {
-        // Simulate a high-end StoreKit 2 transaction
-        try? await Task.sleep(nanoseconds: 1_500_000_000) // Simulate network delay
-        
-        // On success, update the CollectionManager balance
-        CollectionManager.shared.addCoins(product.coins)
+    func requestProducts() async {
+        isLoading = true
+        do {
+            // Fetch real products from App Store
+            let fetchedProducts = try await Product.products(for: productIDs)
+            // Sort by price to keep the store organized
+            self.products = fetchedProducts.sorted(by: { $0.price < $1.price })
+        } catch {
+            print("Failed product request from App Store: \(error)")
+        }
+        isLoading = false
+    }
+    
+    @MainActor
+    func purchase(_ product: Product) async {
+        do {
+            let result = try await product.purchase()
+            
+            switch result {
+            case .success(let verification):
+                // Check if the transaction is verified/valid
+                let transaction = try checkVerified(verification)
+                
+                // Deliver the coins to the user
+                if let coins = coinMap[transaction.productID] {
+                    CollectionManager.shared.addCoins(coins)
+                }
+                
+                // Always finish the transaction
+                await transaction.finish()
+                
+            case .userCancelled:
+                print("User cancelled the purchase.")
+            case .pending:
+                print("Purchase is pending (e.g., parental approval required).")
+            @unknown default:
+                break
+            }
+        } catch {
+            print("Failed to complete purchase: \(error)")
+        }
+    }
+    
+    private func listenForTransactions() -> Task<Void, Never> {
+        Task.detached {
+            for await result in Transaction.updates {
+                do {
+                    let transaction = try self.checkVerified(result)
+                    
+                    // Deliver content for unfinished transactions that completed in background
+                    if let coins = self.coinMap[transaction.productID] {
+                        await MainActor.run {
+                            CollectionManager.shared.addCoins(coins)
+                        }
+                    }
+                    
+                    await transaction.finish()
+                } catch {
+                    print("Transaction update failed JWS verification.")
+                }
+            }
+        }
+    }
+    
+    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+        // Safe check for JWS verification (native to StoreKit 2)
+        switch result {
+        case .unverified:
+            throw StoreError.failedVerification
+        case .verified(let safe):
+            return safe
+        }
     }
 }
 
-struct ProductItem: Identifiable {
-    let id: String
-    let name: String
-    let price: String
-    let coins: Int
+enum StoreError: Error {
+    case failedVerification
 }

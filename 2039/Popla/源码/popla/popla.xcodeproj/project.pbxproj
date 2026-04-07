@@ -3,38 +3,101 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6391C58D76ABA869B7647881 /* Pods_popla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1897B077D9ACA6AA6DF274F /* Pods_popla.framework */; };
 		84598D482F84C575002A5DBE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84598D472F84C575002A5DBE /* StoreKit.framework */; };
+		84598DC62F851D82002A5DBE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598D9F2F851D82002A5DBE /* AppSettings.swift */; };
+		84598DC72F851D82002A5DBE /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA02F851D82002A5DBE /* CollectionManager.swift */; };
+		84598DC82F851D82002A5DBE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA12F851D82002A5DBE /* ImagePicker.swift */; };
+		84598DC92F851D82002A5DBE /* IMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA22F851D82002A5DBE /* IMViewModel.swift */; };
+		84598DCA2F851D82002A5DBE /* MomentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA32F851D82002A5DBE /* MomentsData.swift */; };
+		84598DCB2F851D82002A5DBE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA42F851D82002A5DBE /* StoreManager.swift */; };
+		84598DCC2F851D82002A5DBE /* UrbanModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA52F851D82002A5DBE /* UrbanModels.swift */; };
+		84598DCD2F851D82002A5DBE /* PrivacyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DA92F851D82002A5DBE /* PrivacyManager.swift */; };
+		84598DCE2F851D82002A5DBE /* ExploreGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DAB2F851D82002A5DBE /* ExploreGalleryView.swift */; };
+		84598DCF2F851D82002A5DBE /* UrbanVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DAC2F851D82002A5DBE /* UrbanVideoPlayer.swift */; };
+		84598DD02F851D82002A5DBE /* IMChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DAE2F851D82002A5DBE /* IMChatView.swift */; };
+		84598DD12F851D82002A5DBE /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DAF2F851D82002A5DBE /* ReportView.swift */; };
+		84598DD22F851D82002A5DBE /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DB12F851D82002A5DBE /* MainTabView.swift */; };
+		84598DD32F851D82002A5DBE /* ContributionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DB32F851D82002A5DBE /* ContributionDetailView.swift */; };
+		84598DD42F851D82002A5DBE /* LifePlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DB42F851D82002A5DBE /* LifePlannerView.swift */; };
+		84598DD52F851D82002A5DBE /* RouteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DB52F851D82002A5DBE /* RouteDetailView.swift */; };
+		84598DD62F851D82002A5DBE /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DB72F851D82002A5DBE /* PrivacyView.swift */; };
+		84598DD72F851D82002A5DBE /* PoplaStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DBA2F851D82002A5DBE /* PoplaStoreView.swift */; };
+		84598DD82F851D82002A5DBE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DBB2F851D82002A5DBE /* SettingsView.swift */; };
+		84598DDA2F851D82002A5DBE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DC32F851D82002A5DBE /* RootView.swift */; };
+		84598DDB2F851D82002A5DBE /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84598DA72F851D82002A5DBE /* PrivacyPolicy.txt */; };
+		84598DDC2F851D82002A5DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84598DBF2F851D82002A5DBE /* Assets.xcassets */; };
+		84598DDE2F851D82002A5DBE /* River Vibe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84598DC22F851D82002A5DBE /* River Vibe.mp4 */; };
+		84598DDF2F851D82002A5DBE /* Street Pulse.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84598DC42F851D82002A5DBE /* Street Pulse.mp4 */; };
+		84598DE12F851E6C002A5DBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84598DE02F851E6C002A5DBE /* GoogleService-Info.plist */; };
+		84598DF02F851E82002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DEC2F851E82002A5DBE /* AppWebViewScriptDelegateHandler.swift */; };
+		84598DF12F851E82002A5DBE /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE72F851E82002A5DBE /* AppPermissionTool.swift */; };
+		84598DF22F851E82002A5DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE52F851E82002A5DBE /* AppDelegate.swift */; };
+		84598DF32F851E82002A5DBE /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE42F851E82002A5DBE /* AppConfig.swift */; };
+		84598DF42F851E82002A5DBE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DEE2F851E82002A5DBE /* ProgressHUD.swift */; };
+		84598DF52F851E82002A5DBE /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DEF2F851E82002A5DBE /* WaitViewController.swift */; };
+		84598DF62F851E82002A5DBE /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE82F851E82002A5DBE /* AppRequestBaseModel.swift */; };
+		84598DF72F851E82002A5DBE /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DEB2F851E82002A5DBE /* AppWebViewHandleEvent.swift */; };
+		84598DF82F851E82002A5DBE /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE62F851E82002A5DBE /* AppleIAPManager.swift */; };
+		84598DF92F851E82002A5DBE /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE32F851E82002A5DBE /* AppAdjustManager.swift */; };
+		84598DFA2F851E82002A5DBE /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DED2F851E82002A5DBE /* LocalPushScheduler.swift */; };
+		84598DFB2F851E82002A5DBE /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DE92F851E82002A5DBE /* AppRequestTool.swift */; };
+		84598DFC2F851E82002A5DBE /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84598DEA2F851E82002A5DBE /* AppWebViewController.swift */; };
+		84598DFE2F852436002A5DBE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84598DFD2F852436002A5DBE /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E88C29F94AD5D1FE71FD240 /* Pods-popla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popla.debug.xcconfig"; path = "Target Support Files/Pods-popla/Pods-popla.debug.xcconfig"; sourceTree = "<group>"; };
 		84598D362F84C541002A5DBE /* popla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84598D472F84C575002A5DBE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84598D9F2F851D82002A5DBE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		84598DA02F851D82002A5DBE /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
+		84598DA12F851D82002A5DBE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		84598DA22F851D82002A5DBE /* IMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMViewModel.swift; sourceTree = "<group>"; };
+		84598DA32F851D82002A5DBE /* MomentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsData.swift; sourceTree = "<group>"; };
+		84598DA42F851D82002A5DBE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84598DA52F851D82002A5DBE /* UrbanModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanModels.swift; sourceTree = "<group>"; };
+		84598DA72F851D82002A5DBE /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		84598DA92F851D82002A5DBE /* PrivacyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyManager.swift; sourceTree = "<group>"; };
+		84598DAB2F851D82002A5DBE /* ExploreGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGalleryView.swift; sourceTree = "<group>"; };
+		84598DAC2F851D82002A5DBE /* UrbanVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanVideoPlayer.swift; sourceTree = "<group>"; };
+		84598DAE2F851D82002A5DBE /* IMChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMChatView.swift; sourceTree = "<group>"; };
+		84598DAF2F851D82002A5DBE /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		84598DB12F851D82002A5DBE /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84598DB32F851D82002A5DBE /* ContributionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionDetailView.swift; sourceTree = "<group>"; };
+		84598DB42F851D82002A5DBE /* LifePlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifePlannerView.swift; sourceTree = "<group>"; };
+		84598DB52F851D82002A5DBE /* RouteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailView.swift; sourceTree = "<group>"; };
+		84598DB72F851D82002A5DBE /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		84598DBA2F851D82002A5DBE /* PoplaStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoplaStoreView.swift; sourceTree = "<group>"; };
+		84598DBB2F851D82002A5DBE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84598DBF2F851D82002A5DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84598DC02F851D82002A5DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84598DC12F851D82002A5DBE /* popla.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = popla.entitlements; sourceTree = "<group>"; };
+		84598DC22F851D82002A5DBE /* River Vibe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "River Vibe.mp4"; sourceTree = "<group>"; };
+		84598DC32F851D82002A5DBE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		84598DC42F851D82002A5DBE /* Street Pulse.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Street Pulse.mp4"; sourceTree = "<group>"; };
+		84598DE02F851E6C002A5DBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84598DE32F851E82002A5DBE /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84598DE42F851E82002A5DBE /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84598DE52F851E82002A5DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84598DE62F851E82002A5DBE /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84598DE72F851E82002A5DBE /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84598DE82F851E82002A5DBE /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84598DE92F851E82002A5DBE /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84598DEA2F851E82002A5DBE /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84598DEB2F851E82002A5DBE /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84598DEC2F851E82002A5DBE /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84598DED2F851E82002A5DBE /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84598DEE2F851E82002A5DBE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84598DEF2F851E82002A5DBE /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84598DFD2F852436002A5DBE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8CE5F9D2C957876729566FCB /* Pods-popla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popla.release.xcconfig"; path = "Target Support Files/Pods-popla/Pods-popla.release.xcconfig"; sourceTree = "<group>"; };
+		A1897B077D9ACA6AA6DF274F /* Pods_popla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84598D452F84C556002A5DBE /* Exceptions for "popla" folder in "popla" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 84598D352F84C541002A5DBE /* popla */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84598D382F84C541002A5DBE /* popla */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84598D452F84C556002A5DBE /* Exceptions for "popla" folder in "popla" target */,
-			);
-			path = popla;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84598D332F84C541002A5DBE /* Frameworks */ = {
@@ -42,18 +105,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				84598D482F84C575002A5DBE /* StoreKit.framework in Frameworks */,
+				6391C58D76ABA869B7647881 /* Pods_popla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E498098370B7B605F87DF68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E88C29F94AD5D1FE71FD240 /* Pods-popla.debug.xcconfig */,
+				8CE5F9D2C957876729566FCB /* Pods-popla.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84598D2D2F84C541002A5DBE = {
 			isa = PBXGroup;
 			children = (
-				84598D382F84C541002A5DBE /* popla */,
+				84598DC52F851D82002A5DBE /* popla */,
 				84598D462F84C575002A5DBE /* Frameworks */,
 				84598D372F84C541002A5DBE /* Products */,
+				5E498098370B7B605F87DF68 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +143,153 @@
 			isa = PBXGroup;
 			children = (
 				84598D472F84C575002A5DBE /* StoreKit.framework */,
+				A1897B077D9ACA6AA6DF274F /* Pods_popla.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84598DA62F851D82002A5DBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84598D9F2F851D82002A5DBE /* AppSettings.swift */,
+				84598DA02F851D82002A5DBE /* CollectionManager.swift */,
+				84598DA12F851D82002A5DBE /* ImagePicker.swift */,
+				84598DA22F851D82002A5DBE /* IMViewModel.swift */,
+				84598DA32F851D82002A5DBE /* MomentsData.swift */,
+				84598DA42F851D82002A5DBE /* StoreManager.swift */,
+				84598DA52F851D82002A5DBE /* UrbanModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84598DA82F851D82002A5DBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84598DA72F851D82002A5DBE /* PrivacyPolicy.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84598DAA2F851D82002A5DBE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84598DA92F851D82002A5DBE /* PrivacyManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84598DAD2F851D82002A5DBE /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				84598DAB2F851D82002A5DBE /* ExploreGalleryView.swift */,
+				84598DAC2F851D82002A5DBE /* UrbanVideoPlayer.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		84598DB02F851D82002A5DBE /* IM */ = {
+			isa = PBXGroup;
+			children = (
+				84598DAE2F851D82002A5DBE /* IMChatView.swift */,
+				84598DAF2F851D82002A5DBE /* ReportView.swift */,
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		84598DB22F851D82002A5DBE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84598DB12F851D82002A5DBE /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84598DB62F851D82002A5DBE /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				84598DB32F851D82002A5DBE /* ContributionDetailView.swift */,
+				84598DB42F851D82002A5DBE /* LifePlannerView.swift */,
+				84598DB52F851D82002A5DBE /* RouteDetailView.swift */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
+		84598DB82F851D82002A5DBE /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				84598DB72F851D82002A5DBE /* PrivacyView.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		84598DB92F851D82002A5DBE /* Reels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reels;
+			sourceTree = "<group>";
+		};
+		84598DBC2F851D82002A5DBE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				84598DBA2F851D82002A5DBE /* PoplaStoreView.swift */,
+				84598DBB2F851D82002A5DBE /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		84598DBD2F851D82002A5DBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84598DAD2F851D82002A5DBE /* Explore */,
+				84598DB02F851D82002A5DBE /* IM */,
+				84598DB22F851D82002A5DBE /* Main */,
+				84598DB62F851D82002A5DBE /* Planner */,
+				84598DB82F851D82002A5DBE /* Privacy */,
+				84598DB92F851D82002A5DBE /* Reels */,
+				84598DBC2F851D82002A5DBE /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84598DC52F851D82002A5DBE /* popla */ = {
+			isa = PBXGroup;
+			children = (
+				84598DE22F851E6F002A5DBE /* user */,
+				84598DE02F851E6C002A5DBE /* GoogleService-Info.plist */,
+				84598DA62F851D82002A5DBE /* Models */,
+				84598DA82F851D82002A5DBE /* Resources */,
+				84598DAA2F851D82002A5DBE /* Utils */,
+				84598DBD2F851D82002A5DBE /* Views */,
+				84598DBF2F851D82002A5DBE /* Assets.xcassets */,
+				84598DC02F851D82002A5DBE /* Info.plist */,
+				84598DC12F851D82002A5DBE /* popla.entitlements */,
+				84598DC22F851D82002A5DBE /* River Vibe.mp4 */,
+				84598DC32F851D82002A5DBE /* RootView.swift */,
+				84598DC42F851D82002A5DBE /* Street Pulse.mp4 */,
+				84598DFD2F852436002A5DBE /* Launch Screen.storyboard */,
+			);
+			path = popla;
+			sourceTree = "<group>";
+		};
+		84598DE22F851E6F002A5DBE /* user */ = {
+			isa = PBXGroup;
+			children = (
+				84598DE32F851E82002A5DBE /* AppAdjustManager.swift */,
+				84598DE42F851E82002A5DBE /* AppConfig.swift */,
+				84598DE52F851E82002A5DBE /* AppDelegate.swift */,
+				84598DE62F851E82002A5DBE /* AppleIAPManager.swift */,
+				84598DE72F851E82002A5DBE /* AppPermissionTool.swift */,
+				84598DE82F851E82002A5DBE /* AppRequestBaseModel.swift */,
+				84598DE92F851E82002A5DBE /* AppRequestTool.swift */,
+				84598DEA2F851E82002A5DBE /* AppWebViewController.swift */,
+				84598DEB2F851E82002A5DBE /* AppWebViewHandleEvent.swift */,
+				84598DEC2F851E82002A5DBE /* AppWebViewScriptDelegateHandler.swift */,
+				84598DED2F851E82002A5DBE /* LocalPushScheduler.swift */,
+				84598DEE2F851E82002A5DBE /* ProgressHUD.swift */,
+				84598DEF2F851E82002A5DBE /* WaitViewController.swift */,
+			);
+			path = user;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,20 +299,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84598D412F84C543002A5DBE /* Build configuration list for PBXNativeTarget "popla" */;
 			buildPhases = (
+				652A7EFD3D49D3464FA5E31C /* [CP] Check Pods Manifest.lock */,
 				84598D322F84C541002A5DBE /* Sources */,
 				84598D332F84C541002A5DBE /* Frameworks */,
 				84598D342F84C541002A5DBE /* Resources */,
+				65385B21186E6F62E2CA7D26 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				84598D382F84C541002A5DBE /* popla */,
-			);
 			name = popla;
-			packageProductDependencies = (
-			);
 			productName = popla;
 			productReference = 84598D362F84C541002A5DBE /* popla.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +330,7 @@
 				};
 			};
 			buildConfigurationList = 84598D312F84C541002A5DBE /* Build configuration list for PBXProject "popla" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,8 +338,6 @@
 				Base,
 			);
 			mainGroup = 84598D2D2F84C541002A5DBE;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 84598D372F84C541002A5DBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,16 +352,101 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84598DFE2F852436002A5DBE /* Launch Screen.storyboard in Resources */,
+				84598DDB2F851D82002A5DBE /* PrivacyPolicy.txt in Resources */,
+				84598DDC2F851D82002A5DBE /* Assets.xcassets in Resources */,
+				84598DE12F851E6C002A5DBE /* GoogleService-Info.plist in Resources */,
+				84598DDE2F851D82002A5DBE /* River Vibe.mp4 in Resources */,
+				84598DDF2F851D82002A5DBE /* Street Pulse.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		652A7EFD3D49D3464FA5E31C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-popla-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65385B21186E6F62E2CA7D26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-popla/Pods-popla-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-popla/Pods-popla-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-popla/Pods-popla-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84598D322F84C541002A5DBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84598DC62F851D82002A5DBE /* AppSettings.swift in Sources */,
+				84598DC72F851D82002A5DBE /* CollectionManager.swift in Sources */,
+				84598DC82F851D82002A5DBE /* ImagePicker.swift in Sources */,
+				84598DC92F851D82002A5DBE /* IMViewModel.swift in Sources */,
+				84598DCA2F851D82002A5DBE /* MomentsData.swift in Sources */,
+				84598DCB2F851D82002A5DBE /* StoreManager.swift in Sources */,
+				84598DCC2F851D82002A5DBE /* UrbanModels.swift in Sources */,
+				84598DCD2F851D82002A5DBE /* PrivacyManager.swift in Sources */,
+				84598DCE2F851D82002A5DBE /* ExploreGalleryView.swift in Sources */,
+				84598DCF2F851D82002A5DBE /* UrbanVideoPlayer.swift in Sources */,
+				84598DD02F851D82002A5DBE /* IMChatView.swift in Sources */,
+				84598DD12F851D82002A5DBE /* ReportView.swift in Sources */,
+				84598DD22F851D82002A5DBE /* MainTabView.swift in Sources */,
+				84598DD32F851D82002A5DBE /* ContributionDetailView.swift in Sources */,
+				84598DD42F851D82002A5DBE /* LifePlannerView.swift in Sources */,
+				84598DD52F851D82002A5DBE /* RouteDetailView.swift in Sources */,
+				84598DF02F851E82002A5DBE /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84598DF12F851E82002A5DBE /* AppPermissionTool.swift in Sources */,
+				84598DF22F851E82002A5DBE /* AppDelegate.swift in Sources */,
+				84598DF32F851E82002A5DBE /* AppConfig.swift in Sources */,
+				84598DF42F851E82002A5DBE /* ProgressHUD.swift in Sources */,
+				84598DF52F851E82002A5DBE /* WaitViewController.swift in Sources */,
+				84598DF62F851E82002A5DBE /* AppRequestBaseModel.swift in Sources */,
+				84598DF72F851E82002A5DBE /* AppWebViewHandleEvent.swift in Sources */,
+				84598DF82F851E82002A5DBE /* AppleIAPManager.swift in Sources */,
+				84598DF92F851E82002A5DBE /* AppAdjustManager.swift in Sources */,
+				84598DFA2F851E82002A5DBE /* LocalPushScheduler.swift in Sources */,
+				84598DFB2F851E82002A5DBE /* AppRequestTool.swift in Sources */,
+				84598DFC2F851E82002A5DBE /* AppWebViewController.swift in Sources */,
+				84598DD62F851D82002A5DBE /* PrivacyView.swift in Sources */,
+				84598DD72F851D82002A5DBE /* PoplaStoreView.swift in Sources */,
+				84598DD82F851D82002A5DBE /* SettingsView.swift in Sources */,
+				84598DDA2F851D82002A5DBE /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +574,7 @@
 		};
 		84598D422F84C543002A5DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E88C29F94AD5D1FE71FD240 /* Pods-popla.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popla.city;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -318,6 +619,7 @@
 		};
 		84598D432F84C543002A5DBE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CE5F9D2C957876729566FCB /* Pods-popla.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popla.city;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

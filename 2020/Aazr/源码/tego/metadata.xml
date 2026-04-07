@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://apple.com/itunes/importer" version="software5.10">
+    <software_assets apple_id="YOUR_APPLE_ID" bundle_id="YOUR_BUNDLE_ID">
+        <in_app_purchases>
+            <in_app_purchase>
+                <product_id>tego</product_id>
+                <reference_name>tego</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>1</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>32 coins</title>
+                        <description>32 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego1</product_id>
+                <reference_name>tego1</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>2</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>60 coins</title>
+                        <description>60 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego2</product_id>
+                <reference_name>tego2</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>3</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>96 coins</title>
+                        <description>96 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego4</product_id>
+                <reference_name>tego4</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>5</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>155 coins</title>
+                        <description>155 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego5</product_id>
+                <reference_name>tego5</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>6</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>189 coins</title>
+                        <description>189 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego9</product_id>
+                <reference_name>tego9</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>10</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>359 coins</title>
+                        <description>359 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego19</product_id>
+                <reference_name>tego19</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>20</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>729 coins</title>
+                        <description>729 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego49</product_id>
+                <reference_name>tego49</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>50</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>1869 coins</title>
+                        <description>1869 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+            <in_app_purchase>
+                <product_id>tego99</product_id>
+                <reference_name>tego99</reference_name>
+                <type>consumable</type>
+                <products>
+                    <product>
+                        <cleared_for_sale>true</cleared_for_sale>
+                        <intervals>
+                            <interval>
+                                <start_date>2024-01-01</start_date>
+                                <wholesale_price_tier>87</wholesale_price_tier>
+                            </interval>
+                        </intervals>
+                    </product>
+                </products>
+                <locales>
+                    <locale name="en-US">
+                        <title>3799 coins</title>
+                        <description>3799 coins</description>
+                    </locale>
+                </locales>
+            </in_app_purchase>
+        </in_app_purchases>
+    </software_assets>
+</package>
