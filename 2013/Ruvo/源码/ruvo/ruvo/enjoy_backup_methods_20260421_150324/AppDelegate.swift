@@ -40,16 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.rv_76c5()
+                        self.dp_23cb()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1779370354 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.yy_1106() { // 本地时间戳大于预设时间，进入B面
+                if Date().timeIntervalSince1970 > endTimeInterval && self.pz_5124() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.rv_76c5()
+                    self.dp_23cb()
                 }
             }
         }
@@ -57,16 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func yy_1106() -> Bool {
+    private func pz_5124() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        aw_4634(application)
+        zv_3c68(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.im_36fc()
+        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var cancellables = Set<AnyCancellable>()
     
-    func rv_76c5() {
+    func dp_23cb() {
         // Observe settings changes
         SettingsManager.shared.$enableBackgroundPlayback
             .receive(on: DispatchQueue.main)
@@ -118,7 +118,7 @@ extension AppDelegate: MessagingDelegate {
         Messaging.messaging().delegate = self
     }
     
-    func aw_4634(_ application: UIApplication) {
+    func zv_3c68(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]

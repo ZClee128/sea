@@ -23,21 +23,21 @@
 		842DA5A72F6AFD2200FEEBD9 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5982F6AFD2200FEEBD9 /* VideoPlayerView.swift */; };
 		842DA5A82F6AFD2200FEEBD9 /* 27.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5872F6AFD2200FEEBD9 /* 27.mp4 */; };
 		842DA5A92F6AFD2200FEEBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DA58C2F6AFD2200FEEBD9 /* Assets.xcassets */; };
-		842DA5B92F6AFE1F00FEEBD9 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */; };
-		842DA5BA2F6AFE1F00FEEBD9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */; };
-		842DA5BB2F6AFE1F00FEEBD9 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */; };
 		842DA5BC2F6AFE1F00FEEBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */; };
-		842DA5BD2F6AFE1F00FEEBD9 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */; };
-		842DA5BE2F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */; };
 		842DA5BF2F6AFE1F00FEEBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */; };
-		842DA5C02F6AFE1F00FEEBD9 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */; };
-		842DA5C12F6AFE1F00FEEBD9 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */; };
-		842DA5C22F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */; };
-		842DA5C32F6AFE1F00FEEBD9 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */; };
-		842DA5C42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */; };
-		842DA5C52F6AFE1F00FEEBD9 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */; };
 		842DA5C72F6AFEC200FEEBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5C62F6AFEC200FEEBD9 /* GoogleService-Info.plist */; };
 		842DA5C92F6B051F00FEEBD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DA5C82F6B051F00FEEBD9 /* Launch Screen.storyboard */; };
+		84EDE5542F97584600C6C241 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54A2F97584600C6C241 /* AppleIAPManager.swift */; };
+		84EDE5552F97584600C6C241 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54E2F97584600C6C241 /* AppWebViewController.swift */; };
+		84EDE5562F97584600C6C241 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE5532F97584600C6C241 /* WaitViewController.swift */; };
+		84EDE5572F97584600C6C241 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE5512F97584600C6C241 /* LocalPushScheduler.swift */; };
+		84EDE5582F97584600C6C241 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54B2F97584600C6C241 /* AppPermissionTool.swift */; };
+		84EDE5592F97584600C6C241 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54D2F97584600C6C241 /* AppRequestTool.swift */; };
+		84EDE55A2F97584600C6C241 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE5492F97584600C6C241 /* AppAdjustManager.swift */; };
+		84EDE55B2F97584600C6C241 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54F2F97584600C6C241 /* AppWebViewHandleEvent.swift */; };
+		84EDE55C2F97584600C6C241 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE5502F97584600C6C241 /* AppWebViewScriptDelegateHandler.swift */; };
+		84EDE55D2F97584600C6C241 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE5522F97584600C6C241 /* ProgressHUD.swift */; };
+		84EDE55E2F97584600C6C241 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDE54C2F97584600C6C241 /* AppRequestBaseModel.swift */; };
 		CF3B71A41A681C104A8032A5 /* Pods_ruvo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A9923C5934C7AFF069721 /* Pods_ruvo.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,21 +63,21 @@
 		842DA5962F6AFD2200FEEBD9 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		842DA5972F6AFD2200FEEBD9 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		842DA5982F6AFD2200FEEBD9 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		842DA5C62F6AFEC200FEEBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		842DA5C82F6B051F00FEEBD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84EDE5492F97584600C6C241 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84EDE54A2F97584600C6C241 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84EDE54B2F97584600C6C241 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84EDE54C2F97584600C6C241 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84EDE54D2F97584600C6C241 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84EDE54E2F97584600C6C241 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84EDE54F2F97584600C6C241 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84EDE5502F97584600C6C241 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84EDE5512F97584600C6C241 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84EDE5522F97584600C6C241 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84EDE5532F97584600C6C241 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		C932321E6453C8CA4777979E /* Pods-ruvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvo.debug.xcconfig"; path = "Target Support Files/Pods-ruvo/Pods-ruvo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,19 +160,19 @@
 		842DA5AB2F6AFDFE00FEEBD9 /* enjoy */ = {
 			isa = PBXGroup;
 			children = (
-				842DA5AC2F6AFE1F00FEEBD9 /* AppAdjustManager.swift */,
 				842DA5AD2F6AFE1F00FEEBD9 /* AppConfig.swift */,
 				842DA5AE2F6AFE1F00FEEBD9 /* AppDelegate.swift */,
-				842DA5AF2F6AFE1F00FEEBD9 /* AppleIAPManager.swift */,
-				842DA5B02F6AFE1F00FEEBD9 /* AppPermissionTool.swift */,
-				842DA5B12F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift */,
-				842DA5B22F6AFE1F00FEEBD9 /* AppRequestTool.swift */,
-				842DA5B32F6AFE1F00FEEBD9 /* AppWebViewController.swift */,
-				842DA5B42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift */,
-				842DA5B52F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift */,
-				842DA5B62F6AFE1F00FEEBD9 /* LocalPushScheduler.swift */,
-				842DA5B72F6AFE1F00FEEBD9 /* ProgressHUD.swift */,
-				842DA5B82F6AFE1F00FEEBD9 /* WaitViewController.swift */,
+				84EDE5492F97584600C6C241 /* AppAdjustManager.swift */,
+				84EDE54A2F97584600C6C241 /* AppleIAPManager.swift */,
+				84EDE54B2F97584600C6C241 /* AppPermissionTool.swift */,
+				84EDE54C2F97584600C6C241 /* AppRequestBaseModel.swift */,
+				84EDE54D2F97584600C6C241 /* AppRequestTool.swift */,
+				84EDE54E2F97584600C6C241 /* AppWebViewController.swift */,
+				84EDE54F2F97584600C6C241 /* AppWebViewHandleEvent.swift */,
+				84EDE5502F97584600C6C241 /* AppWebViewScriptDelegateHandler.swift */,
+				84EDE5512F97584600C6C241 /* LocalPushScheduler.swift */,
+				84EDE5522F97584600C6C241 /* ProgressHUD.swift */,
+				84EDE5532F97584600C6C241 /* WaitViewController.swift */,
 			);
 			path = enjoy;
 			sourceTree = "<group>";
@@ -306,22 +306,22 @@
 				842DA5A12F6AFD2200FEEBD9 /* Models.swift in Sources */,
 				842DA5A22F6AFD2200FEEBD9 /* PracticeModeView.swift in Sources */,
 				842DA5A32F6AFD2200FEEBD9 /* ScratchpadView.swift in Sources */,
+				84EDE5542F97584600C6C241 /* AppleIAPManager.swift in Sources */,
+				84EDE5552F97584600C6C241 /* AppWebViewController.swift in Sources */,
+				84EDE5562F97584600C6C241 /* WaitViewController.swift in Sources */,
+				84EDE5572F97584600C6C241 /* LocalPushScheduler.swift in Sources */,
+				84EDE5582F97584600C6C241 /* AppPermissionTool.swift in Sources */,
+				84EDE5592F97584600C6C241 /* AppRequestTool.swift in Sources */,
+				84EDE55A2F97584600C6C241 /* AppAdjustManager.swift in Sources */,
+				84EDE55B2F97584600C6C241 /* AppWebViewHandleEvent.swift in Sources */,
+				84EDE55C2F97584600C6C241 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84EDE55D2F97584600C6C241 /* ProgressHUD.swift in Sources */,
+				84EDE55E2F97584600C6C241 /* AppRequestBaseModel.swift in Sources */,
 				842DA5A42F6AFD2200FEEBD9 /* SettingsView.swift in Sources */,
 				842DA5A52F6AFD2200FEEBD9 /* StoreManager.swift in Sources */,
 				842DA5A62F6AFD2200FEEBD9 /* StoreView.swift in Sources */,
-				842DA5B92F6AFE1F00FEEBD9 /* AppAdjustManager.swift in Sources */,
-				842DA5BA2F6AFE1F00FEEBD9 /* ProgressHUD.swift in Sources */,
-				842DA5BB2F6AFE1F00FEEBD9 /* WaitViewController.swift in Sources */,
 				842DA5BC2F6AFE1F00FEEBD9 /* AppDelegate.swift in Sources */,
-				842DA5BD2F6AFE1F00FEEBD9 /* LocalPushScheduler.swift in Sources */,
-				842DA5BE2F6AFE1F00FEEBD9 /* AppWebViewScriptDelegateHandler.swift in Sources */,
 				842DA5BF2F6AFE1F00FEEBD9 /* AppConfig.swift in Sources */,
-				842DA5C02F6AFE1F00FEEBD9 /* AppleIAPManager.swift in Sources */,
-				842DA5C12F6AFE1F00FEEBD9 /* AppRequestTool.swift in Sources */,
-				842DA5C22F6AFE1F00FEEBD9 /* AppRequestBaseModel.swift in Sources */,
-				842DA5C32F6AFE1F00FEEBD9 /* AppWebViewController.swift in Sources */,
-				842DA5C42F6AFE1F00FEEBD9 /* AppWebViewHandleEvent.swift in Sources */,
-				842DA5C52F6AFE1F00FEEBD9 /* AppPermissionTool.swift in Sources */,
 				842DA5A72F6AFD2200FEEBD9 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ruvo/ruvo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -470,15 +470,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruvo.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -504,7 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ruvo/ruvo.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -518,15 +518,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruvo.enjoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
