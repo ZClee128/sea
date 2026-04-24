@@ -32,8 +32,23 @@ jobs:
       working_directory: ${{ steps.resolve.outputs.working_directory }}
       project_name: ${{ steps.resolve.outputs.project_name }}
       bundle_id: ${{ steps.resolve.outputs.bundle_id }}
+      selected_runner: ${{ steps.runner.outputs.selected_runner }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: 🔀 Random Runner Selection
+        id: runner
+        run: |
+          RUNNERS='["macos-14", "macos-13", "macos-12"]'
+          SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys;print(json.loads(sys.stdin.read())[$RANDOM % 3])")
+          echo "selected_runner=$SELECTED" >> $GITHUB_OUTPUT
+          echo "✓ Selected runner: $SELECTED"
+
+      - name: 🎲 Random Delay (Anti-Fingerprint)
+        run: |
+          DELAY=$((RANDOM % 180 + 60))
+          echo "⏳ Random sleep: $DELAY seconds"
+          sleep $DELAY
 
       - name: Resolve project path
         id: resolve
@@ -69,10 +84,16 @@ jobs:
   build:
     name: Build ${{ github.event.inputs.project }}
     needs: resolve
-    runs-on: macos-latest
+    runs-on: ${{ needs.resolve.outputs.selected_runner }}
     environment: ${{ github.event.inputs.project }}
 
     steps:
+      - name: 🎲 Random Delay Before Build
+        run: |
+          DELAY=$((RANDOM % 90 + 30))
+          echo "⏳ Random sleep before build: $DELAY seconds"
+          sleep $DELAY
+
       - name: 🌐 Check Build Environment
         run: |
           echo "Project: ${{ github.event.inputs.project }}"
