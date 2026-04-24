@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3A2E066816EBBCD1D456D488 /* Pods_junip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65AF949823E50EC98F20626 /* Pods_junip.framework */; };
+		8444B5FC2F9B5E1C0007AB4D /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F32F9B5E1C0007AB4D /* AppPermissionTool.swift */; };
+		8444B5FD2F9B5E1C0007AB4D /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F22F9B5E1C0007AB4D /* AppleIAPManager.swift */; };
+		8444B5FE2F9B5E1C0007AB4D /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F42F9B5E1C0007AB4D /* AppRequestBaseModel.swift */; };
+		8444B5FF2F9B5E1C0007AB4D /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F52F9B5E1C0007AB4D /* AppRequestTool.swift */; };
+		8444B6002F9B5E1C0007AB4D /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F82F9B5E1C0007AB4D /* AppWebViewScriptDelegateHandler.swift */; };
+		8444B6012F9B5E1C0007AB4D /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F92F9B5E1C0007AB4D /* LocalPushScheduler.swift */; };
+		8444B6022F9B5E1C0007AB4D /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F72F9B5E1C0007AB4D /* AppWebViewHandleEvent.swift */; };
+		8444B6032F9B5E1C0007AB4D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5FA2F9B5E1C0007AB4D /* ProgressHUD.swift */; };
+		8444B6042F9B5E1C0007AB4D /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F12F9B5E1C0007AB4D /* AppAdjustManager.swift */; };
+		8444B6052F9B5E1C0007AB4D /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5F62F9B5E1C0007AB4D /* AppWebViewController.swift */; };
+		8444B6062F9B5E1C0007AB4D /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444B5FB2F9B5E1C0007AB4D /* WaitViewController.swift */; };
 		84DC536B2F70DA270073FC25 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DC536A2F70DA270073FC25 /* StoreKit.framework */; };
 		84E1992A2F71110700CBA304 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84E1990A2F71110700CBA304 /* PrivacyPolicy.txt */; };
 		84E1992B2F71110700CBA304 /* TermsOfService.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84E1990B2F71110700CBA304 /* TermsOfService.txt */; };
@@ -31,23 +42,23 @@
 		84E1993E2F71110700CBA304 /* JunipVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1991C2F71110700CBA304 /* JunipVault.swift */; };
 		84E1993F2F71110700CBA304 /* HairMasteryHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1991E2F71110700CBA304 /* HairMasteryHub.swift */; };
 		84E199412F71110700CBA304 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199242F71110700CBA304 /* AppTheme.swift */; };
-		84E199502F71121900CBA304 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199492F71121900CBA304 /* AppRequestTool.swift */; };
 		84E199512F71121900CBA304 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199442F71121900CBA304 /* AppConfig.swift */; };
-		84E199522F71121900CBA304 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199472F71121900CBA304 /* AppPermissionTool.swift */; };
 		84E199532F71121900CBA304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199452F71121900CBA304 /* AppDelegate.swift */; };
-		84E199542F71121900CBA304 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994F2F71121900CBA304 /* WaitViewController.swift */; };
-		84E199552F71121900CBA304 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199432F71121900CBA304 /* AppAdjustManager.swift */; };
-		84E199562F71121900CBA304 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994E2F71121900CBA304 /* ProgressHUD.swift */; };
-		84E199572F71121900CBA304 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199462F71121900CBA304 /* AppleIAPManager.swift */; };
-		84E199582F71121900CBA304 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994D2F71121900CBA304 /* LocalPushScheduler.swift */; };
-		84E199592F71121900CBA304 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994B2F71121900CBA304 /* AppWebViewHandleEvent.swift */; };
-		84E1995A2F71121900CBA304 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E199482F71121900CBA304 /* AppRequestBaseModel.swift */; };
-		84E1995B2F71121900CBA304 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994C2F71121900CBA304 /* AppWebViewScriptDelegateHandler.swift */; };
-		84E1995C2F71121900CBA304 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1994A2F71121900CBA304 /* AppWebViewController.swift */; };
 		84E1995E2F71135A00CBA304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E1995D2F71135A00CBA304 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8444B5F12F9B5E1C0007AB4D /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		8444B5F22F9B5E1C0007AB4D /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		8444B5F32F9B5E1C0007AB4D /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		8444B5F42F9B5E1C0007AB4D /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		8444B5F52F9B5E1C0007AB4D /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		8444B5F62F9B5E1C0007AB4D /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		8444B5F72F9B5E1C0007AB4D /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		8444B5F82F9B5E1C0007AB4D /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		8444B5F92F9B5E1C0007AB4D /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		8444B5FA2F9B5E1C0007AB4D /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		8444B5FB2F9B5E1C0007AB4D /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84DC53592F70D9F60073FC25 /* junip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = junip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DC536A2F70DA270073FC25 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84E199052F71110700CBA304 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
@@ -74,19 +85,8 @@
 		84E199262F71110700CBA304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E199272F71110700CBA304 /* junip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = junip.entitlements; sourceTree = "<group>"; };
 		84E199282F71110700CBA304 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		84E199432F71121900CBA304 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
 		84E199442F71121900CBA304 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		84E199452F71121900CBA304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84E199462F71121900CBA304 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
-		84E199472F71121900CBA304 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
-		84E199482F71121900CBA304 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
-		84E199492F71121900CBA304 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
-		84E1994A2F71121900CBA304 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
-		84E1994B2F71121900CBA304 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
-		84E1994C2F71121900CBA304 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
-		84E1994D2F71121900CBA304 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
-		84E1994E2F71121900CBA304 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		84E1994F2F71121900CBA304 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		84E1995D2F71135A00CBA304 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C259804F4D2CE5B83EC55C49 /* Pods-junip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junip.release.xcconfig"; path = "Target Support Files/Pods-junip/Pods-junip.release.xcconfig"; sourceTree = "<group>"; };
 		C65AF949823E50EC98F20626 /* Pods_junip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_junip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,19 +257,19 @@
 		84E199422F7111F800CBA304 /* vie */ = {
 			isa = PBXGroup;
 			children = (
-				84E199432F71121900CBA304 /* AppAdjustManager.swift */,
+				8444B5F12F9B5E1C0007AB4D /* AppAdjustManager.swift */,
+				8444B5F22F9B5E1C0007AB4D /* AppleIAPManager.swift */,
+				8444B5F32F9B5E1C0007AB4D /* AppPermissionTool.swift */,
+				8444B5F42F9B5E1C0007AB4D /* AppRequestBaseModel.swift */,
+				8444B5F52F9B5E1C0007AB4D /* AppRequestTool.swift */,
+				8444B5F62F9B5E1C0007AB4D /* AppWebViewController.swift */,
+				8444B5F72F9B5E1C0007AB4D /* AppWebViewHandleEvent.swift */,
+				8444B5F82F9B5E1C0007AB4D /* AppWebViewScriptDelegateHandler.swift */,
+				8444B5F92F9B5E1C0007AB4D /* LocalPushScheduler.swift */,
+				8444B5FA2F9B5E1C0007AB4D /* ProgressHUD.swift */,
+				8444B5FB2F9B5E1C0007AB4D /* WaitViewController.swift */,
 				84E199442F71121900CBA304 /* AppConfig.swift */,
 				84E199452F71121900CBA304 /* AppDelegate.swift */,
-				84E199462F71121900CBA304 /* AppleIAPManager.swift */,
-				84E199472F71121900CBA304 /* AppPermissionTool.swift */,
-				84E199482F71121900CBA304 /* AppRequestBaseModel.swift */,
-				84E199492F71121900CBA304 /* AppRequestTool.swift */,
-				84E1994A2F71121900CBA304 /* AppWebViewController.swift */,
-				84E1994B2F71121900CBA304 /* AppWebViewHandleEvent.swift */,
-				84E1994C2F71121900CBA304 /* AppWebViewScriptDelegateHandler.swift */,
-				84E1994D2F71121900CBA304 /* LocalPushScheduler.swift */,
-				84E1994E2F71121900CBA304 /* ProgressHUD.swift */,
-				84E1994F2F71121900CBA304 /* WaitViewController.swift */,
 			);
 			path = vie;
 			sourceTree = "<group>";
@@ -410,19 +410,19 @@
 				84E199322F71110700CBA304 /* JunipNavigationState.swift in Sources */,
 				84E199332F71110700CBA304 /* RootContainerView.swift in Sources */,
 				84E199342F71110700CBA304 /* StoreManager.swift in Sources */,
-				84E199502F71121900CBA304 /* AppRequestTool.swift in Sources */,
 				84E199512F71121900CBA304 /* AppConfig.swift in Sources */,
-				84E199522F71121900CBA304 /* AppPermissionTool.swift in Sources */,
+				8444B5FC2F9B5E1C0007AB4D /* AppPermissionTool.swift in Sources */,
+				8444B5FD2F9B5E1C0007AB4D /* AppleIAPManager.swift in Sources */,
+				8444B5FE2F9B5E1C0007AB4D /* AppRequestBaseModel.swift in Sources */,
+				8444B5FF2F9B5E1C0007AB4D /* AppRequestTool.swift in Sources */,
+				8444B6002F9B5E1C0007AB4D /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				8444B6012F9B5E1C0007AB4D /* LocalPushScheduler.swift in Sources */,
+				8444B6022F9B5E1C0007AB4D /* AppWebViewHandleEvent.swift in Sources */,
+				8444B6032F9B5E1C0007AB4D /* ProgressHUD.swift in Sources */,
+				8444B6042F9B5E1C0007AB4D /* AppAdjustManager.swift in Sources */,
+				8444B6052F9B5E1C0007AB4D /* AppWebViewController.swift in Sources */,
+				8444B6062F9B5E1C0007AB4D /* WaitViewController.swift in Sources */,
 				84E199532F71121900CBA304 /* AppDelegate.swift in Sources */,
-				84E199542F71121900CBA304 /* WaitViewController.swift in Sources */,
-				84E199552F71121900CBA304 /* AppAdjustManager.swift in Sources */,
-				84E199562F71121900CBA304 /* ProgressHUD.swift in Sources */,
-				84E199572F71121900CBA304 /* AppleIAPManager.swift in Sources */,
-				84E199582F71121900CBA304 /* LocalPushScheduler.swift in Sources */,
-				84E199592F71121900CBA304 /* AppWebViewHandleEvent.swift in Sources */,
-				84E1995A2F71121900CBA304 /* AppRequestBaseModel.swift in Sources */,
-				84E1995B2F71121900CBA304 /* AppWebViewScriptDelegateHandler.swift in Sources */,
-				84E1995C2F71121900CBA304 /* AppWebViewController.swift in Sources */,
 				84E199352F71110700CBA304 /* AgreementContentView.swift in Sources */,
 				84E199362F71110700CBA304 /* ServiceAgreementView.swift in Sources */,
 				84E199372F71110700CBA304 /* StyleArticleDetailedView.swift in Sources */,
@@ -567,9 +567,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = junip/junip.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZSU5MYTP8V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -579,21 +580,19 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junip.enjoy;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuxuandao.imapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -617,9 +616,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = junip/junip.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZSU5MYTP8V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -629,21 +629,19 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera for video calls and taking photos for chat.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone for video calls and recording voice messages in chat.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to photo library to share images in chat.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junip.enjoy;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuxuandao.imapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
