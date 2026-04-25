@@ -39,8 +39,9 @@ jobs:
       - name: 🔀 Random Runner Selection
         id: runner
         run: |
-          RUNNERS='["macos-14", "macos-13", "macos-12"]'
-          SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys;print(json.loads(sys.stdin.read())[$RANDOM % 3])")
+          # macos-14 权重更高（6个里5个是14），避免排队太久
+          RUNNERS='["macos-14", "macos-14", "macos-14", "macos-14", "macos-14", "macos-13"]'
+          SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys;print(json.loads(sys.stdin.read())[$RANDOM % 6])")
           echo "selected_runner=$SELECTED" >> $GITHUB_OUTPUT
           echo "✓ Selected runner: $SELECTED"
 
