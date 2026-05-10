@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C649814922E63481702C0C6 /* Pods_OverseaH5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5459B0F6B6639A11D41E9936 /* Pods_OverseaH5.framework */; };
+		B0B86F112FF0103200F97321 /* AppWebViewJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B86F102FF0103200F97321 /* AppWebViewJavascriptBridge.swift */; };
+		B1C30003309E6F3300A1C001 /* AppPushEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30002309E6F3300A1C001 /* AppPushEventStore.swift */; };
 		B118C3592E84D29800E8D807 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118C34A2E84D29800E8D807 /* AppAdjustManager.swift */; };
 		B118C35A2E84D29800E8D807 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118C34B2E84D29800E8D807 /* AppConfig.swift */; };
 		B118C35B2E84D29800E8D807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118C34C2E84D29800E8D807 /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 		B118C34E2E84D29800E8D807 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
 		B118C34F2E84D29800E8D807 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
 		B118C3502E84D29800E8D807 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		B0B86F102FF0103200F97321 /* AppWebViewJavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewJavascriptBridge.swift; sourceTree = "<group>"; };
+		B1C30002309E6F3300A1C001 /* AppPushEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPushEventStore.swift; sourceTree = "<group>"; };
 		B118C3512E84D29800E8D807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B118C3522E84D29800E8D807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B118C3532E84D29800E8D807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				B118C34D2E84D29800E8D807 /* AppPermissionTool.swift */,
 				B118C34E2E84D29800E8D807 /* AppWebViewController.swift */,
 				B118C34F2E84D29800E8D807 /* AppWebViewHandleEvent.swift */,
+				B0B86F102FF0103200F97321 /* AppWebViewJavascriptBridge.swift */,
+				B1C30002309E6F3300A1C001 /* AppPushEventStore.swift */,
 				B118C3502E84D29800E8D807 /* AppWebViewScriptDelegateHandler.swift */,
 				B12BF0FA2F28CD1F00CF22AD /* LocalPushScheduler.swift */,
 				B18AB33B2ED84B1500601E22 /* WaitViewController.swift */,
@@ -261,6 +267,8 @@
 				B118C36E2E8515A400E8D807 /* AppRequestBaseModel.swift in Sources */,
 				B118C35D2E84D29800E8D807 /* AppWebViewController.swift in Sources */,
 				B118C35E2E84D29800E8D807 /* AppWebViewHandleEvent.swift in Sources */,
+				B0B86F112FF0103200F97321 /* AppWebViewJavascriptBridge.swift in Sources */,
+				B1C30003309E6F3300A1C001 /* AppPushEventStore.swift in Sources */,
 				B118C35F2E84D29800E8D807 /* AppWebViewScriptDelegateHandler.swift in Sources */,
 				B118C3662E84E23F00E8D807 /* AppleIAPManager.swift in Sources */,
 				B18AB33C2ED84B1500601E22 /* WaitViewController.swift in Sources */,
@@ -312,7 +320,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to let you select and share images.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -360,7 +367,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to let you select and share images.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

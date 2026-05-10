@@ -1,0 +1,6 @@
+framework module Pods_mussa {
+  umbrella header "Pods-mussa-umbrella.h"
+
+  export *
+  module * { export * }
+}

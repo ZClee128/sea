@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let waitVC = WaitViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window?.rootViewController?.view.addSubview(self.waitVC.view)
-        self.window?.makeKeyAndVisible()
+        setupWindowIfNeeded()
+        self.window?.addSubview(self.waitVC.view)
+        UNUserNotificationCenter.current().delegate = self
         initFireBase()
         let config = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
@@ -73,19 +74,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         DispatchQueue.main.async {
             let vc = AppWebViewController()
             vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.getStatusBarHeight())"
+            vc.onFirstContentCommitted = { [weak self] in
+                self?.waitVC.view.removeFromSuperview()
+            }
             self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
         }
+    }
+
+    /// 初始化window
+    private func setupWindowIfNeeded() {
+        guard window == nil else { return }
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIViewController()
+        self.window = window
+        window.makeKeyAndVisible()
     }
 }
 
 // MARK: - Firebase
 extension AppDelegate: MessagingDelegate {
+    /// 初始化 Firebase 和 FCM 代理
     private func initFireBase() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
     }
     
+    /// 注册远程推送权限
     func registerForRemoteNotification(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -117,7 +131,10 @@ extension AppDelegate: MessagingDelegate {
         completionHandler(.newData)
     }
   
+    /// 用户点击通知回调
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // 推送点击后统一交给事件仓库处理：能立即发就立即发，不能发就缓存等待 WebView 就绪后补发
+        AppPushEventStore.shared.handleNotificationResponse(response)
         completionHandler()
     }
     
@@ -126,6 +143,7 @@ extension AppDelegate: MessagingDelegate {
         print("didFailToRegisterForRemoteNotificationsWithError = \(error.localizedDescription)")
     }
     
+    /// FCM Token 刷新回调
     public func messaging(_: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         let dataDict: [String: String] = ["token": fcmToken ?? ""]
         print("didReceiveRegistrationToken = \(dataDict)")

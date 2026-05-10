@@ -1,0 +1,44 @@
+Mussa Privacy Policy
+Last Updated: May 10, 2026
+
+Welcome to Mussa ("we," "our," or "us"). We are committed to protecting your privacy and providing a secure, account-free experience. This Privacy Policy explains how we handle your information when you use the Mussa mobile application.
+
+1. NO PERSONAL DATA COLLECTION
+Mussa is designed to respect your anonymity. We do NOT collect, store, or share any personally identifiable information (PII). 
+- No registration is required.
+- We do not collect your name, email, phone number, or physical address.
+- We do not access your contacts or messages.
+
+2. DATA STORAGE AND PERSISTENCE
+All your app data—including unlocked items, crystal shards (gold coins), and chat history—is stored locally on your device using standard iOS persistence methods (UserDefaults). 
+- We do not maintain any cloud-based servers that store your individual usage data.
+- If you delete the app, your locally stored data will be removed.
+
+3. IN-APP PURCHASES (STOREKIT)
+Mussa uses Apple's StoreKit for all financial transactions. 
+- All payment processing is handled securely by Apple Inc.
+- We do not have access to your credit card information or billing details.
+- Purchase records are managed by Apple to ensure your transaction security and to allow for the restoration of purchases.
+
+4. MEDIA AND PERMISSIONS
+- Save to Gallery: If you choose to save a Mussa artwork to your device, we request "Add to Photos" permission. We only use this to write the specific image you selected.
+- Camera: The "Matcher" feature may use camera metadata for AR/Scanning simulations, but no images are uploaded to any server.
+
+5. AI CHAT AND INTERACTION
+All interactions with the AI Muses are processed within the app's local logic or secure API endpoints. We do not store transcripts of your conversations on our servers. Your chat history remains on your device.
+
+6. ANALYTICS
+To improve the Mussa experience, we may use anonymous, aggregated usage statistics (such as which crystal types are most popular). This data contains no identifiers and cannot be traced back to you.
+
+7. CHILDREN'S PRIVACY
+Mussa is not intended for children under the age of 13. We do not knowingly collect information from anyone in this age group.
+
+8. CHANGES TO THIS POLICY
+We may update this policy periodically. We recommend checking this page for any changes. Your continued use of the app signifies your acceptance of the updated terms.
+
+9. CONTACT US
+If you have any questions or feedback regarding your privacy, please reach out to us at:
+Email: support@mussa-app.com
+
+---
+By using Mussa, you agree to the terms outlined in this Privacy Policy.
