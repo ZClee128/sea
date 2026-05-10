@@ -39,9 +39,9 @@ jobs:
       - name: 🔀 Random Runner Selection
         id: runner
         run: |
-          # macos-14 权重更高（6个里5个是14），避免排队太久
-          RUNNERS='["macos-14", "macos-14", "macos-14", "macos-14", "macos-14", "macos-13"]'
-          SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys;print(json.loads(sys.stdin.read())[$RANDOM % 6])")
+          # iOS 26 SDK 需要 Xcode 26，优先选择更新的 runner
+          RUNNERS='["macos-15", "macos-15", "macos-15", "macos-14"]'
+          SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys,random; arr=json.loads(sys.stdin.read()); print(arr[random.randrange(len(arr))])")
           echo "selected_runner=$SELECTED" >> $GITHUB_OUTPUT
           echo "✓ Selected runner: $SELECTED"
 
@@ -106,7 +106,22 @@ jobs:
       - name: 🔧 Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: '26.0'
+
+      - name: 🧪 Verify Xcode/SDK Version
+        run: |
+          echo "=== xcodebuild -version ==="
+          xcodebuild -version
+          echo "=== iPhoneOS SDK Version ==="
+          SDK_VERSION=$(xcrun --sdk iphoneos --show-sdk-version)
+          echo "SDK_VERSION=$SDK_VERSION"
+
+          SDK_MAJOR=${SDK_VERSION%%.*}
+          if [ -z "$SDK_MAJOR" ] || [ "$SDK_MAJOR" -lt 26 ]; then
+            echo "❌ 当前 SDK 版本过低: $SDK_VERSION（要求 >= 26）"
+            exit 1
+          fi
+          echo "✓ SDK 版本满足上传要求"
 
       - name: 🧹 Clean Build Environment
         working-directory: ${{ needs.resolve.outputs.working_directory }}
