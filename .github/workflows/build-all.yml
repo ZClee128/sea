@@ -322,15 +322,42 @@ jobs:
           ASC_API_KEY_ID: ${{ secrets.ASC_API_KEY_ID }}
           ASC_API_ISSUER_ID: ${{ secrets.ASC_API_KEY_ISSUER_ID }}
           ASC_API_KEY_CONTENT: ${{ secrets.ASC_API_KEY_CONTENT }}
+          ASC_API_KEY_CONTENT_BASE64: ${{ secrets.ASC_API_KEY_CONTENT_BASE64 }}
         run: |
           IPA_FILE=$(find $EXPORT_PATH -name "*.ipa" -type f | head -1)
 
           if [ "${{ github.event.inputs.submit_for_review }}" == 'true' ]; then
-            if [ -z "$ASC_API_KEY_ID" ] || [ -z "$ASC_API_ISSUER_ID" ] || [ -z "$ASC_API_KEY_CONTENT" ]; then
+            if [ -z "$ASC_API_KEY_ID" ] || [ -z "$ASC_API_ISSUER_ID" ]; then
               echo "❌ 使用直接提审功能必须在相关 Environment 或 Secrets 中配置 App Store Connect API Key："
-              echo "需要: ASC_API_KEY_ID, ASC_API_KEY_ISSUER_ID, ASC_API_KEY_CONTENT"
+              echo "需要: ASC_API_KEY_ID, ASC_API_KEY_ISSUER_ID, ASC_API_KEY_CONTENT(或 ASC_API_KEY_CONTENT_BASE64)"
               exit 1
             fi
+
+            if [ -z "$ASC_API_KEY_CONTENT" ] && [ -n "$ASC_API_KEY_CONTENT_BASE64" ]; then
+              echo "ℹ️ ASC_API_KEY_CONTENT 为空，尝试使用 ASC_API_KEY_CONTENT_BASE64 解码"
+              ASC_API_KEY_CONTENT=$(echo -n "$ASC_API_KEY_CONTENT_BASE64" | base64 --decode)
+            fi
+
+            if [ -z "$ASC_API_KEY_CONTENT" ]; then
+              echo "❌ ASC API Key 内容为空，请配置 ASC_API_KEY_CONTENT 或 ASC_API_KEY_CONTENT_BASE64"
+              exit 1
+            fi
+
+            # 把 \n 转为真实换行，避免 fastlane 解析 PEM 失败（invalid curve name）
+            ASC_API_KEY_CONTENT_NORMALIZED=$(printf '%b' "${ASC_API_KEY_CONTENT//\\n/\\n}")
+            ASC_API_KEY_CONTENT_NORMALIZED=$(printf '%s' "$ASC_API_KEY_CONTENT_NORMALIZED" | sed -e 's/\r$//')
+
+            if ! printf '%s\n' "$ASC_API_KEY_CONTENT_NORMALIZED" | grep -q -- "BEGIN PRIVATE KEY"; then
+              echo "❌ ASC API Key 格式异常：缺少 BEGIN PRIVATE KEY 头"
+              exit 1
+            fi
+            if ! printf '%s\n' "$ASC_API_KEY_CONTENT_NORMALIZED" | grep -q -- "END PRIVATE KEY"; then
+              echo "❌ ASC API Key 格式异常：缺少 END PRIVATE KEY 尾"
+              exit 1
+            fi
+
+            ASC_KEY_PATH="$RUNNER_TEMP/AuthKey_${ASC_API_KEY_ID}.p8"
+            printf '%s\n' "$ASC_API_KEY_CONTENT_NORMALIZED" > "$ASC_KEY_PATH"
             
             echo "🚀 Uploading & Submitting for Review via Fastlane..."
             
@@ -343,7 +370,7 @@ jobs:
             echo "  api_key = app_store_connect_api_key(" >> fastlane/Fastfile
             echo "    key_id: ENV[\"ASC_API_KEY_ID\"]," >> fastlane/Fastfile
             echo "    issuer_id: ENV[\"ASC_API_ISSUER_ID\"]," >> fastlane/Fastfile
-            echo "    key_content: ENV[\"ASC_API_KEY_CONTENT\"]" >> fastlane/Fastfile
+            echo "    key_filepath: ENV[\"ASC_API_KEY_PATH\"]" >> fastlane/Fastfile
             echo "  )" >> fastlane/Fastfile
             echo "  deliver(" >> fastlane/Fastfile
             echo "    api_key: api_key," >> fastlane/Fastfile
@@ -365,6 +392,7 @@ jobs:
             echo "end" >> fastlane/Fastfile
             
             export IPA_FILE_PATH="$IPA_FILE"
+            export ASC_API_KEY_PATH="$ASC_KEY_PATH"
             fastlane upload_and_submit
             rm -rf fastlane
             
