@@ -39,8 +39,8 @@ jobs:
       - name: 🔀 Random Runner Selection
         id: runner
         run: |
-          # iOS 26 SDK 需要 Xcode 26，优先选择更新的 runner
-          RUNNERS='["macos-15", "macos-15", "macos-15", "macos-14"]'
+          # 全部使用 macos-15，macos-14 不含 Xcode 26 已移除
+          RUNNERS='["macos-15", "macos-15", "macos-15", "macos-15"]'
           SELECTED=$(echo "$RUNNERS" | python3 -c "import json,sys,random; arr=json.loads(sys.stdin.read()); print(arr[random.randrange(len(arr))])")
           echo "selected_runner=$SELECTED" >> $GITHUB_OUTPUT
           echo "✓ Selected runner: $SELECTED"
