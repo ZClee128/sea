@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let chatManager = ChatManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        loadToken()
+        setupWindowIfNeeded()
         self.window?.rootViewController = waitVC
         UNUserNotificationCenter.current().delegate = self
         initFireBase()
@@ -43,16 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.refreshItem666()
+                        self.setMainSys()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1782050411 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.checkLayer() { // 本地时间戳大于预设时间，进入B面
+                if Date().timeIntervalSince1970 > endTimeInterval && self.isNotiPad() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.refreshItem666()
+                    self.setMainSys()
                 }
             }
         }
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func checkLayer() -> Bool {
+    private func isNotiPad() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 初始化window
-    private func loadToken() {
+    private func setupWindowIfNeeded() {
         guard window == nil else { return }
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIViewController()
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window.makeKeyAndVisible()
     }
     
-    private func pullToken() {
+    private func setupAudioSession() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
             try AVAudioSession.sharedInstance().setActive(true)
@@ -101,9 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    private func refreshItem666() {
+    private func setMainSys() {
         DispatchQueue.main.async {
-            self.pullToken()
+            self.setupAudioSession()
             
             let contentView = ContentView(privacyManager: self.privacyManager, store: self.store, chatManager: self.chatManager)
             self.window?.rootViewController = UIHostingController(rootView: contentView)

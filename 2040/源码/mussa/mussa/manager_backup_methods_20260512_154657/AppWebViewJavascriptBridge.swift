@@ -16,49 +16,49 @@ final class AppWebViewJavascriptBridge {
         self.webView = webView
     }
 
-    func registerHandler(_ handlerName: String, handler: @escaping AppWebViewBridgeHandler) {
+    func le_6193(_ handlerName: String, handler: @escaping AppWebViewBridgeHandler) {
         messageHandlers[handlerName] = handler
     }
 
-    func removeHandler(_ handlerName: String) {
+    func dp_2916(_ handlerName: String) {
         messageHandlers.removeValue(forKey: handlerName)
     }
 
-    func reset() {
+    func ol_24c8() {
         startupMessageQueue.removeAll()
         responseCallbacks.removeAll()
         uniqueId = 0
         isBridgeInjected = false
     }
 
-    func callHandler(_ handlerName: String, data: Any? = nil, responseCallback: AppWebViewBridgeResponseCallback? = nil) {
+    func nq_1730(_ handlerName: String, data: Any? = nil, responseCallback: AppWebViewBridgeResponseCallback? = nil) {
         var message: [String: Any] = ["handlerName": handlerName]
         if let data {
             message["data"] = data
         }
         if let responseCallback {
-            let callbackId = "objc_cb_\(writeStage())"
+            let callbackId = "objc_cb_\(tj_10fe())"
             responseCallbacks[callbackId] = responseCallback
             message["callbackId"] = callbackId
         }
-        parseRecord824(message)
+        it_2e83(message)
     }
 
     @discardableResult
-    func handleNavigationAction(_ navigationAction: WKNavigationAction,
+    func sn_67cf(_ navigationAction: WKNavigationAction,
                                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) -> Bool {
         guard let url = navigationAction.request.url else {
             return false
         }
-        guard wrapEvent507(url) else {
+        guard vd_28d6(url) else {
             return false
         }
 
         let host = url.host?.lowercased() ?? ""
         if host == Self.bridgeLoaded {
-            pushQueue()
+            jt_1ce7()
         } else if host == Self.queueHasMessage {
-            reduceQueue()
+            nz_31cd()
         } else {
             print("WebViewJavascriptBridge: WARNING: Received unknown command \(url.absoluteString)")
         }
@@ -66,27 +66,27 @@ final class AppWebViewJavascriptBridge {
         return true
     }
 
-    private func parseRecord824(_ message: [String: Any]) {
+    private func it_2e83(_ message: [String: Any]) {
         if isBridgeInjected {
-            receiveTarget(message)
+            mv_2621(message)
         } else {
             startupMessageQueue.append(message)
         }
     }
 
-    private func pushQueue() {
+    private func jt_1ce7() {
         guard isBridgeInjected == false else { return }
-        evaluateJavaScript(Self.bridgeJavascript) { [weak self] _, _ in
+        sr_6ad0(Self.bridgeJavascript) { [weak self] _, _ in
             guard let self else { return }
             self.isBridgeInjected = true
             let queuedMessages = self.startupMessageQueue
             self.startupMessageQueue.removeAll()
-            queuedMessages.forEach { self.receiveTarget($0) }
+            queuedMessages.forEach { self.mv_2621($0) }
         }
     }
 
-    private func reduceQueue() {
-        evaluateJavaScript("WebViewJavascriptBridge._fetchQueue();") { [weak self] result, error in
+    private func nz_31cd() {
+        sr_6ad0("WebViewJavascriptBridge._fetchQueue();") { [weak self] result, error in
             guard let self else { return }
             if let error {
                 print("WebViewJavascriptBridge: WARNING: Error when fetching queue: \(error)")
@@ -95,11 +95,11 @@ final class AppWebViewJavascriptBridge {
             guard let messageQueueString = result as? String, messageQueueString.isEmpty == false else {
                 return
             }
-            self.wrapStep(messageQueueString)
+            self.yo_6134(messageQueueString)
         }
     }
 
-    private func wrapStep(_ messageQueueString: String) {
+    private func yo_6134(_ messageQueueString: String) {
         guard
             let data = messageQueueString.data(using: .utf8),
             let messages = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]]
@@ -122,7 +122,7 @@ final class AppWebViewJavascriptBridge {
                     guard let self else { return }
                     var responseMessage: [String: Any] = ["responseId": callbackId]
                     responseMessage["responseData"] = responseData ?? NSNull()
-                    self.parseRecord824(responseMessage)
+                    self.it_2e83(responseMessage)
                 }
             } else {
                 responseCallback = { _ in }
@@ -141,14 +141,14 @@ final class AppWebViewJavascriptBridge {
         }
     }
 
-    private func receiveTarget(_ message: [String: Any]) {
-        guard let messageJSON = clearMark182(from: message) else { return }
-        let escapedMessageJSON = matchPipe563(messageJSON)
+    private func mv_2621(_ message: [String: Any]) {
+        guard let messageJSON = pj_0eb4(from: message) else { return }
+        let escapedMessageJSON = ec_2d77(messageJSON)
         let javascriptCommand = "WebViewJavascriptBridge._handleMessageFromObjC('\(escapedMessageJSON)');"
-        evaluateJavaScript(javascriptCommand, completion: nil)
+        sr_6ad0(javascriptCommand, completion: nil)
     }
 
-    private func clearMark182(from value: Any) -> String? {
+    private func pj_0eb4(from value: Any) -> String? {
         guard JSONSerialization.isValidJSONObject(value) else {
             print("WebViewJavascriptBridge: WARNING: Invalid JSON object \(value)")
             return nil
@@ -159,7 +159,7 @@ final class AppWebViewJavascriptBridge {
         return String(data: data, encoding: .utf8)
     }
 
-    private func matchPipe563(_ value: String) -> String {
+    private func ec_2d77(_ value: String) -> String {
         value
             .replacingOccurrences(of: "\\", with: "\\\\")
             .replacingOccurrences(of: "\"", with: "\\\"")
@@ -171,7 +171,7 @@ final class AppWebViewJavascriptBridge {
             .replacingOccurrences(of: "\u{2029}", with: "\\u2029")
     }
 
-    private func evaluateJavaScript(_ script: String, completion: ((Any?, Error?) -> Void)?) {
+    private func sr_6ad0(_ script: String, completion: ((Any?, Error?) -> Void)?) {
         DispatchQueue.main.async { [weak self] in
             self?.webView?.evaluateJavaScript(script) { result, error in
                 completion?(result, error)
@@ -179,12 +179,12 @@ final class AppWebViewJavascriptBridge {
         }
     }
 
-    private func writeStage() -> Int {
+    private func tj_10fe() -> Int {
         uniqueId += 1
         return uniqueId
     }
 
-    private func wrapEvent507(_ url: URL) -> Bool {
+    private func vd_28d6(_ url: URL) -> Bool {
         let scheme = (url.scheme ?? "").lowercased()
         guard scheme == Self.newProtocolScheme || scheme == Self.oldProtocolScheme else {
             return false
@@ -211,11 +211,11 @@ private extension AppWebViewJavascriptBridge {
         };
     }
 
-    function registerHandler(handlerName, handler) {
+    function le_6193(handlerName, handler) {
         messageHandlers[handlerName] = handler;
     }
 
-    function callHandler(handlerName, data, responseCallback) {
+    function nq_1730(handlerName, data, responseCallback) {
         if (arguments.length === 2 && typeof data === 'function') {
             responseCallback = data;
             data = null;
@@ -298,8 +298,8 @@ private extension AppWebViewJavascriptBridge {
     var QUEUE_HAS_MESSAGE = '__wvjb_queue_message__';
 
     window.WebViewJavascriptBridge = {
-        registerHandler: registerHandler,
-        callHandler: callHandler,
+        le_6193: le_6193,
+        nq_1730: nq_1730,
         disableJavscriptAlertBoxSafetyTimeout: disableJavscriptAlertBoxSafetyTimeout,
         _fetchQueue: _fetchQueue,
         _handleMessageFromObjC: _handleMessageFromObjC
@@ -310,7 +310,7 @@ private extension AppWebViewJavascriptBridge {
     messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;
     document.documentElement.appendChild(messagingIframe);
 
-    registerHandler('_disableJavascriptAlertBoxSafetyTimeout', disableJavscriptAlertBoxSafetyTimeout);
+    le_6193('_disableJavascriptAlertBoxSafetyTimeout', disableJavscriptAlertBoxSafetyTimeout);
 
     setTimeout(_callWVJBCallbacks, 0);
     function _callWVJBCallbacks() {

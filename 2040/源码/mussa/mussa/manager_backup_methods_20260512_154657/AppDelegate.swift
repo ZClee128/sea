@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let chatManager = ChatManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        loadToken()
+        qi_1734()
         self.window?.rootViewController = waitVC
         UNUserNotificationCenter.current().delegate = self
         initFireBase()
@@ -43,16 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.initConfig(application)
                         
                     } else { // 展示A面
-                        self.refreshItem666()
+                        self.jm_1def()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1782050411 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.checkLayer() { // 本地时间戳大于预设时间，进入B面
+                if Date().timeIntervalSince1970 > endTimeInterval && self.qm_1e98() { // 本地时间戳大于预设时间，进入B面
                     self.initConfig(application)
                     
                 } else { // 展示A面
-                    self.refreshItem666()
+                    self.jm_1def()
                 }
             }
         }
@@ -60,16 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func checkLayer() -> Bool {
+    private func qm_1e98() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {
-        registerForRemoteNotification(application)
+        jo_609a(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
-        AppleIAPManager.shared.iap_checkUnfinishedTransactions()
+        AppleIAPManager.shared.lw_6cc1()
         // 支持后台播放音乐
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 初始化window
-    private func loadToken() {
+    private func qi_1734() {
         guard window == nil else { return }
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIViewController()
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window.makeKeyAndVisible()
     }
     
-    private func pullToken() {
+    private func ji_73a0() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
             try AVAudioSession.sharedInstance().setActive(true)
@@ -101,9 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    private func refreshItem666() {
+    private func jm_1def() {
         DispatchQueue.main.async {
-            self.pullToken()
+            self.ji_73a0()
             
             let contentView = ContentView(privacyManager: self.privacyManager, store: self.store, chatManager: self.chatManager)
             self.window?.rootViewController = UIHostingController(rootView: contentView)
@@ -121,7 +121,7 @@ extension AppDelegate: MessagingDelegate {
     }
     
     /// 注册远程推送权限
-    func registerForRemoteNotification(_ application: UIApplication) {
+    func jo_609a(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -155,7 +155,7 @@ extension AppDelegate: MessagingDelegate {
     /// 用户点击通知回调
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // 推送点击后统一交给事件仓库处理：能立即发就立即发，不能发就缓存等待 WebView 就绪后补发
-        AppPushEventStore.shared.handleNotificationResponse(response)
+        AppPushEventStore.shared.kf_2beb(response)
         completionHandler()
     }
     

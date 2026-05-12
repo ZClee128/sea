@@ -59,7 +59,7 @@ class AppWebViewController: UIViewController {
         self.webView.frame = frame
  
         self.addBridgeMethod()
-        self.closeTask848()
+        self.beginStartRequest()
  
         // 应用从后台切换到前台
         NotificationCenter.default.addObserver(self,
@@ -76,28 +76,28 @@ class AppWebViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         jsEvent_onPageHide()
-        runFlow()
+        finalizePendingJSHandlersIfNeeded()
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
         removeBridgeMethod()
-        runFlow()
+        finalizePendingJSHandlersIfNeeded()
     }
 
     /// 发起网页请求
-    private func closeTask848() {
+    private func beginStartRequest() {
         if let url = URL(string: urlString) {
             // 每次重新发起页面加载时，允许 didCommit 再次通知外部
             hasTriggeredFirstContentCommitted = false
             let urlRequest = URLRequest(url: url)
             self.webView.load(urlRequest)
-            self.syncFlag()
+            self.clearJSBgColor()
         }
     }
     
     /// 设置页面为透明
-    private func syncFlag() {
+    private func clearJSBgColor() {
         guard clearBgColor == true else { return }
         webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'") { _, _  in
         }
@@ -238,7 +238,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        syncFlag()
+        clearJSBgColor()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         // 页面首次加载完成后尝试补发缓存的推送点击事件，兜底冷启动场景
         AppPushEventStore.shared.flushPendingEventIfNeeded(to: self)
@@ -259,7 +259,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
         if self.webView.url != nil {
             self.webView.reload()
         } else {
-            self.closeTask848()
+            self.beginStartRequest()
         }
     }
 
@@ -357,7 +357,7 @@ extension AppWebViewController: WKNavigationDelegate, WKUIDelegate {
 
 extension AppWebViewController {
     /// Ensure any pending JS dialog completion handlers are executed to avoid WKWebView crash
-    private func runFlow() {
+    private func finalizePendingJSHandlersIfNeeded() {
         if let alertCompletion = pendingAlertCompletion {
             alertCompletion()
             pendingAlertCompletion = nil

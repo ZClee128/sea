@@ -47,13 +47,13 @@ open class ProgressHUD: UIView {
                 AppConfig.getWindow().addSubview(ProgressHUD.shared)
             }
         }
-        ProgressHUD.shared.linkEntry()
+        ProgressHUD.shared.of_0704()
     }
     class func dismiss() {
-        ProgressHUD.shared.unlockPool199()
+        ProgressHUD.shared.qk_74c5()
     }
     
-    private func linkEntry() {
+    private func of_0704() {
         DispatchQueue.main.async {
             self.backgroundColor = UIColor(white: 0, alpha: 0)
             self.activityIndicator.transform = CGAffineTransform(scaleX: kTransformScale, y: kTransformScale)
@@ -66,7 +66,7 @@ open class ProgressHUD: UIView {
             }
         }
     }
-    private func unlockPool199() {
+    private func qk_74c5() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: kAnimationInterval) {
                 self.backgroundColor = UIColor(white: 0, alpha: 0)
