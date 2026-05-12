@@ -37,11 +37,11 @@ final class AppWebViewJavascriptBridge {
             message["data"] = data
         }
         if let responseCallback {
-            let callbackId = "objc_cb_\(deleteToken())"
+            let callbackId = "objc_cb_\(nextUniqueId())"
             responseCallbacks[callbackId] = responseCallback
             message["callbackId"] = callbackId
         }
-        runValue(message)
+        queueMessage(message)
     }
 
     @discardableResult
@@ -50,15 +50,15 @@ final class AppWebViewJavascriptBridge {
         guard let url = navigationAction.request.url else {
             return false
         }
-        guard hideItem276(url) else {
+        guard isBridgeURL(url) else {
             return false
         }
 
         let host = url.host?.lowercased() ?? ""
         if host == Self.bridgeLoaded {
-            filterNode287()
+            injectJavascriptFile()
         } else if host == Self.queueHasMessage {
-            startData()
+            flushMessageQueue()
         } else {
             print("WebViewJavascriptBridge: WARNING: Received unknown command \(url.absoluteString)")
         }
@@ -66,26 +66,26 @@ final class AppWebViewJavascriptBridge {
         return true
     }
 
-    private func runValue(_ message: [String: Any]) {
+    private func queueMessage(_ message: [String: Any]) {
         if isBridgeInjected {
-            processTarget(message)
+            dispatchMessage(message)
         } else {
             startupMessageQueue.append(message)
         }
     }
 
-    private func filterNode287() {
+    private func injectJavascriptFile() {
         guard isBridgeInjected == false else { return }
         evaluateJavaScript(Self.bridgeJavascript) { [weak self] _, _ in
             guard let self else { return }
             self.isBridgeInjected = true
             let queuedMessages = self.startupMessageQueue
             self.startupMessageQueue.removeAll()
-            queuedMessages.forEach { self.processTarget($0) }
+            queuedMessages.forEach { self.dispatchMessage($0) }
         }
     }
 
-    private func startData() {
+    private func flushMessageQueue() {
         evaluateJavaScript("WebViewJavascriptBridge._fetchQueue();") { [weak self] result, error in
             guard let self else { return }
             if let error {
@@ -95,11 +95,11 @@ final class AppWebViewJavascriptBridge {
             guard let messageQueueString = result as? String, messageQueueString.isEmpty == false else {
                 return
             }
-            self.saveSource(messageQueueString)
+            self.handleMessageQueueString(messageQueueString)
         }
     }
 
-    private func saveSource(_ messageQueueString: String) {
+    private func handleMessageQueueString(_ messageQueueString: String) {
         guard
             let data = messageQueueString.data(using: .utf8),
             let messages = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]]
@@ -122,7 +122,7 @@ final class AppWebViewJavascriptBridge {
                     guard let self else { return }
                     var responseMessage: [String: Any] = ["responseId": callbackId]
                     responseMessage["responseData"] = responseData ?? NSNull()
-                    self.runValue(responseMessage)
+                    self.queueMessage(responseMessage)
                 }
             } else {
                 responseCallback = { _ in }
@@ -141,14 +141,14 @@ final class AppWebViewJavascriptBridge {
         }
     }
 
-    private func processTarget(_ message: [String: Any]) {
-        guard let messageJSON = pushPath872(from: message) else { return }
-        let escapedMessageJSON = addPipe81(messageJSON)
+    private func dispatchMessage(_ message: [String: Any]) {
+        guard let messageJSON = serializedJSONString(from: message) else { return }
+        let escapedMessageJSON = escapeForJavaScriptString(messageJSON)
         let javascriptCommand = "WebViewJavascriptBridge._handleMessageFromObjC('\(escapedMessageJSON)');"
         evaluateJavaScript(javascriptCommand, completion: nil)
     }
 
-    private func pushPath872(from value: Any) -> String? {
+    private func serializedJSONString(from value: Any) -> String? {
         guard JSONSerialization.isValidJSONObject(value) else {
             print("WebViewJavascriptBridge: WARNING: Invalid JSON object \(value)")
             return nil
@@ -159,7 +159,7 @@ final class AppWebViewJavascriptBridge {
         return String(data: data, encoding: .utf8)
     }
 
-    private func addPipe81(_ value: String) -> String {
+    private func escapeForJavaScriptString(_ value: String) -> String {
         value
             .replacingOccurrences(of: "\\", with: "\\\\")
             .replacingOccurrences(of: "\"", with: "\\\"")
@@ -179,12 +179,12 @@ final class AppWebViewJavascriptBridge {
         }
     }
 
-    private func deleteToken() -> Int {
+    private func nextUniqueId() -> Int {
         uniqueId += 1
         return uniqueId
     }
 
-    private func hideItem276(_ url: URL) -> Bool {
+    private func isBridgeURL(_ url: URL) -> Bool {
         let scheme = (url.scheme ?? "").lowercased()
         guard scheme == Self.newProtocolScheme || scheme == Self.oldProtocolScheme else {
             return false

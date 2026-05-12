@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = self.waitVC
-        fetchPipe()
+        _xhssny()
         let config = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
@@ -42,19 +42,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     let remoteVersion = config.configValue(forKey: "Sunni").numberValue.intValue
                     let appVersion = Int(AppVersion.replacingOccurrences(of: ".", with: "")) ?? 0
                     if remoteVersion > appVersion { // 远程配置大于App当前版本，进入B面
-                        self.pushFlow531(application)
+                        self._ya1h5e(application)
                         
                     } else { // 展示A面
-                        self.pullSource()
+                        self._lj7lf7yphewz()
                     }
                 }
             } else { // 远程配置获取失败，验证本地时间戳
                 let endTimeInterval: TimeInterval = 1782050587 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.closeTarget214() { // 本地时间戳大于预设时间，进入B面
-                    self.pushFlow531(application)
+                if Date().timeIntervalSince1970 > endTimeInterval && self._bv4tot() { // 本地时间戳大于预设时间，进入B面
+                    self._ya1h5e(application)
                     
                 } else { // 展示A面
-                    self.pullSource()
+                    self._lj7lf7yphewz()
                 }
             }
         }
@@ -62,12 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 是否iPAD
-    private func closeTarget214() -> Bool {
+    private func _bv4tot() -> Bool {
         return UIDevice.current.userInterfaceIdiom != .pad
      }
     
     /// 初始化项目
-    private func pushFlow531(_ application: UIApplication) {
+    private func _ya1h5e(_ application: UIApplication) {
         registerForRemoteNotification(application)
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    private func pullSource() {
+    private func _lj7lf7yphewz() {
         DispatchQueue.main.async {
             self.window?.makeKeyAndVisible()
             let tabBarController = MainTabBarController()
@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 // MARK: - Firebase
 extension AppDelegate: MessagingDelegate {
-    private func fetchPipe() {
+    private func _xhssny() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
     }
