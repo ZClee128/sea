@@ -1,0 +1,1198 @@
+2026-01-15 17:14:40 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0xb0a126d00; archive(resolved)="<IDEArchive: 0xb0a5d33a0>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team(resolved)="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0xb0a126d00; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0xb0a126a00; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fd900; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fd680; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fd400; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fd180; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fcf00; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fcc80; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fca00; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fc780; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fc500; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fc280; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="<IDEProvisioningBasicTeam: 0xb0a1317a0; teamID='N595CKS8CD', teamName='(null)'>">
+	<IDEDistributionContext: 0xb0a6fc000; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="(null)">
+	<IDEDistributionContext: 0x1050669b0; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xb0a712420>", team="(null)">
+	<IDEDistributionContext: 0x10509ae60; archive = "<IDEArchive: 0xb0a5d33a0>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0xb0a126d00>
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-01-15 17:14:40 +0000 [MT] Running /usr/bin/ditto '-V' '/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app'
+2026-01-15 17:14:40 +0000  >>> Copying /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app 
+2026-01-15 17:14:40 +0000  copying file ./_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  28317 bytes for ./_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./1.mp4 ... 
+2026-01-15 17:14:40 +0000  6890164 bytes for ./1.mp4
+2026-01-15 17:14:40 +0000  copying file ./2.mp4 ... 
+2026-01-15 17:14:40 +0000  1894898 bytes for ./2.mp4
+copying file ./AppIcon60x60@2x.png ... 
+2026-01-15 17:14:40 +0000  12690 bytes for ./AppIcon60x60@2x.png
+2026-01-15 17:14:40 +0000  copying file ./GoogleService-Info.plist ... 
+463 bytes for ./GoogleService-Info.plist
+copying file ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2516 bytes for ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2026-01-15 17:14:40 +0000  924 bytes for ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2026-01-15 17:14:40 +0000  258 bytes for ./Base.lproj/LaunchScreen.storyboardc/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./README ... 
+2026-01-15 17:14:40 +0000  0 bytes for ./README
+2026-01-15 17:14:40 +0000  copying file ./Assets.car ... 
+2026-01-15 17:14:40 +0000  1495144 bytes for ./Assets.car
+copying file ./AppIcon76x76@2x~ipad.png ... 
+2026-01-15 17:14:40 +0000  16872 bytes for ./AppIcon76x76@2x~ipad.png
+2026-01-15 17:14:40 +0000  copying file ./sunni ... 
+2026-01-15 17:14:40 +0000  1363520 bytes for ./sunni
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleDataTransport.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2380 bytes for ./Frameworks/GoogleDataTransport.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport ... 
+2026-01-15 17:14:40 +0000  374160 bytes for ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  1105 bytes for ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  799 bytes for ./Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleDataTransport.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  808 bytes for ./Frameworks/GoogleDataTransport.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/KeychainSwift.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2324 bytes for ./Frameworks/KeychainSwift.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/KeychainSwift.framework/KeychainSwift.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  373 bytes for ./Frameworks/KeychainSwift.framework/KeychainSwift.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/KeychainSwift.framework/KeychainSwift.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  770 bytes for ./Frameworks/KeychainSwift.framework/KeychainSwift.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/KeychainSwift.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  795 bytes for ./Frameworks/KeychainSwift.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/KeychainSwift.framework/KeychainSwift ... 
+2026-01-15 17:14:40 +0000  155632 bytes for ./Frameworks/KeychainSwift.framework/KeychainSwift
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/WebViewJavascriptBridge.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  1798 bytes for ./Frameworks/WebViewJavascriptBridge.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge ... 
+2026-01-15 17:14:40 +0000  126928 bytes for ./Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/WebViewJavascriptBridge.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  816 bytes for ./Frameworks/WebViewJavascriptBridge.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FBLPromises.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2348 bytes for ./Frameworks/FBLPromises.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  373 bytes for ./Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  783 bytes for ./Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FBLPromises.framework/FBLPromises ... 
+2026-01-15 17:14:40 +0000  188016 bytes for ./Frameworks/FBLPromises.framework/FBLPromises
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FBLPromises.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  790 bytes for ./Frameworks/FBLPromises.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/libswift_Concurrency.dylib ... 
+2026-01-15 17:14:40 +0000  552544 bytes for ./Frameworks/libswift_Concurrency.dylib
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/HandyJSON.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  1798 bytes for ./Frameworks/HandyJSON.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/HandyJSON.framework/HandyJSON ... 
+2026-01-15 17:14:40 +0000  674448 bytes for ./Frameworks/HandyJSON.framework/HandyJSON
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/HandyJSON.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  786 bytes for ./Frameworks/HandyJSON.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCoreInternal.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2384 bytes for ./Frameworks/FirebaseCoreInternal.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  855 bytes for ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  803 bytes for ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal ... 
+2026-01-15 17:14:40 +0000  358128 bytes for ./Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal
+copying file ./Frameworks/FirebaseCoreInternal.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  812 bytes for ./Frameworks/FirebaseCoreInternal.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseSharedSwift.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  1798 bytes for ./Frameworks/FirebaseSharedSwift.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift ... 
+2026-01-15 17:14:40 +0000  531216 bytes for ./Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseSharedSwift.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  810 bytes for ./Frameworks/FirebaseSharedSwift.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCore.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2352 bytes for ./Frameworks/FirebaseCore.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  855 bytes for ./Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  787 bytes for ./Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCore.framework/FirebaseCore ... 
+2026-01-15 17:14:40 +0000  181568 bytes for ./Frameworks/FirebaseCore.framework/FirebaseCore
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseCore.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  794 bytes for ./Frameworks/FirebaseCore.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfig.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2384 bytes for ./Frameworks/FirebaseRemoteConfig.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  1482 bytes for ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  803 bytes for ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig ... 
+2026-01-15 17:14:40 +0000  470096 bytes for ./Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfig.framework/Info.plist ... 
+812 bytes for ./Frameworks/FirebaseRemoteConfig.framework/Info.plist
+copying file ./Frameworks/GoogleUtilities.framework/_CodeSignature/CodeResources ... 
+2364 bytes for ./Frameworks/GoogleUtilities.framework/_CodeSignature/CodeResources
+copying file ./Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+1289 bytes for ./Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  792 bytes for ./Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleUtilities.framework/GoogleUtilities ... 
+2026-01-15 17:14:40 +0000  297312 bytes for ./Frameworks/GoogleUtilities.framework/GoogleUtilities
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/GoogleUtilities.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  801 bytes for ./Frameworks/GoogleUtilities.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseMessaging.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2372 bytes for ./Frameworks/FirebaseMessaging.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  2357 bytes for ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  797 bytes for ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging ... 
+2026-01-15 17:14:40 +0000  518528 bytes for ./Frameworks/FirebaseMessaging.framework/FirebaseMessaging
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseMessaging.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  806 bytes for ./Frameworks/FirebaseMessaging.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/nanopb.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2328 bytes for ./Frameworks/nanopb.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/nanopb.framework/nanopb_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  374 bytes for ./Frameworks/nanopb.framework/nanopb_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/nanopb.framework/nanopb_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  775 bytes for ./Frameworks/nanopb.framework/nanopb_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/nanopb.framework/nanopb ... 
+2026-01-15 17:14:40 +0000  94928 bytes for ./Frameworks/nanopb.framework/nanopb
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/nanopb.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  784 bytes for ./Frameworks/nanopb.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfigInterop.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  1798 bytes for ./Frameworks/FirebaseRemoteConfigInterop.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop ... 
+2026-01-15 17:14:40 +0000  150800 bytes for ./Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseRemoteConfigInterop.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  826 bytes for ./Frameworks/FirebaseRemoteConfigInterop.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Adjust.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  1798 bytes for ./Frameworks/Adjust.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Adjust.framework/Adjust ... 
+2026-01-15 17:14:40 +0000  753664 bytes for ./Frameworks/Adjust.framework/Adjust
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Adjust.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  781 bytes for ./Frameworks/Adjust.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseInstallations.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2388 bytes for ./Frameworks/FirebaseInstallations.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations ... 
+2026-01-15 17:14:40 +0000  271440 bytes for ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  1105 bytes for ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  805 bytes for ./Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseInstallations.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  814 bytes for ./Frameworks/FirebaseInstallations.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Alamofire.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2308 bytes for ./Frameworks/Alamofire.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Alamofire.framework/Alamofire ... 
+2026-01-15 17:14:40 +0000  2773840 bytes for ./Frameworks/Alamofire.framework/Alamofire
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Alamofire.framework/Alamofire.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  600 bytes for ./Frameworks/Alamofire.framework/Alamofire.bundle/PrivacyInfo.xcprivacy
+copying file ./Frameworks/Alamofire.framework/Alamofire.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  761 bytes for ./Frameworks/Alamofire.framework/Alamofire.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/Alamofire.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  786 bytes for ./Frameworks/Alamofire.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseABTesting.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:40 +0000  2372 bytes for ./Frameworks/FirebaseABTesting.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting ... 
+2026-01-15 17:14:40 +0000  129152 bytes for ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseABTesting.framework/Info.plist ... 
+2026-01-15 17:14:40 +0000  806 bytes for ./Frameworks/FirebaseABTesting.framework/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:40 +0000  478 bytes for ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:40 +0000  copying file ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:40 +0000  797 bytes for ./Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/Info.plist
+2026-01-15 17:14:40 +0000  copying file ./embedded.mobileprovision ... 
+2026-01-15 17:14:40 +0000  12136 bytes for ./embedded.mobileprovision
+2026-01-15 17:14:40 +0000  copying file ./Info.plist ... 
+2026-01-15 17:14:40 +0000  2150 bytes for ./Info.plist
+2026-01-15 17:14:40 +0000  copying file ./PkgInfo ... 
+2026-01-15 17:14:40 +0000  8 bytes for ./PkgInfo
+2026-01-15 17:14:40 +0000 [MT] /usr/bin/ditto exited with 0
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7ba0; bundleID='org.cocoapods.Adjust', path='<DVTFilePath:0xb0a050d90:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7c00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Adjust', executablePath='<DVTFilePath:0xb0bcd6100:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework/Adjust'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bc651a0; bundleID='org.cocoapods.Alamofire', path='<DVTFilePath:0xb0a0510a0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bc65200; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Alamofire', executablePath='<DVTFilePath:0xb0bcd6d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework/Alamofire'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7de0; bundleID='org.cocoapods.FBLPromises', path='<DVTFilePath:0xb0a708bd0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7e40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FBLPromises', executablePath='<DVTFilePath:0xb0bc66d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework/FBLPromises'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c3c0; bundleID='org.cocoapods.FirebaseABTesting', path='<DVTFilePath:0xb0a051180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c420; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseABTesting', executablePath='<DVTFilePath:0xb0a0511f0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c0c0; bundleID='org.cocoapods.FirebaseCore', path='<DVTFilePath:0xb0a70a4c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c120; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCore', executablePath='<DVTFilePath:0xb0b02c480:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c480; bundleID='org.cocoapods.FirebaseCoreInternal', path='<DVTFilePath:0xb0a7096c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c4e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCoreInternal', executablePath='<DVTFilePath:0xb0a709960:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7ea0; bundleID='org.cocoapods.FirebaseInstallations', path='<DVTFilePath:0xb0a050e00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseInstallations', executablePath='<DVTFilePath:0xb0a050fc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7a80; bundleID='org.cocoapods.FirebaseMessaging', path='<DVTFilePath:0xb0a050070:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseMessaging', executablePath='<DVTFilePath:0xb0a050540:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c600; bundleID='org.cocoapods.FirebaseRemoteConfig', path='<DVTFilePath:0xb0a70adf0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c660; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfig', executablePath='<DVTFilePath:0xb0a70b2c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c540; bundleID='org.cocoapods.FirebaseRemoteConfigInterop', path='<DVTFilePath:0xb0a6d7900:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c5a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfigInterop', executablePath='<DVTFilePath:0xb0a050d20:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c240; bundleID='org.cocoapods.FirebaseSharedSwift', path='<DVTFilePath:0xb0a709dc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c2a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseSharedSwift', executablePath='<DVTFilePath:0xb0a709ff0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7ae0; bundleID='org.cocoapods.GoogleDataTransport', path='<DVTFilePath:0xb0a5d3d40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7b40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleDataTransport', executablePath='<DVTFilePath:0xb0a5d3db0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c180; bundleID='org.cocoapods.GoogleUtilities', path='<DVTFilePath:0xb0a70b790:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleUtilities', executablePath='<DVTFilePath:0xb0bcd4b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bc65260; bundleID='org.cocoapods.HandyJSON', path='<DVTFilePath:0xb0a7095e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.HandyJSON', executablePath='<DVTFilePath:0xb0bc67180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework/HandyJSON'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7c60; bundleID='org.cocoapods.KeychainSwift', path='<DVTFilePath:0xb0a5d3f00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7cc0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.KeychainSwift', executablePath='<DVTFilePath:0xb0bc665e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c060; bundleID='org.cocoapods.WebViewJavascriptBridge', path='<DVTFilePath:0xb0a6df400:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c000; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.WebViewJavascriptBridge', executablePath='<DVTFilePath:0xb0a7080e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bcd7d20; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7d80; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0xb0bd7c300; bundleID='org.cocoapods.nanopb', path='<DVTFilePath:0xb0a050a10:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c360; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.nanopb', executablePath='<DVTFilePath:0xb0bcd5860:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework/nanopb'>', hardenedRuntime='0'>'>
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7ba0; bundleID='org.cocoapods.Adjust', path='<DVTFilePath:0xb0a050d90:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7c00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Adjust', executablePath='<DVTFilePath:0xb0bcd6100:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework/Adjust'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bc651a0; bundleID='org.cocoapods.Alamofire', path='<DVTFilePath:0xb0a0510a0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bc65200; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Alamofire', executablePath='<DVTFilePath:0xb0bcd6d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework/Alamofire'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7de0; bundleID='org.cocoapods.FBLPromises', path='<DVTFilePath:0xb0a708bd0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7e40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FBLPromises', executablePath='<DVTFilePath:0xb0bc66d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework/FBLPromises'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c3c0; bundleID='org.cocoapods.FirebaseABTesting', path='<DVTFilePath:0xb0a051180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c420; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseABTesting', executablePath='<DVTFilePath:0xb0a0511f0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c0c0; bundleID='org.cocoapods.FirebaseCore', path='<DVTFilePath:0xb0a70a4c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c120; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCore', executablePath='<DVTFilePath:0xb0b02c480:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c480; bundleID='org.cocoapods.FirebaseCoreInternal', path='<DVTFilePath:0xb0a7096c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c4e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCoreInternal', executablePath='<DVTFilePath:0xb0a709960:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7ea0; bundleID='org.cocoapods.FirebaseInstallations', path='<DVTFilePath:0xb0a050e00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseInstallations', executablePath='<DVTFilePath:0xb0a050fc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7a80; bundleID='org.cocoapods.FirebaseMessaging', path='<DVTFilePath:0xb0a050070:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseMessaging', executablePath='<DVTFilePath:0xb0a050540:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c600; bundleID='org.cocoapods.FirebaseRemoteConfig', path='<DVTFilePath:0xb0a70adf0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c660; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfig', executablePath='<DVTFilePath:0xb0a70b2c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c540; bundleID='org.cocoapods.FirebaseRemoteConfigInterop', path='<DVTFilePath:0xb0a6d7900:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c5a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfigInterop', executablePath='<DVTFilePath:0xb0a050d20:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c240; bundleID='org.cocoapods.FirebaseSharedSwift', path='<DVTFilePath:0xb0a709dc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c2a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseSharedSwift', executablePath='<DVTFilePath:0xb0a709ff0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7ae0; bundleID='org.cocoapods.GoogleDataTransport', path='<DVTFilePath:0xb0a5d3d40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7b40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleDataTransport', executablePath='<DVTFilePath:0xb0a5d3db0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c180; bundleID='org.cocoapods.GoogleUtilities', path='<DVTFilePath:0xb0a70b790:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleUtilities', executablePath='<DVTFilePath:0xb0bcd4b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bc65260; bundleID='org.cocoapods.HandyJSON', path='<DVTFilePath:0xb0a7095e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.HandyJSON', executablePath='<DVTFilePath:0xb0bc67180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework/HandyJSON'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bcd7c60; bundleID='org.cocoapods.KeychainSwift', path='<DVTFilePath:0xb0a5d3f00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7cc0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.KeychainSwift', executablePath='<DVTFilePath:0xb0bc665e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c060; bundleID='org.cocoapods.WebViewJavascriptBridge', path='<DVTFilePath:0xb0a6df400:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c000; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.WebViewJavascriptBridge', executablePath='<DVTFilePath:0xb0a7080e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] No Info.plist file URL found for item at path "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib".
+2026-01-15 17:14:40 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0xb0bd7c300; bundleID='org.cocoapods.nanopb', path='<DVTFilePath:0xb0a050a10:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c360; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.nanopb', executablePath='<DVTFilePath:0xb0bcd5860:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework/nanopb'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2026-01-15 17:14:40 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionItemRemovalStep
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-01-15 17:14:40 +0000 [MT] Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2026-01-15 17:14:40 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/F4F126C9-D23C-3F25-824C-5ED28BEED811.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/8D535CF3-F9C7-3359-AB70-7AA3103FE96A.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/515D3281-FF34-393F-B47B-7B95D1D3A3D3.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/53BD2B5F-F10D-3A3D-83F4-C9F97F9E2591.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/4A981666-FA7A-33EC-AD60-2048364AD5F8.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/F91E41E2-8891-36D1-90B6-507E3337CFDC.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/445686B9-F6E4-3D1B-8E50-EAD4F7A3CB0F.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/35CEDE59-98C7-3EBF-99E6-57A38F57C074.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/FE92DE72-CDCF-3BAC-938C-C235A9E5EB11.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/C8506ECB-2682-36C6-A97D-6CE74394AD18.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/FFB59159-4261-3921-9A5D-6EC66FED6343.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/CCF1AEF6-EAE5-38E9-AF4E-5712B322B4F3.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/881C727C-C466-3E46-AAC4-2B4D37BFDE16.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/F55A45F7-DEC4-31BD-998F-C432C4F564B3.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/AD452C1D-C748-3236-A5CF-99238C19D8B8.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/3B4CF7B6-F86C-38A5-BDE5-B7FCB497B1AD.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/2E952D98-860C-3344-8389-85A533DF6DF5.symbols
+2026-01-15 17:14:41 +0000 [MT] Writing /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols/A6201018-80A7-3C29-904D-1B6E8F879593.symbols
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionCopyAppleProvidedContentStep
+2026-01-15 17:14:41 +0000 [MT] Running /usr/bin/ditto '-V' '/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/SwiftSupport' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/SwiftSupport'
+2026-01-15 17:14:41 +0000  >>> Copying /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/SwiftSupport 
+2026-01-15 17:14:41 +0000  copying file ./iphoneos/libswift_Concurrency.dylib ... 
+2026-01-15 17:14:41 +0000  7741808 bytes for ./iphoneos/libswift_Concurrency.dylib
+2026-01-15 17:14:41 +0000 [MT] /usr/bin/ditto exited with 0
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-01-15 17:14:41 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework are []
+2026-01-15 17:14:41 +0000 [MT] Archs to thin for item /Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app are []
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-01-15 17:14:41 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ba0; bundleID='org.cocoapods.Adjust', path='<DVTFilePath:0xb0a050d90:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7c00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Adjust', executablePath='<DVTFilePath:0xb0bcd6100:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework/Adjust'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:41 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ba0; bundleID='org.cocoapods.Adjust', path='<DVTFilePath:0xb0a050d90:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7c00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Adjust', executablePath='<DVTFilePath:0xb0bcd6100:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework/Adjust'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:41 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7ba0; bundleID='org.cocoapods.Adjust', path='<DVTFilePath:0xb0a050d90:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7c00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Adjust', executablePath='<DVTFilePath:0xb0bcd6100:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Adjust.framework/Adjust'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~eby1Sb
+2026-01-15 17:14:41 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865d10; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~eby1Sb",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Adjust.framework"
+)'>
+2026-01-15 17:14:41 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Adjust.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Adjust.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.Adjust]
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bc651a0; bundleID='org.cocoapods.Alamofire', path='<DVTFilePath:0xb0a0510a0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bc65200; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Alamofire', executablePath='<DVTFilePath:0xb0bcd6d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework/Alamofire'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:41 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bc651a0; bundleID='org.cocoapods.Alamofire', path='<DVTFilePath:0xb0a0510a0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bc65200; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Alamofire', executablePath='<DVTFilePath:0xb0bcd6d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework/Alamofire'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:41 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bc651a0; bundleID='org.cocoapods.Alamofire', path='<DVTFilePath:0xb0a0510a0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bc65200; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.Alamofire', executablePath='<DVTFilePath:0xb0bcd6d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/Alamofire.framework/Alamofire'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~wAcgei
+2026-01-15 17:14:41 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~wAcgei",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Alamofire.framework"
+)'>
+2026-01-15 17:14:41 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Alamofire.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Alamofire.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.Alamofire]
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7de0; bundleID='org.cocoapods.FBLPromises', path='<DVTFilePath:0xb0a708bd0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7e40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FBLPromises', executablePath='<DVTFilePath:0xb0bc66d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework/FBLPromises'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:41 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7de0; bundleID='org.cocoapods.FBLPromises', path='<DVTFilePath:0xb0a708bd0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7e40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FBLPromises', executablePath='<DVTFilePath:0xb0bc66d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework/FBLPromises'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:41 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7de0; bundleID='org.cocoapods.FBLPromises', path='<DVTFilePath:0xb0a708bd0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7e40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FBLPromises', executablePath='<DVTFilePath:0xb0bc66d00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FBLPromises.framework/FBLPromises'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~EKoAwd
+2026-01-15 17:14:41 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~EKoAwd",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FBLPromises.framework"
+)'>
+2026-01-15 17:14:41 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FBLPromises.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FBLPromises.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FBLPromises]
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c3c0; bundleID='org.cocoapods.FirebaseABTesting', path='<DVTFilePath:0xb0a051180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c420; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseABTesting', executablePath='<DVTFilePath:0xb0a0511f0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:41 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:41 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c3c0; bundleID='org.cocoapods.FirebaseABTesting', path='<DVTFilePath:0xb0a051180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c420; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseABTesting', executablePath='<DVTFilePath:0xb0a0511f0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:41 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c3c0; bundleID='org.cocoapods.FirebaseABTesting', path='<DVTFilePath:0xb0a051180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c420; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseABTesting', executablePath='<DVTFilePath:0xb0a0511f0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ViuDQ5
+2026-01-15 17:14:41 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ViuDQ5",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseABTesting.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseABTesting.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseABTesting.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseABTesting]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c0c0; bundleID='org.cocoapods.FirebaseCore', path='<DVTFilePath:0xb0a70a4c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c120; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCore', executablePath='<DVTFilePath:0xb0b02c480:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c0c0; bundleID='org.cocoapods.FirebaseCore', path='<DVTFilePath:0xb0a70a4c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c120; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCore', executablePath='<DVTFilePath:0xb0b02c480:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c0c0; bundleID='org.cocoapods.FirebaseCore', path='<DVTFilePath:0xb0a70a4c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c120; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCore', executablePath='<DVTFilePath:0xb0b02c480:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~TFPUWR
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~TFPUWR",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCore.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCore.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCore.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseCore]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c480; bundleID='org.cocoapods.FirebaseCoreInternal', path='<DVTFilePath:0xb0a7096c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c4e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCoreInternal', executablePath='<DVTFilePath:0xb0a709960:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c480; bundleID='org.cocoapods.FirebaseCoreInternal', path='<DVTFilePath:0xb0a7096c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c4e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCoreInternal', executablePath='<DVTFilePath:0xb0a709960:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c480; bundleID='org.cocoapods.FirebaseCoreInternal', path='<DVTFilePath:0xb0a7096c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c4e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseCoreInternal', executablePath='<DVTFilePath:0xb0a709960:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~DveKjo
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~DveKjo",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseCoreInternal]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ea0; bundleID='org.cocoapods.FirebaseInstallations', path='<DVTFilePath:0xb0a050e00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseInstallations', executablePath='<DVTFilePath:0xb0a050fc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ea0; bundleID='org.cocoapods.FirebaseInstallations', path='<DVTFilePath:0xb0a050e00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseInstallations', executablePath='<DVTFilePath:0xb0a050fc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7ea0; bundleID='org.cocoapods.FirebaseInstallations', path='<DVTFilePath:0xb0a050e00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseInstallations', executablePath='<DVTFilePath:0xb0a050fc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~HH6rXa
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~HH6rXa",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseInstallations.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseInstallations.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseInstallations.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseInstallations]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7a80; bundleID='org.cocoapods.FirebaseMessaging', path='<DVTFilePath:0xb0a050070:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseMessaging', executablePath='<DVTFilePath:0xb0a050540:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7a80; bundleID='org.cocoapods.FirebaseMessaging', path='<DVTFilePath:0xb0a050070:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseMessaging', executablePath='<DVTFilePath:0xb0a050540:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7a80; bundleID='org.cocoapods.FirebaseMessaging', path='<DVTFilePath:0xb0a050070:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseMessaging', executablePath='<DVTFilePath:0xb0a050540:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~RqoFVI
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~RqoFVI",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseMessaging.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseMessaging.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseMessaging.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseMessaging]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c600; bundleID='org.cocoapods.FirebaseRemoteConfig', path='<DVTFilePath:0xb0a70adf0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c660; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfig', executablePath='<DVTFilePath:0xb0a70b2c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c600; bundleID='org.cocoapods.FirebaseRemoteConfig', path='<DVTFilePath:0xb0a70adf0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c660; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfig', executablePath='<DVTFilePath:0xb0a70b2c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c600; bundleID='org.cocoapods.FirebaseRemoteConfig', path='<DVTFilePath:0xb0a70adf0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c660; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfig', executablePath='<DVTFilePath:0xb0a70b2c0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ytLJ4D
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ytLJ4D",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseRemoteConfig]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c540; bundleID='org.cocoapods.FirebaseRemoteConfigInterop', path='<DVTFilePath:0xb0a6d7900:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c5a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfigInterop', executablePath='<DVTFilePath:0xb0a050d20:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c540; bundleID='org.cocoapods.FirebaseRemoteConfigInterop', path='<DVTFilePath:0xb0a6d7900:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c5a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfigInterop', executablePath='<DVTFilePath:0xb0a050d20:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c540; bundleID='org.cocoapods.FirebaseRemoteConfigInterop', path='<DVTFilePath:0xb0a6d7900:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c5a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseRemoteConfigInterop', executablePath='<DVTFilePath:0xb0a050d20:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~mG1DC2
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~mG1DC2",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseRemoteConfigInterop]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c240; bundleID='org.cocoapods.FirebaseSharedSwift', path='<DVTFilePath:0xb0a709dc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c2a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseSharedSwift', executablePath='<DVTFilePath:0xb0a709ff0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c240; bundleID='org.cocoapods.FirebaseSharedSwift', path='<DVTFilePath:0xb0a709dc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c2a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseSharedSwift', executablePath='<DVTFilePath:0xb0a709ff0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c240; bundleID='org.cocoapods.FirebaseSharedSwift', path='<DVTFilePath:0xb0a709dc0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c2a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.FirebaseSharedSwift', executablePath='<DVTFilePath:0xb0a709ff0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~cSSFIz
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~cSSFIz",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.FirebaseSharedSwift]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ae0; bundleID='org.cocoapods.GoogleDataTransport', path='<DVTFilePath:0xb0a5d3d40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7b40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleDataTransport', executablePath='<DVTFilePath:0xb0a5d3db0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7ae0; bundleID='org.cocoapods.GoogleDataTransport', path='<DVTFilePath:0xb0a5d3d40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7b40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleDataTransport', executablePath='<DVTFilePath:0xb0a5d3db0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7ae0; bundleID='org.cocoapods.GoogleDataTransport', path='<DVTFilePath:0xb0a5d3d40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7b40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleDataTransport', executablePath='<DVTFilePath:0xb0a5d3db0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~QFZpyW
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~QFZpyW",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleDataTransport.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleDataTransport.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleDataTransport.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.GoogleDataTransport]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c180; bundleID='org.cocoapods.GoogleUtilities', path='<DVTFilePath:0xb0a70b790:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleUtilities', executablePath='<DVTFilePath:0xb0bcd4b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c180; bundleID='org.cocoapods.GoogleUtilities', path='<DVTFilePath:0xb0a70b790:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleUtilities', executablePath='<DVTFilePath:0xb0bcd4b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c180; bundleID='org.cocoapods.GoogleUtilities', path='<DVTFilePath:0xb0a70b790:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.GoogleUtilities', executablePath='<DVTFilePath:0xb0bcd4b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ySwOey
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~ySwOey",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleUtilities.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleUtilities.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleUtilities.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.GoogleUtilities]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bc65260; bundleID='org.cocoapods.HandyJSON', path='<DVTFilePath:0xb0a7095e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.HandyJSON', executablePath='<DVTFilePath:0xb0bc67180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework/HandyJSON'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bc65260; bundleID='org.cocoapods.HandyJSON', path='<DVTFilePath:0xb0a7095e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.HandyJSON', executablePath='<DVTFilePath:0xb0bc67180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework/HandyJSON'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bc65260; bundleID='org.cocoapods.HandyJSON', path='<DVTFilePath:0xb0a7095e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7f00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.HandyJSON', executablePath='<DVTFilePath:0xb0bc67180:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/HandyJSON.framework/HandyJSON'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~SZiLXa
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~SZiLXa",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/HandyJSON.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/HandyJSON.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/HandyJSON.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.HandyJSON]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7c60; bundleID='org.cocoapods.KeychainSwift', path='<DVTFilePath:0xb0a5d3f00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7cc0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.KeychainSwift', executablePath='<DVTFilePath:0xb0bc665e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7c60; bundleID='org.cocoapods.KeychainSwift', path='<DVTFilePath:0xb0a5d3f00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7cc0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.KeychainSwift', executablePath='<DVTFilePath:0xb0bc665e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7c60; bundleID='org.cocoapods.KeychainSwift', path='<DVTFilePath:0xb0a5d3f00:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7cc0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.KeychainSwift', executablePath='<DVTFilePath:0xb0bc665e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~oB7mNo
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~oB7mNo",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/KeychainSwift.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/KeychainSwift.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/KeychainSwift.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.KeychainSwift]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c060; bundleID='org.cocoapods.WebViewJavascriptBridge', path='<DVTFilePath:0xb0a6df400:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c000; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.WebViewJavascriptBridge', executablePath='<DVTFilePath:0xb0a7080e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c060; bundleID='org.cocoapods.WebViewJavascriptBridge', path='<DVTFilePath:0xb0a6df400:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c000; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.WebViewJavascriptBridge', executablePath='<DVTFilePath:0xb0a7080e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c060; bundleID='org.cocoapods.WebViewJavascriptBridge', path='<DVTFilePath:0xb0a6df400:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c000; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.WebViewJavascriptBridge', executablePath='<DVTFilePath:0xb0a7080e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~xvAF5U
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~xvAF5U",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.WebViewJavascriptBridge]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7d20; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7d80; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bcd7d20; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7d80; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bcd7d20; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bcd7d80; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0xb0a709570:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~re2Mso
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~re2Mso",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib"
+)'>
+2026-01-15 17:14:42 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib: signed Mach-O thin (arm64) [com.apple.dt.runtime.swiftConcurrency]
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c300; bundleID='org.cocoapods.nanopb', path='<DVTFilePath:0xb0a050a10:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c360; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.nanopb', executablePath='<DVTFilePath:0xb0bcd5860:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework/nanopb'>', hardenedRuntime='0'>'>: {
+}
+2026-01-15 17:14:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c300; bundleID='org.cocoapods.nanopb', path='<DVTFilePath:0xb0a050a10:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c360; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.nanopb', executablePath='<DVTFilePath:0xb0bcd5860:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework/nanopb'>', hardenedRuntime='0'>'> are: {
+}
+2026-01-15 17:14:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c300; bundleID='org.cocoapods.nanopb', path='<DVTFilePath:0xb0a050a10:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c360; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='(null)', teamID='N595CKS8CD', identifier='org.cocoapods.nanopb', executablePath='<DVTFilePath:0xb0bcd5860:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/Frameworks/nanopb.framework/nanopb'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~Df0rf0
+2026-01-15 17:14:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~Df0rf0",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/nanopb.framework"
+)'>
+2026-01-15 17:14:43 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/nanopb.framework: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/nanopb.framework: signed bundle with Mach-O thin (arm64) [org.cocoapods.nanopb]
+2026-01-15 17:14:43 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c6c0; bundleID='com.sunni.com', path='<DVTFilePath:0xb0bbf3b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c720; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9a40; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='{
+    "application-identifier" = "N595CKS8CD.com.sunni.com";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = N595CKS8CD;
+    "get-task-allow" = 0;
+}', teamID='N595CKS8CD', identifier='com.sunni.com', executablePath='<DVTFilePath:0xb0bc659e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/sunni'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "N595CKS8CD.com.sunni.com";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = N595CKS8CD;
+    "get-task-allow" = 0;
+}
+2026-01-15 17:14:43 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-01-15 17:14:43 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb0bd7c6c0; bundleID='com.sunni.com', path='<DVTFilePath:0xb0bbf3b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c720; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='{
+    "application-identifier" = "N595CKS8CD.com.sunni.com";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = N595CKS8CD;
+    "get-task-allow" = 0;
+}', teamID='N595CKS8CD', identifier='com.sunni.com', executablePath='<DVTFilePath:0xb0bc659e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/sunni'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "N595CKS8CD.com.sunni.com";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = N595CKS8CD;
+    "get-task-allow" = 0;
+}
+2026-01-15 17:14:43 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb0bd7c6c0; bundleID='com.sunni.com', path='<DVTFilePath:0xb0bbf3b40:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb0bd7c720; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb0a5b9140; name='iPhone Distribution: Huy Phat Vu (N595CKS8CD)', hash='4B0367932F7A08D102E93280895B97255BF37549', serialNumber='3DB167E3705758218D982B908400F6A1', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-01-15 04:31:25 +0000''>', entitlements='{
+    "application-identifier" = "N595CKS8CD.com.sunni.com";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = N595CKS8CD;
+    "get-task-allow" = 0;
+}', teamID='N595CKS8CD', identifier='com.sunni.com', executablePath='<DVTFilePath:0xb0bc659e0:'/Volumes/lizhicong/Desktop/海外/Sunni/sunni/build_signed/sunni.xcarchive/Products/Applications/sunni.app/sunni'>', hardenedRuntime='0'>'> to: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~2j9LLd
+2026-01-15 17:14:43 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb0d865bd0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    4B0367932F7A08D102E93280895B97255BF37549,
+    "--entitlements",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/entitlements~~~2j9LLd",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app"
+)'>
+2026-01-15 17:14:43 +0000 [MT] codesign output: /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app: replacing existing signature
+/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app: signed app bundle with Mach-O thin (arm64) [com.sunni.com]
+2026-01-15 17:14:43 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-01-15 17:14:43 +0000 [MT] Processing step: IDEDistributionCreateIPAStep
+2026-01-15 17:14:43 +0000 [MT] Running /usr/bin/rsync '-8aPhhE' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Symbols' '--link-dest' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root'
+2026-01-15 17:14:43 +0000  Symbols/
+Symbols/2E952D98-860C-3344-8389-85A533DF6DF5.symbols
+Symbols/35CEDE59-98C7-3EBF-99E6-57A38F57C074.symbols
+Symbols/3B4CF7B6-F86C-38A5-BDE5-B7FCB497B1AD.symbols
+Symbols/445686B9-F6E4-3D1B-8E50-EAD4F7A3CB0F.symbols
+Symbols/4A981666-FA7A-33EC-AD60-2048364AD5F8.symbols
+Symbols/515D3281-FF34-393F-B47B-7B95D1D3A3D3.symbols
+Symbols/53BD2B5F-F10D-3A3D-83F4-C9F97F9E2591.symbols
+Symbols/881C727C-C466-3E46-AAC4-2B4D37BFDE16.symbols
+Symbols/8D535CF3-F9C7-3359-AB70-7AA3103FE96A.symbols
+Symbols/A6201018-80A7-3C29-904D-1B6E8F879593.symbols
+Symbols/AD452C1D-C748-3236-A5CF-99238C19D8B8.symbols
+Symbols/C8506ECB-2682-36C6-A97D-6CE74394AD18.symbols
+Symbols/CCF1AEF6-EAE5-38E9-AF4E-5712B322B4F3.symbols
+Symbols/F4F126C9-D23C-3F25-824C-5ED28BEED811.symbols
+Symbols/F55A45F7-DEC4-31BD-998F-C432C4F564B3.symbols
+Symbols/F91E41E2-8891-36D1-90B6-507E3337CFDC.symbols
+Symbols/FE92DE72-CDCF-3BAC-938C-C235A9E5EB11.symbols
+Symbols/FFB59159-4261-3921-9A5D-6EC66FED6343.symbols
+2026-01-15 17:14:43 +0000 [MT] /usr/bin/rsync exited with 0
+2026-01-15 17:14:43 +0000 [MT] Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root' '/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Packages/sunni.ipa'
+2026-01-15 17:14:43 +0000  >>> Copying /var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root 
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  28317 bytes for ./Payload/sunni.app/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/1.mp4 ... 
+2026-01-15 17:14:43 +0000  6890164 bytes for ./Payload/sunni.app/1.mp4
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/2.mp4 ... 
+2026-01-15 17:14:43 +0000  1894898 bytes for ./Payload/sunni.app/2.mp4
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/AppIcon60x60@2x.png ... 
+12690 bytes for ./Payload/sunni.app/AppIcon60x60@2x.png
+copying file ./Payload/sunni.app/GoogleService-Info.plist ... 
+2026-01-15 17:14:43 +0000  463 bytes for ./Payload/sunni.app/GoogleService-Info.plist
+copying file ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2516 bytes for ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2026-01-15 17:14:43 +0000  924 bytes for ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+258 bytes for ./Payload/sunni.app/Base.lproj/LaunchScreen.storyboardc/Info.plist
+copying file ./Payload/sunni.app/README ... 
+2026-01-15 17:14:43 +0000  0 bytes for ./Payload/sunni.app/README
+copying file ./Payload/sunni.app/Assets.car ... 
+2026-01-15 17:14:43 +0000  1495144 bytes for ./Payload/sunni.app/Assets.car
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/AppIcon76x76@2x~ipad.png ... 
+2026-01-15 17:14:43 +0000  16872 bytes for ./Payload/sunni.app/AppIcon76x76@2x~ipad.png
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/sunni ... 
+2026-01-15 17:14:43 +0000  1363520 bytes for ./Payload/sunni.app/sunni
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/_CodeSignature/CodeResources ... 
+2380 bytes for ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport ... 
+2026-01-15 17:14:43 +0000  374160 bytes for ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+1105 bytes for ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  799 bytes for ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/GoogleDataTransport_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/Info.plist ... 
+2026-01-15 17:14:43 +0000  808 bytes for ./Payload/sunni.app/Frameworks/GoogleDataTransport.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/KeychainSwift.framework/_CodeSignature/CodeResources ... 
+2324 bytes for ./Payload/sunni.app/Frameworks/KeychainSwift.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift.bundle/PrivacyInfo.xcprivacy ... 
+373 bytes for ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  770 bytes for ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/KeychainSwift.framework/Info.plist ... 
+2026-01-15 17:14:43 +0000  795 bytes for ./Payload/sunni.app/Frameworks/KeychainSwift.framework/Info.plist
+copying file ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift ... 
+2026-01-15 17:14:43 +0000  155632 bytes for ./Payload/sunni.app/Frameworks/KeychainSwift.framework/KeychainSwift
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  1798 bytes for ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge ... 
+2026-01-15 17:14:43 +0000  126928 bytes for ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/WebViewJavascriptBridge
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/Info.plist ... 
+816 bytes for ./Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FBLPromises.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2348 bytes for ./Payload/sunni.app/Frameworks/FBLPromises.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  373 bytes for ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  783 bytes for ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises ... 
+2026-01-15 17:14:43 +0000  188016 bytes for ./Payload/sunni.app/Frameworks/FBLPromises.framework/FBLPromises
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FBLPromises.framework/Info.plist ... 
+790 bytes for ./Payload/sunni.app/Frameworks/FBLPromises.framework/Info.plist
+copying file ./Payload/sunni.app/Frameworks/libswift_Concurrency.dylib ... 
+2026-01-15 17:14:43 +0000  552544 bytes for ./Payload/sunni.app/Frameworks/libswift_Concurrency.dylib
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/HandyJSON.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  1798 bytes for ./Payload/sunni.app/Frameworks/HandyJSON.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/HandyJSON.framework/HandyJSON ... 
+2026-01-15 17:14:43 +0000  674448 bytes for ./Payload/sunni.app/Frameworks/HandyJSON.framework/HandyJSON
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/HandyJSON.framework/Info.plist ... 
+786 bytes for ./Payload/sunni.app/Frameworks/HandyJSON.framework/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/_CodeSignature/CodeResources ... 
+2384 bytes for ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  855 bytes for ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  803 bytes for ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal ... 
+2026-01-15 17:14:43 +0000  358128 bytes for ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal
+copying file ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/Info.plist ... 
+2026-01-15 17:14:43 +0000  812 bytes for ./Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  1798 bytes for ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift ... 
+2026-01-15 17:14:43 +0000  531216 bytes for ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/FirebaseSharedSwift
+copying file ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/Info.plist ... 
+2026-01-15 17:14:43 +0000  810 bytes for ./Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCore.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2352 bytes for ./Payload/sunni.app/Frameworks/FirebaseCore.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  855 bytes for ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  787 bytes for ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore_Privacy.bundle/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore ... 
+2026-01-15 17:14:43 +0000  181568 bytes for ./Payload/sunni.app/Frameworks/FirebaseCore.framework/FirebaseCore
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseCore.framework/Info.plist ... 
+794 bytes for ./Payload/sunni.app/Frameworks/FirebaseCore.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2384 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  1482 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  803 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig_Privacy.bundle/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig ... 
+2026-01-15 17:14:43 +0000  470096 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/FirebaseRemoteConfig
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/Info.plist ... 
+812 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/_CodeSignature/CodeResources ... 
+2364 bytes for ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  1289 bytes for ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  792 bytes for ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities ... 
+2026-01-15 17:14:43 +0000  297312 bytes for ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/GoogleUtilities
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/Info.plist ... 
+801 bytes for ./Payload/sunni.app/Frameworks/GoogleUtilities.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2372 bytes for ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  2357 bytes for ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  797 bytes for ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging ... 
+2026-01-15 17:14:43 +0000  518528 bytes for ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/FirebaseMessaging
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/Info.plist ... 
+806 bytes for ./Payload/sunni.app/Frameworks/FirebaseMessaging.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/nanopb.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2328 bytes for ./Payload/sunni.app/Frameworks/nanopb.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  374 bytes for ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  775 bytes for ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb_Privacy.bundle/Info.plist
+copying file ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb ... 
+2026-01-15 17:14:43 +0000  94928 bytes for ./Payload/sunni.app/Frameworks/nanopb.framework/nanopb
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/nanopb.framework/Info.plist ... 
+784 bytes for ./Payload/sunni.app/Frameworks/nanopb.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  1798 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop ... 
+2026-01-15 17:14:43 +0000  150800 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/Info.plist ... 
+826 bytes for ./Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/Adjust.framework/_CodeSignature/CodeResources ... 
+1798 bytes for ./Payload/sunni.app/Frameworks/Adjust.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/Adjust.framework/Adjust ... 
+2026-01-15 17:14:43 +0000  753664 bytes for ./Payload/sunni.app/Frameworks/Adjust.framework/Adjust
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/Adjust.framework/Info.plist ... 
+781 bytes for ./Payload/sunni.app/Frameworks/Adjust.framework/Info.plist
+copying file ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2388 bytes for ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations ... 
+2026-01-15 17:14:43 +0000  271440 bytes for ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  1105 bytes for ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/PrivacyInfo.xcprivacy
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  805 bytes for ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/FirebaseInstallations_Privacy.bundle/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/Info.plist ... 
+814 bytes for ./Payload/sunni.app/Frameworks/FirebaseInstallations.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/Alamofire.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2308 bytes for ./Payload/sunni.app/Frameworks/Alamofire.framework/_CodeSignature/CodeResources
+copying file ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire ... 
+2026-01-15 17:14:43 +0000  2773840 bytes for ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  600 bytes for ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  761 bytes for ./Payload/sunni.app/Frameworks/Alamofire.framework/Alamofire.bundle/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/Alamofire.framework/Info.plist ... 
+2026-01-15 17:14:43 +0000  786 bytes for ./Payload/sunni.app/Frameworks/Alamofire.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/_CodeSignature/CodeResources ... 
+2026-01-15 17:14:43 +0000  2372 bytes for ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/_CodeSignature/CodeResources
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting ... 
+2026-01-15 17:14:43 +0000  129152 bytes for ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/Info.plist ... 
+806 bytes for ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/PrivacyInfo.xcprivacy ... 
+2026-01-15 17:14:43 +0000  478 bytes for ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/Info.plist ... 
+2026-01-15 17:14:43 +0000  797 bytes for ./Payload/sunni.app/Frameworks/FirebaseABTesting.framework/FirebaseABTesting_Privacy.bundle/Info.plist
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/embedded.mobileprovision ... 
+2026-01-15 17:14:43 +0000  12136 bytes for ./Payload/sunni.app/embedded.mobileprovision
+2026-01-15 17:14:43 +0000  copying file ./Payload/sunni.app/Info.plist ... 
+2026-01-15 17:14:43 +0000  2150 bytes for ./Payload/sunni.app/Info.plist
+copying file ./Payload/sunni.app/PkgInfo ... 
+2026-01-15 17:14:43 +0000  8 bytes for ./Payload/sunni.app/PkgInfo
+2026-01-15 17:14:43 +0000  copying file ./SwiftSupport/iphoneos/libswift_Concurrency.dylib ... 
+2026-01-15 17:14:43 +0000  7741808 bytes for ./SwiftSupport/iphoneos/libswift_Concurrency.dylib
+2026-01-15 17:14:43 +0000  copying file ./Symbols/445686B9-F6E4-3D1B-8E50-EAD4F7A3CB0F.symbols ... 
+2026-01-15 17:14:43 +0000  257588 bytes for ./Symbols/445686B9-F6E4-3D1B-8E50-EAD4F7A3CB0F.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/A6201018-80A7-3C29-904D-1B6E8F879593.symbols ... 
+2026-01-15 17:14:43 +0000  37084 bytes for ./Symbols/A6201018-80A7-3C29-904D-1B6E8F879593.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/AD452C1D-C748-3236-A5CF-99238C19D8B8.symbols ... 
+2026-01-15 17:14:43 +0000  339860 bytes for ./Symbols/AD452C1D-C748-3236-A5CF-99238C19D8B8.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/3B4CF7B6-F86C-38A5-BDE5-B7FCB497B1AD.symbols ... 
+2026-01-15 17:14:43 +0000  60356 bytes for ./Symbols/3B4CF7B6-F86C-38A5-BDE5-B7FCB497B1AD.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/F4F126C9-D23C-3F25-824C-5ED28BEED811.symbols ... 
+2026-01-15 17:14:43 +0000  3096212 bytes for ./Symbols/F4F126C9-D23C-3F25-824C-5ED28BEED811.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/C8506ECB-2682-36C6-A97D-6CE74394AD18.symbols ... 
+2026-01-15 17:14:43 +0000  271684 bytes for ./Symbols/C8506ECB-2682-36C6-A97D-6CE74394AD18.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/F55A45F7-DEC4-31BD-998F-C432C4F564B3.symbols ... 
+2026-01-15 17:14:43 +0000  152108 bytes for ./Symbols/F55A45F7-DEC4-31BD-998F-C432C4F564B3.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/2E952D98-860C-3344-8389-85A533DF6DF5.symbols ... 
+2026-01-15 17:14:43 +0000  31572 bytes for ./Symbols/2E952D98-860C-3344-8389-85A533DF6DF5.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/8D535CF3-F9C7-3359-AB70-7AA3103FE96A.symbols ... 
+2026-01-15 17:14:43 +0000  494052 bytes for ./Symbols/8D535CF3-F9C7-3359-AB70-7AA3103FE96A.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/53BD2B5F-F10D-3A3D-83F4-C9F97F9E2591.symbols ... 
+2026-01-15 17:14:43 +0000  82060 bytes for ./Symbols/53BD2B5F-F10D-3A3D-83F4-C9F97F9E2591.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/881C727C-C466-3E46-AAC4-2B4D37BFDE16.symbols ... 
+2026-01-15 17:14:43 +0000  226180 bytes for ./Symbols/881C727C-C466-3E46-AAC4-2B4D37BFDE16.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/CCF1AEF6-EAE5-38E9-AF4E-5712B322B4F3.symbols ... 
+2026-01-15 17:14:43 +0000  475020 bytes for ./Symbols/CCF1AEF6-EAE5-38E9-AF4E-5712B322B4F3.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/FFB59159-4261-3921-9A5D-6EC66FED6343.symbols ... 
+2026-01-15 17:14:43 +0000  41604 bytes for ./Symbols/FFB59159-4261-3921-9A5D-6EC66FED6343.symbols
+2026-01-15 17:14:43 +0000  copying file ./Symbols/FE92DE72-CDCF-3BAC-938C-C235A9E5EB11.symbols ... 
+2026-01-15 17:14:44 +0000  303724 bytes for ./Symbols/FE92DE72-CDCF-3BAC-938C-C235A9E5EB11.symbols
+2026-01-15 17:14:44 +0000  copying file ./Symbols/35CEDE59-98C7-3EBF-99E6-57A38F57C074.symbols ... 
+2026-01-15 17:14:44 +0000  130324 bytes for ./Symbols/35CEDE59-98C7-3EBF-99E6-57A38F57C074.symbols
+2026-01-15 17:14:44 +0000  copying file ./Symbols/515D3281-FF34-393F-B47B-7B95D1D3A3D3.symbols ... 
+2026-01-15 17:14:44 +0000  2386212 bytes for ./Symbols/515D3281-FF34-393F-B47B-7B95D1D3A3D3.symbols
+2026-01-15 17:14:44 +0000  copying file ./Symbols/4A981666-FA7A-33EC-AD60-2048364AD5F8.symbols ... 
+2026-01-15 17:14:44 +0000  38844 bytes for ./Symbols/4A981666-FA7A-33EC-AD60-2048364AD5F8.symbols
+2026-01-15 17:14:44 +0000  copying file ./Symbols/F91E41E2-8891-36D1-90B6-507E3337CFDC.symbols ... 
+2026-01-15 17:14:44 +0000  85972 bytes for ./Symbols/F91E41E2-8891-36D1-90B6-507E3337CFDC.symbols
+2026-01-15 17:14:44 +0000 [MT] /usr/bin/ditto exited with 0
+2026-01-15 17:14:44 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-01-15 17:14:44 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-01-15 17:14:44 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09dba3e0:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleDataTransport.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09dba290:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/KeychainSwift.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9ce0:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseMessaging.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9b90:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseABTesting.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9ff0:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/nanopb.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9a40:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Adjust.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09dba450:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/HandyJSON.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9c00:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/Alamofire.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09dba060:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/GoogleUtilities.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb0a163d00:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/WebViewJavascriptBridge.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db8c40:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib'>
+2026-01-15 17:14:44 +0000 [MT] [OPTIONAL] Can't have a profile, not a bundle at <DVTFilePath:0xb09db8c40:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/libswift_Concurrency.dylib'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09dba370:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseSharedSwift.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9f10:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCore.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9ab0:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseInstallations.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9c70:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseCoreInternal.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb0a163080:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfigInterop.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9b20:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FBLPromises.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb09db9f80:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app/Frameworks/FirebaseRemoteConfig.framework'>
+2026-01-15 17:14:44 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb0d8d40c0:'/var/folders/x2/r7rb13855d1879qp3n60tgr00000gn/T/XcodeDistPipeline.~~~TgeYR2/Root/Payload/sunni.app'>
+2026-01-15 17:14:44 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2026-01-15 17:14:44 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so
