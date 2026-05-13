@@ -1,336 +1,412 @@
 import SwiftUI
-import AVKit
-import Combine
+
+// MARK: - Share Sheet (UIActivityViewController wrapper)
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
+
+// MARK: - AuraDetailView
 
 @available(iOS 14.0, *)
 struct AuraDetailView: View {
     let item: AuraItem
     @ObservedObject var store: AuraStore
     @Environment(\.presentationMode) var presentationMode
-    @State private var showingAlert = false
-    @State private var alertMessage = ""
-    @State private var alertTitle = "Notice"
-    @State private var showVideoFullScreen = false
-    
-    @StateObject private var videoManager = VideoManager()
-    @State private var showingChat = false
-    @State private var showingStore = false 
+
+    @State private var showingStore = false
     @State private var showingInsufficientAlert = false
-    @State private var showingReport = false // New report state
-    
-    let chatManager: ChatManager
-    
+    @State private var showingShareSheet = false
+    @State private var showingSaveAlert = false
+    @State private var saveMessage = ""
+    @State private var isGenerating = false
+    @State private var generated = false
+    @State private var generatedImage: UIImage?
+
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.black.edgesIgnoringSafeArea(.all)
-            
-            ScrollView {
+            Color(.systemBackground).edgesIgnoringSafeArea(.all)
+
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
+
+                    // ── Hero Image ──────────────────────────────────────
                     ZStack(alignment: .bottomLeading) {
                         Image(item.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 550)
+                            .frame(height: 420)
                             .clipped()
                             .overlay(
-                                LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.8)]), startPoint: .top, endPoint: .bottom)
+                                LinearGradient(
+                                    colors: [.clear, .black.opacity(0.7)],
+                                    startPoint: .center, endPoint: .bottom
+                                )
                             )
-                        
-                        if item.hasVideo {
-                            Button(action: {
-                                videoManager.isBackgroundEnabled = store.isBackgroundPlaybackEnabled
-                                if videoManager.preparePlayer() {
-                                    showVideoFullScreen = true
-                                } else {
-                                    alertTitle = "Media Missing"
-                                    alertMessage = "Please ensure 'ritual_video.mp4' is in bundle."
-                                    showingAlert = true
-                                }
-                            }) {
-                                VStack(spacing: 12) {
-                                    Image(systemName: "play.fill")
-                                        .font(.system(size: 30))
-                                        .padding(25)
-                                        .background(BlurView(style: .systemUltraThinMaterialLight))
-                                        .clipShape(Circle())
-                                        .foregroundColor(.white)
-                                    
-                                    Text("WATCH CINEMATIC")
-                                        .font(.system(size: 12, weight: .black))
-                                        .foregroundColor(.white)
-                                        .tracking(2)
-                                }
+
+                        // Generated badge overlay
+                        if generated {
+                            HStack(spacing: 6) {
+                                Image(systemName: "checkmark.seal.fill")
+                                    .foregroundColor(.green)
+                                Text("Generated!")
+                                    .font(.system(size: 13, weight: .bold))
+                                    .foregroundColor(.white)
                             }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .padding(.bottom, 100)
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(item.rarity.uppercased())
-                                .font(.system(size: 12, weight: .heavy))
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                                .background(Color.yellow)
-                                .foregroundColor(.black)
-                                .cornerRadius(8)
-                            
-                            Text(item.title)
-                                .font(.system(size: 40, weight: .bold))
-                                .foregroundColor(.white)
-                                .shadow(color: .black, radius: 10, x: 0, y: 0)
-                        }
-                        .padding(.horizontal, 30)
-                        .padding(.bottom, 80)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 30) {
-                        if item.hasVideo {
-                            VStack(alignment: .leading, spacing: 12) {
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("Background Rituals")
-                                            .font(.system(size: 18, weight: .bold))
-                                        Text("Keep audio playing even when locked.")
-                                            .font(.system(size: 13))
-                                            .foregroundColor(.secondary)
-                                    }
-                                    Spacer()
-                                    Toggle("", isOn: $store.isBackgroundPlaybackEnabled)
-                                        .labelsHidden()
-                                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                                        .onChange(of: store.isBackgroundPlaybackEnabled) { newValue in
-                                            videoManager.isBackgroundEnabled = newValue
-                                        }
-                                }
-                                .padding()
-                                .background(Color.blue.opacity(0.05))
-                                .cornerRadius(16)
-                            }
-                            .padding(.horizontal, 30)
-                            .padding(.top, 20)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(Color.black.opacity(0.55))
+                            .cornerRadius(20)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                            .padding(16)
                         }
 
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("The \(item.crystalType) Mussa")
-                                    .font(.system(size: 16, weight: .medium))
-                                    .foregroundColor(.secondary)
-                                Text(item.museName)
-                                    .font(.system(size: 28, weight: .bold))
+                        VStack(alignment: .leading, spacing: 6) {
+                            HStack(spacing: 8) {
+                                Text(item.rarity.uppercased())
+                                    .font(.system(size: 10, weight: .black))
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 4)
+                                    .background(Color.aiPink)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(6)
+
+                                Text(item.crystalType.uppercased())
+                                    .font(.system(size: 10, weight: .black))
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 4)
+                                    .background(Color.aiPurple.opacity(0.85))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(6)
                             }
-                            Spacer()
-                            
-                            // REPORT BUTTON in Detail View
-                            Button(action: { showingReport = true }) {
-                                Image(systemName: "exclamationmark.triangle.fill")
-                                    .foregroundColor(.gray.opacity(0.5))
-                                    .font(.title3)
-                            }
+
+                            Text(item.title)
+                                .font(.system(size: 32, weight: .bold))
+                                .foregroundColor(.white)
+
+                            Text(item.museName)
+                                .font(.system(size: 15))
+                                .foregroundColor(.white.opacity(0.75))
                         }
-                        .padding(.horizontal, 30)
-                        
-                        HStack(spacing: 12) {
-                            TagView(text: item.crystalType, icon: "sparkles", color: Color.purple)
-                            TagView(text: item.rarity, icon: "crown.fill", color: Color.orange)
-                        }
-                        .padding(.horizontal, 30)
-                        
-                        Divider().padding(.horizontal, 30)
-                        
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Aura Essence")
-                                .font(.system(size: 20, weight: .bold))
+                        .padding(.horizontal, 22)
+                        .padding(.bottom, 24)
+                    }
+
+                    // ── Content ─────────────────────────────────────────
+                    VStack(alignment: .leading, spacing: 24) {
+
+                        // Description
+                        VStack(alignment: .leading, spacing: 8) {
+                            Label("Style Description", systemImage: "paintbrush.pointed.fill")
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundColor(.aiPurple)
                             Text(item.description)
-                                .font(.system(size: 17))
+                                .font(.system(size: 16))
                                 .foregroundColor(.secondary)
-                                .lineSpacing(8)
+                                .lineSpacing(6)
                         }
-                        .padding(.horizontal, 30)
-                        
+
+                        Divider()
+
+                        // AI Prompt Section
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
+                                Label("AI Prompt", systemImage: "wand.and.stars")
+                                    .font(.system(size: 13, weight: .bold))
+                                    .foregroundColor(.aiPurple)
+                                Spacer()
+                                if store.isUnlocked(item) {
+                                    Button(action: copyPrompt) {
+                                        HStack(spacing: 4) {
+                                            Image(systemName: "doc.on.doc")
+                                                .font(.system(size: 11))
+                                            Text("Copy")
+                                                .font(.system(size: 12, weight: .semibold))
+                                        }
+                                        .foregroundColor(.aiPurple)
+                                    }
+                                }
+                            }
+
+                            if store.isUnlocked(item) {
+                                Text(item.prompt.isEmpty
+                                     ? "A cinematic portrait with soft feminine lighting, dreamy atmosphere, ultra-detailed."
+                                     : item.prompt)
+                                    .font(.system(size: 13, design: .monospaced))
+                                    .foregroundColor(.primary)
+                                    .padding(14)
+                                    .background(Color.aiPurple.opacity(0.06))
+                                    .cornerRadius(12)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color.aiPurple.opacity(0.2), lineWidth: 1)
+                                    )
+                            } else {
+                                ZStack {
+                                    Text("A cinematic portrait with soft feminine lighting, dreamy atmosphere, ultra-detailed skin, soft bokeh background, golden hour...")
+                                        .font(.system(size: 13, design: .monospaced))
+                                        .foregroundColor(.secondary)
+                                        .padding(14)
+                                        .blur(radius: 5)
+                                    VStack(spacing: 8) {
+                                        Image(systemName: "lock.fill")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(.aiPurple)
+                                        Text("Unlock to view full prompt")
+                                            .font(.system(size: 12, weight: .semibold))
+                                            .foregroundColor(.aiPurple)
+                                    }
+                                }
+                                .background(Color.aiPurple.opacity(0.04))
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.aiPurple.opacity(0.15), lineWidth: 1)
+                                )
+                            }
+                        }
+
+                        Divider()
+
+                        // Action Section
                         if store.isUnlocked(item) {
-                            VStack(alignment: .leading, spacing: 25) {
-                                Text("Generation Secrets").font(.system(size: 22, weight: .bold)).foregroundColor(.blue)
-                                HStack(spacing: 12) {
-                                    PremiumActionButton(icon: "arrow.down.circle", text: "Save HD") { saveToLibrary() }
-                                    PremiumActionButton(icon: "iphone", text: "Wallpaper") { saveToLibrary() }
-                                    if item.hasVideo {
-                                        PremiumActionButton(icon: "video.circle", text: "Cinematic") { 
-                                            videoManager.isBackgroundEnabled = store.isBackgroundPlaybackEnabled
-                                            if videoManager.preparePlayer() { showVideoFullScreen = true }
+                            VStack(spacing: 14) {
+
+                                // Generate button
+                                Button(action: simulateGenerate) {
+                                    HStack(spacing: 10) {
+                                        if isGenerating {
+                                            ProgressView()
+                                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                                .scaleEffect(0.85)
+                                        } else {
+                                            Image(systemName: generated ? "checkmark.circle.fill" : "wand.and.stars")
+                                                .font(.system(size: 18))
+                                        }
+                                        Text(isGenerating ? "Generating..." : generated ? "Generated! Generate Again" : "Generate with This Style")
+                                            .font(.system(size: 16, weight: .bold))
+                                    }
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 16)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [Color.aiPurple, Color.aiPink],
+                                            startPoint: .leading, endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(16)
+                                    .opacity(isGenerating ? 0.8 : 1.0)
+                                }
+                                .disabled(isGenerating)
+
+                                // Tool buttons — only shown after generation
+                                if generated {
+                                    HStack(spacing: 12) {
+                                        // Save Image
+                                        ToolActionButton(icon: "arrow.down.circle.fill", label: "Save Image") {
+                                            saveToLibrary()
+                                        }
+
+                                        // Share
+                                        ToolActionButton(icon: "square.and.arrow.up", label: "Share") {
+                                            shareImage()
+                                        }
+
+                                        // Wallpaper
+                                        ToolActionButton(icon: "iphone", label: "Wallpaper") {
+                                            setAsWallpaper()
                                         }
                                     }
-                                    PremiumActionButton(icon: "message", text: "Chat") { 
-                                        showingChat = true
-                                    }
-                                }
-                                VStack(alignment: .leading, spacing: 12) {
-                                    Text("AI PROMPT").font(.caption.bold()).foregroundColor(.blue)
-                                    Text(item.prompt).font(.system(size: 14, design: .monospaced)).padding().background(Color.blue.opacity(0.05)).cornerRadius(12)
+                                    .transition(.move(edge: .bottom).combined(with: .opacity))
                                 }
                             }
-                            .padding(.horizontal, 30)
                         } else {
-                             VStack(spacing: 20) {
-                                Image(systemName: "lock.shield.fill").font(.system(size: 40)).foregroundColor(.blue)
-                                Text("Unlock Generation Metadata").font(.headline)
-                                Button(action: { 
-                                    if !store.unlock(item) {
-                                        showingInsufficientAlert = true
+                            // Unlock CTA
+                            VStack(spacing: 16) {
+                                HStack(spacing: 16) {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text("Premium Style")
+                                            .font(.system(size: 16, weight: .bold))
+                                        Text("Unlock to access the full AI prompt and generate images with this style.")
+                                            .font(.system(size: 13))
+                                            .foregroundColor(.secondary)
+                                            .lineSpacing(4)
                                     }
+                                    Spacer()
+                                    VStack(spacing: 2) {
+                                        Image(systemName: "pentagon.fill")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(.yellow)
+                                        Text("\(item.unlockCost)")
+                                            .font(.system(size: 18, weight: .black))
+                                        Text("Credits")
+                                            .font(.system(size: 10))
+                                            .foregroundColor(.secondary)
+                                    }
+                                }
+                                .padding(18)
+                                .background(Color.aiPurple.opacity(0.06))
+                                .cornerRadius(16)
+
+                                Button(action: {
+                                    if !store.unlock(item) { showingInsufficientAlert = true }
                                 }) {
-                                    Text("Unlock for \(item.unlockCost) Shards")
-                                        .bold().frame(maxWidth: .infinity).padding().background(Color.blue).foregroundColor(.white).cornerRadius(16)
+                                    HStack(spacing: 8) {
+                                        Image(systemName: "lock.open.fill")
+                                        Text("Unlock Style for \(item.unlockCost) Credits")
+                                            .font(.system(size: 16, weight: .bold))
+                                    }
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 16)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [Color.aiPurple, Color.aiPink],
+                                            startPoint: .leading, endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(16)
                                 }
                             }
-                            .padding(25).background(Color(.systemGray6)).cornerRadius(24).padding(.horizontal, 30)
                         }
-                        
-                        Spacer(minLength: 100)
+
+                        Spacer(minLength: 80)
                     }
-                    .background(Color.white)
-                    .cornerRadius(40, corners: [.topLeft, .topRight])
-                    .offset(y: -50)
+                    .padding(22)
+                    .background(Color(.systemBackground))
+                    .cornerRadius(32, corners: [.topLeft, .topRight])
+                    .offset(y: -30)
                 }
             }
             .edgesIgnoringSafeArea(.top)
-            
+
+            // Close button
             Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                Image(systemName: "chevron.left.circle.fill").font(.system(size: 40)).foregroundColor(.white.opacity(0.8)).padding(.top, 50).padding(.leading, 20)
+                Image(systemName: "xmark.circle.fill")
+                    .font(.system(size: 36))
+                    .foregroundColor(.white.opacity(0.85))
+                    .shadow(radius: 4)
+                    .padding(.top, 52)
+                    .padding(.leading, 18)
             }
         }
         .alert(isPresented: $showingInsufficientAlert) {
             Alert(
-                title: Text("Insufficient Shards"),
-                message: Text("You need \(item.unlockCost) shards to unlock this Mussa. Would you like to get more?"),
-                primaryButton: .default(Text("Go to Store")) {
-                    showingStore = true
-                },
+                title: Text("Not Enough Credits"),
+                message: Text("You need \(item.unlockCost) credits to unlock this style."),
+                primaryButton: .default(Text("Get Credits")) { showingStore = true },
                 secondaryButton: .cancel()
             )
         }
-        .sheet(isPresented: $showingReport) {
-            ReportView(targetName: item.title)
+        .alert(isPresented: $showingSaveAlert) {
+            Alert(title: Text("Notice"), message: Text(saveMessage), dismissButton: .default(Text("OK")))
         }
         .sheet(isPresented: $showingStore) {
             CoinStoreView(auraStore: store)
         }
-        .sheet(isPresented: $showingChat) {
-            ChatView(muse: item, chatManager: chatManager)
-        }
-        .fullScreenCover(isPresented: $showVideoFullScreen) {
-            ZStack(alignment: .topTrailing) {
-                Color.black.edgesIgnoringSafeArea(.all)
-                DetachmentVideoPlayer(videoManager: videoManager)
-                    .edgesIgnoringSafeArea(.all)
-                Button(action: { 
-                    videoManager.cleanup()
-                    showVideoFullScreen = false 
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 35))
-                        .foregroundColor(.white.opacity(0.7))
-                        .padding(25)
-                }
+        .sheet(isPresented: $showingShareSheet) {
+            if let img = generatedImage {
+                ShareSheet(items: [img])
             }
         }
+        .animation(.easeInOut(duration: 0.3), value: generated)
     }
-    
+
+    // MARK: - Actions
+
+    /// 模拟生成：加载动画 2.2s 后标记完成，实际展示当前风格图
+    func simulateGenerate() {
+        guard !isGenerating else { return }
+        generated = false
+        isGenerating = true
+        // 预先加载图片备用
+        generatedImage = UIImage(named: item.imageName)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
+            isGenerating = false
+            generated = true
+            // 生成成功后播放清脆的提示音，提供交互反馈
+            AudioManager.shared.playSuccessChime()
+        }
+    }
+
+    /// 复制 Prompt 到剪切板
+    func copyPrompt() {
+        let prompt = item.prompt.isEmpty
+            ? "A cinematic portrait with soft feminine lighting, dreamy atmosphere, ultra-detailed."
+            : item.prompt
+        UIPasteboard.general.string = prompt
+        saveMessage = "Prompt copied to clipboard!"
+        showingSaveAlert = true
+    }
+
+    /// 保存图片到相册
     func saveToLibrary() {
+        guard let image = UIImage(named: item.imageName) else {
+            saveMessage = "Image not found."
+            showingSaveAlert = true
+            return
+        }
+        let saver = ImageSaver()
+        saver.successHandler = {
+            saveMessage = "Image saved to your Photos!"
+            showingSaveAlert = true
+        }
+        saver.errorHandler = { _ in
+            saveMessage = "Failed to save. Please allow Photos access in Settings."
+            showingSaveAlert = true
+        }
+        saver.writeToPhotoAlbum(image: image)
+    }
+
+    /// 分享图片（调用系统分享面板）
+    func shareImage() {
+        generatedImage = UIImage(named: item.imageName)
+        guard generatedImage != nil else {
+            saveMessage = "Image not available for sharing."
+            showingSaveAlert = true
+            return
+        }
+        showingShareSheet = true
+    }
+
+    /// 壁纸：保存到相册并提示用户在系统相册中设置
+    func setAsWallpaper() {
         guard let image = UIImage(named: item.imageName) else { return }
-        let imageSaver = ImageSaver()
-        imageSaver.successHandler = {
-            alertTitle = "Success"
-            alertMessage = "Saved to gallery!"
-            showingAlert = true
+        let saver = ImageSaver()
+        saver.successHandler = {
+            saveMessage = "Saved to Photos!\n\nTo set as wallpaper:\nOpen Photos → Select this image → Share → Use as Wallpaper"
+            showingSaveAlert = true
         }
-        imageSaver.writeToPhotoAlbum(image: image)
+        saver.writeToPhotoAlbum(image: image)
     }
 }
 
-// MARK: - Video Manager for Background Audio (Keep original)
+// MARK: - Tool Action Button
 
-class VideoManager: ObservableObject {
-    @Published var player: AVPlayer?
-    var isBackgroundEnabled: Bool = true
-    private var cancellables = Set<AnyCancellable>()
-    
-    func preparePlayer() -> Bool {
-        if let url = Bundle.main.url(forResource: "ritual_video", withExtension: "mp4") {
-            let newPlayer = AVPlayer(url: url)
-            newPlayer.actionAtItemEnd = .none 
-            newPlayer.preventsDisplaySleepDuringVideoPlayback = true
-            
-            NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime, object: newPlayer.currentItem)
-                .sink { _ in
-                    newPlayer.seek(to: .zero)
-                    newPlayer.play()
-                }
-                .store(in: &cancellables)
-            
-            self.player = newPlayer
-            return true
+struct ToolActionButton: View {
+    let icon: String
+    let label: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.system(size: 20))
+                    .foregroundColor(.aiPurple)
+                Text(label)
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundColor(.primary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(Color.aiPurple.opacity(0.07))
+            .cornerRadius(14)
         }
-        return false
-    }
-    
-    func cleanup() {
-        player?.pause()
-        player = nil
-        cancellables.removeAll()
-    }
-}
-
-// MARK: - Detachment Video Player (FIXES LOCK SCREEN STOPPING)
-
-struct DetachmentVideoPlayer: UIViewRepresentable {
-    @ObservedObject var videoManager: VideoManager
-    
-    func makeUIView(context: Context) -> DetachmentUIView {
-        let view = DetachmentUIView(videoManager: videoManager)
-        return view
-    }
-    
-    func updateUIView(_ uiView: DetachmentUIView, context: Context) {}
-}
-
-class DetachmentUIView: UIView {
-    private let playerLayer = AVPlayerLayer()
-    private weak var videoManager: VideoManager?
-    
-    init(videoManager: VideoManager) {
-        self.videoManager = videoManager
-        super.init(frame: .zero)
-        
-        playerLayer.player = videoManager.player
-        playerLayer.videoGravity = .resizeAspectFill
-        layer.addSublayer(playerLayer)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        videoManager.player?.play()
-    }
-    
-    required init?(coder: NSCoder) { fatalError() }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        playerLayer.frame = bounds
-    }
-    
-    @objc private func handleBackground() {
-        if videoManager?.isBackgroundEnabled == true {
-            playerLayer.player = nil
-            videoManager?.player?.play() 
-        }
-    }
-    
-    @objc private func handleForeground() {
-        playerLayer.player = videoManager?.player
-        videoManager?.player?.play()
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
 }

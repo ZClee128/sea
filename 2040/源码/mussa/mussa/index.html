@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #3b82f6;
+            --primary-color: #8b5cf6;
             --text-color: #1f2937;
-            --bg-color: #ffffff;
-            --section-bg: #f9fafb;
+            --bg-color: #f3f4f6;
+            --container-bg: #ffffff;
         }
 
         * {
@@ -30,39 +30,39 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: #fff;
+            background: var(--container-bg);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
 
         header {
             text-align: center;
             margin-bottom: 50px;
-            border-bottom: 2px solid #f3f4f6;
+            border-bottom: 1px solid #e5e7eb;
             padding-bottom: 30px;
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+            margin-bottom: 12px;
+            letter-spacing: -1.5px;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .last-updated {
             font-size: 14px;
-            color: #6b7280;
+            color: #9ca3af;
         }
 
         section {
@@ -70,10 +70,10 @@
         }
 
         h2 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
             color: #111827;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
         }
@@ -82,61 +82,55 @@
             content: '';
             display: inline-block;
             width: 4px;
-            height: 18px;
+            height: 20px;
             background: var(--primary-color);
             margin-right: 12px;
             border-radius: 2px;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             color: #4b5563;
         }
 
         ul {
             list-style: none;
-            padding-left: 16px;
+            padding-left: 20px;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
             color: #4b5563;
         }
 
         li::before {
-            content: '•';
+            content: '✦';
             color: var(--primary-color);
             font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            position: absolute;
+            left: -20px;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         footer {
             text-align: center;
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid #f3f4f6;
+            border-top: 1px solid #e5e7eb;
             font-size: 14px;
             color: #9ca3af;
         }
 
-        .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
-        }
-
-        .lang-switch a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
         @media (max-width: 640px) {
             body { padding: 20px 10px; }
-            .container { padding: 25px; }
+            .container { padding: 30px 20px; }
+            .logo { font-size: 30px; }
+            h1 { font-size: 24px; }
         }
     </style>
 </head>
@@ -145,62 +139,69 @@
         <header>
             <div class="logo">Mussa</div>
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: May 10, 2026</p>
+            <p class="last-updated">Last Updated: May 13, 2026</p>
         </header>
 
         <section>
-            <p>Welcome to Mussa ("we," "our," or "us"). We are committed to protecting your privacy and providing a secure, account-free experience. This Privacy Policy explains how we handle your information when you use the Mussa mobile application.</p>
+            <p>Welcome to <span class="highlight">Mussa Art Studio</span> ("we," "our," or "us"). We provide professional-grade AI art generation tools. This Privacy Policy outlines how we handle data to ensure your creative experience is private and secure.</p>
         </section>
 
         <section>
-            <h2>1. NO PERSONAL DATA COLLECTION</h2>
-            <p>Mussa is designed to respect your anonymity. We do NOT collect, store, or share any personally identifiable information (PII).</p>
+            <h2>1. AI GENERATION & PRIVACY</h2>
+            <p>Your creativity is your own. We handle AI generation data with strict privacy protocols:</p>
             <ul>
-                <li>No registration is required.</li>
-                <li>We do not collect your name, email, phone number, or physical address.</li>
-                <li>We do not access your contacts or messages.</li>
+                <li><strong>Local Processing:</strong> Prompts and configurations are processed to generate artwork. We do NOT store your creative prompts on our permanent servers beyond the immediate generation request.</li>
+                <li><strong>Image Ownership:</strong> The images you generate are yours to save and share. We do not claim ownership or use your generated artwork for promotional purposes without your explicit consent.</li>
+                <li><strong>No Training:</strong> We do NOT use your private generated images or specific custom prompts to train our global AI models.</li>
             </ul>
         </section>
 
         <section>
-            <h2>2. DATA STORAGE AND PERSISTENCE</h2>
-            <p>All your app data—including unlocked items, crystal shards, and chat history—is stored locally on your device using standard iOS persistence methods.</p>
+            <h2>2. AI SERVICE TERMS</h2>
+            <p>By using our AI generation features, you agree to the following terms:</p>
             <ul>
-                <li>We do not maintain any cloud-based servers that store your individual usage data.</li>
-                <li>If you delete the app, your locally stored data will be removed.</li>
+                <li><strong>Content Responsibility:</strong> You are solely responsible for the prompts you provide. You must not use the AI to generate illegal, harmful, threatening, abusive, harassing, defamatory, or otherwise objectionable content.</li>
+                <li><strong>Generated Content Ownership:</strong> Subject to your compliance with these terms, you own the content you generate using Mussa. However, due to the nature of machine learning, generated content may not be unique and other users may generate similar results.</li>
+                <li><strong>No Infringement:</strong> You agree not to use the service to generate content that infringes upon the intellectual property rights of others.</li>
+                <li><strong>Service Limitations:</strong> AI-generated content is provided "as is." While we strive for high-quality results, we do not guarantee the accuracy, quality, or suitability of the generated output for any specific purpose.</li>
             </ul>
         </section>
 
         <section>
-            <h2>3. IN-APP PURCHASES</h2>
-            <p>Mussa uses Apple's StoreKit for all financial transactions. All payment processing is handled securely by Apple Inc.</p>
+            <h2>3. DATA COLLECTION POLICY</h2>
+            <p>Mussa is designed for anonymity and speed. We do <span class="highlight">NOT</span> collect personally identifiable information (PII).</p>
             <ul>
-                <li>We do not have access to your credit card information or billing details.</li>
-                <li>Purchase records are managed by Apple to ensure your transaction security.</li>
+                <li><strong>No Accounts:</strong> No email, name, or phone number registration is required to use the app.</li>
+                <li><strong>Local Storage:</strong> Your history, unlocked styles (Auras), and credits are stored locally on your device or via secure iCloud backup (if enabled by you).</li>
+                <li><strong>Anonymous Analytics:</strong> We may collect anonymous usage statistics (e.g., app crashes, feature usage frequency) to improve app performance, but this data cannot be linked to you.</li>
             </ul>
         </section>
 
         <section>
-            <h2>4. MEDIA AND PERMISSIONS</h2>
+            <h2>4. IN-APP TRANSACTIONS</h2>
+            <p>Mussa uses Apple's secure App Store infrastructure for all credit purchases.</p>
             <ul>
-                <li><strong>Save to Gallery:</strong> If you choose to save a Mussa artwork, we request "Add to Photos" permission only to write that specific image.</li>
-                <li><strong>Camera:</strong> The "Matcher" feature may use camera metadata for simulations, but no images are uploaded to any server.</li>
+                <li>Payment info is handled exclusively by <span class="highlight">Apple Inc.</span></li>
+                <li>We never see or store your credit card numbers or banking details.</li>
             </ul>
         </section>
 
         <section>
-            <h2>5. AI CHAT AND INTERACTION</h2>
-            <p>All interactions with the AI Muses are processed within the app's local logic or secure API endpoints. Your chat history remains exclusively on your device.</p>
+            <h2>5. DEVICE PERMISSIONS</h2>
+            <ul>
+                <li><strong>Photo Library:</strong> Required only when you choose to save your generated AI artwork to your device.</li>
+                <li><strong>Haptics & Audio:</strong> Used to provide an immersive "Studio Ambience" and tactile feedback during the generation process.</li>
+            </ul>
         </section>
 
         <section>
             <h2>6. CONTACT US</h2>
-            <p>If you have any questions regarding your privacy, please contact us at:</p>
+            <p>For any privacy-related inquiries, please contact our support team:</p>
             <p><strong>Email:</strong> yokhanan70@yahoo.com</p>
         </section>
 
         <footer>
-            &copy; 2026 Mussa. All rights reserved.
+            &copy; 2026 Mussa Art Studio. All rights reserved.
         </footer>
     </div>
 </body>

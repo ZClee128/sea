@@ -3,7 +3,6 @@ import SwiftUI
 @available(iOS 14.0, *)
 struct ExploreView: View {
     @ObservedObject var store: AuraStore
-    @ObservedObject var chatManager: ChatManager
     @State private var selectedItem: AuraItem?
     @State private var selectedCategory: AuraCategory = .emerald
     @State private var searchText = ""
@@ -102,7 +101,7 @@ struct ExploreView: View {
             }
             .navigationBarTitle("Explore", displayMode: .inline)
             .sheet(item: $selectedItem) { item in
-                AuraDetailView(item: item, store: store, chatManager: chatManager)
+                AuraDetailView(item: item, store: store)
             }
         }
     }

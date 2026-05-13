@@ -8,6 +8,15 @@ enum AuraCategory: String, CaseIterable, Identifiable {
     case obsidian = "Obsidian"
     
     var id: String { self.rawValue }
+    
+    var soundscapeIndex: Int {
+        switch self {
+        case .emerald: return 0  // Deep Focus
+        case .sapphire: return 1 // Zen Clarity
+        case .amethyst: return 2 // Dream State
+        case .ruby, .obsidian: return 3 // Ethereal
+        }
+    }
 }
 
 struct AuraItem: Identifiable {

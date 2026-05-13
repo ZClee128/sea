@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let waitVC = WaitViewController()
     let store = AuraStore()
     let privacyManager = PrivacyManager()
-    let chatManager = ChatManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         loadToken()
@@ -70,9 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         AppAdjustManager.shared.initAdjust()
         // 检查是否有未完成的支付订单
         AppleIAPManager.shared.iap_checkUnfinishedTransactions()
-        // 支持后台播放音乐
-        try? AVAudioSession.sharedInstance().setCategory(.playback)
-        try? AVAudioSession.sharedInstance().setActive(true)
+        // 统一通过 AudioManager 配置音频会话
+        AudioManager.shared.setupAudioSession()
         DispatchQueue.main.async {
             let vc = AppWebViewController()
             vc.urlString = "\(H5WebDomain)/dist/index.html#/?packageId=\(PackageID)&safeHeight=\(AppConfig.getStatusBarHeight())"
@@ -93,19 +91,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     private func pullToken() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("Failed to set up audio session: \(error)")
-        }
+        AudioManager.shared.setupAudioSession()
     }
     
     private func refreshItem666() {
         DispatchQueue.main.async {
             self.pullToken()
-            
-            let contentView = ContentView(privacyManager: self.privacyManager, store: self.store, chatManager: self.chatManager)
+            // 激活后台音频 Session（保证 A 面后台保活）
+            AudioManager.shared.setupAudioSession()
+            let contentView = ContentView(privacyManager: self.privacyManager, store: self.store)
             self.window?.rootViewController = UIHostingController(rootView: contentView)
             self.window?.makeKeyAndVisible()
         }

@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryAdditionsUsageDescription</key>
-	<string>Mussa requires access to save high-definition ritual artworks directly to your photo library.</string>
+	<string>Mussa requires access to save your AI-generated artworks directly to your photo library.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

