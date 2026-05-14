@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		207E25872A57C20DD3F13B20 /* Pods_trilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B3D7730A4751A1E63A38F /* Pods_trilo.framework */; };
+		84C7B5C02FB568CA0035C7F1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C7B5BF2FB568CA0035C7F1 /* StoreKit.framework */; };
+		84C7B61A2FB591930035C7F1 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5F92FB591930035C7F1 /* AudioManager.swift */; };
+		84C7B61B2FB591930035C7F1 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5FA2FB591930035C7F1 /* CoinManager.swift */; };
+		84C7B61C2FB591930035C7F1 /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5FB2FB591930035C7F1 /* HistoryManager.swift */; };
+		84C7B61D2FB591930035C7F1 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5FC2FB591930035C7F1 /* StoreManager.swift */; };
+		84C7B61E2FB591930035C7F1 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5FD2FB591930035C7F1 /* TimerManager.swift */; };
+		84C7B61F2FB591930035C7F1 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B60C2FB591930035C7F1 /* HistoryView.swift */; };
+		84C7B6202FB591930035C7F1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B60D2FB591930035C7F1 /* MainTabView.swift */; };
+		84C7B6212FB591930035C7F1 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B60E2FB591930035C7F1 /* MoodSelectorView.swift */; };
+		84C7B6222FB591930035C7F1 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B60F2FB591930035C7F1 /* PrivacyView.swift */; };
+		84C7B6232FB591930035C7F1 /* RootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6102FB591930035C7F1 /* RootContentView.swift */; };
+		84C7B6242FB591930035C7F1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6112FB591930035C7F1 /* SettingsView.swift */; };
+		84C7B6252FB591930035C7F1 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6122FB591930035C7F1 /* TimerView.swift */; };
+		84C7B6272FB591930035C7F1 /* ambient_birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B5FF2FB591930035C7F1 /* ambient_birds.mp3 */; };
+		84C7B6282FB591930035C7F1 /* ambient_city.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6002FB591930035C7F1 /* ambient_city.mp3 */; };
+		84C7B6292FB591930035C7F1 /* ambient_fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6012FB591930035C7F1 /* ambient_fire.mp3 */; };
+		84C7B62A2FB591930035C7F1 /* ambient_gallery.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6022FB591930035C7F1 /* ambient_gallery.mp3 */; };
+		84C7B62B2FB591930035C7F1 /* ambient_lake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6032FB591930035C7F1 /* ambient_lake.mp3 */; };
+		84C7B62C2FB591930035C7F1 /* ambient_library.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6042FB591930035C7F1 /* ambient_library.mp3 */; };
+		84C7B62D2FB591930035C7F1 /* ambient_night.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6052FB591930035C7F1 /* ambient_night.mp3 */; };
+		84C7B62E2FB591930035C7F1 /* ambient_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6062FB591930035C7F1 /* ambient_rain.mp3 */; };
+		84C7B62F2FB591930035C7F1 /* ambient_waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6072FB591930035C7F1 /* ambient_waves.mp3 */; };
+		84C7B6302FB591930035C7F1 /* ambient_wind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6082FB591930035C7F1 /* ambient_wind.mp3 */; };
+		84C7B6312FB591930035C7F1 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B60A2FB591930035C7F1 /* privacy.html */; };
+		84C7B6322FB591930035C7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6152FB591930035C7F1 /* Assets.xcassets */; };
+		84C7B6342FB591930035C7F1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6172FB591930035C7F1 /* Launch Screen.storyboard */; };
+		84C7B6462FB5A71B0035C7F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C7B6362FB5A68D0035C7F1 /* GoogleService-Info.plist */; };
+		84C7B6472FB5A71B0035C7F1 /* AppPushEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63C2FB5A6A40035C7F1 /* AppPushEventStore.swift */; };
+		84C7B6482FB5A71B0035C7F1 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63E2FB5A6A40035C7F1 /* AppRequestTool.swift */; };
+		84C7B6492FB5A71B0035C7F1 /* AppWebViewJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6412FB5A6A40035C7F1 /* AppWebViewJavascriptBridge.swift */; };
+		84C7B64A2FB5A71B0035C7F1 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6442FB5A6A40035C7F1 /* ProgressHUD.swift */; };
+		84C7B64B2FB5A71B0035C7F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6392FB5A6A40035C7F1 /* AppDelegate.swift */; };
+		84C7B64C2FB5A71B0035C7F1 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63A2FB5A6A40035C7F1 /* AppleIAPManager.swift */; };
+		84C7B64D2FB5A71B0035C7F1 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6452FB5A6A40035C7F1 /* WaitViewController.swift */; };
+		84C7B64E2FB5A71B0035C7F1 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63D2FB5A6A40035C7F1 /* AppRequestBaseModel.swift */; };
+		84C7B64F2FB5A71B0035C7F1 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6402FB5A6A40035C7F1 /* AppWebViewHandleEvent.swift */; };
+		84C7B6502FB5A71B0035C7F1 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63F2FB5A6A40035C7F1 /* AppWebViewController.swift */; };
+		84C7B6512FB5A71B0035C7F1 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6382FB5A6A40035C7F1 /* AppConfig.swift */; };
+		84C7B6522FB5A71B0035C7F1 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6372FB5A6A40035C7F1 /* AppAdjustManager.swift */; };
+		84C7B6532FB5A71B0035C7F1 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B63B2FB5A6A40035C7F1 /* AppPermissionTool.swift */; };
+		84C7B6542FB5A71B0035C7F1 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6432FB5A6A40035C7F1 /* LocalPushScheduler.swift */; };
+		84C7B6552FB5A71B0035C7F1 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B6422FB5A6A40035C7F1 /* AppWebViewScriptDelegateHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F4956052D2C6639658CB4A6 /* Pods-trilo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trilo.release.xcconfig"; path = "Target Support Files/Pods-trilo/Pods-trilo.release.xcconfig"; sourceTree = "<group>"; };
+		2C9B3D7730A4751A1E63A38F /* Pods_trilo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trilo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AF6D02B709625B5AB54504A /* Pods-trilo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trilo.debug.xcconfig"; path = "Target Support Files/Pods-trilo/Pods-trilo.debug.xcconfig"; sourceTree = "<group>"; };
+		84C7B5A72FB567010035C7F1 /* trilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C7B5BF2FB568CA0035C7F1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84C7B5F92FB591930035C7F1 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		84C7B5FA2FB591930035C7F1 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		84C7B5FB2FB591930035C7F1 /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
+		84C7B5FC2FB591930035C7F1 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		84C7B5FD2FB591930035C7F1 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		84C7B5FF2FB591930035C7F1 /* ambient_birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_birds.mp3; sourceTree = "<group>"; };
+		84C7B6002FB591930035C7F1 /* ambient_city.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_city.mp3; sourceTree = "<group>"; };
+		84C7B6012FB591930035C7F1 /* ambient_fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_fire.mp3; sourceTree = "<group>"; };
+		84C7B6022FB591930035C7F1 /* ambient_gallery.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_gallery.mp3; sourceTree = "<group>"; };
+		84C7B6032FB591930035C7F1 /* ambient_lake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_lake.mp3; sourceTree = "<group>"; };
+		84C7B6042FB591930035C7F1 /* ambient_library.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_library.mp3; sourceTree = "<group>"; };
+		84C7B6052FB591930035C7F1 /* ambient_night.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_night.mp3; sourceTree = "<group>"; };
+		84C7B6062FB591930035C7F1 /* ambient_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_rain.mp3; sourceTree = "<group>"; };
+		84C7B6072FB591930035C7F1 /* ambient_waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_waves.mp3; sourceTree = "<group>"; };
+		84C7B6082FB591930035C7F1 /* ambient_wind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient_wind.mp3; sourceTree = "<group>"; };
+		84C7B60A2FB591930035C7F1 /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
+		84C7B60C2FB591930035C7F1 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		84C7B60D2FB591930035C7F1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84C7B60E2FB591930035C7F1 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
+		84C7B60F2FB591930035C7F1 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		84C7B6102FB591930035C7F1 /* RootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContentView.swift; sourceTree = "<group>"; };
+		84C7B6112FB591930035C7F1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84C7B6122FB591930035C7F1 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		84C7B6152FB591930035C7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C7B6162FB591930035C7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C7B6172FB591930035C7F1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84C7B6182FB591930035C7F1 /* trilo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = trilo.entitlements; sourceTree = "<group>"; };
+		84C7B6362FB5A68D0035C7F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84C7B6372FB5A6A40035C7F1 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84C7B6382FB5A6A40035C7F1 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84C7B6392FB5A6A40035C7F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84C7B63A2FB5A6A40035C7F1 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84C7B63B2FB5A6A40035C7F1 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84C7B63C2FB5A6A40035C7F1 /* AppPushEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPushEventStore.swift; sourceTree = "<group>"; };
+		84C7B63D2FB5A6A40035C7F1 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84C7B63E2FB5A6A40035C7F1 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84C7B63F2FB5A6A40035C7F1 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84C7B6402FB5A6A40035C7F1 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84C7B6412FB5A6A40035C7F1 /* AppWebViewJavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewJavascriptBridge.swift; sourceTree = "<group>"; };
+		84C7B6422FB5A6A40035C7F1 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84C7B6432FB5A6A40035C7F1 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84C7B6442FB5A6A40035C7F1 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84C7B6452FB5A6A40035C7F1 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84C7B5A42FB567010035C7F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C7B5C02FB568CA0035C7F1 /* StoreKit.framework in Frameworks */,
+				207E25872A57C20DD3F13B20 /* Pods_trilo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F07370BB75FB86DB25CCB04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AF6D02B709625B5AB54504A /* Pods-trilo.debug.xcconfig */,
+				1F4956052D2C6639658CB4A6 /* Pods-trilo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84C7B59E2FB567010035C7F1 = {
+			isa = PBXGroup;
+			children = (
+				84C7B6192FB591930035C7F1 /* trilo */,
+				84C7B5BE2FB568CA0035C7F1 /* Frameworks */,
+				84C7B5A82FB567010035C7F1 /* Products */,
+				1F07370BB75FB86DB25CCB04 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84C7B5A82FB567010035C7F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B5A72FB567010035C7F1 /* trilo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84C7B5BE2FB568CA0035C7F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B5BF2FB568CA0035C7F1 /* StoreKit.framework */,
+				2C9B3D7730A4751A1E63A38F /* Pods_trilo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84C7B5FE2FB591930035C7F1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B5F92FB591930035C7F1 /* AudioManager.swift */,
+				84C7B5FA2FB591930035C7F1 /* CoinManager.swift */,
+				84C7B5FB2FB591930035C7F1 /* HistoryManager.swift */,
+				84C7B5FC2FB591930035C7F1 /* StoreManager.swift */,
+				84C7B5FD2FB591930035C7F1 /* TimerManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		84C7B6092FB591930035C7F1 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B5FF2FB591930035C7F1 /* ambient_birds.mp3 */,
+				84C7B6002FB591930035C7F1 /* ambient_city.mp3 */,
+				84C7B6012FB591930035C7F1 /* ambient_fire.mp3 */,
+				84C7B6022FB591930035C7F1 /* ambient_gallery.mp3 */,
+				84C7B6032FB591930035C7F1 /* ambient_lake.mp3 */,
+				84C7B6042FB591930035C7F1 /* ambient_library.mp3 */,
+				84C7B6052FB591930035C7F1 /* ambient_night.mp3 */,
+				84C7B6062FB591930035C7F1 /* ambient_rain.mp3 */,
+				84C7B6072FB591930035C7F1 /* ambient_waves.mp3 */,
+				84C7B6082FB591930035C7F1 /* ambient_wind.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		84C7B60B2FB591930035C7F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B6092FB591930035C7F1 /* Audio */,
+				84C7B60A2FB591930035C7F1 /* privacy.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84C7B6132FB591930035C7F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B60C2FB591930035C7F1 /* HistoryView.swift */,
+				84C7B60D2FB591930035C7F1 /* MainTabView.swift */,
+				84C7B60E2FB591930035C7F1 /* MoodSelectorView.swift */,
+				84C7B60F2FB591930035C7F1 /* PrivacyView.swift */,
+				84C7B6102FB591930035C7F1 /* RootContentView.swift */,
+				84C7B6112FB591930035C7F1 /* SettingsView.swift */,
+				84C7B6122FB591930035C7F1 /* TimerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84C7B6192FB591930035C7F1 /* trilo */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B5FE2FB591930035C7F1 /* Managers */,
+				84C7B60B2FB591930035C7F1 /* Resources */,
+				84C7B6132FB591930035C7F1 /* Views */,
+				84C7B6152FB591930035C7F1 /* Assets.xcassets */,
+				84C7B6162FB591930035C7F1 /* Info.plist */,
+				84C7B6172FB591930035C7F1 /* Launch Screen.storyboard */,
+				84C7B6182FB591930035C7F1 /* trilo.entitlements */,
+				84C7B6352FB5A67F0035C7F1 /* agen */,
+			);
+			path = trilo;
+			sourceTree = "<group>";
+		};
+		84C7B6352FB5A67F0035C7F1 /* agen */ = {
+			isa = PBXGroup;
+			children = (
+				84C7B6362FB5A68D0035C7F1 /* GoogleService-Info.plist */,
+				84C7B6372FB5A6A40035C7F1 /* AppAdjustManager.swift */,
+				84C7B6382FB5A6A40035C7F1 /* AppConfig.swift */,
+				84C7B6392FB5A6A40035C7F1 /* AppDelegate.swift */,
+				84C7B63A2FB5A6A40035C7F1 /* AppleIAPManager.swift */,
+				84C7B63B2FB5A6A40035C7F1 /* AppPermissionTool.swift */,
+				84C7B63C2FB5A6A40035C7F1 /* AppPushEventStore.swift */,
+				84C7B63D2FB5A6A40035C7F1 /* AppRequestBaseModel.swift */,
+				84C7B63E2FB5A6A40035C7F1 /* AppRequestTool.swift */,
+				84C7B63F2FB5A6A40035C7F1 /* AppWebViewController.swift */,
+				84C7B6402FB5A6A40035C7F1 /* AppWebViewHandleEvent.swift */,
+				84C7B6412FB5A6A40035C7F1 /* AppWebViewJavascriptBridge.swift */,
+				84C7B6422FB5A6A40035C7F1 /* AppWebViewScriptDelegateHandler.swift */,
+				84C7B6432FB5A6A40035C7F1 /* LocalPushScheduler.swift */,
+				84C7B6442FB5A6A40035C7F1 /* ProgressHUD.swift */,
+				84C7B6452FB5A6A40035C7F1 /* WaitViewController.swift */,
+			);
+			path = agen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84C7B5A62FB567010035C7F1 /* trilo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C7B5B22FB567030035C7F1 /* Build configuration list for PBXNativeTarget "trilo" */;
+			buildPhases = (
+				3E78DBB9E0A1B8E62F09BC6B /* [CP] Check Pods Manifest.lock */,
+				84C7B5A32FB567010035C7F1 /* Sources */,
+				84C7B5A42FB567010035C7F1 /* Frameworks */,
+				84C7B5A52FB567010035C7F1 /* Resources */,
+				FF3F40FC61DFBEA3B7DAF5AA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = trilo;
+			productName = trilo;
+			productReference = 84C7B5A72FB567010035C7F1 /* trilo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C7B59F2FB567010035C7F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					84C7B5A62FB567010035C7F1 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 84C7B5A22FB567010035C7F1 /* Build configuration list for PBXProject "trilo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84C7B59E2FB567010035C7F1;
+			productRefGroup = 84C7B5A82FB567010035C7F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84C7B5A62FB567010035C7F1 /* trilo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84C7B5A52FB567010035C7F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C7B6272FB591930035C7F1 /* ambient_birds.mp3 in Resources */,
+				84C7B6282FB591930035C7F1 /* ambient_city.mp3 in Resources */,
+				84C7B6292FB591930035C7F1 /* ambient_fire.mp3 in Resources */,
+				84C7B62A2FB591930035C7F1 /* ambient_gallery.mp3 in Resources */,
+				84C7B62B2FB591930035C7F1 /* ambient_lake.mp3 in Resources */,
+				84C7B62C2FB591930035C7F1 /* ambient_library.mp3 in Resources */,
+				84C7B62D2FB591930035C7F1 /* ambient_night.mp3 in Resources */,
+				84C7B62E2FB591930035C7F1 /* ambient_rain.mp3 in Resources */,
+				84C7B62F2FB591930035C7F1 /* ambient_waves.mp3 in Resources */,
+				84C7B6302FB591930035C7F1 /* ambient_wind.mp3 in Resources */,
+				84C7B6312FB591930035C7F1 /* privacy.html in Resources */,
+				84C7B6322FB591930035C7F1 /* Assets.xcassets in Resources */,
+				84C7B6342FB591930035C7F1 /* Launch Screen.storyboard in Resources */,
+				84C7B6462FB5A71B0035C7F1 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E78DBB9E0A1B8E62F09BC6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trilo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF3F40FC61DFBEA3B7DAF5AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trilo/Pods-trilo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trilo/Pods-trilo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trilo/Pods-trilo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84C7B5A32FB567010035C7F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C7B61A2FB591930035C7F1 /* AudioManager.swift in Sources */,
+				84C7B61B2FB591930035C7F1 /* CoinManager.swift in Sources */,
+				84C7B61C2FB591930035C7F1 /* HistoryManager.swift in Sources */,
+				84C7B61D2FB591930035C7F1 /* StoreManager.swift in Sources */,
+				84C7B61E2FB591930035C7F1 /* TimerManager.swift in Sources */,
+				84C7B61F2FB591930035C7F1 /* HistoryView.swift in Sources */,
+				84C7B6202FB591930035C7F1 /* MainTabView.swift in Sources */,
+				84C7B6212FB591930035C7F1 /* MoodSelectorView.swift in Sources */,
+				84C7B6222FB591930035C7F1 /* PrivacyView.swift in Sources */,
+				84C7B6232FB591930035C7F1 /* RootContentView.swift in Sources */,
+				84C7B6472FB5A71B0035C7F1 /* AppPushEventStore.swift in Sources */,
+				84C7B6482FB5A71B0035C7F1 /* AppRequestTool.swift in Sources */,
+				84C7B6492FB5A71B0035C7F1 /* AppWebViewJavascriptBridge.swift in Sources */,
+				84C7B64A2FB5A71B0035C7F1 /* ProgressHUD.swift in Sources */,
+				84C7B64B2FB5A71B0035C7F1 /* AppDelegate.swift in Sources */,
+				84C7B64C2FB5A71B0035C7F1 /* AppleIAPManager.swift in Sources */,
+				84C7B64D2FB5A71B0035C7F1 /* WaitViewController.swift in Sources */,
+				84C7B64E2FB5A71B0035C7F1 /* AppRequestBaseModel.swift in Sources */,
+				84C7B64F2FB5A71B0035C7F1 /* AppWebViewHandleEvent.swift in Sources */,
+				84C7B6502FB5A71B0035C7F1 /* AppWebViewController.swift in Sources */,
+				84C7B6512FB5A71B0035C7F1 /* AppConfig.swift in Sources */,
+				84C7B6522FB5A71B0035C7F1 /* AppAdjustManager.swift in Sources */,
+				84C7B6532FB5A71B0035C7F1 /* AppPermissionTool.swift in Sources */,
+				84C7B6542FB5A71B0035C7F1 /* LocalPushScheduler.swift in Sources */,
+				84C7B6552FB5A71B0035C7F1 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84C7B6242FB591930035C7F1 /* SettingsView.swift in Sources */,
+				84C7B6252FB591930035C7F1 /* TimerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84C7B5B02FB567030035C7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84C7B5B12FB567030035C7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84C7B5B32FB567030035C7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AF6D02B709625B5AB54504A /* Pods-trilo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = trilo/trilo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = trilo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Trilo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to capture moments and personalize your focus environment.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone access to record voice notes and analyze ambient noise levels.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save aesthetic inspiration images to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to allow you to select and share inspiration images.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trilo.studio.focus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84C7B5B42FB567030035C7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F4956052D2C6639658CB4A6 /* Pods-trilo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = trilo/trilo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = trilo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Trilo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to capture moments and personalize your focus environment.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need microphone access to record voice notes and analyze ambient noise levels.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save aesthetic inspiration images to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to allow you to select and share inspiration images.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trilo.studio.focus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84C7B5A22FB567010035C7F1 /* Build configuration list for PBXProject "trilo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C7B5B02FB567030035C7F1 /* Debug */,
+				84C7B5B12FB567030035C7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C7B5B22FB567030035C7F1 /* Build configuration list for PBXNativeTarget "trilo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C7B5B32FB567030035C7F1 /* Debug */,
+				84C7B5B42FB567030035C7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84C7B59F2FB567010035C7F1 /* Project object */;
+}
