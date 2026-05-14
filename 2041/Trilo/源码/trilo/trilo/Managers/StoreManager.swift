@@ -24,6 +24,7 @@ class StoreManager: ObservableObject {
     func fetchProducts() async {
         do {
             products = try await Product.products(for: productIDs).sorted(by: { $0.price < $1.price })
+            print("Successfully fetched \(products.count) products from App Store.")
         } catch {
             print("Failed to fetch products: \(error)")
         }
