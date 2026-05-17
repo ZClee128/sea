@@ -40,12 +40,28 @@ class StoreManager: ObservableObject {
     // 1. 从苹果服务器拉取真实产品信息
     @MainActor
     func fetchProducts() async {
+        print("--- [StoreManager] Starting fetchProducts ---")
+        print("Requesting \(productIDs.count) Product IDs: \(productIDs)")
         do {
             let fetchedProducts = try await Product.products(for: productIDs)
+            
+            // 打印成功获取的商品
+            print("Successfully fetched \(fetchedProducts.count) products.")
+            let fetchedIDs = fetchedProducts.map { $0.id }
+            print("Fetched IDs: \(fetchedIDs)")
+            
+            // 对比找出没获取到的商品
+            let missingIDs = Set(productIDs).subtracting(Set(fetchedIDs))
+            if !missingIDs.isEmpty {
+                print("⚠️ WARNING: \(missingIDs.count) products failed to fetch: \(missingIDs)")
+            } else {
+                print("✅ All products fetched successfully!")
+            }
+            
             // 按照价格或特定顺序排序
             self.storeProducts = fetchedProducts.sorted(by: { $0.price < $1.price })
         } catch {
-            print("Failed to fetch products from App Store: \(error)")
+            print("❌ Failed to fetch products from App Store: \(error)")
         }
     }
     

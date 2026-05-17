@@ -8,6 +8,7 @@ import PhotosUI
 
 @available(iOS 14.0, *)
 struct PostView: View {
+    @StateObject private var authManager = AuthManager.shared
     @State private var dramaTitle = ""
     @State private var content = ""
     @State private var selectedCategory = "K-Drama"
@@ -15,6 +16,12 @@ struct PostView: View {
     @State private var showSuccess = false
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage? = nil
+    
+    @State private var showLowBalanceAlert = false
+    @State private var navigateToStore = false
+    
+    let postCost = 50 // 发帖消耗金币数
+
     
     let categories = ["K-Drama", "C-Drama", "Netflix", "Trending", "Review"]
     private let screenWidth = UIScreen.main.bounds.width
@@ -130,26 +137,49 @@ struct PostView: View {
                         }
                         .padding(.horizontal, 25)
                         
-                        // 5. 发布按钮
-                        Button(action: postDiscussion) {
-                            ZStack {
-                                Theme.Gradients.primaryGradient
-                                if isPosting {
-                                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                } else {
-                                    Text("Post to Community")
-                                        .font(.headline)
+                        // 5. 发布按钮及价格提示
+                        VStack(spacing: 8) {
+                            Button(action: postDiscussion) {
+                                ZStack {
+                                    Theme.Gradients.primaryGradient
+                                    if isPosting {
+                                        ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                    } else {
+                                        HStack {
+                                            Text("Post to Community")
+                                                .font(.headline)
+                                            Spacer()
+                                            Image(systemName: "circle.fill")
+                                                .foregroundColor(.yellow)
+                                                .font(.system(size: 10))
+                                            Text("\(postCost)")
+                                                .font(.headline)
+                                        }
+                                        .padding(.horizontal, 30)
                                         .foregroundColor(.white)
+                                    }
                                 }
+                                .frame(height: 55)
+                                .frame(width: screenWidth - 50)
+                                .cornerRadius(27)
+                                .shadow(color: Theme.primary.opacity(0.3), radius: 10, y: 5)
                             }
-                            .frame(height: 55)
-                            .frame(width: screenWidth - 50)
-                            .cornerRadius(27)
-                            .shadow(color: Theme.primary.opacity(0.3), radius: 10, y: 5)
+                            .disabled(dramaTitle.isEmpty || content.isEmpty || isPosting)
+                            
+                            HStack(spacing: 4) {
+                                Text("Balance:")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.yellow)
+                                    .font(.system(size: 8))
+                                Text("\(authManager.coinsCount)")
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundColor(.gray)
+                            }
                         }
                         .padding(.horizontal, 25)
                         .padding(.top, 10)
-                        .disabled(dramaTitle.isEmpty || content.isEmpty || isPosting)
                         
                         Spacer(minLength: 100)
                     }
@@ -167,27 +197,48 @@ struct PostView: View {
                         }
                     }
             }
+            
+        }
+        .fullScreenCover(isPresented: $navigateToStore) {
+            if #available(iOS 15.0, *) {
+                CoinStoreView()
+            }
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $selectedImage)
         }
+        .alert(isPresented: $showLowBalanceAlert) {
+            Alert(
+                title: Text("Insufficient Balance"),
+                message: Text("Posting costs \(postCost) coins. Please top up to continue."),
+                primaryButton: .default(Text("Top Up")) {
+                    navigateToStore = true
+                },
+                secondaryButton: .cancel()
+            )
+        }
     }
     
     private func postDiscussion() {
-        isPosting = true
-        
-        // 真实存入数据管理器
-        DramaManager.shared.addPost(
-            title: dramaTitle,
-            description: content,
-            category: selectedCategory,
-            image: selectedImage
-        )
-        
-        // 模拟网络请求延迟
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-            isPosting = false
-            withAnimation { showSuccess = true }
+        if authManager.coinsCount >= postCost {
+            authManager.coinsCount -= postCost
+            isPosting = true
+            
+            // 真实存入数据管理器
+            DramaManager.shared.addPost(
+                title: dramaTitle,
+                description: content,
+                category: selectedCategory,
+                image: selectedImage
+            )
+            
+            // 模拟网络请求延迟
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                isPosting = false
+                withAnimation { showSuccess = true }
+            }
+        } else {
+            showLowBalanceAlert = true
         }
     }
     
