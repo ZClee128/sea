@@ -66,11 +66,13 @@ class AuthManager: ObservableObject {
     private let userDefaultsKey = "vibble_mock_users"
     
     init() {
-        // 预设苹果审核测试账号
-        var users = UserDefaults.standard.dictionary(forKey: userDefaultsKey) as? [String: String] ?? [:]
-        if users["test@vibble.com"] == nil {
+        // 预设苹果审核测试账号 (仅在应用首次安装时注册一次，防止注销后无限复活)
+        let hasInitialized = UserDefaults.standard.bool(forKey: "hasInitializedTestAccount")
+        if !hasInitialized {
+            var users = UserDefaults.standard.dictionary(forKey: userDefaultsKey) as? [String: String] ?? [:]
             users["test@vibble.com"] = "123456"
             UserDefaults.standard.set(users, forKey: userDefaultsKey)
+            UserDefaults.standard.set(true, forKey: "hasInitializedTestAccount")
         }
     }
     
