@@ -95,6 +95,7 @@ struct VideoPlayerView: View {
     @State private var isPlaying = false
     @State private var player: AVPlayer?
     @State private var showReportSheet = false
+    @State private var showDiscussion = false
     @StateObject private var friendManager = FriendManager.shared
     
     var body: some View {
@@ -142,6 +143,13 @@ struct VideoPlayerView: View {
                     }
                     .padding(.bottom, 15)
                     
+                    // 加入讨论按钮 (强化社区属性，弱化播放器属性)
+                    Button(action: {
+                        showDiscussion = true
+                    }) {
+                        SidebarButton(icon: "bubble.left.and.bubble.right.fill", label: "Discuss")
+                    }
+                    
                     // 替换为举报按钮 (App Store 审核必备)
                     Button(action: { 
                         print("Report tapped")
@@ -166,6 +174,9 @@ struct VideoPlayerView: View {
         }
         .sheet(isPresented: $showReportSheet) {
             ReportView(targetUsername: video.userName)
+        }
+        .fullScreenCover(isPresented: $showDiscussion) {
+            VideoDetailView(video: video)
         }
         .onAppear { checkAndPlay() }
         .onDisappear { stopPlayer() }
