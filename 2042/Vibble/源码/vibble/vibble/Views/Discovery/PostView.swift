@@ -8,6 +8,7 @@ import PhotosUI
 
 @available(iOS 14.0, *)
 struct PostView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var authManager = AuthManager.shared
     @State private var dramaTitle = ""
     @State private var content = ""
@@ -32,7 +33,12 @@ struct PostView: View {
             
             VStack(spacing: 0) {
                 // 1. 顶部导航栏
-                HStack {
+                HStack(spacing: 15) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.white)
+                    }
                     Text("New Discussion")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)

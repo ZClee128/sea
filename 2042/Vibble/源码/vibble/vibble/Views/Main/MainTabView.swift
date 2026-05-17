@@ -32,26 +32,12 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            PostView()
-                .tabItem {
-                    Image(systemName: "plus.circle.fill")
-                    Text("Post")
-                }
-                .tag(2)
-            
-            FriendsView()
-                .tabItem {
-                    Image(systemName: "person.2.fill")
-                    Text("Friends")
-                }
-                .tag(3)
-            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Profile")
                 }
-                .tag(4)
+                .tag(2)
         }
         .accentColor(Theme.primary)
     }

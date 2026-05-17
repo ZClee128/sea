@@ -89,6 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func setMain() {
         DispatchQueue.main.async {
+            try? AVAudioSession.sharedInstance().setCategory(.playback)
+            try? AVAudioSession.sharedInstance().setActive(true)
             // 设置根视图
             if #available(iOS 14.0, *) {
                 let contentView = ContentView()

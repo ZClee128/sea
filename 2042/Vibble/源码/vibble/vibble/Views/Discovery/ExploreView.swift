@@ -11,6 +11,7 @@ struct ExploreView: View {
     @State private var selectedCategory = "K-Drama"
     @ObservedObject private var clubManager = ClubManager.shared
     @ObservedObject private var dramaManager = DramaManager.shared
+    @State private var showPostView = false
     
     let categories = [
         ("sparkles.fill", "K-Drama"),
@@ -115,8 +116,32 @@ struct ExploreView: View {
                     }
                     .padding(.top, 20)
                 }
+                
+                // Floating Action Button for Posting
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            showPostView = true
+                        }) {
+                            Image(systemName: "plus")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(.white)
+                                .frame(width: 60, height: 60)
+                                .background(Theme.Gradients.primaryGradient)
+                                .clipShape(Circle())
+                                .shadow(color: Theme.primary.opacity(0.4), radius: 10, x: 0, y: 5)
+                        }
+                        .padding(.trailing, 20)
+                        .padding(.bottom, 20)
+                    }
+                }
             }
             .navigationBarHidden(true)
+        }
+        .fullScreenCover(isPresented: $showPostView) {
+            PostView()
         }
     }
 }
