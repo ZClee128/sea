@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47E3E9035E7C8DB33657C7DD /* Pods_melonShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D970D8F3E01AF8F3D934684 /* Pods_melonShare.framework */; };
+		84EE412C2FBC526C006F1603 /* AuthWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41192FBC526C006F1603 /* AuthWelcomeView.swift */; };
+		84EE412D2FBC526C006F1603 /* CardGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE411A2FBC526C006F1603 /* CardGeneratorView.swift */; };
+		84EE412E2FBC526C006F1603 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE411B2FBC526C006F1603 /* ContentView.swift */; };
+		84EE412F2FBC526C006F1603 /* Drama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE411C2FBC526C006F1603 /* Drama.swift */; };
+		84EE41302FBC526C006F1603 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE411D2FBC526C006F1603 /* ExploreView.swift */; };
+		84EE41312FBC526C006F1603 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE411E2FBC526C006F1603 /* IAPManager.swift */; };
+		84EE41322FBC526C006F1603 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41202FBC526C006F1603 /* MainTabView.swift */; };
+		84EE41332FBC526C006F1603 /* melonShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41212FBC526C006F1603 /* melonShareApp.swift */; };
+		84EE41342FBC526C006F1603 /* PrivacyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41232FBC526C006F1603 /* PrivacyWebView.swift */; };
+		84EE41352FBC526C006F1603 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41242FBC526C006F1603 /* ProfileView.swift */; };
+		84EE41362FBC526C006F1603 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41252FBC526C006F1603 /* Theme.swift */; };
+		84EE41372FBC526C006F1603 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41262FBC526C006F1603 /* TrackerView.swift */; };
+		84EE41382FBC526C006F1603 /* TrailersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41272FBC526C006F1603 /* TrailersView.swift */; };
+		84EE41392FBC526C006F1603 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41282FBC526C006F1603 /* VideoManager.swift */; };
+		84EE413A2FBC526C006F1603 /* WatchlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41292FBC526C006F1603 /* WatchlistManager.swift */; };
+		84EE413B2FBC526C006F1603 /* 0519.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE410C2FBC526C006F1603 /* 0519.mp4 */; };
+		84EE413C2FBC526C006F1603 /* 0519(1).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE410D2FBC526C006F1603 /* 0519(1).mp4 */; };
+		84EE413D2FBC526C006F1603 /* 0519(2).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE410E2FBC526C006F1603 /* 0519(2).mp4 */; };
+		84EE413E2FBC526C006F1603 /* 0519(3).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE410F2FBC526C006F1603 /* 0519(3).mp4 */; };
+		84EE413F2FBC526C006F1603 /* 0519(4).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41102FBC526C006F1603 /* 0519(4).mp4 */; };
+		84EE41402FBC526C006F1603 /* 0519(5).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41112FBC526C006F1603 /* 0519(5).mp4 */; };
+		84EE41412FBC526C006F1603 /* 0519(6).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41122FBC526C006F1603 /* 0519(6).mp4 */; };
+		84EE41422FBC526C006F1603 /* 0519(7).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41132FBC526C006F1603 /* 0519(7).mp4 */; };
+		84EE41432FBC526C006F1603 /* 0519(8).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41142FBC526C006F1603 /* 0519(8).mp4 */; };
+		84EE41442FBC526C006F1603 /* 0519(9).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41152FBC526C006F1603 /* 0519(9).mp4 */; };
+		84EE41452FBC526C006F1603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41182FBC526C006F1603 /* Assets.xcassets */; };
+		84EE41472FBC526C006F1603 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41222FBC526C006F1603 /* PrivacyPolicy.html */; };
+		84EE41582FBC5335006F1603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414B2FBC5335006F1603 /* AppDelegate.swift */; };
+		84EE41592FBC5335006F1603 /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41492FBC5335006F1603 /* AppAdjustManager.swift */; };
+		84EE415A2FBC5335006F1603 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41562FBC5335006F1603 /* ProgressHUD.swift */; };
+		84EE415B2FBC5335006F1603 /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414F2FBC5335006F1603 /* AppRequestBaseModel.swift */; };
+		84EE415C2FBC5335006F1603 /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41512FBC5335006F1603 /* AppWebViewController.swift */; };
+		84EE415D2FBC5335006F1603 /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41552FBC5335006F1603 /* LocalPushScheduler.swift */; };
+		84EE415E2FBC5335006F1603 /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414D2FBC5335006F1603 /* AppPermissionTool.swift */; };
+		84EE415F2FBC5335006F1603 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41572FBC5335006F1603 /* WaitViewController.swift */; };
+		84EE41602FBC5335006F1603 /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41502FBC5335006F1603 /* AppRequestTool.swift */; };
+		84EE41612FBC5335006F1603 /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41542FBC5335006F1603 /* AppWebViewScriptDelegateHandler.swift */; };
+		84EE41622FBC5335006F1603 /* AppPushEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414E2FBC5335006F1603 /* AppPushEventStore.swift */; };
+		84EE41632FBC5335006F1603 /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41522FBC5335006F1603 /* AppWebViewHandleEvent.swift */; };
+		84EE41642FBC5335006F1603 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414A2FBC5335006F1603 /* AppConfig.swift */; };
+		84EE41652FBC5335006F1603 /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE414C2FBC5335006F1603 /* AppleIAPManager.swift */; };
+		84EE41662FBC5335006F1603 /* AppWebViewJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE41532FBC5335006F1603 /* AppWebViewJavascriptBridge.swift */; };
+		84EE41682FBC5439006F1603 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41672FBC5439006F1603 /* GoogleService-Info.plist */; };
+		84EE416A2FBC5D88006F1603 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE41692FBC5D88006F1603 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		793F027D75F60DA436D7F7C9 /* Pods-melonShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-melonShare.release.xcconfig"; path = "Target Support Files/Pods-melonShare/Pods-melonShare.release.xcconfig"; sourceTree = "<group>"; };
+		84EE40C52FBC2789006F1603 /* melonShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = melonShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EE410C2FBC526C006F1603 /* 0519.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0519.mp4; sourceTree = "<group>"; };
+		84EE410D2FBC526C006F1603 /* 0519(1).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(1).mp4"; sourceTree = "<group>"; };
+		84EE410E2FBC526C006F1603 /* 0519(2).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(2).mp4"; sourceTree = "<group>"; };
+		84EE410F2FBC526C006F1603 /* 0519(3).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(3).mp4"; sourceTree = "<group>"; };
+		84EE41102FBC526C006F1603 /* 0519(4).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(4).mp4"; sourceTree = "<group>"; };
+		84EE41112FBC526C006F1603 /* 0519(5).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(5).mp4"; sourceTree = "<group>"; };
+		84EE41122FBC526C006F1603 /* 0519(6).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(6).mp4"; sourceTree = "<group>"; };
+		84EE41132FBC526C006F1603 /* 0519(7).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(7).mp4"; sourceTree = "<group>"; };
+		84EE41142FBC526C006F1603 /* 0519(8).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(8).mp4"; sourceTree = "<group>"; };
+		84EE41152FBC526C006F1603 /* 0519(9).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0519(9).mp4"; sourceTree = "<group>"; };
+		84EE41182FBC526C006F1603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84EE41192FBC526C006F1603 /* AuthWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWelcomeView.swift; sourceTree = "<group>"; };
+		84EE411A2FBC526C006F1603 /* CardGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGeneratorView.swift; sourceTree = "<group>"; };
+		84EE411B2FBC526C006F1603 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84EE411C2FBC526C006F1603 /* Drama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drama.swift; sourceTree = "<group>"; };
+		84EE411D2FBC526C006F1603 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		84EE411E2FBC526C006F1603 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		84EE411F2FBC526C006F1603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EE41202FBC526C006F1603 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84EE41212FBC526C006F1603 /* melonShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melonShareApp.swift; sourceTree = "<group>"; };
+		84EE41222FBC526C006F1603 /* PrivacyPolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
+		84EE41232FBC526C006F1603 /* PrivacyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyWebView.swift; sourceTree = "<group>"; };
+		84EE41242FBC526C006F1603 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		84EE41252FBC526C006F1603 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		84EE41262FBC526C006F1603 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
+		84EE41272FBC526C006F1603 /* TrailersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersView.swift; sourceTree = "<group>"; };
+		84EE41282FBC526C006F1603 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		84EE41292FBC526C006F1603 /* WatchlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistManager.swift; sourceTree = "<group>"; };
+		84EE41492FBC5335006F1603 /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84EE414A2FBC5335006F1603 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84EE414B2FBC5335006F1603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84EE414C2FBC5335006F1603 /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84EE414D2FBC5335006F1603 /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84EE414E2FBC5335006F1603 /* AppPushEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPushEventStore.swift; sourceTree = "<group>"; };
+		84EE414F2FBC5335006F1603 /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84EE41502FBC5335006F1603 /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84EE41512FBC5335006F1603 /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84EE41522FBC5335006F1603 /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84EE41532FBC5335006F1603 /* AppWebViewJavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewJavascriptBridge.swift; sourceTree = "<group>"; };
+		84EE41542FBC5335006F1603 /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84EE41552FBC5335006F1603 /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84EE41562FBC5335006F1603 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84EE41572FBC5335006F1603 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84EE41672FBC5439006F1603 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84EE41692FBC5D88006F1603 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9D970D8F3E01AF8F3D934684 /* Pods_melonShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_melonShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA09B67BC20A00A4CDD9033 /* Pods-melonShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-melonShare.debug.xcconfig"; path = "Target Support Files/Pods-melonShare/Pods-melonShare.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84EE40C22FBC2789006F1603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47E3E9035E7C8DB33657C7DD /* Pods_melonShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84EE40BC2FBC2789006F1603 = {
+			isa = PBXGroup;
+			children = (
+				84EE412A2FBC526C006F1603 /* melonShare */,
+				84EE40C62FBC2789006F1603 /* Products */,
+				F4C1AEDF763D3A46B3FEB8F7 /* Pods */,
+				D62F10F565DAF1791E0DC353 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84EE40C62FBC2789006F1603 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84EE40C52FBC2789006F1603 /* melonShare.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84EE41162FBC526C006F1603 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				84EE410C2FBC526C006F1603 /* 0519.mp4 */,
+				84EE410D2FBC526C006F1603 /* 0519(1).mp4 */,
+				84EE410E2FBC526C006F1603 /* 0519(2).mp4 */,
+				84EE410F2FBC526C006F1603 /* 0519(3).mp4 */,
+				84EE41102FBC526C006F1603 /* 0519(4).mp4 */,
+				84EE41112FBC526C006F1603 /* 0519(5).mp4 */,
+				84EE41122FBC526C006F1603 /* 0519(6).mp4 */,
+				84EE41132FBC526C006F1603 /* 0519(7).mp4 */,
+				84EE41142FBC526C006F1603 /* 0519(8).mp4 */,
+				84EE41152FBC526C006F1603 /* 0519(9).mp4 */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		84EE412A2FBC526C006F1603 /* melonShare */ = {
+			isa = PBXGroup;
+			children = (
+				84EE41482FBC5314006F1603 /* ix */,
+				84EE41162FBC526C006F1603 /* video */,
+				84EE41182FBC526C006F1603 /* Assets.xcassets */,
+				84EE41192FBC526C006F1603 /* AuthWelcomeView.swift */,
+				84EE411A2FBC526C006F1603 /* CardGeneratorView.swift */,
+				84EE411B2FBC526C006F1603 /* ContentView.swift */,
+				84EE411C2FBC526C006F1603 /* Drama.swift */,
+				84EE411D2FBC526C006F1603 /* ExploreView.swift */,
+				84EE411E2FBC526C006F1603 /* IAPManager.swift */,
+				84EE411F2FBC526C006F1603 /* Info.plist */,
+				84EE41202FBC526C006F1603 /* MainTabView.swift */,
+				84EE41212FBC526C006F1603 /* melonShareApp.swift */,
+				84EE41222FBC526C006F1603 /* PrivacyPolicy.html */,
+				84EE41232FBC526C006F1603 /* PrivacyWebView.swift */,
+				84EE41242FBC526C006F1603 /* ProfileView.swift */,
+				84EE41252FBC526C006F1603 /* Theme.swift */,
+				84EE41262FBC526C006F1603 /* TrackerView.swift */,
+				84EE41272FBC526C006F1603 /* TrailersView.swift */,
+				84EE41282FBC526C006F1603 /* VideoManager.swift */,
+				84EE41292FBC526C006F1603 /* WatchlistManager.swift */,
+				84EE41692FBC5D88006F1603 /* Launch Screen.storyboard */,
+			);
+			path = melonShare;
+			sourceTree = "<group>";
+		};
+		84EE41482FBC5314006F1603 /* ix */ = {
+			isa = PBXGroup;
+			children = (
+				84EE41492FBC5335006F1603 /* AppAdjustManager.swift */,
+				84EE414A2FBC5335006F1603 /* AppConfig.swift */,
+				84EE414B2FBC5335006F1603 /* AppDelegate.swift */,
+				84EE414C2FBC5335006F1603 /* AppleIAPManager.swift */,
+				84EE414D2FBC5335006F1603 /* AppPermissionTool.swift */,
+				84EE414E2FBC5335006F1603 /* AppPushEventStore.swift */,
+				84EE41672FBC5439006F1603 /* GoogleService-Info.plist */,
+				84EE414F2FBC5335006F1603 /* AppRequestBaseModel.swift */,
+				84EE41502FBC5335006F1603 /* AppRequestTool.swift */,
+				84EE41512FBC5335006F1603 /* AppWebViewController.swift */,
+				84EE41522FBC5335006F1603 /* AppWebViewHandleEvent.swift */,
+				84EE41532FBC5335006F1603 /* AppWebViewJavascriptBridge.swift */,
+				84EE41542FBC5335006F1603 /* AppWebViewScriptDelegateHandler.swift */,
+				84EE41552FBC5335006F1603 /* LocalPushScheduler.swift */,
+				84EE41562FBC5335006F1603 /* ProgressHUD.swift */,
+				84EE41572FBC5335006F1603 /* WaitViewController.swift */,
+			);
+			path = ix;
+			sourceTree = "<group>";
+		};
+		D62F10F565DAF1791E0DC353 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D970D8F3E01AF8F3D934684 /* Pods_melonShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4C1AEDF763D3A46B3FEB8F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDA09B67BC20A00A4CDD9033 /* Pods-melonShare.debug.xcconfig */,
+				793F027D75F60DA436D7F7C9 /* Pods-melonShare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84EE40C42FBC2789006F1603 /* melonShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EE40D02FBC278B006F1603 /* Build configuration list for PBXNativeTarget "melonShare" */;
+			buildPhases = (
+				0B835EE597E050418514881C /* [CP] Check Pods Manifest.lock */,
+				84EE40C12FBC2789006F1603 /* Sources */,
+				84EE40C22FBC2789006F1603 /* Frameworks */,
+				84EE40C32FBC2789006F1603 /* Resources */,
+				75F1D17D1F591B9646895F95 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = melonShare;
+			productName = melonShare;
+			productReference = 84EE40C52FBC2789006F1603 /* melonShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84EE40BD2FBC2789006F1603 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					84EE40C42FBC2789006F1603 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 84EE40C02FBC2789006F1603 /* Build configuration list for PBXProject "melonShare" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84EE40BC2FBC2789006F1603;
+			productRefGroup = 84EE40C62FBC2789006F1603 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84EE40C42FBC2789006F1603 /* melonShare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84EE40C32FBC2789006F1603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EE41682FBC5439006F1603 /* GoogleService-Info.plist in Resources */,
+				84EE413B2FBC526C006F1603 /* 0519.mp4 in Resources */,
+				84EE413C2FBC526C006F1603 /* 0519(1).mp4 in Resources */,
+				84EE413D2FBC526C006F1603 /* 0519(2).mp4 in Resources */,
+				84EE413E2FBC526C006F1603 /* 0519(3).mp4 in Resources */,
+				84EE413F2FBC526C006F1603 /* 0519(4).mp4 in Resources */,
+				84EE416A2FBC5D88006F1603 /* Launch Screen.storyboard in Resources */,
+				84EE41402FBC526C006F1603 /* 0519(5).mp4 in Resources */,
+				84EE41412FBC526C006F1603 /* 0519(6).mp4 in Resources */,
+				84EE41422FBC526C006F1603 /* 0519(7).mp4 in Resources */,
+				84EE41432FBC526C006F1603 /* 0519(8).mp4 in Resources */,
+				84EE41442FBC526C006F1603 /* 0519(9).mp4 in Resources */,
+				84EE41452FBC526C006F1603 /* Assets.xcassets in Resources */,
+				84EE41472FBC526C006F1603 /* PrivacyPolicy.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B835EE597E050418514881C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-melonShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75F1D17D1F591B9646895F95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-melonShare/Pods-melonShare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-melonShare/Pods-melonShare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-melonShare/Pods-melonShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84EE40C12FBC2789006F1603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EE41582FBC5335006F1603 /* AppDelegate.swift in Sources */,
+				84EE41592FBC5335006F1603 /* AppAdjustManager.swift in Sources */,
+				84EE415A2FBC5335006F1603 /* ProgressHUD.swift in Sources */,
+				84EE415B2FBC5335006F1603 /* AppRequestBaseModel.swift in Sources */,
+				84EE415C2FBC5335006F1603 /* AppWebViewController.swift in Sources */,
+				84EE415D2FBC5335006F1603 /* LocalPushScheduler.swift in Sources */,
+				84EE415E2FBC5335006F1603 /* AppPermissionTool.swift in Sources */,
+				84EE415F2FBC5335006F1603 /* WaitViewController.swift in Sources */,
+				84EE41602FBC5335006F1603 /* AppRequestTool.swift in Sources */,
+				84EE41612FBC5335006F1603 /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84EE41622FBC5335006F1603 /* AppPushEventStore.swift in Sources */,
+				84EE41632FBC5335006F1603 /* AppWebViewHandleEvent.swift in Sources */,
+				84EE41642FBC5335006F1603 /* AppConfig.swift in Sources */,
+				84EE41652FBC5335006F1603 /* AppleIAPManager.swift in Sources */,
+				84EE41662FBC5335006F1603 /* AppWebViewJavascriptBridge.swift in Sources */,
+				84EE412C2FBC526C006F1603 /* AuthWelcomeView.swift in Sources */,
+				84EE412D2FBC526C006F1603 /* CardGeneratorView.swift in Sources */,
+				84EE412E2FBC526C006F1603 /* ContentView.swift in Sources */,
+				84EE412F2FBC526C006F1603 /* Drama.swift in Sources */,
+				84EE41302FBC526C006F1603 /* ExploreView.swift in Sources */,
+				84EE41312FBC526C006F1603 /* IAPManager.swift in Sources */,
+				84EE41322FBC526C006F1603 /* MainTabView.swift in Sources */,
+				84EE41332FBC526C006F1603 /* melonShareApp.swift in Sources */,
+				84EE41342FBC526C006F1603 /* PrivacyWebView.swift in Sources */,
+				84EE41352FBC526C006F1603 /* ProfileView.swift in Sources */,
+				84EE41362FBC526C006F1603 /* Theme.swift in Sources */,
+				84EE41372FBC526C006F1603 /* TrackerView.swift in Sources */,
+				84EE41382FBC526C006F1603 /* TrailersView.swift in Sources */,
+				84EE41392FBC526C006F1603 /* VideoManager.swift in Sources */,
+				84EE413A2FBC526C006F1603 /* WatchlistManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84EE40CE2FBC278B006F1603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84EE40CF2FBC278B006F1603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84EE40D12FBC278B006F1603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA09B67BC20A00A4CDD9033 /* Pods-melonShare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = melonShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MelonShare;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera to take photos for your profile avatar and user reviews.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone to support audio narration in reviews.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to let you choose custom avatars for your profile.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melonShare.ele;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84EE40D22FBC278B006F1603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 793F027D75F60DA436D7F7C9 /* Pods-melonShare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = melonShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MelonShare;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to camera to take photos for your profile avatar and user reviews.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to microphone to support audio narration in reviews.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to let you choose custom avatars for your profile.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melonShare.ele;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84EE40C02FBC2789006F1603 /* Build configuration list for PBXProject "melonShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EE40CE2FBC278B006F1603 /* Debug */,
+				84EE40CF2FBC278B006F1603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84EE40D02FBC278B006F1603 /* Build configuration list for PBXNativeTarget "melonShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EE40D12FBC278B006F1603 /* Debug */,
+				84EE40D22FBC278B006F1603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84EE40BD2FBC2789006F1603 /* Project object */;
+}
