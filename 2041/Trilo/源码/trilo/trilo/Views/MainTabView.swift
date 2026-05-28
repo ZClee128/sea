@@ -11,6 +11,14 @@ struct MainTabView: View {
                 }
             
             if #available(iOS 15.0, *) {
+                TodoView()
+                    .tabItem {
+                        Image(systemName: "list.bullet.rectangle.portrait")
+                        Text("Tasks")
+                    }
+            }
+            
+            if #available(iOS 15.0, *) {
                 MoodSelectorView()
                     .tabItem {
                         Image(systemName: "sparkles")

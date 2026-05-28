@@ -7,6 +7,7 @@ struct TimerView: View {
     @ObservedObject var audioManager = AudioManager.shared
     @AppStorage("selectedMoodImage") var selectedMoodImage: String = "mood_default"
     @AppStorage("selectedMoodSound") var selectedMoodSound: String = "ambient_library"
+    @State private var isBreathing = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -68,6 +69,49 @@ struct TimerView: View {
                             .shadow(radius: 5)
                             .lineLimit(1)
                         
+                        // Current Focus Task Card (Glassmorphic Material)
+                        if #available(iOS 15.0, *) {
+                            if let activeTodo = TodoManager.shared.activeFocusTodo {
+                                HStack(spacing: 12) {
+                                    Image(systemName: "bolt.fill")
+                                        .foregroundColor(.orange)
+                                        .font(.system(size: 14))
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("CURRENT FOCUS TARGET")
+                                            .font(.system(size: 9, weight: .black))
+                                            .foregroundColor(.blue.opacity(0.8))
+                                            .kerning(1.2)
+                                        Text(activeTodo.title)
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(.primary)
+                                            .lineLimit(1)
+                                    }
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .background(.ultraThinMaterial)
+                                .cornerRadius(12)
+                                .shadow(color: .black.opacity(0.08), radius: 5, x: 0, y: 2)
+                                .padding(.horizontal, 30)
+                                .transition(.asymmetric(insertion: .scale.combined(with: .opacity), removal: .opacity))
+                            } else {
+                                HStack {
+                                    Image(systemName: "list.bullet.rectangle.portrait")
+                                        .foregroundColor(.white.opacity(0.6))
+                                    Text("No focus task selected")
+                                        .font(.system(size: 12, weight: .semibold))
+                                        .foregroundColor(.white.opacity(0.8))
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .background(Color.white.opacity(0.12))
+                                .cornerRadius(12)
+                                .padding(.horizontal, 30)
+                            }
+                        }
+                        
                         // Mode Selectors
                         HStack(spacing: 12) {
                             ForEach(TimerManager.TimerMode.allCases) { mode in
@@ -85,6 +129,25 @@ struct TimerView: View {
                         
                         // Circular Timer
                         ZStack {
+                            // Pulsing Breathing Halo
+                            if timerManager.isActive {
+                                Circle()
+                                    .fill(Color.blue.opacity(0.18))
+                                    .scaleEffect(isBreathing ? 1.2 : 0.95)
+                                    .blur(radius: isBreathing ? 20 : 8)
+                                    .animation(
+                                        .easeInOut(duration: 2.0)
+                                        .repeatForever(autoreverses: true),
+                                        value: isBreathing
+                                    )
+                                    .onAppear {
+                                        isBreathing = true
+                                    }
+                                    .onDisappear {
+                                        isBreathing = false
+                                    }
+                            }
+                            
                             Circle()
                                 .stroke(lineWidth: 6)
                                 .opacity(0.2)

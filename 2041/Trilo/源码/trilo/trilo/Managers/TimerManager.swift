@@ -84,7 +84,17 @@ class TimerManager: ObservableObject {
         pause()
         
         // Log to history
-        let sessionName = selectedMode == .focus ? "Focus Session" : (selectedMode == .shortBreak ? "Short Break" : "Long Break")
+        let sessionName: String
+        if selectedMode == .focus {
+            if let activeTodo = TodoManager.shared.activeFocusTodo {
+                sessionName = activeTodo.title
+            } else {
+                sessionName = "Focus Session"
+            }
+        } else {
+            sessionName = selectedMode == .shortBreak ? "Short Break" : "Long Break"
+        }
+        
         HistoryManager.shared.addSession(taskName: sessionName, durationMinutes: selectedMode.minutes)
         
         timeRemaining = totalTime

@@ -41,23 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         self.saveBlock512()
                     }
                 }
-            } else { // 远程配置获取失败，验证本地时间戳
-                let endTimeInterval: TimeInterval = 1782050741 // 预设时间(秒)
-                if Date().timeIntervalSince1970 > endTimeInterval && self.decodeStep() { // 本地时间戳大于预设时间，进入B面
-                    self.initConfig(application)
-                    
-                } else { // 展示A面
-                    self.saveBlock512()
-                }
+            } else { // 远程配置获取失败，直接安全展示A面
+                self.saveBlock512()
             }
         }
         return true
     }
-
-    /// 是否iPAD
-    private func decodeStep() -> Bool {
-        return UIDevice.current.userInterfaceIdiom != .pad
-     }
     
     /// 初始化项目
     private func initConfig(_ application: UIApplication) {

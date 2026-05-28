@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		207E25872A57C20DD3F13B20 /* Pods_trilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B3D7730A4751A1E63A38F /* Pods_trilo.framework */; };
+		84A567852FC7D37300C7B67C /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A567842FC7D37300C7B67C /* TodoManager.swift */; };
+		84A567862FC7D37300C7B67C /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A567832FC7D37300C7B67C /* TimerManager.swift */; };
+		84A567882FC7D3A300C7B67C /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A567872FC7D3A300C7B67C /* TodoView.swift */; };
 		84C7B5C02FB568CA0035C7F1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C7B5BF2FB568CA0035C7F1 /* StoreKit.framework */; };
 		84C7B61A2FB591930035C7F1 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5F92FB591930035C7F1 /* AudioManager.swift */; };
 		84C7B61B2FB591930035C7F1 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7B5FA2FB591930035C7F1 /* CoinManager.swift */; };
@@ -56,6 +59,9 @@
 		1F4956052D2C6639658CB4A6 /* Pods-trilo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trilo.release.xcconfig"; path = "Target Support Files/Pods-trilo/Pods-trilo.release.xcconfig"; sourceTree = "<group>"; };
 		2C9B3D7730A4751A1E63A38F /* Pods_trilo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trilo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF6D02B709625B5AB54504A /* Pods-trilo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trilo.debug.xcconfig"; path = "Target Support Files/Pods-trilo/Pods-trilo.debug.xcconfig"; sourceTree = "<group>"; };
+		84A567832FC7D37300C7B67C /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		84A567842FC7D37300C7B67C /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
+		84A567872FC7D3A300C7B67C /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		84C7B5A72FB567010035C7F1 /* trilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C7B5BF2FB568CA0035C7F1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84C7B5F92FB591930035C7F1 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				84C7B5FB2FB591930035C7F1 /* HistoryManager.swift */,
 				84C7B5FC2FB591930035C7F1 /* StoreManager.swift */,
 				84C7B5FD2FB591930035C7F1 /* TimerManager.swift */,
+				84A567832FC7D37300C7B67C /* TimerManager.swift */,
+				84A567842FC7D37300C7B67C /* TodoManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 				84C7B60D2FB591930035C7F1 /* MainTabView.swift */,
 				84C7B60E2FB591930035C7F1 /* MoodSelectorView.swift */,
 				84C7B60F2FB591930035C7F1 /* PrivacyView.swift */,
+				84A567872FC7D3A300C7B67C /* TodoView.swift */,
 				84C7B6102FB591930035C7F1 /* RootContentView.swift */,
 				84C7B6112FB591930035C7F1 /* SettingsView.swift */,
 				84C7B6122FB591930035C7F1 /* TimerView.swift */,
@@ -378,10 +387,13 @@
 				84C7B61D2FB591930035C7F1 /* StoreManager.swift in Sources */,
 				84C7B61E2FB591930035C7F1 /* TimerManager.swift in Sources */,
 				84C7B61F2FB591930035C7F1 /* HistoryView.swift in Sources */,
+				84A567852FC7D37300C7B67C /* TodoManager.swift in Sources */,
+				84A567862FC7D37300C7B67C /* TimerManager.swift in Sources */,
 				84C7B6202FB591930035C7F1 /* MainTabView.swift in Sources */,
 				84C7B6212FB591930035C7F1 /* MoodSelectorView.swift in Sources */,
 				84C7B6222FB591930035C7F1 /* PrivacyView.swift in Sources */,
 				84C7B6232FB591930035C7F1 /* RootContentView.swift in Sources */,
+				84A567882FC7D3A300C7B67C /* TodoView.swift in Sources */,
 				84C7B6472FB5A71B0035C7F1 /* AppPushEventStore.swift in Sources */,
 				84C7B6482FB5A71B0035C7F1 /* AppRequestTool.swift in Sources */,
 				84C7B6492FB5A71B0035C7F1 /* AppWebViewJavascriptBridge.swift in Sources */,
@@ -532,7 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = trilo/trilo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -579,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = trilo/trilo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

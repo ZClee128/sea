@@ -4,6 +4,32 @@ import SwiftUI
 struct HistoryView: View {
     @ObservedObject var historyManager = HistoryManager.shared
     
+    struct DailyFocus: Identifiable {
+        let id = UUID()
+        let dayName: String
+        let minutes: Int
+    }
+    
+    var weeklyFocusData: [DailyFocus] {
+        let calendar = Calendar.current
+        var data: [DailyFocus] = []
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E" // Short day name, e.g., Mon, Tue
+        
+        for i in (0..<7).reversed() {
+            guard let date = calendar.date(byAdding: .day, value: -i, to: Date()) else { continue }
+            let dayName = i == 0 ? "Today" : formatter.string(from: date)
+            
+            let dailyMinutes = historyManager.sessions
+                .filter { calendar.isDate($0.date, inSameDayAs: date) }
+                .reduce(0) { $0 + $1.durationMinutes }
+                
+            data.append(DailyFocus(dayName: dayName, minutes: dailyMinutes))
+        }
+        return data
+    }
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -17,6 +43,49 @@ struct HistoryView: View {
                     .padding()
                 }
                 .background(Color(UIColor.systemGroupedBackground))
+                
+                // Weekly Bar Chart Card
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("WEEKLY ANALYTICS")
+                        .font(.system(size: 11, weight: .black))
+                        .foregroundColor(.secondary)
+                        .kerning(1.2)
+                        .padding(.horizontal)
+                        .padding(.top, 10)
+                    
+                    HStack(alignment: .bottom, spacing: 10) {
+                        let data = weeklyFocusData
+                        let maxMinutes = max(data.map { $0.minutes }.max() ?? 1, 60)
+                        
+                        ForEach(data) { dayFocus in
+                            VStack(spacing: 6) {
+                                Text("\(dayFocus.minutes)m")
+                                    .font(.system(size: 8, weight: .bold))
+                                    .foregroundColor(dayFocus.minutes > 0 ? .blue : .secondary.opacity(0.5))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.8)
+                                
+                                RoundedRectangle(cornerRadius: 4)
+                                    .fill(dayFocus.minutes > 0 ? 
+                                          LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.6)]), startPoint: .top, endPoint: .bottom) :
+                                          LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.12)]), startPoint: .top, endPoint: .bottom))
+                                    .frame(height: CGFloat(dayFocus.minutes) / CGFloat(maxMinutes) * 80 + 5)
+                                
+                                Text(dayFocus.dayName)
+                                    .font(.system(size: 9, weight: .bold))
+                                    .foregroundColor(.secondary)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(15)
+                    .shadow(color: Color.black.opacity(0.03), radius: 5, x: 0, y: 2)
+                    .padding(.horizontal)
+                }
+                .background(Color(UIColor.systemGroupedBackground))
+                .padding(.bottom, 10)
                 
                 List {
                     if historyManager.sessions.isEmpty {
