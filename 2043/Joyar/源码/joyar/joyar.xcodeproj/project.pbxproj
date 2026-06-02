@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72E8277D369AF97533522EC8 /* Pods_joyar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE950D0ABCA300FA4CC0E779 /* Pods_joyar.framework */; };
+		84036D482FCE83FB008437AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84036D472FCE83FB008437AD /* StoreKit.framework */; };
+		84036D632FCE86E0008437AD /* ChatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D532FCE86E0008437AD /* ChatViews.swift */; };
+		84036D642FCE86E0008437AD /* CommunityViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D542FCE86E0008437AD /* CommunityViews.swift */; };
+		84036D652FCE86E0008437AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D552FCE86E0008437AD /* ContentView.swift */; };
+		84036D662FCE86E0008437AD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D562FCE86E0008437AD /* DataService.swift */; };
+		84036D672FCE86E0008437AD /* FitnessModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D572FCE86E0008437AD /* FitnessModels.swift */; };
+		84036D682FCE86E0008437AD /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D5C2FCE86E0008437AD /* PrivacyPolicyView.swift */; };
+		84036D692FCE86E0008437AD /* RootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D5E2FCE86E0008437AD /* RootContentView.swift */; };
+		84036D6A2FCE86E0008437AD /* SettingsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D5F2FCE86E0008437AD /* SettingsViews.swift */; };
+		84036D6B2FCE86E0008437AD /* VideoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D602FCE86E0008437AD /* VideoViews.swift */; };
+		84036D6C2FCE86E0008437AD /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84036D4C2FCE86E0008437AD /* 1.mp4 */; };
+		84036D6D2FCE86E0008437AD /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84036D4D2FCE86E0008437AD /* 2.mp4 */; };
+		84036D6E2FCE86E0008437AD /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84036D4E2FCE86E0008437AD /* 3.mp4 */; };
+		84036D6F2FCE86E0008437AD /* 4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84036D4F2FCE86E0008437AD /* 4.mp4 */; };
+		84036D702FCE86E0008437AD /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84036D502FCE86E0008437AD /* 5.mp4 */; };
+		84036D712FCE86E0008437AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84036D522FCE86E0008437AD /* Assets.xcassets */; };
+		84036D732FCE86E0008437AD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84036D5A2FCE86E0008437AD /* Launch Screen.storyboard */; };
+		84036D742FCE86E0008437AD /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 84036D5B2FCE86E0008437AD /* privacy_policy.html */; };
+		84036D752FCE86E0008437AD /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 84036D5D2FCE86E0008437AD /* Products.storekit */; };
+		84036D862FCE889D008437AD /* AppPushEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7C2FCE889D008437AD /* AppPushEventStore.swift */; };
+		84036D872FCE889D008437AD /* AppAdjustManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D772FCE889D008437AD /* AppAdjustManager.swift */; };
+		84036D882FCE889D008437AD /* AppWebViewJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D812FCE889D008437AD /* AppWebViewJavascriptBridge.swift */; };
+		84036D892FCE889D008437AD /* AppWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7F2FCE889D008437AD /* AppWebViewController.swift */; };
+		84036D8A2FCE889D008437AD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D782FCE889D008437AD /* AppConfig.swift */; };
+		84036D8B2FCE889D008437AD /* LocalPushScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D832FCE889D008437AD /* LocalPushScheduler.swift */; };
+		84036D8C2FCE889D008437AD /* AppWebViewScriptDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D822FCE889D008437AD /* AppWebViewScriptDelegateHandler.swift */; };
+		84036D8D2FCE889D008437AD /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D842FCE889D008437AD /* ProgressHUD.swift */; };
+		84036D8E2FCE889D008437AD /* AppRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7E2FCE889D008437AD /* AppRequestTool.swift */; };
+		84036D8F2FCE889D008437AD /* AppPermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7B2FCE889D008437AD /* AppPermissionTool.swift */; };
+		84036D902FCE889D008437AD /* AppWebViewHandleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D802FCE889D008437AD /* AppWebViewHandleEvent.swift */; };
+		84036D912FCE889D008437AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D792FCE889D008437AD /* AppDelegate.swift */; };
+		84036D922FCE889D008437AD /* AppleIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7A2FCE889D008437AD /* AppleIAPManager.swift */; };
+		84036D932FCE889D008437AD /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D852FCE889D008437AD /* WaitViewController.swift */; };
+		84036D942FCE889D008437AD /* AppRequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84036D7D2FCE889D008437AD /* AppRequestBaseModel.swift */; };
+		84036D962FCE9104008437AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84036D952FCE9103008437AD /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		354651E1011CBA9D81B1629D /* Pods-joyar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joyar.release.xcconfig"; path = "Target Support Files/Pods-joyar/Pods-joyar.release.xcconfig"; sourceTree = "<group>"; };
+		646FBA35931C2A8B258E4EF8 /* Pods-joyar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joyar.debug.xcconfig"; path = "Target Support Files/Pods-joyar/Pods-joyar.debug.xcconfig"; sourceTree = "<group>"; };
+		84036D042FCDC850008437AD /* joyar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = joyar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84036D472FCE83FB008437AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84036D4C2FCE86E0008437AD /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		84036D4D2FCE86E0008437AD /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
+		84036D4E2FCE86E0008437AD /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
+		84036D4F2FCE86E0008437AD /* 4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.mp4; sourceTree = "<group>"; };
+		84036D502FCE86E0008437AD /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
+		84036D522FCE86E0008437AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84036D532FCE86E0008437AD /* ChatViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViews.swift; sourceTree = "<group>"; };
+		84036D542FCE86E0008437AD /* CommunityViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViews.swift; sourceTree = "<group>"; };
+		84036D552FCE86E0008437AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84036D562FCE86E0008437AD /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		84036D572FCE86E0008437AD /* FitnessModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessModels.swift; sourceTree = "<group>"; };
+		84036D582FCE86E0008437AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84036D592FCE86E0008437AD /* joyar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = joyar.entitlements; sourceTree = "<group>"; };
+		84036D5A2FCE86E0008437AD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84036D5B2FCE86E0008437AD /* privacy_policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
+		84036D5C2FCE86E0008437AD /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		84036D5D2FCE86E0008437AD /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		84036D5E2FCE86E0008437AD /* RootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContentView.swift; sourceTree = "<group>"; };
+		84036D5F2FCE86E0008437AD /* SettingsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViews.swift; sourceTree = "<group>"; };
+		84036D602FCE86E0008437AD /* VideoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViews.swift; sourceTree = "<group>"; };
+		84036D772FCE889D008437AD /* AppAdjustManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdjustManager.swift; sourceTree = "<group>"; };
+		84036D782FCE889D008437AD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		84036D792FCE889D008437AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84036D7A2FCE889D008437AD /* AppleIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIAPManager.swift; sourceTree = "<group>"; };
+		84036D7B2FCE889D008437AD /* AppPermissionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissionTool.swift; sourceTree = "<group>"; };
+		84036D7C2FCE889D008437AD /* AppPushEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPushEventStore.swift; sourceTree = "<group>"; };
+		84036D7D2FCE889D008437AD /* AppRequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestBaseModel.swift; sourceTree = "<group>"; };
+		84036D7E2FCE889D008437AD /* AppRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestTool.swift; sourceTree = "<group>"; };
+		84036D7F2FCE889D008437AD /* AppWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewController.swift; sourceTree = "<group>"; };
+		84036D802FCE889D008437AD /* AppWebViewHandleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewHandleEvent.swift; sourceTree = "<group>"; };
+		84036D812FCE889D008437AD /* AppWebViewJavascriptBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewJavascriptBridge.swift; sourceTree = "<group>"; };
+		84036D822FCE889D008437AD /* AppWebViewScriptDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebViewScriptDelegateHandler.swift; sourceTree = "<group>"; };
+		84036D832FCE889D008437AD /* LocalPushScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushScheduler.swift; sourceTree = "<group>"; };
+		84036D842FCE889D008437AD /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		84036D852FCE889D008437AD /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		84036D952FCE9103008437AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE950D0ABCA300FA4CC0E779 /* Pods_joyar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_joyar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84036D012FCDC850008437AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84036D482FCE83FB008437AD /* StoreKit.framework in Frameworks */,
+				72E8277D369AF97533522EC8 /* Pods_joyar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84036CFB2FCDC850008437AD = {
+			isa = PBXGroup;
+			children = (
+				84036D612FCE86E0008437AD /* joyar */,
+				84036D462FCE83FB008437AD /* Frameworks */,
+				84036D052FCDC850008437AD /* Products */,
+				8FB2EA223617938026CBF57E /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84036D052FCDC850008437AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84036D042FCDC850008437AD /* joyar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84036D462FCE83FB008437AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84036D472FCE83FB008437AD /* StoreKit.framework */,
+				BE950D0ABCA300FA4CC0E779 /* Pods_joyar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84036D612FCE86E0008437AD /* joyar */ = {
+			isa = PBXGroup;
+			children = (
+				84036D762FCE8884008437AD /* more */,
+				84036D4C2FCE86E0008437AD /* 1.mp4 */,
+				84036D4D2FCE86E0008437AD /* 2.mp4 */,
+				84036D4E2FCE86E0008437AD /* 3.mp4 */,
+				84036D4F2FCE86E0008437AD /* 4.mp4 */,
+				84036D502FCE86E0008437AD /* 5.mp4 */,
+				84036D522FCE86E0008437AD /* Assets.xcassets */,
+				84036D532FCE86E0008437AD /* ChatViews.swift */,
+				84036D542FCE86E0008437AD /* CommunityViews.swift */,
+				84036D552FCE86E0008437AD /* ContentView.swift */,
+				84036D562FCE86E0008437AD /* DataService.swift */,
+				84036D572FCE86E0008437AD /* FitnessModels.swift */,
+				84036D582FCE86E0008437AD /* Info.plist */,
+				84036D592FCE86E0008437AD /* joyar.entitlements */,
+				84036D5A2FCE86E0008437AD /* Launch Screen.storyboard */,
+				84036D5B2FCE86E0008437AD /* privacy_policy.html */,
+				84036D5C2FCE86E0008437AD /* PrivacyPolicyView.swift */,
+				84036D5D2FCE86E0008437AD /* Products.storekit */,
+				84036D5E2FCE86E0008437AD /* RootContentView.swift */,
+				84036D5F2FCE86E0008437AD /* SettingsViews.swift */,
+				84036D602FCE86E0008437AD /* VideoViews.swift */,
+			);
+			path = joyar;
+			sourceTree = "<group>";
+		};
+		84036D762FCE8884008437AD /* more */ = {
+			isa = PBXGroup;
+			children = (
+				84036D772FCE889D008437AD /* AppAdjustManager.swift */,
+				84036D782FCE889D008437AD /* AppConfig.swift */,
+				84036D792FCE889D008437AD /* AppDelegate.swift */,
+				84036D7A2FCE889D008437AD /* AppleIAPManager.swift */,
+				84036D7B2FCE889D008437AD /* AppPermissionTool.swift */,
+				84036D952FCE9103008437AD /* GoogleService-Info.plist */,
+				84036D7C2FCE889D008437AD /* AppPushEventStore.swift */,
+				84036D7D2FCE889D008437AD /* AppRequestBaseModel.swift */,
+				84036D7E2FCE889D008437AD /* AppRequestTool.swift */,
+				84036D7F2FCE889D008437AD /* AppWebViewController.swift */,
+				84036D802FCE889D008437AD /* AppWebViewHandleEvent.swift */,
+				84036D812FCE889D008437AD /* AppWebViewJavascriptBridge.swift */,
+				84036D822FCE889D008437AD /* AppWebViewScriptDelegateHandler.swift */,
+				84036D832FCE889D008437AD /* LocalPushScheduler.swift */,
+				84036D842FCE889D008437AD /* ProgressHUD.swift */,
+				84036D852FCE889D008437AD /* WaitViewController.swift */,
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		8FB2EA223617938026CBF57E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				646FBA35931C2A8B258E4EF8 /* Pods-joyar.debug.xcconfig */,
+				354651E1011CBA9D81B1629D /* Pods-joyar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84036D032FCDC850008437AD /* joyar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84036D0F2FCDC852008437AD /* Build configuration list for PBXNativeTarget "joyar" */;
+			buildPhases = (
+				157765CB3BBE736A4F7FC0D1 /* [CP] Check Pods Manifest.lock */,
+				84036D002FCDC850008437AD /* Sources */,
+				84036D012FCDC850008437AD /* Frameworks */,
+				84036D022FCDC850008437AD /* Resources */,
+				D3E978A992AE3280141D5CD2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = joyar;
+			productName = joyar;
+			productReference = 84036D042FCDC850008437AD /* joyar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84036CFC2FCDC850008437AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					84036D032FCDC850008437AD = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 84036CFF2FCDC850008437AD /* Build configuration list for PBXProject "joyar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84036CFB2FCDC850008437AD;
+			productRefGroup = 84036D052FCDC850008437AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84036D032FCDC850008437AD /* joyar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84036D022FCDC850008437AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84036D6C2FCE86E0008437AD /* 1.mp4 in Resources */,
+				84036D6D2FCE86E0008437AD /* 2.mp4 in Resources */,
+				84036D6E2FCE86E0008437AD /* 3.mp4 in Resources */,
+				84036D6F2FCE86E0008437AD /* 4.mp4 in Resources */,
+				84036D702FCE86E0008437AD /* 5.mp4 in Resources */,
+				84036D712FCE86E0008437AD /* Assets.xcassets in Resources */,
+				84036D732FCE86E0008437AD /* Launch Screen.storyboard in Resources */,
+				84036D962FCE9104008437AD /* GoogleService-Info.plist in Resources */,
+				84036D742FCE86E0008437AD /* privacy_policy.html in Resources */,
+				84036D752FCE86E0008437AD /* Products.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		157765CB3BBE736A4F7FC0D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-joyar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E978A992AE3280141D5CD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-joyar/Pods-joyar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-joyar/Pods-joyar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-joyar/Pods-joyar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84036D002FCDC850008437AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84036D632FCE86E0008437AD /* ChatViews.swift in Sources */,
+				84036D862FCE889D008437AD /* AppPushEventStore.swift in Sources */,
+				84036D872FCE889D008437AD /* AppAdjustManager.swift in Sources */,
+				84036D882FCE889D008437AD /* AppWebViewJavascriptBridge.swift in Sources */,
+				84036D892FCE889D008437AD /* AppWebViewController.swift in Sources */,
+				84036D8A2FCE889D008437AD /* AppConfig.swift in Sources */,
+				84036D8B2FCE889D008437AD /* LocalPushScheduler.swift in Sources */,
+				84036D8C2FCE889D008437AD /* AppWebViewScriptDelegateHandler.swift in Sources */,
+				84036D8D2FCE889D008437AD /* ProgressHUD.swift in Sources */,
+				84036D8E2FCE889D008437AD /* AppRequestTool.swift in Sources */,
+				84036D8F2FCE889D008437AD /* AppPermissionTool.swift in Sources */,
+				84036D902FCE889D008437AD /* AppWebViewHandleEvent.swift in Sources */,
+				84036D912FCE889D008437AD /* AppDelegate.swift in Sources */,
+				84036D922FCE889D008437AD /* AppleIAPManager.swift in Sources */,
+				84036D932FCE889D008437AD /* WaitViewController.swift in Sources */,
+				84036D942FCE889D008437AD /* AppRequestBaseModel.swift in Sources */,
+				84036D642FCE86E0008437AD /* CommunityViews.swift in Sources */,
+				84036D652FCE86E0008437AD /* ContentView.swift in Sources */,
+				84036D662FCE86E0008437AD /* DataService.swift in Sources */,
+				84036D672FCE86E0008437AD /* FitnessModels.swift in Sources */,
+				84036D682FCE86E0008437AD /* PrivacyPolicyView.swift in Sources */,
+				84036D692FCE86E0008437AD /* RootContentView.swift in Sources */,
+				84036D6A2FCE86E0008437AD /* SettingsViews.swift in Sources */,
+				84036D6B2FCE86E0008437AD /* VideoViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84036D0D2FCDC852008437AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84036D0E2FCDC852008437AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84036D102FCDC852008437AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646FBA35931C2A8B258E4EF8 /* Pods-joyar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = joyar/joyar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = joyar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Joyar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.camera.joyar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84036D112FCDC852008437AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 354651E1011CBA9D81B1629D /* Pods-joyar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = joyar/joyar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = joyar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Joyar;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.camera.joyar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84036CFF2FCDC850008437AD /* Build configuration list for PBXProject "joyar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84036D0D2FCDC852008437AD /* Debug */,
+				84036D0E2FCDC852008437AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84036D0F2FCDC852008437AD /* Build configuration list for PBXNativeTarget "joyar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84036D102FCDC852008437AD /* Debug */,
+				84036D112FCDC852008437AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84036CFC2FCDC850008437AD /* Project object */;
+}

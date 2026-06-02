@@ -1,0 +1,173 @@
+{
+  "identifier" : "JoyarIAPLocalConfig",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_32",
+      "localizations" : [
+        {
+          "description" : "32 Coins to unlock trainings",
+          "displayName" : "32 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar",
+      "referenceName" : "32 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_60",
+      "localizations" : [
+        {
+          "description" : "60 Coins to unlock trainings",
+          "displayName" : "60 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar1",
+      "referenceName" : "60 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_96",
+      "localizations" : [
+        {
+          "description" : "96 Coins to unlock trainings",
+          "displayName" : "96 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar2",
+      "referenceName" : "96 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_155",
+      "localizations" : [
+        {
+          "description" : "155 Coins to unlock trainings",
+          "displayName" : "155 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar4",
+      "referenceName" : "155 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_189",
+      "localizations" : [
+        {
+          "description" : "189 Coins to unlock trainings",
+          "displayName" : "189 Coins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar5",
+      "referenceName" : "189 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_359",
+      "localizations" : [
+        {
+          "description" : "359 Coins (299+60 Bonus)",
+          "displayName" : "359 Coins Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar9",
+      "referenceName" : "359 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_729",
+      "localizations" : [
+        {
+          "description" : "729 Coins (599+130 Bonus)",
+          "displayName" : "729 Coins Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar19",
+      "referenceName" : "729 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_1869",
+      "localizations" : [
+        {
+          "description" : "1869 Coins (1599+270 Bonus)",
+          "displayName" : "1869 Coins Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar49",
+      "referenceName" : "1869 Coins",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "Joyar_3799",
+      "localizations" : [
+        {
+          "description" : "3799 Coins (3199+600 Bonus)",
+          "displayName" : "3799 Coins Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Joyar99",
+      "referenceName" : "3799 Coins",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status Receive"
+      }
+    ]
+  },
+  "subscriptionGroups" : [ ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

