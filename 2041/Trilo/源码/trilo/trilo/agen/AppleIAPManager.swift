@@ -102,7 +102,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func wrapPath(_ transactionId: String, params: [String: String]) {
+    fileprivate func m6da_6da(_ transactionId: String, params: [String: String]) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = formatGroup582
         reqModel.params = params
@@ -137,7 +137,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - productId: 产品Id
     ///   - block: 回调
-    fileprivate func linkQueue(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
+    fileprivate func saveSegment726(productId: String, source: Int, handle: @escaping (String?, Bool) -> Void) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = setValue712
         var dict = Dictionary<String, Any>()
@@ -163,7 +163,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transaction: 交易信息
     ///   - params: 接口参数
-    fileprivate func unlockEvent572(_ transactionId: String, params: [String: String]) {
+    fileprivate func fn26f26f(_ transactionId: String, params: [String: String]) {
         let reqModel = AppRequestModel.init()
         reqModel.requestPath = lockMap158
         reqModel.params = params
@@ -195,16 +195,16 @@ extension AppleIAPManager {
 // MARK: - Event
 extension AppleIAPManager {
     /// 初始化数据
-    private func setupEvent() {
-        self.payCacheList = lockState(payType: .Pay)
-        self.subscribeCacheList = lockState(payType: .Subscribe)
+    private func fnd85d85() {
+        self.payCacheList = qdaaumr6be(payType: .Pay)
+        self.subscribeCacheList = qdaaumr6be(payType: .Subscribe)
         self.createOrderId = nil
     }
     
     /// 获取缓存列表
     /// - Parameter payType: 支付类型
     /// - Returns: 缓存列表
-    private func lockState(payType: ApplePayType) -> [[String: String]] {
+    private func qdaaumr6be(payType: ApplePayType) -> [[String: String]] {
         var list: [[String: String]]?
         var diskPath = ""
         if payType == .Pay {
@@ -260,7 +260,7 @@ extension AppleIAPManager {
     ///   - transactionId: 收据标识符
     ///   - payType: 支付类型
     /// - Returns: 收据数据
-    fileprivate func drawPipe629(_ transactionId: String, _ payType: ApplePayType) -> String? {
+    fileprivate func populateContextcaa(_ transactionId: String, _ payType: ApplePayType) -> String? {
         // 有未完成的订单，先取缓存
         var paramsArr = [[String: String]]()
         switch(payType) {
@@ -285,16 +285,16 @@ extension AppleIAPManager {
 extension AppleIAPManager {
     /// 检测未完成的苹果支付【只会重试当前登录用户】
     func iap_checkUnfinishedTransactions() {
-        setupEvent()
+        fnd85d85()
 
         // 【购买】失败重试
         for dict in self.payCacheList {
-            hideEvent(dict["transactionId"], .Pay)
+            PrimaryStage6f2(dict["transactionId"], .Pay)
         }
         
         // 【订阅】失败重试
         for dict in self.subscribeCacheList {
-            hideEvent(dict["transactionId"], .Subscribe)
+            PrimaryStage6f2(dict["transactionId"], .Subscribe)
         }
     }
     
@@ -302,7 +302,7 @@ extension AppleIAPManager {
     /// - Parameters:
     ///   - transactionId: Id
     ///   - payType: 支付类型
-    private func hideEvent(_ transactionId: String?, _ payType: ApplePayType) {
+    private func PrimaryStage6f2(_ transactionId: String?, _ payType: ApplePayType) {
         guard let transactionId = transactionId else { return }
         // 初始化每个交易请求次数
         reqRetryCountDict[transactionId] = 0
@@ -320,7 +320,7 @@ extension AppleIAPManager {
     ///   - handle: 回调
     ///   - source: 0 常规充值 1 观看视频后充值或订阅
     func iap_startPurchase(productId: String, payType: ApplePayType, source: Int = 0, handle: @escaping IAPcompletionHandle) {
-        setupEvent()
+        fnd85d85()
         self.completionHandle = handle
         self.currentPayType = payType
         
@@ -339,7 +339,7 @@ extension AppleIAPManager {
             }
         
         case .Subscribe:
-            linkQueue(productId: productId, source: source) { [weak self] orderId, succeed in
+            saveSegment726(productId: productId, source: source) { [weak self] orderId, succeed in
                 guard let self = self else { return }
                 guard succeed == true && orderId != nil else { // 订单创建失败
                     self.completionHandle?(.createOrderFail, 0, .Subscribe, "")
@@ -457,7 +457,7 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
     ///   - transactionId: 交易唯一标识符
     ///   - payType: 支付类型
     fileprivate func receiveLink(_ transactionId: String, _ payType: ApplePayType) {
-        guard let receiptStr = drawPipe629(transactionId, payType) else {
+        guard let receiptStr = populateContextcaa(transactionId, payType) else {
             self.completionHandle?(.verityFail, 0, payType, "")
             return
         }
@@ -501,12 +501,12 @@ extension AppleIAPManager: SKPaymentTransactionObserver {
         case .Pay:
             let paramsArr = self.payCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            wrapPath(transactionId, params: paramsArr.first!)
+            m6da_6da(transactionId, params: paramsArr.first!)
             
         case .Subscribe:
             let paramsArr = self.subscribeCacheList.filter({$0["transactionId"] == transactionId})
             guard paramsArr.count > 0 else { return }
-            unlockEvent572(transactionId, params: paramsArr.first!)
+            fn26f26f(transactionId, params: paramsArr.first!)
         }
     }
 }

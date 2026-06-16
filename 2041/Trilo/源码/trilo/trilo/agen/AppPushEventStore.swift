@@ -18,11 +18,11 @@ final class AppPushEventStore {
     /// 统一处理通知点击事件：优先立即派发给当前 H5，若页面未就绪则缓存，待后续补发
     func handleNotificationResponse(_ response: UNNotificationResponse) {
         let request = response.notification.request
-        let payload = buildState655(from: request)
-        saveView807(payload)
+        let payload = reset_Flaga57(from: request)
+        mf34_f34(payload)
     }
 
-    private func saveView807(_ payload: [String: Any]) {
+    private func mf34_f34(_ payload: [String: Any]) {
         DispatchQueue.main.async {
             if let currentVC = AppConfig.currentViewController() as? AppWebViewController {
                 currentVC.jsEvent_onPushBack(payload)
@@ -42,7 +42,7 @@ final class AppPushEventStore {
     /// 固定按 H5 协议回传 type、uid、showText：
     /// 1 = 本地推送（本地即时/定时本地统一合并）
     /// 2 = 远程推送
-    private func buildState655(from request: UNNotificationRequest) -> [String: Any] {
+    private func reset_Flaga57(from request: UNNotificationRequest) -> [String: Any] {
         let eventType: AppPushBackEventType = request.trigger is UNPushNotificationTrigger ? .remotePush : .localPush
         return [
             "type": eventType.rawValue,

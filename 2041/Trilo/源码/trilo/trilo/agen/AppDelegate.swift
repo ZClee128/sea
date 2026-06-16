@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let waitVC = WaitViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        buildRecord870()
+        release_Stage22f()
         self.window?.addSubview(self.waitVC.view)
         UNUserNotificationCenter.current().delegate = self
-        initFireBase()
+        ReadyValue106a()
         let config = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     /// 初始化window
-    private func buildRecord870() {
+    private func release_Stage22f() {
         guard window == nil else { return }
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIViewController()
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 // MARK: - Firebase
 extension AppDelegate: MessagingDelegate {
     /// 初始化 Firebase 和 FCM 代理
-    private func initFireBase() {
+    private func ReadyValue106a() {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
     }

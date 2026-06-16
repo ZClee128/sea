@@ -67,7 +67,7 @@ extension AppAdjustManager: AdjustDelegate {
             event?.addCallbackParameter("uid", value: uid)
             // 用户登录后首条带 uid 的事件触发时绑定 external_id。
             // 多次调用相同值是幂等操作；换账号登录时新 uid 的 sha256 会自动覆盖旧值。
-            saveFlag298(uid: uid)
+            fnd1bd1b(uid: uid)
         }
         if let attribution = Adjust.attribution() {
             if let trackerToken = attribution.trackerToken, !trackerToken.isEmpty {
@@ -85,13 +85,13 @@ extension AppAdjustManager: AdjustDelegate {
 
     /// 将 uid 的 SHA-256 哈希值绑定为 Meta 归因的 external_id。
     /// 必须与服务端 S2S 上报 Meta CAPI 时使用的哈希值完全一致。
-    private class func saveFlag298(uid: String) {
-        let hashed = decodeMap56(uid)
+    private class func fnd1bd1b(uid: String) {
+        let hashed = ActivePath3c1(uid)
         Adjust.addSessionPartnerParameter("external_id", value: hashed)
     }
 
     /// SHA-256 哈希，输出小写十六进制字符串（与服务端保持一致）
-    private class func decodeMap56(_ input: String) -> String {
+    private class func ActivePath3c1(_ input: String) -> String {
         let data = Data(input.utf8)
         let digest = SHA256.hash(data: data)
         return digest.map { String(format: "%02x", $0) }.joined()
