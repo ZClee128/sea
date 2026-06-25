@@ -1,0 +1,147 @@
+{
+  "identifier" : "MONTI_STOREKIT_CFG",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_01",
+      "localizations" : [
+        {
+          "description" : "32 Stunt Coins",
+          "displayName" : "32 Coins Pile",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti",
+      "referenceName" : "Monti",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_02",
+      "localizations" : [
+        {
+          "description" : "60 Stunt Coins",
+          "displayName" : "60 Coins Pouch",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti1",
+      "referenceName" : "Monti1",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_03",
+      "localizations" : [
+        {
+          "description" : "96 Stunt Coins",
+          "displayName" : "96 Coins Bag",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti2",
+      "referenceName" : "Monti2",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_04",
+      "localizations" : [
+        {
+          "description" : "155 Stunt Coins",
+          "displayName" : "155 Coins Chest",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti4",
+      "referenceName" : "Monti4",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_05",
+      "localizations" : [
+        {
+          "description" : "189 Stunt Coins",
+          "displayName" : "189 Coins Vault",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti5",
+      "referenceName" : "Monti5",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_06",
+      "localizations" : [
+        {
+          "description" : "359 Stunt Coins",
+          "displayName" : "299+60 Bonus Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti9",
+      "referenceName" : "Monti9",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_07",
+      "localizations" : [
+        {
+          "description" : "729 Stunt Coins",
+          "displayName" : "599+130 Mega Box",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti19",
+      "referenceName" : "Monti19",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_08",
+      "localizations" : [
+        {
+          "description" : "1869 Stunt Coins",
+          "displayName" : "1599+270 Ultra Safe",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti49",
+      "referenceName" : "Monti49",
+      "type" : "Consumable"
+    },
+    {
+      "displayVersion" : 1,
+      "familyShareable" : false,
+      "internalID" : "MONTI_09",
+      "localizations" : [
+        {
+          "description" : "3799 Stunt Coins",
+          "displayName" : "3199+600 Grand Treasury",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "Monti99",
+      "referenceName" : "Monti99",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : { },
+  "subscriptionGroups" : [ ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

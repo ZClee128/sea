@@ -1,0 +1,28 @@
+Privacy Policy
+Last Updated: June 24, 2026
+
+Welcome to Monti. Your privacy is important to us. This Privacy Policy explains how Monti ("we", "our", or "us") manages your data.
+
+1. Collection of Information
+Monti is a local-first utility app designed for tracking cosplay stage action, stunt rehearsals, and choreography logs.
+- Personal Data: We do not collect or request any personal identification information (such as your name, email address, phone number, or physical address).
+- Account Creation: No account registration or profile setup is required to use Monti. All coordinates, choreography logs, and roleplay action notes are stored locally on your device.
+- Local Storage: Your rehearsal records, chats, and custom configurations are saved on your own device's internal storage and are not transmitted to any external servers.
+
+2. Media and Content
+The video playing feature and community content showcase in Monti utilize cached sample data to demonstrate choreography performance. No user-recorded videos or personal media files are uploaded, shared, or processed externally by us.
+
+3. Analytics and Cookies
+Monti does not use third-party analytics tools, user trackers, or cookies to monitor your usage habits. Your actions inside the application remain entirely private.
+
+4. Third-Party Services
+This application does not contain links to external third-party services or APIs that gather user details.
+
+5. Compliance with Apple Guidelines
+Monti is fully compliant with the Apple App Store Review Guidelines. As a local utility app, we respect user sandboxing and store no telemetry data.
+
+6. Changes to This Privacy Policy
+We may update our Privacy Policy from time to time. Since we do not collect contact details, any changes will be posted within this document with an updated "Last Updated" date.
+
+7. Contact Us
+If you have any questions or feedback regarding this Privacy Policy, please contact our support team at support@montiapp.com.
